@@ -8,7 +8,7 @@ export const digest = value => createHash('sha256').update(value).digest('hex');
 export const foundationCommands = Object.freeze([
   ['install', ['npm', 'ci', '--ignore-scripts', '--no-audit', '--no-fund']],
   ['check', ['npm', 'run', 'check']],
-  ['example', ['npm', 'run', 'example:sdk']],
+  ['example', ['npm', 'run', 'example:all']],
   ['consumer', ['npm', 'run', 'test:consumer']],
   ['sharding', ['npm', 'run', 'test:sharding']],
   ['dependencies', ['npm', 'run', 'check:dependencies']]

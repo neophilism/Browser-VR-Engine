@@ -30,14 +30,16 @@
     },
     {
       "id": "F03",
-      "status": "planned",
+      "status": "implemented",
       "pullRequest": null,
       "mergedCommit": null,
-      "verification": [],
-      "securityReview": null,
+      "verification": [
+        "docs/evidence/F03.md"
+      ],
+      "securityReview": "docs/security/F03.md",
       "deployment": null,
       "blockers": [],
-      "nextAction": "Wait for accepted dependencies."
+      "nextAction": "Complete integrated current-commit CI and separate review, merge and verify main; then integrate F04/F05 candidate evaluations."
     },
     {
       "id": "F04",

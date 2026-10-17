@@ -1,0 +1,11 @@
+{
+  "name": "@browser-vr-engine/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md"],
+  "scripts": { "test": "tsc -p test/tsconfig.json && node --test --test-isolation=none test/*.test.mjs" },
+  "dependencies": { "@sinclair/typebox": "0.34.52" }
+}
