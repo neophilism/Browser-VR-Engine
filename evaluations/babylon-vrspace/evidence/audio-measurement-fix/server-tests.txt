@@ -1,0 +1,38 @@
+✔ oversized File is rejected before arrayBuffer is called (2.298682ms)
+✔ File length mismatch is rejected before decoding (0.295335ms)
+✔ ordinary embedded triangle and equivalent GLB retain explicit allocation budgets (2.265652ms)
+✔ tiny unbuffered accessors cannot request huge or non-integer allocations (0.778783ms)
+✔ aggregate accessor allocation budget applies across individually valid declarations (0.377809ms)
+✔ buffer declarations and spans must fit actual embedded bytes (4.335109ms)
+✔ sparse allocations and ranges are checked before loader allocation (0.395456ms)
+✔ external and disguised resource URIs are rejected in both GLB and glTF (1.788854ms)
+✔ optional decoders and URI/media extensions are rejected as well as required extensions (0.478691ms)
+✔ allowed material extension remains usable but must be declared (0.407814ms)
+✔ cyclic, multiply-parented, and deeply nested node graphs are rejected (0.883641ms)
+✔ repeated mesh references have a separate rendered vertex budget (0.235575ms)
+✔ reused index accessors cannot multiply draw work without a bound (0.259581ms)
+✔ reused animation input cannot multiply allocated key objects without a bound (0.304178ms)
+✔ duplicate texture references count their separate pixel allocations (0.401575ms)
+✔ oversized compressed-image dimensions are rejected before browser decoding (0.45839ms)
+✔ large JSON and unsafe object keys fail without loader invocation (11.676465ms)
+✔ truncated, misaligned, extra and duplicate GLB chunks are rejected (0.32552ms)
+✔ teleport propagation keeps controller queries at a valid nonpenetrating pose (105.616159ms)
+✔ paired worklet measures actual same-block gain and reports per-sample extrema (7.920248ms)
+✔ paired worklet marks mismatched channels and non-finite samples invalid (9.34941ms)
+✔ paired worklet stops processing after its disposal message (1.118775ms)
+✔ paired worklet bounds both the unacknowledged port and pending window queue (247.814481ms)
+✔ paired window receiver rejects malformed channel, timing and numeric envelopes (0.734015ms)
+✔ paired window receiver bounds retained history and rejects replayed ranges (1.025284ms)
+✔ loopback server exposes only verified evaluation assets and supports media ranges (137.340947ms)
+✔ changed fixture bytes and fixture symlinks outside their package fail before serving (25.211198ms)
+✔ stale build evidence prevents a browser from testing a different bundle (118.444379ms)
+✔ credential-free launcher does not read or forward unrelated environment entries (1.415712ms)
+✔ vendored VRSpace module retains the pinned upstream source identity (0.343677ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 753.176108

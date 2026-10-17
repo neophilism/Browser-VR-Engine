@@ -1,0 +1,32 @@
+
+> browser-vr-engine-workspace@0.0.0 example:all
+> npm run example:sdk && npm run example:fixtures
+
+
+> browser-vr-engine-workspace@0.0.0 example:sdk
+> npm run start --workspace @browser-vr-engine/sdk-smoke
+
+
+> @browser-vr-engine/sdk-smoke@0.0.0 start
+> node index.mjs
+
+@browser-vr-engine/core 0.0.0
+Stage: workspace-foundation
+Standalone package import completed without application services.
+
+> browser-vr-engine-workspace@0.0.0 example:fixtures
+> npm run start --workspace @browser-vr-engine/fixture-smoke
+
+
+> @browser-vr-engine/fixture-smoke@0.1.0 start
+> node index.mjs
+
+{
+  "world": "courtyard-v1",
+  "units": "meters",
+  "entities": 55,
+  "resourceIntegrity": "verified",
+  "logicalActions": 13,
+  "qualificationStatus": "incomplete",
+  "evidence": "Logical replay and content integrity only. Browser, service, audio-device and headset capabilities remain unmeasured."
+}

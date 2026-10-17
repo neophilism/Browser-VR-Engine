@@ -36,6 +36,11 @@ for (const [name, mutate] of [
   ['skipped hosted run', workflow => { workflow.jobs.checks.steps[2].if = '${{ false }}'; }],
   ['missing hosted runner', workflow => { workflow.jobs.checks.steps.splice(2, 1); }],
   ['missing artifact upload', workflow => { workflow.jobs.checks.steps.pop(); }],
+  ['missing evaluation job', workflow => { delete workflow.jobs.evaluations; }],
+  ['skipped evaluation job', workflow => { workflow.jobs.evaluations.if = '${{ false }}'; }],
+  ['local evaluation replacing hosted run', workflow => { workflow.jobs.evaluations.steps[2].run += ' --local'; }],
+  ['missing evaluation artifact', workflow => { workflow.jobs.evaluations.steps.pop(); }],
+  ['evaluation omitted from required gate', workflow => { workflow.jobs.required.needs = ['checks']; }],
   ['conditional artifact upload', workflow => { workflow.jobs.checks.steps[3].if = '${{ success() }}'; }],
   ['skipped foundation job', workflow => { workflow.jobs.checks.if = '${{ false }}'; }],
   ['skipped required gate', workflow => { workflow.jobs.required.if = '${{ success() }}'; }],
@@ -57,10 +62,12 @@ for (const [name, mutate] of [
 
 test('the actual required shell gate fails on failed, skipped, cancelled and absent jobs', () => {
   const command = parse(workflowText).jobs.required.steps[0].run;
-  for (const outcome of ['success', 'failure', 'skipped', 'neutral', 'cancelled', '']) {
-    const result = spawnSync('bash', ['-c', command], { env: { PATH: process.env.PATH, CHECKS_RESULT: outcome } });
-    assert.equal(result.error, undefined);
-    assert.equal(result.status === 0, outcome === 'success');
+  for (const key of ['CHECKS_RESULT', 'EVALUATIONS_RESULT']) {
+    for (const outcome of ['success', 'failure', 'skipped', 'neutral', 'cancelled', '']) {
+      const result = spawnSync('bash', ['-c', command], { env: { PATH: process.env.PATH, CHECKS_RESULT: 'success', EVALUATIONS_RESULT: 'success', [key]: outcome } });
+      assert.equal(result.error, undefined);
+      assert.equal(result.status === 0, outcome === 'success');
+    }
   }
 });
 

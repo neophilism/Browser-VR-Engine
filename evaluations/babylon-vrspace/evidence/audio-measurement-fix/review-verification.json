@@ -1,0 +1,29 @@
+{
+  "scope": "Assistant-observed local verification; not human approval, hosted CI, foundation selection or full F05 acceptance",
+  "run": "artifacts/runs/run-xhkqs2",
+  "timestamp": "2026-10-17T22:43:15.469Z",
+  "sourceDigestCount": 19,
+  "buildInputCount": 11,
+  "buildOutputCount": 3,
+  "allSourceBuildFingerprintsMatch": true,
+  "unitTestsPassed": 30,
+  "browserCounts": {
+    "passed": 19,
+    "failed": 0,
+    "pageErrors": 0,
+    "failedRequests": 0
+  },
+  "historicalDirectoriesUnchanged": [
+    "2026-10-17-initial",
+    "2026-10-17-portable",
+    "review-fix"
+  ],
+  "screenshotVisuallyInspected": true,
+  "dependencyLockChanged": false,
+  "realImmersiveSessionEntryImplemented": false,
+  "freshDependencyAudit": {
+    "status": "blocked",
+    "reason": "Automatic approval review rejected the public npm audit request because package/dependency metadata disclosure to registry.npmjs.org lacks explicit end-user approval. The rejected request was not executed; no passing audit is claimed for this revision."
+  },
+  "historicalFilesCompared": 16
+}

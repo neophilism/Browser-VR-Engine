@@ -1,0 +1,121 @@
+
+> hubs@0.0.1 build
+> npm run check && rimraf ./dist && webpack --mode=production
+
+
+> hubs@0.0.1 check
+> tsc
+
+assets by info 22.6 MiB [immutable]
+  assets by chunk 5.69 MiB (auxiliary name: hub) 77 assets
+  assets by path assets/js/*.js 14.3 MiB 29 assets
+  assets by path assets/stylesheets/*.css 571 KiB 13 assets
+  assets by chunk 763 KiB (auxiliary name: engine) 4 assets
+  + 6 assets
+assets by path *.html 68.5 KiB
+  asset hub.html 50.3 KiB [emitted]
+  asset cloud.html 2.45 KiB [emitted]
+  asset discord.html 2.24 KiB [emitted]
+  asset index.html 2.03 KiB [emitted]
+  + 7 assets
+asset schema.toml 11.8 KiB [emitted] [from: src/schema.toml] [copied]
+asset hub.service.js 1020 bytes [emitted] [from: src/hub.service.js] [copied] [minimized]
+asset assets/js/ammo.worker-1919376c31a5880e2f31.js.LICENSE.txt 92 bytes [emitted]
+cached modules 22 MiB (javascript) 5.75 MiB (asset) 198 KiB (css/mini-extract) 100 KiB (runtime) [cached] 3598 modules
+orphan modules 830 KiB [orphan] 4 modules
+javascript modules 4.12 MiB
+  ./src/hub.js + 807 modules 2.82 MiB [not cacheable] [built]
+  ./src/avatar.js + 75 modules 590 KiB [not cacheable] [built]
+  ./node_modules/three-ammo/index.js + 2 modules 737 KiB [not cacheable] [built]
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  assets/wasm/ammo.wasm-3a50d562f1ae5ec84690ec44f42e9c3d.wasm (826 KiB)
+  assets/js/pdf.worker.min-657f46b20c035ad52a15efad03ebaafe.js (1020 KiB)
+  assets/wasm/basis_transcoder-c04c5112870b4791e3925f3b4c94c752.wasm (488 KiB)
+  assets/js/index-3c7f0415b19b765576fd.js (496 KiB)
+  assets/js/hub-d847c7ad1d9285f92233.js (1.54 MiB)
+  assets/sfx/teleport-loop-c7d8bb02701652fb6a28..mp3 (405 KiB)
+  assets/blender-lut-e6acb8ca8505336d09c6..cube (864 KiB)
+  assets/js/scene-6f6c270713ca2c1f1308.js (412 KiB)
+  assets/js/avatar-043b968b56edf3e2e929.js (645 KiB)
+  assets/js/link-e0d42bfe6d80ca8c7719.js (430 KiB)
+  assets/js/discord-6aa865b57b7e88bcb90d.js (385 KiB)
+  assets/js/cloud-048a60136f03a14e430f.js (464 KiB)
+  assets/js/signin-926183e37db6c4d6a70a.js (469 KiB)
+  assets/js/verify-5851b38a377f2f0eb538.js (465 KiB)
+  assets/js/tokens-5a8160ae167dee82f005.js (497 KiB)
+  assets/js/whats-new-aebe5d9963fec9b81121.js (565 KiB)
+  assets/js/frontend-d567d614afa6054ea02b.js (269 KiB)
+  assets/js/engine-a96695301b4e55535f5d.js (798 KiB)
+  assets/js/hub-vendors-ce2ea8ad3bb05a8528ff.js (5.39 MiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  support (330 KiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/support-e5e75a0cf4b6e233a05a.js
+      assets/stylesheets/support-63d74e7f6dde4789454f.css
+  index (867 KiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/store-535fbaaea3f6ebecb20b.js
+      assets/js/index-3c7f0415b19b765576fd.js
+      assets/stylesheets/index-97885b18a86f4b2c3cc1.css
+  hub (8.17 MiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/engine-a96695301b4e55535f5d.js
+      assets/js/store-535fbaaea3f6ebecb20b.js
+      assets/js/hub-vendors-ce2ea8ad3bb05a8528ff.js
+      assets/stylesheets/hub-vendors-99595070e4dc35b0e01f.css
+      assets/js/hub-d847c7ad1d9285f92233.js
+      assets/stylesheets/hub-a63f56764638a19b0ff4.css
+  scene (756 KiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/store-535fbaaea3f6ebecb20b.js
+      assets/js/scene-6f6c270713ca2c1f1308.js
+      assets/stylesheets/scene-e9adb7245a5dfdd86df5.css
+  avatar (1.75 MiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/engine-a96695301b4e55535f5d.js
+      assets/js/store-535fbaaea3f6ebecb20b.js
+      assets/js/avatar-043b968b56edf3e2e929.js
+      assets/stylesheets/avatar-7f588d478199e2027619.css
+  link (1.55 MiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/engine-a96695301b4e55535f5d.js
+      assets/js/store-535fbaaea3f6ebecb20b.js
+      assets/js/link-e0d42bfe6d80ca8c7719.js
+      assets/stylesheets/link-22b415c6649a65186f36.css
+  discord (730 KiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/store-535fbaaea3f6ebecb20b.js
+      assets/js/discord-6aa865b57b7e88bcb90d.js
+      assets/stylesheets/discord-0e07949271576419b585.css
+  cloud (828 KiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/store-535fbaaea3f6ebecb20b.js
+      assets/js/cloud-048a60136f03a14e430f.js
+      assets/stylesheets/cloud-8a14ddb042da461d027f.css
+  signin (834 KiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/store-535fbaaea3f6ebecb20b.js
+      assets/js/signin-926183e37db6c4d6a70a.js
+      assets/stylesheets/signin-c47ace8a78b8c5471642.css
+  verify (831 KiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/store-535fbaaea3f6ebecb20b.js
+      assets/js/verify-5851b38a377f2f0eb538.js
+      assets/stylesheets/verify-890c78afcb086b3ec05a.css
+  tokens (869 KiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/store-535fbaaea3f6ebecb20b.js
+      assets/js/tokens-5a8160ae167dee82f005.js
+      assets/stylesheets/tokens-f13fa7b8c8d98b620813.css
+  whats-new (928 KiB)
+      assets/js/frontend-d567d614afa6054ea02b.js
+      assets/js/store-535fbaaea3f6ebecb20b.js
+      assets/js/whats-new-aebe5d9963fec9b81121.js
+      assets/stylesheets/whats-new-02c661d3e1ef4f8f18a1.css
+
+webpack 5.99.9 compiled with 2 warnings in 13528 ms

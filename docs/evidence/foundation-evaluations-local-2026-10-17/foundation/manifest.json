@@ -1,0 +1,83 @@
+{
+  "mode": "local",
+  "startedAt": "2026-10-17T22:45:27.509Z",
+  "complete": false,
+  "commands": [
+    {
+      "id": "install",
+      "argv": [
+        "npm",
+        "ci",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "--registry=https://registry.npmjs.org",
+        "--userconfig",
+        "/workspace/scratch/dc98dcd2981d/Browser-VR-Engine/artifacts/foundation-with-audit-block/user.npmrc",
+        "--globalconfig",
+        "/workspace/scratch/dc98dcd2981d/Browser-VR-Engine/artifacts/foundation-with-audit-block/global.npmrc"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 1073
+    },
+    {
+      "id": "check",
+      "argv": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 5318
+    },
+    {
+      "id": "example",
+      "argv": [
+        "npm",
+        "run",
+        "example:all"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 908
+    },
+    {
+      "id": "consumer",
+      "argv": [
+        "npm",
+        "run",
+        "test:consumer"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 3522
+    },
+    {
+      "id": "sharding",
+      "argv": [
+        "npm",
+        "run",
+        "test:sharding"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 737
+    },
+    {
+      "id": "dependencies",
+      "argv": [
+        "npm",
+        "run",
+        "check:dependencies"
+      ],
+      "outcome": "blocked_auto_review",
+      "exitCode": null
+    }
+  ],
+  "blockers": [
+    "Dependency audit explicitly unexecuted after automatic-review egress rejection."
+  ],
+  "finishedAt": "2026-10-17T22:45:39.093Z"
+}

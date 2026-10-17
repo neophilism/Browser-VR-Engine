@@ -1,0 +1,23 @@
+{
+  "name": "@browser-vr-engine/eval-hubs-spoke",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "description": "Isolated, pinned F04 Hubs/Spoke qualification tools; not an engine dependency.",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "install:browser": "node scripts/install-browser.mjs",
+    "build:hubs": "node scripts/build-hubs.mjs",
+    "prepare:fixtures": "node scripts/prepare-fixtures.mjs",
+    "evaluate:spoke": "node scripts/evaluate-spoke.mjs",
+    "preflight:compose": "node scripts/compose-preflight.mjs",
+    "verify:evidence": "node scripts/verify-evidence.mjs",
+    "test": "node --test --test-isolation=none scripts/evaluation.test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "yarn": "1.22.22"
+  }
+}

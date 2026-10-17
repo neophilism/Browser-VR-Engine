@@ -1,0 +1,10 @@
+{
+  "sourceCommit": "bd812b0316a05a63ca989e74c8c88c4062b41606",
+  "threeSourceCommit": "0f9b0024725f0dd917caa54c2934a4ba1fc12c4f",
+  "originalTransport": "https://github.com/Hubs-Foundation/three.js.git#0f9b0024725f0dd917caa54c2934a4ba1fc12c4f",
+  "evaluationTransport": "https://codeload.github.com/Hubs-Foundation/three.js/tar.gz/0f9b0024725f0dd917caa54c2934a4ba1fc12c4f",
+  "archiveSha256": "2ac36b6d4a3858f653551b8d8ee33b6076546ba89ddd7b6f2b5ebacb0a49b347",
+  "archiveIntegrity": "sha512-oA018REmn28W3mnhuk7mORg7LyL0BCK9UMUEu27HAFX4bkOf1BdMbuywrFo6V9hwqxzm7LeVTbD4A1AxPe+oDw==",
+  "registryChange": "Yarn registry to npm registry; retain all original integrity hashes.",
+  "reason": "Pinned source exists in GitHub object storage but Yarn Git resolver cannot find it in advertised refs; Yarn registry returned 502 for several packages."
+}

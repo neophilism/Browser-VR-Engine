@@ -1,0 +1,62 @@
+{
+  "scope": "Historical evaluations retained unchanged; current paired-audio measurement/teleport review-fix evidence. F05 remains incomplete.",
+  "qualificationStatus": "incomplete",
+  "runs": [
+    {
+      "directory": "2026-10-17-initial",
+      "purpose": "Original isolated prototype; retained without rewriting its measured results",
+      "checksPassed": 17,
+      "browserErrors": 0
+    },
+    {
+      "directory": "2026-10-17-portable",
+      "purpose": "Final portable sources, ordinary Playwright import, repository-relative F03 fixture path, isolated test server",
+      "timestamp": "2026-10-17T22:01:04.503Z",
+      "checksPassed": 17,
+      "browserErrors": 0,
+      "failedRequests": 0,
+      "sourceDigestCount": 15,
+      "sourceDigestMatch": true,
+      "serverBoundaryTestsPassed": 5,
+      "dependencyAuditTotalAdvisories": 0,
+      "imageVisuallyInspected": true
+    },
+    {
+      "directory": "review-fix",
+      "purpose": "Review fixes: bounded declarations, transactional failure rollback, normalized geometry, input/resource teardown, explicit empty npm configuration",
+      "timestamp": "2026-10-17T22:19:53.219Z",
+      "checksPassed": 19,
+      "browserErrors": 0,
+      "failedRequests": 0,
+      "sourceDigestCount": 18,
+      "sourceDigestMatch": true,
+      "serverAndImportTestsPassed": 23,
+      "dependencyAuditTotalAdvisories": 0,
+      "imageVisuallyInspected": true
+    },
+    {
+      "directory": "audio-measurement-fix",
+      "purpose": "Paired zero-output AudioWorklet with bounded backpressure, full marker-period sampling, synchronized valid teleports and retained failure diagnostics",
+      "timestamp": "2026-10-17T22:43:15.469Z",
+      "checksPassed": 19,
+      "browserErrors": 0,
+      "failedRequests": 0,
+      "sourceDigestCount": 19,
+      "sourceDigestMatch": true,
+      "buildInputCount": 11,
+      "buildOutputCount": 3,
+      "localTestsPassed": 30,
+      "freshDependencyAudit": "blocked by automatic approval review; public-registry package metadata disclosure requires end-user approval",
+      "imageVisuallyInspected": true
+    }
+  ],
+  "missingEvidence": [
+    "Real immersive-session entry remains unimplemented; Check VR performs capability detection only.",
+    "Physical headset/controller/recenter/seated/wall-adjacent/sleep-resume and actual output audio.",
+    "Two real clients, SFU/spatial voice, reconnect/server-authoritative state.",
+    "AV marker offset measurement below the 80ms threshold.",
+    "Full F03 warmup60s+duration180s+3 repetitions; target-device p95/p99/thermal performance.",
+    "Ten cleanup cycles and memory trend under target workload.",
+    "Complete portable world export, source-original restoration, general importer/conversion and editor."
+  ]
+}

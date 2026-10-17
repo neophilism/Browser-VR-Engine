@@ -1,0 +1,16 @@
+{
+  "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+  "args": [
+    "--input-type=module",
+    "-e",
+    "import assert from 'node:assert/strict'; import { join,resolve } from 'node:path'; import { fixtureRoot,bundleRoot } from './scripts/config.mjs'; import { verifyFixtures } from './scripts/fixtures.mjs'; assert.equal(process.env.F03_FIXTURE_ROOT,undefined); assert.equal(fixtureRoot,resolve(bundleRoot,'../../packages/qualification-fixtures/fixtures')); const fixture=await verifyFixtures(); assert.equal(fixture.files.size,19); console.log(JSON.stringify({status:'default-repository-layout-verified',fileCount:fixture.files.size,entityCount:fixture.world.entities.length,worldDigest:fixture.comparison.worldDigest}));"
+  ],
+  "startedAt": "2026-10-17T22:11:44.417Z",
+  "finishedAt": "2026-10-17T22:11:44.477Z",
+  "exitCode": 0,
+  "signal": null,
+  "processError": null,
+  "timedOut": false,
+  "success": true,
+  "log": "default-layout.log"
+}

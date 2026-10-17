@@ -1,0 +1,74 @@
+{
+  "runId": "run-2026-10-17T22-02-14-024Z-hubs-build-945f6b8e",
+  "status": "passed-scoped-build",
+  "node": "v24.19.0",
+  "commands": [
+    {
+      "command": "npm",
+      "args": [
+        "run",
+        "check"
+      ],
+      "startedAt": "2026-10-17T22:02:14.054Z",
+      "finishedAt": "2026-10-17T22:02:23.375Z",
+      "exitCode": 0,
+      "signal": null,
+      "processError": null,
+      "timedOut": false,
+      "success": true,
+      "log": "check.log"
+    },
+    {
+      "command": "npm",
+      "args": [
+        "run",
+        "test:unit"
+      ],
+      "startedAt": "2026-10-17T22:02:23.376Z",
+      "finishedAt": "2026-10-17T22:02:24.701Z",
+      "exitCode": 0,
+      "signal": null,
+      "processError": null,
+      "timedOut": false,
+      "success": true,
+      "log": "test-unit.log"
+    },
+    {
+      "command": "npm",
+      "args": [
+        "run",
+        "build"
+      ],
+      "startedAt": "2026-10-17T22:02:24.701Z",
+      "finishedAt": "2026-10-17T22:02:50.515Z",
+      "exitCode": 0,
+      "signal": null,
+      "processError": null,
+      "timedOut": false,
+      "success": true,
+      "log": "build.log"
+    }
+  ],
+  "dependencyInstallation": "Uses the installed tree at the configured pinned source; this command does not claim to reinstall dependencies.",
+  "limitations": [
+    "Client build and the upstream unit test only. No lint suite, service deployment, multiplayer, WebXR, frame-time, capacity, or dependency-audit pass is claimed."
+  ],
+  "source": {
+    "repository": "https://github.com/Hubs-Foundation/hubs.git",
+    "commit": "986d07a758e9d1184cb355385c6460391bd238d0",
+    "files": {
+      "package.json": "90ea536f10020d417c63d21bfb4056d6716a0ce68e3fb535d2425bf58dabc542",
+      "package-lock.json": "f1630148e2e4c03c70bf0fbe55182ef4fc0b0506b82625b321109c2d71adf4d3"
+    },
+    "changedFiles": []
+  },
+  "sourceAfterBuild": {
+    "repository": "https://github.com/Hubs-Foundation/hubs.git",
+    "commit": "986d07a758e9d1184cb355385c6460391bd238d0",
+    "files": {
+      "package.json": "90ea536f10020d417c63d21bfb4056d6716a0ce68e3fb535d2425bf58dabc542",
+      "package-lock.json": "f1630148e2e4c03c70bf0fbe55182ef4fc0b0506b82625b321109c2d71adf4d3"
+    },
+    "changedFiles": []
+  }
+}

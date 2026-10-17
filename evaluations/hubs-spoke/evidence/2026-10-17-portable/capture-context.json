@@ -1,0 +1,10 @@
+{
+  "F04": "blocked",
+  "finalBrowserRun": "run-2026-10-17T22-11-00-344Z-spoke-browser-93e22b24",
+  "finalBrowserEnvironment": "Explicit npm/Git/cache/browser/temp paths; HOME and USERPROFILE absent; no provider/auth variables inherited.",
+  "earlierBrowserRun": "prior-launcher-spoke-interactions.json preserves the previous successful corrected-wrapper run before the final environment refactor.",
+  "hubsBuild": "The retained fresh Hubs source check/unit/build ran before the HOME/USERPROFILE launcher refactor. Its command logs and source/package-lock hashes are retained; no launcher fingerprint or new Hubs build under the final environment is claimed.",
+  "toolkitSetup": "A fresh npm ci for the private toolkit passed under the final launcher; full upstream clean-clone dependency setup was not repeated.",
+  "referenceHardware": "Linux x64 shared worker, Node 24.19.0, Chrome 151.0.7922.34, SwiftShader. No physical headset or hardware GPU was measured.",
+  "renderAndAudio": "Screenshots and WebGL/media objects establish real rendering/loading. No frame-time benchmark or audible spatial/audio-device claim is made."
+}

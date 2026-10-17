@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "0.1.0",
+  "nodeMajor": 24,
+  "toolkit": { "playwright": "1.62.1", "yarn": "1.22.22" },
+  "sources": {
+    "hubs": {
+      "repository": "https://github.com/Hubs-Foundation/hubs.git",
+      "commit": "986d07a758e9d1184cb355385c6460391bd238d0",
+      "license": "MPL-2.0",
+      "files": {
+        "package.json": { "original": "90ea536f10020d417c63d21bfb4056d6716a0ce68e3fb535d2425bf58dabc542" },
+        "package-lock.json": { "original": "f1630148e2e4c03c70bf0fbe55182ef4fc0b0506b82625b321109c2d71adf4d3" }
+      }
+    },
+    "spoke": {
+      "repository": "https://github.com/Hubs-Foundation/Spoke.git",
+      "commit": "bd812b0316a05a63ca989e74c8c88c4062b41606",
+      "license": "MPL-2.0; MIT notices for portions derived from the Three.js editor",
+      "patch": "patches/spoke-node24-and-downloads.patch",
+      "files": {
+        "package.json": { "original": "6260e3920140359de96b2f246df8eceb7ddd8529a4ca552abc32c9a7238961bf", "patched": "87f66989b7f8019e08a8728615dfd9b6a53e48c235f0acef222c848d3837ee56" },
+        "yarn.lock": { "original": "93bc2ab7c69e8c4f4e321a11f3b3a8df858dc793f584556957c549f6f966d48e", "patched": "82e60b9d1c5cf3484a8fda02f21135bb20585352621cdec2c7b5b57ef55225b7" }
+      }
+    },
+    "compose": {
+      "repository": "https://github.com/Hubs-Foundation/hubs-compose.git",
+      "commit": "54cc996394e715d32aa71c9cf9df4898b1ea1a57",
+      "license": "MPL-2.0",
+      "files": { "bin/init": { "original": "4d51fd50c243c38a77284cb88dadcafef0facb415353108b90588168c8f03e5a" } }
+    }
+  },
+  "spokeThreeArchive": {
+    "commit": "0f9b0024725f0dd917caa54c2934a4ba1fc12c4f",
+    "url": "https://codeload.github.com/Hubs-Foundation/three.js/tar.gz/0f9b0024725f0dd917caa54c2934a4ba1fc12c4f",
+    "sha256": "2ac36b6d4a3858f653551b8d8ee33b6076546ba89ddd7b6f2b5ebacb0a49b347",
+    "integrity": "sha512-oA018REmn28W3mnhuk7mORg7LyL0BCK9UMUEu27HAFX4bkOf1BdMbuywrFo6V9hwqxzm7LeVTbD4A1AxPe+oDw=="
+  }
+}

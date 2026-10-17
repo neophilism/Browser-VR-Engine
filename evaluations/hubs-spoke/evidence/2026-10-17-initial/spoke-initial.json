@@ -1,0 +1,158 @@
+{
+  "candidate": "Spoke",
+  "sourceCommit": "bd812b0316a05a63ca989e74c8c88c4062b41606",
+  "adaptations": [
+    "Pinned Three.js commit downloaded as archive",
+    "webpack 4.39.3 -> 4.47.0 for Node 24"
+  ],
+  "browser": "151.0.7922.34",
+  "rendererClass": "software SwiftShader",
+  "text": "World\nSelection\n0.5m\n90°\nm\nPublish Scene...\nBack to Projects\nFile\nNew Project\nSave Project\nctrl + S\nSave As\nPublish Scene...\nExport as binary glTF (.glb) ...\nImport legacy .spoke project\nExport legacy .spoke project\nHelp\nTutorial\nKeyboard and Mouse Controls\nGet Support\nSubmit Feedback\nReport an Issue\nJoin us on Discord\nTerms of Use (TBD)\nPrivacy Notice (TBD)\nDeveloper\nEnable Experimental Features\nSubmit Feedback\nViewport\nLit\n[LMB] Orbit / Select | [MMB] Pan | [RMB] Fly\nUpload Asset\nAssets\nElements\nArchitecture Kit\nRock Kit\nSketchfab\nIcosa Gallery\nBing Images\nBing Videos\nHubs Sound Pack\nTenor GIFs\nElements\nGroup\nModel\nGround Plane\nBox Collider\nAmbient Light\nDirectional Light\nHemisphere Light\nSpot Light\nPoint Light\nSpawn Point\nWay Point\nImage\nVideo\nAudio\nSpawner\nLink\nParticle Emitter\nSimple Water\nScene Preview Camera\nMedia Frame\nAudio Zone\nTroika Text\nMirror\nPlace Object\nPlace Object at Origin\nUpload Asset\nHierarchy\nCrater\nSkybox\nDirectional Light\nSpawn Point\nFloor Plan\nTerrain_Crater1.glb\nRename\nDuplicate\nctrl+ D\nGroup\nctrl+ G\nDelete\nExpand All\nCollapse All\nProperties\nNo node selected\nError loading project.\nErrors loading project:\n\n1 Error:\n  Error loading model \"https://uploads-prod.reticulum.io.invalid/files/728260ab-4e8f-4052-8e1a-c7fae3492989.glb\":\n    Cause:\n      Error resolving media \"https://uploads-prod.reticulum.io.invalid/files/728260ab-4e8f-4052-8e1a-c7fae3492989.glb\":\n        Cause:\n          Failed to fetch \"https://dev.reticulum.io.invalid/api/v1/media\":\n            Cause:\n              Failed to fetch (Possibly a CORS error)\nSubmit Feedback\nOk",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "text"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Publish Scene...",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "button"
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": "Search...",
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Submit Feedback",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "button"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Ok",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "submit"
+    }
+  ],
+  "canvas": [
+    {
+      "width": 883,
+      "height": 510
+    }
+  ],
+  "errors": [],
+  "blockedHosts": [
+    "fonts.googleapis.com",
+    "www.google-analytics.com",
+    "dev.reticulum.io.invalid"
+  ],
+  "limitations": [
+    "Initial browser load only; no complete foundation qualification",
+    "No Reticulum/Dialog service",
+    "No physical headset or GPU"
+  ]
+}

@@ -1,0 +1,128 @@
+[34mℹ[39m [90m｢wds｣[39m: Project is running at https://127.0.0.1:9194/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from /
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /workspace/scratch/dc98dcd2981d/engine_work/f04-port/evaluations/hubs-spoke/artifacts/runs/run-2026-10-17T22-11-00-344Z-spoke-browser-93e22b24/served
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /index.html
+Browserslist: caniuse-lite is outdated. Please run next command `yarn upgrade`
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /run-2026-10-17T22-11-00-344Z-spoke-browser-93e22b24.spoke
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /run-2026-10-17T22-11-00-344Z-spoke-browser-93e22b24.spoke
+[BABEL] Note: The code generator has deoptimised the styling of /workspace/scratch/dc98dcd2981d/engine_work/hubs-eval/spoke/src/api/SketchfabZipLoader.worker.js as it exceeds the max of 500KB.
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /run-2026-10-17T22-11-00-344Z-spoke-browser-93e22b24.spoke
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /run-2026-10-17T22-11-00-344Z-spoke-browser-93e22b24.spoke
+[BABEL] Note: The code generator has deoptimised the styling of /workspace/scratch/dc98dcd2981d/engine_work/hubs-eval/spoke/src/editor/heightfield/heightfield.worker.js as it exceeds the max of 500KB.
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /run-2026-10-17T22-11-00-344Z-spoke-browser-93e22b24.spoke
+[34mℹ[39m [90m｢wdm｣[39m: Hash: fbe4c51cd403658154d5
+Version: webpack 4.47.0
+Time: 9002ms
+Built at: 10/17/2026 10:11:10 PM
+                                                                  Asset       Size                                 Chunks                         Chunk Names
+          assets/images/audio-icon-8969e6388ecf8e8e50fcfefbaef2a27c.png   9.64 KiB                                         [emitted]              
+             assets/images/benches-0484fd0676dbfbc26cfdbdd7f878380f.jpg    188 KiB                                         [emitted]              
+             assets/images/default-7e4cf420b4b831bd5b1bfdc51baf508a.png   80.2 KiB                                         [emitted]              
+                 assets/images/dot-75db99b125fe4e9afbe58696320bea73.png  144 bytes                                         [emitted]              
+         assets/images/editor-icon-948a4375549461ebbcf98bdc2cad9e97.png   1.08 KiB                                         [emitted]              
+  assets/images/environment-editor-efe992a4a7fc17ceec6af45461f4edf8.jpg    191 KiB                                         [emitted]              
+                                       assets/images/favicon-editor.ico   33.7 KiB                                         [emitted]              
+                                        assets/images/favicon-spoke.ico    5.3 KiB                                         [emitted]              
+                                              assets/images/favicon.ico   33.7 KiB                                         [emitted]              
+           assets/images/hubs-logo-65e827d2d7c13ed734989200cdafc1ef.png   15.9 KiB                                         [emitted]              
+           assets/images/link-icon-33022e4ece55028f7b75d1a8a94a4816.png   9.67 KiB                                         [emitted]              
+                 assets/images/lmb-e660a57a13eb0824cb256144eb51e0f4.svg  583 bytes                                         [emitted]              
+         assets/images/media-error-19a251258c94bb2318e43e9be669ae5e.png   1.46 KiB                                         [emitted]              
+             assets/images/meeting-ee8cb4d5a0bc4a379c60831eaa2518fd.jpg    110 KiB                                         [emitted]              
+                assets/images/negx-9801efa794aee5a5e8174ce0b7e5db94.jpg    117 KiB                                         [emitted]              
+                assets/images/negy-89a84f86138e2c04d4153cac9cd5d15c.jpg    137 KiB                                         [emitted]              
+                assets/images/negz-93ddca2043d48af80e279d408ae72ae9.jpg    154 KiB                                         [emitted]              
+                assets/images/posx-d28d89004f7b92a5d4fcf483008ec73d.jpg    131 KiB                                         [emitted]              
+                assets/images/posy-684b9b64999cd41971ce19a485fb08ef.jpg    103 KiB                                         [emitted]              
+                assets/images/posz-fe12b4ee015194a00647bc7b1542c8b9.jpg    159 KiB                                         [emitted]              
+                 assets/images/rmb-c4e5ad68dffa357f82b3b55e6d915245.svg  577 bytes                                         [emitted]              
+          assets/images/spoke-icon-689abdfcc73a5aef104f6961d81ebacf.png   9.36 KiB                                         [emitted]              
+          assets/images/spoke-logo-ddd2655333da7ed72e1ba4f7231de49e.png   77.5 KiB                                         [emitted]              
+                assets/images/wasd-f95ac5ab7fd5e31bde6e7c3ad422b791.svg   5.35 KiB                                         [emitted]              
+        assets/images/waternormals-4418dde3f6abc21dc32506acf5f5b093.jpg    243 KiB                                         [emitted]              
+                   assets/js/SketchfabZipLoader-6c509168ef1fff971d97.js   3.32 MiB                     SketchfabZipLoader  [emitted] [immutable]  SketchfabZipLoader
+                                assets/js/entry-c31513ac476cbefc4ae7.js   11.3 MiB                                  entry  [emitted] [immutable]  entry
+                     assets/js/package-kit-page-404536a5cefc5431787c.js   39.7 KiB                       package-kit-page  [emitted] [immutable]  package-kit-page
+        assets/js/package-kit-page~project-page-6f26eb3b745c27d8d612.js    539 KiB          package-kit-page~project-page  [emitted] [immutable]  package-kit-page~project-page
+                         assets/js/project-page-114a58e74146a92558d2.js   12.1 MiB                           project-page  [emitted] [immutable]  project-page
+             assets/js/vendors~package-kit-page-ae4f09aec517a0e70723.js   1.34 MiB               vendors~package-kit-page  [emitted] [immutable]  vendors~package-kit-page
+assets/js/vendors~package-kit-page~project-page-76129111e71c2b3e347f.js   3.11 MiB  vendors~package-kit-page~project-page  [emitted] [immutable]  vendors~package-kit-page~project-page
+                 assets/js/vendors~project-page-ce5de3782cf1508d3605.js   11.6 MiB                   vendors~project-page  [emitted] [immutable]  vendors~project-page
+            assets/js/wasm/recast-cdfd36cc3c82e78bb3b253ec10d6b9b4.wasm   83.6 KiB                                         [emitted]              
+      assets/models/TransformGizmo-5661bc18bc9b9fecd7ad49b099a8a1c2.glb    147 KiB                                         [emitted]              
+        assets/models/loading-cube-7dcc3b81897e68b740c1cf12b6cf4c3f.glb   27.4 KiB                                         [emitted]              
+         assets/models/spawn-point-af89f0ed6871147032774ddc8bdfb5ec.glb   27.7 KiB                                         [emitted]              
+         assets/templates/crater-195d5b8fe4e9935a822c1c37db4c3b80.spoke    2.7 KiB                                         [emitted]              
+       assets/templates/tutorial-bb5f37e8ec2a0f82da9d12d0cfbd5969.spoke   2.67 KiB                                         [emitted]              
+         assets/videos/SpokePromo-3d9b631900e5e7881a7c8ff9419442f0.webm   2.56 MiB                                         [emitted]              
+          assets/videos/SpokePromo-dc8d5f692b26841b59f9c9fb201d8c85.mp4   1.53 MiB                                         [emitted]              
+                                                             index.html   1.14 KiB                                         [emitted]              
+Entrypoint entry = assets/js/entry-c31513ac476cbefc4ae7.js (prefetch: assets/js/vendors~package-kit-page~project-page-76129111e71c2b3e347f.js assets/js/vendors~package-kit-page-ae4f09aec517a0e70723.js assets/js/package-kit-page~project-page-6f26eb3b745c27d8d612.js assets/js/package-kit-page-404536a5cefc5431787c.js assets/js/vendors~project-page-ce5de3782cf1508d3605.js assets/js/project-page-114a58e74146a92558d2.js assets/js/SketchfabZipLoader-6c509168ef1fff971d97.js)
+[1] multi (webpack)-dev-server/client?https://127.0.0.1:9194 ./src/index.js 40 bytes {entry} [built]
+[./node_modules/@sentry/browser/esm/index.js] 1.26 KiB {entry} [built]
+[./node_modules/abortcontroller-polyfill/dist/polyfill-patch-fetch.js] 15.1 KiB {entry} [built]
+[./node_modules/react-dom/index.js] 1.33 KiB {entry} [built]
+[./node_modules/react/index.js] 190 bytes {entry} [built]
+[./node_modules/webpack-dev-server/client/index.js?https://127.0.0.1:9194] (webpack)-dev-server/client?https://127.0.0.1:9194 4.29 KiB {entry} [built]
+[./node_modules/webpack-dev-server/client/overlay.js] (webpack)-dev-server/client/overlay.js 3.51 KiB {entry} [built]
+[./node_modules/webpack-dev-server/client/socket.js] (webpack)-dev-server/client/socket.js 1.53 KiB {entry} [built]
+[./node_modules/webpack-dev-server/client/utils/createSocketUrl.js] (webpack)-dev-server/client/utils/createSocketUrl.js 2.85 KiB {entry} [built]
+[./node_modules/webpack-dev-server/client/utils/log.js] (webpack)-dev-server/client/utils/log.js 964 bytes {entry} [built]
+[./node_modules/webpack-dev-server/client/utils/reloadApp.js] (webpack)-dev-server/client/utils/reloadApp.js 1.59 KiB {entry} [built]
+[./node_modules/webpack-dev-server/client/utils/sendMessage.js] (webpack)-dev-server/client/utils/sendMessage.js 402 bytes {entry} [built]
+[./node_modules/webpack-dev-server/node_modules/strip-ansi/index.js] (webpack)-dev-server/node_modules/strip-ansi/index.js 161 bytes {entry} [built]
+[./node_modules/webpack/hot sync ^\.\/log$] (webpack)/hot sync nonrecursive ^\.\/log$ 170 bytes {entry} [built]
+[./src/index.js] 782 bytes {entry} [built]
+    + 2685 hidden modules
+Child html-webpack-plugin for "index.html":
+     1 asset
+    Entrypoint undefined = index.html
+    [./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html] 1.33 KiB {0} [built]
+    [./node_modules/lodash/lodash.js] 530 KiB {0} [built]
+    [./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {0} [built]
+    [./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 497 bytes {0} [built]
+Child worker:
+     1 asset
+    Entrypoint main = assets/js/workers/heightfield.worker-58c2162715ae9f7d62f6.js
+    [./node_modules/three-mesh-bvh/src/BVHConstructionContext.js] 9.9 KiB {main} [built]
+    [./node_modules/three-mesh-bvh/src/Constants.js] 105 bytes {main} [built]
+    [./node_modules/three-mesh-bvh/src/MeshBVH.js] 8.51 KiB {main} [built]
+    [./node_modules/three-mesh-bvh/src/MeshBVHNode.js] 12.8 KiB {main} [built]
+    [./node_modules/three-mesh-bvh/src/MeshBVHVisualizer.js] 2.8 KiB {main} [built]
+    [./node_modules/three-mesh-bvh/src/Utils/ArrayBoxUtilities.js] 850 bytes {main} [built]
+    [./node_modules/three-mesh-bvh/src/Utils/MathUtilities.js] 4.25 KiB {main} [built]
+    [./node_modules/three-mesh-bvh/src/Utils/OrientedBox.js] 8.91 KiB {main} [built]
+    [./node_modules/three-mesh-bvh/src/Utils/RayIntersectTriUtlities.js] 719 bytes {main} [built]
+    [./node_modules/three-mesh-bvh/src/Utils/SeparatingAxisBounds.js] 2.43 KiB {main} [built]
+    [./node_modules/three-mesh-bvh/src/Utils/SeparatingAxisTriangle.js] 5.54 KiB {main} [built]
+    [./node_modules/three-mesh-bvh/src/Utils/ThreeIntersectionUtilities.js] 2.63 KiB {main} [built]
+    [./node_modules/three-mesh-bvh/src/index.js] 1.21 KiB {main} [built]
+    [./node_modules/three/build/three.module.js] 1.09 MiB {main} [built]
+    [./src/editor/heightfield/heightfield.worker.js] 4.16 KiB {main} [built]
+Child worker:
+     1 asset
+    Entrypoint main = assets/js/workers/SketchfabZipLoader.worker-5aa262bb8c3b2f7eb052.js
+    [./node_modules/jszip/lib/compressedObject.js] 2.84 KiB {main} [built]
+    [./node_modules/jszip/lib/defaults.js] 284 bytes {main} [built]
+    [./node_modules/jszip/lib/external.js] 459 bytes {main} [built]
+    [./node_modules/jszip/lib/generate/index.js] 1.95 KiB {main} [built]
+    [./node_modules/jszip/lib/index.js] 1.32 KiB {main} [built]
+    [./node_modules/jszip/lib/load.js] 2.76 KiB {main} [built]
+    [./node_modules/jszip/lib/nodejs/NodejsStreamInputAdapter.js] 1.8 KiB {main} [built]
+    [./node_modules/jszip/lib/nodejsUtils.js] 1.84 KiB {main} [built]
+    [./node_modules/jszip/lib/object.js] 12.2 KiB {main} [built]
+    [./node_modules/jszip/lib/readable-stream-browser.js] 427 bytes {main} [built]
+    [./node_modules/jszip/lib/stream/Crc32Probe.js] 599 bytes {main} [built]
+    [./node_modules/jszip/lib/stream/GenericWorker.js] 7.99 KiB {main} [built]
+    [./node_modules/jszip/lib/stream/StreamHelper.js] 6.72 KiB {main} [built]
+    [./node_modules/jszip/lib/support.js] 1.06 KiB {main} [built]
+    [./src/api/SketchfabZipLoader.worker.js] 1.37 KiB {main} [built]
+        + 71 hidden modules
+Child worker:
+     1 asset
+    Entrypoint main = assets/js/workers/recast.worker-dea64e3136493dba4b6f.js
+    [./node_modules/node-libs-browser/mock/empty.js] 0 bytes {main} [built]
+    [./node_modules/path-browserify/index.js] 8.54 KiB {main} [built]
+    [./node_modules/recast-wasm/dist/recast.js] 39.6 KiB {main} [built]
+    [./src/editor/recast/recast.worker.js] 2.97 KiB {main} [built]
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.

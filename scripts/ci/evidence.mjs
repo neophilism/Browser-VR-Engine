@@ -23,7 +23,7 @@ export function artifactName({ testedSha, runId, runAttempt }, job = 'foundation
   return `engine-${job}-${testedSha}-${runId}-${runAttempt}`;
 }
 
-export function requiredJobsPassed(results, expected = ['checks']) {
+export function requiredJobsPassed(results, expected = ['checks', 'evaluations']) {
   return object(results) && expected.length > 0 && new Set(expected).size === expected.length && Object.keys(results).length === expected.length && expected.every(id => results[id] === 'success');
 }
 
@@ -35,9 +35,10 @@ export function validateScopes(document) {
     if (!object(scope) || typeof scope.id !== 'string' || seen.has(scope.id)) { errors.push('Invalid or duplicate scope'); continue; }
     seen.add(scope.id);
     if (!['required', 'not_applicable'].includes(scope.status) || !/^[A-Z]\d{2}$/.test(scope.activationCard ?? '') || typeof scope.reason !== 'string' || !scope.reason.trim()) errors.push(`Invalid scope ${scope.id}`);
-    if (scope.status === 'required' && scope.id !== 'foundation') errors.push(`Scope ${scope.id} needs a real runner before activation`);
+    if (scope.status === 'required' && !['foundation', 'browser'].includes(scope.id)) errors.push(`Scope ${scope.id} needs a real runner before activation`);
   }
   if (document.scopes.find(scope => scope?.id === 'foundation')?.status !== 'required') errors.push('Foundation scope must be required');
+  if (document.scopes.find(scope => scope?.id === 'browser')?.status !== 'required') errors.push('Browser evaluation scope must be required');
   for (const id of ['foundation', 'integration', 'browser', 'migration']) if (!seen.has(id)) errors.push(`Missing scope ${id}`);
   return errors;
 }

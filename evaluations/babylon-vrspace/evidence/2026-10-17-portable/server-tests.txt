@@ -1,0 +1,13 @@
+✔ loopback server exposes only verified evaluation assets and supports media ranges (176.372463ms)
+✔ changed fixture bytes and fixture symlinks outside their package fail before serving (29.820977ms)
+✔ stale build evidence prevents a browser from testing a different bundle (72.670265ms)
+✔ credential-free launcher does not read or forward unrelated environment entries (1.304937ms)
+✔ vendored VRSpace module retains the pinned upstream source identity (0.707987ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 377.982829

@@ -1,0 +1,15 @@
+{
+  "command": "npm",
+  "args": [
+    "run",
+    "test:unit"
+  ],
+  "startedAt": "2026-10-17T22:02:23.376Z",
+  "finishedAt": "2026-10-17T22:02:24.701Z",
+  "exitCode": 0,
+  "signal": null,
+  "processError": null,
+  "timedOut": false,
+  "success": true,
+  "log": "test-unit.log"
+}

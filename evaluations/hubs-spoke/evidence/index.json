@@ -1,0 +1,418 @@
+{
+  "schemaVersion": "0.1.0",
+  "F04": "blocked",
+  "meaning": "Preserved local subset evidence. Integrity verification does not rerun or expand browser/service/device qualification.",
+  "captures": [
+    {
+      "kind": "initial-spoke-editor",
+      "result": "evidence/2026-10-17-initial/spoke-interactions.json",
+      "scope": "Native editor transform/export/native project reload. Original wrapper did not keep collider attached or preserve physical video height."
+    },
+    {
+      "kind": "initial-audit-timeout",
+      "result": "evidence/2026-10-17-initial/hubs-dependency-audit.json",
+      "scope": "Audit ETIMEDOUT, unknown result, not clean."
+    },
+    {
+      "kind": "portable-hubs-build",
+      "result": "evidence/2026-10-17-portable/hubs-build.json",
+      "scope": "Fresh typecheck, one actual upstream unit test, production client build. Existing installed dependencies; no services."
+    },
+    {
+      "kind": "portable-compose-preflight",
+      "result": "evidence/2026-10-17-portable/compose-preflight.json",
+      "scope": "Missing tools. Init exited before service operations."
+    },
+    {
+      "kind": "failed-spoke-attempt",
+      "result": "evidence/2026-10-17-portable/attempt-1-input-selector.json",
+      "scope": "Failed numeric selector after load. Superseded by corrected Position-group selector; never a pass."
+    },
+    {
+      "kind": "portable-spoke-editor",
+      "result": "evidence/2026-10-17-portable/spoke-interactions.json",
+      "glb": "evidence/2026-10-17-portable/spoke-courtyard-export.glb",
+      "scope": "13 passed real-browser editor subset checks. No two-client services, headset, audible calibration or capacity qualification."
+    },
+    {
+      "kind": "portable-toolkit-checks",
+      "result": "evidence/2026-10-17-portable/toolkit-checks.json",
+      "scope": "9 named bounded tests, including tamper/command failure/patch reproduction. Not runtime or hardware evidence."
+    },
+    {
+      "kind": "portable-default-fixture-layout",
+      "result": "evidence/2026-10-17-portable/default-layout.json",
+      "scope": "Default repository-relative F03 path verified with override absent in a copied disposable layout."
+    },
+    {
+      "kind": "prior-launcher-spoke-editor",
+      "result": "evidence/2026-10-17-portable/prior-launcher-spoke-interactions.json",
+      "scope": "Previous corrected-wrapper success before HOME/USERPROFILE was removed. Final current-run evidence is spoke-interactions.json."
+    },
+    {
+      "kind": "portable-toolkit-install",
+      "result": "evidence/2026-10-17-portable/toolkit-install.json",
+      "scope": "Actual private toolkit npm ci under final explicit-config environment, lifecycle scripts disabled."
+    },
+    {
+      "kind": "capture-context",
+      "result": "evidence/2026-10-17-portable/capture-context.json",
+      "scope": "Explains earlier versus final launcher captures and shared-software-renderer limits."
+    }
+  ],
+  "unverified": [
+    "Complete F03 runtime adapter/scenario",
+    "Reticulum and Dialog deployment",
+    "Two independent participants and ownership",
+    "Reconnect convergence",
+    "Shared synchronized media",
+    "Hubs GLB reimport and canonical semantic roundtrip",
+    "Physical headset/controller and audible spatial calibration",
+    "Target-device frame-time routes",
+    "Untrusted production content and detailed marketplace assets",
+    "Transitive dependency-security closure"
+  ],
+  "runnerFingerprintsMatchCapturedRun": true,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sizeBytes": 25,
+      "sha256": "c3007e8cfe9e6668bf6eaf8e62f44d583c9b86893520d1e4e599db431558b705"
+    },
+    {
+      "path": "README.md",
+      "sizeBytes": 9404,
+      "sha256": "6ad85125a01c70b5d13980a6f560a479ef3252bcff5faefed2d33299e9b55bc2"
+    },
+    {
+      "path": "REUSE_ASSESSMENT.md",
+      "sizeBytes": 8803,
+      "sha256": "7b78d0902dc40aa9da50b45047a72d2acd8606902b0ea51814dac0c64fd16e65"
+    },
+    {
+      "path": "SECURITY_REVIEW.md",
+      "sizeBytes": 4482,
+      "sha256": "b4899767e285428ad4662f2a24155d67c02b07c03a13e1815a10682a30a76ab5"
+    },
+    {
+      "path": "evidence/2026-10-17-initial/hubs-dependency-audit.json",
+      "sizeBytes": 241,
+      "sha256": "638c0d01690cd369e10cd6ca39a60f042118c4ea1582e45959c16b85d924c4ca"
+    },
+    {
+      "path": "evidence/2026-10-17-initial/spoke-controls.json",
+      "sizeBytes": 10952,
+      "sha256": "da32b188d8ca9f0204e8f6247970d161c9e4a1dcae52e71b4492d981f689f8e7"
+    },
+    {
+      "path": "evidence/2026-10-17-initial/spoke-courtyard-export.glb",
+      "sizeBytes": 45500,
+      "sha256": "8cbc97fe2f7871ce4ae6190dc6a56a0d5bec47914877d52838636965376e165a"
+    },
+    {
+      "path": "evidence/2026-10-17-initial/spoke-courtyard-export.spoke",
+      "sizeBytes": 80830,
+      "sha256": "8e11772f03be2924ff81d6c57dcf08c34c77830013b2345bcf5cfcf9e7e936ac"
+    },
+    {
+      "path": "evidence/2026-10-17-initial/spoke-courtyard.json",
+      "sizeBytes": 11568,
+      "sha256": "c70b98236c1dbb37eeb6e37dfe89a2bd5f67ac625fc4d7801cfdc0d338d37b88"
+    },
+    {
+      "path": "evidence/2026-10-17-initial/spoke-courtyard.png",
+      "sizeBytes": 112488,
+      "sha256": "67deaae7623b5585a21772f6fd6036cf606a6425949f14b978e2bb4e02cdc3f2"
+    },
+    {
+      "path": "evidence/2026-10-17-initial/spoke-editor.png",
+      "sizeBytes": 202563,
+      "sha256": "07b04f00e4230e7021da2728fab9348ce38f4599a26e7a394a87202296ba9ea2"
+    },
+    {
+      "path": "evidence/2026-10-17-initial/spoke-fixture-adaptation.json",
+      "sizeBytes": 577,
+      "sha256": "0da6a069129b90b6e8268321ef9598d814b17030900c26c12357f39bb862af10"
+    },
+    {
+      "path": "evidence/2026-10-17-initial/spoke-initial.json",
+      "sizeBytes": 4697,
+      "sha256": "ee87d99873b594e631bb394980d9831c5e6c2565e2c1dc827845fe44d124b99e"
+    },
+    {
+      "path": "evidence/2026-10-17-initial/spoke-interactions.json",
+      "sizeBytes": 11827,
+      "sha256": "4a32b3aed391040d184064823086c760e006cff37b126916e63fecf0fcbb7dbe"
+    },
+    {
+      "path": "evidence/2026-10-17-initial/spoke-selected.png",
+      "sizeBytes": 177424,
+      "sha256": "4f097234d4859f36d4464d422bac8f845e058721817914a0e5cb9cd78719cc01"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/attempt-1-input-selector.json",
+      "sizeBytes": 9091,
+      "sha256": "7b9ef9276102d780f33db750f0a63611288a706579d6151ebe843f831780e03c"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/build.json",
+      "sizeBytes": 271,
+      "sha256": "bb8174efd35c8629c031d26dd99375e3d4b81bfdbefd820eea42c329710daa90"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/build.log",
+      "sizeBytes": 5498,
+      "sha256": "531b34bf763eddd00ec91d03042867f4d1fe8634048d0c84d847bc7c5a5e4354"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/capture-context.json",
+      "sizeBytes": 1130,
+      "sha256": "bc62c945318d73fcbd41d1d004c2bf4b9781ac327882679d9e8db3ff49885d2d"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/check.json",
+      "sizeBytes": 271,
+      "sha256": "626fc790789ac9c3d657f79cf4f2aa6fe10083264959ad9cec4fee55be3bb37c"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/check.log",
+      "sizeBytes": 235,
+      "sha256": "12aab897716eb1495dab6c0f0bd162ec4a6a21114d076c3de855977c7f4af7b1"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/compose-init-blocked.json",
+      "sizeBytes": 280,
+      "sha256": "f1dd614c2929f76d8b42a5f848b7fc704ce5367ffac375f2f03f6226f1a33af9"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/compose-init-blocked.log",
+      "sizeBytes": 51,
+      "sha256": "9e30c717332a96bb659eeaddcc10af6737c91bbc74e84cb8861680cc73dae22f"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/compose-preflight.json",
+      "sizeBytes": 1171,
+      "sha256": "20f8e095106c58670be9867fea4924b5489475aef123700ab26cdee95cbcd45c"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/default-layout.json",
+      "sizeBytes": 983,
+      "sha256": "465b2273122d683e146f5063774bf971e99d0002304f3cc31291bf16d322d6e0"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/default-layout.log",
+      "sizeBytes": 161,
+      "sha256": "7f844cc1c8aa635ba44d0e830859a40954be2f37535595743dc8813948709a76"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/hubs-build.json",
+      "sizeBytes": 2232,
+      "sha256": "4a5ddabb9952c954a6d7452839c518f9301460f6f432b14556e4dd6577ccf604"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/prior-launcher-spoke-interactions.json",
+      "sizeBytes": 11030,
+      "sha256": "fa54668aa979bda5ca3d815496e5435749021c1c0b793c576c182217ce883ad9"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/spoke-courtyard-export.glb",
+      "sizeBytes": 45156,
+      "sha256": "257819377db2b01cc5e98337f0f277524667ba3c24bdca1af33097890c0f2a9a"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/spoke-courtyard-export.spoke",
+      "sizeBytes": 80242,
+      "sha256": "aa55845453a35d545af9edad24c56ad267242eadade3cc3b2dcbf3be525a5cdf"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/spoke-fixture-adaptation.json",
+      "sizeBytes": 2107,
+      "sha256": "6ed52d928367da5dfbf392058f1f51f57e78682c4af753924ef7467265a129c2"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/spoke-interactions.json",
+      "sizeBytes": 11030,
+      "sha256": "5d316a4556bb30eea178325f14f4cef6b4d6058437f0056f4b70653dcf7b0499"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/spoke-selected.png",
+      "sizeBytes": 178985,
+      "sha256": "cbbdb62b7b954301a24f6715bf3e76a1f88489f03195419c369ab03e5934f426"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/spoke-server.json",
+      "sizeBytes": 656,
+      "sha256": "f67081f0980f9f4b2dd695efd0cf223aea2622297b15159883c146644411182d"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/spoke-server.log",
+      "sizeBytes": 13776,
+      "sha256": "59283cc392a6de29b00a0cf560ec8afc04fad76be8b4b1d116cf620de4eb3913"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/test-unit.json",
+      "sizeBytes": 279,
+      "sha256": "6d6e9af9f78d50921d3cd711e251fbd6cea24722557f3ae2d23c2c3cfdb5810c"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/test-unit.log",
+      "sizeBytes": 282,
+      "sha256": "df5ba4225777eeb2ae08ecd55e01ef3f062f2c7429acb73492212fea7a8b8bec"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/toolkit-checks.json",
+      "sizeBytes": 399,
+      "sha256": "4bd3c8251f1504693e14d28fd457e2afdc85ae2b8d55a7497b38e1b9f3a19d95"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/toolkit-checks.log",
+      "sizeBytes": 929,
+      "sha256": "321adf8d7f2157a7bdc0e7a0e94f3e0d906725761759f2905dc1299b36e66991"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/toolkit-install.json",
+      "sizeBytes": 326,
+      "sha256": "946e38bb079f65d2cf657dcd817fd1176740cf7c47d287dbc8eeec34e05cbdef"
+    },
+    {
+      "path": "evidence/2026-10-17-portable/toolkit-install.log",
+      "sizeBytes": 27,
+      "sha256": "934f3259a907778fa658bbe0229eaf9c7f926c2a39ab0c83eadb4d49dce4a8c6"
+    },
+    {
+      "path": "fixture-pins.json",
+      "sizeBytes": 688,
+      "sha256": "b97cf8e32a92ebc78d61df5aa8d997b0bf8545e838c1819f661f10e008dff628"
+    },
+    {
+      "path": "licenses/compose-LICENSE.txt",
+      "sizeBytes": 16725,
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+    },
+    {
+      "path": "licenses/hubs-LICENSE.txt",
+      "sizeBytes": 16726,
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+    },
+    {
+      "path": "licenses/playwright-LICENSE.txt",
+      "sizeBytes": 11601,
+      "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+    },
+    {
+      "path": "licenses/playwright-NOTICE.txt",
+      "sizeBytes": 254,
+      "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+    },
+    {
+      "path": "licenses/spoke-LICENSE.txt",
+      "sizeBytes": 18588,
+      "sha256": "65d64ea179c32b523c0f2a412de736d7c0e06c0ff044ac7109e7a2fc68969db7"
+    },
+    {
+      "path": "licenses/yarn-LICENSE.txt",
+      "sizeBytes": 1355,
+      "sha256": "ae09761b5d27e237571245437653b483bbb85de3cc64b802e8ef47d03aabec1e"
+    },
+    {
+      "path": "package-lock.json",
+      "sizeBytes": 2367,
+      "sha256": "a328c9c6e6687fea6af89df053e94f3770ba7ef59ef1301d86e5cb474c6e7978"
+    },
+    {
+      "path": "package.json",
+      "sizeBytes": 836,
+      "sha256": "7ceaadf5b6fa4421a3b6b4d5a479bd6f752e736f1f4a4c0dad0d9f3217fa6653"
+    },
+    {
+      "path": "patches/spoke-download-adaptation.json",
+      "sizeBytes": 843,
+      "sha256": "8eaa1286d7b5f5286785b5f628ea37ea29633162aa1b2a7c4a56dc88f4ace021"
+    },
+    {
+      "path": "patches/spoke-node24-and-downloads.patch",
+      "sizeBytes": 835053,
+      "sha256": "cf2544c7e84b2e440fe5d20f05a69fa6ebd182e7592102e1da53ec5bbaea5831"
+    },
+    {
+      "path": "scripts/bootstrap.mjs",
+      "sizeBytes": 871,
+      "sha256": "07a34292cba2c2e15c9359ab19b0e3cd031932c839485e187c416f617f198941"
+    },
+    {
+      "path": "scripts/browser-support.mjs",
+      "sizeBytes": 3593,
+      "sha256": "ae8332cfcb65f0c5e4cafcde6d933b10d3a0c0477231004b247cb95668404451"
+    },
+    {
+      "path": "scripts/build-hubs.mjs",
+      "sizeBytes": 1246,
+      "sha256": "95ae386c95faa269ef9f79bf212464bea8723955f608852e6dee019c0f218d83"
+    },
+    {
+      "path": "scripts/compose-preflight.mjs",
+      "sizeBytes": 2230,
+      "sha256": "ec3a1f6df87f32686c4fa1841c1ea8e139e89ecc7ee67d81bcf32e46708b07b5"
+    },
+    {
+      "path": "scripts/config.mjs",
+      "sizeBytes": 1059,
+      "sha256": "2010dd1003678bab7136eb8afc1771b78fd20a7c61965196bc8521ec4180ff02"
+    },
+    {
+      "path": "scripts/environment.mjs",
+      "sizeBytes": 2145,
+      "sha256": "1377949e15508ba004f0ec3435b60b3b83122dfe7c7c0b237f77ec451f225c27"
+    },
+    {
+      "path": "scripts/evaluate-spoke.mjs",
+      "sizeBytes": 10678,
+      "sha256": "620e5a15424f59cf5f114de0d59e9ce870938f47cbf98ff39b7c9aef843601cf"
+    },
+    {
+      "path": "scripts/evaluation.test.mjs",
+      "sizeBytes": 6789,
+      "sha256": "f82d6555b82e666fefbeac3b92fc96886d2bcd93b9be803441bafe484944bfea"
+    },
+    {
+      "path": "scripts/fixtures.mjs",
+      "sizeBytes": 8989,
+      "sha256": "2e5ddd90c6aa5d107656d9fb7c720f5dce0ff999616f6944c1562a4f6905db59"
+    },
+    {
+      "path": "scripts/install-browser.mjs",
+      "sizeBytes": 580,
+      "sha256": "0c96eba686d140ff9509e0bbe64764d86b273548dd2e659bc9ea31111178d63b"
+    },
+    {
+      "path": "scripts/lib.mjs",
+      "sizeBytes": 4304,
+      "sha256": "1787b96c4d1401e832284e2cc24313da2edf56408ccd05348347b45a930f5fbb"
+    },
+    {
+      "path": "scripts/prepare-fixtures.mjs",
+      "sizeBytes": 759,
+      "sha256": "ffdb0a4671945e2be8bfa8009ebca0308b19950d7286231322e26824125b451f"
+    },
+    {
+      "path": "scripts/setup.mjs",
+      "sizeBytes": 2775,
+      "sha256": "4147858577b83520169d82af5da164b81adc7dd586153ac636523aa45b05979b"
+    },
+    {
+      "path": "scripts/sources.mjs",
+      "sizeBytes": 2177,
+      "sha256": "837ac8565524359698a5d6c80859b0cc0a0141f7501e0dc327a58f72bb8dee07"
+    },
+    {
+      "path": "scripts/verify-evidence.mjs",
+      "sizeBytes": 2159,
+      "sha256": "00da9c080359d44d0e4f04b2a268320992483c6e3076ea3661594ee56c4e9b0b"
+    },
+    {
+      "path": "source-pins.json",
+      "sizeBytes": 1942,
+      "sha256": "0dc1d4841e8c5f84d3e3ac2cb3b15b8e23a15debea346669e0598001bd0d88b6"
+    }
+  ]
+}

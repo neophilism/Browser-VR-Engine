@@ -1,0 +1,15 @@
+{
+  "command": "npm",
+  "args": [
+    "run",
+    "check"
+  ],
+  "startedAt": "2026-10-17T22:02:14.054Z",
+  "finishedAt": "2026-10-17T22:02:23.375Z",
+  "exitCode": 0,
+  "signal": null,
+  "processError": null,
+  "timedOut": false,
+  "success": true,
+  "log": "check.log"
+}
