@@ -19,3 +19,7 @@ World data uses meters, right-handed axes and Y up. Rendered interchange assets 
 Every sound source can have an entity attachment and a listener-relative mix, including video soundtracks. Media access control is independent of acoustic distance.
 
 See [the complete approved architecture](docs/architecture/approved-architecture.md) and [decisions](docs/decisions/0001-engine-first-workspace.md).
+
+## Generated-object and NPC extension
+
+The owner-requested [NPC generation and funding architecture](docs/architecture/npc-generation-and-funding.md) extends the complete plan by G01–G16 and C27–C41. Runtime identity, memory, spatial speech, provider jobs and metering belong to the engine; prices, wallets, subscriptions, administrator exemptions and operating subsidies belong to XLR8. R12 now includes the engine NPC qualification gate.

@@ -1,6 +1,6 @@
 # Complete development plan
 
-This is the approved 145-unit baseline: 119 engine units and 26 XLR8 application units. Every deliverable and acceptance criterion is retained. The owner subsequently directed engine completion first; C01 now additionally depends on R12.
+This is the complete 176-unit plan: 135 engine units and 41 XLR8 application units. It retains every deliverable and acceptance criterion from the approved 145-unit baseline, adds the owner-requested generated-object/NPC and funding scope, and preserves engine completion first. C01 depends on R12; R12 includes G16, and C24 includes C41. All 31 additions start planned.
 
 ## Execution contract
 
@@ -19,7 +19,8 @@ See [HANDOFF.md](HANDOFF.md), [ACCEPTANCE.md](ACCEPTANCE.md), [progress](docs/pr
 - **Audio and media:** 26 units, M01 through M26.
 - **Authoring:** 10 units, B01 through B10.
 - **Operations and release:** 13 units, R01 through R13.
-- **Conference application:** 26 units, C01 through C26.
+- **Generated objects and NPCs:** 16 units, G01 through G16.
+- **Conference application:** 41 units, C01 through C41; C27–C41 cover NPC credits, subscriptions and funding.
 
 ## Foundations
 
@@ -1751,7 +1752,7 @@ Depends on: A24, W22, B10.
 
 Repository: neophilism/Browser-VR-Engine. Stage: expanded.
 
-Depends on: R07, R10, R11, R13.
+Depends on: R07, R10, R11, R13, G16.
 
 **Deliverable:** Reconcile all core and expanded engine cards, publish supported capability/format/device profiles and produce the final versioned SDK and service release. Keep every reusable mechanism free of conference-specific runtime dependencies.
 
@@ -2110,7 +2111,7 @@ Depends on: C19, C20, R03.
 
 Repository: neophilism/XLR8. Stage: expanded.
 
-Depends on: C15, C21, C22, C23, R09.
+Depends on: C15, C21, C22, C23, R09, C41.
 
 **Deliverable:** Create an automated event rehearsal plus a real participant/headset script covering preparation, registration, keynote, breakouts, exhibits, shared files, spatial audio, moderation and post-event access. Record actual environment and service versions.
 
@@ -2151,3 +2152,492 @@ Depends on: C25, R12.
 **Verification:** Repeat critical production smoke and reference-event tests on the release build; verify links to immutable CI, security, deployment and recovery evidence.
 
 **Security review:** Perform a separately recorded final security review and close unresolved blocking findings without weakening required repository checks.
+
+
+## Generated objects and persistent NPCs
+
+See [generation and funding architecture](docs/architecture/npc-generation-and-funding.md) for the complete user journeys, provider facts, lifecycle and economic model. These additions preserve general engine interfaces and keep product billing in XLR8.
+
+### G01 — Define generated-object, NPC, provider-job and usage contracts
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: F08, W01, A01.
+
+**Deliverable:** Define versioned creation intents for objects and NPCs; generated image sets; provider tasks; rig/animation results; persona, memory scope and lifecycle descriptors; cost estimates, usage events, budget reservations and injected entitlement ports. Preserve source artifacts and stable identities across providers and world instances.
+
+**Acceptance:** A standalone engine host can describe creation, approve a bounded cost reservation and load an NPC definition without importing XLR8, a payment processor, credit prices or conference roles. Object creation does not require a humanoid rig or conversational brain.
+
+**Verification:** Validate schema versions, capability negotiation, malformed provider output, identity continuity, bounded numeric units and an independent host consumer.
+
+**Security review:** Treat prompts and provider responses as untrusted data. Host authorization is authoritative; model text cannot authorize expenditure, tools or world mutations.
+
+
+### G02 — Generate consistent multiview reference images
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G01, A03, A05.
+
+**Deliverable:** Integrate a replaceable image-generation provider. Produce a coherent front, rear, side and three-quarter reference set from a shared character/object specification, with pose, framing, identity, prompt/model versions, seeds where supported and output provenance. Show previews before downstream generation when requested.
+
+**Acceptance:** The same depicted object is recognizable across views; a humanoid reference set has separated limbs and a rig-compatible rest pose. Failed consistency checks are repairable within an explicitly approved retry budget. Original references remain available.
+
+**Verification:** Run actual provider image generation, consistency/pose review, cancellation, partial failure, timeout and bounded-regeneration cases; fixture-only tests remain separately labeled.
+
+**Security review:** Keep provider keys server-side and scope access to reference images. Upload only the selected inputs; redact signed URLs and prompts containing private data from operational logs.
+
+**External evidence:** An image-generation provider account, credentials and an approved test-spend budget
+
+
+### G03 — Integrate Hyper3D Rodin model generation
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G01, G02, A03, A25.
+
+**Deliverable:** Implement the Rodin HTTP adapter for ordered multiview images, explicit model/tier parameters, asynchronous task/status handling, output download and provider usage capture. Import original mesh/material outputs into controlled immutable storage; keep provider credentials and expiring task handles out of saved worlds.
+
+**Acceptance:** An actual coherent image set produces a downloadable textured 3D model and enters the ordinary asset pipeline. Ambiguous submission timeouts reconcile provider task state instead of blindly creating a second paid job. Model family is always explicit.
+
+**Verification:** Exercise live creation/status/download, ordered image inputs, rate limits, provider rejection, expired download refresh, restart recovery, duplicate callbacks and source/result integrity.
+
+**Security review:** Validate provider endpoints and output hosts, bound downloaded data, isolate mesh parsing and reconcile task ownership before accepting callbacks or charging usage.
+
+**External evidence:** Rodin API credentials, funded provider balance and an approved test-spend budget
+
+
+### G04 — Normalize characters and integrate Meshy rigging
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G03, A11, A13, W12.
+
+**Deliverable:** Prepare textured humanoid GLB input from Rodin output; validate scale, declared forward axis, limb separation, topology and rest pose. Integrate Meshy external-model rigging and preserve the returned rig and skin. Expose repair or alternate/manual rig adapters for unsupported bodies.
+
+**Acceptance:** A generated humanoid has a working skeleton, skin weights and stable scale in the browser. The pipeline diagnoses unsuitable topology and does not claim every creature can use the same provider. Generic object creation and nonhumanoid import remain supported.
+
+**Verification:** Run actual external GLB rigging, +Z input-facing checks, skeleton/weight validation, deformation preview, upload expiry, provider failures and alternate-rig import.
+
+**Security review:** Deliver only the intended asset through an expiring provider-readable URL or supported upload. Preserve original bytes and isolate returned-file parsing.
+
+**External evidence:** Meshy API credentials, funded provider balance and an approved test-spend budget
+
+
+### G05 — Acquire animations and prepare runtime character clips
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G04, W13.
+
+**Deliverable:** Integrate Meshy animation tasks for idle, walking, speaking gestures and selected actions; retain provider action identifiers and clip names. Import/retarget clips, root motion and attachment mappings through the existing animation system. Capture rig/clip artifacts before provider expiry.
+
+**Acceptance:** A generated NPC switches between locomotion and gestures without losing its material, skeleton or identity. Missing facial shapes are reported as a distinct capability gap; body auto-rigging is not treated as automatic lip-sync support.
+
+**Verification:** Run live rig-to-animation tasks, multi-clip import, blending, root motion, interruption, expired task handling and persistent replay after provider task deletion.
+
+**Security review:** Treat animation metadata as untrusted; bound clip count/duration and retain only controlled asset references in worlds.
+
+**External evidence:** Meshy animation API access and an approved test-spend budget
+
+
+### G06 — Compile generated objects and NPC assets for world placement
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G03, A12, A13, A16, W23.
+
+**Deliverable:** Send generated objects and characters through the same material, LOD, collider, navigation, scale, source-retention and export pipeline as imported assets. Produce placement previews, stable asset revisions, inventory entries and repair diagnostics.
+
+**Acceptance:** A creator can generate a static prop or venue element, place it, collide with it, clone it and export/reimport it. An NPC asset preserves rig/animation bindings. Generation never bypasses weak-device budgets or collision readiness.
+
+**Verification:** Test original-to-runtime provenance, safe placement, physical bounds, quality variants, large output rejection/repair, rig preservation and editable world round trips.
+
+**Security review:** Isolate compiler tasks and authorize publication/ownership changes. Keep generated content out of privileged execution paths.
+
+
+### G07 — Orchestrate resumable generation and stage-level cost settlement
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G02, G03, G04, G05, G06, G12.
+
+**Deliverable:** Implement durable creation jobs spanning references, Rodin, optional Meshy rig/animation, compilation and publication. Persist stage results, user preview decisions, cancellation, compensation, retries and provider request identities; emit estimated, reserved, incurred and released usage separately.
+
+**Acceptance:** A worker restart resumes paid completed stages without regenerating them. Failures retain usable outputs and release unspent reservations. No downstream paid stage begins without an adequate valid reservation; uncertain provider outcomes enter reconciliation.
+
+**Verification:** Inject crashes before/after provider submission and settlement, duplicate delivery, delayed callbacks, cancellation races, retry ceilings and partial-success recovery against real providers plus deterministic fault fixtures.
+
+**Security review:** Bind jobs, reservations and outputs to a tenant/principal. Never trust client-supplied price or completion status; compensate with append-only events.
+
+
+### G08 — Implement reusable NPC entity and behavior lifecycle
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G01, W15, N05, W23.
+
+**Deliverable:** Add a general NPC controller for identity, asset/rig attachment, navigation, perception, interaction focus, action queues, idle/active state and shared-world authority. Separate durable NPC identity from transient rendered instances and conversational sessions.
+
+**Acceptance:** NPCs can be placed, approached, addressed, moved and instantiated across permitted worlds without requiring a conference. One authoritative actor governs shared actions; concurrent conversations have declared isolation and capacity.
+
+**Verification:** Test spawn/despawn, ownership, two-client observation, navigation/collision, action cancellation, instance identity, reconnect and resource disposal.
+
+**Security review:** Authorize NPC actions through ordinary world capabilities; an NPC has no ambient administrator or arbitrary-script privilege.
+
+
+### G09 — Integrate conversational personas and bounded LLM tools
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G08, G11, G12.
+
+**Deliverable:** Implement pluggable LLM conversations with persona style, vocabulary, language, curated knowledge, source attribution and bounded world tools. Include an English Einstein portrayal fixture explaining spacetime, with observable model/prompt versions and a configurable modern-knowledge policy.
+
+**Acceptance:** The NPC sustains its configured English persona while answering using its approved knowledge and relevant private conversation context. It is identified as an AI portrayal. Conversation content cannot override owner settings, access other users memories, spend money or perform unauthorized world actions.
+
+**Verification:** Run actual LLM multi-turn conversations, persona/language evaluation, retrieval evidence, interruption, prompt-injection and tool-authorization cases, token limits and provider outage recovery.
+
+**Security review:** Enforce capabilities outside the model, separate instruction and retrieved-data channels, minimize provider disclosure and validate every requested tool action.
+
+**External evidence:** An LLM endpoint, credentials where required and an approved test-spend budget
+
+
+### G10 — Give NPCs spatial speech and synchronized expressive motion
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G09, G05, M08, M19, W13.
+
+**Deliverable:** Integrate streaming speech input/output, interruption, captions, turn-taking and optional viseme/facial adapters. Route generated speech through the NPCs existing positional emitter and coordinate gesture/lip-sync timing with the same speech session.
+
+**Acceptance:** An NPC can converse through text or voice on desktop and VR. Moving closer changes its speech level/direction; interrupted speech stops promptly. Facial animation uses verified available rig capabilities, with an explicit simpler fallback.
+
+**Verification:** Run real STT/TTS sessions, spatial graph and single-route checks, interruption, overlapping speakers, caption alignment, head rotation, provider latency and real headset/audio verification.
+
+**Security review:** Gate microphone capture and transcript retention with explicit user controls; isolate conversation audio scopes and avoid storing raw audio by default.
+
+**External evidence:** Speech provider access, approved test-spend budget and actual target audio/headset devices
+
+
+### G11 — Persist NPC memory with private conversation boundaries
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G01, F08, N13.
+
+**Deliverable:** Store durable NPC configuration, structured memories, episodic summaries and retrievable conversation context with provenance, versioning and retention controls. Separate creator-authored knowledge, world-shared memories and per-user private conversations. Support inspection, correction, forgetting, export and deletion.
+
+**Acceptance:** A resumed NPC recalls permitted earlier conversations with the same user. A second user, creator or subscriber cannot read another users private conversation solely through ownership or payment. Frozen NPCs retain their authorized memory without ongoing inference.
+
+**Verification:** Test real database/vector retrieval, restart/restore, cross-user isolation, correction, deletion propagation, stale summaries, memory poisoning and bounded compaction/retrieval cost.
+
+**Security review:** Enforce tenant, NPC, user and conversation ACLs during both indexing and retrieval; encrypt stored data as appropriate and keep derived summaries subject to the same deletion policy.
+
+
+### G12 — Meter provider usage and enforce generic operating budgets
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G01, F08, R03.
+
+**Deliverable:** Implement durable usage events, provider rate-card snapshots, maximum-cost estimates, atomic reserve/settle/release and expiring operating leases. Measure image/model/rig jobs, LLM tokens, speech, embeddings, storage and active simulation resources. Expose host-injected funding/entitlement decisions without credit or subscription business rules.
+
+**Acceptance:** Concurrent NPC turns cannot exceed a hosts approved reservation ceiling. Missing or expired funding denies new paid work. Actual platform costs remain visible when the host elects to charge its user zero. Uncancelable in-flight work is bounded by an already reserved maximum.
+
+**Verification:** Test concurrent reservations, duplicate settlement, stale rates, provider under/over-reporting, timeout reconciliation, expired leases, crash recovery and an independent host cost adapter.
+
+**Security review:** Use integer accounting units and durable idempotency keys; authenticate meters and budget decisions. Model output and browser balances are never authoritative.
+
+
+### G13 — Freeze and resume NPCs without losing identity or memory
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G07, G08, G10, G11, G12.
+
+**Deliverable:** Implement funded, active, quiescing, frozen and resuming states. Stop accepting paid work, cancel supported requests, settle bounded in-flight usage, checkpoint behavior/memory and release runtime/media resources. Restore assets, identity and authorized context on renewed funding.
+
+**Acceptance:** Removing funding can leave a clearly dormant world object or make it inaccessible according to host policy. No new paid inference, speech or background agent loop runs while frozen. Restoring a valid lease resumes the same NPC; it does not regenerate the character.
+
+**Verification:** Test funding loss during speech/generation, last-turn settlement, server crashes during checkpoint, long dormancy, repeated resume, access revocation and exact resource cleanup.
+
+**Security review:** Use server-authoritative lifecycle transitions. Preserve data access controls across freeze/resume; checkpointing is not deletion or a billing bypass.
+
+
+### G14 — Share and clone NPCs with explicit identity and access policies
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G08, G11, G13, W23, N13.
+
+**Deliverable:** Expose capability-based NPC access, private/shared sessions, world placement, immutable persona versions and explicit clone-versus-instance operations. Accept host entitlement decisions for paid access without implementing a marketplace in the engine.
+
+**Acceptance:** Several authorized users can access the same published NPC subject to host concurrency limits. A clone receives a new identity and explicitly selected knowledge; private visitor memories do not silently copy or become public.
+
+**Verification:** Test entitlement revocation, cross-world instances, simultaneous sessions, clone semantics, owner transfer, private memory isolation and subscriber-like host adapters.
+
+**Security review:** Recheck authorization for sessions and protected assets; opaque NPC IDs and public world visibility do not grant memory access.
+
+
+### G15 — Add general creation and NPC authoring controls
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G07, G10, G13, G14, B08, W06.
+
+**Deliverable:** Add reusable typed/voice creation commands, multiview previews, generation progress, placement, persona/knowledge editing, animation settings, memory controls and freeze/resume UI. Present cost/approval data through an injected host UI contract; provide desktop, touch and in-headset controls.
+
+**Acceptance:** A standalone engine example can interpret conjure an Einstein NPC to explain spacetime to me, obtain host approval, create/place the NPC and converse with it. Object-only prompts use the same creation flow. Users can inspect failures and choose repair or resume without repeating paid completed stages.
+
+**Verification:** Exercise the actual UI with providers, accessibility input, VR panels, cancellation, repair, context continuity and frozen-state explanations.
+
+**Security review:** Display prompts/results as data and reauthorize creation/memory/world mutations on the server. Client preview approval is bound to the exact job and quote.
+
+
+### G16 — Qualify generated objects and persistent NPCs end to end
+
+Repository: neophilism/Browser-VR-Engine. Stage: expanded.
+
+Depends on: G15, R08, A16.
+
+**Deliverable:** Run and retain the complete real-provider creation, rigging, animation, conversation, memory, spatial voice and operating-budget scenarios. Publish source/provider versions, cost measurements, performance profiles, lifecycle limits, export semantics and an application-independent sample.
+
+**Acceptance:** Actual generated props and an Einstein-style NPC work on the supported desktop and headset profiles. Restart, funding exhaustion and later restoration preserve identity/memory; account isolation and cost ceilings pass. Simulated providers cannot close this release gate.
+
+**Verification:** Run the full live pipeline, multi-user memory/privacy, failure-injection, overspend/concurrency, resource cleanup, weak-device profiles, real audio and export/reimport acceptance.
+
+**Security review:** Complete an integrated separate review of upload parsing, provider credentials, prompt/tool boundaries, memory ACLs and spend authorization; resolve blocking findings.
+
+**External evidence:** Live image/Rodin/Meshy/LLM/speech access, approved test-spend budget and actual supported headset/audio devices
+
+
+## NPC credits, subscriptions and funding in XLR8
+
+### C27 — Define credit prices and versioned provider cost catalogs
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C02, G12.
+
+**Deliverable:** Define platform credit denomination, currency conversion, provider rate cards, generation/runtime markup and pricing versions. Start with a configurable 2x markup default, with explicit treatment of fees, tax, storage, retries and included allowances; separate wholesale cost from customer price.
+
+**Acceptance:** A quote is reproducible from its versioned inputs and uses integer monetary/credit units. Rodin/Meshy provider credits are never equated with platform credits. Pricing can change without changing engine capabilities or rewriting past transactions.
+
+**Verification:** Test rounding, currency/rate precision, stale catalogs, markup changes, bundled provider discounts, quote expiry and historical replay.
+
+**Security review:** Authorize catalog changes, audit them and prevent client-supplied wholesale prices or discount/exemption flags.
+
+
+### C28 — Implement the credit wallet and immutable accounting ledger
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C27, F08.
+
+**Deliverable:** Build an append-only double-entry credit ledger with paid/promotional/recurring grants, available/reserved balances, idempotent reserve/settle/release, reversals and reconciliation. Keep the application ledger authoritative for immediate spend admission.
+
+**Acceptance:** Simultaneous generation and NPC turns cannot spend the same credits twice. Corrections append balancing entries; a payment processors eventual invoice state cannot temporarily grant unlimited work.
+
+**Verification:** Run real transactional database concurrency, crash/retry, duplicate events, expiry, reservation release, reconciliation and negative-balance prevention tests.
+
+**Security review:** Restrict ledger mutations to authenticated services; retain audit provenance without logging payment instruments or private conversations.
+
+
+### C29 — Sell a la carte credits through verified payments
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C28, C02.
+
+**Deliverable:** Integrate a replaceable payment adapter, initially Stripe Checkout, for one-time credit purchases, receipts and refunds. Verify signed webhooks, store event identities and reconcile with provider records before granting spendable credits.
+
+**Acceptance:** Credits appear exactly once after a verified successful payment, including duplicate/out-of-order webhook delivery and a user closing checkout. A browser success redirect cannot mint credits.
+
+**Verification:** Exercise real processor test-mode checkout, failed/asynchronous payment, webhook signatures/retries, duplicate delivery, refunds and reconciliation.
+
+**Security review:** Keep card collection with the processor, scope keys and validate raw-body signatures and event/account ownership.
+
+**External evidence:** Payment processor test account and webhook signing credentials; live merchant configuration before production
+
+
+### C30 — Implement subscriptions with monthly credit grants
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C29, C27.
+
+**Deliverable:** Add recurring plans, monthly credit allowances, optional NPC-slot add-ons, upgrades/downgrades, cancellation, renewal, grace states, carryover/expiry policy and customer billing management. Pin plan terms at purchase and issue grants from verified paid invoice periods.
+
+**Acceptance:** Each paid subscription period grants its allowance once. Failed renewals and delayed webhooks produce the declared access/grace behavior. Mid-cycle changes and repeated plan switching cannot multiply allowances or reset consumed quota.
+
+**Verification:** Run processor test-clock renewals, dunning, cancellation, proration, duplicate/out-of-order invoices, annual-with-monthly-allowance schedules if offered, and grant expiry/rollover.
+
+**Security review:** Use server entitlement state and reconcile processor/account identities. Changes affecting recurring charges require a concrete user-confirmed price.
+
+
+### C31 — Apply administrator exemptions while retaining platform costs
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C05, C27, C28.
+
+**Deliverable:** Implement trusted server-side administrator billing exemptions. Generation, conversation and NPC operation charge exempt admins zero credits while preserving real provider usage, internal cost attribution and ordinary authorization/resource controls. Issue platform-funded reservations and engine operating leases for exempt use; preserve the distinction between zero customer debit and nonzero wholesale resource cost.
+
+**Acceptance:** Admins can use the features without a credit deduction or paid subscription requirement. Non-admin requests cannot obtain the exemption by editing the client, NPC prompt or request body. Reports still show the company's actual expense.
+
+**Verification:** Test zero balance admin use, role revocation, cross-organization authority, forged exemption claims and cost reconciliation without customer debit. Confirm an exempt admin with no paid slot receives an authorized platform-funded lease.
+
+**Security review:** Resolve exemptions through trusted application authorization and audit overrides; never encode an unverified isAdmin flag in engine authority.
+
+
+### C32 — Quote and authorize generation and operating spend
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C27, C28, C31, G12.
+
+**Deliverable:** Connect engine cost estimates to itemized platform-credit quotes, expiry, maximum authorized total, initial operating funding and atomic reservation. Show one-time creation cost separately from recurring/usage operation, apply approved markup and release unused reserved credits.
+
+**Acceptance:** Before paid creation the user sees X credits, what is included, the maximum charge and the chosen operating mode/cap. Price changes, extra retries or new stages exceeding that approval require a new quote. Admin quotes show zero customer charge.
+
+**Verification:** Test stale/tampered quotes, simultaneous acceptance, cancellation, partial provider failure, estimate reconciliation, charge ceilings and never-started refunds.
+
+**Security review:** Bind quotes to principal, NPC/job, inputs, pricing version and nonce; client estimates never authorize spending.
+
+
+### C33 — Allocate NPC subscription slots and operating allowances
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C30, C32, G13.
+
+**Deliverable:** Implement assignment/removal of NPCs to purchased or included slots. Each plan defines concurrent active slots, included operating allowance, model/voice/service tier and explicit overage choice. Track consumption across slot transfers and billing periods.
+
+**Acceptance:** A user can assign an existing NPC to an unused slot or buy an add-on, then remove it. Removing the last eligible funding source freezes it. Slot reassignment does not reset used allowances, and included slots do not imply unbounded inference.
+
+**Verification:** Test concurrent assignments, exceeded slot count, downgrade, transfer, renewal failure, exhausted included usage, no-overage mode and explicit supplemental credit approval.
+
+**Security review:** Issue scoped short-lived engine operating leases from authoritative entitlement state; revoke them consistently on funding loss.
+
+
+### C34 — Integrate conjuring and object creation into conference worlds
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C11, C08, C32, C33, G15.
+
+**Deliverable:** Connect in-world text/voice creation to permissions, quote acceptance, image previews, progress, placement and first conversation. Offer an Einstein-style educational NPC preset while supporting arbitrary creator-defined objects and NPCs through the general engine.
+
+**Acceptance:** A participant with creation permission can complete the live pipeline from a world UI, understand one-time and operating charges, and choose wallet funding or a slot. Missing funds preserve already-created assets and expose repair/resume actions.
+
+**Verification:** Run desktop/VR user journeys for props and NPCs, admin exemption, denied permission, cancellation, partial results, late completion and cross-world inventory reuse.
+
+**Security review:** Verify event/world creation capabilities separately from billing authority. Private reference images and conversations follow their defined access scopes.
+
+
+### C35 — Give creators operating budgets and NPC lifecycle controls
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C33, C34, C23.
+
+**Deliverable:** Add per-NPC and account budget dashboards, daily/monthly caps, model/voice limits, usage forecasts, funding priority, optional explicitly authorized top-up and freeze/resume controls. Show creation cost, recurring commitments, incurred usage and remaining allowance separately.
+
+**Acceptance:** Creators can bound opex, stop future spending and later resume the same NPC. Frozen/inaccessible state is clear to visitors. Forecasts are labeled estimates; no silent recharge or indefinite background conversation is enabled.
+
+**Verification:** Test budget races, low-funds notices, caps mid-turn, disconnected owner, recurring cancellation, model downgrade, resume and persisted memory.
+
+**Security review:** Reauthorize funding changes and keep financial dashboards separate from other visitors private conversation content.
+
+
+### C36 — Publish creator-controlled subscribable NPCs
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C34, C35, C20, G14.
+
+**Deliverable:** Let a creator enable or disable NPC subscriptions and set access level, price, included visitor usage, concurrency, visibility, renewal terms and shared-knowledge policy. Keep private conversations private and version changes to subscriber entitlements.
+
+**Acceptance:** Only NPCs explicitly enabled by an authorized creator become subscribable. A subscription grants the advertised interactions, not ownership or access to other users memories. Disabling new sales handles existing paid periods explicitly.
+
+**Verification:** Test private/unlisted/public publication, creator authority, pricing updates, existing subscriptions, access revocation, abuse reporting and shared/private memory boundaries.
+
+**Security review:** Validate creator ownership and permitted content publication; protect subscription and memory ACLs independently.
+
+
+### C37 — Bill NPC subscribers and grant interaction access
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C36, C30, C29.
+
+**Deliverable:** Implement NPC-specific recurring purchases, cancellation, renewal and entitlements through the payment adapter. Define subscriber interaction allowances and optional overages separately from funding contributions; collect revenue and grant access through verified payment events.
+
+**Acceptance:** A visitor can subscribe to an enabled NPC, use the advertised allowance and cancel future renewal. Creator deletion/freeze, failed payment and unavailable service follow the visible credit/refund/access policy.
+
+**Verification:** Run processor test-mode NPC subscriptions, renewals, failed payments, duplicate events, concurrent sessions and entitlement revocation.
+
+**Security review:** Bind subscriptions to the intended NPC/version/customer and enforce interaction allowance on the server.
+
+
+### C38 — Allocate subscriber revenue to company margin and NPC operation
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C37, C28, C27.
+
+**Deliverable:** Implement versioned settlement of verified subscriber receipts into processor/tax costs, company share and an NPC operating subsidy pool. Apply subsidies against the creators eligible operating bill with a floor of zero; define reserve/rollover and refund reversal rules.
+
+**Acceptance:** Additional subscribers can reduce the creators payable operating cost to zero while retaining the configured company share. Net cash, credit liabilities, operating subsidy and consumed service are distinct; no receipt is counted twice as revenue or funding.
+
+**Verification:** Test accounting identities, enough-subscriber/zero-creator-cost cases, partial periods, refunds/disputes after subsidy use, rollover, insufficient funding and historical rate replay.
+
+**Security review:** Use immutable settlement records and restricted policy changes; isolate financial entitlements from model-generated claims and client balances.
+
+
+### C39 — Coordinate wallet, slot and subscriber funding for NPC operation
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C38, C35, C33, G13.
+
+**Deliverable:** Implement an atomic funding arbiter using the creators declared priority among included slot allowance, NPC subscriber subsidy and approved wallet spend. Budget for subscriber consumption as well as creator sessions, issue engine leases and checkpoint when eligible funding ends. Include trusted administrator exemptions as platform-funded reservations and leases, without consuming a customer wallet or requiring a paid NPC slot.
+
+**Acceptance:** Removing a creator slot does not freeze an otherwise funded NPC. With no eligible funding it freezes after bounded in-flight work; renewing a slot or adding credits/subscriber funding restores access and memory. No funding source is double-debited. Exempt administrator operation remains available at zero customer charge while its real usage settles to the platform cost account.
+
+**Verification:** Test simultaneous funding changes, last-payer loss, fan demand exceeding allowance, bounded queue/concurrency, grace expiry, fair allocation, split settlement and resume. Cover administrator platform funding, exemption revocation, and separation from subscriber/creator debits.
+
+**Security review:** Authorize every funding source and preserve reservation provenance across engine/app failures; never infer spending permission from a public NPC listing.
+
+
+### C40 — Operate billing reconciliation refunds and financial recovery
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C29, C30, C31, C38, C39.
+
+**Deliverable:** Add payment/usage reconciliation, credit adjustments, refund/dispute handling, fraud/rate controls, pricing operations and margin/cost reporting. Surface provider invoice variance, expiring reservations and failed settlements. Preserve dormant NPC assets/memories through financial recovery.
+
+**Acceptance:** Operators can trace a charge from quote through provider usage, payment and ledger entries, repair discrepancies with reversals, and explain admin-funded expense. Financial failures do not silently delete a creators NPC or leak conversations.
+
+**Verification:** Run webhook outage/backfill, duplicate billing, refunded consumed credits, chargebacks, reconciliation repair, ledger invariant audits and least-privilege operator access.
+
+**Security review:** Separate operational roles, audit sensitive adjustments, redact payment/private data and restrict production payment keys.
+
+
+### C41 — Qualify the complete NPC credits and subscription business flow
+
+Repository: neophilism/XLR8. Stage: expanded.
+
+Depends on: C34, C35, C36, C37, C38, C39, C40, G16.
+
+**Deliverable:** Run full generation and lifecycle scenarios with real engine/provider behavior and payment test-mode transactions; measure margins and user-visible charges. Cover one-time purchases, recurring credits, slots, admins, creator subscribers, exhaustion, freezing and restoration before the conference release rehearsal.
+
+**Acceptance:** A generated English Einstein-style NPC remembers its permitted user context, has spatial speech, settles actual approved creation usage within the maximum and releases unused credits, obeys operating caps and resumes unchanged after funding restoration. Subscriber funding demonstrably reduces creator cost while retaining company share. Actual production payment configuration is checked separately before launch.
+
+**Verification:** Run end-to-end browser/headset journeys, payment renewal simulations, concurrency/overspend, privacy, partial failure, refunds, slot movement and account recovery; retain reconciled cost and ledger evidence.
+
+**Security review:** Complete separate integrated review of payment trust, spend authorization, provider keys, persona/tool boundaries and private memory. Resolve blocking findings before deployment.
+
+**External evidence:** Payment test environment, live generation/conversation providers, approved test-spend budget and supported devices
