@@ -1,0 +1,10 @@
+{
+  "name": "@browser-vr-engine/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md"],
+  "scripts": { "test": "node --test test/*.test.mjs" }
+}
