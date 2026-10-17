@@ -1,0 +1,22 @@
+[
+  "frontend.mjs",
+  "network.js",
+  "browser-checks.mjs",
+  "finalize-run.mjs",
+  "run-clean.py",
+  "environment.py",
+  "setup.py",
+  "server-run.py",
+  "process_control.py",
+  "server.properties",
+  "stop-server.py",
+  "observe-server.py",
+  "source-pins.json",
+  "vendor/vrspace/client.js",
+  "package.json",
+  "package-lock.json",
+  "test/launcher-checks.py",
+  "test/frontend-checks.mjs",
+  "test/finalization-checks.mjs",
+  "source-files.json"
+]

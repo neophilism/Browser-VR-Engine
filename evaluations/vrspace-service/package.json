@@ -1,0 +1,9 @@
+{
+  "name": "@browser-vr-engine/evaluation-vrspace-service",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=24 <25" },
+  "devDependencies": { "playwright": "1.62.1" }
+}

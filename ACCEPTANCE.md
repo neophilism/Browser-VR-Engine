@@ -14,6 +14,8 @@ F03 adds versioned contracts, reference math and reproducible original assets. I
 
 F04/F05 provide isolated runnable foundation evaluations. The required `engine-evaluations` job checks the current toolkits and a real Chromium subset, with its own command, source, fixture and artifact identity. The final aggregate requires both `engine-foundation` and `engine-evaluations`. Passing that subset or merging its tools does not accept F04/F05: their complete common-world, service and actual-headset requirements remain separate blockers. See [F04](docs/evidence/F04.md), [F05](docs/evidence/F05.md) and the [evaluation reproduction guide](evaluations/README.md).
 
+The separate [released-service proposal](docs/evidence/F05-service.md) has local manual server/browser evidence. Its automation and third dependency graph have no required hosted CI coverage yet. Complete the pending supervisor lifecycle tests, service audit, end-to-end automation and required current-candidate service CI before treating that proposal as mergeable. Historical manual runs cannot satisfy those gates.
+
 ## Complete release
 
 R09 is a core beta. R12 requires every engine unit, including expanded/native capabilities and actual required hardware, asset and provider evidence. C26 follows completion of the application and the engine. Missing mandatory evidence keeps the relevant gate incomplete.

@@ -1,0 +1,27 @@
+{
+  "release": "v0.8.7",
+  "commit": "ca0e02ce611e1435e87dcec79de05fd2970dfc2d",
+  "publishedAt": "2026-03-03T11:26:36Z",
+  "jar": {
+    "url": "https://github.com/jalmasi/vrspace/releases/download/v0.8.7/server-0.8.7-executable.jar",
+    "bytes": 228055892,
+    "digest": "sha256:e5f0ba53f492d07e0f978ae1e15afce9fed2b3632a2d5984c48f3ab27d8004b3"
+  },
+  "distinction": "Released server/client evaluation, not the F05 AssetLoader master server at 61f840a3dd0133fc9d357891f37eb1670b147539",
+  "client": {
+    "source": "https://github.com/jalmasi/vrspace/blob/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/babylon/js/client/vrspace.js",
+    "sha256": "05b50269527e2f55095da07fbc767416477cd7eb788be28ac933354e8d7be867",
+    "bytes": 39785,
+    "modified": false,
+    "verifiedRawURL": "https://raw.githubusercontent.com/jalmasi/vrspace/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/babylon/js/client/vrspace.js"
+  },
+  "profile": {
+    "sha256": "cb1bc393a3fbddf97bf99aff931779dc16edf205f3843ebf65465959205e41d5",
+    "purpose": "Loopback-only synthetic guest presence/pose evaluation; authentication and optional integrations disabled"
+  },
+  "license": {
+    "repository": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/jalmasi/vrspace/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  }
+}
