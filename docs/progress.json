@@ -17,16 +17,16 @@
     },
     {
       "id": "F02",
-      "status": "implementing",
+      "status": "accepted",
       "pullRequest": "https://github.com/neophilism/Browser-VR-Engine/pull/2",
-      "mergedCommit": null,
+      "mergedCommit": "dd7feba47f37b61f622a403967e287cd058ceb0d",
       "verification": [
         "docs/evidence/F02.md"
       ],
       "securityReview": "docs/security/F02.md",
       "deployment": null,
       "blockers": [],
-      "nextAction": "Deliberate hosted failure observed; require fresh checks and current-head review on the repaired candidate, then merge and verify main."
+      "nextAction": "Complete; required-check failure and repair, separate reviewed head, merge and main CI verified. Continue F03."
     },
     {
       "id": "F03",
@@ -1600,6 +1600,347 @@
       "deployment": null,
       "blockers": [],
       "nextAction": "Wait for accepted dependencies."
+    },
+    {
+      "id": "G01",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G02",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G03",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G04",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G05",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G06",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G07",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G08",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G09",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G10",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G11",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G12",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G13",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G14",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G15",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "G16",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C27",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C28",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C29",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C30",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C31",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C32",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C33",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C34",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C35",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C36",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C37",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C38",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C39",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C40",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
+    },
+    {
+      "id": "C41",
+      "status": "planned",
+      "pullRequest": null,
+      "mergedCommit": null,
+      "verification": [],
+      "securityReview": null,
+      "deployment": null,
+      "blockers": [],
+      "nextAction": "Implement after accepted dependencies; qualify the required real integrations before acceptance."
     }
   ]
 }

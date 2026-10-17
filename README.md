@@ -35,3 +35,7 @@ The proposed modular stack is qualified against existing Hubs/Spoke and VRSpace 
 ## Distribution
 
 Original workspace packages are private and UNLICENSED at bootstrap; no public license grant has been added for the owner's code. Third-party components retain their own licenses and notices. Selected source versions, necessary forks and distribution obligations are recorded by F07.
+
+## Generated objects and NPCs
+
+The [generation and funding design](docs/architecture/npc-generation-and-funding.md) covers multiview images, Rodin model generation, Meshy rigging/animation, conversational personas, private persistent memory, spatial speech and freeze/resume. G01–G16 implement the general engine mechanisms. C27–C41 implement XLR8 credits, subscriptions, admin exemptions, NPC slots and subscriber operating subsidies after the complete engine release. These are planned capabilities.
