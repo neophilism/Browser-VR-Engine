@@ -2,23 +2,25 @@
 
 A reusable browser world and game engine for desktop and VR. The development plan covers graphics, solid physics, avatars, editable worlds, broad asset conversion, shared state, spatial audio, presentations and media. The separate conference application is [XLR8](https://github.com/neophilism/XLR8).
 
-**Current stage: F01 workspace foundation.** The SDK metadata package builds and can be imported by a standalone consumer. Rendering, VR, physics, networking and media remain planned until their implementation and qualification units pass. The engine is completed before XLR8 implementation begins.
+**Current stage: workspace foundation with F02 CI tooling.** The SDK metadata package builds and can be imported by a standalone consumer. CI/evidence and package-install checks are implemented; hosted acceptance is recorded separately in the progress ledger. Rendering, VR, physics, networking and media remain planned until their implementation and qualification units pass. The engine is completed before XLR8 implementation begins.
 
 ## Develop
 
-Use Node 24 and npm:
+Use the pinned Node 24 version in `.nvmrc` and npm:
 
 ```sh
-npm ci
+npm ci --ignore-scripts
 npm run check
 npm run example:sdk
+npm run test:consumer
+npm run test:sharding
 ```
 
-`npm run check` validates the complete plan, checks package boundaries, builds TypeScript and runs available implementation tests. F02 adds hosted CI and immutable evidence retention.
+`npm run check` validates the plan and evidence references, checks package/workflow boundaries, performs the baseline credential scan, builds TypeScript and runs required package/tooling tests. `test:consumer` installs the built tarball outside the workspace. `npm run check:dependencies` queries the npm registry; `npm run ci:local` runs the full foundation sequence and records a local preview. See [CI and merge procedure](docs/ci/README.md) for scopes, failure behavior and evidence identity.
 
 ## Project records
 
-- [Complete development plan](DEVELOPMENT_PLAN.md): all 145 units with dependencies and acceptance criteria.
+- [Complete development plan](DEVELOPMENT_PLAN.md): approved units with dependencies and acceptance criteria.
 - [Architecture](ARCHITECTURE.md): repository boundaries and the complete approved design.
 - [Handoff](HANDOFF.md): current state and next dependency.
 - [Acceptance](ACCEPTANCE.md) and [progress](docs/progress.json): verified implementation and release evidence.
