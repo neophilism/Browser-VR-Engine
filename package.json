@@ -1,0 +1,19 @@
+{
+  "name": "browser-vr-engine-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=24 <25" },
+  "workspaces": ["packages/*", "examples/*"],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "tsc -b --clean",
+    "test": "npm run build && npm run test --workspaces --if-present",
+    "check:plan": "node scripts/check-plan.mjs",
+    "check:boundaries": "node scripts/check-boundaries.mjs",
+    "check": "npm run check:plan && npm run check:boundaries && npm test",
+    "example:sdk": "npm run start --workspace @browser-vr-engine/sdk-smoke"
+  },
+  "devDependencies": { "typescript": "7.0.2" }
+}

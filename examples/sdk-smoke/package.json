@@ -1,0 +1,9 @@
+{
+  "name": "@browser-vr-engine/sdk-smoke",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "dependencies": { "@browser-vr-engine/core": "0.0.0" },
+  "scripts": { "start": "node index.mjs" }
+}
