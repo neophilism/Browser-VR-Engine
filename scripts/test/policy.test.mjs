@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { parse, stringify } from 'yaml';
-import { validateWorkflow } from '../check-ci-policy.mjs';
+import { validateWorkflow, validatePackageCommands } from '../check-ci-policy.mjs';
 import { inspectBoundary } from '../check-boundaries.mjs';
 import { inspectExposure, redact, redactStructured } from '../check-secret-exposure.mjs';
 import { classifyAudit } from '../check-dependencies.mjs';
@@ -12,6 +12,19 @@ import { validatePackInventory } from '../test-consumer.mjs';
 const workflowText = await readFile(new URL('../../.github/workflows/engine-ci.yml', import.meta.url), 'utf8');
 const pins = JSON.parse(await readFile(new URL('../../docs/ci/action-pins.json', import.meta.url), 'utf8')).actions;
 test('the actual workflow conforms to the checked-in policy', () => assert.deepEqual(validateWorkflow(workflowText, pins), []));
+
+const manifest = JSON.parse(await readFile(new URL('../../package.json', import.meta.url), 'utf8'));
+test('required package and example commands include every foundation host and suite', () => {
+  assert.deepEqual(validatePackageCommands(manifest), []);
+  for (const suffix of [' && npm run test --workspace @browser-vr-engine/contracts', ' && npm run test --workspace @browser-vr-engine/qualification-fixtures']) {
+    const changed = structuredClone(manifest);
+    changed.scripts.test = changed.scripts.test.replace(suffix, '');
+    assert.ok(validatePackageCommands(changed).length);
+  }
+  const changed = structuredClone(manifest);
+  changed.scripts['example:all'] = 'npm run example:sdk';
+  assert.ok(validatePackageCommands(changed).length);
+});
 
 for (const [name, mutate] of [
   ['floating action', workflow => { workflow.jobs.checks.steps[0].uses = 'actions/checkout@v7'; }],

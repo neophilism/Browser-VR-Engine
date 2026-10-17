@@ -1,0 +1,32 @@
+{
+  "name": "@browser-vr-engine/qualification-fixtures",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./fixtures/*": "./fixtures/*"
+  },
+  "files": [
+    "dist",
+    "fixtures",
+    "scripts",
+    "sources",
+    "README.md"
+  ],
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "check:fixtures": "node scripts/generate.mjs --check",
+    "test": "node --test --test-isolation=none test/*.test.mjs && npm run check:fixtures"
+  },
+  "dependencies": {
+    "@browser-vr-engine/contracts": "0.1.0"
+  },
+  "devDependencies": {
+    "gltf-validator": "2.0.0-dev.3.10"
+  }
+}

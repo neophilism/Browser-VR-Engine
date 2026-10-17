@@ -2,7 +2,7 @@
 
 A reusable browser world and game engine for desktop and VR. The development plan covers graphics, solid physics, avatars, editable worlds, broad asset conversion, shared state, spatial audio, presentations and media. The separate conference application is [XLR8](https://github.com/neophilism/XLR8).
 
-**Current stage: workspace foundation with F02 CI tooling.** The SDK metadata package builds and can be imported by a standalone consumer. CI/evidence and package-install checks are implemented; hosted acceptance is recorded separately in the progress ledger. Rendering, VR, physics, networking and media remain planned until their implementation and qualification units pass. The engine is completed before XLR8 implementation begins.
+**Current stage: shared engine contracts and qualification assets (F03), with F02 CI tooling.** Three packages provide SDK metadata, versioned contracts/reference math, and an original reproducible test world. Runtime and declaration exports are checked through a separate installed consumer; hosted acceptance is recorded separately in the progress ledger. Rendering, VR, physics, networking and media remain planned until their implementation and qualification units pass. The engine is completed before XLR8 implementation begins.
 
 ## Develop
 
@@ -11,12 +11,14 @@ Use the pinned Node 24 version in `.nvmrc` and npm:
 ```sh
 npm ci --ignore-scripts
 npm run check
-npm run example:sdk
+npm run example:all
 npm run test:consumer
 npm run test:sharding
 ```
 
-`npm run check` validates the plan and evidence references, checks package/workflow boundaries, performs the baseline credential scan, builds TypeScript and runs required package/tooling tests. `test:consumer` installs the built tarball outside the workspace. `npm run check:dependencies` queries the npm registry; `npm run ci:local` runs the full foundation sequence and records a local preview. See [CI and merge procedure](docs/ci/README.md) for scopes, failure behavior and evidence identity.
+`npm run check` validates the plan and evidence references, checks package/workflow boundaries, performs the baseline credential scan, builds TypeScript and runs required package/tooling tests. `test:consumer` installs all three built tarballs outside the workspace and verifies the locked validation dependency before installation. `npm run check:dependencies` queries the npm registry; `npm run ci:local` runs the full foundation sequence and records a local preview. See [CI and merge procedure](docs/ci/README.md) for scopes, failure behavior and evidence identity.
+
+The [qualification protocol](docs/qualification/f03.md) defines the shared courtyard, animated creature, movable props, four audio corners, wall video and required observation methods. `npm run example:fixtures` verifies assets and logical scenario replay. It deliberately reports qualification as incomplete because logical replay cannot establish browser, service or headset behavior.
 
 ## Project records
 

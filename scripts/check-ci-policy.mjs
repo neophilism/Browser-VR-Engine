@@ -5,6 +5,20 @@ import { parseDocument } from 'yaml';
 
 export const gateCommand = 'test "$CHECKS_RESULT" = success';
 
+// Keep the package list explicit: an omitted workspace was a real F03
+// integration regression, and --if-present would conceal a missing suite.
+export function validatePackageCommands(manifest) {
+  const errors = [];
+  const packages = ['core', 'contracts', 'qualification-fixtures'];
+  const expectedTest = ['npm run build', ...packages.map(name => `npm run test --workspace @browser-vr-engine/${name}`)].join(' && ');
+  if (manifest?.scripts?.test !== expectedTest) errors.push('Required package test command omits or substitutes a suite');
+  if (manifest?.scripts?.['example:all'] !== 'npm run example:sdk && npm run example:fixtures') errors.push('Required example command must run both standalone hosts');
+  for (const [script, name] of [['example:sdk', 'sdk-smoke'], ['example:fixtures', 'fixture-smoke']]) {
+    if (manifest?.scripts?.[script] !== `npm run start --workspace @browser-vr-engine/${name}`) errors.push(`Required ${script} command differs`);
+  }
+  return errors;
+}
+
 export function validateWorkflow(text, pins) {
   const errors = [];
   const document = parseDocument(text, { uniqueKeys: true });
@@ -52,7 +66,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   const root = resolve(import.meta.dirname, '..');
   const pins = JSON.parse(await readFile(resolve(root, 'docs/ci/action-pins.json'), 'utf8')).actions;
   const files = (await readdir(resolve(root, '.github/workflows'))).filter(name => /\.ya?ml$/.test(name));
-  const errors = [];
+  const errors = validatePackageCommands(JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8')));
   if (!files.includes('engine-ci.yml')) errors.push('Missing engine CI workflow');
   for (const file of files) errors.push(...validateWorkflow(await readFile(resolve(root, '.github/workflows', file), 'utf8'), pins).map(error => `${file}: ${error}`));
   if (errors.length) { console.error(errors.join('\n')); process.exitCode = 1; }

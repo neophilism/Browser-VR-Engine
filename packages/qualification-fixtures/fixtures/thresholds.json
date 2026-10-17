@@ -1,0 +1,1 @@
+{"attenuationErrorDb":0.1,"avOffsetMs":80,"cleanupCycles":10,"coordinateErrorMeters":0.000001,"id":"comparison-thresholds-0.1.0","kind":"threshold-set","maxMissedIntervalFraction":0.01,"missedIntervalMultiplier":1.5,"p95FramePeriodMultiplier":1.1,"p99FramePeriodMultiplier":2.1,"schemaVersion":"0.1.0","stallMs":250,"staticAnchorErrorMeters":0.001}

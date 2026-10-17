@@ -14,7 +14,7 @@
   "scripts": {
     "build": "tsc -b",
     "clean": "tsc -b --clean",
-    "test": "npm run build && npm run test --workspace @browser-vr-engine/core",
+    "test": "npm run build && npm run test --workspace @browser-vr-engine/core && npm run test --workspace @browser-vr-engine/contracts && npm run test --workspace @browser-vr-engine/qualification-fixtures",
     "check:plan": "node scripts/check-plan.mjs",
     "check:boundaries": "node scripts/check-boundaries.mjs",
     "check:ci-policy": "node scripts/check-ci-policy.mjs",
@@ -25,7 +25,9 @@
     "test:sharding": "node scripts/test-sharding.mjs",
     "ci:local": "node scripts/ci/run.mjs --local",
     "check": "npm run check:plan && npm run check:boundaries && npm run check:ci-policy && npm run check:secret-exposure && npm test && npm run test:tooling",
-    "example:sdk": "npm run start --workspace @browser-vr-engine/sdk-smoke"
+    "example:sdk": "npm run start --workspace @browser-vr-engine/sdk-smoke",
+    "example:fixtures": "npm run start --workspace @browser-vr-engine/fixture-smoke",
+    "example:all": "npm run example:sdk && npm run example:fixtures"
   },
   "devDependencies": {
     "typescript": "7.0.2",

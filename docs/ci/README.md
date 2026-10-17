@@ -8,14 +8,14 @@ Use the exact Node version in `.nvmrc`. Install dependencies with `npm ci --igno
 
 | Command | What it verifies |
 |---|---|
-| `npm run check` | Plan/progress structure and evidence references, static engine/application boundaries, workflow policy, baseline credential exposure, TypeScript build, required core-package tests and tooling mutation tests. |
-| `npm run example:sdk` | The standalone workspace host can import the public SDK. |
-| `npm run test:consumer` | The already built SDK tarball installs outside the repository; runtime and declaration exports resolve inside that installation. No package is published. |
+| `npm run check` | Plan/progress structure and evidence references, static engine/application boundaries, workflow policy, baseline credential exposure, TypeScript build, required core/contracts/qualification-fixture tests and tooling mutation tests. |
+| `npm run example:all` | Both standalone hosts import public exports: SDK metadata and fixture assets/contracts. Each remains separately runnable through `example:sdk` and `example:fixtures`. |
+| `npm run test:consumer` | All three already built engine tarballs install in a fresh directory outside the repository. Runtime/declaration exports, the fixture example and the shipped generator resolve there. The external lock must match the root-pinned TypeBox dependency before installation; no package is published. |
 | `npm run test:sharding` | Two actual Node test-runner shards cover named assertion cases without omission, duplication or an empty shard. An intentional failing assertion must exit nonzero in the same unsharded and sharded runner modes. These fixtures qualify the test mechanism. |
 | `npm run check:dependencies` | The actual npm registry audit for the lockfile, including development dependencies. Registry/network failures remain blocked scans. |
 | `npm run ci:local` | A clean dependency reinstall and the complete foundation command sequence, producing a local preview manifest and reports. Local evidence cannot establish hosted acceptance. |
 
-`test:consumer` follows `npm run check` or `npm run build`. Required commands and the core test script are explicit: removal of a required script cannot become an `--if-present` pass. No browser or provider package is installed merely to create an empty CI job.
+`test:consumer` follows `npm run check` or `npm run build`. Required commands and all three package test scripts are explicit: removal of a required script cannot become an `--if-present` pass. The workflow policy also checks the root test and example commands against the required suite/host set, covering the F03 integration omission found during review. No browser or provider package is installed merely to create an empty CI job.
 
 The static import checker uses the scanner exported by the exact pinned TypeScript 7 package. It checks literal imports, re-exports, dynamic-import literals and require calls in engine packages, plus root/package dependency names and alias, file or Git targets, while ignoring comment and ordinary string contents. It is not a control for computed import targets or arbitrary creator code; those need the later runtime capability boundaries and review. Its use of TypeScript's explicitly unstable scanner API is covered by the tooling tests on every compiler upgrade.
 
