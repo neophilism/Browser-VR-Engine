@@ -1,0 +1,70 @@
+name: Engine CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  merge_group:
+    types: [checks_requested]
+
+permissions: {}
+
+concurrency:
+  group: engine-ci-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  checks:
+    name: engine-foundation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    env:
+      CI: 'true'
+      TZ: UTC
+      CI_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha || '' }}
+      CI_PR_BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
+      CI_WORKFLOW_REF: ${{ github.workflow_ref }}
+      CI_WORKFLOW_SHA: ${{ github.workflow_sha }}
+    steps:
+      - name: Check out the event commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - name: Set up pinned Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - name: Execute required checks and retain outcomes
+        run: node scripts/ci/run.mjs
+      - name: Retain exact-run reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: engine-foundation-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/ci/
+          if-no-files-found: error
+          include-hidden-files: false
+          overwrite: false
+          retention-days: 30
+
+  required:
+    name: engine-required
+    if: ${{ always() }}
+    needs: [checks]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    permissions: {}
+    steps:
+      - name: Require successful prerequisite checks
+        env:
+          CHECKS_RESULT: ${{ needs.checks.result }}
+        run: test "$CHECKS_RESULT" = success

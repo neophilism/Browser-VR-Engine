@@ -4,27 +4,27 @@
   "units": [
     {
       "id": "F01",
-      "status": "verified",
-      "pullRequest": null,
-      "mergedCommit": null,
+      "status": "accepted",
+      "pullRequest": "https://github.com/neophilism/Browser-VR-Engine/pull/1",
+      "mergedCommit": "1aa27e913143623787b34bc7f6afddaa98e20e0f",
       "verification": [
         "docs/evidence/F01.md"
       ],
       "securityReview": "docs/security/F01.md",
       "deployment": null,
       "blockers": [],
-      "nextAction": "Open F01 PR, verify current head and merge; record merged evidence in the next progress update."
+      "nextAction": "Complete; retained evidence in docs/evidence/F01.md. Continue F02."
     },
     {
       "id": "F02",
-      "status": "planned",
+      "status": "implementing",
       "pullRequest": null,
       "mergedCommit": null,
       "verification": [],
       "securityReview": null,
       "deployment": null,
       "blockers": [],
-      "nextAction": "Wait for accepted dependencies."
+      "nextAction": "Implement CI, negative gate tests, current-commit evidence and isolated package verification; observe GitHub results before acceptance."
     },
     {
       "id": "F03",
