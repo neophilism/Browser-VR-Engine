@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "argv": [
+    "npm",
+    "ci",
+    "--ignore-scripts",
+    "--no-audit",
+    "--no-fund",
+    "--registry=https://registry.npmjs.org",
+    "--fetch-timeout=15000",
+    "--fetch-retries=0",
+    "--userconfig=/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/tool-config/user-npmrc",
+    "--globalconfig=/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/tool-config/global-npmrc"
+  ],
+  "supervisorPid": 3175,
+  "startedAt": "2026-10-18T18:35:52.008Z",
+  "outcome": "passed",
+  "exitCode": 0,
+  "requestedSignal": null,
+  "commandPid": 3176,
+  "shutdown": {
+    "needed": false,
+    "terminateSent": [],
+    "killSent": [],
+    "stopped": true
+  },
+  "finishedAt": "2026-10-18T18:35:52.586Z"
+}

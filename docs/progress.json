@@ -48,16 +48,17 @@
       "mergedCommit": null,
       "verification": [
         "docs/evidence/F04.md",
-        "docs/evidence/F04-F05-integration.md"
+        "docs/evidence/F04-F05-integration.md",
+        "docs/evidence/F04-runtime.md"
       ],
-      "securityReview": "docs/security/F04-F05.md",
+      "securityReview": "docs/security/F04-runtime.md",
       "deployment": null,
       "blockers": [
         "Pinned Reticulum/Dialog service deployment and complete Hubs runtime scenario have not been exercised.",
         "Full two-client ownership/media/roundtrip behavior, physical headset/audio and target-device workload evidence are missing.",
         "The pinned upstream Hubs graph audit completed on 2026-10-18 and failed: 106 npm package/metavulnerability entries (14 critical, 64 high, 25 moderate, 3 low); required source patches and requalification remain."
       ],
-      "nextAction": "Use the pinned reproduction toolkit to complete upstream services, dependency review and common runtime/device scenarios; retain the demonstrated editor/build results."
+      "nextAction": "Pass current-head integration gates and main verification, then explicitly dispatch the reviewed-main F04 diagnose workflow and independently verify its actual failed/passed artifact. Retain every mandatory audit failure; complete missing common runtime/device scenarios and dependency review before foundation selection."
     },
     {
       "id": "F05",
@@ -68,17 +69,17 @@
         "docs/evidence/F05.md",
         "docs/evidence/F05-service.md",
         "docs/evidence/F04-F05-integration.md",
-        "docs/evidence/F05-XR.md"
+        "docs/evidence/F05-XR.md",
+        "docs/evidence/xr-integration-ci-39154237536/index.json"
       ],
       "securityReview": "docs/security/F05-XR.md",
       "deployment": null,
       "blockers": [
         "Physical headset/controller/audio and target-device performance evidence are missing.",
         "Full canonical-world roundtrip, multiuser ownership/physics, SFU voice/media and measured AV synchronization remain unqualified.",
-        "The released VRSpace server/client presence test is a different pin from the master AssetLoader evaluation and does not qualify all VRSpace subsystems.",
-        "PR6 passed hosted service/automation and artifact verification, but its merged main run failed the desktop bird observation. PR7's first run passed desktop/XR but failed service placement during XR preparation. The corrected follow-up still requires current-head hosted desktop/XR/service artifacts and a successful subsequent main run."
+        "The released VRSpace server/client presence test is a different pin from the master AssetLoader evaluation and does not qualify all VRSpace subsystems."
       ],
-      "nextAction": "Verify the reviewed immersive-XR, animation-observation and startup-race corrections on the current hosted candidate, download all three artifacts, merge and verify main; then follow docs/qualification/f05-gap-map.md for complete shared-scenario and physical-device qualification. F05 remains incomplete."
+      "nextAction": "PR7 repair verification is complete: all required candidate/main jobs and all six downloaded artifacts passed. Continue portable authored-world reload, complete shared-scenario behavior and physical-device qualification using docs/qualification/f05-gap-map.md. F05 remains incomplete."
     },
     {
       "id": "F06",

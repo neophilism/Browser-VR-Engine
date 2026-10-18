@@ -1,0 +1,10 @@
+✔ only the declared loopback-resolved HTTP and native WebSocket origins are allowed (1.871427ms)
+✔ final status is decided after all cleanup and fails on any late contradiction (0.517181ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13.276647

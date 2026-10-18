@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "argv": [
+    "node",
+    "browser-checks.mjs"
+  ],
+  "supervisorPid": 3361,
+  "startedAt": "2026-10-18T18:29:21.360Z",
+  "outcome": "passed",
+  "exitCode": 0,
+  "requestedSignal": null,
+  "commandPid": 3362,
+  "shutdown": {
+    "needed": false,
+    "terminateSent": [],
+    "killSent": [],
+    "stopped": true
+  },
+  "finishedAt": "2026-10-18T18:29:52.603Z"
+}

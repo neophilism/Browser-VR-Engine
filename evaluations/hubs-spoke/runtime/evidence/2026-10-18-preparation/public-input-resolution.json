@@ -1,0 +1,95 @@
+{
+  "images": {
+    "observedAt": "2026-10-18T17:24:16.312726+00:00",
+    "images": {
+      "hubs": {
+        "repository": "library/node",
+        "observedTag": "22-bookworm",
+        "image": "library/node@sha256:c4d5523090a817b7aa86d2111241fdd4f66d1e27782b44160e6aa63b357ecb2d",
+        "platform": "linux/amd64",
+        "indexDigest": "sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8",
+        "manifestDigest": "sha256:c4d5523090a817b7aa86d2111241fdd4f66d1e27782b44160e6aa63b357ecb2d",
+        "manifestBytes": 2493,
+        "sourceUrl": "https://registry-1.docker.io/v2/library/node/manifests/22-bookworm"
+      },
+      "dialog": {
+        "repository": "library/node",
+        "observedTag": "18-bookworm",
+        "image": "library/node@sha256:eb29363371ee2859fad6a3c5af88d4abc6ff7d399addb13b7de3c1f11bdee6b9",
+        "platform": "linux/amd64",
+        "indexDigest": "sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783",
+        "manifestDigest": "sha256:eb29363371ee2859fad6a3c5af88d4abc6ff7d399addb13b7de3c1f11bdee6b9",
+        "manifestBytes": 2493,
+        "sourceUrl": "https://registry-1.docker.io/v2/library/node/manifests/18-bookworm"
+      },
+      "reticulum": {
+        "repository": "library/elixir",
+        "observedTag": "1.16.3-otp-25",
+        "image": "library/elixir@sha256:74bf732be6954ddb3876ac29462a3b04737e101d7b5046bdf27662b7558a173e",
+        "platform": "linux/amd64",
+        "indexDigest": "sha256:d3c1538021e234ba54cd2dc8ac6a40ed1989b8d6b1bdabfecbec1f738b6d4bf2",
+        "manifestDigest": "sha256:74bf732be6954ddb3876ac29462a3b04737e101d7b5046bdf27662b7558a173e",
+        "manifestBytes": 2499,
+        "sourceUrl": "https://registry-1.docker.io/v2/library/elixir/manifests/1.16.3-otp-25"
+      },
+      "db": {
+        "repository": "library/postgres",
+        "observedTag": "14-alpine",
+        "image": "library/postgres@sha256:7116ab7df71ef638eda416adbb92466b58a9da423f5476f2b830aae0a97b4fa5",
+        "platform": "linux/amd64",
+        "indexDigest": "sha256:4ea9e5ed06591da7ea23eb65465e8d3187fe79f4d5ec3ae976d29a33b013e77a",
+        "manifestDigest": "sha256:7116ab7df71ef638eda416adbb92466b58a9da423f5476f2b830aae0a97b4fa5",
+        "manifestBytes": 3054,
+        "sourceUrl": "https://registry-1.docker.io/v2/library/postgres/manifests/14-alpine"
+      }
+    }
+  },
+  "bootstrap": {
+    "hex": {
+      "url": "https://repo.hex.pm/installs/1.14.0/hex-2.2.1.ez",
+      "bytes": 739152,
+      "sha256": "d151bbaf3d226d604958d0bf072f923c3dd061d53847e83866f32f83a1227eed"
+    },
+    "rebar3": {
+      "url": "https://github.com/erlang/rebar3/releases/download/3.23.0/rebar3",
+      "bytes": 815571,
+      "sha256": "195591a13abf6a337aecbbc4c9b33d3684b0f3b14c76e84c007baff38db20393"
+    },
+    "mediasoup-inspection": {
+      "url": "https://registry.npmjs.org/mediasoup/-/mediasoup-3.11.4.tgz",
+      "bytes": 506425,
+      "sha256": "c03bf4eb6e17474e285a4b0d37d60536470cf466003e1d2df5b3fcf802115af2"
+    }
+  },
+  "wheels": {
+    "pip": {
+      "version": "23.0.1",
+      "filename": "pip-23.0.1-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/07/51/2c0959c5adf988c44d9e1e0d940f5b074516ecc87e96b1af25f59de9ba38/pip-23.0.1-py3-none-any.whl",
+      "bytes": 2055563,
+      "sha256": "236bcb61156d76c4b8a05821b988c7b8c35bf0da28a4b614e8d6ab5212c25c6f"
+    },
+    "setuptools": {
+      "version": "65.5.1",
+      "filename": "setuptools-65.5.1-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/b6/40/353c051f77ee5618adaf1fd96f4f6bae9714ed0a22c7142c01c24eb77fe4/setuptools-65.5.1-py3-none-any.whl",
+      "bytes": 1232712,
+      "sha256": "d0b9a8433464d5800cbe05094acf5c6d52a91bfac9b52bcfc4d41382be5d5d31"
+    },
+    "meson": {
+      "version": "0.61.5",
+      "filename": "meson-0.61.5-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/18/db/3feb3cfa102553b9329d0c887b3c10480381de69abf6e8629f6b32f450df/meson-0.61.5-py3-none-any.whl",
+      "bytes": 862509,
+      "sha256": "58c2ddb5f885da0e929f15d89f38d8a7d97f981f56815bcba008414f8511f59a"
+    },
+    "ninja": {
+      "version": "1.10.2.4",
+      "filename": "ninja-1.10.2.4-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/48/d2/5c106c854b0f2366679747b2a9c5377cc59e03e2b80d72e41588d143abbc/ninja-1.10.2.4-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.whl",
+      "bytes": 120718,
+      "sha256": "327c319176c5a4af21908b727b776e9f5caf275680403da632821ba071fd6296"
+    }
+  },
+  "scope": "Retained prior public manifest and downloaded-byte resolution metadata. No image layers were executed and no dependency lifecycle ran during resolution."
+}

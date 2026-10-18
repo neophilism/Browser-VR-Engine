@@ -1,0 +1,125 @@
+{
+  "hubs": {
+    "commit": "986d07a758e9d1184cb355385c6460391bd238d0",
+    "checkedFiles": {
+      "package.json": {
+        "bytes": 9741,
+        "sha256": "90ea536f10020d417c63d21bfb4056d6716a0ce68e3fb535d2425bf58dabc542"
+      },
+      "package-lock.json": {
+        "bytes": 791722,
+        "sha256": "f1630148e2e4c03c70bf0fbe55182ef4fc0b0506b82625b321109c2d71adf4d3"
+      },
+      "webpack.config.js": {
+        "bytes": 26865,
+        "sha256": "6ab02fa34bb25d90445a3b07516474e2aaa19f29c2885ef81b1daeb4fe7bce9e"
+      },
+      "src/naf-dialog-adapter.js": {
+        "bytes": 31885,
+        "sha256": "a509d2d7ab1fdd5793c98bc3c4577a88764eb354eda7569691fa7bb8d5c99f18"
+      }
+    },
+    "adaptations": [
+      {
+        "file": "src/naf-dialog-adapter.js",
+        "before": "a509d2d7ab1fdd5793c98bc3c4577a88764eb354eda7569691fa7bb8d5c99f18",
+        "after": "b986ad24e4464b4dc9cf64a4ecfc39fea50be82a517fb66c56dc96ea0f5a4146",
+        "patch": "--- a/src/naf-dialog-adapter.js\n+++ b/src/naf-dialog-adapter.js\n@@ -71,34 +71,13 @@\n     return this._downlinkBwe;\n   }\n \n-  getIceServers(host, port, turn) {\n-    const iceServers = [];\n-\n+  getIceServers(host, port, _turn) {\n+    // F04 local diagnostic only: no external STUN/TURN or NAT claim.\n+    if (host !== \"hubs.local\" || Number(port) !== 4443) {\n+      throw new Error(\"F04 diagnostic requires its owned loopback Dialog endpoint\");\n+    }\n     this._serverUrl = `wss://${host}:${port}`;\n-\n-    if (turn && turn.enabled) {\n-      turn.transports.forEach(ts => {\n-        // Try both TURN DTLS and TCP/TLS\n-        if (!this._forceTcp) {\n-          iceServers.push({\n-            urls: `turns:${host}:${ts.port}`,\n-            username: turn.username,\n-            credential: turn.credential\n-          });\n-        }\n-\n-        iceServers.push({\n-          urls: `turns:${host}:${ts.port}?transport=tcp`,\n-          username: turn.username,\n-          credential: turn.credential\n-        });\n-      });\n-      iceServers.push({ urls: \"stun:stun1.l.google.com:19302\" });\n-    } else {\n-      iceServers.push({ urls: \"stun:stun1.l.google.com:19302\" }, { urls: \"stun:stun2.l.google.com:19302\" });\n-    }\n-\n-    return iceServers;\n+    return [];\n   }\n \n   /**\n"
+      }
+    ],
+    "scope": "Exact pin-covered public source files only; no full checkout, container build or backend execution."
+  },
+  "dialog": {
+    "commit": "9da31c58c35fd9047ff9c52a426a230769c1a1e0",
+    "checkedFiles": {
+      "package.json": {
+        "bytes": 990,
+        "sha256": "a4ed4d4b16cb413a5f0e424408b7cbfac318e861e46d004528fbc3b302d4e48d"
+      },
+      "package-lock.json": {
+        "bytes": 91812,
+        "sha256": "9839c71a5162daff713d55ae0b8ed94c7ab67c424133bbae472065cc7b73b2ad"
+      },
+      "config.js": {
+        "bytes": 4040,
+        "sha256": "fbf1b48e3a3c862901dfabdb1f431f93e348314bcb108de32c06b068c770bca7"
+      },
+      "index.js": {
+        "bytes": 9002,
+        "sha256": "eadf5f32e3439195cb731a3d01ab0d5603f56b3363400527eee57121cd930337"
+      },
+      "LICENSE": {
+        "bytes": 16725,
+        "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+      }
+    },
+    "adaptations": [
+      {
+        "file": "config.js",
+        "before": "fbf1b48e3a3c862901dfabdb1f431f93e348314bcb108de32c06b068c770bca7",
+        "after": "6d333afb0884da0ac82583e2726faca61d19e14a89c1456e9efb49ce591011cd",
+        "patch": "--- a/config.js\n+++ b/config.js\n@@ -153,4 +153,7 @@\n \t});\n }\n \n+// F04 loopback diagnostic: one real worker; one advertised loopback candidate.\n+config.mediasoup.numWorkers = 1;\n+config.mediasoup.webRtcTransportOptions.listenIps = [{ ip: '0.0.0.0', announcedIp: '127.0.0.1' }];\n module.exports = config;\n"
+      }
+    ],
+    "scope": "Exact pin-covered public source files only; no full checkout, container build or backend execution."
+  },
+  "reticulum": {
+    "commit": "10364b17b50a6801ebceaf760188182e753860ec",
+    "checkedFiles": {
+      "mix.exs": {
+        "bytes": 3570,
+        "sha256": "f4057fe7c22e43785772e69743e7a13dfca033cb9c63ce411727d3f9ded0a8a4"
+      },
+      "mix.lock": {
+        "bytes": 28193,
+        "sha256": "e65796788f57bab27da75fb51a39edb88e04ad91f7824ec50e748db0f294e0ec"
+      },
+      "config/dev.exs": {
+        "bytes": 6955,
+        "sha256": "edd8f22d51744beaf4d87b7137537f41fcfde8d28a78ed7a42e7cde56fdea4d6"
+      },
+      "config/runtime.exs": {
+        "bytes": 2083,
+        "sha256": "c9c21adbe4f6e4ccc8071848b53d5890f1b1509a9ca657db6aeff1484aeede17"
+      },
+      "lib/ret_web/controllers/api/v1/hub_controller.ex": {
+        "bytes": 2703,
+        "sha256": "dd830f1b79660e272e244ee9adbb7fa16ad1ff1c6315bab78bfd1a35f54e0f0c"
+      },
+      "LICENSE": {
+        "bytes": 16725,
+        "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+      }
+    },
+    "adaptations": [
+      {
+        "file": "config/dev.exs",
+        "before": "edd8f22d51744beaf4d87b7137537f41fcfde8d28a78ed7a42e7cde56fdea4d6",
+        "after": "01bfc89218fb003b9b226a8dfe4468b32cc13e351c5eba6df0864aee8de819cc",
+        "patch": "--- a/config/dev.exs\n+++ b/config/dev.exs\n@@ -31,7 +31,7 @@\n   link_url: [scheme: \"https\", host: link_host, port: 4000],\n   imgproxy_url: [scheme: \"http\", host: host, port: 5000],\n   debug_errors: true,\n-  code_reloader: true,\n+  code_reloader: false,\n   check_origin: false,\n   # This config value is for local development only.\n   secret_key_base: \"txlMOtlaY5x3crvOCko4uV5PM29ul3zGo1oBGNO3cDXx+7GHLKqt0gR9qzgThxb5\",\n"
+      },
+      {
+        "file": "config/runtime.exs",
+        "before": "c9c21adbe4f6e4ccc8071848b53d5890f1b1509a9ca657db6aeff1484aeede17",
+        "after": "79ab09b1593c52e46000e0c7929f598f3327c0538e15b5e8995a407282950637",
+        "patch": "--- a/config/runtime.exs\n+++ b/config/runtime.exs\n@@ -67,3 +67,24 @@\n   _ ->\n     :ok\n end\n+\n+# Appended only to the exact pinned development build context. This is a\n+# loopback diagnostic profile, not a production authentication policy.\n+if config_env() == :dev do\n+  config :ret, Ret.Repo, password: \"synthetic-local-only\"\n+  config :ret, Ret.SessionLockRepo, password: \"synthetic-local-only\"\n+  config :ret, Ret.Locking,\n+    session_lock_db: [database: \"ret_dev\", hostname: System.fetch_env!(\"DB_HOST\"),\n+                      password: \"synthetic-local-only\", username: \"postgres\"]\n+  config :ret, RetWeb.Endpoint,\n+    https: [port: 4000, keyfile: \"/run/bve/key.pem\", certfile: \"/run/bve/cert.pem\"],\n+    secret_key_base: File.read!(\"/run/bve/secret-base\"),\n+    code_reloader: false,\n+    allowed_origins: \"https://hubs.local:4000,https://hubs.local:8080\"\n+  config :ret, Ret.PermsToken, perms_key: File.read!(\"/run/bve/perms-private.pem\")\n+  config :ret, Ret.Guardian, secret_key: File.read!(\"/run/bve/guardian-secret\")\n+  # The partial runtime does not start Admin or Spoke. This disables the warmer's\n+  # aggregate background fetch; dev skip_cache still fetches real Hubs pages on demand.\n+  config :ret, Ret.PageOriginWarmer, admin_page_origin: nil, spoke_page_origin: nil\n+  config :cors_plug, origin: [\"https://hubs.local:4000\", \"https://hubs.local:8080\"]\n+end\n"
+      }
+    ],
+    "scope": "Exact pin-covered public source files only; no full checkout, container build or backend execution."
+  },
+  "compose": {
+    "commit": "54cc996394e715d32aa71c9cf9df4898b1ea1a57",
+    "checkedFiles": {
+      "docker-compose.yml": {
+        "bytes": 3881,
+        "sha256": "aaecdec125473742ff9129138281b7e878d6d470ac32b109be4fab6881a79b7a"
+      },
+      "bin/init": {
+        "bytes": 1462,
+        "sha256": "4d51fd50c243c38a77284cb88dadcafef0facb415353108b90588168c8f03e5a"
+      }
+    },
+    "adaptations": [],
+    "scope": "Exact pin-covered public source files only; no full checkout, container build or backend execution."
+  }
+}

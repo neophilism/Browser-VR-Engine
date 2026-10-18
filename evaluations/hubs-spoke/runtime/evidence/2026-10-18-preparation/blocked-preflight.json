@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "runId": "f04-0b76071465f5970b",
+  "mode": "preflight",
+  "startedAt": "2026-10-18T17:51:35.976Z",
+  "overallStatus": "failed",
+  "qualification": "incomplete",
+  "commands": [],
+  "audits": {},
+  "failures": [
+    "RuntimeError: Missing prerequisites: docker, same-namespace procfs task/children and pidfd supervision, local Docker daemon socket /var/run/docker.sock"
+  ],
+  "browserPassed": false,
+  "shutdownPassed": true,
+  "prerequisites": {
+    "tools": {
+      "docker": null,
+      "git": "/usr/local/bin/git",
+      "node": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "npm": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/npm",
+      "openssl": "/usr/bin/openssl"
+    },
+    "samePidNamespace": false,
+    "procfsChildren": false,
+    "missing": [
+      "docker",
+      "same-namespace procfs task/children and pidfd supervision",
+      "local Docker daemon socket /var/run/docker.sock"
+    ],
+    "passed": false
+  },
+  "runtimeExecuted": false,
+  "runtimeStartAttempted": false,
+  "limits": [
+    "No physical headset, native GPU, WAN/TURN, event-scale or production security qualification.",
+    "Retained native Spoke export; no fresh editor/publication flow in this runtime command.",
+    "Npm audits do not cover Hex/Python/OS/native source advisories."
+  ],
+  "sources": {
+    "audit.mjs": {
+      "bytes": 2091,
+      "sha256": "e6f27b30516b152d712f7b0efc9013980e02972191cd9a7657bf5d12489f90f3"
+    },
+    "browser-checks.mjs": {
+      "bytes": 14077,
+      "sha256": "fddfb4819fb486e81f5b490c6bc42cc46397d962f669b4aa9b414e3667920b26"
+    },
+    "browser-policy.mjs": {
+      "bytes": 1322,
+      "sha256": "da813a0c9da43516e7ee370b702a60500df082d993d83cfd8c1f59fc40386cd2"
+    },
+    "config.py": {
+      "bytes": 14235,
+      "sha256": "ca6eb2206985d7322d74ae7f5df786342ac5b72c9414fcc99fb9801425d3afa6"
+    },
+    "dockerfiles/dialog.Dockerfile": {
+      "bytes": 977,
+      "sha256": "ec85c33ec771d399251935252f1ac679550f66526ac1630e81e83cc2db2fb4d4"
+    },
+    "dockerfiles/hubs.Dockerfile": {
+      "bytes": 424,
+      "sha256": "1455ecb90b291891d538e0c2605a2b803873d87b7d68b0a5f516ee40cd5a3c06"
+    },
+    "dockerfiles/reticulum.Dockerfile": {
+      "bytes": 521,
+      "sha256": "5515dc7b87a767eb4aa5a0bf5bb825e597ae641f50cd0e691eb4faff1d9b018b"
+    },
+    "download.py": {
+      "bytes": 1968,
+      "sha256": "b496cc410cc2e4246b994ffde0e1e2c8c3721909ca03ab9901e77fea30f6ee5c"
+    },
+    "git-config": {
+      "bytes": 115,
+      "sha256": "1f6383c4e0a40e62b81542376a602dd49ae1dcb277be26c34912c638688f11d9"
+    },
+    "pins.json": {
+      "bytes": 9597,
+      "sha256": "54e71d2b9d2dd690060030c0e4b12b46a5274c654f2a78fa00e3813431c46692"
+    },
+    "prepare.py": {
+      "bytes": 6490,
+      "sha256": "378c801b6bb4b9fa2cb127eb379077b4a13821c3384e05d7c52526cea5aa9035"
+    },
+    "readiness.py": {
+      "bytes": 1559,
+      "sha256": "010250f0aa61a73ebd1a186d3ac93cde9ab398ede71d3df0258cf4945b025325"
+    },
+    "reticulum-config.exs": {
+      "bytes": 1263,
+      "sha256": "adab03b11a1bdfb5412e0a5d6500368b36c49e5c1b98cfffe3e60d0d27805cd8"
+    },
+    "run.py": {
+      "bytes": 32716,
+      "sha256": "966a743f64039225bc46b2dc7af4c75f17717df5133eb9a8207b5c6a5c2183b0"
+    },
+    "test/browser-policy.test.mjs": {
+      "bytes": 1768,
+      "sha256": "a40fa5fbf737b8a2a941b3ea13ec5ee678dd3d831acfa3b3ce86afb7e2bdfb6d"
+    },
+    "test/runtime-checks.py": {
+      "bytes": 19938,
+      "sha256": "ae7738d2d9e788623250db2a93be15587aa5fc40ba1cb2362c6c16d7fc12dad2"
+    }
+  },
+  "pins": {
+    "schemaVersion": 1,
+    "status": "Prepared; exact-source and container compatibility not yet executed",
+    "sources": {
+      "hubs": {
+        "repository": "https://github.com/Hubs-Foundation/hubs.git",
+        "commit": "986d07a758e9d1184cb355385c6460391bd238d0",
+        "license": "MPL-2.0",
+        "files": {
+          "package.json": {
+            "bytes": 9741,
+            "sha256": "90ea536f10020d417c63d21bfb4056d6716a0ce68e3fb535d2425bf58dabc542"
+          },
+          "package-lock.json": {
+            "bytes": 791722,
+            "sha256": "f1630148e2e4c03c70bf0fbe55182ef4fc0b0506b82625b321109c2d71adf4d3"
+          },
+          "webpack.config.js": {
+            "bytes": 26865,
+            "sha256": "6ab02fa34bb25d90445a3b07516474e2aaa19f29c2885ef81b1daeb4fe7bce9e"
+          },
+          "src/naf-dialog-adapter.js": {
+            "bytes": 31885,
+            "sha256": "a509d2d7ab1fdd5793c98bc3c4577a88764eb354eda7569691fa7bb8d5c99f18"
+          }
+        }
+      },
+      "compose": {
+        "repository": "https://github.com/Hubs-Foundation/hubs-compose.git",
+        "commit": "54cc996394e715d32aa71c9cf9df4898b1ea1a57",
+        "license": "MPL-2.0",
+        "files": {
+          "docker-compose.yml": {
+            "bytes": 3881,
+            "sha256": "aaecdec125473742ff9129138281b7e878d6d470ac32b109be4fab6881a79b7a"
+          },
+          "bin/init": {
+            "bytes": 1462,
+            "sha256": "4d51fd50c243c38a77284cb88dadcafef0facb415353108b90588168c8f03e5a"
+          }
+        }
+      },
+      "reticulum": {
+        "repository": "https://github.com/Hubs-Foundation/reticulum.git",
+        "commit": "10364b17b50a6801ebceaf760188182e753860ec",
+        "license": "MPL-2.0",
+        "files": {
+          "mix.exs": {
+            "bytes": 3570,
+            "sha256": "f4057fe7c22e43785772e69743e7a13dfca033cb9c63ce411727d3f9ded0a8a4"
+          },
+          "mix.lock": {
+            "bytes": 28193,
+            "sha256": "e65796788f57bab27da75fb51a39edb88e04ad91f7824ec50e748db0f294e0ec"
+          },
+          "config/dev.exs": {
+            "bytes": 6955,
+            "sha256": "edd8f22d51744beaf4d87b7137537f41fcfde8d28a78ed7a42e7cde56fdea4d6"
+          },
+          "config/runtime.exs": {
+            "bytes": 2083,
+            "sha256": "c9c21adbe4f6e4ccc8071848b53d5890f1b1509a9ca657db6aeff1484aeede17"
+          },
+          "lib/ret_web/controllers/api/v1/hub_controller.ex": {
+            "bytes": 2703,
+            "sha256": "dd830f1b79660e272e244ee9adbb7fa16ad1ff1c6315bab78bfd1a35f54e0f0c"
+          },
+          "LICENSE": {
+            "bytes": 16725,
+            "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+          }
+        }
+      },
+      "dialog": {
+        "repository": "https://github.com/Hubs-Foundation/dialog.git",
+        "commit": "9da31c58c35fd9047ff9c52a426a230769c1a1e0",
+        "license": "MPL-2.0",
+        "files": {
+          "package.json": {
+            "bytes": 990,
+            "sha256": "a4ed4d4b16cb413a5f0e424408b7cbfac318e861e46d004528fbc3b302d4e48d"
+          },
+          "package-lock.json": {
+            "bytes": 91812,
+            "sha256": "9839c71a5162daff713d55ae0b8ed94c7ab67c424133bbae472065cc7b73b2ad"
+          },
+          "config.js": {
+            "bytes": 4040,
+            "sha256": "fbf1b48e3a3c862901dfabdb1f431f93e348314bcb108de32c06b068c770bca7"
+          },
+          "index.js": {
+            "bytes": 9002,
+            "sha256": "eadf5f32e3439195cb731a3d01ab0d5603f56b3363400527eee57121cd930337"
+          },
+          "LICENSE": {
+            "bytes": 16725,
+            "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+          }
+        }
+      }
+    },
+    "images": {
+      "observedAt": "2026-10-18T17:24:16.312726+00:00",
+      "images": {
+        "hubs": {
+          "repository": "library/node",
+          "observedTag": "22-bookworm",
+          "image": "library/node@sha256:c4d5523090a817b7aa86d2111241fdd4f66d1e27782b44160e6aa63b357ecb2d",
+          "platform": "linux/amd64",
+          "indexDigest": "sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8",
+          "manifestDigest": "sha256:c4d5523090a817b7aa86d2111241fdd4f66d1e27782b44160e6aa63b357ecb2d",
+          "manifestBytes": 2493,
+          "sourceUrl": "https://registry-1.docker.io/v2/library/node/manifests/22-bookworm"
+        },
+        "dialog": {
+          "repository": "library/node",
+          "observedTag": "18-bookworm",
+          "image": "library/node@sha256:eb29363371ee2859fad6a3c5af88d4abc6ff7d399addb13b7de3c1f11bdee6b9",
+          "platform": "linux/amd64",
+          "indexDigest": "sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783",
+          "manifestDigest": "sha256:eb29363371ee2859fad6a3c5af88d4abc6ff7d399addb13b7de3c1f11bdee6b9",
+          "manifestBytes": 2493,
+          "sourceUrl": "https://registry-1.docker.io/v2/library/node/manifests/18-bookworm"
+        },
+        "reticulum": {
+          "repository": "library/elixir",
+          "observedTag": "1.16.3-otp-25",
+          "image": "library/elixir@sha256:74bf732be6954ddb3876ac29462a3b04737e101d7b5046bdf27662b7558a173e",
+          "platform": "linux/amd64",
+          "indexDigest": "sha256:d3c1538021e234ba54cd2dc8ac6a40ed1989b8d6b1bdabfecbec1f738b6d4bf2",
+          "manifestDigest": "sha256:74bf732be6954ddb3876ac29462a3b04737e101d7b5046bdf27662b7558a173e",
+          "manifestBytes": 2499,
+          "sourceUrl": "https://registry-1.docker.io/v2/library/elixir/manifests/1.16.3-otp-25"
+        },
+        "db": {
+          "repository": "library/postgres",
+          "observedTag": "14-alpine",
+          "image": "library/postgres@sha256:7116ab7df71ef638eda416adbb92466b58a9da423f5476f2b830aae0a97b4fa5",
+          "platform": "linux/amd64",
+          "indexDigest": "sha256:4ea9e5ed06591da7ea23eb65465e8d3187fe79f4d5ec3ae976d29a33b013e77a",
+          "manifestDigest": "sha256:7116ab7df71ef638eda416adbb92466b58a9da423f5476f2b830aae0a97b4fa5",
+          "manifestBytes": 3054,
+          "sourceUrl": "https://registry-1.docker.io/v2/library/postgres/manifests/14-alpine"
+        }
+      }
+    },
+    "bootstrap": {
+      "hex": {
+        "url": "https://repo.hex.pm/installs/1.14.0/hex-2.2.1.ez",
+        "bytes": 739152,
+        "sha256": "d151bbaf3d226d604958d0bf072f923c3dd061d53847e83866f32f83a1227eed"
+      },
+      "rebar3": {
+        "url": "https://github.com/erlang/rebar3/releases/download/3.23.0/rebar3",
+        "bytes": 815571,
+        "sha256": "195591a13abf6a337aecbbc4c9b33d3684b0f3b14c76e84c007baff38db20393"
+      }
+    },
+    "wheels": {
+      "pip": {
+        "version": "23.0.1",
+        "filename": "pip-23.0.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/07/51/2c0959c5adf988c44d9e1e0d940f5b074516ecc87e96b1af25f59de9ba38/pip-23.0.1-py3-none-any.whl",
+        "bytes": 2055563,
+        "sha256": "236bcb61156d76c4b8a05821b988c7b8c35bf0da28a4b614e8d6ab5212c25c6f"
+      },
+      "setuptools": {
+        "version": "65.5.1",
+        "filename": "setuptools-65.5.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/b6/40/353c051f77ee5618adaf1fd96f4f6bae9714ed0a22c7142c01c24eb77fe4/setuptools-65.5.1-py3-none-any.whl",
+        "bytes": 1232712,
+        "sha256": "d0b9a8433464d5800cbe05094acf5c6d52a91bfac9b52bcfc4d41382be5d5d31"
+      },
+      "meson": {
+        "version": "0.61.5",
+        "filename": "meson-0.61.5-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/18/db/3feb3cfa102553b9329d0c887b3c10480381de69abf6e8629f6b32f450df/meson-0.61.5-py3-none-any.whl",
+        "bytes": 862509,
+        "sha256": "58c2ddb5f885da0e929f15d89f38d8a7d97f981f56815bcba008414f8511f59a"
+      },
+      "ninja": {
+        "version": "1.10.2.4",
+        "filename": "ninja-1.10.2.4-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/48/d2/5c106c854b0f2366679747b2a9c5377cc59e03e2b80d72e41588d143abbc/ninja-1.10.2.4-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.whl",
+        "bytes": 120718,
+        "sha256": "327c319176c5a4af21908b727b776e9f5caf275680403da632821ba071fd6296"
+      }
+    },
+    "sharedSupervisor": {
+      "automate.py": {
+        "sha256": "7bda4d2edbc8f5aeb356cf08d6a4c80b4fd50ee7a6ada238f43bda94f86a70bf"
+      },
+      "command-supervisor.py": {
+        "sha256": "8908746dd988cf39074faf2b9408d59d33a765cb9d6d3c946a14bdd0c064137b"
+      }
+    },
+    "spokeExport": {
+      "path": "evidence/2026-10-17-portable/spoke-courtyard-export.glb",
+      "bytes": 45156,
+      "sha256": "257819377db2b01cc5e98337f0f277524667ba3c24bdca1af33097890c0f2a9a",
+      "role": "Retained native Spoke export from historical F03 editor interaction; prop remains at [2,1,2]. URL and documented spawn relocation only in generated copy."
+    },
+    "fixtureMetadata": {
+      "world.json": {
+        "bytes": 20707,
+        "sha256": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812"
+      },
+      "catalog.json": {
+        "bytes": 2692,
+        "sha256": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c"
+      },
+      "scenario.json": {
+        "bytes": 3840,
+        "sha256": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d"
+      },
+      "thresholds.json": {
+        "bytes": 349,
+        "sha256": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0"
+      },
+      "workloads.json": {
+        "bytes": 2899,
+        "sha256": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1"
+      },
+      "devices.json": {
+        "bytes": 829,
+        "sha256": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932"
+      },
+      "schema-set.json": {
+        "bytes": 23133,
+        "sha256": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b"
+      },
+      "comparison.json": {
+        "bytes": 651,
+        "sha256": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+      }
+    }
+  },
+  "sharedSupervisor": {
+    "files": {
+      "automate.py": {
+        "bytes": 32517,
+        "sha256": "7bda4d2edbc8f5aeb356cf08d6a4c80b4fd50ee7a6ada238f43bda94f86a70bf"
+      },
+      "command-supervisor.py": {
+        "bytes": 7496,
+        "sha256": "8908746dd988cf39074faf2b9408d59d33a765cb9d6d3c946a14bdd0c064137b"
+      }
+    },
+    "executedFromVerifiedCopy": true
+  },
+  "cancelledSignal": null,
+  "auditFailures": [],
+  "artifacts": {},
+  "preflightPassed": false,
+  "finishedAt": "2026-10-18T17:51:36.005Z"
+}

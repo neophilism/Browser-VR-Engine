@@ -1,0 +1,65 @@
+name: F04 Hubs runtime diagnostic
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Audit-gated evaluation or evidence-only diagnostic
+        type: choice
+        required: true
+        default: diagnose
+        options: [diagnose, evaluate]
+
+permissions: {}
+
+concurrency:
+  group: f04-hubs-runtime-${{ github.ref }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  runtime:
+    name: f04-hubs-runtime
+    runs-on: ubuntu-24.04
+    timeout-minutes: 70
+    permissions:
+      contents: read
+    env:
+      CI: 'true'
+      TZ: UTC
+      F04_MODE: ${{ inputs.mode }}
+      CI_WORKFLOW_REF: ${{ github.workflow_ref }}
+      CI_WORKFLOW_SHA: ${{ github.workflow_sha }}
+    steps:
+      - name: Check out the exact dispatched commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+          ref: ${{ github.sha }}
+      - name: Set up pinned Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - name: Run the real audit-gated diagnostic
+        run: python3 -B -O scripts/ci/f04-runtime.py run
+      - name: Watchdog cleanup of this run's owned processes and containers
+        if: ${{ always() }}
+        run: python3 -B -O scripts/ci/f04-runtime.py cleanup
+      - name: Finalize bounded evidence and preserve the actual outcome
+        if: ${{ always() }}
+        run: python3 -B -O scripts/ci/f04-runtime.py finalize
+      - name: Retain exact-run success or failure evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: f04-hubs-runtime-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/f04-runtime/
+          if-no-files-found: error
+          include-hidden-files: false
+          overwrite: false
+          retention-days: 30
