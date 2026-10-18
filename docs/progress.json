@@ -47,15 +47,15 @@
       "pullRequest": null,
       "mergedCommit": null,
       "verification": [
-        "docs/evidence/F04.md"
+        "docs/evidence/F04.md",
+        "docs/evidence/F04-F05-integration.md"
       ],
       "securityReview": "docs/security/F04-F05.md",
       "deployment": null,
       "blockers": [
         "Pinned Reticulum/Dialog service deployment and complete Hubs runtime scenario have not been exercised.",
         "Full two-client ownership/media/roundtrip behavior, physical headset/audio and target-device workload evidence are missing.",
-        "The upstream Hubs dependency audit timed out; its result remains unknown.",
-        "Registry dependency metadata audits were explicitly authorized by the owner on 2026-10-18; fresh current-candidate audits, hosted checks, review and merge evidence are still required."
+        "The pinned upstream Hubs graph audit completed on 2026-10-18 and failed: 106 npm package/metavulnerability entries (14 critical, 64 high, 25 moderate, 3 low); required source patches and requalification remain."
       ],
       "nextAction": "Use the pinned reproduction toolkit to complete upstream services, dependency review and common runtime/device scenarios; retain the demonstrated editor/build results."
     },
@@ -65,18 +65,20 @@
       "pullRequest": null,
       "mergedCommit": null,
       "verification": [
-        "docs/evidence/F05.md"
+        "docs/evidence/F05.md",
+        "docs/evidence/F05-service.md",
+        "docs/evidence/F04-F05-integration.md"
       ],
-      "securityReview": "docs/security/F04-F05.md",
+      "securityReview": "docs/security/F05-service.md",
       "deployment": null,
       "blockers": [
         "The current VR control only checks support; an immersive-session entry/lifecycle path is not yet implemented in this evaluation.",
         "Physical headset/controller/audio and target-device performance evidence are missing.",
         "Full canonical-world roundtrip, multiuser ownership/physics, SFU voice/media and measured AV synchronization remain unqualified.",
         "The released VRSpace server/client presence test is a different pin from the master AssetLoader evaluation and does not qualify all VRSpace subsystems.",
-        "Registry dependency metadata audits were explicitly authorized by the owner on 2026-10-18; fresh current-candidate audits, hosted checks, review and merge evidence are still required."
+        "The required released-service CI path is implemented and reviewed, but actual full supervisor/service execution, the third graph audit and current-candidate hosted artifact verification remain required; local procfs blocked two real process methods."
       ],
-      "nextAction": "Complete the remaining shared-scenario and device evidence; retain observed browser interactions and released-server presence/reconnect results without claiming full foundation acceptance."
+      "nextAction": "Complete and verify the required released-service CI path and immersive-session follow-up, then continue full shared-scenario and physical-device qualification. The accepted PR5 tooling subset does not accept F05."
     },
     {
       "id": "F06",

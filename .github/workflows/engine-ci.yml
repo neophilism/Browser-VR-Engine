@@ -93,10 +93,54 @@ jobs:
           overwrite: false
           retention-days: 30
 
+  service:
+    name: engine-service-evaluation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    env:
+      CI: 'true'
+      TZ: UTC
+      CI_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha || '' }}
+      CI_PR_BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
+      CI_WORKFLOW_REF: ${{ github.workflow_ref }}
+      CI_WORKFLOW_SHA: ${{ github.workflow_sha }}
+    steps:
+      - name: Check out the event commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - name: Set up pinned Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - name: Set up Java 17 for the pinned released server
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: '17'
+          check-latest: false
+          overwrite-settings: false
+      - name: Execute process regressions and the real released service
+        run: python3 -B -O scripts/ci/service.py
+      - name: Retain exact-run service reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: engine-service-evaluation-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/service/
+          if-no-files-found: error
+          include-hidden-files: false
+          overwrite: false
+          retention-days: 30
+
   required:
     name: engine-required
     if: ${{ always() }}
-    needs: [checks, evaluations]
+    needs: [checks, evaluations, service]
     runs-on: ubuntu-24.04
     timeout-minutes: 2
     permissions: {}
@@ -105,4 +149,5 @@ jobs:
         env:
           CHECKS_RESULT: ${{ needs.checks.result }}
           EVALUATIONS_RESULT: ${{ needs.evaluations.result }}
-        run: test "$CHECKS_RESULT" = success && test "$EVALUATIONS_RESULT" = success
+          SERVICE_RESULT: ${{ needs.service.result }}
+        run: test "$CHECKS_RESULT" = success && test "$EVALUATIONS_RESULT" = success && test "$SERVICE_RESULT" = success

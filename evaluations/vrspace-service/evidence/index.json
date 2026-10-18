@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-17T23:05:10.943Z",
+  "kind": "released-vrspace-service-proposal-evidence-index",
+  "branchBase": "64f095d6b65530ca57a97de26f7929593032a51d",
+  "qualificationStatus": "incomplete",
+  "hostedCiAcceptance": false,
+  "currentManualEvidence": "2026-10-17-finalization-v3",
+  "currentManualSuites": {
+    "browser": {
+      "path": "2026-10-17-finalization-v3/browser-checks.json",
+      "passed": 9
+    },
+    "optimizedLauncher": {
+      "path": "2026-10-17-finalization-v3/launcher-checks.json",
+      "passed": 14
+    },
+    "deterministicFinalization": {
+      "path": "2026-10-17-finalization-v3/finalization-checks.json",
+      "passed": 15
+    }
+  },
+  "manualSourceFiles": {
+    "frontend.mjs": {
+      "bytes": 5635,
+      "sha256": "c2cc66b70efe078744472f3118ad7a0e8b7490ff9367f564d79cee77dfd73ddf"
+    },
+    "network.js": {
+      "bytes": 9005,
+      "sha256": "422ae0f7053317e32dfb9af3f102589a8218cf87fd4e8a48df6480efab0d681d"
+    },
+    "browser-checks.mjs": {
+      "bytes": 16066,
+      "sha256": "3d39c3edeb9372b3d6261e2137c4b3f18d29c27e25bc2dd6f51786e7d2a79c73"
+    },
+    "finalize-run.mjs": {
+      "bytes": 2195,
+      "sha256": "12c08c4b85665c321239fcaa446618731204ea377e89047f7475985feb83dc4f"
+    },
+    "run-clean.py": {
+      "bytes": 428,
+      "sha256": "8e4b5ceba7e294f51737cf4e69c13ce7f39ed6e1ae93c6789a69875b2e7370c7"
+    },
+    "environment.py": {
+      "bytes": 1419,
+      "sha256": "0d5968bf909e05249390f00e6e6c187be0b7a535933071fabf83fad67eb3e102"
+    },
+    "setup.py": {
+      "bytes": 1721,
+      "sha256": "1ec4248e08f5fd26f61eeb7e77f033a0332ae246e9ec2a1e2982a60357c95cfc"
+    },
+    "server-run.py": {
+      "bytes": 5098,
+      "sha256": "b6233b700b3dad193f1aad5a346aec1039105d4f7077b1c1728f06fe0179cf04"
+    },
+    "process_control.py": {
+      "bytes": 7245,
+      "sha256": "54dd8f76f85612313f45eb73a9d5b5268d847f0192ca1577d07e7be898c450f7"
+    },
+    "server.properties": {
+      "bytes": 2679,
+      "sha256": "cb1bc393a3fbddf97bf99aff931779dc16edf205f3843ebf65465959205e41d5"
+    },
+    "stop-server.py": {
+      "bytes": 266,
+      "sha256": "0b8d8acbf72549e6e54a174850b454cee2f243500fdead0fdfbb195a10deb343"
+    },
+    "observe-server.py": {
+      "bytes": 2248,
+      "sha256": "656b461970f6422b77b4164d146fcb338951ed22e2b52dcadc956031691624dc"
+    },
+    "source-pins.json": {
+      "bytes": 1376,
+      "sha256": "2cbc0249af606a85d3139be1d7e67694a29039d11913d2503278b2e8582708f1"
+    },
+    "vendor/vrspace/client.js": {
+      "bytes": 39785,
+      "sha256": "05b50269527e2f55095da07fbc767416477cd7eb788be28ac933354e8d7be867"
+    },
+    "package.json": {
+      "bytes": 236,
+      "sha256": "4ec82be323d0f588a70e6c8a131612d043fd8f04c83405cd708367bc08685713"
+    },
+    "package-lock.json": {
+      "bytes": 1885,
+      "sha256": "5be3491734cf57b12fe0d36440d88d7762977f56cffafb569485422d3217a445"
+    },
+    "test/launcher-checks.py": {
+      "bytes": 19318,
+      "sha256": "b24861a2e5a2a71c5e3b6b0137f5d99d2315b095c149f881a110cdff40f84d86"
+    },
+    "test/frontend-checks.mjs": {
+      "bytes": 4633,
+      "sha256": "d9757fd0ae7f4ddb9f16bbe503366412e003251608515a5cb09d85bb49a9994d"
+    },
+    "test/finalization-checks.mjs": {
+      "bytes": 7650,
+      "sha256": "6bd87b6ea622580a99aa99bd969420a9a67b04828412a75dc46a5cd644470090"
+    },
+    "source-files.json": {
+      "bytes": 453,
+      "sha256": "f8f5928bbec2047b9053e85ba77cdb11de8562b9a8899b71f351cb1572ec34fd"
+    }
+  },
+  "sourceArchive": {
+    "files": 55,
+    "bytes": 1125738,
+    "sha256": "dd9a4b31f107714c5478c619a64e490291cf4875e768ca1e25e49efcfbb3f892",
+    "verifiedSafePathsAndFileHashes": true,
+    "binariesDependenciesDatabasesExcluded": true
+  },
+  "currentAutomationVerifierReceipt": "automation-review/integrated-verifier-review.json",
+  "historicalEvidence": [
+    "2026-10-17-portable",
+    "2026-10-17-hardened",
+    "2026-10-17-hardened-final",
+    "automation-review/validation-receipt.json"
+  ],
+  "releaseProvenanceEvidence": "release",
+  "visualInspection": {
+    "rootInspected": "2026-10-17-finalization-v3/alpha-courtyard.png",
+    "observed": "Real courtyard canvas, visible labeled Beta capsule, remote participant count one and readable controls. Agent inspected both current screenshots.",
+    "physicalDeviceQualification": false
+  },
+  "blockers": [
+    "Fresh dependency audits require the explicitly requested npm registry destination/payload authorization.",
+    "Two actual process-supervisor test methods need a compatible Linux procfs/pidfd/subreaper host.",
+    "Full service automation has not executed and the third service dependency graph has no required hosted CI coverage.",
+    "Complete F05 world, media, identity, hardware and workload acceptance remains incomplete."
+  ],
+  "files": {
+    "2026-10-17-finalization-v3/alpha-courtyard.png": {
+      "bytes": 179929,
+      "sha256": "9ede551a70e45239d94d0914eda8101c234bc04ce4a8c29a8275a6d3c698eae4"
+    },
+    "2026-10-17-finalization-v3/beta-courtyard.png": {
+      "bytes": 156234,
+      "sha256": "2e22cd99a6108aa03c299ea7d7f4fcc8762402caa74fb2cbff343f84ae63bf78"
+    },
+    "2026-10-17-finalization-v3/browser-checks.json": {
+      "bytes": 185408,
+      "sha256": "938ad2bf2460e36fadc86a073c6b2bad8e313aee45a64077acd34a7e103f72b0"
+    },
+    "2026-10-17-finalization-v3/finalization-checks.json": {
+      "bytes": 14676,
+      "sha256": "59287ce24a4581e15a22b56475821a6246cd88d95e0c4b0c310d93e051764209"
+    },
+    "2026-10-17-finalization-v3/launcher-checks.json": {
+      "bytes": 8969,
+      "sha256": "9c07035e65961740be2fa60f623b41c8c33aa696b4814a24a542305041b5990f"
+    },
+    "2026-10-17-finalization-v3/process-snapshot.json": {
+      "bytes": 1594,
+      "sha256": "bcb21283e808d78a29614b15b9ea7f848885cbae5085012d35efe73552566dfc"
+    },
+    "2026-10-17-finalization-v3/server-run.json": {
+      "bytes": 6059,
+      "sha256": "b7abaa232d6d95d47b437bfeed7efb2e6596c011a54399c298ab80a17b4719a5"
+    },
+    "2026-10-17-finalization-v3/server.log": {
+      "bytes": 7084,
+      "sha256": "083ff0d27eb981a067145c6f10565b56268c3a2fa4a7c0a74faa0d04bc496450"
+    },
+    "2026-10-17-finalization-v3/setup-verification.json": {
+      "bytes": 166,
+      "sha256": "c8e2849ff5140ca8e88b63831d902b3b3e2fb7c8757ea2d8ff01efd3a4575602"
+    },
+    "2026-10-17-finalization-v3/stop-result.json": {
+      "bytes": 74,
+      "sha256": "d0720cea246b81e8d93830c3061e20493474323bbdf5edd0129d37b4dd3626c0"
+    },
+    "2026-10-17-finalization-v3/summary.json": {
+      "bytes": 9353,
+      "sha256": "ec42b6f114845b43fa673f0108237a3cbd602477881ff8b004bf82e0d2cf07bf"
+    },
+    "2026-10-17-hardened/launcher-checks.json": {
+      "bytes": 8099,
+      "sha256": "ba7d84920d57d14cd2e420fd893dc72a47e564b6d9c489045acfc42b9ef997e9"
+    },
+    "2026-10-17-hardened-final/alpha-courtyard.png": {
+      "bytes": 179096,
+      "sha256": "7506a140b0910aad719581fdcb43066c0ef6e52c574eea01610ef6b6bac1a69e"
+    },
+    "2026-10-17-hardened-final/beta-courtyard.png": {
+      "bytes": 156415,
+      "sha256": "b167067001dda1029cbbe1ba54f6bb837993e7c7b2f0938f7f55456630a2d2b1"
+    },
+    "2026-10-17-hardened-final/browser-checks.json": {
+      "bytes": 145363,
+      "sha256": "027587d02f6211f00b41b9c410e318235032846b1ae52653e9ce7d43ac9b4508"
+    },
+    "2026-10-17-hardened-final/launcher-checks.json": {
+      "bytes": 8774,
+      "sha256": "043c8982e172bff1c0ca465badae89e4fcd0dc6206b888e1b712bdfe699aef99"
+    },
+    "2026-10-17-hardened-final/process-snapshot.json": {
+      "bytes": 1594,
+      "sha256": "970a5f6fcc2d2fc1d00106fbdad2180c2b75079af01eb20d76dfa104f368ec66"
+    },
+    "2026-10-17-hardened-final/server-run.json": {
+      "bytes": 6059,
+      "sha256": "e6f5a546be0d29a0c7e99978d18aa651522594551d148dc3733b8a1a4175ed03"
+    },
+    "2026-10-17-hardened-final/server.log": {
+      "bytes": 7084,
+      "sha256": "e28f87d07743d79997651580cd20fb2250cbf602c1882345b4d289712dbdc9d6"
+    },
+    "2026-10-17-hardened-final/setup-verification.json": {
+      "bytes": 166,
+      "sha256": "c8e2849ff5140ca8e88b63831d902b3b3e2fb7c8757ea2d8ff01efd3a4575602"
+    },
+    "2026-10-17-hardened-final/stop-result.json": {
+      "bytes": 74,
+      "sha256": "5a054082531d45e8e20ede30d1d7c4924c7b5e35316eda90850659bb9550ee14"
+    },
+    "2026-10-17-hardened-final/summary.json": {
+      "bytes": 7743,
+      "sha256": "b71cec3fd494e4da5dde0feded85cabe87997f7a11d70826b0d1afa14aa46ef1"
+    },
+    "2026-10-17-portable/alpha-courtyard.png": {
+      "bytes": 182515,
+      "sha256": "dfdc025342a44c98d15c9382c7eaffef1d2fcd131342157acfdacaae7c165430"
+    },
+    "2026-10-17-portable/beta-courtyard.png": {
+      "bytes": 155304,
+      "sha256": "9b7f7a566e4c50f3f5dfda337f3eaef87aacdb7b4a635a517e1a627bc25e81d2"
+    },
+    "2026-10-17-portable/browser-checks.json": {
+      "bytes": 203155,
+      "sha256": "1b2ff03ca7a24b1fb18e7f80d2ec689d841b690c7910326b2ebae9b222b7bf43"
+    },
+    "2026-10-17-portable/process-snapshot.json": {
+      "bytes": 1563,
+      "sha256": "476701e39d52ee5127877028b87a659c9d9da81027cdcd95241d790683bb9638"
+    },
+    "2026-10-17-portable/server-run.json": {
+      "bytes": 5890,
+      "sha256": "863b5ed32447b3895736866b68f20eadf1b43569fd7fd6abd68ff378381cf9e2"
+    },
+    "2026-10-17-portable/server.log": {
+      "bytes": 7078,
+      "sha256": "438753dc399de4202c4e5a27408ccb2a94b189da380fe2034a592f6977414800"
+    },
+    "2026-10-17-portable/summary.json": {
+      "bytes": 6534,
+      "sha256": "4612bc2178d4de3bba10a6c400cc324f764fbbeed507dbb3016e46691d0e35f3"
+    },
+    "automation-review/integrated-verifier-review.json": {
+      "bytes": 3125,
+      "sha256": "0669cb0cb382d6ca99123762d66510356bddda205361d824fae59f29ee33fa3c"
+    },
+    "automation-review/integrated-verifier-tests.txt": {
+      "bytes": 1191,
+      "sha256": "81a1a63eacb9ca0851a4d6411f828d0d378fe334a354ec56abda20c3747f97e0"
+    },
+    "automation-review/validation-receipt.json": {
+      "bytes": 3540,
+      "sha256": "a01650e9c6e0b6db6c9d7f097bedae96c6998e5535b74e74a5fdacf9f426db7a"
+    },
+    "release/build-and-license.json": {
+      "bytes": 2061,
+      "sha256": "6917e5164aa4718c8299b35fbff9b34f399605747d5a94965f6710c1e6a03424"
+    },
+    "release/jar-inspection.json": {
+      "bytes": 15280,
+      "sha256": "5a3cd6a2bd4beef2e61427e49fd6eba84e006e3baabf115754e45f12a2184161"
+    }
+  }
+}

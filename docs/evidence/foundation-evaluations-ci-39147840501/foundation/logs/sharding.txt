@@ -1,0 +1,5 @@
+
+> browser-vr-engine-workspace@0.0.0 test:sharding
+> node scripts/test-sharding.mjs
+
+Real Node test sharding passed: named cases cover both shards; an intentional assertion fails the unsharded runner and its shard.

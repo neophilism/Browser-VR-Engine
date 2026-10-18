@@ -4,6 +4,7 @@
   "actions": {
     "actions/checkout": { "version": "v7.0.1", "sha": "3d3c42e5aac5ba805825da76410c181273ba90b1", "source": "https://github.com/actions/checkout/commit/3d3c42e5aac5ba805825da76410c181273ba90b1" },
     "actions/setup-node": { "version": "v7.1.0", "sha": "949feb2413d6458794dcd2491c4babbbce0c15c1", "source": "https://github.com/actions/setup-node/commit/949feb2413d6458794dcd2491c4babbbce0c15c1" },
-    "actions/upload-artifact": { "version": "v7.0.2", "sha": "cf430e030ddbb5b0abf93d22962f4752f3646cd9", "source": "https://github.com/actions/upload-artifact/commit/cf430e030ddbb5b0abf93d22962f4752f3646cd9" }
+    "actions/upload-artifact": { "version": "v7.0.2", "sha": "cf430e030ddbb5b0abf93d22962f4752f3646cd9", "source": "https://github.com/actions/upload-artifact/commit/cf430e030ddbb5b0abf93d22962f4752f3646cd9" },
+    "actions/setup-java": { "version": "v6.1.0", "sha": "b843ebf9b913146b38da2eaa7aeddf76074ae1ad", "verifiedOn": "2026-10-18", "source": "https://github.com/actions/setup-java/commit/b843ebf9b913146b38da2eaa7aeddf76074ae1ad" }
   }
 }

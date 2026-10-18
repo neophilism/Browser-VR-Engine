@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "scope": "Accepted foundation evaluation tooling; F04/F05 qualification remains incomplete",
+  "repository": "neophilism/Browser-VR-Engine",
+  "pullRequest": 5,
+  "headSha": "dbc55adbcecfdb83d0e53c7c2a1e0b3e6510f863",
+  "baseSha": "64c3dbfc8818c4ebaac64f94103f26815e539c96",
+  "testedSha": "b55a9132f929b17265d283a3cde1ca65a47d86a7",
+  "treeSha": "3d810a00fac0ce671cce6fc5551f1bc6282743e8",
+  "runId": 39147840501,
+  "runAttempt": 1,
+  "mergedCommit": "bec6cb1f36256c9bafd8504bb6111733c8e6f858",
+  "mergedAt": "2026-10-18T17:06:10Z",
+  "mainRunId": 39148025401,
+  "mainConclusion": "success",
+  "review": {
+    "id": 5563983238,
+    "commitId": "dbc55adbcecfdb83d0e53c7c2a1e0b3e6510f863",
+    "state": "COMMENTED",
+    "submittedAt": "2026-10-18T17:04:22Z",
+    "author": "neophilism",
+    "body": "## Separate assistant self security review\n\nReviewed final head `dbc55adbcecfdb83d0e53c7c2a1e0b3e6510f863`, tree `3d810a00fac0ce671cce6fc5551f1bc6282743e8`, against base `64c3dbfc8818c4ebaac64f94103f26815e539c96`. This is assistant self review, including a separate read-only agent examination; it is not independent human approval.\n\nNo unresolved blocking source finding identified in this evaluation-integration scope.\n\n### Boundaries reviewed\n- Minimal CI permissions, pinned actions, credential-filtered subprocesses, explicit empty npm configuration for isolated evaluation audits, and required aggregate behavior on failed/skipped/cancelled work or failed artifact upload.\n- Fresh browser command/run/time binding, exact source/build/fixture/lock fingerprints, contained and bounded artifact files, malformed audit rejection, and current head/base/tree/run/workflow identity. Historical artifacts cannot establish current-candidate acceptance.\n- Bounded untrusted GLB/glTF parsing and allocation, rejection of external resource routes, serialized imports, failed-import rollback before publication, object-URL ownership and disposal.\n- One audible WebAudio route per source, attached video/bird emitters, analysis-only paired meters with bounded messages/history, actual post-disposal input/resource checks, and no provider credentials in this integration.\n- The repaired movement observation uses real DOM focus/keydown/keyup and the running physics counter, preserves the >0.1m assertion, bounds waiting at 10 seconds and releases the key in `finally`. Its 21-step measurement is functional input evidence, not a latency/performance qualification. The previous failure's exact cause is not asserted.\n- Synthetic verifier-fixture fingerprint rebinding is in-memory test data only. It writes no historical report and is not a runtime evidence path. Existing tamper/stale-source rejection tests remain passing.\n\n### Actual verification and remaining gates\nFresh local checks passed 39 package tests, 136 tooling tests, nine F04 toolkit tests, the 68-file retained-artifact integrity check, 30 F05 tests and all 19 actual Chromium browser checks. The current local browser run was `run-Uwnp8O` (2026-10-18T17:02:13.825Z\u201317:02:27.674Z), report SHA-256 `260bed97f375dbf1fa11a7e58fe7de57d17130ef78d6eee4add591ef1c029d4d`; it retains honest local/incomplete status. Fresh root/F04/F05 audits reported zero advisories.\n\nThe first hosted run `39147325398` failed 1/19 browser checks and correctly blocked acceptance; its unchanged downloaded artifacts are retained in the repository. Final-head hosted run `39147840501`, both downloaded-artifact verifications, fresh mergeability/head/base/review checks and applicable main verification remain required before accepting integration. Full F04/F05 service, hardware and shared-world qualification remains incomplete regardless of this PR's outcome."
+  },
+  "artifacts": [
+    {
+      "id": 12144012002,
+      "name": "engine-foundation-b55a9132f929b17265d283a3cde1ca65a47d86a7-39147840501-1",
+      "bytes": 9089,
+      "sha256": "a18720c9d3834cfe14435de55827c4d43672ebb66754e37247a0217236487683"
+    },
+    {
+      "id": 12144003393,
+      "name": "engine-evaluations-b55a9132f929b17265d283a3cde1ca65a47d86a7-39147840501-1",
+      "bytes": 300866,
+      "sha256": "96f4345533217ab2337ab8dce9b4dda2c6a865d62bbc9c2dbed5c71efc18f703"
+    }
+  ],
+  "files": [
+    {
+      "path": "evaluation/browser/browser-checks.json",
+      "bytes": 273567,
+      "sha256": "0b428c3b1b41c870187de7efae89bce3e04a12f0f74667fdf77ddd904e60d042"
+    },
+    {
+      "path": "evaluation/browser/build.json",
+      "bytes": 2701,
+      "sha256": "39c91153603c4c0ae64b90b27ea19721ed672a04e7fe64d6fd273f67bc87e5b4"
+    },
+    {
+      "path": "evaluation/browser/courtyard-verified.png",
+      "bytes": 137977,
+      "sha256": "fe33c952cdc492bac5bbdf984b8e2d3f7d04943b235a75d0245b81cab83fe8b8"
+    },
+    {
+      "path": "evaluation/browser/derived-prop.glb",
+      "bytes": 1924,
+      "sha256": "0c20e6a53dff9ab6cf08681c47c30d286a664ef5155f8a1b0439f31a2ec97be0"
+    },
+    {
+      "path": "evaluation/browser/f03-before-activation.png",
+      "bytes": 122938,
+      "sha256": "33cf9cfd5f97005f37fdc20714c913f49a4bebea3f75bb5296aed6426ca96564"
+    },
+    {
+      "path": "evaluation/browser/f05-summary.json",
+      "bytes": 5715,
+      "sha256": "e3f790b14697f3f5ac43c41f0d67eafd72a1dab138a2e0e556bef7d0ecad7be7"
+    },
+    {
+      "path": "evaluation/logs/f04-audit.txt",
+      "bytes": 42,
+      "sha256": "01ab317b6b75f3a88b6242746cbaad8fc76d83db620c2a6feb562026aa7c7cb0"
+    },
+    {
+      "path": "evaluation/logs/f04-history.txt",
+      "bytes": 301,
+      "sha256": "a7655b85b2e6f6e655ef301e3f43edb69dadc325f60ac92ceff38491fe17efc2"
+    },
+    {
+      "path": "evaluation/logs/f04-install.txt",
+      "bytes": 177,
+      "sha256": "07682ed503c9feee5c6c014155254373261b931dc486f4523568e2b2aa46ace1"
+    },
+    {
+      "path": "evaluation/logs/f04-source.txt",
+      "bytes": 128,
+      "sha256": "d3235fdcc622846d6bc93974325e344cdc0cccd00be05f74c3dbb1aefd32a224"
+    },
+    {
+      "path": "evaluation/logs/f04-tests.txt",
+      "bytes": 1041,
+      "sha256": "d79b7ec0a4128b5527030e4ee882bf724418a80172552030d066ebbe28098ea5"
+    },
+    {
+      "path": "evaluation/logs/f05-audit.txt",
+      "bytes": 42,
+      "sha256": "01ab317b6b75f3a88b6242746cbaad8fc76d83db620c2a6feb562026aa7c7cb0"
+    },
+    {
+      "path": "evaluation/logs/f05-browser-install.txt",
+      "bytes": 16467,
+      "sha256": "cfe3394758ece437be9aba6125cce88bf0243837d98bec89adf884e76ee8fd02"
+    },
+    {
+      "path": "evaluation/logs/f05-browser.txt",
+      "bytes": 984,
+      "sha256": "71672005d129fab21c893b6b4c20fde1e6ec56cc856ea4b61b7fbb2ab4decbcc"
+    },
+    {
+      "path": "evaluation/logs/f05-build.txt",
+      "bytes": 172,
+      "sha256": "be1421c4244546ad68257379bebc5eeec9006db134e1dcb320952b8d94283c28"
+    },
+    {
+      "path": "evaluation/logs/f05-install.txt",
+      "bytes": 24,
+      "sha256": "a65e2ebbeefa7468ed9eaa3606113dc79f8a4566de46ff05b3577f611f8013f8"
+    },
+    {
+      "path": "evaluation/logs/f05-tests.txt",
+      "bytes": 2779,
+      "sha256": "b52d86e7feedf7225e12cc542be3983b437ff936aca94355e330f6e7f2fe6358"
+    },
+    {
+      "path": "evaluation/manifest.json",
+      "bytes": 9151,
+      "sha256": "53689023f43ad2df9d4ca44bd34198099b86066ddac4c40f9a9174b0718d3b3f"
+    },
+    {
+      "path": "evaluation/reports/f04/dependency-audit.json",
+      "bytes": 596,
+      "sha256": "bd2d26afd50f981870b6a8c045465caab2fb588142f9b14d65113330721723f1"
+    },
+    {
+      "path": "evaluation/reports/f05/dependency-audit.json",
+      "bytes": 599,
+      "sha256": "7daabf7f6cd8c0d252345a8aff0bd3b404edc2c3e56043426bd94e0d9d9cd65e"
+    },
+    {
+      "path": "foundation/logs/check.txt",
+      "bytes": 16475,
+      "sha256": "93c0f0f825eea036ff96067e6ad4db9775f9762d9a5a75661e274ae5a8d28d89"
+    },
+    {
+      "path": "foundation/logs/consumer.txt",
+      "bytes": 263,
+      "sha256": "b70373de193d55366a7509d6b5c277dc84179256043192e48a139030110c372a"
+    },
+    {
+      "path": "foundation/logs/dependencies.txt",
+      "bytes": 137,
+      "sha256": "48d456d1d29a34ea0f3f70174bb236277e220b3edc3f6ca559791c14fcc7a354"
+    },
+    {
+      "path": "foundation/logs/example.txt",
+      "bytes": 877,
+      "sha256": "2d27e68eff6e50d9447eaeaa621427bb66c8e853a2cceef6c0c055bdcc98e160"
+    },
+    {
+      "path": "foundation/logs/install.txt",
+      "bytes": 25,
+      "sha256": "34bf0571dedf29c5408f36ef7fe7829529577bba89525cd30c3f3c72ae3c0643"
+    },
+    {
+      "path": "foundation/logs/sharding.txt",
+      "bytes": 215,
+      "sha256": "476f29e3597e2f519c7c1ca07931b8f5daeaacd51ba73a62b2dd3a9e8be72d55"
+    },
+    {
+      "path": "foundation/manifest.json",
+      "bytes": 4240,
+      "sha256": "e1efc9e2babd9fffb4e0c59c328a674581f1cd73c045f234eb8785aa429eb6de"
+    },
+    {
+      "path": "foundation/reports/dependency-audit.json",
+      "bytes": 600,
+      "sha256": "82c5f5d010b7bb31c3d305ff8b5221dd516fdc52f15aef53df66cda7aaa44f9f"
+    }
+  ]
+}

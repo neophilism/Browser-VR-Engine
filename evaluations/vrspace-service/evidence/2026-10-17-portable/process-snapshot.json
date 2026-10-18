@@ -1,0 +1,83 @@
+{
+  "observedAt": "2026-10-17T22:21:16Z",
+  "process": {
+    "Name": "java",
+    "Pid": "29795",
+    "VmPeak": "6438720 kB",
+    "VmSize": "6438720 kB",
+    "VmHWM": "687816 kB",
+    "VmRSS": "687816 kB",
+    "Threads": "62"
+  },
+  "sockets": [
+    {
+      "state": "0A",
+      "local": {
+        "host": "127.0.0.1",
+        "port": 18180
+      },
+      "remote": {
+        "host": "0.0.0.0",
+        "port": 0
+      }
+    },
+    {
+      "state": "0A",
+      "local": {
+        "host": "127.0.0.1",
+        "port": 17687
+      },
+      "remote": {
+        "host": "0.0.0.0",
+        "port": 0
+      }
+    },
+    {
+      "state": "01",
+      "local": {
+        "host": "127.0.0.1",
+        "port": 17687
+      },
+      "remote": {
+        "host": "127.0.0.1",
+        "port": 60444
+      }
+    },
+    {
+      "state": "01",
+      "local": {
+        "host": "127.0.0.1",
+        "port": 44896
+      },
+      "remote": {
+        "host": "127.0.0.1",
+        "port": 17687
+      }
+    },
+    {
+      "state": "01",
+      "local": {
+        "host": "127.0.0.1",
+        "port": 60444
+      },
+      "remote": {
+        "host": "127.0.0.1",
+        "port": 17687
+      }
+    },
+    {
+      "state": "01",
+      "local": {
+        "host": "127.0.0.1",
+        "port": 17687
+      },
+      "remote": {
+        "host": "127.0.0.1",
+        "port": 44896
+      }
+    }
+  ],
+  "allOwnedListenersLoopback": true,
+  "allObservedEstablishedConnectionsLoopback": true,
+  "note": "Snapshot of this task JVM only, not a complete historical egress audit or total-memory limit."
+}

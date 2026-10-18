@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-17T22:44:06.311Z",
+  "kind": "proposed-vrspace-service-automation-overlay",
+  "status": "prepared-with-validation-blockers",
+  "overlay": "evaluations/vrspace-service",
+  "files": {
+    "automate.py": {
+      "bytes": 31683,
+      "sha256": "4c7d45e9ec712c3ad21d4c6548c8b982f381c363000a06ab790933e20797dd23"
+    },
+    "command-supervisor.py": {
+      "bytes": 7496,
+      "sha256": "8908746dd988cf39074faf2b9408d59d33a765cb9d6d3c946a14bdd0c064137b"
+    },
+    "AUTOMATION.md": {
+      "bytes": 6625,
+      "sha256": "7b5876c7a9a97f44e15d49955931d6155a8710202d0e549c879e3eff935dd8c8"
+    },
+    "test/automation-checks.py": {
+      "bytes": 12769,
+      "sha256": "8e4e526529c5dedc52c97c560af59601c92de090a7ba4a167def2c261ba976d4"
+    }
+  },
+  "changesOutsideOverlay": false,
+  "committed": false,
+  "hostedCiAcceptance": false,
+  "liveProcessQualification": false,
+  "fullAutomationExecuted": false,
+  "syntax": {
+    "files": 3,
+    "valid": true,
+    "bareAsserts": 0
+  },
+  "tests": {
+    "invocation": "python3 -B -O test/automation-checks.py followed by the seven selected AutomationChecks methods",
+    "result": "passed",
+    "methods": [
+      "test_synthetic_browser_binding_accepts_without_execution_claim",
+      "test_browser_failures_remain_failures_after_consistent_counts",
+      "test_stdout_must_identify_exactly_one_fresh_browser_run",
+      "test_audit_requires_consistent_registry_entries_and_success",
+      "test_screenshot_checks_dimensions_checksums_complete_rows",
+      "test_source_snapshot_includes_new_worklet_and_rejects_file_escape",
+      "test_missing_and_symlinked_output_directories_are_rejected"
+    ],
+    "passedMethods": 7,
+    "failedMethods": 0,
+    "recordedDurationSeconds": 0.031,
+    "evidence": "Observed exec output chunk 8a63e0; these are verifier/source/image/audit-result/path tests, not an audit or a live service run."
+  },
+  "blockedProcessTests": {
+    "methods": [
+      "test_real_command_exit_spawn_timeout_and_cancel_fail_closed",
+      "test_exited_leader_and_detached_term_ignoring_descendants_are_reaped"
+    ],
+    "state": "blocked before command creation by prerequisites; no passing lifecycle claim",
+    "observations": [
+      "Local default and elevated attempts exposed different os.getpid() and /proc/self/stat PIDs.",
+      "A separate aligned-runtime attempt by asset_research failed because /proc/<pid>/task/<pid>/children was absent."
+    ],
+    "priorResultsReused": false
+  },
+  "prerequisites": [
+    "Linux with procfs mounted in the current PID namespace",
+    "Readable /proc/<pid>/task/<pid>/children support",
+    "PR_SET_CHILD_SUBREAPER, Python pidfd_open and pidfd_send_signal support",
+    "Python >=3.11, Node 24/npm, Java 17, curl",
+    "Corrected sibling F05 build with all manifest outputs, matching installed Playwright browser and frozen F03 fixtures"
+  ],
+  "blockers": [
+    "Run all nine test methods on a host satisfying the Linux process prerequisites before trusting the new supervisor.",
+    "Automatic approval review rejected repository-derived dependency inventory transmission to registry.npmjs.org. Specific destination/payload authorization is outstanding; no new audit attempt was made.",
+    "After audit authorization and final sibling integration, execute and retain the full nine-browser-check service automation run."
+  ],
+  "scope": "Only the proposed next service-automation change. No workflow, current CI candidate, upstream service source, GitHub, provider or XLR8 edits."
+}

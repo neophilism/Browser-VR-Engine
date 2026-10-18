@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "scopes": [
     { "id": "foundation", "status": "required", "activationCard": "F02", "reason": "Real build, unit, package-consumer, policy and evidence tests exist." },
-    { "id": "integration", "status": "not_applicable", "activationCard": "F08", "reason": "No control API, database, queue or object-storage service exists yet." },
-    { "id": "browser", "status": "required", "activationCard": "F04", "reason": "Isolated F05 real-browser and F04 evaluation-toolkit checks have a required runner; full candidate services, target hardware and headset qualification remain separate and incomplete." },
+    { "id": "integration", "status": "not_applicable", "activationCard": "F08", "reason": "No engine control API, durable engine database, queue or object-storage service exists yet. The isolated upstream release probe has its own required service-evaluation job and does not implement F08." },
+    { "id": "browser", "status": "required", "activationCard": "F04", "reason": "F05 rendering and F04 toolkit checks have a required evaluation job. A separate required service job covers the released VRSpace pair and all supervisor tests; full candidate semantics, target hardware and headset qualification remain incomplete." },
     { "id": "migration", "status": "not_applicable", "activationCard": "F08", "reason": "No durable database schema or migration exists yet." }
   ]
 }
