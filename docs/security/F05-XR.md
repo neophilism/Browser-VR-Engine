@@ -22,12 +22,23 @@ The first main run after PR6 really failed the bird check; its unchanged artifac
 
 Fresh desktop evidence and source hashes were inspected separately from the author. The repaired runner hash is `ffe27331ea779a2b8e81ca17cbce34359c8dc52b12541c89e67c5699b1c45850`. No remaining source blocker was found in this correction. Current hosted results and subsequent main verification remain necessary; the local pass does not erase the failed main run.
 
+## Service-startup correction
+
+The first PR7 run passed the desktop/XR subsets but exposed a real service-startup race: general `busy` status included a pending native capability query and blocked Alpha's initial placement. The complete failed run remains in `docs/evidence/xr-integration-failure-39152832852/`. The correction separates desktop-pose ownership from preparation rather than changing the service's checks or timing.
+
+Review verified that entry sets ownership synchronously before hooks and the native request, and keeps it through pending/cancelled grants, active rendering, failed/unconfirmed native end and disposal. A separately found synchronous pre-request hook failure now clears ownership before publishing an error, so no nonexistent session can permanently lock desktop placement. Deterministic cases assert zero requests after that failure and successful retry. The native-support hold in the browser is test instrumentation; it does not substitute a device or count as headset evidence.
+
+The old-runtime negative control rejected both Alpha/Beta placements during preparation. Final local evidence is 55/55 cases, 19/19 desktop and 10/10 emulated XR with unchanged required check counts, complete source inventories and zero late diagnostics. Separate source reviews found no remaining blocker in the five-file correction. The real released-service run, current-head review, artifact verification and subsequent main checks remain required.
+
 ## Reviewed source identities
 
 | Source | SHA-256 |
 | --- | --- |
-| `src/main.js` | `6477331950d33d2574d4672ca7dced7f1ebfcaabecf399aa42828f4812c9f01c` |
-| `src/xr-session.js` | `234a4f478a8f984b2dd4b02450604193c54d58a3554e96cc23d7ee0e768d182f` |
+| `src/main.js` | `e6bbf4e37463959a687810ff0a713c524a40815188dbe5a9a050ea37a1fdbc9b` |
+| `src/xr-session.js` | `fefeae1a64899d6552a7420e09b388c88d2b59dfbd75e05fc5f2ffb126972c64` |
+| `browser-checks.mjs` | `db8caa0a2773af74f6c5b32c42c3f49c60c9980e9b5bcc0ce78c9d10f6bfbd5c` |
+| `test/xr-browser-checks.mjs` | `352baf7b329a11429821e15a67dd9b88876fcba93b05d31c87e6cc124ec10305` |
+| `test/xr-session.test.mjs` | `fdf726cf251d04c09030805f3214f35652187f43629d6586a9312c7409ec3d55` |
 | `test/browser-finalize.mjs` | `0c48a4c12bbf0fa425ccebd89fc5267c099acce2c4091e25e2e62e0ecaf0e3a3` |
 | `scripts/ci/evaluate.mjs` | `e75fac3f4caf94979441966e268e9f9d1fcdc0708be9425574bfd90dd2c5ca29` |
 | `scripts/ci/evaluation-evidence.mjs` | `038dd622cc8ead442028115a2b61efd0f18679cf5b7b45397eb716f3c21a3b66` |

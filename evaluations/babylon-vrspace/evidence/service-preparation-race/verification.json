@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "scope": "local regression evidence; not hosted acceptance or physical qualification",
+  "baseCommit": "18418567ea1edeb4758c5e1ec845499f9acea4e3",
+  "verifiedAt": "2026-10-18T18:22:55.358Z",
+  "sourceInventory": {
+    "buildInputs": 12,
+    "sourceFingerprints": 23,
+    "outputs": 3
+  },
+  "changedSources": {
+    "src/main.js": {
+      "bytes": 48051,
+      "sha256": "e6bbf4e37463959a687810ff0a713c524a40815188dbe5a9a050ea37a1fdbc9b"
+    },
+    "src/xr-session.js": {
+      "bytes": 11809,
+      "sha256": "fefeae1a64899d6552a7420e09b388c88d2b59dfbd75e05fc5f2ffb126972c64"
+    },
+    "browser-checks.mjs": {
+      "bytes": 34960,
+      "sha256": "db8caa0a2773af74f6c5b32c42c3f49c60c9980e9b5bcc0ce78c9d10f6bfbd5c"
+    },
+    "test/xr-session.test.mjs": {
+      "bytes": 22143,
+      "sha256": "fdf726cf251d04c09030805f3214f35652187f43629d6586a9312c7409ec3d55"
+    },
+    "test/xr-browser-checks.mjs": {
+      "bytes": 21113,
+      "sha256": "352baf7b329a11429821e15a67dd9b88876fcba93b05d31c87e6cc124ec10305"
+    }
+  },
+  "sourceAndBuildComparison": "All 23 source fingerprints, 12 build inputs and three output hashes match both final reports and the checked local files.",
+  "commands": {
+    "build": {
+      "command": "node run.mjs build",
+      "exitCode": 0
+    },
+    "unit": {
+      "command": "node run.mjs test-server",
+      "exitCode": 0,
+      "registeredTests": 55,
+      "passed": 55,
+      "failed": 0,
+      "skipped": 0,
+      "log": "unit-tests.txt",
+      "sha256": "0bcecb63f7ddee5647995ccb1bf4c493f526e33b0d90f9fc5dc15e2a548c850c"
+    },
+    "desktop": {
+      "command": "node run.mjs test",
+      "exitCode": 0,
+      "run": "run-BmvAM7",
+      "report": "desktop/browser-checks.json",
+      "sha256": "7543e09394b692e3cdf08f3c0cde089de17f148ba15f4ad147cf56e5edd560f8",
+      "startedAt": "2026-10-18T18:21:22.866Z",
+      "completedAt": "2026-10-18T18:21:38.012Z",
+      "counts": {
+        "passed": 19,
+        "failed": 0,
+        "pageErrors": 0,
+        "failedRequests": 0,
+        "logOverflow": 0
+      },
+      "method": "real-browser"
+    },
+    "xr": {
+      "command": "node run.mjs test-xr",
+      "exitCode": 0,
+      "run": "run-emwe5u",
+      "report": "xr/xr-browser-checks.json",
+      "sha256": "8a82ec87b5b7c0358a853c1f6b86763d8ea40b5ae4f10b6ef3ab92954e192534",
+      "startedAt": "2026-10-18T18:21:50.201Z",
+      "completedAt": "2026-10-18T18:22:16.296Z",
+      "counts": {
+        "passed": 10,
+        "failed": 0,
+        "pageErrors": 0,
+        "failedRequests": 0,
+        "logOverflow": 0
+      },
+      "method": "emulated-browser"
+    }
+  },
+  "negativeControl": {
+    "run": "run-yHf1aX",
+    "exitCode": 1,
+    "report": "negative-control/browser-checks.json",
+    "sha256": "ea562d31cbd0642e9c00e07410b7686ca20a2a950236fe6c5391360cdaf62cca",
+    "counts": {
+      "passed": 18,
+      "failed": 1,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "logOverflow": 0
+    },
+    "scope": "Original PR7 runtime; first revision of the controlled native capability hold. Both actual service spawn positions reproduce the guard rejection. This report is historical, not current-source verification."
+  },
+  "history": {
+    "directory": "before-hook-cleanup-review",
+    "unitTests": 54,
+    "desktopRun": "run-ZEHDIc",
+    "xrRun": "run-lHF01t",
+    "scope": "Passed before independent review found synchronous pre-request hook ownership cleanup; preserved unchanged and superseded by current reports."
+  },
+  "review": {
+    "self": "Reviewed source, installed Babylon helper timing, actual input/ownership paths, no new trust endpoints or credentials, no changes to service/CI/gates.",
+    "independent": "asset_research reviewed the five-file diff and pre-request cleanup delta; no remaining blocker. No tests were executed by that reviewer.",
+    "baselineCredentialScan": "passed; filename/pattern baseline only",
+    "diffWhitespace": "passed"
+  },
+  "limitations": {
+    "physicalHeadset": false,
+    "physicalAudio": false,
+    "localServiceRerun": false,
+    "hostedServiceVerification": "Required on next exact candidate; the original PR7 failed service capture remains failed.",
+    "fullFoundationQualification": "incomplete",
+    "audit": "No dependency graph change or new audit request in this patch."
+  },
+  "executionNote": "An initial local unit invocation after source edits correctly rejected the still-old compiled bundle as stale (53/54). Rebuild preceded the retained passing runs; that invocation is not acceptance evidence."
+}

@@ -68,8 +68,12 @@ export class XRSessionController {
   }
   get active() { return this.session !== null; }
   get busy() { return !!this.prepareTask || !!this.entryTask || !!this.endTask || this.disposing; }
+  // A support query/helper preparation does not own the desktop pose. Entry
+  // takes ownership synchronously, before beforeEnter or requestSession runs.
+  get blocksDesktopPose() { return this.active || !!this.operation || !!this.entryTask || !!this.endTask || this.disposing || this.disposed; }
   inspect() {
     return { phase: this.phase, supported: this.supported, active: this.active, busy: this.busy,
+      blocksDesktopPose: this.blocksDesktopPose,
       visibility: this.visibility, frames: this.frames, referenceSpace: this.active ? 'local-floor' : null,
       error: this.error, qualification: 'physical-device-evidence-pending' };
   }
@@ -119,8 +123,15 @@ export class XRSessionController {
     this.error = null;
     const operation = { cancelled: false };
     this.operation = operation;
-    this.hooks.beforeEnter?.();
-    this.setPhase('requesting');
+    try {
+      this.hooks.beforeEnter?.();
+      this.setPhase('requesting');
+    } catch (error) {
+      // No native request or entry task owns this failed preparation hook.
+      if (this.operation === operation) this.operation = null;
+      this.fail(error);
+      return Promise.resolve(false);
+    }
     // No capability probe or asynchronous preparation intervenes between this
     // user action and Babylon's browser requestSession call.
     const { helper, renderTarget } = this.experience;

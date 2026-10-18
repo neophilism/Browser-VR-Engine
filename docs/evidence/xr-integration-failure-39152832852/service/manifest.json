@@ -1,0 +1,1372 @@
+{
+  "schemaVersion": 1,
+  "kind": "engine-service-evaluation",
+  "mode": "hosted",
+  "complete": false,
+  "qualificationStatus": "incomplete",
+  "runStatus": "failed",
+  "scope": "Released VRSpace pair: process regressions, presence/pose/reconnect and cleanup only; no full engine, auth, authority, SFU/media, physical-XR or capacity acceptance.",
+  "startedAt": "2026-10-18T18:09:19.442Z",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-O",
+        "test/report-automation-checks.py"
+      ],
+      "cwd": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service",
+      "startedAt": "2026-10-18T18:09:19.509Z",
+      "outcome": "passed",
+      "exitCode": 0,
+      "processEvidence": "automation-methods-h047ag0l.process.json",
+      "supervisorShutdown": {
+        "terminateSent": false,
+        "killSent": false
+      },
+      "supervisorExitCode": 0,
+      "supervision": {
+        "schemaVersion": 1,
+        "argv": [
+          "python3",
+          "-B",
+          "-O",
+          "test/report-automation-checks.py"
+        ],
+        "supervisorPid": 2532,
+        "startedAt": "2026-10-18T18:09:19.715Z",
+        "outcome": "passed",
+        "exitCode": 0,
+        "requestedSignal": null,
+        "commandPid": 2533,
+        "shutdown": {
+          "needed": false,
+          "terminateSent": [],
+          "killSent": [],
+          "stopped": true
+        },
+        "finishedAt": "2026-10-18T18:09:23.959Z"
+      },
+      "finishedAt": "2026-10-18T18:09:24.017Z",
+      "durationMs": 4507,
+      "id": "automation-methods"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-O",
+        "test/launcher-checks.py"
+      ],
+      "cwd": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service",
+      "startedAt": "2026-10-18T18:09:24.018Z",
+      "outcome": "passed",
+      "exitCode": 0,
+      "processEvidence": "launcher-regressions-od4rg20w.process.json",
+      "supervisorShutdown": {
+        "terminateSent": false,
+        "killSent": false
+      },
+      "supervisorExitCode": 0,
+      "supervision": {
+        "schemaVersion": 1,
+        "argv": [
+          "python3",
+          "-B",
+          "-O",
+          "test/launcher-checks.py"
+        ],
+        "supervisorPid": 2557,
+        "startedAt": "2026-10-18T18:09:24.206Z",
+        "outcome": "passed",
+        "exitCode": 0,
+        "requestedSignal": null,
+        "commandPid": 2558,
+        "shutdown": {
+          "needed": false,
+          "terminateSent": [],
+          "killSent": [],
+          "stopped": true
+        },
+        "finishedAt": "2026-10-18T18:09:56.364Z"
+      },
+      "finishedAt": "2026-10-18T18:09:56.376Z",
+      "durationMs": 32358,
+      "id": "launcher-regressions"
+    },
+    {
+      "argv": [
+        "node",
+        "test/finalization-checks.mjs"
+      ],
+      "cwd": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service",
+      "startedAt": "2026-10-18T18:09:56.378Z",
+      "outcome": "passed",
+      "exitCode": 0,
+      "processEvidence": "finalization-regressions-m899j6qm.process.json",
+      "supervisorShutdown": {
+        "terminateSent": false,
+        "killSent": false
+      },
+      "supervisorExitCode": 0,
+      "supervision": {
+        "schemaVersion": 1,
+        "argv": [
+          "node",
+          "test/finalization-checks.mjs"
+        ],
+        "supervisorPid": 2625,
+        "startedAt": "2026-10-18T18:09:56.556Z",
+        "outcome": "passed",
+        "exitCode": 0,
+        "requestedSignal": null,
+        "commandPid": 2626,
+        "shutdown": {
+          "needed": false,
+          "terminateSent": [],
+          "killSent": [],
+          "stopped": true
+        },
+        "finishedAt": "2026-10-18T18:09:57.084Z"
+      },
+      "finishedAt": "2026-10-18T18:09:57.180Z",
+      "durationMs": 802,
+      "id": "finalization-regressions"
+    },
+    {
+      "argv": [
+        "node",
+        "--version"
+      ],
+      "cwd": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service",
+      "startedAt": "2026-10-18T18:09:57.182Z",
+      "outcome": "passed",
+      "exitCode": 0,
+      "processEvidence": "node-version-e946mid6.process.json",
+      "supervisorShutdown": {
+        "terminateSent": false,
+        "killSent": false
+      },
+      "supervisorExitCode": 0,
+      "supervision": {
+        "schemaVersion": 1,
+        "argv": [
+          "node",
+          "--version"
+        ],
+        "supervisorPid": 2742,
+        "startedAt": "2026-10-18T18:09:57.371Z",
+        "outcome": "passed",
+        "exitCode": 0,
+        "requestedSignal": null,
+        "commandPid": 2743,
+        "shutdown": {
+          "needed": false,
+          "terminateSent": [],
+          "killSent": [],
+          "stopped": true
+        },
+        "finishedAt": "2026-10-18T18:09:57.397Z"
+      },
+      "finishedAt": "2026-10-18T18:09:57.483Z",
+      "durationMs": 302,
+      "id": "node-version"
+    },
+    {
+      "argv": [
+        "java",
+        "-version"
+      ],
+      "cwd": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service",
+      "startedAt": "2026-10-18T18:09:57.485Z",
+      "outcome": "passed",
+      "exitCode": 0,
+      "processEvidence": "java-version-o0ix93mp.process.json",
+      "supervisorShutdown": {
+        "terminateSent": false,
+        "killSent": false
+      },
+      "supervisorExitCode": 0,
+      "supervision": {
+        "schemaVersion": 1,
+        "argv": [
+          "java",
+          "-version"
+        ],
+        "supervisorPid": 2744,
+        "startedAt": "2026-10-18T18:09:57.663Z",
+        "outcome": "passed",
+        "exitCode": 0,
+        "requestedSignal": null,
+        "commandPid": 2745,
+        "shutdown": {
+          "needed": false,
+          "terminateSent": [],
+          "killSent": [],
+          "stopped": true
+        },
+        "finishedAt": "2026-10-18T18:09:57.790Z"
+      },
+      "finishedAt": "2026-10-18T18:09:57.887Z",
+      "durationMs": 402,
+      "id": "java-version"
+    },
+    {
+      "argv": [
+        "npm",
+        "--version"
+      ],
+      "cwd": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service",
+      "startedAt": "2026-10-18T18:09:57.888Z",
+      "outcome": "passed",
+      "exitCode": 0,
+      "processEvidence": "npm-version-01s_dm37.process.json",
+      "supervisorShutdown": {
+        "terminateSent": false,
+        "killSent": false
+      },
+      "supervisorExitCode": 0,
+      "supervision": {
+        "schemaVersion": 1,
+        "argv": [
+          "npm",
+          "--version"
+        ],
+        "supervisorPid": 2763,
+        "startedAt": "2026-10-18T18:09:58.069Z",
+        "outcome": "passed",
+        "exitCode": 0,
+        "requestedSignal": null,
+        "commandPid": 2764,
+        "shutdown": {
+          "needed": false,
+          "terminateSent": [],
+          "killSent": [],
+          "stopped": true
+        },
+        "finishedAt": "2026-10-18T18:09:58.221Z"
+      },
+      "finishedAt": "2026-10-18T18:09:58.290Z",
+      "durationMs": 402,
+      "id": "npm-version"
+    },
+    {
+      "argv": [
+        "node",
+        "run.mjs",
+        "install"
+      ],
+      "cwd": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/babylon-vrspace",
+      "startedAt": "2026-10-18T18:09:58.292Z",
+      "outcome": "passed",
+      "exitCode": 0,
+      "processEvidence": "f05-install-9whrn597.process.json",
+      "supervisorShutdown": {
+        "terminateSent": false,
+        "killSent": false
+      },
+      "supervisorExitCode": 0,
+      "supervision": {
+        "schemaVersion": 1,
+        "argv": [
+          "node",
+          "run.mjs",
+          "install"
+        ],
+        "supervisorPid": 2775,
+        "startedAt": "2026-10-18T18:09:58.467Z",
+        "outcome": "passed",
+        "exitCode": 0,
+        "requestedSignal": null,
+        "commandPid": 2776,
+        "shutdown": {
+          "needed": false,
+          "terminateSent": [],
+          "killSent": [],
+          "stopped": true
+        },
+        "finishedAt": "2026-10-18T18:10:03.743Z"
+      },
+      "finishedAt": "2026-10-18T18:10:03.801Z",
+      "durationMs": 5510,
+      "id": "f05-install"
+    },
+    {
+      "argv": [
+        "node",
+        "run.mjs",
+        "build"
+      ],
+      "cwd": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/babylon-vrspace",
+      "startedAt": "2026-10-18T18:10:03.803Z",
+      "outcome": "passed",
+      "exitCode": 0,
+      "processEvidence": "f05-build-_6bbkn0o.process.json",
+      "supervisorShutdown": {
+        "terminateSent": false,
+        "killSent": false
+      },
+      "supervisorExitCode": 0,
+      "supervision": {
+        "schemaVersion": 1,
+        "argv": [
+          "node",
+          "run.mjs",
+          "build"
+        ],
+        "supervisorPid": 2802,
+        "startedAt": "2026-10-18T18:10:03.984Z",
+        "outcome": "passed",
+        "exitCode": 0,
+        "requestedSignal": null,
+        "commandPid": 2803,
+        "shutdown": {
+          "needed": false,
+          "terminateSent": [],
+          "killSent": [],
+          "stopped": true
+        },
+        "finishedAt": "2026-10-18T18:10:06.332Z"
+      },
+      "finishedAt": "2026-10-18T18:10:06.410Z",
+      "durationMs": 2607,
+      "id": "f05-build"
+    },
+    {
+      "argv": [
+        "node",
+        "node_modules/playwright/cli.js",
+        "install",
+        "--with-deps",
+        "chromium"
+      ],
+      "cwd": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/babylon-vrspace",
+      "startedAt": "2026-10-18T18:10:06.412Z",
+      "outcome": "passed",
+      "exitCode": 0,
+      "processEvidence": "browser-install-3pk3cu2b.process.json",
+      "supervisorShutdown": {
+        "terminateSent": false,
+        "killSent": false
+      },
+      "supervisorExitCode": 0,
+      "supervision": {
+        "schemaVersion": 1,
+        "argv": [
+          "node",
+          "node_modules/playwright/cli.js",
+          "install",
+          "--with-deps",
+          "chromium"
+        ],
+        "supervisorPid": 2834,
+        "startedAt": "2026-10-18T18:10:06.592Z",
+        "outcome": "passed",
+        "exitCode": 0,
+        "requestedSignal": null,
+        "commandPid": 2835,
+        "shutdown": {
+          "needed": false,
+          "terminateSent": [],
+          "killSent": [],
+          "stopped": true
+        },
+        "finishedAt": "2026-10-18T18:10:32.293Z"
+      },
+      "finishedAt": "2026-10-18T18:10:32.367Z",
+      "durationMs": 25954,
+      "id": "browser-install"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-O",
+        "automate.py"
+      ],
+      "cwd": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service",
+      "startedAt": "2026-10-18T18:10:32.426Z",
+      "outcome": "failed",
+      "exitCode": 1,
+      "processEvidence": "full-automation-ep0q4ghd.process.json",
+      "supervisorShutdown": {
+        "terminateSent": false,
+        "killSent": false
+      },
+      "supervisorExitCode": 1,
+      "supervision": {
+        "schemaVersion": 1,
+        "argv": [
+          "python3",
+          "-B",
+          "-O",
+          "automate.py"
+        ],
+        "supervisorPid": 3453,
+        "startedAt": "2026-10-18T18:10:32.602Z",
+        "outcome": "failed",
+        "exitCode": 1,
+        "requestedSignal": null,
+        "commandPid": 3454,
+        "shutdown": {
+          "needed": false,
+          "terminateSent": [],
+          "killSent": [],
+          "stopped": true
+        },
+        "finishedAt": "2026-10-18T18:12:14.916Z"
+      },
+      "error": "RuntimeError: Stage failed or required descendant cleanup",
+      "finishedAt": "2026-10-18T18:12:14.972Z",
+      "durationMs": 102546,
+      "id": "full-automation"
+    }
+  ],
+  "failures": [
+    "RuntimeError: Full automation did not pass its limited local contract"
+  ],
+  "files": [
+    {
+      "path": "automation/browser/browser-checks.json",
+      "bytes": 21663,
+      "sha256": "516afed52f114f052afe5e5dfec46e285181b939e480ae4a36b9339c8e6c6153"
+    },
+    {
+      "path": "automation/browser/failure-0.png",
+      "bytes": 181769,
+      "sha256": "9e96762dd7a708f824aba394a599efe0b965d49807878c9cc72f4c8941b7e472"
+    },
+    {
+      "path": "automation/browser/failure-1.png",
+      "bytes": 163556,
+      "sha256": "e9e523e1feff259b597771efb72c1b522ffa905267c74012aba7d714a54e5ae6"
+    },
+    {
+      "path": "automation/logs/node-version-_js3bp2n.process.json",
+      "bytes": 378,
+      "sha256": "952c37924d60f7b0eda450507db940b65b140ba0733e0054bb800a3fcd591218"
+    },
+    {
+      "path": "automation/logs/node-version.txt",
+      "bytes": 9,
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
+    },
+    {
+      "path": "automation/logs/owned-network-snapshot-jqdfylco.process.json",
+      "bytes": 398,
+      "sha256": "e8b8810433ed10fa65fea4ffa926deb8138914f44960241551a0e75ca30c8221"
+    },
+    {
+      "path": "automation/logs/owned-network-snapshot.txt",
+      "bytes": 1216,
+      "sha256": "85bca2e0b5539d551907283c026620cd49e255a4423f8a7cc718e1b8dc794588"
+    },
+    {
+      "path": "automation/logs/release-download-verify-9tqlld9k.process.json",
+      "bytes": 389,
+      "sha256": "92b568d6bb53017bdf7d375444cda4c260eef527f44aecadc42cabbe77642e26"
+    },
+    {
+      "path": "automation/logs/release-download-verify.txt",
+      "bytes": 166,
+      "sha256": "c8e2849ff5140ca8e88b63831d902b3b3e2fb7c8757ea2d8ff01efd3a4575602"
+    },
+    {
+      "path": "automation/logs/server-launcher.txt",
+      "bytes": 414,
+      "sha256": "d4b98c5be154f247c8ca035fefc0178f6c0946f5cc3f35fc91cba4fd6faba619"
+    },
+    {
+      "path": "automation/logs/service-browser-n6l7t92q.process.json",
+      "bytes": 387,
+      "sha256": "9370e608356f47bca2bc9455a2ee82735efe4fe4246869251cd307eb06150b80"
+    },
+    {
+      "path": "automation/logs/service-browser.txt",
+      "bytes": 218,
+      "sha256": "77f536935ba84deb4bf22a8ebd69c966a77cb222e3a936b52c984f25e315a85a"
+    },
+    {
+      "path": "automation/logs/toolkit-audit-57n94sk6.process.json",
+      "bytes": 786,
+      "sha256": "a832da0b887e68dc4f285ac9506c2612b684b94249dcd8395ef6046de00417ca"
+    },
+    {
+      "path": "automation/logs/toolkit-audit.txt",
+      "bytes": 358,
+      "sha256": "a01267e7d3023badd5d4b64f1d798707912523aeba3545b611eaaa83ee261353"
+    },
+    {
+      "path": "automation/logs/toolkit-install-kyzjr4wp.process.json",
+      "bytes": 802,
+      "sha256": "784ebc070fdab22a4d2272ccf4d4e0a8bef7483d39098e4fd0ac6076fb074bd9"
+    },
+    {
+      "path": "automation/logs/toolkit-install.txt",
+      "bytes": 236,
+      "sha256": "fb0668708182deda159ad4cf270872f8f2dc8ad94fff658e2d156f5f906bf385"
+    },
+    {
+      "path": "automation/manifest.json",
+      "bytes": 29496,
+      "sha256": "46438d34e6669dda0c167ed5575ec69feb6ec04831f42c4e024c1e15f6f67d2f"
+    },
+    {
+      "path": "automation/reports/dependency-audit.json",
+      "bytes": 358,
+      "sha256": "a01267e7d3023badd5d4b64f1d798707912523aeba3545b611eaaa83ee261353"
+    },
+    {
+      "path": "automation/server/process-snapshot.json",
+      "bytes": 1216,
+      "sha256": "85bca2e0b5539d551907283c026620cd49e255a4423f8a7cc718e1b8dc794588"
+    },
+    {
+      "path": "automation/server/run.json",
+      "bytes": 5994,
+      "sha256": "f579270d5ae74940912e206f2e6fb2c640bec69a84859c1fe8fc08c93b2f556b"
+    },
+    {
+      "path": "automation/server/server.log",
+      "bytes": 4823,
+      "sha256": "9af57bb7fd127c3e23ae44399d9d2b0ef3ac8bdaed244451002117b6aa7b8a73"
+    },
+    {
+      "path": "build.json",
+      "bytes": 2840,
+      "sha256": "ec0eb0bc14c65cf1c675d7a25e26509e96879f127d36dc4fb8576fde5143d1d9"
+    },
+    {
+      "path": "logs/automation-methods-h047ag0l.process.json",
+      "bytes": 424,
+      "sha256": "429605de9ddbfe1b82e8a6fb3df4d7696d0861e9386111476c50df1069fada41"
+    },
+    {
+      "path": "logs/automation-methods.txt",
+      "bytes": 1739,
+      "sha256": "88a6e0cd6ae2f75e9dea27d8554a5a637e7a27efe25a8ea037c0d11a01118ebe"
+    },
+    {
+      "path": "logs/browser-install-3pk3cu2b.process.json",
+      "bytes": 449,
+      "sha256": "80bd14474571e28b23011b5bf16173c87de8007a6fb6ac4d9643cdb8265ea261"
+    },
+    {
+      "path": "logs/browser-install.txt",
+      "bytes": 16500,
+      "sha256": "077d2c8b6710738cc3d7ec6ed73a768dd208169a09d727d434248d161cee4c62"
+    },
+    {
+      "path": "logs/f05-build-_6bbkn0o.process.json",
+      "bytes": 389,
+      "sha256": "6be9b0d183dec7f12a0fff3cc5749c2ead275a23cfeafb30c46d4d37f767fd3d"
+    },
+    {
+      "path": "logs/f05-build.txt",
+      "bytes": 172,
+      "sha256": "a0caee9722315b863a18e6a49687b2ded700112d48247af5f19866ec3945e568"
+    },
+    {
+      "path": "logs/f05-install-9whrn597.process.json",
+      "bytes": 391,
+      "sha256": "6148455c637a97980afcabf0b3653f3833efcad25eaa0da5ea2cd2c699f643c4"
+    },
+    {
+      "path": "logs/f05-install.txt",
+      "bytes": 25,
+      "sha256": "38f77027a2deee3d2841ac3964f426617b8a628705e10d66c4b8b20210863c78"
+    },
+    {
+      "path": "logs/finalization-regressions-m899j6qm.process.json",
+      "bytes": 397,
+      "sha256": "fe6a9e8f3a8cdbab2e7dc6ccf8af5f88f2241af88e05277c9de148ea071cf743"
+    },
+    {
+      "path": "logs/finalization-regressions.txt",
+      "bytes": 763,
+      "sha256": "dff273424bcbb50773e3307c1fb02481669e2eeb9cb9e8ef96c0db11e2d3f69f"
+    },
+    {
+      "path": "logs/full-automation-ep0q4ghd.process.json",
+      "bytes": 403,
+      "sha256": "cd333509e9cdcd21bbb6f4fd818426a79a58ec1af54263b92251a5c474a29f21"
+    },
+    {
+      "path": "logs/full-automation.txt",
+      "bytes": 374,
+      "sha256": "1f3265d7dec6f26c11fbd36e9e41b8cfd159446c9b4f153b6719133cb174cf36"
+    },
+    {
+      "path": "logs/java-version-o0ix93mp.process.json",
+      "bytes": 377,
+      "sha256": "0129b87078c09e28a957c1b0f9656e04e00c8fb7d34256c0622fcedb1f31409f"
+    },
+    {
+      "path": "logs/java-version.txt",
+      "bytes": 193,
+      "sha256": "8ffd2d05de22acb2a1f82845905d499e807c7595cf7c3e7f2a2cab7e576a26de"
+    },
+    {
+      "path": "logs/launcher-regressions-od4rg20w.process.json",
+      "bytes": 415,
+      "sha256": "8e8451f09dc93873fe57fad4c85eb7aee12bbc6cae278b3d2d5efd0fd8a6ce7c"
+    },
+    {
+      "path": "logs/launcher-regressions.txt",
+      "bytes": 896,
+      "sha256": "9ddc0649c77c4dd351e6bbd0c5e6fe446001b8d3c18243dbe23e441cf50155d0"
+    },
+    {
+      "path": "logs/node-version-e946mid6.process.json",
+      "bytes": 378,
+      "sha256": "06fc61f4878a6b66f619d50f895804e6cc7af47eeb29ea8ff819a7c2b67262a8"
+    },
+    {
+      "path": "logs/node-version.txt",
+      "bytes": 9,
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
+    },
+    {
+      "path": "logs/npm-version-01s_dm37.process.json",
+      "bytes": 377,
+      "sha256": "6f27b1b033ac3c122ad6b7aab129089d46ec266346278b42387f111aa3acbac8"
+    },
+    {
+      "path": "logs/npm-version.txt",
+      "bytes": 8,
+      "sha256": "a38e383f1e9080b0dd9001481f6e56b341000de90a05061b66734350ad3adc41"
+    },
+    {
+      "path": "reports/automation-checks.json",
+      "bytes": 4887,
+      "sha256": "9268751c6053421953f33a781d006e621d9dfc818cc56f603bc26cb8b55d6f0a"
+    },
+    {
+      "path": "reports/finalization-checks.json",
+      "bytes": 15069,
+      "sha256": "b3121b9d53097f8b922b46f4e52be592c23071fc14f38092b28246fd4f2d096d"
+    },
+    {
+      "path": "reports/launcher-checks.json",
+      "bytes": 9304,
+      "sha256": "7b8e63b184d07060c7d8ca03d7aeebd946a1519e672c9518d04f3f21ddf34ca9"
+    }
+  ],
+  "identity": {
+    "tested": "ccb2b21176e2d546067aa6f7f60b4a7c683079eb",
+    "tree": "993ab826ec823ed308fbb43acbdb73b1c9d52685",
+    "dirty": false,
+    "repository": "neophilism/Browser-VR-Engine",
+    "event": "pull_request",
+    "head": "18418567ea1edeb4758c5e1ec845499f9acea4e3",
+    "base": "315b0283f598b1bef7f2c6c38c90c01d562fe6c5",
+    "workflowRef": "neophilism/Browser-VR-Engine/.github/workflows/engine-ci.yml@refs/pull/7/merge",
+    "workflowSha": "ccb2b21176e2d546067aa6f7f60b4a7c683079eb",
+    "runId": "39152832852",
+    "attempt": "1"
+  },
+  "inputs": {
+    "ci": {
+      "scripts/ci/service.py": {
+        "bytes": 13884,
+        "sha256": "08add48b6f4c41b9e9e14ce408260af9f35e7113dffd435e5784a8a32e80b75a"
+      },
+      "scripts/ci/service_evidence.py": {
+        "bytes": 21109,
+        "sha256": "7d6c383186cd21bf0bacde64ce9fb3c49b126a2abfb3f958fb0c645bb4889687"
+      },
+      "scripts/ci/verify-service-evidence.py": {
+        "bytes": 2954,
+        "sha256": "61d91af82814f15b46d2baba711fa36867f620ecbc6661adeb1b33f5e2527dbc"
+      },
+      "scripts/test/service-evidence.test.mjs": {
+        "bytes": 632,
+        "sha256": "439b30d03a5b29d7376fcc5b60adb45b78cd5112903a4812a5856ff5da7dc086"
+      },
+      "scripts/test/service-evidence-checks.py": {
+        "bytes": 20426,
+        "sha256": "f4f285b8d6ddecfbc8a91d185335925de95532d5e22f4a5d1a8defeb1aa79a18"
+      },
+      "scripts/check-ci-policy.mjs": {
+        "bytes": 8361,
+        "sha256": "e111d7b071915db37fc6c0ae327b1b8b303446c5133e79ba2ed8171660e8e86f"
+      },
+      "scripts/ci/evidence.mjs": {
+        "bytes": 7273,
+        "sha256": "efc0dddaf6bf195578175458df587edca887ea9ae19bb7115c295a7a06240f94"
+      },
+      "scripts/test/evidence.test.mjs": {
+        "bytes": 6975,
+        "sha256": "8ccf8e7536daf891baa6b59f8cc696f4d5c016a2a4f8f9b96f948758ee254a17"
+      },
+      "scripts/test/policy.test.mjs": {
+        "bytes": 11212,
+        "sha256": "291651fba4837e2505080e5592a288f7df67489d3f66bf932a6ee17042a9c4b2"
+      },
+      ".github/workflows/engine-ci.yml": {
+        "bytes": 5318,
+        "sha256": "3634fb248b301b893212128cbf817811e7307106c5e2d8277e5492550c9efb32"
+      },
+      "docs/ci/action-pins.json": {
+        "bytes": 912,
+        "sha256": "0c7bb8fe079be877c441db163e2216f8b6d9f06a196a715b80fd27cf6b92defa"
+      },
+      "docs/ci/scopes.json": {
+        "bytes": 972,
+        "sha256": "8c04ddd33fdaa372f84f258a45eabe4cf3ec4293ab55c28c39984362438ee4d0"
+      },
+      ".nvmrc": {
+        "bytes": 8,
+        "sha256": "7e8a2fa94951112b894a3dbe3d05efef5e9263741fa49125f0a70f40fedab4cc"
+      },
+      "package.json": {
+        "bytes": 1506,
+        "sha256": "902828c67ff0e586c67572f0556e45600dc7db0f7f3ce232eb750bc3101764c8"
+      },
+      "package-lock.json": {
+        "bytes": 15605,
+        "sha256": "0b02cc9619d396fad6f67d9d653421ab7b2c51166d2587b9ad5a6d8d31a58299"
+      },
+      "docs/plan/pr-plan.json": {
+        "bytes": 239460,
+        "sha256": "076d8750880f1117633c7619331a0b52cce4f412e72b3466c42ffedc1faa1932"
+      },
+      "packages/qualification-fixtures/fixtures/comparison.json": {
+        "bytes": 651,
+        "sha256": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+      }
+    },
+    "service": {
+      "automate.py": {
+        "bytes": 32517,
+        "sha256": "7bda4d2edbc8f5aeb356cf08d6a4c80b4fd50ee7a6ada238f43bda94f86a70bf"
+      },
+      "browser-checks.mjs": {
+        "bytes": 16066,
+        "sha256": "3d39c3edeb9372b3d6261e2137c4b3f18d29c27e25bc2dd6f51786e7d2a79c73"
+      },
+      "command-supervisor.py": {
+        "bytes": 7496,
+        "sha256": "8908746dd988cf39074faf2b9408d59d33a765cb9d6d3c946a14bdd0c064137b"
+      },
+      "environment.py": {
+        "bytes": 1419,
+        "sha256": "0d5968bf909e05249390f00e6e6c187be0b7a535933071fabf83fad67eb3e102"
+      },
+      "finalize-run.mjs": {
+        "bytes": 2195,
+        "sha256": "12c08c4b85665c321239fcaa446618731204ea377e89047f7475985feb83dc4f"
+      },
+      "frontend.mjs": {
+        "bytes": 5635,
+        "sha256": "c2cc66b70efe078744472f3118ad7a0e8b7490ff9367f564d79cee77dfd73ddf"
+      },
+      "network.js": {
+        "bytes": 9005,
+        "sha256": "422ae0f7053317e32dfb9af3f102589a8218cf87fd4e8a48df6480efab0d681d"
+      },
+      "observe-server.py": {
+        "bytes": 2248,
+        "sha256": "656b461970f6422b77b4164d146fcb338951ed22e2b52dcadc956031691624dc"
+      },
+      "package-lock.json": {
+        "bytes": 1885,
+        "sha256": "5be3491734cf57b12fe0d36440d88d7762977f56cffafb569485422d3217a445"
+      },
+      "package.json": {
+        "bytes": 236,
+        "sha256": "4ec82be323d0f588a70e6c8a131612d043fd8f04c83405cd708367bc08685713"
+      },
+      "process_control.py": {
+        "bytes": 7245,
+        "sha256": "54dd8f76f85612313f45eb73a9d5b5268d847f0192ca1577d07e7be898c450f7"
+      },
+      "run-clean.py": {
+        "bytes": 428,
+        "sha256": "8e4b5ceba7e294f51737cf4e69c13ce7f39ed6e1ae93c6789a69875b2e7370c7"
+      },
+      "server-run.py": {
+        "bytes": 5098,
+        "sha256": "b6233b700b3dad193f1aad5a346aec1039105d4f7077b1c1728f06fe0179cf04"
+      },
+      "server.properties": {
+        "bytes": 2679,
+        "sha256": "cb1bc393a3fbddf97bf99aff931779dc16edf205f3843ebf65465959205e41d5"
+      },
+      "setup.py": {
+        "bytes": 1721,
+        "sha256": "1ec4248e08f5fd26f61eeb7e77f033a0332ae246e9ec2a1e2982a60357c95cfc"
+      },
+      "source-files.json": {
+        "bytes": 566,
+        "sha256": "1590114b385a35f720be5b0b919295ff9f6e54386e40a0f4d4065a7ded62ad9d"
+      },
+      "source-pins.json": {
+        "bytes": 1376,
+        "sha256": "2cbc0249af606a85d3139be1d7e67694a29039d11913d2503278b2e8582708f1"
+      },
+      "stop-server.py": {
+        "bytes": 266,
+        "sha256": "0b8d8acbf72549e6e54a174850b454cee2f243500fdead0fdfbb195a10deb343"
+      },
+      "test/automation-checks.py": {
+        "bytes": 14429,
+        "sha256": "e91721df996c8a0ef27dfd3ab0725551492c641c44a7aa77b704c69d332a22d4"
+      },
+      "test/finalization-checks.mjs": {
+        "bytes": 7650,
+        "sha256": "6bd87b6ea622580a99aa99bd969420a9a67b04828412a75dc46a5cd644470090"
+      },
+      "test/frontend-checks.mjs": {
+        "bytes": 4633,
+        "sha256": "d9757fd0ae7f4ddb9f16bbe503366412e003251608515a5cb09d85bb49a9994d"
+      },
+      "test/launcher-checks.py": {
+        "bytes": 19318,
+        "sha256": "b24861a2e5a2a71c5e3b6b0137f5d99d2315b095c149f881a110cdff40f84d86"
+      },
+      "test/report-automation-checks.py": {
+        "bytes": 3915,
+        "sha256": "d0f03cbd304451675b9115afebac9b086c696fb0902b39b2b36e7c15bb32a2c6"
+      },
+      "vendor/vrspace/LICENSE": {
+        "bytes": 11357,
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      "vendor/vrspace/client.js": {
+        "bytes": 39785,
+        "sha256": "05b50269527e2f55095da07fbc767416477cd7eb788be28ac933354e8d7be867"
+      }
+    },
+    "sibling": {
+      "browser-checks.mjs": {
+        "bytes": 32284,
+        "sha256": "ffe27331ea779a2b8e81ca17cbce34359c8dc52b12541c89e67c5699b1c45850"
+      },
+      "build.mjs": {
+        "bytes": 1211,
+        "sha256": "edafe75c96202949a07a8f328ffcbfa8458b15842afd127bd76adf2dedf016a0"
+      },
+      "config.mjs": {
+        "bytes": 580,
+        "sha256": "654e3b737b57eb3885290fc8ee97de6e54ecd4ecc319c888273af0a6ecd2cc1c"
+      },
+      "environment.mjs": {
+        "bytes": 1660,
+        "sha256": "4b1c895d0f7264b72bbfdad33d12c8589f87e42234f9dd36a0173e049cd46d33"
+      },
+      "fixture-pins.json": {
+        "bytes": 1199,
+        "sha256": "7c561df8f41f3b016b80e6b4d17258bc3d76dbe4bf8a6fde8ec5d7fa0511add9"
+      },
+      "fixtures.mjs": {
+        "bytes": 3395,
+        "sha256": "42e01a19ff4b041372cf8cf42eb07c6d4011da3ca2272b54709da75bb99a5fe6"
+      },
+      "index.html": {
+        "bytes": 5308,
+        "sha256": "47ab476d0419ace4255100c11bab2f430c7ffe0ff9d060d0ce0ffcb3ae126ecd"
+      },
+      "package-lock.json": {
+        "bytes": 19336,
+        "sha256": "5247d7d4737c6772e9a1654ec395279ab6cf6ffd5263d0ea19d3ce490bcc73b7"
+      },
+      "package.json": {
+        "bytes": 768,
+        "sha256": "7584f5bd1d434da3a1f05b531210e369d59eb07b24a626e66e5409fa2c238dc3"
+      },
+      "run.mjs": {
+        "bytes": 1717,
+        "sha256": "0c6bfc35af4f0451aa18e42e091826af5f6d97060dff557f9cf8aa1b7e39634f"
+      },
+      "server.mjs": {
+        "bytes": 4820,
+        "sha256": "3fc12ab773d844a8b0dac0b71cd40142aeefa2311803c1b85b92e6bdaf7a8e24"
+      },
+      "source-pins.json": {
+        "bytes": 4633,
+        "sha256": "56e57eba3cf19b3fc48144d87164fb39daa59375c777526281ba1117bf363f3e"
+      },
+      "src/audio-meter.js": {
+        "bytes": 2929,
+        "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+      },
+      "src/import-policy.js": {
+        "bytes": 14112,
+        "sha256": "a66d799731635bdf335a45faf3343bee88e2af7bad71a244e9c8ca57b4359bc2"
+      },
+      "src/import-resources.js": {
+        "bytes": 1300,
+        "sha256": "756a4931cd4348a336a659aab87e49bee53b2f798bddfa2e0a4cac49b696c4c4"
+      },
+      "src/main.js": {
+        "bytes": 48056,
+        "sha256": "6477331950d33d2574d4672ca7dced7f1ebfcaabecf399aa42828f4812c9f01c"
+      },
+      "src/spatial-audio.js": {
+        "bytes": 9722,
+        "sha256": "c8e252517b5f6a3ad0119d00c05d1ca401fd04b0ea0eef7a38b9cd4b610d64f0"
+      },
+      "src/xr-session.js": {
+        "bytes": 11219,
+        "sha256": "234a4f478a8f984b2dd4b02450604193c54d58a3554e96cc23d7ee0e768d182f"
+      },
+      "test/browser-finalize.mjs": {
+        "bytes": 1389,
+        "sha256": "0c48a4c12bbf0fa425ccebd89fc5267c099acce2c4091e25e2e62e0ecaf0e3a3"
+      },
+      "test/import-policy.test.mjs": {
+        "bytes": 8376,
+        "sha256": "0607930398f8cc3a54b56ebfe8cdbc46047481f9a813617cf0127e060c0c2fd9"
+      },
+      "test/local-server.test.mjs": {
+        "bytes": 11694,
+        "sha256": "1bc9ed0a74eb476063a0946e5b45d32af9e8e061b85bf147d375b395cc19ac37"
+      },
+      "test/xr-browser-checks.mjs": {
+        "bytes": 20152,
+        "sha256": "254a731d16df8067562a290c2fbe41e1085cb6969f6c3cfa13232566d9d4eccf"
+      },
+      "test/xr-session.test.mjs": {
+        "bytes": 16939,
+        "sha256": "8b93264389b88ed7e2bf52464fe2140f702bfcfafe84b355a610b6e97f4dea42"
+      },
+      "vendor/vrspace/LICENSE": {
+        "bytes": 11357,
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      "vendor/vrspace/asset-loader.js": {
+        "bytes": 10336,
+        "sha256": "1afa505b193dac8f60ee54ea7ccdfd60e9a0620cf561fa393aa570055d23fa06"
+      },
+      "vendor/vrspace/provenance.json": {
+        "bytes": 842,
+        "sha256": "6a9a9c668560d517d94141886de357f019e0254489543a145b218341ba7ee547"
+      }
+    }
+  },
+  "checkoutRoot": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine",
+  "toolchain": {
+    "python": "3.12.3",
+    "platform": "linux",
+    "kernel": "6.17.0-1022-azure",
+    "runnerImage": "ubuntu24",
+    "runnerImageVersion": "20261012.334.1",
+    "node": "v24.19.0",
+    "java": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+    "npm": "11.17.0"
+  },
+  "evaluatedInputs": {
+    "service": {
+      "automate.py": {
+        "bytes": 32517,
+        "sha256": "7bda4d2edbc8f5aeb356cf08d6a4c80b4fd50ee7a6ada238f43bda94f86a70bf"
+      },
+      "browser-checks.mjs": {
+        "bytes": 16066,
+        "sha256": "3d39c3edeb9372b3d6261e2137c4b3f18d29c27e25bc2dd6f51786e7d2a79c73"
+      },
+      "command-supervisor.py": {
+        "bytes": 7496,
+        "sha256": "8908746dd988cf39074faf2b9408d59d33a765cb9d6d3c946a14bdd0c064137b"
+      },
+      "environment.py": {
+        "bytes": 1419,
+        "sha256": "0d5968bf909e05249390f00e6e6c187be0b7a535933071fabf83fad67eb3e102"
+      },
+      "finalize-run.mjs": {
+        "bytes": 2195,
+        "sha256": "12c08c4b85665c321239fcaa446618731204ea377e89047f7475985feb83dc4f"
+      },
+      "frontend.mjs": {
+        "bytes": 5635,
+        "sha256": "c2cc66b70efe078744472f3118ad7a0e8b7490ff9367f564d79cee77dfd73ddf"
+      },
+      "network.js": {
+        "bytes": 9005,
+        "sha256": "422ae0f7053317e32dfb9af3f102589a8218cf87fd4e8a48df6480efab0d681d"
+      },
+      "observe-server.py": {
+        "bytes": 2248,
+        "sha256": "656b461970f6422b77b4164d146fcb338951ed22e2b52dcadc956031691624dc"
+      },
+      "package-lock.json": {
+        "bytes": 1885,
+        "sha256": "5be3491734cf57b12fe0d36440d88d7762977f56cffafb569485422d3217a445"
+      },
+      "package.json": {
+        "bytes": 236,
+        "sha256": "4ec82be323d0f588a70e6c8a131612d043fd8f04c83405cd708367bc08685713"
+      },
+      "process_control.py": {
+        "bytes": 7245,
+        "sha256": "54dd8f76f85612313f45eb73a9d5b5268d847f0192ca1577d07e7be898c450f7"
+      },
+      "run-clean.py": {
+        "bytes": 428,
+        "sha256": "8e4b5ceba7e294f51737cf4e69c13ce7f39ed6e1ae93c6789a69875b2e7370c7"
+      },
+      "server-run.py": {
+        "bytes": 5098,
+        "sha256": "b6233b700b3dad193f1aad5a346aec1039105d4f7077b1c1728f06fe0179cf04"
+      },
+      "server.properties": {
+        "bytes": 2679,
+        "sha256": "cb1bc393a3fbddf97bf99aff931779dc16edf205f3843ebf65465959205e41d5"
+      },
+      "setup.py": {
+        "bytes": 1721,
+        "sha256": "1ec4248e08f5fd26f61eeb7e77f033a0332ae246e9ec2a1e2982a60357c95cfc"
+      },
+      "source-files.json": {
+        "bytes": 566,
+        "sha256": "1590114b385a35f720be5b0b919295ff9f6e54386e40a0f4d4065a7ded62ad9d"
+      },
+      "source-pins.json": {
+        "bytes": 1376,
+        "sha256": "2cbc0249af606a85d3139be1d7e67694a29039d11913d2503278b2e8582708f1"
+      },
+      "stop-server.py": {
+        "bytes": 266,
+        "sha256": "0b8d8acbf72549e6e54a174850b454cee2f243500fdead0fdfbb195a10deb343"
+      },
+      "test/automation-checks.py": {
+        "bytes": 14429,
+        "sha256": "e91721df996c8a0ef27dfd3ab0725551492c641c44a7aa77b704c69d332a22d4"
+      },
+      "test/finalization-checks.mjs": {
+        "bytes": 7650,
+        "sha256": "6bd87b6ea622580a99aa99bd969420a9a67b04828412a75dc46a5cd644470090"
+      },
+      "test/frontend-checks.mjs": {
+        "bytes": 4633,
+        "sha256": "d9757fd0ae7f4ddb9f16bbe503366412e003251608515a5cb09d85bb49a9994d"
+      },
+      "test/launcher-checks.py": {
+        "bytes": 19318,
+        "sha256": "b24861a2e5a2a71c5e3b6b0137f5d99d2315b095c149f881a110cdff40f84d86"
+      },
+      "test/report-automation-checks.py": {
+        "bytes": 3915,
+        "sha256": "d0f03cbd304451675b9115afebac9b086c696fb0902b39b2b36e7c15bb32a2c6"
+      },
+      "vendor/vrspace/LICENSE": {
+        "bytes": 11357,
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      "vendor/vrspace/client.js": {
+        "bytes": 39785,
+        "sha256": "05b50269527e2f55095da07fbc767416477cd7eb788be28ac933354e8d7be867"
+      }
+    },
+    "serviceBrowserSources": [
+      "frontend.mjs",
+      "network.js",
+      "browser-checks.mjs",
+      "finalize-run.mjs",
+      "run-clean.py",
+      "environment.py",
+      "setup.py",
+      "server-run.py",
+      "process_control.py",
+      "server.properties",
+      "stop-server.py",
+      "observe-server.py",
+      "source-pins.json",
+      "vendor/vrspace/client.js",
+      "package.json",
+      "package-lock.json",
+      "test/launcher-checks.py",
+      "test/frontend-checks.mjs",
+      "test/finalization-checks.mjs",
+      "automate.py",
+      "command-supervisor.py",
+      "test/automation-checks.py",
+      "test/report-automation-checks.py",
+      "source-files.json"
+    ],
+    "sourcePins": {
+      "release": "v0.8.7",
+      "commit": "ca0e02ce611e1435e87dcec79de05fd2970dfc2d",
+      "publishedAt": "2026-03-03T11:26:36Z",
+      "jar": {
+        "url": "https://github.com/jalmasi/vrspace/releases/download/v0.8.7/server-0.8.7-executable.jar",
+        "bytes": 228055892,
+        "digest": "sha256:e5f0ba53f492d07e0f978ae1e15afce9fed2b3632a2d5984c48f3ab27d8004b3"
+      },
+      "distinction": "Released server/client evaluation, not the F05 AssetLoader master server at 61f840a3dd0133fc9d357891f37eb1670b147539",
+      "client": {
+        "source": "https://github.com/jalmasi/vrspace/blob/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/babylon/js/client/vrspace.js",
+        "sha256": "05b50269527e2f55095da07fbc767416477cd7eb788be28ac933354e8d7be867",
+        "bytes": 39785,
+        "modified": false,
+        "verifiedRawURL": "https://raw.githubusercontent.com/jalmasi/vrspace/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/babylon/js/client/vrspace.js"
+      },
+      "profile": {
+        "sha256": "cb1bc393a3fbddf97bf99aff931779dc16edf205f3843ebf65465959205e41d5",
+        "purpose": "Loopback-only synthetic guest presence/pose evaluation; authentication and optional integrations disabled"
+      },
+      "license": {
+        "repository": "Apache-2.0",
+        "url": "https://raw.githubusercontent.com/jalmasi/vrspace/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    },
+    "siblingSource": {
+      "browser-checks.mjs": {
+        "bytes": 32284,
+        "sha256": "ffe27331ea779a2b8e81ca17cbce34359c8dc52b12541c89e67c5699b1c45850"
+      },
+      "build.mjs": {
+        "bytes": 1211,
+        "sha256": "edafe75c96202949a07a8f328ffcbfa8458b15842afd127bd76adf2dedf016a0"
+      },
+      "config.mjs": {
+        "bytes": 580,
+        "sha256": "654e3b737b57eb3885290fc8ee97de6e54ecd4ecc319c888273af0a6ecd2cc1c"
+      },
+      "environment.mjs": {
+        "bytes": 1660,
+        "sha256": "4b1c895d0f7264b72bbfdad33d12c8589f87e42234f9dd36a0173e049cd46d33"
+      },
+      "fixture-pins.json": {
+        "bytes": 1199,
+        "sha256": "7c561df8f41f3b016b80e6b4d17258bc3d76dbe4bf8a6fde8ec5d7fa0511add9"
+      },
+      "fixtures.mjs": {
+        "bytes": 3395,
+        "sha256": "42e01a19ff4b041372cf8cf42eb07c6d4011da3ca2272b54709da75bb99a5fe6"
+      },
+      "index.html": {
+        "bytes": 5308,
+        "sha256": "47ab476d0419ace4255100c11bab2f430c7ffe0ff9d060d0ce0ffcb3ae126ecd"
+      },
+      "package-lock.json": {
+        "bytes": 19336,
+        "sha256": "5247d7d4737c6772e9a1654ec395279ab6cf6ffd5263d0ea19d3ce490bcc73b7"
+      },
+      "package.json": {
+        "bytes": 768,
+        "sha256": "7584f5bd1d434da3a1f05b531210e369d59eb07b24a626e66e5409fa2c238dc3"
+      },
+      "run.mjs": {
+        "bytes": 1717,
+        "sha256": "0c6bfc35af4f0451aa18e42e091826af5f6d97060dff557f9cf8aa1b7e39634f"
+      },
+      "server.mjs": {
+        "bytes": 4820,
+        "sha256": "3fc12ab773d844a8b0dac0b71cd40142aeefa2311803c1b85b92e6bdaf7a8e24"
+      },
+      "source-pins.json": {
+        "bytes": 4633,
+        "sha256": "56e57eba3cf19b3fc48144d87164fb39daa59375c777526281ba1117bf363f3e"
+      },
+      "src/audio-meter.js": {
+        "bytes": 2929,
+        "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+      },
+      "src/import-policy.js": {
+        "bytes": 14112,
+        "sha256": "a66d799731635bdf335a45faf3343bee88e2af7bad71a244e9c8ca57b4359bc2"
+      },
+      "src/import-resources.js": {
+        "bytes": 1300,
+        "sha256": "756a4931cd4348a336a659aab87e49bee53b2f798bddfa2e0a4cac49b696c4c4"
+      },
+      "src/main.js": {
+        "bytes": 48056,
+        "sha256": "6477331950d33d2574d4672ca7dced7f1ebfcaabecf399aa42828f4812c9f01c"
+      },
+      "src/spatial-audio.js": {
+        "bytes": 9722,
+        "sha256": "c8e252517b5f6a3ad0119d00c05d1ca401fd04b0ea0eef7a38b9cd4b610d64f0"
+      },
+      "src/xr-session.js": {
+        "bytes": 11219,
+        "sha256": "234a4f478a8f984b2dd4b02450604193c54d58a3554e96cc23d7ee0e768d182f"
+      },
+      "test/browser-finalize.mjs": {
+        "bytes": 1389,
+        "sha256": "0c48a4c12bbf0fa425ccebd89fc5267c099acce2c4091e25e2e62e0ecaf0e3a3"
+      },
+      "test/import-policy.test.mjs": {
+        "bytes": 8376,
+        "sha256": "0607930398f8cc3a54b56ebfe8cdbc46047481f9a813617cf0127e060c0c2fd9"
+      },
+      "test/local-server.test.mjs": {
+        "bytes": 11694,
+        "sha256": "1bc9ed0a74eb476063a0946e5b45d32af9e8e061b85bf147d375b395cc19ac37"
+      },
+      "test/xr-browser-checks.mjs": {
+        "bytes": 20152,
+        "sha256": "254a731d16df8067562a290c2fbe41e1085cb6969f6c3cfa13232566d9d4eccf"
+      },
+      "test/xr-session.test.mjs": {
+        "bytes": 16939,
+        "sha256": "8b93264389b88ed7e2bf52464fe2140f702bfcfafe84b355a610b6e97f4dea42"
+      },
+      "vendor/vrspace/LICENSE": {
+        "bytes": 11357,
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      "vendor/vrspace/asset-loader.js": {
+        "bytes": 10336,
+        "sha256": "1afa505b193dac8f60ee54ea7ccdfd60e9a0620cf561fa393aa570055d23fa06"
+      },
+      "vendor/vrspace/provenance.json": {
+        "bytes": 842,
+        "sha256": "6a9a9c668560d517d94141886de357f019e0254489543a145b218341ba7ee547"
+      }
+    },
+    "build": {
+      "schemaVersion": 1,
+      "inputs": {
+        "src/main.js": {
+          "bytes": 48056,
+          "sha256": "6477331950d33d2574d4672ca7dced7f1ebfcaabecf399aa42828f4812c9f01c"
+        },
+        "src/xr-session.js": {
+          "bytes": 11219,
+          "sha256": "234a4f478a8f984b2dd4b02450604193c54d58a3554e96cc23d7ee0e768d182f"
+        },
+        "src/spatial-audio.js": {
+          "bytes": 9722,
+          "sha256": "c8e252517b5f6a3ad0119d00c05d1ca401fd04b0ea0eef7a38b9cd4b610d64f0"
+        },
+        "src/audio-meter.js": {
+          "bytes": 2929,
+          "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+        },
+        "src/import-policy.js": {
+          "bytes": 14112,
+          "sha256": "a66d799731635bdf335a45faf3343bee88e2af7bad71a244e9c8ca57b4359bc2"
+        },
+        "src/import-resources.js": {
+          "bytes": 1300,
+          "sha256": "756a4931cd4348a336a659aab87e49bee53b2f798bddfa2e0a4cac49b696c4c4"
+        },
+        "index.html": {
+          "bytes": 5308,
+          "sha256": "47ab476d0419ace4255100c11bab2f430c7ffe0ff9d060d0ce0ffcb3ae126ecd"
+        },
+        "package.json": {
+          "bytes": 768,
+          "sha256": "7584f5bd1d434da3a1f05b531210e369d59eb07b24a626e66e5409fa2c238dc3"
+        },
+        "package-lock.json": {
+          "bytes": 19336,
+          "sha256": "5247d7d4737c6772e9a1654ec395279ab6cf6ffd5263d0ea19d3ce490bcc73b7"
+        },
+        "fixture-pins.json": {
+          "bytes": 1199,
+          "sha256": "7c561df8f41f3b016b80e6b4d17258bc3d76dbe4bf8a6fde8ec5d7fa0511add9"
+        },
+        "vendor/vrspace/asset-loader.js": {
+          "bytes": 10336,
+          "sha256": "1afa505b193dac8f60ee54ea7ccdfd60e9a0620cf561fa393aa570055d23fa06"
+        },
+        "build.mjs": {
+          "bytes": 1211,
+          "sha256": "edafe75c96202949a07a8f328ffcbfa8458b15842afd127bd76adf2dedf016a0"
+        }
+      },
+      "outputs": {
+        "dist/main.js": {
+          "bytes": 22681531,
+          "sha256": "6bb2f82964955286e2e0974dd8c4ec89d23f845fcd2c4b9a2dec4c403eb0d9b2"
+        },
+        "dist/main.js.map": {
+          "bytes": 33462080,
+          "sha256": "a95cf092a3ba6f19de738dc8ee00286dce359b2c8f6baed0e3ece71e6dcf1b3c"
+        },
+        "dist/audio-meter.js": {
+          "bytes": 2929,
+          "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+        }
+      },
+      "fixtureDigests": {
+        "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+        "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+        "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+        "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+        "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+        "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+        "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+        "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+      }
+    },
+    "buildFingerprint": {
+      "bytes": 2840,
+      "sha256": "ec0eb0bc14c65cf1c675d7a25e26509e96879f127d36dc4fb8576fde5143d1d9"
+    },
+    "fixtureDigests": {
+      "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+      "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+      "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+      "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+      "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+      "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+      "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+      "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+    },
+    "resources": {
+      "models/courtyard.gltf": {
+        "bytes": 7323,
+        "sha256": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+      },
+      "models/coordinates.gltf": {
+        "bytes": 5085,
+        "sha256": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+      },
+      "models/prop.gltf": {
+        "bytes": 2116,
+        "sha256": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+      },
+      "models/creature.gltf": {
+        "bytes": 12139,
+        "sha256": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+      },
+      "audio/corner-0.wav": {
+        "bytes": 96044,
+        "sha256": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+      },
+      "audio/corner-1.wav": {
+        "bytes": 96044,
+        "sha256": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+      },
+      "audio/corner-2.wav": {
+        "bytes": 96044,
+        "sha256": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+      },
+      "audio/corner-3.wav": {
+        "bytes": 96044,
+        "sha256": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+      },
+      "audio/calibration.wav": {
+        "bytes": 96044,
+        "sha256": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+      },
+      "media/screen-marker.webm": {
+        "bytes": 116192,
+        "sha256": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+      },
+      "media/readability.svg": {
+        "bytes": 460,
+        "sha256": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+      }
+    },
+    "comparison": {
+      "catalogDigest": "ae8f38424e68be31dd85acc066abbb96322cead3d90f580089b89a18d3039593",
+      "deviceTargetDigest": "c3f2dcce2e56da61f1999dc4056d165adbe9ff1601fc93bdf62dfc493e0080f6",
+      "fixtureSetId": "bve-foundation-0.1.0",
+      "scenarioDigest": "6547e68553d86e8294f2d2ea09413bfb45b7c773ba6942a0f25166835d099848",
+      "schemaDigest": "ef7de9b6f72e18063253c28cec464cf09d6fcc0d0e3795ff86f3108947f1224b",
+      "schemaVersion": "0.1.0",
+      "thresholdDigest": "36ca04ae7a569ba2e4c8fc6804db9620ca5a7ca5f63d527ad83cf880611d2a14",
+      "workloadDigest": "b105f1b7772ce039a5d43d098762bef459288ba447019bc6fc8c3dfcd8979e7b",
+      "worldDigest": "c18f890d75db0a8f7124ee14a230751c53aea5f7346b68c130cb499704b7b667"
+    }
+  },
+  "automationOutput": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/automation-runs/run-4sc3vgnw",
+  "finishedAt": "2026-10-18T18:12:14.987Z"
+}

@@ -1,0 +1,6 @@
+Built isolated F05 evaluation against bve-foundation-0.1.0; 11 verified shared resources.
+
+  dist/main.js      21.6mb ⚠️
+  dist/main.js.map  31.9mb
+
+⚡ Done in 2110ms

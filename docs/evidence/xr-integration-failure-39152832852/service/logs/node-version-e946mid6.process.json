@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "argv": [
+    "node",
+    "--version"
+  ],
+  "supervisorPid": 2742,
+  "startedAt": "2026-10-18T18:09:57.371Z",
+  "outcome": "passed",
+  "exitCode": 0,
+  "requestedSignal": null,
+  "commandPid": 2743,
+  "shutdown": {
+    "needed": false,
+    "terminateSent": [],
+    "killSent": [],
+    "stopped": true
+  },
+  "finishedAt": "2026-10-18T18:09:57.397Z"
+}

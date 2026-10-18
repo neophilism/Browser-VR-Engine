@@ -46,6 +46,21 @@ try {
     const url = new URL(route.request().url());
     return url.origin === server.origin || ['blob:', 'data:'].includes(url.protocol) ? route.continue() : route.abort('blockedbyclient');
   });
+  await context.addInitScript(() => {
+    // Hold only the first native capability result. This reproduces the service
+    // spawn/prepare race without substituting a device or requesting a session.
+    const xr=navigator.xr;if(!xr)throw Error('The browser must expose its native WebXR capability query.');
+    const support=xr.isSessionSupported,request=xr.requestSession;
+    let release;const gate=new Promise(resolve=>{release=resolve;});
+    const probe=window.xrPreparationTest={queries:0,requests:0,released:false,release:()=>{
+      probe.released=true;xr.isSessionSupported=support;xr.requestSession=request;release();
+    }};
+    xr.isSessionSupported=function(...args){
+      const result=support.apply(this,args);probe.queries++;
+      return probe.queries===1?Promise.all([result,gate]).then(([supported])=>supported):result;
+    };
+    xr.requestSession=function(...args){probe.requests++;return request.apply(this,args);};
+  });
   page = await context.newPage();
   page.setDefaultTimeout(45000);
   const cdp = await context.newCDPSession(page);
@@ -62,7 +77,29 @@ try {
  await check('real-render-and-frozen-fixtures',async()=>{
    const state=observed.before;assert.equal(state.webglVersion,2);assert.equal(state.rightHanded,true);assert(state.meshes>=70);assert(state.vertices>1500);assert.equal(state.skeletons[0].bones,5);assert(state.animations[0].playing);
    const validation=await page.evaluate(()=>({entities:foundationProbe.world.entities.length,digests:foundationProbe.manifest.sourceFileDigests,assetCount:foundationProbe.assetCache.size}));
-   assert.equal(validation.entities,55);return {...validation,canvas:state.canvas,meshes:state.meshes,vertices:state.vertices,renderer:state.renderer};
+   assert.equal(validation.entities,55);
+   const preparation=observed.xrPreparation={initialEye:state.player.eye};
+   try {
+     Object.assign(preparation,await page.evaluate(()=>{
+       const p=foundationProbe,before=p.inspectXR(),spawns=[];
+       for(const position of [[-2,1.6,7],[2,1.6,3]]) {
+         try {p.setPlayer(position);spawns.push({requested:position,eye:p.camera.position.asArray(),body:p.player.translation(),error:null});}
+         catch(error){spawns.push({requested:position,error:error.message});}
+       }
+       return {before,spawns,queries:xrPreparationTest.queries,sessionRequests:xrPreparationTest.requests,released:xrPreparationTest.released,teleportControlsEnabled:!document.getElementById('home').disabled&&!document.getElementById('center').disabled};
+     }));
+     assert.equal(preparation.before.phase,'preparing');assert.equal(preparation.before.busy,true);assert.equal(preparation.before.active,false);
+     assert.equal(preparation.before.blocksDesktopPose,false);assert.equal(preparation.teleportControlsEnabled,true);
+     assert.equal(preparation.released,false);assert.equal(preparation.sessionRequests,0);
+     for(const spawn of preparation.spawns) {
+       assert.equal(spawn.error,null,'Desktop service placement must remain available during the native capability query');
+       assert.deepEqual(spawn.eye,spawn.requested);
+       assert(Math.hypot(spawn.body.x-spawn.requested[0],spawn.body.y-(spawn.requested[1]-.7),spawn.body.z-spawn.requested[2])<1e-6);
+     }
+   } finally {
+     preparation.after=await page.evaluate(async position=>{xrPreparationTest.release();await foundationProbe.xr.prepareTask;foundationProbe.setPlayer(position);return foundationProbe.inspectXR();},preparation.initialEye);
+   }
+   return {...validation,canvas:state.canvas,meshes:state.meshes,vertices:state.vertices,renderer:state.renderer,preparation};
  });
  await check('user-start-activation',async()=>{
    assert.equal(observed.before.audio.state,'suspended');await page.locator('#start').click();await page.waitForFunction(()=>foundationProbe.audio.context.state==='running');await wait(300);

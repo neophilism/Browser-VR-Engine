@@ -49,6 +49,60 @@ test('XR synchronous support and factory failures release pending tasks for retr
   assert.equal(await f.controller.prepare(),false);assert.equal(f.controller.busy,false);
   f.controller.createExperience=create;assert.equal(await f.controller.prepare(),true);await f.controller.dispose();
 });
+test('XR capability and helper preparation leave desktop pose available through task settlement',async()=>{
+  const support=deferred(),factory=deferred(),factoryStarted=deferred(),states=[];
+  const f=fixture({hooks:{state:state=>states.push(state)}}),create=f.controller.createExperience;
+  f.platform.xr.isSessionSupported=()=>support.promise;
+  f.controller.createExperience=()=>{factoryStarted.resolve();return factory.promise;};
+  const prepared=f.controller.prepare();
+  assert.equal(f.controller.phase,'preparing');assert.equal(f.controller.busy,true);assert.equal(f.controller.blocksDesktopPose,false);
+  support.resolve(true);await factoryStarted.promise;
+  assert.equal(f.controller.busy,true);assert.equal(f.controller.blocksDesktopPose,false);assert.equal(f.counts.requests,0);
+  factory.resolve(await create());assert.equal(await prepared,true);
+  assert(states.some(state=>state.phase==='ready'&&state.busy&&!state.blocksDesktopPose));
+  assert.equal(f.controller.blocksDesktopPose,false);assert.equal(f.controller.busy,false);await f.controller.dispose();
+});
+test('XR desktop pose ownership starts synchronously before request and survives cancellation until a late grant ends',async()=>{
+  const grant=deferred(),atEntry=[];let f;
+  f=fixture({request:()=>{atEntry.push(['request',f.controller.blocksDesktopPose]);return grant.promise;},hooks:{beforeEnter:()=>atEntry.push(['beforeEnter',f.controller.blocksDesktopPose])}});
+  await f.controller.prepare();const entered=f.controller.enter();
+  assert.deepEqual(atEntry,[['beforeEnter',true],['request',true]]);
+  assert.equal(f.controller.phase,'requesting');assert.equal(f.controller.active,false);assert.equal(f.controller.blocksDesktopPose,true);
+  const cancelled=f.controller.cancel();assert.equal(f.controller.phase,'cancelling');assert.equal(f.controller.blocksDesktopPose,true);
+  const session=new Session();grant.resolve(session);assert.equal(await entered,false);assert.equal(await cancelled,true);
+  assert.equal(session.endCalls,1);assert.equal(f.counts.renderStarts,0);assert.equal(f.controller.blocksDesktopPose,false);await f.controller.dispose();
+});
+test('XR synchronous pre-request hook failures release desktop pose ownership and permit a later retry',async()=>{
+  for(const hook of ['beforeEnter','requestingState']) {
+    let failOnce=true;
+    const fail=()=>{if(failOnce){failOnce=false;throw Error('Synthetic pre-request '+hook+' failure');}};
+    const f=fixture({hooks:{beforeEnter:()=>{if(hook==='beforeEnter')fail();},state:state=>{if(hook==='requestingState'&&state.phase==='requesting')fail();}}});
+    await f.controller.prepare();assert.equal(await f.controller.enter(),false);
+    assert.equal(f.counts.requests,0);assert.equal(f.controller.operation,null);assert.equal(f.controller.active,false);assert.equal(f.controller.busy,false);
+    assert.equal(f.controller.phase,'error');assert.equal(f.controller.error.code,'XRFailure');assert.equal(f.controller.blocksDesktopPose,false);
+    assert.equal(await f.controller.enter(),true);assert.equal(f.counts.requests,1);assert.equal(f.controller.blocksDesktopPose,true);
+    f.frame();assert.equal(f.controller.phase,'immersive');await f.controller.dispose();
+  }
+});
+test('XR desktop pose remains protected during active rendering, native end failure and disposal',async()=>{
+  const f=fixture();await f.controller.prepare();await f.controller.enter();
+  assert.equal(f.controller.phase,'entering');assert.equal(f.controller.blocksDesktopPose,true);
+  f.frame();assert.equal(f.controller.phase,'immersive');assert.equal(f.controller.blocksDesktopPose,true);
+  const session=f.controller.session,originalEnd=session.end.bind(session),end=deferred();session.end=()=>end.promise;
+  const ending=f.controller.exit();assert.equal(f.controller.phase,'ending');assert.equal(f.controller.blocksDesktopPose,true);
+  end.reject(Error('Synthetic native end refusal'));await assert.rejects(ending,/Synthetic native end refusal/);
+  assert.equal(f.controller.phase,'error');assert.equal(f.controller.active,true);assert.equal(f.controller.blocksDesktopPose,true);
+  await assert.rejects(f.controller.dispose(),/Synthetic native end refusal/);assert.equal(f.controller.blocksDesktopPose,true);assert.equal(f.counts.helperDisposed,0);
+  session.end=originalEnd;await f.controller.exit();assert.equal(f.controller.blocksDesktopPose,false);
+  await f.controller.dispose();assert.equal(f.controller.blocksDesktopPose,true);assert.equal(f.controller.phase,'disposed');
+});
+test('XR disposal takes desktop pose ownership even while its capability query is pending',async()=>{
+  const support=deferred(),f=fixture();f.platform.xr.isSessionSupported=()=>support.promise;
+  const prepared=f.controller.prepare();assert.equal(f.controller.blocksDesktopPose,false);
+  const disposed=f.controller.dispose();assert.equal(f.controller.disposing,true);assert.equal(f.controller.blocksDesktopPose,true);assert.equal(f.controller.active,false);
+  support.resolve(false);await prepared;await disposed;
+  assert.equal(f.controller.phase,'disposed');assert.equal(f.controller.blocksDesktopPose,true);assert.equal(f.counts.requests,0);
+});
 test('XR requires direct activation and two concurrent enters share one native request',async()=>{
   const grant=deferred(),f=fixture({request:()=>grant.promise});await f.controller.prepare();
   f.platform.userActivation.isActive=false;assert.equal(await f.controller.enter(),false);assert.equal(f.counts.requests,0);
@@ -103,7 +157,7 @@ test('XR native end failure retains session and rendering resources until a succ
 });
 test('XR an unconfirmed native end cannot produce successful disposal',async()=>{
   const f=fixture();await f.controller.prepare();await f.controller.enter();const session=f.controller.session,original=session.end.bind(session);session.end=async()=>{};
-  await assert.rejects(f.controller.dispose(),/not confirmed/);assert.equal(f.counts.helperDisposed,0);assert.equal(f.controller.active,true);
+  await assert.rejects(f.controller.dispose(),/not confirmed/);assert.equal(f.counts.helperDisposed,0);assert.equal(f.controller.active,true);assert.equal(f.controller.blocksDesktopPose,true);
   session.end=original;await f.controller.dispose();
 });
 test('XR synchronous native end exception clears the busy task and permits retry',async()=>{

@@ -63,6 +63,15 @@ async function enterAt(position){
   const settled=await inspect();closeEnough([settled.xr.pose.position[0],settled.xr.pose.position[2]],[settled.player.position[0],settled.player.position[2]],.01);return settled;
 }
 async function desktopExit(){await page.keyboard.press('Escape');await page.waitForFunction(()=>!foundationProbe.xr.active&&!foundationProbe.xr.busy);}
+async function blockedDesktopTeleport(){
+  const attempt=await page.evaluate(()=>{
+    const p=foundationProbe,before={body:p.player.translation(),camera:p.camera.position.asArray()};let error=null;
+    try{p.setPlayer([before.camera[0]+2,before.camera[1],before.camera[2]+2]);}catch(caught){error=caught.message;}
+    return {phase:p.xr.phase,blocksDesktopPose:p.xr.blocksDesktopPose,before,after:{body:p.player.translation(),camera:p.camera.position.asArray()},error};
+  });
+  assert.equal(attempt.blocksDesktopPose,true);assert.match(attempt.error||'',/Leave VR/);assert.deepEqual(attempt.after,attempt.before);
+  return attempt;
+}
 
 try{
   server=await startEvaluationServer();
@@ -94,11 +103,12 @@ try{
   });
   await check('emulated-cancelled-late-grant-never-starts-xr-renderer',async()=>{
     await page.evaluate(()=>{xrTest.fault='hold';});await page.locator('#xr').click();
-    await page.waitForFunction(()=>!!xrTest.pending);await page.locator('#xr').click();assert.equal((await inspect()).xr.phase,'cancelling');
+    await page.waitForFunction(()=>!!xrTest.pending);const requestingTeleport=await blockedDesktopTeleport();assert.equal(requestingTeleport.phase,'requesting');
+    await page.locator('#xr').click();assert.equal((await inspect()).xr.phase,'cancelling');const cancellingTeleport=await blockedDesktopTeleport();
     await page.evaluate(()=>xrTest.pending());await page.waitForFunction(()=>foundationProbe.xr.phase==='ready'&&!foundationProbe.xr.busy);
     const state=await inspect();assert.equal(state.xr.active,false);assert.equal(state.xr.frames,0);assert.equal(state.xr.activeCamera,'desktop-camera');
     const lateEnd=await page.evaluate(()=>({events:xrTest.lateEndEvents,deviceActive:!!xrTest.device.activeSession}));assert.equal(lateEnd.events,1);assert.equal(lateEnd.deviceActive,false);
-    await page.evaluate(()=>{xrTest.fault=null;xrTest.pending=null;});return {xr:state.xr,lateEnd,syntheticFault:'permission grant held until after cancellation'};
+    await page.evaluate(()=>{xrTest.fault=null;xrTest.pending=null;});return {xr:state.xr,lateEnd,requestingTeleport,cancellingTeleport,syntheticFault:'permission grant held until after cancellation'};
   });
   await check('emulated-session-renders-stereo-through-babylon',async()=>{
     const state=await enterAt([0,1.65,8]);assert.equal(state.xr.active,true);assert.equal(state.xr.referenceSpace,'local-floor');assert.equal(state.xr.rigCameras,2);assert.equal(state.xr.baseLayer,true);assert.notEqual(state.xr.activeCamera,'desktop-camera');assert.equal(state.xr.visuals.exitEnabled,true);
@@ -112,8 +122,9 @@ try{
     closeEnough(after.audio.listener.position,after.xr.pose.position,1e-6);closeEnough(after.audio.listener.forward,after.xr.pose.forward,1e-6);closeEnough(after.audio.listener.up,after.xr.pose.up,1e-6);
     assert.equal(after.audio.contextCount,1);assert.equal(after.audio.sources.length,6);assert.equal(after.audio.sources.find(source=>source.id==='wall-playback').mediaSourceCount,1);assert(after.audio.sources.every(source=>source.sameContext&&!source.directSourceToDestination));
     assert.equal(await page.locator('#home').isDisabled(),true);assert.equal(await page.locator('#center').isDisabled(),true);
+    const activeTeleport=await blockedDesktopTeleport();assert.equal(activeTeleport.phase,'immersive');
     const blocked=await page.evaluate(async()=>{try{await foundationProbe.importFile(new File(['{}'],'during-xr.gltf'));return false;}catch(error){return error.message.includes('Leave VR');}});assert(blocked);
-    return {frames,before:before.xr.pose,after:after.xr.pose,listener:after.audio.listener,contexts:after.audio.contextCount,wallMediaSources:1};
+    return {frames,before:before.xr.pose,after:after.xr.pose,listener:after.audio.listener,contexts:after.audio.contextCount,wallMediaSources:1,activeTeleport};
   });
   await check('emulated-visibility-mutes-pauses-input-and-restores-output',async()=>{
     const originalGain=(await inspect()).audio.outputGain;

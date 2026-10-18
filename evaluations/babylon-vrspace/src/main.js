@@ -132,7 +132,7 @@ class Evaluation {
     $('xr').disabled=['preparing','unavailable','cancelling','ending','disposed'].includes(state.phase)||this.stopped||this.disposing;
     $('xr-dismiss').hidden=!state.error;$('xr-dismiss').disabled=this.stopped||this.disposing;
     $('xr-status').textContent=state.error?.message||(state.phase==='cancelling'?'Cancellation requested. Close the browser prompt; a late grant will be ended.':state.phase==='immersive'?'VR active. Left thumbstick moves; point and select EXIT VR to leave.':state.phase==='unavailable'?'Immersive VR is unavailable in this browser. Desktop exploration remains available.':state.phase==='ready'?'Enter VR requests browser permission and enables spatial audio.':'');
-    for(const id of ['home','center'])$(id).disabled=state.active||state.busy||this.stopped||this.disposing;
+    for(const id of ['home','center'])$(id).disabled=state.blocksDesktopPose||this.stopped||this.disposing;
   }
   restoreXRAudio() {
     if(this.xrMutedOutput!==null){this.audio.output.gain.value=this.xrMutedOutput;this.xrMutedOutput=null;}
@@ -252,7 +252,7 @@ class Evaluation {
     }
   }
   setPlayer(position) {
-    if(this.xr?.active||this.xr?.busy)throw new Error('Leave VR before using desktop teleport controls.');
+    if(this.xr?.blocksDesktopPose)throw new Error('Leave VR before using desktop teleport controls.');
     if(!this.player)return;
     this.player.setTranslation({x:position[0],y:position[1]-.7,z:position[2]},true);
     this.player.setNextKinematicTranslation({x:position[0],y:position[1]-.7,z:position[2]});

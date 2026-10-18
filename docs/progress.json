@@ -76,9 +76,9 @@
         "Physical headset/controller/audio and target-device performance evidence are missing.",
         "Full canonical-world roundtrip, multiuser ownership/physics, SFU voice/media and measured AV synchronization remain unqualified.",
         "The released VRSpace server/client presence test is a different pin from the master AssetLoader evaluation and does not qualify all VRSpace subsystems.",
-        "PR6 passed hosted service/automation and artifact verification, but its merged main run failed the desktop bird observation. The repaired immersive-XR follow-up still requires current-head hosted desktop/XR/service artifacts and a successful subsequent main run."
+        "PR6 passed hosted service/automation and artifact verification, but its merged main run failed the desktop bird observation. PR7's first run passed desktop/XR but failed service placement during XR preparation. The corrected follow-up still requires current-head hosted desktop/XR/service artifacts and a successful subsequent main run."
       ],
-      "nextAction": "Verify the reviewed immersive-XR and animation-observation repair on the current hosted candidate, download all three artifacts, merge and verify main; then continue complete shared-scenario and physical-device qualification. F05 remains incomplete."
+      "nextAction": "Verify the reviewed immersive-XR, animation-observation and startup-race corrections on the current hosted candidate, download all three artifacts, merge and verify main; then follow docs/qualification/f05-gap-map.md for complete shared-scenario and physical-device qualification. F05 remains incomplete."
     },
     {
       "id": "F06",

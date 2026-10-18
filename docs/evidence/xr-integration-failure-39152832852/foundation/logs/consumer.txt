@@ -1,0 +1,5 @@
+
+> browser-vr-engine-workspace@0.0.0 test:consumer
+> node scripts/test-consumer.mjs
+
+Independent tarball consumer passed: all three packages, root-lock TypeBox 0.34.52, public fixture replay, shipped fixture regeneration check and positive/negative declarations.
