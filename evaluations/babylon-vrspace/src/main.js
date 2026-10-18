@@ -18,6 +18,7 @@ const digest=async bytes=>[...new Uint8Array(await crypto.subtle.digest('SHA-256
 const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const download=(blob,name)=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};
 const safeError=error=>{console.error(error);$('fatal').style.display='block';$('fatal').textContent=error.stack||String(error);status(error.message||String(error));};
+const emptyResourceCounters=()=>Object.fromEntries(['instances','engines','scenes','renderLoops','entityNodes','assetContainers','assetCacheEntries','localAssetEntries','originalEntries','originalBuffers','originalBytes','physicsWorlds','rigidBodies','colliders','characterControllers','audioContexts','audioSources','bufferSources','mediaSources','panners','workletNodes','workletPorts','workletHandlers','meterWindows','videoElements','objectUrls','keys','pointerCaptures','xrSessions','pendingLoads','pendingImports','pendingDisposals'].map(key=>[key,0]));
 globalThis.BABYLON=B; // Compatibility boundary for the pinned, unmodified VRSpace modules.
 
 class Evaluation {
@@ -566,6 +567,30 @@ class Evaluation {
     const result={sourceCommit:'61f840a3dd0133fc9d357891f37eb1670b147539',babylonVersion:B.Engine.Version,loadedMeshes:first.meshes.length,instancedRoots:second.rootNodes.length,containerIdentity:loader.containers[url].container===first,instanceCount:loader.containers[url].numberOfInstances,networkServer:false};
     loader.unloadAsset(url,second);loader.unloadAsset(url);result.meshesBefore=before;result.meshesAfter=this.scene.meshes.length;result.remainingContainers=Object.keys(loader.containers).length;this.vrspace=result;return result;
   }
+  resourceSnapshot() {
+    // Read-only evaluation diagnostics. Return numbers/strings/arrays only;
+    // callers must never retain engines, contexts, nodes, ports or asset bytes.
+    const audio=this.audio,items=[...(audio?.sources.values()||[])],buffers=new Set();
+    for(const table of [this.originals,this.localAssets,this.assetCache])for(const asset of table.values())if(asset.bytes instanceof Uint8Array)buffers.add(asset.bytes.buffer);
+    const live=this.state!=='disposed',counters={
+      instances:Number(live),engines:Number(!this.engine.isDisposed),scenes:Number(!this.scene.isDisposed),renderLoops:this.engine.activeRenderLoops.length,
+      entityNodes:this.nodes.size,assetContainers:this.containers.length,assetCacheEntries:this.assetCache.size,localAssetEntries:this.localAssets.size,
+      originalEntries:this.originals.size,originalBuffers:buffers.size,originalBytes:[...buffers].reduce((total,buffer)=>total+buffer.byteLength,0),
+      physicsWorlds:Number(!!this.physics),rigidBodies:this.physics?.bodies.len()||0,colliders:this.physics?.colliders.len()||0,characterControllers:Number(!!this.controller),
+      audioContexts:Number(!!audio&&audio.context.state!=='closed'),audioSources:items.length,bufferSources:items.filter(item=>!item.video).length,mediaSources:items.filter(item=>!!item.video).length,
+      panners:items.length,workletNodes:items.length,workletPorts:items.filter(item=>!audio.cleanupDone?.has(item.id+':meter-close')).length,
+      workletHandlers:items.filter(item=>item.meter.port.onmessage!==null).length,meterWindows:items.reduce((total,item)=>total+item.meterState.history.length,0),
+      videoElements:this.videoElements.size,objectUrls:this.urls.length,keys:this.keys.size,pointerCaptures:this.pointerIds.size,xrSessions:Number(!!this.xr?.active),
+      pendingLoads:Number(!!this.loadTask),pendingImports:Number(!!this.importTask),pendingDisposals:Number(!!this.disposeTask),
+    };
+    const activity=live&&!this.stopped?{
+      physicsSteps:this.physicsSteps,sceneFrame:this.scene.getFrameId(),
+      animations:this.animations.map(item=>({entityId:item.entityId,clip:item.data.clip,playing:!!item.group?.isPlaying,frame:item.group?.animatables[0]?.masterFrame??null,position:serialVec(item.node.position)})),
+      audio:audio?{state:audio.context.state,time:audio.context.currentTime,activation:audio.activation?structuredClone(audio.activation):null,sources:items.map(item=>({id:item.id,inputRms:item.meterState.history.at(-1)?.inputRms||0,endFrame:item.meterState.history.at(-1)?.endFrame??null,invalidMessages:item.meterState.invalidMessages})).sort((a,b)=>a.id.localeCompare(b.id))}:null,
+      video:this.video?{time:this.video.currentTime,paused:this.video.paused,readyState:this.video.readyState,decodedFrames:this.video.getVideoPlaybackQuality?.().totalVideoFrames??null}:null,
+    }:null;
+    return {instanceId:this.instanceId??null,state:this.state,counters,scene:resourceCounts(this.scene),activity};
+  }
   async dispose() {
     if(this.disposeTask)return this.disposeTask;
     if(this.state==='disposed')return;
@@ -616,7 +641,13 @@ class Evaluation {
 
 const portableHost={phase:'starting',createdInstances:0,source:null,receipt:null,error:null,task:null,lastFailure:null,failedInstance:null};
 const cleanupState=app=>({disposed:app.state==='disposed',state:app.state,nodes:app.nodes.size,bodies:app.bodies.size,urls:app.urls.length,mediaElements:app.videoElements.size,audioClosed:!app.audio||app.audio.closed,sceneDisposed:app.scene.isDisposed,physicsFreed:!app.physics,errors:app.cleanupErrors||[]});
-window.portableHost={inspect:()=>structuredClone({phase:portableHost.phase,createdInstances:portableHost.createdInstances,source:portableHost.source,receipt:portableHost.receipt,error:portableHost.error,lastFailure:portableHost.lastFailure,pendingCleanup:portableHost.failedInstance?cleanupState(portableHost.failedInstance):null})};
+function lifecycleSnapshot() {
+  const published=window.foundationProbe,failed=portableHost.failedInstance;
+  if(published&&failed&&published!==failed)throw new Error('Multiple instance owners prevent a single-instance lifecycle snapshot');
+  const app=failed||published;
+  return {...(app?app.resourceSnapshot():{instanceId:null,state:'empty',counters:emptyResourceCounters(),scene:Object.fromEntries(resourceCollections.map(key=>[key,0])),activity:null}),host:{phase:portableHost.phase,createdInstances:portableHost.createdInstances,pendingHostTask:!!portableHost.task,failedOwner:!!failed,publishedInstance:!!published,publishedAdapter:!!window.qualificationAdapter,foundationReady:!!window.foundationReady}};
+}
+window.portableHost={inspect:()=>structuredClone({phase:portableHost.phase,createdInstances:portableHost.createdInstances,source:portableHost.source,receipt:portableHost.receipt,error:portableHost.error,lastFailure:portableHost.lastFailure,pendingCleanup:portableHost.failedInstance?cleanupState(portableHost.failedInstance):null}),lifecycleSnapshot,unload:unloadPortableWorld};
 
 async function disposeOwnedInstance(app) {
   try{await app.dispose();if(portableHost.failedInstance===app)portableHost.failedInstance=null;}
@@ -626,7 +657,7 @@ async function createEvaluation(world,originals,context={}) {
   portableHost.createdInstances++;
   let app;
   try{
-    app=new Evaluation();app.manifest=context.manifest;
+    app=new Evaluation();app.instanceId=portableHost.createdInstances;app.manifest=context.manifest;
     await app.load(world,{...context,world,originals});
     window.foundationProbe=app;window.qualificationAdapter=app;window.foundationReady=true;
     return app;
@@ -637,6 +668,29 @@ async function createEvaluation(world,originals,context={}) {
     }
     throw error;
   }
+}
+async function unloadPortableWorld() {
+  if(portableHost.task)throw new Error('Finish the current world operation before unloading');
+  const task=(async()=>{
+    const published=window.foundationProbe,failed=portableHost.failedInstance;
+    portableHost.phase='unloading';portableHost.error=null;
+    // dispose() owns pending native work and the XR end gate. Failed cleanup
+    // keeps the same instance reachable until a later unload/open can retry it.
+    if(failed)await disposeOwnedInstance(failed);
+    if(published&&published!==failed)await disposeOwnedInstance(published);
+    const released=(published||failed)?.resourceSnapshot()||null;
+    delete window.foundationProbe;delete window.qualificationAdapter;window.foundationReady=false;
+    portableHost.phase='empty';portableHost.source='empty';portableHost.receipt=null;portableHost.lastFailure=null;
+    for(const control of document.querySelectorAll('button,input'))control.disabled=true;
+    $('world-file').disabled=false;$('start').textContent='Choose a portable world';$('world-id').textContent='No world';$('sources').textContent='0 / 0';$('selection').textContent='None';$('transform-editor').style.display='none';
+    status('World unloaded. Open a portable world to create a fresh instance.');
+    return released;
+  })();
+  portableHost.task=task;
+  try{return await task;}catch(error){
+    portableHost.phase=portableHost.failedInstance?'cleanup-failed':window.foundationProbe&&!window.foundationProbe.stopped?'ready':'empty';portableHost.error=error.message;
+    $('world-file').disabled=!!window.foundationProbe&&!window.foundationProbe.stopped&&!!window.foundationProbe.xr?.blocksDesktopPose;status(error.message);throw error;
+  }finally{portableHost.task=null;}
 }
 async function openPortableFile(file) {
   if(portableHost.task)throw new Error('One world import may run at a time');

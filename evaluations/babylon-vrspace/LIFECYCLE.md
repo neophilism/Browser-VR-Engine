@@ -1,0 +1,19 @@
+# Same-page resource lifecycle evaluation
+
+This slice adds an explicit empty-host transition to the Babylon candidate. `portableHost.unload()` waits for the existing disposal path, including native XR session release. It clears the published adapter only after cleanup succeeds. A failed native cleanup remains owned and blocks replacement until the same cleanup is retried. `portableHost.lifecycleSnapshot()` and the instance's `resourceSnapshot()` return plain values; they do not export engines, buffers, nodes, ports, contexts or native handles.
+
+The test opens the unchanged 55-entity, 11-original F03 courtyard carrier ten times in one page and one browser context. Each cycle starts native audio and wall video with a real click, observes advancing physics, scene/animation frames, video time/decoded frames and paired audio sample windows, then unloads. There is no extra warmup world, modified fixture or additional instance hidden outside those ten cycles. All browser fixture requests are blocked; each load uses the same validated portable bytes.
+
+## Frozen observation policy
+
+`test/lifecycle-profile.json` is written before the first run and retained by raw hash in the report. It fixes the cycle count, required loaded resources, empty baseline, observation deadlines, listener targets and input actions. The test compares exact live counts after each unload with the initial empty page. Cumulative instance and event IDs are diagnostic identities, not live-resource counters. No heap byte or percentage tolerance is invented.
+
+The test-only observer is installed before the evaluation module. It records actual object-URL creation/revocation, AudioContext close completion, worklet MessagePort closure, timers, animation-frame requests and native WebGL allocation/deletion calls. Its resource identity tables are weak where native objects are keys; retained journal entries contain only bounded plain metadata. CDP WebAudio events provide a separate view of context states and the native graph. Closed contexts are distinguished from eventual wrapper destruction or garbage collection. Stable DOM targets receive an independent listener census, with every remote handle released after reading it.
+
+The same page, canvas and controls persist. The browser may retain the canvas's WebGL context and compiled-code, WebAssembly or driver caches. A successful native GL deletion call does not prove immediate physical GPU-memory reclamation. Raw JS heap and DOM counters are diagnostic; unavailable or unmeasured APIs are reported explicitly. Export/download actions and their temporary URL/timer path are outside these ten cycles. This test does not qualify long-duration memory trends, physical devices, immersive sessions, conferencing scale or the complete foundation choice.
+
+## Failure and evidence handling
+
+Page/CDP reads and native unload are bounded. If they stall, the harness uses Playwright's public BrowserServer force-kill path on its own loopback-only browser process; cancellation also has an explicit deadline. A failed observation is retained as failure, including finalization errors. It cannot leave an unbounded measurement running while publishing a pass.
+
+Run `node run.mjs test-server` for deterministic boundary tests and `node run.mjs test-lifecycle` for the actual browser cycle. The latter emits four files under a fresh `artifacts/lifecycle-runs/run-*` directory: a detailed report, summary, exact build record and bounded native/CDP event journal. The canonical evaluation collector must verify their command interval, fresh output directory, source/build/fixture closure, profile hash, input carrier identity and event replay. Desktop19, emulated XR10 and portable9 remain separate required checks. A local software-rendered run is not physical or hosted-current-commit acceptance.

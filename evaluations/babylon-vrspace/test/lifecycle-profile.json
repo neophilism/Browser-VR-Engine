@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "f05-resource-lifecycle-v1",
+  "fixtureSetId": "bve-foundation-0.1.0",
+  "cycles": 10,
+  "sameDocument": true,
+  "sameContext": true,
+  "snapshotPhases": ["baseline", "loaded", "activation-before", "activation-after", "unloaded", "post-input-before", "post-input-after", "final", "negative-before", "negative-allocated", "negative-released"],
+  "eventPhases": ["boot", "baseline", "loading", "loaded", "activation-before", "activating", "activation-after", "unloading", "unloaded", "post-input-before", "post-input-after", "final", "negative-before", "negative-allocated", "negative-released"],
+  "postInputActions": ["focus-canvas", "keyboard-KeyW-down-up", "pointer-move-down-up", "window-resize", "disabled-start-click"],
+  "viewport": {"width": 1280, "height": 720, "dpr": 1},
+  "strictLiveBaseline": true,
+  "runtimeCounters": ["instances", "engines", "scenes", "renderLoops", "entityNodes", "assetContainers", "assetCacheEntries", "localAssetEntries", "originalEntries", "originalBuffers", "originalBytes", "physicsWorlds", "rigidBodies", "colliders", "characterControllers", "audioContexts", "audioSources", "bufferSources", "mediaSources", "panners", "workletNodes", "workletPorts", "workletHandlers", "meterWindows", "videoElements", "objectUrls", "keys", "pointerCaptures", "xrSessions", "pendingLoads", "pendingImports", "pendingDisposals"],
+  "sceneCounters": ["animationGroups", "meshes", "transformNodes", "skeletons", "materials", "multiMaterials", "textures", "geometries", "morphTargetManagers", "cameras", "lights", "particleSystems", "spriteManagers", "reflectionProbes", "actionManagers"],
+  "nativeCounters": ["objectUrls", "audioContexts", "workletPorts", "timeouts", "intervals", "animationFrames", "glBuffers", "glFramebuffers", "glPrograms", "glRenderbuffers", "glShaders", "glTextures", "glQueries", "glSamplers", "glSyncs", "glTransformFeedbacks", "glVertexArrays"],
+  "loadedExpectations": {
+    "instances": 1, "engines": 1, "scenes": 1, "renderLoops": 1,
+    "entityNodes": 55, "originalEntries": 11, "originalBuffers": 11,
+    "physicsWorlds": 1, "rigidBodies": 47, "colliders": 47, "characterControllers": 1,
+    "audioContexts": 1, "audioSources": 6, "bufferSources": 5, "mediaSources": 1,
+    "panners": 6, "workletNodes": 6, "workletPorts": 6, "workletHandlers": 6,
+    "videoElements": 1, "xrSessions": 0, "pendingLoads": 0, "pendingImports": 0, "pendingDisposals": 0
+  },
+  "sourceIds": ["bird-playback", "corner-playback-0", "corner-playback-1", "corner-playback-2", "corner-playback-3", "wall-playback"],
+  "listenerTargets": ["window", "document", "body", "scene", "navigator.xr", "start", "home", "center", "file", "export", "save", "world-file", "video-toggle", "xr", "xr-dismiss", "edit-x", "edit-y", "edit-z", "apply-transform"],
+  "settle": {"deadlineMs": 20000, "pollMs": 50, "stableSamples": 2, "forcedCloseDeadlineMs": 10000},
+  "activation": {"deadlineMs": 20000, "audioSeconds": 0.2, "videoSeconds": 0.1, "minimumInputRms": 0.01, "requiredPhysicsProgress": true, "requiredSceneProgress": true, "requiredAnimationProgress": true, "requiredDecodedVideoProgress": true, "userClickRequired": true},
+  "observer": {"maximumEvents": 50000, "maximumLiveEntries": 1024, "maximumCDPEvents": 20000, "overflowFails": true, "unsupportedTimerCallbackFails": true},
+  "emptyOwnership": {"allRuntimeCounters": 0, "allSceneCounters": 0, "allNativeCounters": 0, "documentVideoElements": 0, "cdpAudioContexts": 0, "publishedInstance": false, "publishedAdapter": false, "failedOwner": false, "pendingHostTask": false},
+  "persistentResources": [
+    "The same document, canvas, controls, module namespace and one world-file change listener remain for all ten cycles; stable-target listener inventories must exactly equal the initial empty-page inventory after every unload.",
+    "Browser code, compiled WebAssembly and driver-managed caches may persist. This test neither invents their sizes nor treats unavailable allocation measurements as zero. No candidate-owned live engine, scene, media, physics, timer, URL or worklet port is an allowed persistent resource.",
+    "The same canvas may retain its browser-owned WebGL context. Native WebGL create/delete calls must balance for buffers, textures, programs, shaders, framebuffers, renderbuffers and WebGL2 allocation types; successful deletion calls do not claim immediate physical GPU memory reclamation.",
+    "The test observer retains only bounded plain metadata and event records; its native-object identity maps are weak. CDP remote object handles are explicitly released after each listener census."
+  ],
+  "memory": {"policy": "diagnostic-only", "byteOrPercentAcceptanceTolerance": null, "unavailableIsZero": false, "physicalDeviceQualified": false},
+  "scope": "Ten same-page activations and complete unloads of the frozen authored courtyard. Progress minima only establish that physics, animation and native media actually ran; they are not performance budgets. Export/download actions and their temporary URL timer path are not exercised by these cycles. Closed AudioContexts and live resources are measured separately from eventual wrapper destruction or garbage collection. Physical hardware, long-duration memory trends and complete foundation qualification remain pending."
+}
