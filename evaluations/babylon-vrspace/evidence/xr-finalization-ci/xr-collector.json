@@ -1,0 +1,54 @@
+{
+  "scope": "Local diagnostic of the actual fresh XR command and canonical collector; not hosted evidence",
+  "mode": "local",
+  "complete": false,
+  "commands": [
+    {
+      "id": "f05-xr-browser",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "test-xr"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T17:21:24.110Z",
+      "finishedAt": "2026-10-18T17:21:48.404Z",
+      "durationMs": 24294
+    }
+  ],
+  "files": [
+    {
+      "path": "logs/f05-xr-browser.txt",
+      "bytes": 769,
+      "sha256": "da43e4d458812e7df21a850465dfc3db0d9db9fdd0b11299b4e7ea6fb70cc0ba"
+    },
+    {
+      "path": "xr/xr-browser-checks.json",
+      "bytes": 20881,
+      "sha256": "ac4ff6b0359a8340652d7cd8b11e391e1724e564d72fae5c19c66d52f4543c0d"
+    },
+    {
+      "path": "xr/emulated-stereo.png",
+      "bytes": 33229,
+      "sha256": "99cc418186e711429472d233dc656d8642078bda622790bb05daad01a1aa09fa"
+    },
+    {
+      "path": "xr/build.json",
+      "bytes": 2840,
+      "sha256": "ec0eb0bc14c65cf1c675d7a25e26509e96879f127d36dc4fb8576fde5143d1d9"
+    }
+  ],
+  "failures": [],
+  "xr": {
+    "runDirectory": "artifacts/xr-runs/run-SbVbXB",
+    "startedAt": "2026-10-18T17:21:24.519Z",
+    "finishedAt": "2026-10-18T17:21:48.380Z",
+    "reportSha256": "ac4ff6b0359a8340652d7cd8b11e391e1724e564d72fae5c19c66d52f4543c0d",
+    "buildSha256": "ec0eb0bc14c65cf1c675d7a25e26509e96879f127d36dc4fb8576fde5143d1d9",
+    "screenshotSha256": "99cc418186e711429472d233dc656d8642078bda622790bb05daad01a1aa09fa"
+  }
+}

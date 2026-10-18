@@ -1,0 +1,20 @@
+{
+  "command": [
+    "npm",
+    "audit",
+    "--json",
+    "--audit-level=high",
+    "--registry=https://registry.npmjs.org",
+    "--userconfig=/workspace/scratch/dc98dcd2981d/engine_work/f05-xr-review/evaluations/babylon-vrspace/artifacts/tool-config/user.npmrc",
+    "--globalconfig=/workspace/scratch/dc98dcd2981d/engine_work/f05-xr-review/evaluations/babylon-vrspace/artifacts/tool-config/global.npmrc",
+    "--fetch-timeout=15000",
+    "--fetch-retries=0",
+    "--update-notifier=false"
+  ],
+  "startedAt": "2026-10-18T17:10:30.455Z",
+  "finishedAt": "2026-10-18T17:10:31.026Z",
+  "status": 0,
+  "signal": null,
+  "errorCode": null,
+  "stderr": ""
+}

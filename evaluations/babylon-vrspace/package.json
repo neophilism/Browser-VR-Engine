@@ -13,7 +13,8 @@
     "test": "node run.mjs test",
     "test:server": "node run.mjs test-server",
     "browser:install": "node run.mjs browser-install",
-    "audit": "node run.mjs audit"
+    "audit": "node run.mjs audit",
+    "test:xr": "node run.mjs test-xr"
   },
   "dependencies": {
     "@babylonjs/core": "9.30.0",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "esbuild": "0.28.2",
+    "iwer": "2.6.0",
     "playwright": "1.62.1"
   }
 }

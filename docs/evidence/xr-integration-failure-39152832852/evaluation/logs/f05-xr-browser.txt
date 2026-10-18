@@ -1,0 +1,19 @@
+PASS emulated-capability-does-not-request-session
+PASS emulated-permission-denial-visible-and-dismissible
+PASS emulated-cancelled-late-grant-never-starts-xr-renderer
+PASS emulated-session-renders-stereo-through-babylon
+PASS emulated-head-pose-drives-one-shared-spatial-listener
+PASS emulated-visibility-mutes-pauses-input-and-restores-output
+PASS emulated-thumbstick-moves-and-collides-with-frozen-thin-barrier
+PASS emulated-physical-head-overlap-warns-without-clamping-tracking
+PASS emulated-controller-ray-select-exits-with-renderer-cleanup
+PASS emulated-dispose-ends-live-session-and-removes-controls
+{
+  "runStatus": "passed",
+  "passed": 10,
+  "failed": 0,
+  "pageErrors": 0,
+  "failedRequests": 0,
+  "logOverflow": 0,
+  "output": "artifacts/xr-runs/run-pgRjkL"
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "argv": [
+    "python3",
+    "-B",
+    "-O",
+    "automate.py"
+  ],
+  "supervisorPid": 3453,
+  "startedAt": "2026-10-18T18:10:32.602Z",
+  "outcome": "failed",
+  "exitCode": 1,
+  "requestedSignal": null,
+  "commandPid": 3454,
+  "shutdown": {
+    "needed": false,
+    "terminateSent": [],
+    "killSent": [],
+    "stopped": true
+  },
+  "finishedAt": "2026-10-18T18:12:14.916Z"
+}

@@ -1,0 +1,15 @@
+PASS optimized-process-controls-reject-mismatched-procfs-namespace
+PASS optimized-launch-rejects-wrong-jar-length
+PASS optimized-launch-rejects-wrong-jar-digest
+PASS optimized-launch-rejects-profile-change
+PASS optimized-setup-rejects-wrong-jar
+PASS optimized-setup-rejects-wrong-client
+PASS optimized-stop-and-observe-reject-unrelated-process
+PASS optimized-stop-and-observe-reject-malformed-proc-path-record
+PASS optimized-stop-and-observe-reject-stale-creation-identity
+PASS optimized-pidfd-stop-kills-only-verified-hung-child
+PASS optimized-observer-rejects-nonloopback-and-missing-listeners
+PASS optimized-parent-sigterm-bounded-kill-and-reap
+PASS optimized-post-popen-metadata-failure-cleans-owned-child
+PASS frontend-failure-paths-close-all-owned-loopback-listeners
+{"counts": {"passed": 14, "failed": 0, "checks": 14}, "report": "artifacts/launcher-checks-70rjsuka/launcher-checks.json"}

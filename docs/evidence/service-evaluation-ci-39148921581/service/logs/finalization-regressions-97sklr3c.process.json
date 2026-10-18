@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "argv": [
+    "node",
+    "test/finalization-checks.mjs"
+  ],
+  "supervisorPid": 2556,
+  "startedAt": "2026-10-18T17:18:41.437Z",
+  "outcome": "passed",
+  "exitCode": 0,
+  "requestedSignal": null,
+  "commandPid": 2557,
+  "shutdown": {
+    "needed": false,
+    "terminateSent": [],
+    "killSent": [],
+    "stopped": true
+  },
+  "finishedAt": "2026-10-18T17:18:41.940Z"
+}

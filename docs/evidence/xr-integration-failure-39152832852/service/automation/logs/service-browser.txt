@@ -1,0 +1,11 @@
+Release health HTTP 200
+page.waitForFunction: Timeout 60000ms exceeded.
+{
+  "runStatus": "failed",
+  "counts": {
+    "passed": 0,
+    "failed": 0,
+    "checks": 0
+  },
+  "output": "artifacts/browser-runs/run-H1hetr"
+}

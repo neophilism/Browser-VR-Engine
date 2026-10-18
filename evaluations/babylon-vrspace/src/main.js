@@ -5,6 +5,7 @@ import RAPIER from '@dimforge/rapier3d-compat';
 import {SpatialGraph} from './spatial-audio.js';
 import {IMPORT_LIMITS, readModelFile, validateModelBytes} from './import-policy.js';
 import {resourceCollections, captureResources, newResources, resourceCounts, disposeResources} from './import-resources.js';
+import {XRSessionController, createBabylonXRExperience, xrMovementAxes} from './xr-session.js';
 
 const $=id=>document.getElementById(id);
 const status=message=>{$('status').textContent=message;};
@@ -24,6 +25,7 @@ class Evaluation {
     this.urls=[];this.assetCache=new Map();this.localAssets=new Map();this.keys=new Set();this.frames=[];
     this.physicsSteps=0;this.selected=null;this.held=null;this.lastTime=performance.now();this.accumulator=0;
     this.imports=[];this.audio=null;this.video=null;this.xr=null;this.vrspace=null;this.stopped=false;
+    this.xrPose=null;this.xrVisuals=null;this.xrMutedOutput=null;this.disposing=false;
     this.inputController=new AbortController();this.pointerIds=new Set();this.importTask=null;this.disposeTask=null;this.lastImportRollback=null;
     this.canvas=$('scene');this.engine=new B.Engine(this.canvas,true,{preserveDrawingBuffer:true,stencil:true,disableWebGL2Support:false,audioEngine:false},false);
     this.engine.setHardwareScalingLevel(1);
@@ -45,11 +47,11 @@ class Evaluation {
     this.bindInput();
   }
   async probe() {
-    const xr=!!navigator.xr&&await navigator.xr.isSessionSupported('immersive-vr');
+    let xr=false;try{xr=!!navigator.xr&&await navigator.xr.isSessionSupported('immersive-vr');}catch{}
     return [
       {feature:'render:webgl2',status:this.engine.webGLVersion===2?'available':'unavailable',method:'real-browser',detail:this.engine.getGlInfo().renderer},
       {feature:'audio:spatial',status:window.AudioContext?'available':'unavailable',method:'real-browser',detail:'Browser-native WebAudio graph, a shared listener, one MediaElementAudioSourceNode per video element.'},
-      {feature:'xr:immersive-vr',status:xr?'available':'unavailable',method:'real-browser',detail:'isSessionSupported result only; no physical headset observation.'},
+      {feature:'xr:immersive-vr',status:xr?'available':'unavailable',method:'real-browser',detail:'Capability query only. The separate user-activated session path uses Babylon rendering; physical headset evidence remains pending.'},
       {feature:'network:multiuser',status:'unverified',method:'real-browser',detail:'The isolated local prototype does not instantiate a collaboration server.'}
     ];
   }
@@ -99,6 +101,93 @@ class Evaluation {
     $('sources').textContent=`${this.audio.sources.size} / ${this.audio.sources.size}`;
     $('start').disabled=false;$('start').textContent='Enter courtyard & enable audio';
     status('Ready. Enter to enable sound, then explore.');
+    this.setupXR();
+  }
+  setupXR() {
+    this.xr=new XRSessionController({createExperience:()=>createBabylonXRExperience(this.scene,this.canvas),hooks:{
+      state:state=>this.updateXRControls(state),
+      beforeEnter:()=>{this.keys.clear();this.release();for(const id of this.pointerIds)if(this.canvas.hasPointerCapture(id))this.canvas.releasePointerCapture(id);this.pointerIds.clear();this.accumulator=0;this.lastTime=performance.now();},
+      initialPose:camera=>{camera.position.y=this.player.translation().y-.9-.015;},
+      frame:(frame,helper)=>this.updateXRFrame(frame,helper),
+      visibility:visibility=>{
+        this.keys.clear();this.accumulator=0;this.lastTime=performance.now();
+        if(visibility!=='visible'&&this.xrMutedOutput===null){this.xrMutedOutput=this.audio.output.gain.value;this.audio.output.gain.value=0;}
+        if(visibility==='visible')this.restoreXRAudio();
+      },
+      select:event=>this.selectXR(event),
+      ended:()=>{
+        this.clearXRVisuals();this.restoreXRAudio();this.xrPose=null;this.keys.clear();this.accumulator=0;this.lastTime=performance.now();
+        // Return to the collision controller's valid position, rather than a
+        // physical lean that may put the tracked head through a virtual wall.
+        if(this.player){const p=this.player.translation();this.camera.position.set(p.x,p.y+.7,p.z);}
+        this.scene.activeCamera=this.camera;this.updateListener();
+      },
+    }});
+    void this.xr.prepare();
+    if(navigator.xr)this.listen(navigator.xr,'devicechange',()=>{if(!this.xr.active&&!this.xr.busy)void this.xr.prepare();});
+  }
+  updateXRControls(state) {
+    const labels={unprepared:'Prepare VR',preparing:'Preparing VR…',unavailable:'VR unavailable',ready:'Enter VR',requesting:'Cancel VR',entering:'Cancel VR',cancelling:'Cancelling…',immersive:'Exit VR',ending:'Leaving VR…',error:state.active?'Retry exit':'Try VR again',disposed:'VR closed'};
+    $('xr').textContent=labels[state.phase]||'Enter VR';
+    $('xr').disabled=['preparing','unavailable','cancelling','ending','disposed'].includes(state.phase)||this.stopped||this.disposing;
+    $('xr-dismiss').hidden=!state.error;$('xr-dismiss').disabled=this.stopped||this.disposing;
+    $('xr-status').textContent=state.error?.message||(state.phase==='cancelling'?'Cancellation requested. Close the browser prompt; a late grant will be ended.':state.phase==='immersive'?'VR active. Left thumbstick moves; point and select EXIT VR to leave.':state.phase==='unavailable'?'Immersive VR is unavailable in this browser. Desktop exploration remains available.':state.phase==='ready'?'Enter VR requests browser permission and enables spatial audio.':'');
+    for(const id of ['home','center'])$(id).disabled=state.blocksDesktopPose||this.stopped||this.disposing;
+  }
+  restoreXRAudio() {
+    if(this.xrMutedOutput!==null){this.audio.output.gain.value=this.xrMutedOutput;this.xrMutedOutput=null;}
+  }
+  createXRVisuals(camera) {
+    const makeLabel=(name,text,width,height,y)=>{
+      const mesh=B.MeshBuilder.CreatePlane(name,{width,height,sideOrientation:B.Mesh.DOUBLESIDE},this.scene);
+      mesh.parent=camera;mesh.position.set(0,y,-1.1);mesh.metadata={presentationOnly:true};mesh.renderingGroupId=3;
+      const texture=new B.DynamicTexture(name+'-text',{width:1024,height:256},this.scene,false);
+      texture.drawText(text,null,150,'bold 55px sans-serif','#ffffff',name==='xr-exit'?'#173846':'#6a1e27',true);
+      const material=new B.StandardMaterial(name+'-material',this.scene);material.diffuseTexture=texture;material.emissiveColor=B.Color3.White();material.disableLighting=true;material.backFaceCulling=false;mesh.material=material;
+      return {mesh,texture,material};
+    };
+    const exit=makeLabel('xr-exit','EXIT VR',.5,.125,-.32),warning=makeLabel('xr-wall-warning','Move back from this virtual object',1.1,.275,.25);
+    warning.mesh.isPickable=false;warning.mesh.setEnabled(false);
+    this.xrVisuals={exit,warning,rays:new Map(),headShape:new RAPIER.Ball(.18)};
+  }
+  updateXRFrame(frame,helper) {
+    const pose=frame.getViewerPose(helper.sessionManager.referenceSpace);
+    if(!pose){this.xrPose=null;return false;}
+    const camera=helper.camera;camera.computeWorldMatrix();
+    this.xrPose={position:serialVec(camera.position),forward:serialVec(camera.getForwardRay().direction.normalize()),up:serialVec(camera.getDirection(B.Axis.Y).normalize()),tracking:!pose.emulatedPosition};
+    this.audio.setListener(this.xrPose.position,this.xrPose.forward,this.xrPose.up);
+    if(!this.xrVisuals)this.createXRVisuals(camera);
+    const hit=this.physics.intersectionWithShape(camera.position,{x:0,y:0,z:0,w:1},this.xrVisuals.headShape,undefined,undefined,this.playerCollider);
+    this.xrPose.nearGeometry=!!hit;this.xrVisuals.warning.mesh.setEnabled(!!hit);
+    const sources=Array.from(this.xr.session.inputSources||[]).slice(0,4),visible=this.xr.visibility==='visible';
+    for(const [source,line] of this.xrVisuals.rays)if(!sources.includes(source)){line.dispose();this.xrVisuals.rays.delete(source);}
+    for(const source of sources) {
+      const rayPose=frame.getPose(source.targetRaySpace,helper.sessionManager.referenceSpace);
+      let line=this.xrVisuals.rays.get(source);
+      if(!rayPose||!visible){line?.setEnabled(false);continue;}
+      const ray=this.rayFromXRPose(rayPose),points=[ray.origin,ray.origin.add(ray.direction.scale(2))];
+      if(!line){line=B.MeshBuilder.CreateLines('xr-input-ray',{points,updatable:true},this.scene);line.color=new B.Color3(.5,1,.8);line.isPickable=false;line.metadata={presentationOnly:true};this.xrVisuals.rays.set(source,line);}
+      else B.MeshBuilder.CreateLines('xr-input-ray',{points,instance:line});
+      line.setEnabled(true);
+    }
+    return true;
+  }
+  rayFromXRPose(pose) {
+    const p=pose.transform.position,q=pose.transform.orientation,rotation=new B.Quaternion(q.x,q.y,q.z,q.w);
+    const direction=new B.Vector3(0,0,-1);direction.rotateByQuaternionToRef(rotation,direction);
+    return new B.Ray(new B.Vector3(p.x,p.y,p.z),direction.normalize(),20);
+  }
+  selectXR(event) {
+    const helper=this.xr.experience?.helper,pose=helper&&event.frame.getPose(event.inputSource.targetRaySpace,helper.sessionManager.referenceSpace);
+    if(!pose||!this.xrVisuals||this.xr.visibility!=='visible')return;
+    const hit=this.scene.pickWithRay(this.rayFromXRPose(pose),mesh=>mesh===this.xrVisuals.exit.mesh);
+    if(hit?.hit)void this.xr.exit().catch(()=>{});
+  }
+  clearXRVisuals() {
+    if(!this.xrVisuals)return;
+    for(const line of this.xrVisuals.rays.values())line.dispose();
+    for(const label of [this.xrVisuals.exit,this.xrVisuals.warning]){label.mesh.dispose();label.material.dispose();label.texture.dispose();}
+    this.xrVisuals=null;
   }
   applyTransform(node,transform) {
     if(transform.kind==='trs') {node.position.copyFromFloats(...transform.translation);node.rotationQuaternion=B.Quaternion.FromArray(transform.rotation);node.scaling.copyFromFloats(...transform.scale);}
@@ -163,6 +252,7 @@ class Evaluation {
     }
   }
   setPlayer(position) {
+    if(this.xr?.blocksDesktopPose)throw new Error('Leave VR before using desktop teleport controls.');
     if(!this.player)return;
     this.player.setTranslation({x:position[0],y:position[1]-.7,z:position[2]},true);
     this.player.setNextKinematicTranslation({x:position[0],y:position[1]-.7,z:position[2]});
@@ -172,7 +262,9 @@ class Evaluation {
   }
   updateListener() {
     if(!this.audio)return;
-    const q=this.camera.absoluteRotation||B.Quaternion.FromEulerVector(this.camera.rotation);
+    // The XR frame callback owns the listener while immersive: camera.position
+    // may already contain an artificial offset intended for the next XR frame.
+    if(this.xr?.active)return;
     const forward=this.camera.getForwardRay().direction.normalize();
     const up=this.camera.getDirection(B.Axis.Y).normalize();
     this.audio.setListener(serialVec(this.camera.globalPosition),serialVec(forward),serialVec(up));
@@ -181,11 +273,16 @@ class Evaluation {
     if(!this.physics||!this.player)return;
     let move=desired;
     if(!move) {
-      const forward=this.camera.getForwardRay().direction;forward.y=0;forward.normalize();
+      const forward=this.xr?.active&&this.xrPose?vec(this.xrPose.forward):this.camera.getForwardRay().direction;forward.y=0;forward.normalize();
       const right=B.Vector3.Cross(forward,B.Axis.Y).normalize();
       move=new B.Vector3(0,-.12,0);
-      if(this.keys.has('KeyW'))move.addInPlace(forward.scale(3*dt));if(this.keys.has('KeyS'))move.addInPlace(forward.scale(-3*dt));
-      if(this.keys.has('KeyD'))move.addInPlace(right.scale(3*dt));if(this.keys.has('KeyA'))move.addInPlace(right.scale(-3*dt));
+      if(this.xr?.active){
+        const axes=xrMovementAxes(this.xr.session,this.xr.phase==='immersive'&&this.xrPose?.tracking&&!this.xrPose.nearGeometry);
+        move.addInPlace(forward.scale(-axes[1]*1.8*dt));move.addInPlace(right.scale(axes[0]*1.8*dt));
+      }else{
+        if(this.keys.has('KeyW'))move.addInPlace(forward.scale(3*dt));if(this.keys.has('KeyS'))move.addInPlace(forward.scale(-3*dt));
+        if(this.keys.has('KeyD'))move.addInPlace(right.scale(3*dt));if(this.keys.has('KeyA'))move.addInPlace(right.scale(-3*dt));
+      }
     }
     this.controller.computeColliderMovement(this.playerCollider,move,undefined,undefined,c=>!this.held||c.handle!==this.bodies.get(this.held).collider.handle);
     const step=this.controller.computedMovement(),p=this.player.translation();
@@ -195,7 +292,9 @@ class Evaluation {
       this.bodies.get(this.held).body.setNextKinematicTranslation(target);
     }
     this.physics.step();this.physicsSteps++;
-    const at=this.player.translation();this.camera.position.set(at.x,at.y+.7,at.z);
+    const at=this.player.translation();
+    if(this.xr?.active)this.xr.experience.helper.camera.position.addInPlace(new B.Vector3(at.x-p.x,at.y-p.y,at.z-p.z));
+    else this.camera.position.set(at.x,at.y+.7,at.z);
     for(const {body,node,data} of this.bodies.values())if(data.body!=='static') {node.position.copyFromFloats(...serialVec(body.translation()));node.rotationQuaternion=B.Quaternion.FromArray(serialQuat(body.rotation()));}
   }
   frame() {
@@ -234,14 +333,15 @@ class Evaluation {
     if(!this.held)return false;
     const item=this.bodies.get(this.held);item.body.setBodyType(RAPIER.RigidBodyType.Dynamic,true);item.body.setLinvel({x:velocity[0],y:velocity[1],z:velocity[2]},true);this.held=null;status('Prop released into the physics world.');return true;
   }
-  listen(target,type,handler) { target.addEventListener(type,handler,{signal:this.inputController.signal}); }
+  listen(target,type,handler) { target.addEventListener(type,event=>{if(!this.stopped&&!this.disposing)handler(event);},{signal:this.inputController.signal}); }
   bindInput() {
-    this.listen(window,'keydown',e=>{if(e.target.tagName==='INPUT')return;this.keys.add(e.code);if(e.code==='KeyE'){e.preventDefault();this.held?this.release():this.grab();}if(e.code==='Space'){e.preventDefault();if(this.held)this.release(serialVec(this.camera.getForwardRay().direction.scale(7).add(new B.Vector3(0,2,0))));}});
+    this.listen(window,'keydown',e=>{if(this.xr?.active||this.xr?.busy){if(e.code==='Escape')void this.xr.exit().catch(()=>{});return;}if(e.target.tagName==='INPUT')return;this.keys.add(e.code);if(e.code==='KeyE'){e.preventDefault();this.held?this.release():this.grab();}if(e.code==='Space'){e.preventDefault();if(this.held)this.release(serialVec(this.camera.getForwardRay().direction.scale(7).add(new B.Vector3(0,2,0))));}});
     this.listen(window,'keyup',e=>this.keys.delete(e.code));this.listen(window,'blur',()=>this.keys.clear());
     let drag=null;
-    this.listen(this.canvas,'pointerdown',e=>{this.canvas.focus();drag={x:e.clientX,y:e.clientY,moved:0};this.canvas.setPointerCapture(e.pointerId);this.pointerIds.add(e.pointerId);});
-    this.listen(this.canvas,'pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag.moved+=Math.abs(dx)+Math.abs(dy);drag.x=e.clientX;drag.y=e.clientY;this.camera.rotationQuaternion=null;this.camera.rotation.y-=dx*.004;this.camera.rotation.x=Math.max(-1.2,Math.min(1.2,this.camera.rotation.x+dy*.004));});
-    this.listen(this.canvas,'pointerup',e=>{if(drag&&drag.moved<5){const pick=this.scene.pick(e.clientX,e.clientY,m=>!!m.metadata?.entityId);if(pick?.hit)this.select(pick.pickedMesh.metadata.entityId);}drag=null;if(this.canvas.hasPointerCapture(e.pointerId))this.canvas.releasePointerCapture(e.pointerId);this.pointerIds.delete(e.pointerId);});
+    this.listen(this.canvas,'pointerdown',e=>{if(this.xr?.active||this.xr?.busy)return;this.canvas.focus();drag={x:e.clientX,y:e.clientY,moved:0};this.canvas.setPointerCapture(e.pointerId);this.pointerIds.add(e.pointerId);});
+    this.listen(this.canvas,'pointermove',e=>{if(!drag||this.xr?.active||this.xr?.busy)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag.moved+=Math.abs(dx)+Math.abs(dy);drag.x=e.clientX;drag.y=e.clientY;this.camera.rotationQuaternion=null;this.camera.rotation.y-=dx*.004;this.camera.rotation.x=Math.max(-1.2,Math.min(1.2,this.camera.rotation.x+dy*.004));});
+    this.listen(this.canvas,'pointerup',e=>{if(drag&&drag.moved<5&&!this.xr?.active&&!this.xr?.busy){const pick=this.scene.pick(e.clientX,e.clientY,m=>!!m.metadata?.entityId);if(pick?.hit)this.select(pick.pickedMesh.metadata.entityId);}drag=null;if(this.canvas.hasPointerCapture(e.pointerId))this.canvas.releasePointerCapture(e.pointerId);this.pointerIds.delete(e.pointerId);});
+    this.listen(this.canvas,'lostpointercapture',()=>{drag=null;});
     $('start').onclick=async()=>{try{await this.audio.activate();if(this.stopped)return;this.state='running';$('start').textContent='Audio enabled · explore';status('Four corner tracks, bird and wall video share one spatial listener.');this.canvas.focus();}catch(e){if(!this.stopped)safeError(e);}};
     $('home').onclick=()=>{this.setPlayer([0,1.65,8]);this.camera.setTarget(new B.Vector3(0,2,-4));};
     $('center').onclick=()=>{this.setPlayer([0,1.65,0]);this.camera.setTarget(new B.Vector3(0,2,-8));};
@@ -253,7 +353,15 @@ class Evaluation {
     $('reload').onclick=()=>{try{this.restoreWorld(this.saved||this.snapshotWorld());status('World transforms restored; asset identity and audio source bindings preserved.');}catch(e){if(!this.stopped)safeError(e);}};
     $('video-toggle').onclick=async()=>{const video=this.video;if(!video)return;if(video.paused)await video.play();else video.pause();if(this.stopped)return;$('video-toggle').textContent=video.paused?'Play video':'Pause video';};
     $('apply-transform').onclick=()=>{if(!this.selected)return;const position=['x','y','z'].map(axis=>Number($('edit-'+axis).value));if(!position.every(v=>Number.isFinite(v)&&Math.abs(v)<=1000)){status('Use finite coordinates between -1000 and 1000 meters.');return;}const node=this.nodes.get(this.selected),body=this.bodies.get(this.selected)?.body;node.position.copyFromFloats(...position);if(body){body.setTranslation(node.position,true);body.setLinvel({x:0,y:0,z:0},true);}status(`Applied position to ${this.selected}.`);};
-    $('xr').onclick=async()=>{const supported=!!navigator.xr&&await navigator.xr.isSessionSupported('immersive-vr');if(this.stopped)return;status(supported?'Immersive VR is reported available. This evaluation has not validated headset input or audio.':'This browser reports no immersive VR session. A physical headset is still required for qualification.');};
+    $('xr').onclick=async()=>{
+      if(!this.xr||this.stopped||this.disposing)return;
+      if(this.importTask){$('xr-status').textContent='Wait for the local model import to finish before entering VR.';return;}
+      if(this.xr.active||this.xr.busy){await this.xr.exit().catch(()=>{});return;}
+      if(!this.xr.experience){await this.xr.prepare();return;}
+      const audio=this.audio.activate();const entry=this.xr.enter();
+      try{await audio;if(!this.stopped&&!this.disposing)this.state='running';await entry;}catch{if(!this.stopped&&!this.disposing)$('xr-status').textContent='Spatial audio needs permission. Use the audio control after leaving VR.';}
+    };
+    $('xr-dismiss').onclick=()=>this.xr?.dismissError();
   }
   validateModel(bytes,extension) { return validateModelBytes(bytes,extension).json; }
   importState() {
@@ -264,6 +372,8 @@ class Evaluation {
   }
   async importFile(file) {
     if(this.stopped)throw new Error('Evaluation is disposed');
+    if(this.disposing)throw new Error('Evaluation is disposing');
+    if(this.xr?.active||this.xr?.busy)throw new Error('Leave VR before importing a local model.');
     if(!['ready','running'].includes(this.state))throw new Error('Evaluation is not ready to import');
     if(this.importTask)throw new Error('One local import may run at a time');
     const task=this.importTransaction(file);this.importTask=task;
@@ -332,7 +442,7 @@ class Evaluation {
     return {entityCount:world.entities.length,assetCount:world.assets.length};
   }
   async exportGLB() {
-    const exported=await GLTF2Export.GLBAsync(this.scene,'courtyard',{shouldExportNode:node=>node!==this.camera&&!node.metadata?.presentationOnly&&!node.name.endsWith('-screen')});
+    const exported=await GLTF2Export.GLBAsync(this.scene,'courtyard',{shouldExportNode:node=>!(node instanceof B.Camera)&&!node.metadata?.presentationOnly&&!node.name.endsWith('-screen')});
     const blob=exported.glTFFiles['courtyard.glb'];return {blob,bytes:blob.size};
   }
   async checkGLBRoundTrip() {
@@ -340,9 +450,13 @@ class Evaluation {
     const container=await B.LoadAssetContainerAsync(url,this.scene,{pluginExtension:'.glb'});
     const result={bytes,meshes:container.meshes.filter(m=>m.getTotalVertices()>0).length,vertices:container.meshes.reduce((s,m)=>s+m.getTotalVertices(),0),skeletons:container.skeletons.length,animationGroups:container.animationGroups.length,scope:'GLB geometry/material/animation subset; media surfaces and world semantics use the JSON snapshot, not glTF.'};container.dispose();URL.revokeObjectURL(url);return result;
   }
+  inspectXR() {
+    const helper=this.xr?.experience?.helper,camera=helper?.camera;
+    return {...this.xr?.inspect(),pose:this.xrPose,activeCamera:this.scene.activeCamera?.name,rigCameras:camera?.rigCameras.length||0,baseLayer:!!this.xr?.active&&!!helper?.sessionManager.session?.renderState.baseLayer,visuals:this.xrVisuals?{rays:this.xrVisuals.rays.size,exitEnabled:this.xrVisuals.exit.mesh.isEnabled(),warningEnabled:this.xrVisuals.warning.mesh.isEnabled()}:null};
+  }
   inspect() {
     const sorted=[...this.frames].sort((a,b)=>a-b),q=p=>sorted[Math.min(sorted.length-1,Math.floor(sorted.length*p))]||0;
-    return {state:this.state,descriptor:this.descriptor,worldId:this.world?.id,renderer:this.engine.getGlInfo(),webglVersion:this.engine.webGLVersion,rightHanded:this.scene.useRightHandedSystem,canvas:{width:this.canvas.width,height:this.canvas.height},meshes:this.scene.meshes.filter(m=>m.getTotalVertices()>0).length,vertices:this.scene.getTotalVertices(),skeletons:this.scene.skeletons.map(s=>({name:s.name,bones:s.bones.length})),animations:this.animations.map(a=>({entityId:a.entityId,clip:a.data.clip,playing:!!a.group?.isPlaying,position:serialVec(a.node.position),frame:a.group?.animatables?.[0]?.masterFrame??null})),bodies:[...this.bodies].map(([id,b])=>({id,type:b.data.body,position:serialVec(b.body.translation()),velocity:serialVec(b.body.linvel()),rotation:serialQuat(b.body.rotation()),halfExtents:b.half})),player:this.player?{position:serialVec(this.player.translation()),eye:serialVec(this.camera.position),grounded:this.controller.computedGrounded()}:null,audio:this.audio?.inspect(),imports:this.imports,selected:this.selected,physicsSteps:this.physicsSteps,renderTiming:{samples:this.frames.length,p50Ms:q(.5),p95Ms:q(.95),p99Ms:q(.99),label:'Isolated software-renderer diagnostic; not target-device capacity evidence.'}};
+    return {xr:this.inspectXR(),state:this.state,descriptor:this.descriptor,worldId:this.world?.id,renderer:this.engine.getGlInfo(),webglVersion:this.engine.webGLVersion,rightHanded:this.scene.useRightHandedSystem,canvas:{width:this.canvas.width,height:this.canvas.height},meshes:this.scene.meshes.filter(m=>m.getTotalVertices()>0).length,vertices:this.scene.getTotalVertices(),skeletons:this.scene.skeletons.map(s=>({name:s.name,bones:s.bones.length})),animations:this.animations.map(a=>({entityId:a.entityId,clip:a.data.clip,playing:!!a.group?.isPlaying,position:serialVec(a.node.position),frame:a.group?.animatables?.[0]?.masterFrame??null})),bodies:[...this.bodies].map(([id,b])=>({id,type:b.data.body,position:serialVec(b.body.translation()),velocity:serialVec(b.body.linvel()),rotation:serialQuat(b.body.rotation()),halfExtents:b.half})),player:this.player?{position:serialVec(this.player.translation()),eye:this.xr?.active&&this.xrPose?this.xrPose.position:serialVec(this.camera.position),grounded:this.controller.computedGrounded()}:null,audio:this.audio?.inspect(),imports:this.imports,selected:this.selected,physicsSteps:this.physicsSteps,renderTiming:{samples:this.frames.length,p50Ms:q(.5),p95Ms:q(.95),p99Ms:q(.99),label:'Isolated software-renderer diagnostic; not target-device capacity evidence.'}};
   }
   async perform(step,context) {
     if(this.stopped)throw new Error('Evaluation is disposed');
@@ -375,17 +489,27 @@ class Evaluation {
   }
   async dispose() {
     if(this.disposeTask)return this.disposeTask;
-    this.stopped=true;this.engine.stopRenderLoop();this.inputController.abort();this.keys.clear();
-    for(const id of this.pointerIds)if(this.canvas.hasPointerCapture(id))this.canvas.releasePointerCapture(id);this.pointerIds.clear();
-    for(const element of document.querySelectorAll('button,input')) {element.onclick=null;element.onchange=null;element.disabled=true;}
-    document.body.classList.remove('dragging');
+    if(this.stopped)return;
+    this.disposing=true;this.keys.clear();
+    const controls=[...document.querySelectorAll('button,input')].map(element=>({element,disabled:element.disabled}));
+    for(const {element} of controls)element.disabled=true;
     this.disposeTask=(async()=>{
+      // A rejected native end retains renderer ownership and leaves disposal
+      // retryable. Do not free a live session's camera, framebuffer or audio.
+      await this.xr?.dispose();
+      this.stopped=true;this.engine.stopRenderLoop();this.inputController.abort();
+      for(const id of this.pointerIds)if(this.canvas.hasPointerCapture(id))this.canvas.releasePointerCapture(id);this.pointerIds.clear();
+      for(const {element} of controls){element.onclick=null;element.onchange=null;}
+      document.body.classList.remove('dragging');
       if(this.importTask)await this.importTask.catch(()=>{});
-      this.release();await this.audio?.dispose();for(const url of this.urls)URL.revokeObjectURL(url);this.urls=[];
+      this.release();this.clearXRVisuals();await this.audio?.dispose();for(const url of this.urls)URL.revokeObjectURL(url);this.urls=[];
       this.physics?.free();this.scene.dispose();this.engine.dispose();
       this.nodes.clear();this.bodies.clear();this.assetCache.clear();this.localAssets.clear();this.containers=[];this.animations=[];
       this.player=null;this.playerCollider=null;this.controller=null;this.selected=null;this.video=null;this.state='disposed';
-    })();
+    })().finally(()=>{
+      this.disposing=false;this.disposeTask=null;
+      if(!this.stopped){for(const {element,disabled} of controls)element.disabled=disabled;this.updateXRControls(this.xr.inspect());}
+    });
     return this.disposeTask;
   }
 

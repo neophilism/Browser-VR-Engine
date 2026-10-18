@@ -1,4 +1,5 @@
 import { chromium } from 'playwright';
+import { finalizeBrowserRun } from './test/browser-finalize.mjs';
 import { writeFile, mkdir, mkdtemp } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { join, relative } from 'node:path';
@@ -6,7 +7,7 @@ import assert from 'node:assert/strict';
 import { packageRoot, artifactRoot, chromeExecutable, softwareRendering } from './config.mjs';
 import { isolatedEnvironment } from './environment.mjs';
 import { startEvaluationServer } from './server.mjs';
-import { fingerprintFiles, buildInputPaths } from './fixtures.mjs';
+import { fingerprintFiles, evidenceSourcePaths } from './fixtures.mjs';
 
 await mkdir(join(artifactRoot, 'runs'), { recursive: true });
 const outputDirectory = await mkdtemp(join(artifactRoot, 'runs/run-'));
@@ -14,7 +15,7 @@ const output = name => join(outputDirectory, name);
 const startedAt = new Date().toISOString();
 const flags = [...(softwareRendering ? ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'] : []), '--autoplay-policy=document-user-activation-required'];
 const logs = [], requests = [], audioEvents = [], checks = [], observed = {};
-let server, browser, page;
+let server, browser, page, resultBase, fatalError;
 async function check(id, fn) {
   try { const detail = await fn(); checks.push({id, status:'passed', method:'real-browser', detail}); console.log('PASS '+id); }
   catch (error) { checks.push({id, status:'failed', method:'real-browser', detail:error.stack}); console.log('FAIL '+id+': '+error.message); }
@@ -45,6 +46,21 @@ try {
     const url = new URL(route.request().url());
     return url.origin === server.origin || ['blob:', 'data:'].includes(url.protocol) ? route.continue() : route.abort('blockedbyclient');
   });
+  await context.addInitScript(() => {
+    // Hold only the first native capability result. This reproduces the service
+    // spawn/prepare race without substituting a device or requesting a session.
+    const xr=navigator.xr;if(!xr)throw Error('The browser must expose its native WebXR capability query.');
+    const support=xr.isSessionSupported,request=xr.requestSession;
+    let release;const gate=new Promise(resolve=>{release=resolve;});
+    const probe=window.xrPreparationTest={queries:0,requests:0,released:false,release:()=>{
+      probe.released=true;xr.isSessionSupported=support;xr.requestSession=request;release();
+    }};
+    xr.isSessionSupported=function(...args){
+      const result=support.apply(this,args);probe.queries++;
+      return probe.queries===1?Promise.all([result,gate]).then(([supported])=>supported):result;
+    };
+    xr.requestSession=function(...args){probe.requests++;return request.apply(this,args);};
+  });
   page = await context.newPage();
   page.setDefaultTimeout(45000);
   const cdp = await context.newCDPSession(page);
@@ -61,7 +77,29 @@ try {
  await check('real-render-and-frozen-fixtures',async()=>{
    const state=observed.before;assert.equal(state.webglVersion,2);assert.equal(state.rightHanded,true);assert(state.meshes>=70);assert(state.vertices>1500);assert.equal(state.skeletons[0].bones,5);assert(state.animations[0].playing);
    const validation=await page.evaluate(()=>({entities:foundationProbe.world.entities.length,digests:foundationProbe.manifest.sourceFileDigests,assetCount:foundationProbe.assetCache.size}));
-   assert.equal(validation.entities,55);return {...validation,canvas:state.canvas,meshes:state.meshes,vertices:state.vertices,renderer:state.renderer};
+   assert.equal(validation.entities,55);
+   const preparation=observed.xrPreparation={initialEye:state.player.eye};
+   try {
+     Object.assign(preparation,await page.evaluate(()=>{
+       const p=foundationProbe,before=p.inspectXR(),spawns=[];
+       for(const position of [[-2,1.6,7],[2,1.6,3]]) {
+         try {p.setPlayer(position);spawns.push({requested:position,eye:p.camera.position.asArray(),body:p.player.translation(),error:null});}
+         catch(error){spawns.push({requested:position,error:error.message});}
+       }
+       return {before,spawns,queries:xrPreparationTest.queries,sessionRequests:xrPreparationTest.requests,released:xrPreparationTest.released,teleportControlsEnabled:!document.getElementById('home').disabled&&!document.getElementById('center').disabled};
+     }));
+     assert.equal(preparation.before.phase,'preparing');assert.equal(preparation.before.busy,true);assert.equal(preparation.before.active,false);
+     assert.equal(preparation.before.blocksDesktopPose,false);assert.equal(preparation.teleportControlsEnabled,true);
+     assert.equal(preparation.released,false);assert.equal(preparation.sessionRequests,0);
+     for(const spawn of preparation.spawns) {
+       assert.equal(spawn.error,null,'Desktop service placement must remain available during the native capability query');
+       assert.deepEqual(spawn.eye,spawn.requested);
+       assert(Math.hypot(spawn.body.x-spawn.requested[0],spawn.body.y-(spawn.requested[1]-.7),spawn.body.z-spawn.requested[2])<1e-6);
+     }
+   } finally {
+     preparation.after=await page.evaluate(async position=>{xrPreparationTest.release();await foundationProbe.xr.prepareTask;foundationProbe.setPlayer(position);return foundationProbe.inspectXR();},preparation.initialEye);
+   }
+   return {...validation,canvas:state.canvas,meshes:state.meshes,vertices:state.vertices,renderer:state.renderer,preparation};
  });
  await check('user-start-activation',async()=>{
    assert.equal(observed.before.audio.state,'suspended');await page.locator('#start').click();await page.waitForFunction(()=>foundationProbe.audio.context.state==='running');await wait(300);
@@ -69,9 +107,19 @@ try {
    return {activation:state.audio.activation,note:'Application deliberately suspends audio until Start; this does not prove browser autoplay enforcement.'};
  });
  await check('animated-skinned-creature-and-attached-source',async()=>{
-   const a=await inspect();await wait(300);const b=await inspect();assert.notDeepEqual(a.animations[0].position,b.animations[0].position);assert.notEqual(a.animations[0].frame,b.animations[0].frame);
-   const sound=b.audio.sources.find(s=>s.id==='bird-playback');assert(Math.hypot(...sound.position.map((v,i)=>v-b.animations[0].position[i]))<.00001);
-   return {before:a.animations[0],after:b.animations[0],soundPosition:sound.position};
+   // A fixed timer can expire between rendered frames on software CI. Observe
+   // real scene/clip progress without moving the bird or advancing its clock.
+   const sample=()=>page.evaluate(()=>{const p=foundationProbe,state=p.inspect();return {time:performance.now(),sceneFrame:p.scene.getFrameId(),physicsSteps:p.physicsSteps,renderSamples:p.frames.length,animation:state.animations[0],route:{segment:p.animations[0]?.segment,progress:p.animations[0]?.progress},soundPosition:state.audio.sources.find(source=>source.id==='bird-playback')?.position};});
+   const observation=observed.creatureMotion={before:await sample(),timeoutMs:10000};
+   try {
+     assert(Number.isFinite(observation.before.animation.frame),'The skinned clip must expose a real animation frame');
+     await page.waitForFunction(start=>{const p=foundationProbe,frame=p.animations[0]?.group?.animatables?.[0]?.masterFrame;return p.scene.getFrameId()>start.sceneFrame&&p.physicsSteps>start.physicsSteps&&Number.isFinite(frame)&&frame!==start.animation.frame;},observation.before,{polling:50,timeout:observation.timeoutMs});
+   } finally { observation.after=await sample(); }
+   const a=observation.before,b=observation.after;
+   assert(b.sceneFrame>a.sceneFrame&&b.physicsSteps>a.physicsSteps,'The actual scene and simulation must progress');
+   assert.notDeepEqual(a.animation.position,b.animation.position);assert.notEqual(a.animation.frame,b.animation.frame);
+   assert(Math.hypot(...b.soundPosition.map((v,i)=>v-b.animation.position[i]))<.00001);
+   return observation;
  });
  await check('desktop-keyboard-movement',async()=>{
    // Measure a fixed amount of actual simulation progress, not the number of
@@ -215,28 +263,28 @@ try {
    assert.equal(actual.state,'disposed');assert.equal(actual.audioState,'closed');assert.equal(actual.videoElements,0);assert(actual.sceneDisposed);assert(actual.aborted);assert(actual.allControlsDisabled);for(const key of ['keys','nodes','bodies','urls'])assert.equal(actual[key],0);assert.equal(actual.status,initial.status);assert.equal(actual.steps,initial.steps);
    return {...actual,contextsCreated:before,note:'One disposal cycle, including actual post-dispose DOM input and an idempotent second disposal; the 10-cycle hardware/memory measurement is not claimed.'};
  });
- const errors=logs.filter(log=>['error','pageerror'].includes(log.type));
- const result={
+ resultBase={
    scope:'F05 local browser adaptation evidence; partial evaluation, not production-card or hardware acceptance',qualificationStatus:'incomplete',
    startedAt,timestamp:new Date().toISOString(),
    candidate:{babylon:'9.30.0',rapier:'0.21.0',vrspaceCommit:'61f840a3dd0133fc9d357891f37eb1670b147539'},
    environment:{browser:await browser.version(),playwright:'1.62.1',flags,viewport:{width:1280,height:720,dpr:1},graphicsMode:softwareRendering?'SwiftShader':'browser default; hardware not qualified',physicalGPU:softwareRendering?false:'unverified',physicalHeadset:false,physicalAudio:false,subprocessEnvironment:'Explicit evaluation allowlist; empty npm configuration and separate cache/browser paths; HOME/USERPROFILE are not overridden or forwarded.'},
    fixtureDigests:server.manifest.sourceFileDigests,comparison:server.manifest.comparison,build:server.build,
-   sourceDigests:await fingerprintFiles([...buildInputPaths,'config.mjs','environment.mjs','fixtures.mjs','server.mjs','run.mjs','browser-checks.mjs','test/local-server.test.mjs','test/import-policy.test.mjs']),
-   checks,observed,logs,failedRequests:requests,missingEvidence,audioEvents,
-   counts:{passed:checks.filter(check=>check.status==='passed').length,failed:checks.filter(check=>check.status==='failed').length,pageErrors:errors.length,failedRequests:requests.length},
+   checks,observed,missingEvidence,audioEvents,
  };
- result.runStatus=result.counts.passed===19&&result.counts.failed===0&&errors.length===0&&requests.length===0?'passed':'failed';
- await writeFile(output('browser-checks.json'),JSON.stringify(result,null,2)+'\n');
- const summary={scope:result.scope,qualificationStatus:result.qualificationStatus,startedAt,timestamp:result.timestamp,candidate:result.candidate,environment:result.environment,fixtureDigests:result.fixtureDigests,comparison:result.comparison,runStatus:result.runStatus,counts:result.counts,checks:checks.map(({id,status,method})=>({id,status,method})),softwareRenderTiming:observed.final.renderTiming,missingEvidence,evidenceFile:'browser-checks.json'};
- await writeFile(output('f05-summary.json'),JSON.stringify(summary,null,2)+'\n');
- console.log(JSON.stringify({runStatus:result.runStatus,...result.counts,output:relative(packageRoot,outputDirectory)},null,2));
- if(result.runStatus!=='passed')process.exitCode=1;
 } catch (error) {
- await writeFile(output('browser-checks-fatal.json'),JSON.stringify({scope:'F05 incomplete local run; not acceptance',startedAt,timestamp:new Date().toISOString(),runStatus:'failed',error:error.stack,logs,checks,audioEvents},null,2)+'\n');
+ fatalError=error;
  if(page)await page.screenshot({path:output('browser-checks-fatal.png')}).catch(()=>{});
- console.error(error.message);console.error('Failed-run evidence: '+relative(packageRoot,outputDirectory));process.exitCode=1;
 } finally {
- try { await browser?.close(); }
- finally { await server?.close(); }
+ const finalized=await finalizeBrowserRun({checks,expectedChecks:19,readSources:()=>fingerprintFiles(evidenceSourcePaths),closeBrowser:()=>browser?.close(),closeServer:()=>server?.close(),diagnostics:()=>({logs,failedRequests:requests})});
+ if(fatalError){
+   await writeFile(output('browser-checks-fatal.json'),JSON.stringify({scope:'F05 incomplete local run; not acceptance',startedAt,...finalized,runStatus:'failed',error:fatalError.stack,checks,audioEvents},null,2)+'\n');
+   console.error(fatalError.message);console.error('Failed-run evidence: '+relative(packageRoot,outputDirectory));process.exitCode=1;
+ }else{
+   const result={...resultBase,...finalized};
+   await writeFile(output('browser-checks.json'),JSON.stringify(result,null,2)+'\n');
+   const summary={scope:result.scope,qualificationStatus:result.qualificationStatus,startedAt,timestamp:result.timestamp,candidate:result.candidate,environment:result.environment,fixtureDigests:result.fixtureDigests,comparison:result.comparison,runStatus:result.runStatus,counts:result.counts,finalizationErrors:result.finalizationErrors,checks:checks.map(({id,status,method})=>({id,status,method})),softwareRenderTiming:observed.final.renderTiming,missingEvidence,evidenceFile:'browser-checks.json'};
+   await writeFile(output('f05-summary.json'),JSON.stringify(summary,null,2)+'\n');
+   console.log(JSON.stringify({runStatus:result.runStatus,...result.counts,output:relative(packageRoot,outputDirectory)},null,2));
+   if(result.runStatus!=='passed')process.exitCode=1;
+ }
 }

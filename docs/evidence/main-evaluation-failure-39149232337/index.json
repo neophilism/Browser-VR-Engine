@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "kind": "engine-evaluation-pr-and-main-record",
+  "pr": {
+    "number": 6,
+    "url": "https://github.com/neophilism/Browser-VR-Engine/pull/6",
+    "head": "8c0dd0eb01f5708fea9bbb03b23e043b040afbde",
+    "base": "bec6cb1f36256c9bafd8504bb6111733c8e6f858",
+    "tested": "9fd972c0426973588f143fc5856cf5255ff2595b",
+    "tree": "c6cea257e15291b3f67fed9eabcea99b1749f0ca"
+  },
+  "review": {
+    "id": 5564028092,
+    "commit": "8c0dd0eb01f5708fea9bbb03b23e043b040afbde",
+    "state": "COMMENTED",
+    "kind": "assistant-self-review"
+  },
+  "run": {
+    "id": 39148921581,
+    "event": "pull_request",
+    "attempt": 1,
+    "conclusion": "success",
+    "jobs": [
+      {
+        "id": 117738370231,
+        "name": "engine-foundation",
+        "status": "completed",
+        "conclusion": "success",
+        "uploads": [
+          {
+            "name": "Retain exact-run reports",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "id": 117738370451,
+        "name": "engine-evaluations",
+        "status": "completed",
+        "conclusion": "success",
+        "uploads": [
+          {
+            "name": "Retain exact-run evaluation reports",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "id": 117738370530,
+        "name": "engine-service-evaluation",
+        "status": "completed",
+        "conclusion": "success",
+        "uploads": [
+          {
+            "name": "Retain exact-run service reports",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "id": 117739001346,
+        "name": "engine-required",
+        "status": "completed",
+        "conclusion": "success",
+        "uploads": []
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "id": 12144930723,
+      "name": "engine-service-evaluation-9fd972c0426973588f143fc5856cf5255ff2595b-39148921581-1",
+      "bytes": 400187,
+      "digest": "sha256:2f1509f450a773740db59201ba34b8e29326153d95b702113ef5cef0a74dd09e",
+      "downloaded": true,
+      "archiveDigestVerified": true,
+      "checkedInVerifierPassed": true
+    },
+    {
+      "id": 12144059480,
+      "name": "engine-evaluations-9fd972c0426973588f143fc5856cf5255ff2595b-39148921581-1",
+      "bytes": 299762,
+      "digest": "sha256:98376e66ffd1332024e81f2f30f2970028621399ac38b4b02e46571c0fe9d3a7",
+      "downloaded": true,
+      "archiveDigestVerified": true,
+      "checkedInVerifierPassed": true
+    },
+    {
+      "id": 12144018238,
+      "name": "engine-foundation-9fd972c0426973588f143fc5856cf5255ff2595b-39148921581-1",
+      "bytes": 9434,
+      "digest": "sha256:3c50e17509c0a87d80ac44eb46947966c490b34147438bad0aa0782b81f52873",
+      "downloaded": true,
+      "archiveDigestVerified": true,
+      "checkedInVerifierPassed": true
+    }
+  ],
+  "merge": {
+    "sha": "315b0283f598b1bef7f2c6c38c90c01d562fe6c5",
+    "tree": "c6cea257e15291b3f67fed9eabcea99b1749f0ca",
+    "parent": "bec6cb1f36256c9bafd8504bb6111733c8e6f858",
+    "mergedAt": "2026-10-18T17:21:47Z",
+    "expectedHeadMatched": true
+  },
+  "main": {
+    "id": 39149232337,
+    "event": "push",
+    "attempt": 1,
+    "head": "315b0283f598b1bef7f2c6c38c90c01d562fe6c5",
+    "conclusion": "failure",
+    "jobs": [
+      {
+        "id": 117739282064,
+        "name": "engine-evaluations",
+        "status": "completed",
+        "conclusion": "failure",
+        "uploads": [
+          {
+            "name": "Retain exact-run evaluation reports",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "id": 117739282197,
+        "name": "engine-foundation",
+        "status": "completed",
+        "conclusion": "success",
+        "uploads": [
+          {
+            "name": "Retain exact-run reports",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "id": 117739282203,
+        "name": "engine-service-evaluation",
+        "status": "completed",
+        "conclusion": "success",
+        "uploads": [
+          {
+            "name": "Retain exact-run service reports",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "id": 117739838930,
+        "name": "engine-required",
+        "status": "completed",
+        "conclusion": "failure",
+        "uploads": []
+      }
+    ],
+    "issue": "Desktop animated-skinned-creature-and-attached-source check sampled identical positions across a fixed 300 ms delay. Exact interval progression was not retained."
+  },
+  "status": "merged-main-verification-failed",
+  "completeFoundationQualification": false,
+  "retainedScope": "failed-main-desktop-evaluation",
+  "files": [
+    {
+      "path": "evaluation/browser/browser-checks.json",
+      "bytes": 273779,
+      "sha256": "c6028c698e7f4a31ea5029b032182c651ba7423c9be739c6df2ff5e87ed7cdda"
+    },
+    {
+      "path": "evaluation/browser/build.json",
+      "bytes": 2701,
+      "sha256": "39c91153603c4c0ae64b90b27ea19721ed672a04e7fe64d6fd273f67bc87e5b4"
+    },
+    {
+      "path": "evaluation/browser/courtyard-verified.png",
+      "bytes": 137374,
+      "sha256": "3de2e1b5dbe8aad662a5a519d053d5bb1dec905df0307c6f03684fcd207ffe7b"
+    },
+    {
+      "path": "evaluation/browser/derived-prop.glb",
+      "bytes": 1924,
+      "sha256": "0c20e6a53dff9ab6cf08681c47c30d286a664ef5155f8a1b0439f31a2ec97be0"
+    },
+    {
+      "path": "evaluation/browser/f03-before-activation.png",
+      "bytes": 129850,
+      "sha256": "14e9b93fc5067899cb6f0b82fdeda81871c969c668f1425c2ec96bc8ec68b6e9"
+    },
+    {
+      "path": "evaluation/browser/f05-summary.json",
+      "bytes": 5741,
+      "sha256": "ad0fec252eb8d06f15f9dee32b7a327ef0f5d84a880dd94eea3b5bce8c8f9b48"
+    },
+    {
+      "path": "evaluation/logs/f04-audit.txt",
+      "bytes": 42,
+      "sha256": "01ab317b6b75f3a88b6242746cbaad8fc76d83db620c2a6feb562026aa7c7cb0"
+    },
+    {
+      "path": "evaluation/logs/f04-history.txt",
+      "bytes": 301,
+      "sha256": "a7655b85b2e6f6e655ef301e3f43edb69dadc325f60ac92ceff38491fe17efc2"
+    },
+    {
+      "path": "evaluation/logs/f04-install.txt",
+      "bytes": 177,
+      "sha256": "9938133f008c4aa62416ddd9507ccbb565e7d8f0cd5bac74046ce2da55dc434e"
+    },
+    {
+      "path": "evaluation/logs/f04-source.txt",
+      "bytes": 128,
+      "sha256": "d3235fdcc622846d6bc93974325e344cdc0cccd00be05f74c3dbb1aefd32a224"
+    },
+    {
+      "path": "evaluation/logs/f04-tests.txt",
+      "bytes": 1043,
+      "sha256": "68db1e342d9da50aae13f5a2f6c5ce46b9ad3088b2d64e92015797b78338277c"
+    },
+    {
+      "path": "evaluation/logs/f05-audit.txt",
+      "bytes": 42,
+      "sha256": "01ab317b6b75f3a88b6242746cbaad8fc76d83db620c2a6feb562026aa7c7cb0"
+    },
+    {
+      "path": "evaluation/logs/f05-browser-install.txt",
+      "bytes": 16467,
+      "sha256": "92e9e0114565423ceeb9e8c9c4ce35635f9aad0c22a3edb1a2c1308792f5a10e"
+    },
+    {
+      "path": "evaluation/logs/f05-browser.txt",
+      "bytes": 1075,
+      "sha256": "32147eda6e86cb2f809caf6d304a3cb6185851980c7146bf7feaa2acfc9aad15"
+    },
+    {
+      "path": "evaluation/logs/f05-build.txt",
+      "bytes": 172,
+      "sha256": "d47b3c365c26c4da391f64a373adeb64f0411ec47e2bc720432a386d639d7485"
+    },
+    {
+      "path": "evaluation/logs/f05-install.txt",
+      "bytes": 24,
+      "sha256": "c14acfaacab7514b1c429046d3fd4afe531afbe72b5a012dfd6d5d8f88d392fc"
+    },
+    {
+      "path": "evaluation/logs/f05-tests.txt",
+      "bytes": 2778,
+      "sha256": "8bd6ca8d38cd1ab71f10266ddfb5c88f4a2dc73e1255ed9f5e9e5f96e0528e7c"
+    },
+    {
+      "path": "evaluation/manifest.json",
+      "bytes": 9522,
+      "sha256": "24fe1c48d8df00966ab637f87be0fe613d0ea554241ed9c169f2ab2582958723"
+    },
+    {
+      "path": "evaluation/reports/f04/dependency-audit.json",
+      "bytes": 596,
+      "sha256": "bd2d26afd50f981870b6a8c045465caab2fb588142f9b14d65113330721723f1"
+    },
+    {
+      "path": "evaluation/reports/f05/dependency-audit.json",
+      "bytes": 599,
+      "sha256": "7daabf7f6cd8c0d252345a8aff0bd3b404edc2c3e56043426bd94e0d9d9cd65e"
+    }
+  ],
+  "failedArchive": {
+    "id": 12144238621,
+    "bytes": 308138,
+    "sha256": "a28c867d5205f1965cd6de487beee061ea5c5b258c6ddbf7da64d0b7936b3d95",
+    "downloaded": true,
+    "archiveDigestVerified": true,
+    "acceptanceVerifierPassed": false
+  }
+}

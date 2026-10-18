@@ -1,0 +1,14 @@
+{
+  "runStatus": "failed",
+  "qualificationStatus": "incomplete",
+  "ciAcceptance": false,
+  "counts": {
+    "passed": 0,
+    "failed": 0,
+    "checks": 0
+  },
+  "output": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/automation-runs/run-4sc3vgnw",
+  "failures": [
+    "RuntimeError: Service browser subset did not pass"
+  ]
+}
