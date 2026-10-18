@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "node",
+    "run.mjs",
+    "test-lifecycle"
+  ],
+  "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f05-lifecycle/evaluations/babylon-vrspace",
+  "startedAt": "2026-10-18T21:22:24.911+00:00",
+  "finishedAt": "2026-10-18T21:22:57.778+00:00",
+  "exitCode": 0,
+  "beforeRunDirectories": [],
+  "afterRunDirectories": [
+    "run-hH5Mir"
+  ],
+  "newRunDirectories": [
+    "run-hH5Mir"
+  ],
+  "logSha256": "fe5989e0d8e96291bdb287bb257c7976cee470887bea39ae10fba395cefce24e",
+  "localOnly": true,
+  "physicalQualification": false
+}

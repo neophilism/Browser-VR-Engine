@@ -24,7 +24,7 @@
   "sourceIds": ["bird-playback", "corner-playback-0", "corner-playback-1", "corner-playback-2", "corner-playback-3", "wall-playback"],
   "listenerTargets": ["window", "document", "body", "scene", "navigator.xr", "start", "home", "center", "file", "export", "save", "world-file", "video-toggle", "xr", "xr-dismiss", "edit-x", "edit-y", "edit-z", "apply-transform"],
   "settle": {"deadlineMs": 20000, "pollMs": 50, "stableSamples": 2, "forcedCloseDeadlineMs": 10000},
-  "activation": {"deadlineMs": 20000, "audioSeconds": 0.2, "videoSeconds": 0.1, "minimumInputRms": 0.01, "requiredPhysicsProgress": true, "requiredSceneProgress": true, "requiredAnimationProgress": true, "requiredDecodedVideoProgress": true, "userClickRequired": true},
+  "activation": {"deadlineMs": 20000, "audioSeconds": 0.2, "videoSeconds": 0.1, "minimumInputRms": 0.01, "minimumVideoReadyState": 2, "maximumObservations": 256, "maximumSourceWindows": 128, "independentObservedMilestones": true, "wrapAwareVideoProgress": true, "requiredPhysicsProgress": true, "requiredSceneProgress": true, "requiredAnimationProgress": true, "requiredDecodedVideoProgress": true, "userClickRequired": true},
   "observer": {"maximumEvents": 50000, "maximumLiveEntries": 1024, "maximumCDPEvents": 20000, "overflowFails": true, "unsupportedTimerCallbackFails": true},
   "emptyOwnership": {"allRuntimeCounters": 0, "allSceneCounters": 0, "allNativeCounters": 0, "documentVideoElements": 0, "cdpAudioContexts": 0, "publishedInstance": false, "publishedAdapter": false, "failedOwner": false, "pendingHostTask": false},
   "persistentResources": [

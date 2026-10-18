@@ -1,0 +1,868 @@
+TAP version 13
+# Subtest: lifecycle is a distinct mandatory14th command after portable with six unchanged outcome IDs
+ok 1 - lifecycle is a distinct mandatory14th command after portable with six unchanged outcome IDs
+  ---
+  duration_ms: 3.59384
+  type: 'test'
+  ...
+# Subtest: independent lifecycle replay accepts a synthetic ten-cycle trace with native closes and no GC destruction
+ok 2 - independent lifecycle replay accepts a synthetic ten-cycle trace with native closes and no GC destruction
+  ---
+  duration_ms: 106.950025
+  type: 'test'
+  ...
+# Subtest: diagnostic unavailable and increasing memory are not converted into zero or an invented budget
+ok 3 - diagnostic unavailable and increasing memory are not converted into zero or an invented budget
+  ---
+  duration_ms: 75.699794
+  type: 'test'
+  ...
+# Subtest: late CDP wrapper destruction is replayed without requiring a garbage collection deadline
+ok 4 - late CDP wrapper destruction is replayed without requiring a garbage collection deadline
+  ---
+  duration_ms: 75.096981
+  type: 'test'
+  ...
+# Subtest: CDP nodes destroyed before activation cannot satisfy the live graph using cumulative creation counts
+ok 5 - CDP nodes destroyed before activation cannot satisfy the live graph using cumulative creation counts
+  ---
+  duration_ms: 264.84537
+  type: 'test'
+  ...
+# Subtest: milestones can occur in distinct native samples while final animation phase and latest audio return to their initial values
+ok 6 - milestones can occur in distinct native samples while final animation phase and latest audio return to their initial values
+  ---
+  duration_ms: 69.076219
+  type: 'test'
+  ...
+# Subtest: adjacent observations prove playback across a loop wrap without a final-clock-difference assumption
+ok 7 - adjacent observations prove playback across a loop wrap without a final-clock-difference assumption
+  ---
+  duration_ms: 61.232395
+  type: 'test'
+  ...
+# Subtest: an initial metadata-ready trace may have an early sample before any readiness milestone
+ok 8 - an initial metadata-ready trace may have an early sample before any readiness milestone
+  ---
+  duration_ms: 64.74969
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects missing native media trace after all envelope hashes are rebound
+ok 9 - lifecycle independently rejects missing native media trace after all envelope hashes are rebound
+  ---
+  duration_ms: 54.964618
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects empty observation trace after all envelope hashes are rebound
+ok 10 - lifecycle independently rejects empty observation trace after all envelope hashes are rebound
+  ---
+  duration_ms: 67.62842
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects 257 media observations after all envelope hashes are rebound
+ok 11 - lifecycle independently rejects 257 media observations after all envelope hashes are rebound
+  ---
+  duration_ms: 68.968801
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects 129 retained source windows after all envelope hashes are rebound
+ok 12 - lifecycle independently rejects 129 retained source windows after all envelope hashes are rebound
+  ---
+  duration_ms: 78.098514
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects before observation unbound from native snapshot after all envelope hashes are rebound
+ok 13 - lifecycle independently rejects before observation unbound from native snapshot after all envelope hashes are rebound
+  ---
+  duration_ms: 62.158111
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects last observation unbound from native snapshot after all envelope hashes are rebound
+ok 14 - lifecycle independently rejects last observation unbound from native snapshot after all envelope hashes are rebound
+  ---
+  duration_ms: 89.736802
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects last sample omitted after all envelope hashes are rebound
+ok 15 - lifecycle independently rejects last sample omitted after all envelope hashes are rebound
+  ---
+  duration_ms: 74.463227
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects regressed sample clock after all envelope hashes are rebound
+ok 16 - lifecycle independently rejects regressed sample clock after all envelope hashes are rebound
+  ---
+  duration_ms: 61.329035
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects regressed decoded frame count after all envelope hashes are rebound
+ok 17 - lifecycle independently rejects regressed decoded frame count after all envelope hashes are rebound
+  ---
+  duration_ms: 50.753854
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects changed video identity after all envelope hashes are rebound
+ok 18 - lifecycle independently rejects changed video identity after all envelope hashes are rebound
+  ---
+  duration_ms: 50.269082
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects changed audio sample rate after all envelope hashes are rebound
+ok 19 - lifecycle independently rejects changed audio sample rate after all envelope hashes are rebound
+  ---
+  duration_ms: 48.92482
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects missing native metadata readiness after all envelope hashes are rebound
+ok 20 - lifecycle independently rejects missing native metadata readiness after all envelope hashes are rebound
+  ---
+  duration_ms: 45.982106
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects invented first milestone positions after all envelope hashes are rebound
+ok 21 - lifecycle independently rejects invented first milestone positions after all envelope hashes are rebound
+  ---
+  duration_ms: 49.103819
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects invented video elapsed duration after all envelope hashes are rebound
+ok 22 - lifecycle independently rejects invented video elapsed duration after all envelope hashes are rebound
+  ---
+  duration_ms: 50.958595
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects invented video wrap count after all envelope hashes are rebound
+ok 23 - lifecycle independently rejects invented video wrap count after all envelope hashes are rebound
+  ---
+  duration_ms: 50.993293
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects invented video duration binding after all envelope hashes are rebound
+ok 24 - lifecycle independently rejects invented video duration binding after all envelope hashes are rebound
+  ---
+  duration_ms: 48.937049
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects seek jumps counted as elapsed playback after all envelope hashes are rebound
+ok 25 - lifecycle independently rejects seek jumps counted as elapsed playback after all envelope hashes are rebound
+  ---
+  duration_ms: 50.648696
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects passing counters conceal incomplete media reducer after all envelope hashes are rebound
+ok 26 - lifecycle independently rejects passing counters conceal incomplete media reducer after all envelope hashes are rebound
+  ---
+  duration_ms: 52.85829
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects positive audio without any native window after all envelope hashes are rebound
+ok 27 - lifecycle independently rejects positive audio without any native window after all envelope hashes are rebound
+  ---
+  duration_ms: 59.082051
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects silent window relabeled as positive after all envelope hashes are rebound
+ok 28 - lifecycle independently rejects silent window relabeled as positive after all envelope hashes are rebound
+  ---
+  duration_ms: 57.183053
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects dropped window relabeled as positive after all envelope hashes are rebound
+ok 29 - lifecycle independently rejects dropped window relabeled as positive after all envelope hashes are rebound
+  ---
+  duration_ms: 54.633162
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects wrong audio render-window length after all envelope hashes are rebound
+ok 30 - lifecycle independently rejects wrong audio render-window length after all envelope hashes are rebound
+  ---
+  duration_ms: 53.277887
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects reordered audio history after all envelope hashes are rebound
+ok 31 - lifecycle independently rejects reordered audio history after all envelope hashes are rebound
+  ---
+  duration_ms: 75.472513
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects latest RMS detached from retained native window after all envelope hashes are rebound
+ok 32 - lifecycle independently rejects latest RMS detached from retained native window after all envelope hashes are rebound
+  ---
+  duration_ms: 61.519605
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects all positive audio predates activation after all envelope hashes are rebound
+ok 33 - lifecycle independently rejects all positive audio predates activation after all envelope hashes are rebound
+  ---
+  duration_ms: 91.618033
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects all source windows contain invalid frames after all envelope hashes are rebound
+ok 34 - lifecycle independently rejects all source windows contain invalid frames after all envelope hashes are rebound
+  ---
+  duration_ms: 63.741081
+  type: 'test'
+  ...
+# Subtest: lifecycle independently rejects all source windows were dropped after all envelope hashes are rebound
+ok 35 - lifecycle independently rejects all source windows were dropped after all envelope hashes are rebound
+  ---
+  duration_ms: 56.150748
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects nine cycles despite six passing checks with all file hashes recomputed
+ok 36 - lifecycle verifier rejects nine cycles despite six passing checks with all file hashes recomputed
+  ---
+  duration_ms: 66.536495
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects duplicate cycle identity with all file hashes recomputed
+ok 37 - lifecycle verifier rejects duplicate cycle identity with all file hashes recomputed
+  ---
+  duration_ms: 60.945516
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects same instance reused with all file hashes recomputed
+ok 38 - lifecycle verifier rejects same instance reused with all file hashes recomputed
+  ---
+  duration_ms: 78.987335
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects new browser context halfway through with all file hashes recomputed
+ok 39 - lifecycle verifier rejects new browser context halfway through with all file hashes recomputed
+  ---
+  duration_ms: 92.267124
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects page reload token with all file hashes recomputed
+ok 40 - lifecycle verifier rejects page reload token with all file hashes recomputed
+  ---
+  duration_ms: 56.851617
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects different raw event target with all file hashes recomputed
+ok 41 - lifecycle verifier rejects different raw event target with all file hashes recomputed
+  ---
+  duration_ms: 49.147394
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects snapshot outside actual run with all file hashes recomputed
+ok 42 - lifecycle verifier rejects snapshot outside actual run with all file hashes recomputed
+  ---
+  duration_ms: 66.587353
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects snapshot order reversal with all file hashes recomputed
+ok 43 - lifecycle verifier rejects snapshot order reversal with all file hashes recomputed
+  ---
+  duration_ms: 60.463065
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects undeclared snapshot phase with all file hashes recomputed
+ok 44 - lifecycle verifier rejects undeclared snapshot phase with all file hashes recomputed
+  ---
+  duration_ms: 133.0667
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects fallback fixture request with all file hashes recomputed
+ok 45 - lifecycle verifier rejects fallback fixture request with all file hashes recomputed
+  ---
+  duration_ms: 134.056523
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects raw fallback request hidden by report count with all file hashes recomputed
+ok 46 - lifecycle verifier rejects raw fallback request hidden by report count with all file hashes recomputed
+  ---
+  duration_ms: 120.969109
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects changed input carrier hash with all file hashes recomputed
+ok 47 - lifecycle verifier rejects changed input carrier hash with all file hashes recomputed
+  ---
+  duration_ms: 61.707447
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects omitted unused original SVG with all file hashes recomputed
+ok 48 - lifecycle verifier rejects omitted unused original SVG with all file hashes recomputed
+  ---
+  duration_ms: 92.376764
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects changed authored world input revision with all file hashes recomputed
+ok 49 - lifecycle verifier rejects changed authored world input revision with all file hashes recomputed
+  ---
+  duration_ms: 60.126424
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects missing strict counter key with all file hashes recomputed
+ok 50 - lifecycle verifier rejects missing strict counter key with all file hashes recomputed
+  ---
+  duration_ms: 59.94909
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects negative runtime counter with all file hashes recomputed
+ok 51 - lifecycle verifier rejects negative runtime counter with all file hashes recomputed
+  ---
+  duration_ms: 296.007399
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects nonfinite runtime counter with all file hashes recomputed
+ok 52 - lifecycle verifier rejects nonfinite runtime counter with all file hashes recomputed
+  ---
+  duration_ms: 146.570881
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects empty synthetic scene called loaded with all file hashes recomputed
+ok 53 - lifecycle verifier rejects empty synthetic scene called loaded with all file hashes recomputed
+  ---
+  duration_ms: 79.236486
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects missing solid bodies with all file hashes recomputed
+ok 54 - lifecycle verifier rejects missing solid bodies with all file hashes recomputed
+  ---
+  duration_ms: 71.019381
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects missing decoded originals with all file hashes recomputed
+ok 55 - lifecycle verifier rejects missing decoded originals with all file hashes recomputed
+  ---
+  duration_ms: 50.068106
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects lost import ownership with all file hashes recomputed
+ok 56 - lifecycle verifier rejects lost import ownership with all file hashes recomputed
+  ---
+  duration_ms: 58.915746
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects stale published adapter after unload with all file hashes recomputed
+ok 57 - lifecycle verifier rejects stale published adapter after unload with all file hashes recomputed
+  ---
+  duration_ms: 51.380588
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects failed retained instance after unload with all file hashes recomputed
+ok 58 - lifecycle verifier rejects failed retained instance after unload with all file hashes recomputed
+  ---
+  duration_ms: 70.798135
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects final remains ready with all file hashes recomputed
+ok 59 - lifecycle verifier rejects final remains ready with all file hashes recomputed
+  ---
+  duration_ms: 54.496562
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects live original bytes after unload with all file hashes recomputed
+ok 60 - lifecycle verifier rejects live original bytes after unload with all file hashes recomputed
+  ---
+  duration_ms: 51.512965
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects live meshes hidden by empty host with all file hashes recomputed
+ok 61 - lifecycle verifier rejects live meshes hidden by empty host with all file hashes recomputed
+  ---
+  duration_ms: 52.588823
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects dispose receipt belongs to another instance with all file hashes recomputed
+ok 62 - lifecycle verifier rejects dispose receipt belongs to another instance with all file hashes recomputed
+  ---
+  duration_ms: 59.293791
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects cleanup failed receipt relabeled by counts with all file hashes recomputed
+ok 63 - lifecycle verifier rejects cleanup failed receipt relabeled by counts with all file hashes recomputed
+  ---
+  duration_ms: 48.4442
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects disposed receipt still owns port with all file hashes recomputed
+ok 64 - lifecycle verifier rejects disposed receipt still owns port with all file hashes recomputed
+  ---
+  duration_ms: 47.174224
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects physics never advanced with all file hashes recomputed
+ok 65 - lifecycle verifier rejects physics never advanced with all file hashes recomputed
+  ---
+  duration_ms: 58.773689
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects render frames never advanced with all file hashes recomputed
+ok 66 - lifecycle verifier rejects render frames never advanced with all file hashes recomputed
+  ---
+  duration_ms: 47.495212
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects route moved but animation frame frozen with all file hashes recomputed
+ok 67 - lifecycle verifier rejects route moved but animation frame frozen with all file hashes recomputed
+  ---
+  duration_ms: 57.912461
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects animation frame changed but route frozen with all file hashes recomputed
+ok 68 - lifecycle verifier rejects animation frame changed but route frozen with all file hashes recomputed
+  ---
+  duration_ms: 48.147286
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects different animation used as evidence with all file hashes recomputed
+ok 69 - lifecycle verifier rejects different animation used as evidence with all file hashes recomputed
+  ---
+  duration_ms: 63.708232
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects audio clock frozen with all file hashes recomputed
+ok 70 - lifecycle verifier rejects audio clock frozen with all file hashes recomputed
+  ---
+  duration_ms: 53.974794
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects no actual user gesture with all file hashes recomputed
+ok 71 - lifecycle verifier rejects no actual user gesture with all file hashes recomputed
+  ---
+  duration_ms: 45.856094
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects missing audio source with all file hashes recomputed
+ok 72 - lifecycle verifier rejects missing audio source with all file hashes recomputed
+  ---
+  duration_ms: 62.897605
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects silent source hidden by counters with all file hashes recomputed
+ok 73 - lifecycle verifier rejects silent source hidden by counters with all file hashes recomputed
+  ---
+  duration_ms: 49.072509
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects invalid worklet message with all file hashes recomputed
+ok 74 - lifecycle verifier rejects invalid worklet message with all file hashes recomputed
+  ---
+  duration_ms: 54.076285
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects absent measured worklet frame with all file hashes recomputed
+ok 75 - lifecycle verifier rejects absent measured worklet frame with all file hashes recomputed
+  ---
+  duration_ms: 45.242441
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects video paused with all file hashes recomputed
+ok 76 - lifecycle verifier rejects video paused with all file hashes recomputed
+  ---
+  duration_ms: 61.734924
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects video clock frozen with all file hashes recomputed
+ok 77 - lifecycle verifier rejects video clock frozen with all file hashes recomputed
+  ---
+  duration_ms: 52.371489
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects no decoded video progress with all file hashes recomputed
+ok 78 - lifecycle verifier rejects no decoded video progress with all file hashes recomputed
+  ---
+  duration_ms: 50.468896
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects decoded frames unavailable with all file hashes recomputed
+ok 79 - lifecycle verifier rejects decoded frames unavailable with all file hashes recomputed
+  ---
+  duration_ms: 52.748922
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects missing post-unload mouse action with all file hashes recomputed
+ok 80 - lifecycle verifier rejects missing post-unload mouse action with all file hashes recomputed
+  ---
+  duration_ms: 47.019366
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects post-unload input created another instance with all file hashes recomputed
+ok 81 - lifecycle verifier rejects post-unload input created another instance with all file hashes recomputed
+  ---
+  duration_ms: 52.69812
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects new lingering DOM video with all file hashes recomputed
+ok 82 - lifecycle verifier rejects new lingering DOM video with all file hashes recomputed
+  ---
+  duration_ms: 42.194443
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects missing listener target with all file hashes recomputed
+ok 83 - lifecycle verifier rejects missing listener target with all file hashes recomputed
+  ---
+  duration_ms: 57.376926
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects lingering keydown listener with all file hashes recomputed
+ok 84 - lifecycle verifier rejects lingering keydown listener with all file hashes recomputed
+  ---
+  duration_ms: 51.320746
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects passive listener change with all file hashes recomputed
+ok 85 - lifecycle verifier rejects passive listener change with all file hashes recomputed
+  ---
+  duration_ms: 56.041727
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects lost permanent world-file host listener with all file hashes recomputed
+ok 86 - lifecycle verifier rejects lost permanent world-file host listener with all file hashes recomputed
+  ---
+  duration_ms: 46.959103
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects native observer fault with all file hashes recomputed
+ok 87 - lifecycle verifier rejects native observer fault with all file hashes recomputed
+  ---
+  duration_ms: 57.436726
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects native event overflow with all file hashes recomputed
+ok 88 - lifecycle verifier rejects native event overflow with all file hashes recomputed
+  ---
+  duration_ms: 55.804282
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects snapshot observer overflow with all file hashes recomputed
+ok 89 - lifecycle verifier rejects snapshot observer overflow with all file hashes recomputed
+  ---
+  duration_ms: 45.695232
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects CDP overflow with all file hashes recomputed
+ok 90 - lifecycle verifier rejects CDP overflow with all file hashes recomputed
+  ---
+  duration_ms: 58.459476
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects native event sequence gap with all file hashes recomputed
+ok 91 - lifecycle verifier rejects native event sequence gap with all file hashes recomputed
+  ---
+  duration_ms: 45.666454
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects native close reclassified as an unproven release with all file hashes recomputed
+ok 92 - lifecycle verifier rejects native close reclassified as an unproven release with all file hashes recomputed
+  ---
+  duration_ms: 53.064566
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects worklet port bound to another native context with all file hashes recomputed
+ok 93 - lifecycle verifier rejects worklet port bound to another native context with all file hashes recomputed
+  ---
+  duration_ms: 51.619438
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects interval callback treated as release with all file hashes recomputed
+ok 94 - lifecycle verifier rejects interval callback treated as release with all file hashes recomputed
+  ---
+  duration_ms: 58.090278
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects GL deletion removed from actual event trace with all file hashes recomputed
+ok 95 - lifecycle verifier rejects GL deletion removed from actual event trace with all file hashes recomputed
+  ---
+  duration_ms: 50.826021
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects raw allocation not represented by snapshot IDs with all file hashes recomputed
+ok 96 - lifecycle verifier rejects raw allocation not represented by snapshot IDs with all file hashes recomputed
+  ---
+  duration_ms: 55.524954
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects native count hides live-ID entry with all file hashes recomputed
+ok 97 - lifecycle verifier rejects native count hides live-ID entry with all file hashes recomputed
+  ---
+  duration_ms: 47.045864
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects renderer allocation observation omitted with all file hashes recomputed
+ok 98 - lifecycle verifier rejects renderer allocation observation omitted with all file hashes recomputed
+  ---
+  duration_ms: 51.86772
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects native prefix made stale with all file hashes recomputed
+ok 99 - lifecycle verifier rejects native prefix made stale with all file hashes recomputed
+  ---
+  duration_ms: 48.824405
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects CDP prefix made stale with all file hashes recomputed
+ok 100 - lifecycle verifier rejects CDP prefix made stale with all file hashes recomputed
+  ---
+  duration_ms: 57.285279
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects CDP close state hidden with all file hashes recomputed
+ok 101 - lifecycle verifier rejects CDP close state hidden with all file hashes recomputed
+  ---
+  duration_ms: 58.966625
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects invented garbage collection count with all file hashes recomputed
+ok 102 - lifecycle verifier rejects invented garbage collection count with all file hashes recomputed
+  ---
+  duration_ms: 51.354622
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects invented closed-context count with all file hashes recomputed
+ok 103 - lifecycle verifier rejects invented closed-context count with all file hashes recomputed
+  ---
+  duration_ms: 47.427295
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects missing CDP source creation with all file hashes recomputed
+ok 104 - lifecycle verifier rejects missing CDP source creation with all file hashes recomputed
+  ---
+  duration_ms: 52.461094
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects duplicate CDP node ID with all file hashes recomputed
+ok 105 - lifecycle verifier rejects duplicate CDP node ID with all file hashes recomputed
+  ---
+  duration_ms: 63.668316
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects CDP audio ownership outside current context with all file hashes recomputed
+ok 106 - lifecycle verifier rejects CDP audio ownership outside current context with all file hashes recomputed
+  ---
+  duration_ms: 55.65614
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects negative control boolean without allocation with all file hashes recomputed
+ok 107 - lifecycle verifier rejects negative control boolean without allocation with all file hashes recomputed
+  ---
+  duration_ms: 50.913833
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects negative control never released with all file hashes recomputed
+ok 108 - lifecycle verifier rejects negative control never released with all file hashes recomputed
+  ---
+  duration_ms: 60.041278
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects missing diagnostic availability with all file hashes recomputed
+ok 109 - lifecycle verifier rejects missing diagnostic availability with all file hashes recomputed
+  ---
+  duration_ms: 54.946439
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects unavailable heap disguised as zero with all file hashes recomputed
+ok 110 - lifecycle verifier rejects unavailable heap disguised as zero with all file hashes recomputed
+  ---
+  duration_ms: 47.651831
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects unreviewed memory tolerance with all file hashes recomputed
+ok 111 - lifecycle verifier rejects unreviewed memory tolerance with all file hashes recomputed
+  ---
+  duration_ms: 47.350724
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects physical GPU measurement claim with all file hashes recomputed
+ok 112 - lifecycle verifier rejects physical GPU measurement claim with all file hashes recomputed
+  ---
+  duration_ms: 72.066816
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects different checked profile hash with all file hashes recomputed
+ok 113 - lifecycle verifier rejects different checked profile hash with all file hashes recomputed
+  ---
+  duration_ms: 53.962406
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects different raw event profile with all file hashes recomputed
+ok 114 - lifecycle verifier rejects different raw event profile with all file hashes recomputed
+  ---
+  duration_ms: 50.287746
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects missing profile source hash with all file hashes recomputed
+ok 115 - lifecycle verifier rejects missing profile source hash with all file hashes recomputed
+  ---
+  duration_ms: 50.555822
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects changed observer source hash with all file hashes recomputed
+ok 116 - lifecycle verifier rejects changed observer source hash with all file hashes recomputed
+  ---
+  duration_ms: 70.202151
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects missing lifecycle check with all file hashes recomputed
+ok 117 - lifecycle verifier rejects missing lifecycle check with all file hashes recomputed
+  ---
+  duration_ms: 62.957173
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects failed check hidden by passed counts with all file hashes recomputed
+ok 118 - lifecycle verifier rejects failed check hidden by passed counts with all file hashes recomputed
+  ---
+  duration_ms: 51.418397
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects wrong run command with all file hashes recomputed
+ok 119 - lifecycle verifier rejects wrong run command with all file hashes recomputed
+  ---
+  duration_ms: 60.61644
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects failed command despite passing browser with all file hashes recomputed
+ok 120 - lifecycle verifier rejects failed command despite passing browser with all file hashes recomputed
+  ---
+  duration_ms: 53.214246
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects child error despite zero exit with all file hashes recomputed
+ok 121 - lifecycle verifier rejects child error despite zero exit with all file hashes recomputed
+  ---
+  duration_ms: 53.401846
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects child signal despite zero exit with all file hashes recomputed
+ok 122 - lifecycle verifier rejects child signal despite zero exit with all file hashes recomputed
+  ---
+  duration_ms: 64.743913
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects different stdout run with all file hashes recomputed
+ok 123 - lifecycle verifier rejects different stdout run with all file hashes recomputed
+  ---
+  duration_ms: 51.937465
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects two passing stdout receipts with all file hashes recomputed
+ok 124 - lifecycle verifier rejects two passing stdout receipts with all file hashes recomputed
+  ---
+  duration_ms: 51.846198
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects historical evidence directory with all file hashes recomputed
+ok 125 - lifecycle verifier rejects historical evidence directory with all file hashes recomputed
+  ---
+  duration_ms: 66.977245
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects run outside actual command with all file hashes recomputed
+ok 126 - lifecycle verifier rejects run outside actual command with all file hashes recomputed
+  ---
+  duration_ms: 53.288487
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects full qualification claim with all file hashes recomputed
+ok 127 - lifecycle verifier rejects full qualification claim with all file hashes recomputed
+  ---
+  duration_ms: 64.549601
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects late browser error with all file hashes recomputed
+ok 128 - lifecycle verifier rejects late browser error with all file hashes recomputed
+  ---
+  duration_ms: 52.996059
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects late failed request with all file hashes recomputed
+ok 129 - lifecycle verifier rejects late failed request with all file hashes recomputed
+  ---
+  duration_ms: 50.293534
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects late browser cleanup failure with all file hashes recomputed
+ok 130 - lifecycle verifier rejects late browser cleanup failure with all file hashes recomputed
+  ---
+  duration_ms: 62.276269
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects non-null fatal "" with all file hashes recomputed
+ok 131 - lifecycle verifier rejects non-null fatal "" with all file hashes recomputed
+  ---
+  duration_ms: 51.243596
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects non-null fatal false with all file hashes recomputed
+ok 132 - lifecycle verifier rejects non-null fatal false with all file hashes recomputed
+  ---
+  duration_ms: 49.79297
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects non-null fatal 0 with all file hashes recomputed
+ok 133 - lifecycle verifier rejects non-null fatal 0 with all file hashes recomputed
+  ---
+  duration_ms: 67.770416
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects non-null fatal {} with all file hashes recomputed
+ok 134 - lifecycle verifier rejects non-null fatal {} with all file hashes recomputed
+  ---
+  duration_ms: 47.11695
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects non-null fatal [] with all file hashes recomputed
+ok 135 - lifecycle verifier rejects non-null fatal [] with all file hashes recomputed
+  ---
+  duration_ms: 57.622443
+  type: 'test'
+  ...
+# Subtest: lifecycle verifier rejects non-null fatal "late fatal" with all file hashes recomputed
+ok 136 - lifecycle verifier rejects non-null fatal "late fatal" with all file hashes recomputed
+  ---
+  duration_ms: 56.603859
+  type: 'test'
+  ...
+# Subtest: a native allocation after final snapshot cannot be hidden by a later matching release
+ok 137 - a native allocation after final snapshot cannot be hidden by a later matching release
+  ---
+  duration_ms: 54.584487
+  type: 'test'
+  ...
+# Subtest: transient native work caused by unloaded input is rejected even after both live snapshots are empty
+ok 138 - transient native work caused by unloaded input is rejected even after both live snapshots are empty
+  ---
+  duration_ms: 64.229919
+  type: 'test'
+  ...
+# Subtest: native/CDP live traces cannot be replaced by empty boolean-only summaries
+ok 139 - native/CDP live traces cannot be replaced by empty boolean-only summaries
+  ---
+  duration_ms: 152.623105
+  type: 'test'
+  ...
+# Subtest: every collected lifecycle file remains bound to its actual bytes and inventory
+ok 140 - every collected lifecycle file remains bound to its actual bytes and inventory
+  ---
+  duration_ms: 199.174844
+  type: 'test'
+  ...
+# Subtest: lifecycle collector requires exactly one new real run directory
+ok 141 - lifecycle collector requires exactly one new real run directory
+  ---
+  duration_ms: 5.462787
+  type: 'test'
+  ...
+# Subtest: downloaded lifecycle event size is rejected before reading an oversized file
+ok 142 - downloaded lifecycle event size is rejected before reading an oversized file
+  ---
+  duration_ms: 1.963659
+  type: 'test'
+  ...
+# Subtest: semantic inspector bounds hostile nesting and reports invalid checked originals
+ok 143 - semantic inspector bounds hostile nesting and reports invalid checked originals
+  ---
+  duration_ms: 28.320707
+  type: 'test'
+  ...
+1..143
+# tests 143
+# suites 0
+# pass 143
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9143.502074

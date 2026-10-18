@@ -10,6 +10,7 @@ import { childEnvironment } from './environment.mjs';
 import { classifyAudit } from '../check-dependencies.mjs';
 import { redact } from '../check-secret-exposure.mjs';
 import { inspectPortableCarrier, validatePortableWorldObservations } from './portable-carrier-evidence.mjs';
+import { validateLifecycleObservations } from './lifecycle-resource-evidence.mjs';
 
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const hashPattern = /^[a-f0-9]{64}$/;
@@ -39,7 +40,9 @@ export const requiredF05SourceFiles = Object.freeze([
   ...requiredF05BuildInputs, 'config.mjs', 'environment.mjs', 'fixtures.mjs', 'server.mjs', 'run.mjs',
   'browser-checks.mjs', 'test/local-server.test.mjs', 'test/import-policy.test.mjs',
   'test/xr-session.test.mjs', 'test/xr-browser-checks.mjs', 'test/browser-finalize.mjs',
-  'test/portable-world.test.mjs', 'test/portable-browser-checks.mjs'
+  'test/portable-world.test.mjs', 'test/portable-browser-checks.mjs',
+  'test/media-progress.mjs', 'test/media-progress.test.mjs',
+  'test/lifecycle-browser-checks.mjs', 'test/lifecycle-observer.mjs', 'test/lifecycle-profile.json', 'test/lifecycle-observer.test.mjs'
 ]);
 export const requiredF05Checks = Object.freeze([
   'real-render-and-frozen-fixtures', 'user-start-activation', 'animated-skinned-creature-and-attached-source',
@@ -66,6 +69,11 @@ export const requiredF05PortableChecks = Object.freeze([
   'portable-affine-static-projection', 'portable-native-load-failure-rollback',
   'portable-disposal-releases-instance-resources'
 ]);
+export const requiredF05LifecycleChecks = Object.freeze([
+  'lifecycle-empty-host-baseline', 'lifecycle-observer-negative-control', 'lifecycle-ten-activated-cycles',
+  'lifecycle-native-resource-release', 'lifecycle-unloaded-input-inert', 'lifecycle-final-empty-host'
+]);
+const lifecycleFiles = Object.freeze(['lifecycle-browser-checks.json', 'lifecycle-summary.json', 'build.json', 'lifecycle-resource-events.json']);
 const portableFiles = Object.freeze(['portable-browser-checks.json', 'portable-summary.json', 'build.json', 'portable-world.png',
   'exported-world.bveworld', 'reexported-world.bveworld', 'authored-world.bveworld']);
 const xrFiles = Object.freeze(['xr-browser-checks.json', 'emulated-stereo.png', 'emulated-failed.png']);
@@ -367,6 +375,75 @@ export async function validatePortableBrowserEvidence(report, summary, {
   return errors;
 }
 
+export async function validateLifecycleBrowserEvidence(report, summary, {
+  root, record, lifecycleCommand, requireBuildOutputs = false,
+  reportBytes = report ? Buffer.from(pretty(report)) : null,
+  summaryBytes = summary ? Buffer.from(pretty(summary)) : null,
+  buildBytes = report?.build ? Buffer.from(pretty(report.build)) : null,
+  eventsBytes = null,
+} = {}) {
+  const errors = [];
+  if (!object(report) || !object(summary) || !object(record?.lifecycle)) return ['Missing fresh ten-cycle lifecycle result binding'];
+  const binding = record.lifecycle, files = Array.isArray(record.files) ? record.files : [];
+  if (!/^artifacts\/lifecycle-runs\/run-[A-Za-z0-9]+$/.test(binding.runDirectory ?? '')) errors.push('Invalid fresh lifecycle run directory');
+  if (report.runStatus !== 'passed' || summary.runStatus !== 'passed' || report.qualificationStatus !== 'incomplete'
+    || summary.qualificationStatus !== 'incomplete' || report.method !== 'real-browser'
+    || report.physicalHeadset !== false || report.physicalAudio !== false) errors.push('Lifecycle evidence must remain an incomplete software browser subset');
+  if (!Array.isArray(report.checks) || !equal(report.checks.map(check => check?.id), requiredF05LifecycleChecks)
+    || report.checks.some(check => check?.status !== 'passed' || check?.method !== 'real-browser')) errors.push('Required current 6 lifecycle checks are missing, changed or failing');
+  const counts = { passed: requiredF05LifecycleChecks.length, failed: 0, pageErrors: 0, failedRequests: 0, logOverflow: 0 };
+  if (!equal(report.counts, counts) || !equal(summary.counts, counts)) errors.push('Lifecycle check/error/request counts are invalid');
+  if (!Array.isArray(report.finalizationErrors) || report.finalizationErrors.length) errors.push('Lifecycle finalization did not complete cleanly');
+  if (!Array.isArray(report.failedRequests) || report.failedRequests.length) errors.push('Lifecycle contains failed requests');
+  if (!Array.isArray(report.logs) || report.logs.some(log => !object(log) || !['warning', 'warn'].includes(log.type))) errors.push('Lifecycle contains page errors or invalid diagnostics');
+  for (const value of [report, summary]) if (value.fatalError !== null && value.fatalError !== undefined) errors.push('Lifecycle contains a fatal error or malformed fatal field');
+  if (!Array.isArray(report.missingEvidence) || !report.missingEvidence.length || report.missingEvidence.some(item => typeof item !== 'string' || !item.trim())) errors.push('Lifecycle qualification limitations are missing');
+  if (summary.evidenceFile !== 'lifecycle-browser-checks.json'
+    || !equal(summary.checks, Array.isArray(report.checks) ? report.checks.map(check => object(check) ? { id: check.id, status: check.status, method: check.method } : null) : null)) errors.push('Lifecycle summary differs from its report');
+  const times = [lifecycleCommand?.startedAt, report.startedAt, report.timestamp, lifecycleCommand?.finishedAt].map(value => typeof value === 'string' ? Date.parse(value) : NaN);
+  if (times.some(time => !Number.isFinite(time)) || times.some((time, index) => index > 0 && time < times[index - 1])
+    || binding.startedAt !== report.startedAt || binding.finishedAt !== report.timestamp) errors.push('Lifecycle evidence is stale or outside its command time bounds');
+  const expectedCommand = evaluationCommands.find(command => command.id === 'f05-lifecycle-browser');
+  if (lifecycleCommand?.id !== expectedCommand.id || lifecycleCommand?.cwd !== expectedCommand.cwd || !equal(lifecycleCommand?.argv, expectedCommand.argv)
+    || lifecycleCommand?.outcome !== 'passed' || lifecycleCommand?.exitCode !== 0
+    || (lifecycleCommand.errorCode !== null && lifecycleCommand.errorCode !== undefined)
+    || (lifecycleCommand.signal !== null && lifecycleCommand.signal !== undefined)) errors.push('Lifecycle command did not complete successfully');
+  const consoleResults = browserConsoleResults(lifecycleCommand?.log);
+  if (consoleResults.length !== 1 || consoleResults[0].output !== binding.runDirectory || consoleResults[0].runStatus !== 'passed'
+    || !Object.entries(counts).every(([key, value]) => consoleResults[0][key] === value)) errors.push('Lifecycle command output does not identify this fresh run');
+  for (const [field, name, bytes] of [
+    ['reportSha256', 'lifecycle-browser-checks.json', reportBytes], ['summarySha256', 'lifecycle-summary.json', summaryBytes],
+    ['buildSha256', 'build.json', buildBytes], ['eventsSha256', 'lifecycle-resource-events.json', eventsBytes],
+  ]) {
+    const path = 'lifecycle/' + name, entry = files.find(item => item?.path === path);
+    if (!Buffer.isBuffer(bytes) || bytes.length > evaluationFileLimit(path) || !hashPattern.test(binding[field] ?? '')
+      || digest(bytes) !== binding[field] || entry?.sha256 !== binding[field] || entry?.bytes !== bytes.length) errors.push(`Lifecycle ${field} is not bound to the collected file`);
+  }
+  if (!Buffer.isBuffer(eventsBytes) || report.eventsSha256 !== digest(eventsBytes)) errors.push('Lifecycle report does not bind its raw resource events');
+  errors.push(...await validateF05RunInputs(report, { root, binding, buildBytes, requireBuildOutputs, kind: 'lifecycle' }));
+  try {
+    const profileBytes = await readContainedEvaluationFile(root, `${candidateDirectory}/test/lifecycle-profile.json`, 64 * 1024);
+    const profile = JSON.parse(profileBytes);
+    if (report.profileSha256 !== digest(profileBytes) || !equal(report.profile, profile)) errors.push('Lifecycle observation profile differs from checked source');
+    if (!Buffer.isBuffer(eventsBytes) || eventsBytes.length > evaluationFileLimit('lifecycle/lifecycle-resource-events.json')) errors.push('Lifecycle event stream is missing or oversized');
+    else {
+      const catalog = await jsonFile(root, `${fixtureDirectory}/catalog.json`);
+      if (!Array.isArray(catalog.resources) || catalog.resources.length !== 11) throw new Error('Invalid frozen lifecycle original inventory');
+      const originals = new Map();
+      for (const resource of catalog.resources) {
+        if (!safeRelative(resource?.path) || originals.has(resource.id)) throw new Error('Invalid frozen lifecycle resource path/identity');
+        originals.set(resource.id, { mediaType: resource.mediaType,
+          bytes: await readContainedEvaluationFile(resolve(root, fixtureDirectory), resource.path, 4 * 1024 * 1024) });
+      }
+      errors.push(...validateLifecycleObservations(report, JSON.parse(eventsBytes), {
+        profile, world: await jsonFile(root, `${fixtureDirectory}/world.json`), catalog, originals,
+        thresholds: await jsonFile(root, `${fixtureDirectory}/thresholds.json`),
+      }));
+    }
+  } catch (error) { errors.push(`Lifecycle resource evidence is invalid: ${error.message}`); }
+  return errors;
+}
+
 async function validateF05RunInputs(report, { root, binding, buildBytes, requireBuildOutputs, kind }) {
   const errors = [];
   let build;
@@ -404,7 +481,7 @@ async function validateF05RunInputs(report, { root, binding, buildBytes, require
     const vendor = await jsonFile(root, `${candidateDirectory}/vendor/vrspace/provenance.json`);
     const expectedCandidate = kind === 'xr'
       ? { babylon: pkg.dependencies['@babylonjs/core'], rapier: pkg.dependencies['@dimforge/rapier3d-compat'], iwer: pkg.devDependencies.iwer, testOnlyAdapter: 'IWER getOffsetReferenceSpace forwards originOffset.matrix; pre-patch negative control required' }
-      : kind === 'portable'
+      : ['portable', 'lifecycle'].includes(kind)
         ? { babylon: pkg.dependencies['@babylonjs/core'], rapier: pkg.dependencies['@dimforge/rapier3d-compat'], typebox: pkg.dependencies['@sinclair/typebox'] }
         : { babylon: pkg.dependencies['@babylonjs/core'], rapier: pkg.dependencies['@dimforge/rapier3d-compat'], vrspaceCommit: vendor.commit };
     if (!equal(report.candidate, expectedCandidate)) errors.push('Browser candidate differs from checked dependencies/provenance');
@@ -432,8 +509,8 @@ export async function validateEvaluationAudits(record, directory) {
 }
 
 export async function evaluationRunDirectories(root, kind = 'desktop') {
-  if (!['desktop', 'xr', 'portable'].includes(kind)) throw new Error('Unknown evaluation run kind');
-  const directory = resolve(root, candidateDirectory, kind === 'portable' ? 'artifacts/portable-runs' : kind === 'xr' ? 'artifacts/xr-runs' : 'artifacts/runs');
+  if (!['desktop', 'xr', 'portable', 'lifecycle'].includes(kind)) throw new Error('Unknown evaluation run kind');
+  const directory = resolve(root, candidateDirectory, kind === 'lifecycle' ? 'artifacts/lifecycle-runs' : kind === 'portable' ? 'artifacts/portable-runs' : kind === 'xr' ? 'artifacts/xr-runs' : 'artifacts/runs');
   try {
     const resolved = await realpath(directory), rel = relative(await realpath(root), resolved);
     if (rel.startsWith('..') || isAbsolute(rel) || (await lstat(directory)).isSymbolicLink()) throw new Error('Unsafe browser run directory');
@@ -517,6 +594,24 @@ export async function collectPortableEvidence(record, root, output, before, comm
   if (errors.length) throw new Error(errors.join('\n'));
 }
 
+export async function collectLifecycleEvidence(record, root, output, before, command) {
+  const after = await evaluationRunDirectories(root, 'lifecycle'), added = [...after].filter(name => !before.has(name));
+  if (added.length !== 1) throw new Error('Lifecycle command did not create exactly one new unique run directory');
+  const runDirectory = `artifacts/lifecycle-runs/${added[0]}`, directory = resolve(root, candidateDirectory, runDirectory), copied = new Map();
+  for (const name of lifecycleFiles) {
+    const bytes = await readContainedEvaluationFile(directory, name, evaluationFileLimit('lifecycle/' + name));
+    await putFile(record, output, 'lifecycle/' + name, bytes); copied.set(name, bytes);
+  }
+  const reportBytes = copied.get('lifecycle-browser-checks.json'), summaryBytes = copied.get('lifecycle-summary.json');
+  const buildBytes = copied.get('build.json'), eventsBytes = copied.get('lifecycle-resource-events.json');
+  const report = JSON.parse(reportBytes), summary = JSON.parse(summaryBytes);
+  record.lifecycle = { runDirectory, startedAt: report.startedAt, finishedAt: report.timestamp,
+    reportSha256: digest(reportBytes), summarySha256: digest(summaryBytes), buildSha256: digest(buildBytes), eventsSha256: digest(eventsBytes) };
+  const errors = await validateLifecycleBrowserEvidence(report, summary, { root, record, lifecycleCommand: command, requireBuildOutputs: true,
+    reportBytes, summaryBytes, buildBytes, eventsBytes });
+  if (errors.length) throw new Error(errors.join('\n'));
+}
+
 async function main() {
   if (process.argv.slice(2).some(arg => arg !== '--local') || process.argv.length > 3) throw new Error('Usage: node scripts/ci/evaluate.mjs [--local]');
   const local = process.argv.includes('--local');
@@ -524,7 +619,7 @@ async function main() {
   const root = resolve(import.meta.dirname, '../..');
   const output = await ensureDirectory(root, 'artifacts/evaluations');
   await rm(output, { recursive: true, force: true });
-  for (const path of ['artifacts/evaluations/logs', 'artifacts/evaluations/reports/f04', 'artifacts/evaluations/reports/f05', 'artifacts/evaluations/browser', 'artifacts/evaluations/xr', 'artifacts/evaluations/portable', 'artifacts/evaluation-tools/config', 'artifacts/evaluation-tools/npm-cache', 'artifacts/evaluation-tools/browsers']) await ensureDirectory(root, path);
+  for (const path of ['artifacts/evaluations/logs', 'artifacts/evaluations/reports/f04', 'artifacts/evaluations/reports/f05', 'artifacts/evaluations/browser', 'artifacts/evaluations/xr', 'artifacts/evaluations/portable', 'artifacts/evaluations/lifecycle', 'artifacts/evaluation-tools/config', 'artifacts/evaluation-tools/npm-cache', 'artifacts/evaluation-tools/browsers']) await ensureDirectory(root, path);
   const config = resolve(root, 'artifacts/evaluation-tools/config');
   for (const file of ['user.npmrc', 'global.npmrc']) await writeFile(resolve(config, file), '');
   const env = { ...childEnvironment(),
@@ -538,7 +633,7 @@ async function main() {
     mode: local ? 'local' : 'github', eventName: local ? 'local' : process.env.GITHUB_EVENT_NAME,
     startedAt: new Date().toISOString(), commands: [], files: [], failures: [], complete: false,
     scope: { f04: 'Pinned toolkit tests, historical evidence integrity and modern toolkit audit; no fresh Hubs/Spoke runtime, services or headset execution.',
-      f05: 'Fresh 19-check desktop, 10-check emulated XR and 9-check portable-world software-rendering subsets; full runtime/device/service/production qualification remains incomplete.' }
+      f05: 'Fresh 19-check desktop, 10-check emulated XR, 9-check portable-world and 6-check ten-cycle resource-lifecycle software-rendering subsets; full runtime/device/service/production qualification remains incomplete.' }
   };
   const write = () => writeFile(resolve(output, 'manifest.json'), pretty(record));
   await write();
@@ -574,9 +669,10 @@ async function main() {
       'f05-build': ['f05-install'], 'f05-tests': ['f05-install', 'f05-build'], 'f05-browser-install': ['f05-install'],
       'f05-browser': ['f05-install', 'f05-build', 'f05-tests', ...(local ? [] : ['f05-browser-install'])],
       'f05-xr-browser': ['f05-install', 'f05-build', 'f05-tests', ...(local ? [] : ['f05-browser-install'])],
-      'f05-portable-browser': ['f05-install', 'f05-build', 'f05-tests', ...(local ? [] : ['f05-browser-install'])]
+      'f05-portable-browser': ['f05-install', 'f05-build', 'f05-tests', ...(local ? [] : ['f05-browser-install'])],
+      'f05-lifecycle-browser': ['f05-install', 'f05-build', 'f05-tests', ...(local ? [] : ['f05-browser-install'])]
     };
-    const timeouts = { 'f04-source': 360_000, 'f05-browser-install': 600_000, 'f04-audit': 45_000, 'f05-audit': 45_000 };
+    const timeouts = { 'f04-source': 360_000, 'f05-browser-install': 600_000, 'f05-lifecycle-browser': 600_000, 'f04-audit': 45_000, 'f05-audit': 45_000 };
     for (const command of evaluationCommands) {
       let result, before;
       const unmet = (prerequisites[command.id] || []).filter(id => record.commands.find(item => item.id === id)?.outcome !== 'passed');
@@ -584,7 +680,7 @@ async function main() {
       else if (unmet.length) result = { argv: [...command.argv], outcome: 'not_run', exitCode: null, errorCode: null, signal: null, durationMs: 0, log: `Not run: failed prerequisites ${unmet.join(', ')}.\n` };
       else {
         try {
-          if (['f05-browser', 'f05-xr-browser', 'f05-portable-browser'].includes(command.id)) before = await evaluationRunDirectories(root, command.id === 'f05-portable-browser' ? 'portable' : command.id === 'f05-xr-browser' ? 'xr' : 'desktop');
+          if (['f05-browser', 'f05-xr-browser', 'f05-portable-browser', 'f05-lifecycle-browser'].includes(command.id)) before = await evaluationRunDirectories(root, command.id === 'f05-lifecycle-browser' ? 'lifecycle' : command.id === 'f05-portable-browser' ? 'portable' : command.id === 'f05-xr-browser' ? 'xr' : 'desktop');
           if (command.id === 'f05-build') {
             const parent = await ensureDirectory(root, candidateDirectory);
             const dist = resolve(parent, 'dist');
@@ -610,6 +706,10 @@ async function main() {
       }
       if (command.id === 'f05-portable-browser' && before) {
         try { await collectPortableEvidence(record, root, output, before, { id: command.id, cwd: command.cwd, ...result }); }
+        catch (error) { record.failures.push(redact(error.message)); }
+      }
+      if (command.id === 'f05-lifecycle-browser' && before) {
+        try { await collectLifecycleEvidence(record, root, output, before, { id: command.id, cwd: command.cwd, ...result }); }
         catch (error) { record.failures.push(redact(error.message)); }
       }
       if (command.id.endsWith('-audit')) {

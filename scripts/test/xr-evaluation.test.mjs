@@ -11,6 +11,7 @@ import { validateXRBrowserEvidence, collectXREvidence, evaluationRunDirectories,
   requiredF05SourceFiles, requiredF05BuildInputs } from '../ci/evaluate.mjs';
 import { verifyEvaluationEvidence } from '../ci/verify-evaluation-evidence.mjs';
 import { rebindF05Inputs, portableFixture, bindPortableFixture } from './evaluation-fixtures.mjs';
+import { lifecycleFixture, bindLifecycleFixture } from './lifecycle-fixtures.mjs';
 
 const root = resolve(import.meta.dirname, '../..');
 const candidate = 'evaluations/babylon-vrspace';
@@ -171,6 +172,13 @@ test('download verification requires each separate browser lane, carrier and com
       ['portable-world.png', portable.screenshotBytes], ['exported-world.bveworld', portable.exportedBytes],
       ['reexported-world.bveworld', portable.reexportedBytes], ['authored-world.bveworld', portable.authoredBytes]
     ]) contents.set('portable/' + name, bytes);
+    const lifecycle = bindLifecycleFixture(await lifecycleFixture(root));
+    record.lifecycle = lifecycle.record.lifecycle;
+    const { log: lifecycleLog, ...lifecycleCommand } = lifecycle.lifecycleCommand;
+    record.commands[record.commands.findIndex(command => command.id === lifecycleCommand.id)] = lifecycleCommand;
+    contents.set('logs/f05-lifecycle-browser.txt', Buffer.from(lifecycleLog));
+    for (const [name, bytes] of [['lifecycle-browser-checks.json', lifecycle.reportBytes], ['lifecycle-summary.json', lifecycle.summaryBytes],
+      ['build.json', lifecycle.buildBytes], ['lifecycle-resource-events.json', lifecycle.eventsBytes]]) contents.set('lifecycle/' + name, bytes);
     const audit = await json(join(history, 'dependency-audit.json'));
     for (const id of ['f04', 'f05']) contents.set(`reports/${id}/dependency-audit.json`, pretty({ report: audit, exitCode: 0, commandError: null, assessment: { status: 'passed', reason: 'No reported dependency advisories' } }));
     record.files = [];
@@ -194,6 +202,11 @@ test('download verification requires each separate browser lane, carrier and com
     for (const path of ['portable/portable-browser-checks.json', 'portable/authored-world.bveworld']) {
       await rm(join(directory, path));
       assert.match((await verify()).join('\n'), /Fresh bound portable-world|Missing report portable/);
+      await writeFile(join(directory, path), contents.get(path));
+    }
+    for (const path of ['lifecycle/lifecycle-browser-checks.json', 'lifecycle/lifecycle-resource-events.json']) {
+      await rm(join(directory, path));
+      assert.match((await verify()).join('\n'), /Fresh bound ten-cycle lifecycle|Missing report lifecycle/);
       await writeFile(join(directory, path), contents.get(path));
     }
     const invalidCarrier = Buffer.from(portable.exportedBytes); invalidCarrier[invalidCarrier.length - 1] ^= 1;

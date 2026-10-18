@@ -1,0 +1,39 @@
+✔ native URLs are observed independently of any candidate asset map and release exactly once (3.201333ms)
+✔ one-shot timer wrapping preserves receiver, arguments and return while releasing before callback (2.101847ms)
+✔ interval callbacks remain live and browser-interchangeable clearTimeout releases them (0.459819ms)
+✔ clearInterval also clears a timeout, and no removed callback executes (0.279118ms)
+✔ animation-frame callback preserves timestamp and cancellation releases the remaining request (0.650724ms)
+✔ invalid RAF callback preserves the native synchronous rejection (0.813948ms)
+✔ native GL allocations are weakly identified and release only after successful native deletion (0.498407ms)
+✔ a non-throwing wrong-context WebGL deletion cannot hide the owning context live handle (0.495091ms)
+✔ native AudioContext close failure stays live and successful retry is the only release (0.797414ms)
+✔ worklet port identity is associated with its context and failed native close remains visible (0.713217ms)
+✔ observer has bounded plain event history, independent snapshots and fatal overflow (0.429543ms)
+✔ live table limits and unobservable string callbacks fail closed without changing native timer scheduling (0.241721ms)
+✔ phase identity is fixed to the frozen cycle and phase protocol (0.229885ms)
+✔ empty comparison rejects native allocation with entirely empty runtime maps and accepts its release (0.784084ms)
+✔ empty comparison catches retained ownership, native ports, scene members, listeners and omitted counters (0.302883ms)
+✔ stalled native observation stops its browser before reporting the bounded failure (5.184833ms)
+✔ observation cancellation itself is bounded and a successful observation does not stop the browser (10.957675ms)
+✔ looping video progress and an earlier real pulse survive a silent final window (1.140117ms)
+✔ media progress cannot pass with silence (0.31394ms)
+✔ media progress cannot pass with stale pulse (0.203044ms)
+✔ media progress cannot pass with invalid PCM (0.161042ms)
+✔ media progress cannot pass with dropped window (0.22705ms)
+✔ media progress cannot pass with frozen decoded frames (0.220119ms)
+✔ media progress cannot pass with frozen animation (0.148603ms)
+✔ media progress cannot pass with frozen physics (0.247451ms)
+✔ media progress cannot pass with suspended context (0.202483ms)
+✔ media progress cannot pass with seeking video (0.167942ms)
+✔ a transient positive native window is copied instead of retaining mutable history (0.181361ms)
+✔ pending video metadata stays incomplete and binds the first native duration (0.259208ms)
+✔ nonfinite forged worklet values cannot produce progress (0.346549ms)
+✔ invalid samples, clock regression and excess observations fail visibly (4.665035ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 66.753023

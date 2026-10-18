@@ -6,7 +6,7 @@ import { shaPattern } from './evidence.mjs';
 import { validateEvaluationEvidence, validateEvaluationFiles } from './evaluation-evidence.mjs';
 import { childEnvironment } from './environment.mjs';
 import { redact } from '../check-secret-exposure.mjs';
-import { readContainedEvaluationFile, validateCheckedEvaluationInputs, validateBrowserEvidence, validateXRBrowserEvidence, validatePortableBrowserEvidence, validateEvaluationAudits, validateEvaluationScreenshot } from './evaluate.mjs';
+import { readContainedEvaluationFile, validateCheckedEvaluationInputs, validateBrowserEvidence, validateXRBrowserEvidence, validatePortableBrowserEvidence, validateLifecycleBrowserEvidence, validateEvaluationAudits, validateEvaluationScreenshot } from './evaluate.mjs';
 
 export async function verifyEvaluationEvidence(file, { headSha, testedSha, baseSha, root = resolve(import.meta.dirname, '../..') } = {}) {
   const path = resolve(file), directory = dirname(path);
@@ -57,6 +57,16 @@ export async function verifyEvaluationEvidence(file, { headSha, testedSha, baseS
       reportBytes, summaryBytes, buildBytes, screenshotBytes, exportedBytes, reexportedBytes, authoredBytes,
     }));
   } catch { errors.push('Fresh bound portable-world report, summary, build, screenshot, carriers or log is missing/invalid'); }
+  try {
+    const read = name => readContainedEvaluationFile(directory, 'lifecycle/' + name, 16 * 1024 * 1024);
+    const reportBytes = await read('lifecycle-browser-checks.json'), summaryBytes = await read('lifecycle-summary.json');
+    const buildBytes = await read('build.json'), eventsBytes = await read('lifecycle-resource-events.json');
+    const log = (await readContainedEvaluationFile(directory, 'logs/f05-lifecycle-browser.txt', 32 * 1024 * 1024)).toString();
+    const command = Array.isArray(record.commands) ? record.commands.find(item => item?.id === 'f05-lifecycle-browser') : null;
+    errors.push(...await validateLifecycleBrowserEvidence(JSON.parse(reportBytes), JSON.parse(summaryBytes), {
+      root, record, lifecycleCommand: { ...command, log }, requireBuildOutputs: false, reportBytes, summaryBytes, buildBytes, eventsBytes,
+    }));
+  } catch { errors.push('Fresh bound lifecycle report, summary, build, raw events or log is missing/invalid'); }
   return errors;
 }
 
@@ -67,7 +77,7 @@ async function main() {
   }
   const errors = await verifyEvaluationEvidence(file, { headSha, testedSha, baseSha });
   if (errors.length) { console.error(errors.join('\n')); process.exitCode = 1; }
-  else console.log('Evaluation files, current source, exact candidate identity and separate fresh desktop/emulated XR/portable-world bindings match. Independently verify the actual GitHub checks and required reviews; this remains subset evidence, not completed hardware/service qualification.');
+  else console.log('Evaluation files, current source, exact candidate identity and separate fresh desktop/emulated XR/portable-world/ten-cycle lifecycle bindings match. Independently verify the actual GitHub checks and required reviews; this remains subset evidence, not completed hardware/service qualification.');
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

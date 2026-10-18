@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "kind": "f05-resource-lifecycle-local-development-index",
+  "recordedAt": "2026-10-18T21:32:11.554+00:00",
+  "complete": false,
+  "qualificationStatus": "incomplete",
+  "localSourceBase": "a017afcfcf10eb1ae188fc883cdd040c1518566d",
+  "priorPublishedUnverifiedCheckpoint": "e518757b7bf2f500d7c53b863223563310586566",
+  "currentSources": [
+    {
+      "path": "evaluations/babylon-vrspace/LIFECYCLE.md",
+      "bytes": 3824,
+      "sha256": "1ed4eb0992a110ca848579bf477ed2daa5333c0e6f1ea7918b6b18facd7771d5"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/fixtures.mjs",
+      "bytes": 4326,
+      "sha256": "4a1ce7dc9334e360e03b7337eecf5915b29a87c3c352f36cd13af4a66f81b8c6"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/run.mjs",
+      "bytes": 1967,
+      "sha256": "7c5f2a396eb9676a9dc7d6f44726c5f734672a9ee574b38f9f6f914331de0a9c"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/src/main.js",
+      "bytes": 68350,
+      "sha256": "d19c9f4a4a15fa9b363b678ce8129a3054fe974a6f35f8d434e3a97634a23162"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/test/lifecycle-browser-checks.mjs",
+      "bytes": 21397,
+      "sha256": "1b22f1c7afdfeafa09447de46fa11c0efd76a7153c89caf603d15e9257e6a87e"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/test/lifecycle-observer.mjs",
+      "bytes": 9679,
+      "sha256": "8a5fa86a47d77b5c4598a3f274ef6b4688b9eb9cb4a33d9c1f1c48c74e0b5d71"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/test/lifecycle-observer.test.mjs",
+      "bytes": 11275,
+      "sha256": "90e7b8add6ec546fdaa70050af0fbf432307735ce482d80d21cb1fd41847766c"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/test/lifecycle-profile.json",
+      "bytes": 5465,
+      "sha256": "1af428fe913003657f4b8d4ec55cf275f78780cc9fec6123ba4b60514b5c527c"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/test/media-progress.mjs",
+      "bytes": 5883,
+      "sha256": "8bdffae6e8fa5e9ebe24d1a9647442929e42d5b09ec20932e4df2c4536c28d00"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/test/media-progress.test.mjs",
+      "bytes": 4596,
+      "sha256": "fdf79b69fd5161892ec213d9cac0356fdf6fbedff127c8e67bd5c14fe78380ec"
+    },
+    {
+      "path": "scripts/ci/evaluate.mjs",
+      "bytes": 62343,
+      "sha256": "52424f40c26709a63e98179628f71b4ab3ab045483ee508950bceb7bc185f3e5"
+    },
+    {
+      "path": "scripts/ci/evaluation-evidence.mjs",
+      "bytes": 9607,
+      "sha256": "da597aef761b45b06cc442a576cf4ee887d3582a3f1323211cea31e18931ea30"
+    },
+    {
+      "path": "scripts/ci/lifecycle-resource-evidence.mjs",
+      "bytes": 42972,
+      "sha256": "f0c122006b98c61791e929142eca2e2929a16d211794f74383736f75dc2b9b9a"
+    },
+    {
+      "path": "scripts/ci/verify-evaluation-evidence.mjs",
+      "bytes": 7472,
+      "sha256": "e7e8657d7d9b8958395f3b62ef44b07ba94b76ff8badbe460f06f78a8d7fb8e1"
+    },
+    {
+      "path": "scripts/test/evaluation-evidence.test.mjs",
+      "bytes": 8822,
+      "sha256": "00a3d7a6de6c0cb1df95d06b8ddca681e6c0d71f99bdbef195a49844629828cb"
+    },
+    {
+      "path": "scripts/test/lifecycle-evaluation.test.mjs",
+      "bytes": 30266,
+      "sha256": "1fc3995d322b9ff9282fe1a222c263241e46efa5ef09ae8b2fb6c84f2ad6a45e"
+    },
+    {
+      "path": "scripts/test/lifecycle-fixtures.mjs",
+      "bytes": 14920,
+      "sha256": "4522c5832c5bb6b612cc74103780fadd799fe382e0ea3796ec2669782a3053cb"
+    },
+    {
+      "path": "scripts/test/portable-evaluation.test.mjs",
+      "bytes": 18828,
+      "sha256": "e63f3a961c92502a1d2f090d2c80b03b1cba3c07cb022833841dae1de4d732a1"
+    },
+    {
+      "path": "scripts/test/service-evidence-checks.py",
+      "bytes": 21902,
+      "sha256": "254f877d2707ccbb4f38edc559b4e3b62755c689ad4e9961152d11dc5ed1eebd"
+    },
+    {
+      "path": "scripts/test/xr-evaluation.test.mjs",
+      "bytes": 18624,
+      "sha256": "cd0fe13899aaa5aa6462b4893f46ec09bbf35dc9a74eef0454239ee7847e7b10"
+    }
+  ],
+  "evidence": [
+    {
+      "origin": "artifacts/lifecycle-ci/actual-hH5Mir-final/validation.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/actual-hH5Mir-final/validation.json",
+      "bytes": 4412,
+      "sha256": "a1c697457ba4fc7d81337eb4ec9012a731aeb9a93b04449f896f558144aa5e0c"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/actual-hH5Mir/validation.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/actual-hH5Mir/validation.json",
+      "bytes": 4412,
+      "sha256": "367c0c49a72746d94168519b5afb97c20debecf0a164ff4bfed6e33c04633592"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/combined-verifier-tests-final-2.tap",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/combined-verifier-tests-final-2.tap",
+      "bytes": 79154,
+      "sha256": "8ec3bf4c7a0986f401ba4f57a21e406a0f4561ab4233fde14111a9b4332f43c3"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/combined-verifier-tests-final.tap",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/combined-verifier-tests-final.tap",
+      "bytes": 79992,
+      "sha256": "41285f3d11db551e99134dedff3b07d4c0cf2ac581d177bb9ec7d00e12ca115a"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/combined-verifier-tests-first.tap",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/combined-verifier-tests-first.tap",
+      "bytes": 70817,
+      "sha256": "8c4d097b5f9f95d4d369e343a363576f12ce2101e39965109d937abc4a852ce9"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/combined-verifier-tests-media-replay.tap",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/combined-verifier-tests-media-replay.tap",
+      "bytes": 77902,
+      "sha256": "0df93c0bec977bf53bd65f156fb8f8e09e7cce794fa244babc078f2425bc6e61"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/combined-verifier-tests-scoped.tap",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/combined-verifier-tests-scoped.tap",
+      "bytes": 69212,
+      "sha256": "20594ffb9ac359cefccb8fb29d0e812bfacf4d6567a4e438f5334f4ed7a12410"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/freeze.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/freeze.json",
+      "bytes": 17116,
+      "sha256": "1b6efb6e3b475c07a9e483d195ff240321873a8001c79f016ced751a8b69512a"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/lifecycle-tests-first.tap",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/lifecycle-tests-first.tap",
+      "bytes": 27754,
+      "sha256": "d3178c3455a7595eafab5d32cadb25c21c7f378b1e522d83f7b77d46147a474b"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/lifecycle-tests-live-graph.tap",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/lifecycle-tests-live-graph.tap",
+      "bytes": 28026,
+      "sha256": "d57e4064fb27bc047d9b8c39bdeaccca3440a9bb9ad8fba33c01cbf76472ce95"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/lifecycle-tests-media-replay.tap",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/lifecycle-tests-media-replay.tap",
+      "bytes": 36383,
+      "sha256": "e141bf74ba5efe399d095c13795849bff5bba9f5f207ac873821a35ca3659cdb"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/service-bindings-tests-media-replay.txt",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/service-bindings-tests-media-replay.txt",
+      "bytes": 1412,
+      "sha256": "2f859baf37c3d57797d652392b830df5703b318427ced2720da39babe8ac3140"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/service-bindings-tests.txt",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/service-bindings-tests.txt",
+      "bytes": 1412,
+      "sha256": "f83f1a11f43240a64e9ac602b4b89f41ae9828566334b447bffe9f4709ad7617"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/validate-actual-final.mjs",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/validate-actual-final.mjs",
+      "bytes": 3303,
+      "sha256": "85e60817dcadc6d1ca90b310a4b3b69a8aed7b5f3659a19af4d2364c07cb3e4b"
+    },
+    {
+      "origin": "artifacts/lifecycle-ci/validate-actual.mjs",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/ci-development/validate-actual.mjs",
+      "bytes": 3297,
+      "sha256": "fd33b4ef6d46f467e901a5419b3a5795a827936c2ab05cb8458813a9dd4e90ca"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-development/current-unit-stage/command.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/current-unit-stage/command.json",
+      "bytes": 422,
+      "sha256": "edddf0edaa81498437e623e10606ab322bd62be5f7490b77e53dac18ce4da1dd"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-development/current-unit-stage/command.txt",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/current-unit-stage/command.txt",
+      "bytes": 10680,
+      "sha256": "cb29f83bf8704bfbc205ae1522ac667430a3ac4556a16edf2de191acb9fb8dcc"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-runs/run-hH5Mir/build.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/run-hH5Mir/build.json",
+      "bytes": 4670,
+      "sha256": "c8c1d25da00a63f2b4c14a9bafc39afad60269e99c762bb54d41159b20f32fd5"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-development/run-20261018T212224/command.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/run-hH5Mir/command.json",
+      "bytes": 544,
+      "sha256": "741a58e4155b342d4cc27a72632b2c0dd5892e025fb184f079129ca9474e858c"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-development/run-20261018T212224/command.txt",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/run-hH5Mir/command.txt",
+      "bytes": 921,
+      "sha256": "fe5989e0d8e96291bdb287bb257c7976cee470887bea39ae10fba395cefce24e"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-runs/run-hH5Mir/lifecycle-browser-checks.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/run-hH5Mir/lifecycle-browser-checks.json",
+      "bytes": 1503989,
+      "sha256": "985bd83c3c22627be91a873cc35204805301f733834275568bdf4251b184aad9"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-runs/run-hH5Mir/lifecycle-resource-events.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/run-hH5Mir/lifecycle-resource-events.json",
+      "bytes": 2845593,
+      "sha256": "4700a1dd564e6d238dd975a03d01bba3bf700d327cb174e70993d41b19f93427"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-runs/run-hH5Mir/lifecycle-summary.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/run-hH5Mir/lifecycle-summary.json",
+      "bytes": 955,
+      "sha256": "1a5d2c8400a81f8f5b13dc7887e0c265fded7c944fea9368a43b70a5e87ed53c"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-development/observer-and-media-command.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/unit-history/observer-and-media-command.json",
+      "bytes": 368,
+      "sha256": "5a28bb196225f12b4c4480a834c3729bb21499d9e6ee22456d57a932476d7c83"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-development/observer-and-media-tests.txt",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/unit-history/observer-and-media-tests.txt",
+      "bytes": 2924,
+      "sha256": "d7f56e256504fcd6ece9b38868bfb51e910eb040b18ad90f590822ad34f542ca"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-development/unit-test-server-command.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/unit-history/unit-test-server-command.json",
+      "bytes": 358,
+      "sha256": "ed0d3f87f4169fba7a9658ef913431936293902e5d54df6f07a9c23d2df6b7c9"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-development/unit-test-server-loopback-command.json",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/unit-history/unit-test-server-loopback-command.json",
+      "bytes": 389,
+      "sha256": "2d7c8926c1532c70b19e94d0f2c771e69978efeb5ff213f2dfac9efee373625f"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-development/unit-test-server-loopback.txt",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/unit-history/unit-test-server-loopback.txt",
+      "bytes": 9547,
+      "sha256": "567289efe7e73cd8acd0201cb5204acc851356ef83e75c773db6282db18ec84a"
+    },
+    {
+      "origin": "evaluations/babylon-vrspace/artifacts/lifecycle-development/unit-test-server.txt",
+      "path": "evaluations/babylon-vrspace/evidence/resource-lifecycle-development/unit-history/unit-test-server.txt",
+      "bytes": 10084,
+      "sha256": "ed83e6060cb60ebbfa0098770e2a237191be8de39a00bb3d802c3eb4808c9dbd"
+    }
+  ],
+  "observed": {
+    "browserRun": "run-hH5Mir",
+    "browserChecks": 6,
+    "cycles": 10,
+    "candidateUnitCases": 111,
+    "independentVerifierCases": 333,
+    "pureServiceBindingMethods": 7,
+    "evaluationSources": 34,
+    "localBuildInputs": 15,
+    "workspaceBuildInputs": 8,
+    "buildOutputs": 4,
+    "physicalQualification": false
+  },
+  "remaining": [
+    "Integrate onto the parent-owned PR10 portable observation repair without replacing its newer portable browser harness.",
+    "Run the complete14-stage graph on the integrated candidate and verify hosted-current-commit artifacts.",
+    "Physical devices, full F05 comparison and F06 selection remain separate."
+  ],
+  "historyPolicy": "Every raw report, log and command/verification receipt is copied byte-for-byte. Earlier test outcomes are history, not later-source acceptance."
+}

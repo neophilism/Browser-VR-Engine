@@ -1,0 +1,25 @@
+PASS lifecycle-empty-host-baseline
+PASS lifecycle-observer-negative-control
+CYCLE 1 activated and returned to the empty baseline
+CYCLE 2 activated and returned to the empty baseline
+CYCLE 3 activated and returned to the empty baseline
+CYCLE 4 activated and returned to the empty baseline
+CYCLE 5 activated and returned to the empty baseline
+CYCLE 6 activated and returned to the empty baseline
+CYCLE 7 activated and returned to the empty baseline
+CYCLE 8 activated and returned to the empty baseline
+CYCLE 9 activated and returned to the empty baseline
+CYCLE 10 activated and returned to the empty baseline
+PASS lifecycle-ten-activated-cycles
+PASS lifecycle-native-resource-release
+PASS lifecycle-unloaded-input-inert
+PASS lifecycle-final-empty-host
+{
+  "runStatus": "passed",
+  "passed": 6,
+  "failed": 0,
+  "pageErrors": 0,
+  "failedRequests": 0,
+  "logOverflow": 0,
+  "output": "artifacts/lifecycle-runs/run-hH5Mir"
+}

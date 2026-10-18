@@ -584,10 +584,10 @@ class Evaluation {
       pendingLoads:Number(!!this.loadTask),pendingImports:Number(!!this.importTask),pendingDisposals:Number(!!this.disposeTask),
     };
     const activity=live&&!this.stopped?{
-      physicsSteps:this.physicsSteps,sceneFrame:this.scene.getFrameId(),
+      at:performance.now(),physicsSteps:this.physicsSteps,sceneFrame:this.scene.getFrameId(),
       animations:this.animations.map(item=>({entityId:item.entityId,clip:item.data.clip,playing:!!item.group?.isPlaying,frame:item.group?.animatables[0]?.masterFrame??null,position:serialVec(item.node.position)})),
-      audio:audio?{state:audio.context.state,time:audio.context.currentTime,activation:audio.activation?structuredClone(audio.activation):null,sources:items.map(item=>({id:item.id,inputRms:item.meterState.history.at(-1)?.inputRms||0,endFrame:item.meterState.history.at(-1)?.endFrame??null,invalidMessages:item.meterState.invalidMessages})).sort((a,b)=>a.id.localeCompare(b.id))}:null,
-      video:this.video?{time:this.video.currentTime,paused:this.video.paused,readyState:this.video.readyState,decodedFrames:this.video.getVideoPlaybackQuality?.().totalVideoFrames??null}:null,
+      audio:audio?{state:audio.context.state,time:audio.context.currentTime,sampleRate:audio.context.sampleRate,activation:audio.activation?structuredClone(audio.activation):null,sources:items.map(item=>({id:item.id,inputRms:item.meterState.history.at(-1)?.inputRms||0,endFrame:item.meterState.history.at(-1)?.endFrame??null,invalidMessages:item.meterState.invalidMessages,windows:item.meterState.history.map(({startFrame,endFrame,sampleRate,invalidFrames,droppedWindows,inputRms})=>({startFrame,endFrame,sampleRate,invalidFrames,droppedWindows,inputRms}))})).sort((a,b)=>a.id.localeCompare(b.id))}:null,
+      video:this.video?{time:this.video.currentTime,duration:Number.isFinite(this.video.duration)?this.video.duration:null,loop:this.video.loop,paused:this.video.paused,seeking:this.video.seeking,readyState:this.video.readyState,decodedFrames:this.video.getVideoPlaybackQuality?.().totalVideoFrames??null}:null,
     }:null;
     return {instanceId:this.instanceId??null,state:this.state,counters,scene:resourceCounts(this.scene),activity};
   }

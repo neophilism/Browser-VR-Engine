@@ -1,0 +1,44 @@
+{
+  "qualificationStatus": "incomplete",
+  "evidenceFile": "lifecycle-browser-checks.json",
+  "checks": [
+    {
+      "id": "lifecycle-empty-host-baseline",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "lifecycle-observer-negative-control",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "lifecycle-ten-activated-cycles",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "lifecycle-native-resource-release",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "lifecycle-unloaded-input-inert",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "lifecycle-final-empty-host",
+      "status": "passed",
+      "method": "real-browser"
+    }
+  ],
+  "counts": {
+    "passed": 6,
+    "failed": 0,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "logOverflow": 0
+  },
+  "runStatus": "passed"
+}

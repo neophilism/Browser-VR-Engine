@@ -10,9 +10,10 @@ const commands = {
   build: [process.execPath, ['build.mjs']],
   serve: [process.execPath, ['server.mjs']],
   test: [process.execPath, ['browser-checks.mjs']],
-  'test-server': [process.execPath, ['--test','--test-isolation=none','test/local-server.test.mjs','test/import-policy.test.mjs','test/xr-session.test.mjs','test/portable-world.test.mjs']],
+  'test-server': [process.execPath, ['--test','--test-isolation=none','test/local-server.test.mjs','test/import-policy.test.mjs','test/xr-session.test.mjs','test/portable-world.test.mjs','test/media-progress.test.mjs','test/lifecycle-observer.test.mjs']],
   'test-xr': [process.execPath, ['test/xr-browser-checks.mjs']],
   'test-world': [process.execPath, ['test/portable-browser-checks.mjs']],
+  'test-lifecycle': [process.execPath, ['test/lifecycle-browser-checks.mjs']],
   'browser-install': [process.execPath, ['node_modules/playwright/cli.js', 'install', 'chromium']],
   audit: ['npm', ['audit', '--json', '--audit-level=high', ...npmOptions]],
 };

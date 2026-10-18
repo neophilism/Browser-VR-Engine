@@ -11,6 +11,7 @@ import {evidenceSourcePaths,fingerprintFiles} from '../fixtures.mjs';
 import {encodePortableWorld} from '../dist/portable-world.mjs';
 import {finalizeBrowserRun} from './browser-finalize.mjs';
 import {installLifecycleObserver,emptySnapshotDifferences,withinLifecycleDeadline} from './lifecycle-observer.mjs';
+import {observeMediaProgress} from './media-progress.mjs';
 
 const profileBytes=await readFile(new URL('./lifecycle-profile.json',import.meta.url)),profile=JSON.parse(profileBytes),sha=bytes=>createHash('sha256').update(bytes).digest('hex'),profileSha256=sha(profileBytes);
 await mkdir(join(artifactRoot,'lifecycle-runs'),{recursive:true});
@@ -76,13 +77,18 @@ function assertLoaded(value,index){
   for(const key of ['meshes','transformNodes','textures','geometries','cameras','lights','animationGroups','skeletons'])assert(value.runtime.scene[key]>0,'actual loaded scene '+key);
   assert.equal(value.native.counters.audioContexts,1);assert.equal(value.native.counters.workletPorts,6);assert(value.native.counters.objectUrls>0);for(const key of ['glBuffers','glTextures','glPrograms'])assert(value.native.counters[key]>0,'native renderer '+key);assert.equal(value.dom.videoElements,1);assert.equal(value.cdp.audioContexts.length,1);
 }
-function activated(after,before){
-  const a=after.runtime.activity,b=before.runtime.activity;if(!a||!b||!a.audio||!a.video)return false;
-  const bird=a.animations.find(item=>item.entityId==='bird'),old=b.animations.find(item=>item.entityId==='bird');
-  return a.physicsSteps>b.physicsSteps&&a.sceneFrame>b.sceneFrame&&bird?.playing&&bird.frame!==old?.frame&&bird.position.some((value,index)=>Math.abs(value-old.position[index])>.001)&&
-    a.audio.state==='running'&&a.audio.time>b.audio.time+profile.activation.audioSeconds&&a.audio.activation?.isActive===true&&a.audio.activation.after==='running'&&
-    a.video.paused===false&&a.video.time>b.video.time+profile.activation.videoSeconds&&Number.isInteger(a.video.decodedFrames)&&a.video.decodedFrames>b.video.decodedFrames&&
-    JSON.stringify(a.audio.sources.map(item=>item.id))===JSON.stringify(profile.sourceIds)&&a.audio.sources.every(item=>item.inputRms>profile.activation.minimumInputRms&&item.invalidMessages===0);
+function mediaSample(snapshot){
+  const a=snapshot.runtime.activity,wall=a.audio.sources.find(item=>item.id==='wall-playback');
+  return {at:a.at,steps:a.physicsSteps,animation:a.animations.find(item=>item.entityId==='bird'),audioState:a.audio.state,clock:a.audio.time,sampleRate:a.audio.sampleRate,video:a.video,invalidMessages:wall.invalidMessages,wallWindows:wall.windows};
+}
+function activated(after,before,progress){
+  const a=after.runtime.activity,b=before.runtime.activity;
+  const ready=observeMediaProgress({state:progress,sample:mediaSample(after)});
+  return !!ready&&a.sceneFrame>b.sceneFrame&&a.audio.activation?.isActive===true&&a.audio.activation.after==='running'&&
+    JSON.stringify(a.audio.sources.map(item=>item.id))===JSON.stringify(profile.sourceIds)&&a.audio.sources.every(item=>{
+      const prior=b.audio.sources.find(value=>value.id===item.id),baselineFrame=Math.max(b.audio.time*b.audio.sampleRate,prior.endFrame??0);
+      return item.invalidMessages===0&&item.windows.some(window=>window.startFrame>=baselineFrame&&window.endFrame>baselineFrame&&window.sampleRate===a.audio.sampleRate&&window.invalidFrames===0&&window.droppedWindows===0&&window.inputRms>profile.activation.minimumInputRms);
+    });
 }
 
 try{
@@ -128,8 +134,8 @@ try{
       await page.locator('#world-file').setInputFiles({name:'lifecycle-world.bveworld',mimeType:'application/octet-stream',buffer:Buffer.from(encoded.bytes)});
       await poll(()=>page.evaluate(()=>portableHost.lifecycleSnapshot().host),value=>!value.pendingHostTask&&['ready','empty','cleanup-failed'].includes(value.phase));
       cycle.loaded=await snapshot(index,'loaded');cycle.instanceId=cycle.loaded.runtime.instanceId;assertLoaded(cycle.loaded,index);
-      const before=await snapshot(index,'activation-before');cycle.activation={before};await mark(index,'activating');await page.locator('#start').click();
-      const after=await poll(()=>snapshot(index,'activation-after'),value=>activated(value,before),profile.activation.deadlineMs);cycle.activation.after=after;assertLoaded(after,index);
+      const before=await poll(()=>snapshot(index,'activation-before'),value=>{const video=value.runtime.activity?.video;return video&&Number.isFinite(video.duration)&&video.duration>0&&video.readyState>=profile.activation.minimumVideoReadyState;}),progress={};cycle.activation={before,mediaProgress:progress};observeMediaProgress({state:progress,sample:mediaSample(before)});await mark(index,'activating');await page.locator('#start').click();
+      const after=await poll(async()=>{const value=await snapshot(index,'activation-after');cycle.activation.after=value;return value;},value=>activated(value,before,progress),profile.activation.deadlineMs);assertLoaded(after,index);
       await mark(index,'unloading');cycle.unloadReceipt=await bounded(()=>page.evaluate(()=>portableHost.unload()),'native world unload');
       assert.equal(cycle.unloadReceipt.state,'disposed');assert.equal(cycle.unloadReceipt.instanceId,index);assert(Object.values(cycle.unloadReceipt.counters).every(value=>value===0));assert(Object.values(cycle.unloadReceipt.scene).every(value=>value===0));assert.equal(cycle.unloadReceipt.activity,null);
       cycle.unloaded=await empty(index,'unloaded');assertEmpty(cycle.unloaded);assert.equal(cycle.unloaded.runtime.host.createdInstances,index);

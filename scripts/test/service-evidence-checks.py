@@ -98,6 +98,9 @@ class ServiceEvidenceChecks(unittest.TestCase):
 
     def test_renderer_source_and_worklet_inventory_cannot_be_silently_shortened(self):
         before = evidence.snapshot(ROOT)
+        for name in ('test/media-progress.mjs', 'test/media-progress.test.mjs', 'test/lifecycle-browser-checks.mjs', 'test/lifecycle-observer.mjs',
+                     'test/lifecycle-profile.json', 'test/lifecycle-observer.test.mjs'):
+            self.assertIn(name, before['sibling'])
         inputs = {'service': before['service'], 'siblingSource': before['sibling'],
                   'serviceBrowserSources': evidence.automation.read_json(evidence.SERVICE, 'source-files.json'),
                   'sourcePins': evidence.automation.read_json(evidence.SERVICE, 'source-pins.json'),
@@ -118,6 +121,10 @@ class ServiceEvidenceChecks(unittest.TestCase):
                        lambda x: x['build']['workspaceInputs']['packages/contracts/src/schemas.ts'].update(sha256='f' * 64),
                        lambda x: x['siblingSource'].pop('src/main.js'),
                        lambda x: x['siblingSource'].pop('test/browser-finalize.mjs'),
+                       lambda x: x['siblingSource'].pop('test/lifecycle-observer.mjs'),
+                       lambda x: x['siblingSource'].pop('test/media-progress.mjs'),
+                       lambda x: x['siblingSource'].pop('test/lifecycle-profile.json'),
+                       lambda x: x['siblingSource']['test/lifecycle-browser-checks.mjs'].update(sha256='f' * 64),
                        lambda x: x['serviceBrowserSources'].remove('command-supervisor.py'),
                        lambda x: x['sourcePins'].update(release='unqualified-master')):
             with self.assertRaises(RuntimeError):

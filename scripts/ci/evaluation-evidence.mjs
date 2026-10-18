@@ -15,6 +15,7 @@ export const evaluationCommands = Object.freeze([
   ['f05-browser', 'evaluations/babylon-vrspace', ['node', 'run.mjs', 'test']],
   ['f05-xr-browser', 'evaluations/babylon-vrspace', ['node', 'run.mjs', 'test-xr']],
   ['f05-portable-browser', 'evaluations/babylon-vrspace', ['node', 'run.mjs', 'test-world']],
+  ['f05-lifecycle-browser', 'evaluations/babylon-vrspace', ['node', 'run.mjs', 'test-lifecycle']],
   ['f05-audit', '.', ['node', 'scripts/ci/audit-evaluation.mjs', 'f05']]
 ].map(([id, cwd, argv]) => Object.freeze({ id, cwd, argv: Object.freeze(argv) })));
 export const requiredEvaluationReports = Object.freeze([
@@ -23,9 +24,10 @@ export const requiredEvaluationReports = Object.freeze([
   'browser/browser-checks.json', 'browser/f05-summary.json', 'browser/build.json', 'browser/courtyard-verified.png',
   'xr/xr-browser-checks.json', 'xr/build.json', 'xr/emulated-stereo.png',
   'portable/portable-browser-checks.json', 'portable/portable-summary.json', 'portable/build.json', 'portable/portable-world.png',
-  'portable/exported-world.bveworld', 'portable/reexported-world.bveworld', 'portable/authored-world.bveworld'
+  'portable/exported-world.bveworld', 'portable/reexported-world.bveworld', 'portable/authored-world.bveworld',
+  'lifecycle/lifecycle-browser-checks.json', 'lifecycle/lifecycle-summary.json', 'lifecycle/build.json', 'lifecycle/lifecycle-resource-events.json'
 ]);
-export const evaluationReportPath = /^(?:logs\/[a-z0-9-]+\.txt|reports\/f0[45]\/dependency-audit\.json|browser\/[a-z0-9-]+\.(?:json|png|glb)|xr\/(?:xr-browser-checks\.json|build\.json|emulated-(?:stereo|failed)\.png)|portable\/(?:portable-browser-checks\.json|portable-summary\.json|build\.json|portable-world\.png|(?:exported|reexported|authored)-world\.bveworld))$/;
+export const evaluationReportPath = /^(?:logs\/[a-z0-9-]+\.txt|reports\/f0[45]\/dependency-audit\.json|browser\/[a-z0-9-]+\.(?:json|png|glb)|xr\/(?:xr-browser-checks\.json|build\.json|emulated-(?:stereo|failed)\.png)|portable\/(?:portable-browser-checks\.json|portable-summary\.json|build\.json|portable-world\.png|(?:exported|reexported|authored)-world\.bveworld)|lifecycle\/(?:lifecycle-browser-checks|lifecycle-summary|build|lifecycle-resource-events)\.json)$/;
 export const evaluationFileLimit = path => path.endsWith('.bveworld') ? 4 * 1024 * 1024 : path.startsWith('logs/') ? 32 * 1024 * 1024 : 16 * 1024 * 1024;
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 
@@ -47,11 +49,14 @@ export function validateEvaluationEvidence(record, expected = {}) {
   if (!object(record.browser) || !/^artifacts\/runs\/run-[A-Za-z0-9]+$/.test(record.browser.runDirectory ?? '') || ['reportSha256', 'summarySha256', 'buildSha256'].some(field => !/^[a-f0-9]{64}$/.test(record.browser[field] ?? '')) || !Number.isFinite(Date.parse(record.browser.startedAt)) || !Number.isFinite(Date.parse(record.browser.finishedAt)) || Date.parse(record.browser.finishedAt) < Date.parse(record.browser.startedAt)) errors.push('Fresh browser run identity is required');
   if (!object(record.xr) || !/^artifacts\/xr-runs\/run-[A-Za-z0-9]+$/.test(record.xr.runDirectory ?? '') || ['reportSha256', 'buildSha256', 'screenshotSha256'].some(field => !/^[a-f0-9]{64}$/.test(record.xr[field] ?? '')) || !Number.isFinite(Date.parse(record.xr.startedAt)) || !Number.isFinite(Date.parse(record.xr.finishedAt)) || Date.parse(record.xr.finishedAt) < Date.parse(record.xr.startedAt)) errors.push('Fresh emulated XR run identity is required');
   if (!object(record.portable) || !/^artifacts\/portable-runs\/run-[A-Za-z0-9]+$/.test(record.portable.runDirectory ?? '') || ['reportSha256', 'summarySha256', 'buildSha256', 'screenshotSha256', 'exportedSha256', 'reexportedSha256', 'authoredSha256'].some(field => !/^[a-f0-9]{64}$/.test(record.portable[field] ?? '')) || !Number.isFinite(Date.parse(record.portable.startedAt)) || !Number.isFinite(Date.parse(record.portable.finishedAt)) || Date.parse(record.portable.finishedAt) < Date.parse(record.portable.startedAt)) errors.push('Fresh portable-world run identity is required');
+  if (!object(record.lifecycle) || !/^artifacts\/lifecycle-runs\/run-[A-Za-z0-9]+$/.test(record.lifecycle.runDirectory ?? '') || ['reportSha256', 'summarySha256', 'buildSha256', 'eventsSha256'].some(field => !/^[a-f0-9]{64}$/.test(record.lifecycle[field] ?? '')) || !Number.isFinite(Date.parse(record.lifecycle.startedAt)) || !Number.isFinite(Date.parse(record.lifecycle.finishedAt)) || Date.parse(record.lifecycle.finishedAt) < Date.parse(record.lifecycle.startedAt)) errors.push('Fresh ten-cycle lifecycle run identity is required');
   if (!Array.isArray(record.commands) || record.commands.length !== evaluationCommands.length) errors.push('Required evaluation commands are missing');
   else for (const [index, command] of record.commands.entries()) {
     const expectedCommand = evaluationCommands[index];
     if (!object(command) || command.id !== expectedCommand.id || command.cwd !== expectedCommand.cwd || JSON.stringify(command.argv) !== JSON.stringify(expectedCommand.argv)) errors.push('Evaluation command substituted or reordered');
-    if (command?.outcome !== 'passed' || command?.exitCode !== 0 || command?.errorCode || command?.signal || !Number.isFinite(command.durationMs) || command.durationMs < 0) errors.push(`Evaluation ${command?.id} did not pass`);
+    if (command?.outcome !== 'passed' || command?.exitCode !== 0
+      || (command.errorCode !== null && command.errorCode !== undefined) || (command.signal !== null && command.signal !== undefined)
+      || !Number.isFinite(command.durationMs) || command.durationMs < 0) errors.push(`Evaluation ${command?.id} did not pass`);
   }
   const paths = new Set();
   if (!Array.isArray(record.files)) errors.push('Missing evaluation files');

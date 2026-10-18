@@ -11,7 +11,7 @@ function environment(overrides={}) {
   class Context {constructor(){this.state='suspended';this.rejectClose=false;}close(){if(this.rejectClose)return Promise.reject(new Error('native close failure'));this.state='closed';return Promise.resolve();}}
   class Port {close(){if(this.rejectClose)throw new Error('native port failure');this.closed=true;}}
   class Worklet {constructor(context){this.context=context;this.port=new Port();}}
-  class GL {createBuffer(){return {buffer:true};}deleteBuffer(handle){if(handle?.reject)throw new Error('native GL failure');}createTexture(){return {texture:true};}deleteTexture(){}}
+  class GL {createBuffer(){return {buffer:true,owner:this};}deleteBuffer(handle){if(handle?.owner!==this){this.ignoredDeletion=true;return;}if(handle?.reject)throw new Error('native GL failure');}createTexture(){return {texture:true,owner:this};}deleteTexture(){}}
   const register=(callback,args,repeat=false)=>{const id=++identity;callbacks.set(id,{callback,args,repeat});return id;};
   const root={crypto:{randomUUID:()=> 'test-document'},AudioContext:Context,AudioWorkletNode:Worklet,MessagePort:Port,WebGL2RenderingContext:GL,
     URL:{createObjectURL(){const id='blob:test/'+(++identity);urls.add(id);return id;},revokeObjectURL(id){urls.delete(id);}},
@@ -56,6 +56,11 @@ test('native GL allocations are weakly identified and release only after success
   assert.throws(()=>gl.deleteBuffer(buffer),/native GL failure/);assert.equal(observer.snapshot().counters.glBuffers,1);
   buffer.reject=false;gl.deleteBuffer(buffer);gl.deleteBuffer(buffer);gl.deleteTexture(texture);assert.equal(observer.snapshot().counters.glBuffers,0);assert.equal(observer.snapshot().counters.glTextures,0);
   assert.equal(observer.journal().events.filter(event=>event.category==='glBuffers'&&event.action==='release').length,1);
+});
+test('a non-throwing wrong-context WebGL deletion cannot hide the owning context live handle',()=>{
+  const {root,observer}=environment(),owner=new root.WebGL2RenderingContext(),other=new root.WebGL2RenderingContext(),buffer=owner.createBuffer();
+  other.deleteBuffer(buffer);assert.equal(other.ignoredDeletion,true);assert.equal(observer.snapshot().counters.glBuffers,1);assert.equal(observer.journal().events.length,1);
+  owner.deleteBuffer(buffer);assert.equal(observer.snapshot().counters.glBuffers,0);assert.equal(observer.journal().events.at(-1).action,'release');
 });
 test('native AudioContext close failure stays live and successful retry is the only release',async()=>{
   const {root,observer}=environment();const context=new root.AudioContext();context.rejectClose=true;

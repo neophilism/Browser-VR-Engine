@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "kind": "local-lifecycle-retained-run-verification",
+  "mode": "local",
+  "complete": false,
+  "qualificationStatus": "incomplete",
+  "checkedAt": "2026-10-18T21:29:36.922Z",
+  "files": [
+    {
+      "path": "lifecycle/lifecycle-browser-checks.json",
+      "bytes": 1503989,
+      "sha256": "985bd83c3c22627be91a873cc35204805301f733834275568bdf4251b184aad9"
+    },
+    {
+      "path": "lifecycle/lifecycle-summary.json",
+      "bytes": 955,
+      "sha256": "1a5d2c8400a81f8f5b13dc7887e0c265fded7c944fea9368a43b70a5e87ed53c"
+    },
+    {
+      "path": "lifecycle/build.json",
+      "bytes": 4670,
+      "sha256": "c8c1d25da00a63f2b4c14a9bafc39afad60269e99c762bb54d41159b20f32fd5"
+    },
+    {
+      "path": "lifecycle/lifecycle-resource-events.json",
+      "bytes": 2845593,
+      "sha256": "4700a1dd564e6d238dd975a03d01bba3bf700d327cb174e70993d41b19f93427"
+    }
+  ],
+  "errors": [],
+  "actualCommandReceipt": {
+    "path": "evaluations/babylon-vrspace/artifacts/lifecycle-development/run-20261018T212224/command.json",
+    "bytes": 544,
+    "sha256": "741a58e4155b342d4cc27a72632b2c0dd5892e025fb184f079129ca9474e858c",
+    "value": {
+      "argv": [
+        "node",
+        "run.mjs",
+        "test-lifecycle"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f05-lifecycle/evaluations/babylon-vrspace",
+      "startedAt": "2026-10-18T21:22:24.911+00:00",
+      "finishedAt": "2026-10-18T21:22:57.778+00:00",
+      "exitCode": 0,
+      "beforeRunDirectories": [],
+      "afterRunDirectories": [
+        "run-hH5Mir"
+      ],
+      "newRunDirectories": [
+        "run-hH5Mir"
+      ],
+      "logSha256": "fe5989e0d8e96291bdb287bb257c7976cee470887bea39ae10fba395cefce24e",
+      "localOnly": true,
+      "physicalQualification": false
+    }
+  },
+  "actualLog": {
+    "path": "evaluations/babylon-vrspace/artifacts/lifecycle-development/run-20261018T212224/command.txt",
+    "bytes": 921,
+    "sha256": "fe5989e0d8e96291bdb287bb257c7976cee470887bea39ae10fba395cefce24e"
+  },
+  "command": {
+    "id": "f05-lifecycle-browser",
+    "cwd": "evaluations/babylon-vrspace",
+    "argv": [
+      "node",
+      "run.mjs",
+      "test-lifecycle"
+    ],
+    "startedAt": "2026-10-18T21:22:24.911+00:00",
+    "finishedAt": "2026-10-18T21:22:57.778+00:00",
+    "exitCode": 0,
+    "outcome": "passed",
+    "durationMs": 32867,
+    "log": "PASS lifecycle-empty-host-baseline\nPASS lifecycle-observer-negative-control\nCYCLE 1 activated and returned to the empty baseline\nCYCLE 2 activated and returned to the empty baseline\nCYCLE 3 activated and returned to the empty baseline\nCYCLE 4 activated and returned to the empty baseline\nCYCLE 5 activated and returned to the empty baseline\nCYCLE 6 activated and returned to the empty baseline\nCYCLE 7 activated and returned to the empty baseline\nCYCLE 8 activated and returned to the empty baseline\nCYCLE 9 activated and returned to the empty baseline\nCYCLE 10 activated and returned to the empty baseline\nPASS lifecycle-ten-activated-cycles\nPASS lifecycle-native-resource-release\nPASS lifecycle-unloaded-input-inert\nPASS lifecycle-final-empty-host\n{\n  \"runStatus\": \"passed\",\n  \"passed\": 6,\n  \"failed\": 0,\n  \"pageErrors\": 0,\n  \"failedRequests\": 0,\n  \"logOverflow\": 0,\n  \"output\": \"artifacts/lifecycle-runs/run-hH5Mir\"\n}\n"
+  },
+  "lifecycle": {
+    "runDirectory": "artifacts/lifecycle-runs/run-hH5Mir",
+    "startedAt": "2026-10-18T21:22:25.390Z",
+    "finishedAt": "2026-10-18T21:22:57.716Z",
+    "reportSha256": "985bd83c3c22627be91a873cc35204805301f733834275568bdf4251b184aad9",
+    "summarySha256": "1a5d2c8400a81f8f5b13dc7887e0c265fded7c944fea9368a43b70a5e87ed53c",
+    "buildSha256": "c8c1d25da00a63f2b4c14a9bafc39afad60269e99c762bb54d41159b20f32fd5",
+    "eventsSha256": "4700a1dd564e6d238dd975a03d01bba3bf700d327cb174e70993d41b19f93427"
+  },
+  "status": "current-data-and-local-command-binding-verified",
+  "checkedSource": {
+    "scripts/ci/evaluate.mjs": {
+      "bytes": 62343,
+      "sha256": "52424f40c26709a63e98179628f71b4ab3ab045483ee508950bceb7bc185f3e5"
+    },
+    "scripts/ci/evaluation-evidence.mjs": {
+      "bytes": 9607,
+      "sha256": "da597aef761b45b06cc442a576cf4ee887d3582a3f1323211cea31e18931ea30"
+    },
+    "scripts/ci/lifecycle-resource-evidence.mjs": {
+      "bytes": 42972,
+      "sha256": "f0c122006b98c61791e929142eca2e2929a16d211794f74383736f75dc2b9b9a"
+    }
+  }
+}

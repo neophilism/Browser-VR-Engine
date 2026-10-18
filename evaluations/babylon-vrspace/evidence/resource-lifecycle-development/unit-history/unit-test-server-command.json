@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "node",
+    "run.mjs",
+    "test-server"
+  ],
+  "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f05-lifecycle/evaluations/babylon-vrspace",
+  "startedAt": "2026-10-18T21:16:48.988541+00:00",
+  "finishedAt": "2026-10-18T21:16:50.569463+00:00",
+  "exitCode": 1,
+  "scope": "Development unit tests; no browser or complete qualification"
+}

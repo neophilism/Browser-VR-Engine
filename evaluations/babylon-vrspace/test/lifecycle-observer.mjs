@@ -47,15 +47,15 @@ export function installLifecycleObserver(options,root=globalThis) {
 
   // A weak handle map observes successful native release calls independently
   // of Babylon's collection clearing. No GPU byte lifetime is inferred.
-  const glHandles=new WeakMap();
+  const glHandles=new WeakMap(),glContexts=new WeakMap();
   for(const NativeGL of [root.WebGLRenderingContext,root.WebGL2RenderingContext]){
     if(!NativeGL)continue;
     for(const [category,createName,deleteName] of glTypes){
       const prototype=NativeGL.prototype;
       if(!Object.hasOwn(prototype,createName)||!Object.hasOwn(prototype,deleteName))continue;
       const create=prototype[createName],release=prototype[deleteName];
-      prototype[createName]=function(...args){const handle=create.apply(this,args);if(handle){const key=++identity;add(category,key);glHandles.set(handle,{category,key});}return handle;};
-      prototype[deleteName]=function(handle){const result=release.call(this,handle),owned=handle&&glHandles.get(handle);if(owned?.category===category)remove(category,owned.key,'release');return result;};
+      prototype[createName]=function(...args){const handle=create.apply(this,args);if(handle){if(!glContexts.has(this))glContexts.set(this,++identity);const key=++identity;add(category,key);glHandles.set(handle,{category,key,contextId:glContexts.get(this)});}return handle;};
+      prototype[deleteName]=function(handle){const result=release.call(this,handle),owned=handle&&glHandles.get(handle);if(owned?.category===category&&owned.contextId===glContexts.get(this))remove(category,owned.key,'release');return result;};
     }
   }
 

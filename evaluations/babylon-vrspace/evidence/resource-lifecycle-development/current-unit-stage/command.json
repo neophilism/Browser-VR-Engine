@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "node",
+    "run.mjs",
+    "test-server"
+  ],
+  "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f05-lifecycle/evaluations/babylon-vrspace",
+  "startedAt": "2026-10-18T21:26:20.542+00:00",
+  "finishedAt": "2026-10-18T21:26:22.158+00:00",
+  "exitCode": 0,
+  "logSha256": "cb29f83bf8704bfbc205ae1522ac667430a3ac4556a16edf2de191acb9fb8dcc",
+  "loopbackPermission": true,
+  "externalNetworkUsed": false
+}

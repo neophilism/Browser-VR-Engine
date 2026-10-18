@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "node",
+    "--test",
+    "--test-isolation=none",
+    "test/lifecycle-observer.test.mjs",
+    "test/media-progress.test.mjs"
+  ],
+  "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f05-lifecycle/evaluations/babylon-vrspace",
+  "startedAt": "2026-10-18T21:21:24.912456+00:00",
+  "finishedAt": "2026-10-18T21:21:25.083375+00:00",
+  "exitCode": 0
+}

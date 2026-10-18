@@ -35,12 +35,12 @@ function replaceCarrier(value, key, mutate) {
 }
 
 test('portable command, input closure and outputs are exact and separate from desktop and XR', () => {
-  assert.equal(evaluationCommands.length, 13);
+  assert.equal(evaluationCommands.length, 14);
   const index = evaluationCommands.findIndex(command => command.id === 'f05-portable-browser');
   assert.equal(evaluationCommands[index - 1].id, 'f05-xr-browser');
   assert.deepEqual(evaluationCommands[index], { id: 'f05-portable-browser', cwd: 'evaluations/babylon-vrspace', argv: ['node', 'run.mjs', 'test-world'] });
   assert.equal(requiredF05BuildInputs.length, 15); assert.equal(requiredF05WorkspaceInputs.length, 8);
-  assert.equal(requiredF05BuildOutputs.length, 4); assert.equal(requiredF05SourceFiles.length, 28);
+  assert.equal(requiredF05BuildOutputs.length, 4); assert.equal(requiredF05SourceFiles.length, 34);
 });
 test('independent portable verifier accepts consistent synthetic bytes without executing a submitted bundle', async () => {
   const value = await portableFixture();
