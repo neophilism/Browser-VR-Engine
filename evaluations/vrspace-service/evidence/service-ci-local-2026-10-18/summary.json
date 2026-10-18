@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "kind": "service-ci-local-review",
+  "recordedAt": "2026-10-18T17:07:22.048991+00:00",
+  "baseCommit": "5d5b4312c41bdc53aca76ffcecbb192052670764",
+  "sourceState": "uncommitted implementation reviewed before root integration",
+  "qualificationStatus": "incomplete",
+  "hostedAcceptance": false,
+  "targetedPolicyAggregateAndEvidenceTests": {
+    "command": "node --test scripts/test/policy.test.mjs scripts/test/evidence.test.mjs scripts/test/service-evidence.test.mjs",
+    "passed": 67,
+    "failed": 0,
+    "skipped": 0,
+    "note": "Includes seven new Python no-network evidence mutation methods under -O; no browser or service ran."
+  },
+  "completeAutomationMethods": {
+    "command": "python3 -B run-clean.py python3 -B -O test/report-automation-checks.py",
+    "exitCode": 1,
+    "counts": {
+      "passed": 7,
+      "failed": 2,
+      "skipped": 0,
+      "checks": 9
+    },
+    "startedAt": "2026-10-18T17:05:53.036Z",
+    "finishedAt": "2026-10-18T17:05:54.096Z",
+    "sourceCount": 24,
+    "report": "automation-checks.json",
+    "reportSha256": "38b7882745d35f43979ab446ce32a2ccdcc07173bf5c6049fac844e16896dc7c"
+  },
+  "processBlocker": {
+    "reason": "Stage supervision requires the Linux procfs task children interface",
+    "attempts": 4,
+    "commandProcessesCreated": 0,
+    "syntheticLeadersOrChildrenStarted": false,
+    "jvmStarted": false,
+    "browserStarted": false,
+    "auditInvoked": false
+  },
+  "checks": {
+    "baselineCredentialPatternScan": "passed",
+    "diffWhitespace": "passed"
+  },
+  "review": {
+    "type": "separate read-only assistant review",
+    "runtimeExecutedByReviewer": false,
+    "blockingFindingsRemaining": 0,
+    "resolvedFinding": "Shared requiredJobsPassed helper default now matches checks/evaluations/service; negative cases added."
+  },
+  "sourceDigests": {
+    "scripts/ci/service.py": "08add48b6f4c41b9e9e14ce408260af9f35e7113dffd435e5784a8a32e80b75a",
+    "scripts/ci/service_evidence.py": "10efca12105eb06afd5dafca972172762520021a777f64f213f00697ba07904c",
+    "scripts/ci/verify-service-evidence.py": "61d91af82814f15b46d2baba711fa36867f620ecbc6661adeb1b33f5e2527dbc",
+    "scripts/ci/evidence.mjs": "efc0dddaf6bf195578175458df587edca887ea9ae19bb7115c295a7a06240f94",
+    "scripts/check-ci-policy.mjs": "e111d7b071915db37fc6c0ae327b1b8b303446c5133e79ba2ed8171660e8e86f",
+    "scripts/test/service-evidence-checks.py": "04791f231eba4e4634490846150b0af57620dd04f6dc2fed71fb12cf8341292e",
+    "scripts/test/service-evidence.test.mjs": "439b30d03a5b29d7376fcc5b60adb45b78cd5112903a4812a5856ff5da7dc086",
+    "scripts/test/evidence.test.mjs": "8ccf8e7536daf891baa6b59f8cc696f4d5c016a2a4f8f9b96f948758ee254a17",
+    "scripts/test/policy.test.mjs": "291651fba4837e2505080e5592a288f7df67489d3f66bf932a6ee17042a9c4b2",
+    ".github/workflows/engine-ci.yml": "3634fb248b301b893212128cbf817811e7307106c5e2d8277e5492550c9efb32",
+    "evaluations/vrspace-service/test/report-automation-checks.py": "d0f03cbd304451675b9115afebac9b086c696fb0902b39b2b36e7c15bb32a2c6"
+  },
+  "limitations": [
+    "The two real supervisor methods have not passed on a compatible host.",
+    "No complete service automation or hosted service job has passed for this implementation.",
+    "Service graph audit remains mandatory and authorized; no fresh service audit ran here.",
+    "Historical manual 14+15+9 evidence remains separate and unchanged.",
+    "No auth/authority/SFU/media/headset/physical audio/capacity qualification."
+  ]
+}

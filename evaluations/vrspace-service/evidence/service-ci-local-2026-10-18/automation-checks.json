@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "kind": "automation-method-regressions",
+  "runStatus": "failed",
+  "qualificationStatus": "incomplete",
+  "scope": "Verifier mutations and real owned synthetic process lifecycle, not the VRSpace service or headset qualification",
+  "pythonOptimized": true,
+  "startedAt": "2026-10-18T17:05:53.036Z",
+  "finishedAt": "2026-10-18T17:05:54.096Z",
+  "counts": {
+    "passed": 7,
+    "failed": 2,
+    "skipped": 0,
+    "checks": 9
+  },
+  "cases": [
+    {
+      "id": "test_audit_requires_consistent_registry_entries_and_success",
+      "status": "passed",
+      "startedAt": "2026-10-18T17:05:53.036Z",
+      "finishedAt": "2026-10-18T17:05:53.036Z",
+      "durationMs": 0
+    },
+    {
+      "id": "test_browser_failures_remain_failures_after_consistent_counts",
+      "status": "passed",
+      "startedAt": "2026-10-18T17:05:53.036Z",
+      "finishedAt": "2026-10-18T17:05:53.039Z",
+      "durationMs": 3
+    },
+    {
+      "id": "test_exited_leader_and_detached_term_ignoring_descendants_are_reaped",
+      "status": "failed",
+      "startedAt": "2026-10-18T17:05:53.039Z",
+      "finishedAt": "2026-10-18T17:05:53.751Z",
+      "durationMs": 711
+    },
+    {
+      "id": "test_missing_and_symlinked_output_directories_are_rejected",
+      "status": "passed",
+      "startedAt": "2026-10-18T17:05:53.751Z",
+      "finishedAt": "2026-10-18T17:05:53.751Z",
+      "durationMs": 0
+    },
+    {
+      "id": "test_real_command_exit_spawn_timeout_and_cancel_fail_closed",
+      "status": "failed",
+      "startedAt": "2026-10-18T17:05:53.751Z",
+      "finishedAt": "2026-10-18T17:05:54.054Z",
+      "durationMs": 303
+    },
+    {
+      "id": "test_screenshot_checks_dimensions_checksums_complete_rows",
+      "status": "passed",
+      "startedAt": "2026-10-18T17:05:54.054Z",
+      "finishedAt": "2026-10-18T17:05:54.089Z",
+      "durationMs": 35
+    },
+    {
+      "id": "test_source_snapshot_includes_new_worklet_and_rejects_file_escape",
+      "status": "passed",
+      "startedAt": "2026-10-18T17:05:54.089Z",
+      "finishedAt": "2026-10-18T17:05:54.092Z",
+      "durationMs": 3
+    },
+    {
+      "id": "test_stdout_must_identify_exactly_one_fresh_browser_run",
+      "status": "passed",
+      "startedAt": "2026-10-18T17:05:54.092Z",
+      "finishedAt": "2026-10-18T17:05:54.092Z",
+      "durationMs": 0
+    },
+    {
+      "id": "test_synthetic_browser_binding_accepts_without_execution_claim",
+      "status": "passed",
+      "startedAt": "2026-10-18T17:05:54.092Z",
+      "finishedAt": "2026-10-18T17:05:54.092Z",
+      "durationMs": 0
+    }
+  ],
+  "sourceDigests": {
+    "frontend.mjs": "c2cc66b70efe078744472f3118ad7a0e8b7490ff9367f564d79cee77dfd73ddf",
+    "network.js": "422ae0f7053317e32dfb9af3f102589a8218cf87fd4e8a48df6480efab0d681d",
+    "browser-checks.mjs": "3d39c3edeb9372b3d6261e2137c4b3f18d29c27e25bc2dd6f51786e7d2a79c73",
+    "finalize-run.mjs": "12c08c4b85665c321239fcaa446618731204ea377e89047f7475985feb83dc4f",
+    "run-clean.py": "8e4b5ceba7e294f51737cf4e69c13ce7f39ed6e1ae93c6789a69875b2e7370c7",
+    "environment.py": "0d5968bf909e05249390f00e6e6c187be0b7a535933071fabf83fad67eb3e102",
+    "setup.py": "1ec4248e08f5fd26f61eeb7e77f033a0332ae246e9ec2a1e2982a60357c95cfc",
+    "server-run.py": "b6233b700b3dad193f1aad5a346aec1039105d4f7077b1c1728f06fe0179cf04",
+    "process_control.py": "54dd8f76f85612313f45eb73a9d5b5268d847f0192ca1577d07e7be898c450f7",
+    "server.properties": "cb1bc393a3fbddf97bf99aff931779dc16edf205f3843ebf65465959205e41d5",
+    "stop-server.py": "0b8d8acbf72549e6e54a174850b454cee2f243500fdead0fdfbb195a10deb343",
+    "observe-server.py": "656b461970f6422b77b4164d146fcb338951ed22e2b52dcadc956031691624dc",
+    "source-pins.json": "2cbc0249af606a85d3139be1d7e67694a29039d11913d2503278b2e8582708f1",
+    "vendor/vrspace/client.js": "05b50269527e2f55095da07fbc767416477cd7eb788be28ac933354e8d7be867",
+    "package.json": "4ec82be323d0f588a70e6c8a131612d043fd8f04c83405cd708367bc08685713",
+    "package-lock.json": "5be3491734cf57b12fe0d36440d88d7762977f56cffafb569485422d3217a445",
+    "test/launcher-checks.py": "b24861a2e5a2a71c5e3b6b0137f5d99d2315b095c149f881a110cdff40f84d86",
+    "test/frontend-checks.mjs": "d9757fd0ae7f4ddb9f16bbe503366412e003251608515a5cb09d85bb49a9994d",
+    "test/finalization-checks.mjs": "6bd87b6ea622580a99aa99bd969420a9a67b04828412a75dc46a5cd644470090",
+    "automate.py": "7bda4d2edbc8f5aeb356cf08d6a4c80b4fd50ee7a6ada238f43bda94f86a70bf",
+    "command-supervisor.py": "8908746dd988cf39074faf2b9408d59d33a765cb9d6d3c946a14bdd0c064137b",
+    "test/automation-checks.py": "e91721df996c8a0ef27dfd3ab0725551492c641c44a7aa77b704c69d332a22d4",
+    "test/report-automation-checks.py": "d0f03cbd304451675b9115afebac9b086c696fb0902b39b2b36e7c15bb32a2c6",
+    "source-files.json": "1590114b385a35f720be5b0b919295ff9f6e54386e40a0f4d4065a7ded62ad9d"
+  },
+  "sourcesUnchanged": true,
+  "errors": [
+    {
+      "id": "automation_checks.AutomationChecks.test_exited_leader_and_detached_term_ignoring_descendants_are_reaped (detached=False, leader_exit=7)",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/test/automation-checks.py\", line 195, in test_exited_leader_and_detached_term_ignoring_descendants_are_reaped\n    self.assertEqual(result['exitCode'], -signal.SIGTERM if leader_exit is None else leader_exit, result)\nAssertionError: None != 7 : {'argv': ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '-c', 'import pathlib,subprocess,sys,time\\nsubprocess.Popen([sys.executable,\"-c\",\\'import json,os,pathlib,signal,time; signal.signal(signal.SIGTERM,signal.SIG_IGN); ticks=int(pathlib.Path(\"/proc/self/stat\").read_text().rsplit(\") \",1)[1].split()[19]); pathlib.Path(\\\\\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpzxm_bwum/owned-child.json\\\\\\').write_text(json.dumps({\"pid\":os.getpid(),\"ticks\":ticks})); time.sleep(20)\\'],start_new_session=False)\\ndeadline=time.monotonic()+2\\nwhile not pathlib.Path(\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpzxm_bwum/owned-child.json\\').exists() and time.monotonic()<deadline: time.sleep(.01)\\nraise SystemExit(7)\\n'], 'cwd': '/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpzxm_bwum', 'startedAt': '2026-10-18T17:05:53.040Z', 'outcome': 'failed', 'exitCode': None, 'processEvidence': 'command-ljhvc871.process.json', 'supervisorShutdown': {'terminateSent': False, 'killSent': False}, 'supervisorExitCode': 1, 'supervision': {'schemaVersion': 1, 'argv': ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '-c', 'import pathlib,subprocess,sys,time\\nsubprocess.Popen([sys.executable,\"-c\",\\'import json,os,pathlib,signal,time; signal.signal(signal.SIGTERM,signal.SIG_IGN); ticks=int(pathlib.Path(\"/proc/self/stat\").read_text().rsplit(\") \",1)[1].split()[19]); pathlib.Path(\\\\\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpzxm_bwum/owned-child.json\\\\\\').write_text(json.dumps({\"pid\":os.getpid(),\"ticks\":ticks})); time.sleep(20)\\'],start_new_session=False)\\ndeadline=time.monotonic()+2\\nwhile not pathlib.Path(\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpzxm_bwum/owned-child.json\\').exists() and time.monotonic()<deadline: time.sleep(.01)\\nraise SystemExit(7)\\n'], 'supervisorPid': 8204, 'startedAt': '2026-10-18T17:05:53.210Z', 'outcome': 'failed', 'exitCode': None, 'requestedSignal': None, 'error': 'RuntimeError: Stage supervision requires the Linux procfs task children interface', 'shutdown': {'needed': False, 'terminateSent': [], 'killSent': [], 'stopped': True}, 'finishedAt': '2026-10-18T17:05:53.210Z'}, 'error': 'RuntimeError: Stage failed or required descendant cleanup', 'finishedAt': '2026-10-18T17:05:53.241Z', 'durationMs': 201}\n"
+    },
+    {
+      "id": "automation_checks.AutomationChecks.test_exited_leader_and_detached_term_ignoring_descendants_are_reaped (detached=True, leader_exit=0)",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/test/automation-checks.py\", line 195, in test_exited_leader_and_detached_term_ignoring_descendants_are_reaped\n    self.assertEqual(result['exitCode'], -signal.SIGTERM if leader_exit is None else leader_exit, result)\nAssertionError: None != 0 : {'argv': ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '-c', 'import pathlib,subprocess,sys,time\\nsubprocess.Popen([sys.executable,\"-c\",\\'import json,os,pathlib,signal,time; signal.signal(signal.SIGTERM,signal.SIG_IGN); ticks=int(pathlib.Path(\"/proc/self/stat\").read_text().rsplit(\") \",1)[1].split()[19]); pathlib.Path(\\\\\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpyp6_26wa/owned-child.json\\\\\\').write_text(json.dumps({\"pid\":os.getpid(),\"ticks\":ticks})); time.sleep(20)\\'],start_new_session=True)\\ndeadline=time.monotonic()+2\\nwhile not pathlib.Path(\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpyp6_26wa/owned-child.json\\').exists() and time.monotonic()<deadline: time.sleep(.01)\\nraise SystemExit(0)\\n'], 'cwd': '/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpyp6_26wa', 'startedAt': '2026-10-18T17:05:53.242Z', 'outcome': 'failed', 'exitCode': None, 'processEvidence': 'command-4prtknsh.process.json', 'supervisorShutdown': {'terminateSent': False, 'killSent': False}, 'supervisorExitCode': 1, 'supervision': {'schemaVersion': 1, 'argv': ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '-c', 'import pathlib,subprocess,sys,time\\nsubprocess.Popen([sys.executable,\"-c\",\\'import json,os,pathlib,signal,time; signal.signal(signal.SIGTERM,signal.SIG_IGN); ticks=int(pathlib.Path(\"/proc/self/stat\").read_text().rsplit(\") \",1)[1].split()[19]); pathlib.Path(\\\\\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpyp6_26wa/owned-child.json\\\\\\').write_text(json.dumps({\"pid\":os.getpid(),\"ticks\":ticks})); time.sleep(20)\\'],start_new_session=True)\\ndeadline=time.monotonic()+2\\nwhile not pathlib.Path(\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpyp6_26wa/owned-child.json\\').exists() and time.monotonic()<deadline: time.sleep(.01)\\nraise SystemExit(0)\\n'], 'supervisorPid': 8206, 'startedAt': '2026-10-18T17:05:53.467Z', 'outcome': 'failed', 'exitCode': None, 'requestedSignal': None, 'error': 'RuntimeError: Stage supervision requires the Linux procfs task children interface', 'shutdown': {'needed': False, 'terminateSent': [], 'killSent': [], 'stopped': True}, 'finishedAt': '2026-10-18T17:05:53.467Z'}, 'error': 'RuntimeError: Stage failed or required descendant cleanup', 'finishedAt': '2026-10-18T17:05:53.545Z', 'durationMs': 302}\n"
+    },
+    {
+      "id": "automation_checks.AutomationChecks.test_exited_leader_and_detached_term_ignoring_descendants_are_reaped (detached=True, leader_exit=None)",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/test/automation-checks.py\", line 195, in test_exited_leader_and_detached_term_ignoring_descendants_are_reaped\n    self.assertEqual(result['exitCode'], -signal.SIGTERM if leader_exit is None else leader_exit, result)\nAssertionError: None != -15 : {'argv': ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '-c', 'import pathlib,subprocess,sys,time\\nsubprocess.Popen([sys.executable,\"-c\",\\'import json,os,pathlib,signal,time; signal.signal(signal.SIGTERM,signal.SIG_IGN); ticks=int(pathlib.Path(\"/proc/self/stat\").read_text().rsplit(\") \",1)[1].split()[19]); pathlib.Path(\\\\\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpjxvrlusj/owned-child.json\\\\\\').write_text(json.dumps({\"pid\":os.getpid(),\"ticks\":ticks})); time.sleep(20)\\'],start_new_session=True)\\ndeadline=time.monotonic()+2\\nwhile not pathlib.Path(\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpjxvrlusj/owned-child.json\\').exists() and time.monotonic()<deadline: time.sleep(.01)\\ntime.sleep(20)\\n'], 'cwd': '/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpjxvrlusj', 'startedAt': '2026-10-18T17:05:53.546Z', 'outcome': 'failed', 'exitCode': None, 'processEvidence': 'command-ssybl05n.process.json', 'supervisorShutdown': {'terminateSent': False, 'killSent': False}, 'supervisorExitCode': 1, 'supervision': {'schemaVersion': 1, 'argv': ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '-c', 'import pathlib,subprocess,sys,time\\nsubprocess.Popen([sys.executable,\"-c\",\\'import json,os,pathlib,signal,time; signal.signal(signal.SIGTERM,signal.SIG_IGN); ticks=int(pathlib.Path(\"/proc/self/stat\").read_text().rsplit(\") \",1)[1].split()[19]); pathlib.Path(\\\\\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpjxvrlusj/owned-child.json\\\\\\').write_text(json.dumps({\"pid\":os.getpid(),\"ticks\":ticks})); time.sleep(20)\\'],start_new_session=True)\\ndeadline=time.monotonic()+2\\nwhile not pathlib.Path(\\'/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpjxvrlusj/owned-child.json\\').exists() and time.monotonic()<deadline: time.sleep(.01)\\ntime.sleep(20)\\n'], 'supervisorPid': 8207, 'startedAt': '2026-10-18T17:05:53.697Z', 'outcome': 'failed', 'exitCode': None, 'requestedSignal': None, 'error': 'RuntimeError: Stage supervision requires the Linux procfs task children interface', 'shutdown': {'needed': False, 'terminateSent': [], 'killSent': [], 'stopped': True}, 'finishedAt': '2026-10-18T17:05:53.697Z'}, 'error': 'RuntimeError: Stage failed or required descendant cleanup', 'finishedAt': '2026-10-18T17:05:53.750Z', 'durationMs': 204}\n"
+    },
+    {
+      "id": "automation_checks.AutomationChecks.test_real_command_exit_spawn_timeout_and_cancel_fail_closed",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/test/automation-checks.py\", line 153, in test_real_command_exit_spawn_timeout_and_cancel_fail_closed\n    self.assertEqual(good['outcome'], 'passed', good)\nAssertionError: 'failed' != 'passed'\n- failed\n+ passed\n : {'argv': ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '-c', 'print(\"synthetic command\")'], 'cwd': '/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-review/evaluations/vrspace-service/artifacts/tmp/tmpxx06y9lq', 'startedAt': '2026-10-18T17:05:53.751Z', 'outcome': 'failed', 'exitCode': None, 'processEvidence': 'command-1czs40q0.process.json', 'supervisorShutdown': {'terminateSent': False, 'killSent': False}, 'supervisorExitCode': 1, 'supervision': {'schemaVersion': 1, 'argv': ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3', '-c', 'print(\"synthetic command\")'], 'supervisorPid': 8208, 'startedAt': '2026-10-18T17:05:53.998Z', 'outcome': 'failed', 'exitCode': None, 'requestedSignal': None, 'error': 'RuntimeError: Stage supervision requires the Linux procfs task children interface', 'shutdown': {'needed': False, 'terminateSent': [], 'killSent': [], 'stopped': True}, 'finishedAt': '2026-10-18T17:05:53.998Z'}, 'error': 'RuntimeError: Stage failed or required descendant cleanup', 'finishedAt': '2026-10-18T17:05:54.053Z', 'durationMs': 302}\n"
+    }
+  ]
+}

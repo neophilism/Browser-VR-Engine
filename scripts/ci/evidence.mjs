@@ -23,7 +23,7 @@ export function artifactName({ testedSha, runId, runAttempt }, job = 'foundation
   return `engine-${job}-${testedSha}-${runId}-${runAttempt}`;
 }
 
-export function requiredJobsPassed(results, expected = ['checks', 'evaluations']) {
+export function requiredJobsPassed(results, expected = ['checks', 'evaluations', 'service']) {
   return object(results) && expected.length > 0 && new Set(expected).size === expected.length && Object.keys(results).length === expected.length && expected.every(id => results[id] === 'success');
 }
 

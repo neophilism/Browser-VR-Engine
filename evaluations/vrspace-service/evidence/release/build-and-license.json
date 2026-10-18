@@ -1,0 +1,56 @@
+{
+  "binaryGitMetadata": {
+    "git.branch": "master",
+    "git.build.time": "2026-03-03T10:43:21+0000",
+    "git.build.version": "0.8.7",
+    "git.commit.id.abbrev": "ca0e02c",
+    "git.commit.id.describe": "ca0e02c",
+    "git.commit.id.describe-short": "ca0e02c",
+    "git.commit.id.full": "ca0e02ce611e1435e87dcec79de05fd2970dfc2d",
+    "git.commit.time": "2026-03-03T10:42:39+0000",
+    "git.dirty": "false"
+  },
+  "coordinates": "org.vrspace:server:0.8.7",
+  "javaClassMajorVersion": 61,
+  "repositoryClientLicense": "Apache-2.0",
+  "embeddedNeo4jLicense": "GNU GPL version 3, with commercial-agreement alternative stated in embedded LICENSE.txt",
+  "licenseRecords": [
+    {
+      "jar": "neo4j-5.26.21.jar",
+      "file": "META-INF/LICENSE.txt",
+      "bytes": 36008,
+      "sha256": "a27565f141354ee9f8ece5c579f35706ef560353a95103b1ec33dd03cffd90ea"
+    },
+    {
+      "jar": "neo4j-5.26.21.jar",
+      "file": "META-INF/NOTICE.txt",
+      "bytes": 7689,
+      "sha256": "fc2a2d780fe63afeb4357df3015e6c95e43c098d6572652e803644a5c92d25b2"
+    },
+    {
+      "jar": "neo4j-5.26.21.jar",
+      "file": "META-INF/LICENSES.txt",
+      "bytes": 109729,
+      "sha256": "6a1bd7b6fe5e070de7a2e4e3cf56b70100e72d40ae42c74f6f3873e9732adafc"
+    },
+    {
+      "jar": "neo4j-kernel-5.26.21.jar",
+      "file": "META-INF/LICENSE.txt",
+      "bytes": 36008,
+      "sha256": "a27565f141354ee9f8ece5c579f35706ef560353a95103b1ec33dd03cffd90ea"
+    },
+    {
+      "jar": "neo4j-kernel-5.26.21.jar",
+      "file": "META-INF/NOTICE.txt",
+      "bytes": 2532,
+      "sha256": "29146a6cc9fe98be71d827e8e847165b5dc3005d3f44ff36b7d7ab4a18487578"
+    },
+    {
+      "jar": "neo4j-kernel-5.26.21.jar",
+      "file": "META-INF/LICENSES.txt",
+      "bytes": 67315,
+      "sha256": "a858c64fd76f312da848961ddafd2368690fb01d2da5ff5ffcc0ad5e38c4113e"
+    }
+  ],
+  "note": "Binary metadata is upstream self-reporting corroborated by the release tag and official binary digest; no independent reproducible source build or complete transitive redistribution assessment was performed."
+}

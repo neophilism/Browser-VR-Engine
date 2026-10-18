@@ -40,6 +40,19 @@ for (const [name, mutate] of [
   ['skipped evaluation job', workflow => { workflow.jobs.evaluations.if = '${{ false }}'; }],
   ['local evaluation replacing hosted run', workflow => { workflow.jobs.evaluations.steps[2].run += ' --local'; }],
   ['missing evaluation artifact', workflow => { workflow.jobs.evaluations.steps.pop(); }],
+  ['missing service job', workflow => { delete workflow.jobs.service; }],
+  ['skipped service job', workflow => { workflow.jobs.service.if = '${{ false }}'; }],
+  ['local service replacing hosted run', workflow => { workflow.jobs.service.steps[3].run += ' --local'; }],
+  ['skipped service runner', workflow => { workflow.jobs.service.steps[3].if = '${{ false }}'; }],
+  ['missing Java setup', workflow => { workflow.jobs.service.steps.splice(2, 1); }],
+  ['floating Java action', workflow => { workflow.jobs.service.steps[2].uses = 'actions/setup-java@v6'; }],
+  ['wrong Java generation', workflow => { workflow.jobs.service.steps[2].with['java-version'] = '25'; }],
+  ['Java settings overwrite', workflow => { workflow.jobs.service.steps[2].with['overwrite-settings'] = true; }],
+  ['missing service artifact', workflow => { workflow.jobs.service.steps.pop(); }],
+  ['service artifact includes binary cache', workflow => { workflow.jobs.service.steps[4].with.path = 'evaluations/vrspace-service/'; }],
+  ['service artifact reuses a stale name', workflow => { workflow.jobs.service.steps[4].with.name = 'previous-service-result'; }],
+  ['service omitted from required gate', workflow => { workflow.jobs.required.needs = ['checks', 'evaluations']; }],
+  ['service result replaced by constant', workflow => { workflow.jobs.required.steps[0].env.SERVICE_RESULT = 'success'; }],
   ['evaluation omitted from required gate', workflow => { workflow.jobs.required.needs = ['checks']; }],
   ['conditional artifact upload', workflow => { workflow.jobs.checks.steps[3].if = '${{ success() }}'; }],
   ['skipped foundation job', workflow => { workflow.jobs.checks.if = '${{ false }}'; }],
@@ -62,9 +75,9 @@ for (const [name, mutate] of [
 
 test('the actual required shell gate fails on failed, skipped, cancelled and absent jobs', () => {
   const command = parse(workflowText).jobs.required.steps[0].run;
-  for (const key of ['CHECKS_RESULT', 'EVALUATIONS_RESULT']) {
+  for (const key of ['CHECKS_RESULT', 'EVALUATIONS_RESULT', 'SERVICE_RESULT']) {
     for (const outcome of ['success', 'failure', 'skipped', 'neutral', 'cancelled', '']) {
-      const result = spawnSync('bash', ['-c', command], { env: { PATH: process.env.PATH, CHECKS_RESULT: 'success', EVALUATIONS_RESULT: 'success', [key]: outcome } });
+      const result = spawnSync('bash', ['-c', command], { env: { PATH: process.env.PATH, CHECKS_RESULT: 'success', EVALUATIONS_RESULT: 'success', SERVICE_RESULT: 'success', [key]: outcome } });
       assert.equal(result.error, undefined);
       assert.equal(result.status === 0, outcome === 'success');
     }

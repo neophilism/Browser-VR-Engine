@@ -1,0 +1,66 @@
+{
+  "kind": "upstream-hubs-lockfile-audit",
+  "sourceCommit": "986d07a758e9d1184cb355385c6460391bd238d0",
+  "startedAt": "2026-10-18T17:09:58.393085+00:00",
+  "argv": [
+    "npm",
+    "audit",
+    "--package-lock-only",
+    "--ignore-scripts",
+    "--json",
+    "--audit-level=high",
+    "--registry=https://registry.npmjs.org",
+    "--fetch-timeout=15000",
+    "--fetch-retries=0",
+    "--userconfig=/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-assessment/hubs-audit/audit-q41o1o4j/config/user-npmrc",
+    "--globalconfig=/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-assessment/hubs-audit/audit-q41o1o4j/config/global-npmrc"
+  ],
+  "sourceBefore": {
+    "package.json": "90ea536f10020d417c63d21bfb4056d6716a0ce68e3fb535d2425bf58dabc542",
+    "package-lock.json": "f1630148e2e4c03c70bf0fbe55182ef4fc0b0506b82625b321109c2d71adf4d3"
+  },
+  "runtime": {
+    "node": "v24.19.0",
+    "npm": "11.9.0"
+  },
+  "dependencyInstallation": false,
+  "serviceExecution": false,
+  "exitCode": 1,
+  "processError": null,
+  "finishedAt": "2026-10-18T17:10:37.433445+00:00",
+  "sourceAfter": {
+    "package.json": "90ea536f10020d417c63d21bfb4056d6716a0ce68e3fb535d2425bf58dabc542",
+    "package-lock.json": "f1630148e2e4c03c70bf0fbe55182ef4fc0b0506b82625b321109c2d71adf4d3"
+  },
+  "sourceUnchanged": true,
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "info": 0,
+    "low": 3,
+    "moderate": 25,
+    "high": 64,
+    "critical": 14,
+    "total": 106
+  },
+  "dependencies": {
+    "prod": 266,
+    "dev": 1414,
+    "optional": 61,
+    "peer": 31,
+    "peerOptional": 0,
+    "total": 1691
+  },
+  "reportError": null,
+  "reportValid": true,
+  "files": {
+    "audit.stdout.json": {
+      "bytes": 128244,
+      "sha256": "01147dc40610eea1d4fae0b2ed58be50f203c098938f811e56dfb8137904ebee"
+    },
+    "audit.stderr.txt": {
+      "bytes": 208,
+      "sha256": "76162e465989f3f070a9de8db711fbf358e53b74d09ce1bbdb57c727e4c4a16d"
+    }
+  },
+  "nodeModulesCreated": false
+}

@@ -22,6 +22,8 @@ The [qualification protocol](docs/qualification/f03.md) defines the shared court
 
 The separate required `engine-evaluations` job installs and audits both evaluation toolkits, checks the pinned Spoke adaptation, and builds and runs the current Babylon/VRSpace browser subset. `node scripts/ci/evaluate.mjs --local` reproduces its diagnostic stages using an existing browser selected through `CHROME_EXECUTABLE`. Local execution records its browser-install omission and cannot produce hosted acceptance evidence. See each evaluation's README for full upstream reproduction and missing qualification.
 
+The [released VRSpace service follow-up](evaluations/vrspace-service/README.md) retains historical two-browser guest presence, pose and reconnect observations. Its separate required `engine-service-evaluation` job runs all nine automation methods, 14 launcher cases, 15 finalization cases, a fresh renderer build and the full released-server automation, including this third package's actual dependency audit. The local process-interface blocker remains explicit; the new hosted path must execute and its current-commit artifact must be verified before this follow-up is mergeable. Historical manual evidence cannot replace those gates.
+
 ## Project records
 
 - [Complete development plan](DEVELOPMENT_PLAN.md): approved units with dependencies and acceptance criteria.

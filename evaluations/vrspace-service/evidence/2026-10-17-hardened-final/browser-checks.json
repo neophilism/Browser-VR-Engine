@@ -1,0 +1,3995 @@
+{
+  "scope": "Actual released VRSpace service presence/pose evaluation against frozen F03 rendering; partial F05 evidence only",
+  "qualificationStatus": "incomplete",
+  "startedAt": "2026-10-17T22:48:54.842Z",
+  "finishedAt": "2026-10-17T22:49:19.404Z",
+  "realm": "F03_20261017224854841_I4Ip5m",
+  "runStatus": "passed",
+  "counts": {
+    "passed": 9,
+    "failed": 0,
+    "checks": 9
+  },
+  "sourcePins": {
+    "release": "v0.8.7",
+    "commit": "ca0e02ce611e1435e87dcec79de05fd2970dfc2d",
+    "publishedAt": "2026-03-03T11:26:36Z",
+    "jar": {
+      "url": "https://github.com/jalmasi/vrspace/releases/download/v0.8.7/server-0.8.7-executable.jar",
+      "bytes": 228055892,
+      "digest": "sha256:e5f0ba53f492d07e0f978ae1e15afce9fed2b3632a2d5984c48f3ab27d8004b3"
+    },
+    "distinction": "Released server/client evaluation, not the F05 AssetLoader master server at 61f840a3dd0133fc9d357891f37eb1670b147539",
+    "client": {
+      "source": "https://github.com/jalmasi/vrspace/blob/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/babylon/js/client/vrspace.js",
+      "sha256": "05b50269527e2f55095da07fbc767416477cd7eb788be28ac933354e8d7be867",
+      "bytes": 39785,
+      "modified": false,
+      "verifiedRawURL": "https://raw.githubusercontent.com/jalmasi/vrspace/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/babylon/js/client/vrspace.js"
+    },
+    "profile": {
+      "sha256": "cb1bc393a3fbddf97bf99aff931779dc16edf205f3843ebf65465959205e41d5",
+      "purpose": "Loopback-only synthetic guest presence/pose evaluation; authentication and optional integrations disabled"
+    },
+    "license": {
+      "repository": "Apache-2.0",
+      "url": "https://raw.githubusercontent.com/jalmasi/vrspace/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    }
+  },
+  "sourceDigests": {
+    "frontend.mjs": "c2cc66b70efe078744472f3118ad7a0e8b7490ff9367f564d79cee77dfd73ddf",
+    "network.js": "422ae0f7053317e32dfb9af3f102589a8218cf87fd4e8a48df6480efab0d681d",
+    "browser-checks.mjs": "ddfe5b991b8f319d28569957570d35f40c1038d1aa8731eeadeee2b1d6a07e52",
+    "run-clean.py": "8e4b5ceba7e294f51737cf4e69c13ce7f39ed6e1ae93c6789a69875b2e7370c7",
+    "environment.py": "0d5968bf909e05249390f00e6e6c187be0b7a535933071fabf83fad67eb3e102",
+    "setup.py": "1ec4248e08f5fd26f61eeb7e77f033a0332ae246e9ec2a1e2982a60357c95cfc",
+    "server-run.py": "b6233b700b3dad193f1aad5a346aec1039105d4f7077b1c1728f06fe0179cf04",
+    "process_control.py": "54dd8f76f85612313f45eb73a9d5b5268d847f0192ca1577d07e7be898c450f7",
+    "server.properties": "cb1bc393a3fbddf97bf99aff931779dc16edf205f3843ebf65465959205e41d5",
+    "stop-server.py": "0b8d8acbf72549e6e54a174850b454cee2f243500fdead0fdfbb195a10deb343",
+    "observe-server.py": "656b461970f6422b77b4164d146fcb338951ed22e2b52dcadc956031691624dc",
+    "source-pins.json": "2cbc0249af606a85d3139be1d7e67694a29039d11913d2503278b2e8582708f1",
+    "vendor/vrspace/client.js": "05b50269527e2f55095da07fbc767416477cd7eb788be28ac933354e8d7be867",
+    "package.json": "4ec82be323d0f588a70e6c8a131612d043fd8f04c83405cd708367bc08685713",
+    "package-lock.json": "5be3491734cf57b12fe0d36440d88d7762977f56cffafb569485422d3217a445",
+    "test/launcher-checks.py": "b24861a2e5a2a71c5e3b6b0137f5d99d2315b095c149f881a110cdff40f84d86",
+    "test/frontend-checks.mjs": "d9757fd0ae7f4ddb9f16bbe503366412e003251608515a5cb09d85bb49a9994d",
+    "source-files.json": "5d2edf5ff5f289264ab270519aa8a1726102808917e43f6619e682bbf41bf945"
+  },
+  "fixtureDigests": {
+    "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+    "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+    "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+    "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+    "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+    "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+    "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+    "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+  },
+  "baseBuild": {
+    "schemaVersion": 1,
+    "inputs": {
+      "src/main.js": {
+        "bytes": 38352,
+        "sha256": "ed4b1a6a3e001ca2f2c6a73ae7d196eeb6ef3384121419940da548bcc0290f41"
+      },
+      "src/spatial-audio.js": {
+        "bytes": 9722,
+        "sha256": "c8e252517b5f6a3ad0119d00c05d1ca401fd04b0ea0eef7a38b9cd4b610d64f0"
+      },
+      "src/audio-meter.js": {
+        "bytes": 2929,
+        "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+      },
+      "src/import-policy.js": {
+        "bytes": 14112,
+        "sha256": "a66d799731635bdf335a45faf3343bee88e2af7bad71a244e9c8ca57b4359bc2"
+      },
+      "src/import-resources.js": {
+        "bytes": 1300,
+        "sha256": "756a4931cd4348a336a659aab87e49bee53b2f798bddfa2e0a4cac49b696c4c4"
+      },
+      "index.html": {
+        "bytes": 5174,
+        "sha256": "a67c337d6e20db44affea29188e55d1a3517582bfb70ae68911b46aad3a4a5b1"
+      },
+      "package.json": {
+        "bytes": 708,
+        "sha256": "5e3bda25bcf6001a27f82ff2e0f9280bdd5c0556e81ff7a686652048b082295e"
+      },
+      "package-lock.json": {
+        "bytes": 18199,
+        "sha256": "436da0200e08676a672c3e0e21f2da2ac609e5a3bf0d96f3d1d48c5f4730b8ec"
+      },
+      "fixture-pins.json": {
+        "bytes": 1199,
+        "sha256": "7c561df8f41f3b016b80e6b4d17258bc3d76dbe4bf8a6fde8ec5d7fa0511add9"
+      },
+      "vendor/vrspace/asset-loader.js": {
+        "bytes": 10336,
+        "sha256": "1afa505b193dac8f60ee54ea7ccdfd60e9a0620cf561fa393aa570055d23fa06"
+      },
+      "build.mjs": {
+        "bytes": 1211,
+        "sha256": "edafe75c96202949a07a8f328ffcbfa8458b15842afd127bd76adf2dedf016a0"
+      }
+    },
+    "outputs": {
+      "dist/main.js": {
+        "bytes": 22660534,
+        "sha256": "319050f4b86772f80feb4811e0026dd102776bf52eb0ced3a0435cb9e4345ba7"
+      },
+      "dist/main.js.map": {
+        "bytes": 33426258,
+        "sha256": "0aaee0514a9dc22d016309709414f9873cf7f5f65c62410d383a6bfe7518d762"
+      },
+      "dist/audio-meter.js": {
+        "bytes": 2929,
+        "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+      }
+    },
+    "fixtureDigests": {
+      "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+      "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+      "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+      "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+      "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+      "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+      "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+      "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+    }
+  },
+  "ports": {
+    "frontend": "http://127.0.0.1:4176",
+    "fixtureBackend": "http://127.0.0.1:38401",
+    "vrspace": "http://127.0.0.1:18180",
+    "websocket": "ws://127.0.0.1:18180/vrspace/client"
+  },
+  "checks": [
+    {
+      "id": "two-independent-real-service-sessions",
+      "status": "passed",
+      "method": "two-real-browser-pages-and-release-server",
+      "detail": {
+        "clients": [
+          {
+            "participant": "Alpha",
+            "me": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "name": null,
+              "className": "User"
+            },
+            "realm": "F03_20261017224854841_I4Ip5m",
+            "enterAcknowledgement": {
+              "requestedRealm": "F03_20261017224854841_I4Ip5m",
+              "userId": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "responseTimestamp": "2026-10-17T22:49:01.426097820"
+            }
+          },
+          {
+            "participant": "Beta",
+            "me": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "name": null,
+              "className": "User"
+            },
+            "realm": "F03_20261017224854841_I4Ip5m",
+            "enterAcknowledgement": {
+              "requestedRealm": "F03_20261017224854841_I4Ip5m",
+              "userId": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "responseTimestamp": "2026-10-17T22:49:01.436701489"
+            }
+          }
+        ],
+        "serverWorldCreation": "2026-10-17T22:49:01.161Z  INFO 40140 --- [vrspace-loopback-release-evaluation] [.1-18180-exec-2] org.vrspace.server.core.WorldFactory     : Creating temporary world on demand: F03_20261017224854841_I4Ip5m",
+        "realWebSocketURL": "ws://127.0.0.1:18180/vrspace/client",
+        "health": {
+          "status": 200,
+          "body": {
+            "status": "UP"
+          }
+        },
+        "note": "The released Welcome omits worldId. Enter acknowledgements, actual server world creation, and mutual Add events identify the shared realm."
+      }
+    },
+    {
+      "id": "same-frozen-f03-venue-in-both-canvases",
+      "status": "passed",
+      "method": "two-real-browser-pages-and-release-server",
+      "detail": [
+        {
+          "fixture": "courtyard-v1",
+          "entities": 55,
+          "meshes": 91,
+          "rightHanded": true,
+          "digests": {
+            "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+            "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+            "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+            "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+            "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+            "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+            "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+            "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+          },
+          "renderedFrames": 59,
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "webgl": 2
+        },
+        {
+          "fixture": "courtyard-v1",
+          "entities": 55,
+          "meshes": 91,
+          "rightHanded": true,
+          "digests": {
+            "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+            "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+            "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+            "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+            "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+            "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+            "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+            "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+          },
+          "renderedFrames": 58,
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "webgl": 2
+        }
+      ]
+    },
+    {
+      "id": "mutual-presence-from-server-add-events",
+      "status": "passed",
+      "method": "two-real-browser-pages-and-release-server",
+      "detail": [
+        {
+          "participant": "Alpha",
+          "me": {
+            "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+            "name": null,
+            "className": "User"
+          },
+          "peers": [
+            {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "name": "Beta_F03_20261017224854841_I4Ip5m",
+              "position": {
+                "x": 1.9998375177383423,
+                "y": 1.6146438241004943,
+                "z": 2.99988055229187
+              },
+              "renderedPosition": [
+                1.9998375177383423,
+                1.6146438241004943,
+                2.99988055229187
+              ],
+              "updates": 1,
+              "lastUpdate": {
+                "wallTime": 1792277343281,
+                "monotonic": 7615.100000000559
+              },
+              "visible": true
+            }
+          ]
+        },
+        {
+          "participant": "Beta",
+          "me": {
+            "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+            "name": null,
+            "className": "User"
+          },
+          "peers": [
+            {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "name": "Alpha_F03_20261017224854841_I4Ip5m",
+              "position": {
+                "x": -1.99998939037323,
+                "y": 1.614942741394043,
+                "z": 6.999968528747559
+              },
+              "renderedPosition": [
+                -1.99998939037323,
+                1.614942741394043,
+                6.999968528747559
+              ],
+              "updates": 2,
+              "lastUpdate": {
+                "wallTime": 1792277343302,
+                "monotonic": 7635.5
+              },
+              "visible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alpha-keyboard-pose-visible-to-beta",
+      "status": "passed",
+      "method": "two-real-browser-pages-and-release-server",
+      "detail": {
+        "sender": "Alpha",
+        "senderId": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+        "before": [
+          -1.99998939037323,
+          1.614942741394043,
+          6.999968528747559
+        ],
+        "after": [
+          -1.624681830406189,
+          1.6150627851486206,
+          5.293887615203857
+        ],
+        "remoteBefore": {
+          "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+          "name": "Alpha_F03_20261017224854841_I4Ip5m",
+          "position": {
+            "x": -1.99998939037323,
+            "y": 1.614942741394043,
+            "z": 6.999968528747559
+          },
+          "renderedPosition": [
+            -1.99998939037323,
+            1.614942741394043,
+            6.999968528747559
+          ],
+          "updates": 2,
+          "lastUpdate": {
+            "wallTime": 1792277343302,
+            "monotonic": 7635.5
+          },
+          "visible": true
+        },
+        "remoteAfter": {
+          "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+          "name": "Alpha_F03_20261017224854841_I4Ip5m",
+          "position": {
+            "x": -1.624681830406189,
+            "y": 1.6150627851486206,
+            "z": 5.293887615203857
+          },
+          "renderedPosition": [
+            -1.624681830406189,
+            1.6150627851486206,
+            5.293887615203857
+          ],
+          "updates": 7,
+          "lastUpdate": {
+            "wallTime": 1792277344360,
+            "monotonic": 8693.399999999441
+          },
+          "visible": true
+        }
+      }
+    },
+    {
+      "id": "beta-keyboard-pose-visible-to-alpha",
+      "status": "passed",
+      "method": "two-real-browser-pages-and-release-server",
+      "detail": {
+        "sender": "Beta",
+        "senderId": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+        "before": [
+          1.9998375177383423,
+          1.6146438241004943,
+          2.99988055229187
+        ],
+        "after": [
+          0.7261674404144287,
+          1.6152862429618835,
+          3.7264468669891357
+        ],
+        "remoteBefore": {
+          "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+          "name": "Beta_F03_20261017224854841_I4Ip5m",
+          "position": {
+            "x": 1.9998375177383423,
+            "y": 1.6146438241004943,
+            "z": 2.99988055229187
+          },
+          "renderedPosition": [
+            1.9998375177383423,
+            1.6146438241004943,
+            2.99988055229187
+          ],
+          "updates": 1,
+          "lastUpdate": {
+            "wallTime": 1792277343281,
+            "monotonic": 7615.100000000559
+          },
+          "visible": true
+        },
+        "remoteAfter": {
+          "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+          "name": "Beta_F03_20261017224854841_I4Ip5m",
+          "position": {
+            "x": 0.7261674404144287,
+            "y": 1.6152862429618835,
+            "z": 3.7264468669891357
+          },
+          "renderedPosition": [
+            0.7261674404144287,
+            1.6152862429618835,
+            3.7264468669891357
+          ],
+          "updates": 7,
+          "lastUpdate": {
+            "wallTime": 1792277345142,
+            "monotonic": 9475.800000000745
+          },
+          "visible": true
+        }
+      }
+    },
+    {
+      "id": "disconnect-removes-remote-guest",
+      "status": "passed",
+      "method": "two-real-browser-pages-and-release-server",
+      "detail": {
+        "disconnectedId": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+        "alphaPeers": [],
+        "betaPhase": "disconnected",
+        "receivedRemove": [
+          {
+            "type": "remove",
+            "wallTime": 1792277345338,
+            "monotonic": 9671.800000000745,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "className": "User"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "same-browser-rejoin-restores-pose-flow",
+      "status": "passed",
+      "method": "two-real-browser-pages-and-release-server",
+      "detail": {
+        "oldGuestId": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+        "newGuestId": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+        "identityPreserved": false,
+        "joinedGeneration": 2,
+        "pose": {
+          "sender": "Beta",
+          "senderId": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+          "before": [
+            0.7261256575584412,
+            1.614747953414917,
+            3.7264163494110107
+          ],
+          "after": [
+            2.3974826335906982,
+            1.615060520172119,
+            3.057438850402832
+          ],
+          "remoteBefore": {
+            "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+            "name": "Beta_F03_20261017224854841_I4Ip5m",
+            "position": {
+              "x": 0.7261256575584412,
+              "y": 1.614747953414917,
+              "z": 3.7264163494110107
+            },
+            "renderedPosition": [
+              0.7261256575584412,
+              1.614747953414917,
+              3.7264163494110107
+            ],
+            "updates": 4,
+            "lastUpdate": {
+              "wallTime": 1792277346668,
+              "monotonic": 11002
+            },
+            "visible": true
+          },
+          "remoteAfter": {
+            "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+            "name": "Beta_F03_20261017224854841_I4Ip5m",
+            "position": {
+              "x": 2.3974826335906982,
+              "y": 1.615060520172119,
+              "z": 3.057438850402832
+            },
+            "renderedPosition": [
+              2.3974826335906982,
+              1.615060520172119,
+              3.057438850402832
+            ],
+            "updates": 12,
+            "lastUpdate": {
+              "wallTime": 1792277347387,
+              "monotonic": 11721.400000000373
+            },
+            "visible": true
+          }
+        },
+        "note": "Guest identity continuity is observed here, not assumed as a product requirement."
+      }
+    },
+    {
+      "id": "upstream-sdk-automatic-reconnect-after-controlled-close",
+      "status": "passed",
+      "method": "two-real-browser-pages-and-release-server",
+      "detail": {
+        "elapsedMs": 7140,
+        "beforeId": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+        "afterId": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+        "identityPreserved": false,
+        "transportGeneration": 3,
+        "joinedGeneration": 3,
+        "pose": {
+          "sender": "Alpha",
+          "senderId": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+          "before": [
+            -1.6246943473815918,
+            1.6148250818252563,
+            5.293882369995117
+          ],
+          "after": [
+            -0.11521702259778976,
+            1.6149644374847412,
+            5.629403114318848
+          ],
+          "remoteBefore": {
+            "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+            "name": "Alpha_F03_20261017224854841_I4Ip5m",
+            "position": {
+              "x": -1.6246943473815918,
+              "y": 1.6148250818252563,
+              "z": 5.293882369995117
+            },
+            "renderedPosition": [
+              -1.6246943473815918,
+              1.6148250818252563,
+              5.293882369995117
+            ],
+            "updates": 1,
+            "lastUpdate": {
+              "wallTime": 1792277353538,
+              "monotonic": 17871.5
+            },
+            "visible": true
+          },
+          "remoteAfter": {
+            "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+            "name": "Alpha_F03_20261017224854841_I4Ip5m",
+            "position": {
+              "x": -0.11521702259778976,
+              "y": 1.6149644374847412,
+              "z": 5.629403114318848
+            },
+            "renderedPosition": [
+              -0.11521702259778976,
+              1.6149644374847412,
+              5.629403114318848
+            ],
+            "updates": 7,
+            "lastUpdate": {
+              "wallTime": 1792277354518,
+              "monotonic": 18851.599999999627
+            },
+            "visible": true
+          }
+        },
+        "note": "Unmodified SDK retry timer reconnects a deliberately closed native WebSocket; no WAN outage, server restart, or packet-loss claim."
+      }
+    },
+    {
+      "id": "wire-evidence-and-no-browser-errors",
+      "status": "passed",
+      "method": "two-real-browser-pages-and-release-server",
+      "detail": {
+        "wireCounts": [
+          {
+            "participant": "Alpha",
+            "sent": 22,
+            "received": 27,
+            "welcomes": 1,
+            "enters": 1,
+            "sessions": 1,
+            "receivedAdds": 3,
+            "receivedPoses": 19,
+            "receivedRemoves": 2
+          },
+          {
+            "participant": "Beta",
+            "sent": 29,
+            "received": 30,
+            "welcomes": 3,
+            "enters": 3,
+            "sessions": 3,
+            "receivedAdds": 3,
+            "receivedPoses": 18,
+            "receivedRemoves": 0
+          }
+        ],
+        "onlyServiceSockets": true,
+        "errors": [
+          [],
+          []
+        ],
+        "failedOrBlockedRequests": [],
+        "relayUnknownResourceChecks": [
+          {
+            "path": "/%2fexample.invalid/probe",
+            "status": 404
+          },
+          {
+            "path": "/server.properties",
+            "status": 404
+          },
+          {
+            "path": "/vendor/vrspace/../../server-run.py",
+            "status": 404
+          }
+        ]
+      }
+    }
+  ],
+  "observed": {
+    "serverRun": {
+      "pid": 40140,
+      "processStartTicks": 600033,
+      "runDirectory": "/workspace/scratch/dc98dcd2981d/engine_work/vrspace-service-port-v2-test/evaluations/vrspace-service/artifacts/server-m235ldzk"
+    },
+    "health": {
+      "status": 200,
+      "body": {
+        "status": "UP"
+      }
+    },
+    "environment": {
+      "browser": "151.0.7922.34",
+      "playwright": "1.62.1",
+      "flags": [
+        "--use-angle=swiftshader",
+        "--enable-unsafe-swiftshader",
+        "--autoplay-policy=document-user-activation-required",
+        "--disable-background-timer-throttling",
+        "--disable-backgrounding-occluded-windows",
+        "--disable-renderer-backgrounding"
+      ],
+      "viewport": {
+        "width": 1280,
+        "height": 800,
+        "dpr": 1
+      },
+      "hardwareScaling": 2,
+      "physicalGPU": false,
+      "physicalHeadset": false,
+      "physicalAudio": false,
+      "profileIsolation": "two separate BrowserContexts, independent cookie jars",
+      "subprocessEnvironment": "Explicit browser allowlist; no HOME/USERPROFILE override and no inherited provider/registry/GitHub variables"
+    },
+    "initial": [
+      {
+        "participant": "Alpha",
+        "realm": "F03_20261017224854841_I4Ip5m",
+        "phase": "joined",
+        "transportGeneration": 1,
+        "joinedGeneration": 1,
+        "connected": true,
+        "me": {
+          "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+          "name": null,
+          "className": "User"
+        },
+        "sentPoses": 1,
+        "enterAcknowledgement": {
+          "requestedRealm": "F03_20261017224854841_I4Ip5m",
+          "userId": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+          "responseTimestamp": "2026-10-17T22:49:01.426097820"
+        },
+        "localEye": [
+          -1.99998939037323,
+          1.614942741394043,
+          6.999968528747559
+        ],
+        "peers": [
+          {
+            "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+            "name": "Beta_F03_20261017224854841_I4Ip5m",
+            "position": {
+              "x": 1.9998375177383423,
+              "y": 1.6146438241004943,
+              "z": 2.99988055229187
+            },
+            "renderedPosition": [
+              1.9998375177383423,
+              1.6146438241004943,
+              2.99988055229187
+            ],
+            "updates": 1,
+            "lastUpdate": {
+              "wallTime": 1792277343281,
+              "monotonic": 7615.100000000559
+            },
+            "visible": true
+          }
+        ],
+        "sdkObjects": [
+          {
+            "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+            "className": "User",
+            "position": {
+              "x": 1.9998375177383423,
+              "y": 1.6146438241004943,
+              "z": 2.99988055229187
+            },
+            "active": true
+          }
+        ],
+        "errors": [],
+        "events": [
+          {
+            "type": "transport",
+            "wallTime": 1792277339179,
+            "monotonic": 3513,
+            "detail": {
+              "connected": true,
+              "generation": 1
+            }
+          },
+          {
+            "type": "welcome",
+            "wallTime": 1792277341070,
+            "monotonic": 5404,
+            "detail": {
+              "user": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "transportGeneration": 1
+            }
+          },
+          {
+            "type": "entered",
+            "wallTime": 1792277341429,
+            "monotonic": 5762.700000000186,
+            "detail": {
+              "requestedRealm": "F03_20261017224854841_I4Ip5m",
+              "userId": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "responseTimestamp": "2026-10-17T22:49:01.426097820"
+            }
+          },
+          {
+            "type": "add",
+            "wallTime": 1792277343271,
+            "monotonic": 7605.200000000186,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "className": "User"
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277343281,
+            "monotonic": 7615.100000000559,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "changes": {
+                "initial": true
+              },
+              "renderedPosition": [
+                1.9998375177383423,
+                1.6146438241004943,
+                2.99988055229187
+              ]
+            }
+          },
+          {
+            "type": "session-start",
+            "wallTime": 1792277343281,
+            "monotonic": 7615.300000000745,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "realm": "F03_20261017224854841_I4Ip5m",
+              "sceneCount": 1,
+              "joinedGeneration": 1
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277343281,
+            "monotonic": 7615.4000000003725,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.99998939037323,
+                "y": 1.614942741394043,
+                "z": 6.999968528747559
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 1
+            }
+          }
+        ]
+      },
+      {
+        "participant": "Beta",
+        "realm": "F03_20261017224854841_I4Ip5m",
+        "phase": "joined",
+        "transportGeneration": 1,
+        "joinedGeneration": 1,
+        "connected": true,
+        "me": {
+          "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+          "name": null,
+          "className": "User"
+        },
+        "sentPoses": 1,
+        "enterAcknowledgement": {
+          "requestedRealm": "F03_20261017224854841_I4Ip5m",
+          "userId": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+          "responseTimestamp": "2026-10-17T22:49:01.436701489"
+        },
+        "localEye": [
+          1.9998375177383423,
+          1.6146438241004943,
+          2.99988055229187
+        ],
+        "peers": [
+          {
+            "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+            "name": "Alpha_F03_20261017224854841_I4Ip5m",
+            "position": {
+              "x": -1.99998939037323,
+              "y": 1.614942741394043,
+              "z": 6.999968528747559
+            },
+            "renderedPosition": [
+              -1.99998939037323,
+              1.614942741394043,
+              6.999968528747559
+            ],
+            "updates": 2,
+            "lastUpdate": {
+              "wallTime": 1792277343302,
+              "monotonic": 7635.5
+            },
+            "visible": true
+          }
+        ],
+        "sdkObjects": [
+          {
+            "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+            "className": "User",
+            "position": {
+              "x": -1.99998939037323,
+              "y": 1.614942741394043,
+              "z": 6.999968528747559
+            },
+            "active": true
+          }
+        ],
+        "errors": [],
+        "events": [
+          {
+            "type": "transport",
+            "wallTime": 1792277339483,
+            "monotonic": 3816.199999999255,
+            "detail": {
+              "connected": true,
+              "generation": 1
+            }
+          },
+          {
+            "type": "welcome",
+            "wallTime": 1792277341069,
+            "monotonic": 5402.299999999814,
+            "detail": {
+              "user": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "transportGeneration": 1
+            }
+          },
+          {
+            "type": "entered",
+            "wallTime": 1792277341441,
+            "monotonic": 5774,
+            "detail": {
+              "requestedRealm": "F03_20261017224854841_I4Ip5m",
+              "userId": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "responseTimestamp": "2026-10-17T22:49:01.436701489"
+            }
+          },
+          {
+            "type": "session-start",
+            "wallTime": 1792277343093,
+            "monotonic": 7426.199999999255,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "realm": "F03_20261017224854841_I4Ip5m",
+              "sceneCount": 0,
+              "joinedGeneration": 1
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277343093,
+            "monotonic": 7426.299999999814,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "position": {
+                "x": 1.9998375177383423,
+                "y": 1.6146438241004943,
+                "z": 2.99988055229187
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 1
+            }
+          },
+          {
+            "type": "add",
+            "wallTime": 1792277343270,
+            "monotonic": 7603.5999999996275,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "className": "User"
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277343276,
+            "monotonic": 7609.399999999441,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "initial": true
+              },
+              "renderedPosition": [
+                -1.9999639987945557,
+                1.6136022329330444,
+                6.99997615814209
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277343302,
+            "monotonic": 7635.5999999996275,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.99998939037323,
+                  "y": 1.614942741394043,
+                  "z": 6.999968528747559
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.99998939037323,
+                1.614942741394043,
+                6.999968528747559
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "firstDisconnectedId": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+    "final": [
+      {
+        "participant": "Alpha",
+        "realm": "F03_20261017224854841_I4Ip5m",
+        "phase": "joined",
+        "transportGeneration": 1,
+        "joinedGeneration": 1,
+        "connected": true,
+        "me": {
+          "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+          "name": null,
+          "className": "User"
+        },
+        "sentPoses": 19,
+        "enterAcknowledgement": {
+          "requestedRealm": "F03_20261017224854841_I4Ip5m",
+          "userId": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+          "responseTimestamp": "2026-10-17T22:49:01.426097820"
+        },
+        "localEye": [
+          -0.11522524803876877,
+          1.615080189704895,
+          5.629392147064209
+        ],
+        "peers": [
+          {
+            "id": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+            "name": "Beta_F03_20261017224854841_I4Ip5m",
+            "position": {
+              "x": 2.397486686706543,
+              "y": 1.6150975346565246,
+              "z": 3.0574357509613037
+            },
+            "renderedPosition": [
+              2.397486686706543,
+              1.6150975346565246,
+              3.0574357509613037
+            ],
+            "updates": 2,
+            "lastUpdate": {
+              "wallTime": 1792277353551,
+              "monotonic": 17885.200000000186
+            },
+            "visible": true
+          }
+        ],
+        "sdkObjects": [
+          {
+            "id": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+            "className": "User",
+            "position": {
+              "x": 2.397486686706543,
+              "y": 1.6150975346565246,
+              "z": 3.0574357509613037
+            },
+            "active": true
+          }
+        ],
+        "errors": [],
+        "events": [
+          {
+            "type": "transport",
+            "wallTime": 1792277339179,
+            "monotonic": 3513,
+            "detail": {
+              "connected": true,
+              "generation": 1
+            }
+          },
+          {
+            "type": "welcome",
+            "wallTime": 1792277341070,
+            "monotonic": 5404,
+            "detail": {
+              "user": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "transportGeneration": 1
+            }
+          },
+          {
+            "type": "entered",
+            "wallTime": 1792277341429,
+            "monotonic": 5762.700000000186,
+            "detail": {
+              "requestedRealm": "F03_20261017224854841_I4Ip5m",
+              "userId": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "responseTimestamp": "2026-10-17T22:49:01.426097820"
+            }
+          },
+          {
+            "type": "add",
+            "wallTime": 1792277343271,
+            "monotonic": 7605.200000000186,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "className": "User"
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277343281,
+            "monotonic": 7615.100000000559,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "changes": {
+                "initial": true
+              },
+              "renderedPosition": [
+                1.9998375177383423,
+                1.6146438241004943,
+                2.99988055229187
+              ]
+            }
+          },
+          {
+            "type": "session-start",
+            "wallTime": 1792277343281,
+            "monotonic": 7615.300000000745,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "realm": "F03_20261017224854841_I4Ip5m",
+              "sceneCount": 1,
+              "joinedGeneration": 1
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277343281,
+            "monotonic": 7615.4000000003725,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.99998939037323,
+                "y": 1.614942741394043,
+                "z": 6.999968528747559
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 1
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277343846,
+            "monotonic": 8179.9000000003725,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.9457687139511108,
+                "y": 1.6150689840316772,
+                "z": 6.755173206329346
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 2
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344047,
+            "monotonic": 8380.800000000745,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.8598735332489014,
+                "y": 1.6150784611701965,
+                "z": 6.365743637084961
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 3
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344146,
+            "monotonic": 8479.700000000186,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.7969945669174194,
+                "y": 1.6149592518806457,
+                "z": 6.0737175941467285
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 4
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344245,
+            "monotonic": 8579.5,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.6995787620544434,
+                "y": 1.6165023565292358,
+                "z": 5.635413646697998
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 5
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344348,
+            "monotonic": 8681.700000000186,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.624681830406189,
+                "y": 1.6150627851486206,
+                "z": 5.293887615203857
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 6
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344399,
+            "monotonic": 8733.5,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.624681830406189,
+                "y": 1.6150627851486206,
+                "z": 5.293887615203857
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 7
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344545,
+            "monotonic": 8879.600000000559,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.624677062034607,
+                "y": 1.6150623083114624,
+                "z": 5.293879508972168
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 8
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344571,
+            "monotonic": 8905.5,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "changes": {
+                "position": {
+                  "x": 1.7213025093078613,
+                  "y": 1.6156293869018554,
+                  "z": 3.111290216445923
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                1.7213025093078613,
+                1.6156293869018554,
+                3.111290216445923
+              ]
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344646,
+            "monotonic": 8979.900000000373,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.6246728897094727,
+                "y": 1.614825141429901,
+                "z": 5.2938761711120605
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 9
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344662,
+            "monotonic": 8995.900000000373,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "changes": {
+                "position": {
+                  "x": 1.5350273847579956,
+                  "y": 1.6150618314743042,
+                  "z": 3.18441104888916
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                1.5350273847579956,
+                1.6150618314743042,
+                3.18441104888916
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344764,
+            "monotonic": 9098.200000000186,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "changes": {
+                "position": {
+                  "x": 1.3625051975250244,
+                  "y": 1.6152270555496215,
+                  "z": 3.2940549850463867
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                1.3625051975250244,
+                1.6152270555496215,
+                3.2940549850463867
+              ]
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344845,
+            "monotonic": 9179.400000000373,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.6246767044067383,
+                "y": 1.6148252010345459,
+                "z": 5.293886661529541
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 10
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344945,
+            "monotonic": 9279.600000000559,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.6246886253356934,
+                "y": 1.6150251746177673,
+                "z": 5.293878555297852
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 11
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344967,
+            "monotonic": 9300.800000000745,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "changes": {
+                "position": {
+                  "x": 1.2071844339370728,
+                  "y": 1.6151703715324401,
+                  "z": 3.4607768058776855
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                1.2071844339370728,
+                1.6151703715324401,
+                3.4607768058776855
+              ]
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277345045,
+            "monotonic": 9379.600000000559,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.6246943473815918,
+                "y": 1.6148250818252563,
+                "z": 5.293882369995117
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 12
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277345077,
+            "monotonic": 9411,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "changes": {
+                "position": {
+                  "x": 0.9577953815460205,
+                  "y": 1.6153187870979309,
+                  "z": 3.63401198387146
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                0.9577953815460205,
+                1.6153187870979309,
+                3.63401198387146
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277345142,
+            "monotonic": 9475.800000000745,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "changes": {
+                "position": {
+                  "x": 0.7261674404144287,
+                  "y": 1.6152862429618835,
+                  "z": 3.7264468669891357
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                0.7261674404144287,
+                1.6152862429618835,
+                3.7264468669891357
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277345269,
+            "monotonic": 9602.900000000373,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "changes": {
+                "position": {
+                  "x": 0.7261597514152527,
+                  "y": 1.6148479104042053,
+                  "z": 3.7264394760131836
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                0.7261597514152527,
+                1.6148479104042053,
+                3.7264394760131836
+              ]
+            }
+          },
+          {
+            "type": "remove",
+            "wallTime": 1792277345338,
+            "monotonic": 9671.800000000745,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "className": "User"
+            }
+          },
+          {
+            "type": "add",
+            "wallTime": 1792277346392,
+            "monotonic": 10725.900000000373,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "className": "User"
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277346393,
+            "monotonic": 10727.700000000186,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "initial": true
+              },
+              "renderedPosition": [
+                0.7261533141136169,
+                1.614747953414917,
+                3.726419448852539
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277346643,
+            "monotonic": 10977.400000000373,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "position": {
+                  "x": 0.7261461019515991,
+                  "y": 1.615093958377838,
+                  "z": 3.726423978805542
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                0.7261461019515991,
+                1.615093958377838,
+                3.726423978805542
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277346646,
+            "monotonic": 10980.600000000559,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "position": {
+                  "x": 0.7261318564414978,
+                  "y": 1.6149739146232605,
+                  "z": 3.726419687271118
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                0.7261318564414978,
+                1.6149739146232605,
+                3.726419687271118
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277346668,
+            "monotonic": 11002,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "position": {
+                  "x": 0.7261256575584412,
+                  "y": 1.614747953414917,
+                  "z": 3.7264163494110107
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                0.7261256575584412,
+                1.614747953414917,
+                3.7264163494110107
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277346766,
+            "monotonic": 11099.800000000745,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "position": {
+                  "x": 1.004668116569519,
+                  "y": 1.6150987267494201,
+                  "z": 3.615248680114746
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                1.004668116569519,
+                1.6150987267494201,
+                3.615248680114746
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277346873,
+            "monotonic": 11207.5,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "position": {
+                  "x": 1.2360483407974243,
+                  "y": 1.6149766564369201,
+                  "z": 3.522326707839966
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                1.2360483407974243,
+                1.6149766564369201,
+                3.522326707839966
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277346972,
+            "monotonic": 11306,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "position": {
+                  "x": 1.51485013961792,
+                  "y": 1.6150785207748413,
+                  "z": 3.4113099575042725
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                1.51485013961792,
+                1.6150785207748413,
+                3.4113099575042725
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277347063,
+            "monotonic": 11396.900000000373,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "position": {
+                  "x": 1.7929736375808716,
+                  "y": 1.6147876501083374,
+                  "z": 3.3006935119628906
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                1.7929736375808716,
+                1.6147876501083374,
+                3.3006935119628906
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277347170,
+            "monotonic": 11503.700000000186,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "position": {
+                  "x": 1.9323160648345947,
+                  "y": 1.6150779247283935,
+                  "z": 3.2449584007263184
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                1.9323160648345947,
+                1.6150779247283935,
+                3.2449584007263184
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277347263,
+            "monotonic": 11597.300000000745,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "position": {
+                  "x": 2.1643688678741455,
+                  "y": 1.6150716066360473,
+                  "z": 3.151759147644043
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                2.1643688678741455,
+                1.6150716066360473,
+                3.151759147644043
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277347367,
+            "monotonic": 11701.400000000373,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "position": {
+                  "x": 2.3974826335906982,
+                  "y": 1.615060520172119,
+                  "z": 3.057438850402832
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                2.3974826335906982,
+                1.615060520172119,
+                3.057438850402832
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277347387,
+            "monotonic": 11721.5,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "changes": {
+                "position": {
+                  "x": 2.3974826335906982,
+                  "y": 1.615060520172119,
+                  "z": 3.057438850402832
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                2.3974826335906982,
+                1.615060520172119,
+                3.057438850402832
+              ]
+            }
+          },
+          {
+            "type": "remove",
+            "wallTime": 1792277347413,
+            "monotonic": 11747.5,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "className": "User"
+            }
+          },
+          {
+            "type": "add",
+            "wallTime": 1792277353536,
+            "monotonic": 17869.800000000745,
+            "detail": {
+              "id": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+              "className": "User"
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277353537,
+            "monotonic": 17871.60000000056,
+            "detail": {
+              "id": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+              "changes": {
+                "initial": true
+              },
+              "renderedPosition": [
+                2.397486686706543,
+                1.6150975346565246,
+                3.0574357509613037
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277353551,
+            "monotonic": 17885.200000000186,
+            "detail": {
+              "id": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+              "changes": {
+                "position": {
+                  "x": 2.397486686706543,
+                  "y": 1.6150975346565246,
+                  "z": 3.0574357509613037
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": 0.38050637122673114,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                2.397486686706543,
+                1.6150975346565246,
+                3.0574357509613037
+              ]
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277353948,
+            "monotonic": 18282.60000000056,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.3313261270523071,
+                "y": 1.6148697853088378,
+                "z": 5.3581695556640625
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 13
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277354048,
+            "monotonic": 18382,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -1.038586974143982,
+                "y": 1.614963126182556,
+                "z": 5.42314338684082
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 14
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277354245,
+            "monotonic": 18579.5,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -0.6978288888931274,
+                "y": 1.6167836904525756,
+                "z": 5.497613906860352
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 15
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277354345,
+            "monotonic": 18679.5,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -0.40797948837280273,
+                "y": 1.615072739124298,
+                "z": 5.564809322357178
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 16
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277354449,
+            "monotonic": 18782.800000000745,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -0.11521702259778976,
+                "y": 1.6149644374847412,
+                "z": 5.629403114318848
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 17
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277354491,
+            "monotonic": 18825,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -0.11521702259778976,
+                "y": 1.6149644374847412,
+                "z": 5.629403114318848
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 18
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277354546,
+            "monotonic": 18879.800000000745,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "position": {
+                "x": -0.11522524803876877,
+                "y": 1.615080189704895,
+                "z": 5.629392147064209
+              },
+              "rotation": {
+                "x": 0,
+                "y": -0.21866895304570036,
+                "z": 0
+              },
+              "sentPoses": 19
+            }
+          }
+        ]
+      },
+      {
+        "participant": "Beta",
+        "realm": "F03_20261017224854841_I4Ip5m",
+        "phase": "joined",
+        "transportGeneration": 3,
+        "joinedGeneration": 3,
+        "connected": true,
+        "me": {
+          "id": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+          "name": null,
+          "className": "User"
+        },
+        "sentPoses": 20,
+        "enterAcknowledgement": {
+          "requestedRealm": "F03_20261017224854841_I4Ip5m",
+          "userId": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+          "responseTimestamp": "2026-10-17T22:49:13.196452579"
+        },
+        "localEye": [
+          2.397486686706543,
+          1.6150975346565246,
+          3.0574357509613037
+        ],
+        "peers": [
+          {
+            "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+            "name": "Alpha_F03_20261017224854841_I4Ip5m",
+            "position": {
+              "x": -0.11522524803876877,
+              "y": 1.615080189704895,
+              "z": 5.629392147064209
+            },
+            "renderedPosition": [
+              -0.11522524803876877,
+              1.615080189704895,
+              5.629392147064209
+            ],
+            "updates": 8,
+            "lastUpdate": {
+              "wallTime": 1792277354563,
+              "monotonic": 18896.799999999814
+            },
+            "visible": true
+          }
+        ],
+        "sdkObjects": [
+          {
+            "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+            "className": "User",
+            "position": {
+              "x": -0.11522524803876877,
+              "y": 1.615080189704895,
+              "z": 5.629392147064209
+            },
+            "active": true
+          }
+        ],
+        "errors": [],
+        "events": [
+          {
+            "type": "transport",
+            "wallTime": 1792277339483,
+            "monotonic": 3816.199999999255,
+            "detail": {
+              "connected": true,
+              "generation": 1
+            }
+          },
+          {
+            "type": "welcome",
+            "wallTime": 1792277341069,
+            "monotonic": 5402.299999999814,
+            "detail": {
+              "user": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "transportGeneration": 1
+            }
+          },
+          {
+            "type": "entered",
+            "wallTime": 1792277341441,
+            "monotonic": 5774,
+            "detail": {
+              "requestedRealm": "F03_20261017224854841_I4Ip5m",
+              "userId": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "responseTimestamp": "2026-10-17T22:49:01.436701489"
+            }
+          },
+          {
+            "type": "session-start",
+            "wallTime": 1792277343093,
+            "monotonic": 7426.199999999255,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "realm": "F03_20261017224854841_I4Ip5m",
+              "sceneCount": 0,
+              "joinedGeneration": 1
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277343093,
+            "monotonic": 7426.299999999814,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "position": {
+                "x": 1.9998375177383423,
+                "y": 1.6146438241004943,
+                "z": 2.99988055229187
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 1
+            }
+          },
+          {
+            "type": "add",
+            "wallTime": 1792277343270,
+            "monotonic": 7603.5999999996275,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "className": "User"
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277343276,
+            "monotonic": 7609.399999999441,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "initial": true
+              },
+              "renderedPosition": [
+                -1.9999639987945557,
+                1.6136022329330444,
+                6.99997615814209
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277343302,
+            "monotonic": 7635.5999999996275,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.99998939037323,
+                  "y": 1.614942741394043,
+                  "z": 6.999968528747559
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.99998939037323,
+                1.614942741394043,
+                6.999968528747559
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277343871,
+            "monotonic": 8204.299999999814,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.9457687139511108,
+                  "y": 1.6150689840316772,
+                  "z": 6.755173206329346
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.9457687139511108,
+                1.6150689840316772,
+                6.755173206329346
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344065,
+            "monotonic": 8398.099999999627,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.8598735332489014,
+                  "y": 1.6150784611701965,
+                  "z": 6.365743637084961
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.8598735332489014,
+                1.6150784611701965,
+                6.365743637084961
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344168,
+            "monotonic": 8501.099999999627,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.7969945669174194,
+                  "y": 1.6149592518806457,
+                  "z": 6.0737175941467285
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.7969945669174194,
+                1.6149592518806457,
+                6.0737175941467285
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344257,
+            "monotonic": 8589.899999999441,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.6995787620544434,
+                  "y": 1.6165023565292358,
+                  "z": 5.635413646697998
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.6995787620544434,
+                1.6165023565292358,
+                5.635413646697998
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344360,
+            "monotonic": 8693.399999999441,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.624681830406189,
+                  "y": 1.6150627851486206,
+                  "z": 5.293887615203857
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.624681830406189,
+                1.6150627851486206,
+                5.293887615203857
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344515,
+            "monotonic": 8848.699999999255,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.624681830406189,
+                  "y": 1.6150627851486206,
+                  "z": 5.293887615203857
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.624681830406189,
+                1.6150627851486206,
+                5.293887615203857
+              ]
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344553,
+            "monotonic": 8886,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "position": {
+                "x": 1.7213025093078613,
+                "y": 1.6156293869018554,
+                "z": 3.111290216445923
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 2
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344567,
+            "monotonic": 8900.199999999255,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.624677062034607,
+                  "y": 1.6150623083114624,
+                  "z": 5.293879508972168
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.624677062034607,
+                1.6150623083114624,
+                5.293879508972168
+              ]
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344653,
+            "monotonic": 8986.599999999627,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "position": {
+                "x": 1.5350273847579956,
+                "y": 1.6150618314743042,
+                "z": 3.18441104888916
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 3
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344662,
+            "monotonic": 8995,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.6246728897094727,
+                  "y": 1.614825141429901,
+                  "z": 5.2938761711120605
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.6246728897094727,
+                1.614825141429901,
+                5.2938761711120605
+              ]
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344753,
+            "monotonic": 9086.199999999255,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "position": {
+                "x": 1.3625051975250244,
+                "y": 1.6152270555496215,
+                "z": 3.2940549850463867
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 4
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344862,
+            "monotonic": 9195.299999999814,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.6246767044067383,
+                  "y": 1.6148252010345459,
+                  "z": 5.293886661529541
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.6246767044067383,
+                1.6148252010345459,
+                5.293886661529541
+              ]
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277344953,
+            "monotonic": 9285.899999999441,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "position": {
+                "x": 1.2071844339370728,
+                "y": 1.6151703715324401,
+                "z": 3.4607768058776855
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 5
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277344965,
+            "monotonic": 9298.599999999627,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.6246886253356934,
+                  "y": 1.6150251746177673,
+                  "z": 5.293878555297852
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.6246886253356934,
+                1.6150251746177673,
+                5.293878555297852
+              ]
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277345055,
+            "monotonic": 9388.199999999255,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "position": {
+                "x": 0.9577953815460205,
+                "y": 1.6153187870979309,
+                "z": 3.63401198387146
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 6
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277345062,
+            "monotonic": 9395.5,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.6246943473815918,
+                  "y": 1.6148250818252563,
+                  "z": 5.293882369995117
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.6246943473815918,
+                1.6148250818252563,
+                5.293882369995117
+              ]
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277345124,
+            "monotonic": 9457.599999999627,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "position": {
+                "x": 0.7261674404144287,
+                "y": 1.6152862429618835,
+                "z": 3.7264468669891357
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 7
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277345253,
+            "monotonic": 9586,
+            "detail": {
+              "id": "ab573a70-fbed-47aa-ab59-a5e8db594892",
+              "position": {
+                "x": 0.7261597514152527,
+                "y": 1.6148479104042053,
+                "z": 3.7264394760131836
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 8
+            }
+          },
+          {
+            "type": "transport",
+            "wallTime": 1792277345702,
+            "monotonic": 10035.199999999255,
+            "detail": {
+              "connected": false,
+              "shouldReconnect": false,
+              "generation": 1
+            }
+          },
+          {
+            "type": "transport",
+            "wallTime": 1792277346005,
+            "monotonic": 10338.399999999441,
+            "detail": {
+              "connected": true,
+              "generation": 2
+            }
+          },
+          {
+            "type": "welcome",
+            "wallTime": 1792277346053,
+            "monotonic": 10386.799999999814,
+            "detail": {
+              "user": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "transportGeneration": 2
+            }
+          },
+          {
+            "type": "entered",
+            "wallTime": 1792277346157,
+            "monotonic": 10489.899999999441,
+            "detail": {
+              "requestedRealm": "F03_20261017224854841_I4Ip5m",
+              "userId": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "responseTimestamp": "2026-10-17T22:49:06.152428606"
+            }
+          },
+          {
+            "type": "add",
+            "wallTime": 1792277346390,
+            "monotonic": 10723,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "className": "User"
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277346397,
+            "monotonic": 10729.899999999441,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "initial": true
+              },
+              "renderedPosition": [
+                -1.6246943473815918,
+                1.6148250818252563,
+                5.293882369995117
+              ]
+            }
+          },
+          {
+            "type": "session-start",
+            "wallTime": 1792277346397,
+            "monotonic": 10730.399999999441,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "realm": "F03_20261017224854841_I4Ip5m",
+              "sceneCount": 1,
+              "joinedGeneration": 2
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277346397,
+            "monotonic": 10730.399999999441,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "position": {
+                "x": 0.7261461019515991,
+                "y": 1.615093958377838,
+                "z": 3.726423978805542
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 9
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277346552,
+            "monotonic": 10885.799999999814,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "position": {
+                "x": 0.7261318564414978,
+                "y": 1.6149739146232605,
+                "z": 3.726419687271118
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 10
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277346652,
+            "monotonic": 10985.699999999255,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "position": {
+                "x": 0.7261256575584412,
+                "y": 1.614747953414917,
+                "z": 3.7264163494110107
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 11
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277346752,
+            "monotonic": 11085.799999999814,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "position": {
+                "x": 1.004668116569519,
+                "y": 1.6150987267494201,
+                "z": 3.615248680114746
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 12
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277346852,
+            "monotonic": 11185.799999999814,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "position": {
+                "x": 1.2360483407974243,
+                "y": 1.6149766564369201,
+                "z": 3.522326707839966
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 13
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277346952,
+            "monotonic": 11285.799999999814,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "position": {
+                "x": 1.51485013961792,
+                "y": 1.6150785207748413,
+                "z": 3.4113099575042725
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 14
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277347054,
+            "monotonic": 11387.099999999627,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "position": {
+                "x": 1.7929736375808716,
+                "y": 1.6147876501083374,
+                "z": 3.3006935119628906
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 15
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277347152,
+            "monotonic": 11485.799999999814,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "position": {
+                "x": 1.9323160648345947,
+                "y": 1.6150779247283935,
+                "z": 3.2449584007263184
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 16
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277347252,
+            "monotonic": 11585.799999999814,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "position": {
+                "x": 2.1643688678741455,
+                "y": 1.6150716066360473,
+                "z": 3.151759147644043
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 17
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277347353,
+            "monotonic": 11685.899999999441,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "position": {
+                "x": 2.3974826335906982,
+                "y": 1.615060520172119,
+                "z": 3.057438850402832
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 18
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277347375,
+            "monotonic": 11708.799999999814,
+            "detail": {
+              "id": "f1446b84-77e4-4126-90b0-ba0b7fc30e9d",
+              "position": {
+                "x": 2.3974826335906982,
+                "y": 1.615060520172119,
+                "z": 3.057438850402832
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 19
+            }
+          },
+          {
+            "type": "transport",
+            "wallTime": 1792277347483,
+            "monotonic": 11816.5,
+            "detail": {
+              "connected": false,
+              "shouldReconnect": true,
+              "generation": 2
+            }
+          },
+          {
+            "type": "transport",
+            "wallTime": 1792277352497,
+            "monotonic": 16829.89999999944,
+            "detail": {
+              "connected": true,
+              "generation": 3
+            }
+          },
+          {
+            "type": "welcome",
+            "wallTime": 1792277353072,
+            "monotonic": 17405.699999999255,
+            "detail": {
+              "user": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+              "transportGeneration": 3
+            }
+          },
+          {
+            "type": "entered",
+            "wallTime": 1792277353197,
+            "monotonic": 17530.599999999627,
+            "detail": {
+              "requestedRealm": "F03_20261017224854841_I4Ip5m",
+              "userId": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+              "responseTimestamp": "2026-10-17T22:49:13.196452579"
+            }
+          },
+          {
+            "type": "add",
+            "wallTime": 1792277353536,
+            "monotonic": 17869.699999999255,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "className": "User"
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277353538,
+            "monotonic": 17871.5,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "initial": true
+              },
+              "renderedPosition": [
+                -1.6246943473815918,
+                1.6148250818252563,
+                5.293882369995117
+              ]
+            }
+          },
+          {
+            "type": "session-start",
+            "wallTime": 1792277353538,
+            "monotonic": 17871.599999999627,
+            "detail": {
+              "id": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+              "realm": "F03_20261017224854841_I4Ip5m",
+              "sceneCount": 1,
+              "joinedGeneration": 3
+            }
+          },
+          {
+            "type": "local-pose",
+            "wallTime": 1792277353538,
+            "monotonic": 17871.699999999255,
+            "detail": {
+              "id": "6963d6cb-3286-4615-8801-05cedb14eb0d",
+              "position": {
+                "x": 2.397486686706543,
+                "y": 1.6150975346565246,
+                "z": 3.0574357509613037
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0.38050637122673114,
+                "z": 0
+              },
+              "sentPoses": 20
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277353966,
+            "monotonic": 18299.299999999814,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.3313261270523071,
+                  "y": 1.6148697853088378,
+                  "z": 5.3581695556640625
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.3313261270523071,
+                1.6148697853088378,
+                5.3581695556640625
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277354058,
+            "monotonic": 18391.299999999814,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -1.038586974143982,
+                  "y": 1.614963126182556,
+                  "z": 5.42314338684082
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -1.038586974143982,
+                1.614963126182556,
+                5.42314338684082
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277354258,
+            "monotonic": 18591.5,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -0.6978288888931274,
+                  "y": 1.6167836904525756,
+                  "z": 5.497613906860352
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -0.6978288888931274,
+                1.6167836904525756,
+                5.497613906860352
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277354359,
+            "monotonic": 18691.89999999944,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -0.40797948837280273,
+                  "y": 1.615072739124298,
+                  "z": 5.564809322357178
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -0.40797948837280273,
+                1.615072739124298,
+                5.564809322357178
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277354464,
+            "monotonic": 18797.5,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -0.11521702259778976,
+                  "y": 1.6149644374847412,
+                  "z": 5.629403114318848
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -0.11521702259778976,
+                1.6149644374847412,
+                5.629403114318848
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277354518,
+            "monotonic": 18851.599999999627,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -0.11521702259778976,
+                  "y": 1.6149644374847412,
+                  "z": 5.629403114318848
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -0.11521702259778976,
+                1.6149644374847412,
+                5.629403114318848
+              ]
+            }
+          },
+          {
+            "type": "remote-update",
+            "wallTime": 1792277354563,
+            "monotonic": 18896.799999999814,
+            "detail": {
+              "id": "202b3e5a-864e-4dbb-be8b-f07cdab23dc3",
+              "changes": {
+                "position": {
+                  "x": -0.11522524803876877,
+                  "y": 1.615080189704895,
+                  "z": 5.629392147064209
+                },
+                "rotation": {
+                  "x": 0,
+                  "y": -0.21866895304570036,
+                  "z": 0
+                }
+              },
+              "renderedPosition": [
+                -0.11522524803876877,
+                1.615080189704895,
+                5.629392147064209
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "logs": [],
+  "requests": [],
+  "frames": [
+    {
+      "participant": "Alpha",
+      "type": "socket",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277339083
+    },
+    {
+      "participant": "Beta",
+      "type": "socket",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277339477
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277341074,
+      "payload": "{\"Welcome\":{\"client\":{\"User\":{\"id\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"active\":true,\"humanoid\":true,\"video\":false,\"sceneProperties\":{\"range\":2000.0,\"resolution\":10.0,\"size\":1000,\"timeout\":30000}}},\"timestamp\":\"2026-10-17T22:49:01.004629108\"}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277341074,
+      "payload": "{\"command\":{\"Enter\":{\"async\":false, \"world\":\"F03_20261017224854841_I4Ip5m\"}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277341074,
+      "payload": "{\"Welcome\":{\"client\":{\"User\":{\"id\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"active\":true,\"humanoid\":true,\"video\":false,\"sceneProperties\":{\"range\":2000.0,\"resolution\":10.0,\"size\":1000,\"timeout\":30000}}},\"timestamp\":\"2026-10-17T22:49:01.003918593\"}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277341074,
+      "payload": "{\"command\":{\"Enter\":{\"async\":false, \"world\":\"F03_20261017224854841_I4Ip5m\"}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277341430,
+      "payload": "{\"response\":{\"client\":{\"User\":{\"id\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"active\":false,\"humanoid\":true,\"video\":false,\"sceneProperties\":{\"range\":2000.0,\"resolution\":10.0,\"size\":1000,\"timeout\":30000}}},\"timestamp\":\"2026-10-17T22:49:01.426097820\"}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277341430,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"name\":\"Alpha_F03_20261017224854841_I4Ip5m\",\"position\":{\"x\":-1.9999639987945557,\"y\":1.6136022329330444,\"z\":6.99997615814209},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0},\"hasAvatar\":true}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277341430,
+      "payload": "{\"command\":{\"Session\":{}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277341442,
+      "payload": "{\"response\":{\"client\":{\"User\":{\"id\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"active\":false,\"humanoid\":true,\"video\":false,\"sceneProperties\":{\"range\":2000.0,\"resolution\":10.0,\"size\":1000,\"timeout\":30000}}},\"timestamp\":\"2026-10-17T22:49:01.436701489\"}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277341442,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"name\":\"Beta_F03_20261017224854841_I4Ip5m\",\"position\":{\"x\":1.9998360872268677,\"y\":1.6117019176483154,\"z\":2.9998865127563477},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0},\"hasAvatar\":true}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277341442,
+      "payload": "{\"command\":{\"Session\":{}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277343096,
+      "payload": "{\"response\":0}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277343096,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":1.9998375177383423,\"y\":1.6146438241004943,\"z\":2.99988055229187},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277343278,
+      "payload": "{\"Add\":{\"objects\":[{\"User\":{\"id\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\",\"position\":{\"x\":-1.9999639987945557,\"y\":1.6136022329330444,\"z\":6.99997615814209},\"rotation\":{\"x\":0.0,\"y\":-0.21866895304570036,\"z\":0.0,\"angle\":null},\"active\":true,\"name\":\"Alpha_F03_20261017224854841_I4Ip5m\",\"humanoid\":true,\"video\":false}}]}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277343282,
+      "payload": "{\"Add\":{\"objects\":[{\"User\":{\"id\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\",\"position\":{\"x\":1.9998375177383423,\"y\":1.6146438241004943,\"z\":2.99988055229187},\"rotation\":{\"x\":0.0,\"y\":0.38050637122673114,\"z\":0.0,\"angle\":null},\"active\":true,\"name\":\"Beta_F03_20261017224854841_I4Ip5m\",\"humanoid\":true,\"video\":false}}]}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277343282,
+      "payload": "{\"response\":1}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277343282,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.99998939037323,\"y\":1.614942741394043,\"z\":6.999968528747559},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277343304,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.99998939037323,\"y\":1.614942741394043,\"z\":6.999968528747559},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277343851,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.9457687139511108,\"y\":1.6150689840316772,\"z\":6.755173206329346},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277343872,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.9457687139511108,\"y\":1.6150689840316772,\"z\":6.755173206329346},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344048,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.8598735332489014,\"y\":1.6150784611701965,\"z\":6.365743637084961},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344065,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.8598735332489014,\"y\":1.6150784611701965,\"z\":6.365743637084961},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344146,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.7969945669174194,\"y\":1.6149592518806457,\"z\":6.0737175941467285},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344173,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.7969945669174194,\"y\":1.6149592518806457,\"z\":6.0737175941467285},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344246,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.6995787620544434,\"y\":1.6165023565292358,\"z\":5.635413646697998},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344265,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.6995787620544434,\"y\":1.6165023565292358,\"z\":5.635413646697998},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344348,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.624681830406189,\"y\":1.6150627851486206,\"z\":5.293887615203857},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344361,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.624681830406189,\"y\":1.6150627851486206,\"z\":5.293887615203857},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344402,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.624681830406189,\"y\":1.6150627851486206,\"z\":5.293887615203857},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344517,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.624681830406189,\"y\":1.6150627851486206,\"z\":5.293887615203857},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344549,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.624677062034607,\"y\":1.6150623083114624,\"z\":5.293879508972168},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344553,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":1.7213025093078613,\"y\":1.6156293869018554,\"z\":3.111290216445923},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344569,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.624677062034607,\"y\":1.6150623083114624,\"z\":5.293879508972168},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344577,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":1.7213025093078613,\"y\":1.6156293869018554,\"z\":3.111290216445923},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344647,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.6246728897094727,\"y\":1.614825141429901,\"z\":5.2938761711120605},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344657,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":1.5350273847579956,\"y\":1.6150618314743042,\"z\":3.18441104888916},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344662,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.6246728897094727,\"y\":1.614825141429901,\"z\":5.2938761711120605},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344663,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":1.5350273847579956,\"y\":1.6150618314743042,\"z\":3.18441104888916},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344755,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":1.3625051975250244,\"y\":1.6152270555496215,\"z\":3.2940549850463867},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344765,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":1.3625051975250244,\"y\":1.6152270555496215,\"z\":3.2940549850463867},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344853,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.6246767044067383,\"y\":1.6148252010345459,\"z\":5.293886661529541},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344863,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.6246767044067383,\"y\":1.6148252010345459,\"z\":5.293886661529541},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344946,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.6246886253356934,\"y\":1.6150251746177673,\"z\":5.293878555297852},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344962,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":1.2071844339370728,\"y\":1.6151703715324401,\"z\":3.4607768058776855},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344966,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.6246886253356934,\"y\":1.6150251746177673,\"z\":5.293878555297852},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277344967,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":1.2071844339370728,\"y\":1.6151703715324401,\"z\":3.4607768058776855},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277345049,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.6246943473815918,\"y\":1.6148250818252563,\"z\":5.293882369995117},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277345059,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":0.9577953815460205,\"y\":1.6153187870979309,\"z\":3.63401198387146},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277345065,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.6246943473815918,\"y\":1.6148250818252563,\"z\":5.293882369995117},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277345083,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":0.9577953815460205,\"y\":1.6153187870979309,\"z\":3.63401198387146},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277345125,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":0.7261674404144287,\"y\":1.6152862429618835,\"z\":3.7264468669891357},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277345142,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":0.7261674404144287,\"y\":1.6152862429618835,\"z\":3.7264468669891357},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277345253,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":0.7261597514152527,\"y\":1.6148479104042053,\"z\":3.7264394760131836},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277345269,
+      "payload": "{\"object\":{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"},\"changes\":{\"position\":{\"x\":0.7261597514152527,\"y\":1.6148479104042053,\"z\":3.7264394760131836},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277345339,
+      "payload": "{\"Remove\":{\"objects\":[{\"User\":\"ab573a70-fbed-47aa-ab59-a5e8db594892\"}]}}"
+    },
+    {
+      "participant": "Beta",
+      "type": "close",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277345701
+    },
+    {
+      "participant": "Beta",
+      "type": "socket",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346013
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346055,
+      "payload": "{\"Welcome\":{\"client\":{\"User\":{\"id\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"active\":true,\"humanoid\":true,\"video\":false,\"sceneProperties\":{\"range\":2000.0,\"resolution\":10.0,\"size\":1000,\"timeout\":30000}}},\"timestamp\":\"2026-10-17T22:49:06.043922153\"}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346055,
+      "payload": "{\"command\":{\"Enter\":{\"async\":false, \"world\":\"F03_20261017224854841_I4Ip5m\"}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346163,
+      "payload": "{\"response\":{\"client\":{\"User\":{\"id\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"active\":false,\"humanoid\":true,\"video\":false,\"sceneProperties\":{\"range\":2000.0,\"resolution\":10.0,\"size\":1000,\"timeout\":30000}}},\"timestamp\":\"2026-10-17T22:49:06.152428606\"}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346163,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"name\":\"Beta_F03_20261017224854841_I4Ip5m\",\"position\":{\"x\":0.7261533141136169,\"y\":1.614747953414917,\"z\":3.726419448852539},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0},\"hasAvatar\":true}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346163,
+      "payload": "{\"command\":{\"Session\":{}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346395,
+      "payload": "{\"Add\":{\"objects\":[{\"User\":{\"id\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\",\"position\":{\"x\":0.7261533141136169,\"y\":1.614747953414917,\"z\":3.726419448852539},\"rotation\":{\"x\":0.0,\"y\":0.38050637122673114,\"z\":0.0,\"angle\":null},\"active\":true,\"name\":\"Beta_F03_20261017224854841_I4Ip5m\",\"humanoid\":true,\"video\":false}}]}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346399,
+      "payload": "{\"Add\":{\"objects\":[{\"User\":{\"id\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\",\"position\":{\"x\":-1.6246943473815918,\"y\":1.6148250818252563,\"z\":5.293882369995117},\"rotation\":{\"x\":0.0,\"y\":-0.21866895304570036,\"z\":0.0,\"angle\":null},\"active\":true,\"name\":\"Alpha_F03_20261017224854841_I4Ip5m\",\"humanoid\":true,\"video\":false}}]}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346399,
+      "payload": "{\"response\":1}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346399,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":0.7261461019515991,\"y\":1.615093958377838,\"z\":3.726423978805542},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346553,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":0.7261318564414978,\"y\":1.6149739146232605,\"z\":3.726419687271118},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346645,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":0.7261461019515991,\"y\":1.615093958377838,\"z\":3.726423978805542},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346647,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":0.7261318564414978,\"y\":1.6149739146232605,\"z\":3.726419687271118},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346654,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":0.7261256575584412,\"y\":1.614747953414917,\"z\":3.7264163494110107},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346688,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":0.7261256575584412,\"y\":1.614747953414917,\"z\":3.7264163494110107},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346753,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":1.004668116569519,\"y\":1.6150987267494201,\"z\":3.615248680114746},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346768,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":1.004668116569519,\"y\":1.6150987267494201,\"z\":3.615248680114746},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346854,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":1.2360483407974243,\"y\":1.6149766564369201,\"z\":3.522326707839966},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346874,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":1.2360483407974243,\"y\":1.6149766564369201,\"z\":3.522326707839966},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346955,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":1.51485013961792,\"y\":1.6150785207748413,\"z\":3.4113099575042725},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277346973,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":1.51485013961792,\"y\":1.6150785207748413,\"z\":3.4113099575042725},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347054,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":1.7929736375808716,\"y\":1.6147876501083374,\"z\":3.3006935119628906},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347065,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":1.7929736375808716,\"y\":1.6147876501083374,\"z\":3.3006935119628906},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347157,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":1.9323160648345947,\"y\":1.6150779247283935,\"z\":3.2449584007263184},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347171,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":1.9323160648345947,\"y\":1.6150779247283935,\"z\":3.2449584007263184},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347253,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":2.1643688678741455,\"y\":1.6150716066360473,\"z\":3.151759147644043},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347265,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":2.1643688678741455,\"y\":1.6150716066360473,\"z\":3.151759147644043},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347353,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":2.3974826335906982,\"y\":1.615060520172119,\"z\":3.057438850402832},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347368,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":2.3974826335906982,\"y\":1.615060520172119,\"z\":3.057438850402832},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347376,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":2.3974826335906982,\"y\":1.615060520172119,\"z\":3.057438850402832},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347388,
+      "payload": "{\"object\":{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"},\"changes\":{\"position\":{\"x\":2.3974826335906982,\"y\":1.615060520172119,\"z\":3.057438850402832},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347417,
+      "payload": "{\"Remove\":{\"objects\":[{\"User\":\"f1446b84-77e4-4126-90b0-ba0b7fc30e9d\"}]}}"
+    },
+    {
+      "participant": "Beta",
+      "type": "close",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277347487
+    },
+    {
+      "participant": "Beta",
+      "type": "socket",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277352489
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353075,
+      "payload": "{\"Welcome\":{\"client\":{\"User\":{\"id\":\"6963d6cb-3286-4615-8801-05cedb14eb0d\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"active\":true,\"humanoid\":true,\"video\":false,\"sceneProperties\":{\"range\":2000.0,\"resolution\":10.0,\"size\":1000,\"timeout\":30000}}},\"timestamp\":\"2026-10-17T22:49:13.057221376\"}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353075,
+      "payload": "{\"command\":{\"Enter\":{\"async\":false, \"world\":\"F03_20261017224854841_I4Ip5m\"}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353199,
+      "payload": "{\"response\":{\"client\":{\"User\":{\"id\":\"6963d6cb-3286-4615-8801-05cedb14eb0d\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"active\":false,\"humanoid\":true,\"video\":false,\"sceneProperties\":{\"range\":2000.0,\"resolution\":10.0,\"size\":1000,\"timeout\":30000}}},\"timestamp\":\"2026-10-17T22:49:13.196452579\"}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353199,
+      "payload": "{\"object\":{\"User\":\"6963d6cb-3286-4615-8801-05cedb14eb0d\"},\"changes\":{\"name\":\"Beta_F03_20261017224854841_I4Ip5m\",\"position\":{\"x\":2.397486686706543,\"y\":1.6150975346565246,\"z\":3.0574357509613037},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0},\"hasAvatar\":true}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353199,
+      "payload": "{\"command\":{\"Session\":{}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353539,
+      "payload": "{\"Add\":{\"objects\":[{\"User\":{\"id\":\"6963d6cb-3286-4615-8801-05cedb14eb0d\",\"position\":{\"x\":2.397486686706543,\"y\":1.6150975346565246,\"z\":3.0574357509613037},\"rotation\":{\"x\":0.0,\"y\":0.38050637122673114,\"z\":0.0,\"angle\":null},\"active\":true,\"name\":\"Beta_F03_20261017224854841_I4Ip5m\",\"humanoid\":true,\"video\":false}}]}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353539,
+      "payload": "{\"Add\":{\"objects\":[{\"User\":{\"id\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\",\"position\":{\"x\":-1.6246943473815918,\"y\":1.6148250818252563,\"z\":5.293882369995117},\"rotation\":{\"x\":0.0,\"y\":-0.21866895304570036,\"z\":0.0,\"angle\":null},\"active\":true,\"name\":\"Alpha_F03_20261017224854841_I4Ip5m\",\"humanoid\":true,\"video\":false}}]}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353539,
+      "payload": "{\"response\":1}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353539,
+      "payload": "{\"object\":{\"User\":\"6963d6cb-3286-4615-8801-05cedb14eb0d\"},\"changes\":{\"position\":{\"x\":2.397486686706543,\"y\":1.6150975346565246,\"z\":3.0574357509613037},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353552,
+      "payload": "{\"object\":{\"User\":\"6963d6cb-3286-4615-8801-05cedb14eb0d\"},\"changes\":{\"position\":{\"x\":2.397486686706543,\"y\":1.6150975346565246,\"z\":3.0574357509613037},\"rotation\":{\"x\":0,\"y\":0.38050637122673114,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353956,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.3313261270523071,\"y\":1.6148697853088378,\"z\":5.3581695556640625},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277353969,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.3313261270523071,\"y\":1.6148697853088378,\"z\":5.3581695556640625},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354050,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.038586974143982,\"y\":1.614963126182556,\"z\":5.42314338684082},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354060,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-1.038586974143982,\"y\":1.614963126182556,\"z\":5.42314338684082},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354249,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.6978288888931274,\"y\":1.6167836904525756,\"z\":5.497613906860352},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354259,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.6978288888931274,\"y\":1.6167836904525756,\"z\":5.497613906860352},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354347,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.40797948837280273,\"y\":1.615072739124298,\"z\":5.564809322357178},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354359,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.40797948837280273,\"y\":1.615072739124298,\"z\":5.564809322357178},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354451,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.11521702259778976,\"y\":1.6149644374847412,\"z\":5.629403114318848},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354465,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.11521702259778976,\"y\":1.6149644374847412,\"z\":5.629403114318848},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354492,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.11521702259778976,\"y\":1.6149644374847412,\"z\":5.629403114318848},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354519,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.11521702259778976,\"y\":1.6149644374847412,\"z\":5.629403114318848},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354550,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.11522524803876877,\"y\":1.615080189704895,\"z\":5.629392147064209},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354582,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.11522524803876877,\"y\":1.615080189704895,\"z\":5.629392147064209},\"rotation\":{\"x\":0,\"y\":-0.21866895304570036,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354648,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.11523054540157318,\"y\":1.614685606956482,\"z\":5.629388809204102},\"rotation\":{\"x\":0.000004823874456938135,\"y\":-0.7737470777041165,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354655,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.11523054540157318,\"y\":1.614685606956482,\"z\":5.629388809204102},\"rotation\":{\"x\":0.000004823874456938135,\"y\":-0.7737470777041165,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354751,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.11523247510194778,\"y\":1.614785623550415,\"z\":5.629386901855469},\"rotation\":{\"x\":0.000004823874456938135,\"y\":-0.7737470777041165,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277354767,
+      "payload": "{\"object\":{\"User\":\"202b3e5a-864e-4dbb-be8b-f07cdab23dc3\"},\"changes\":{\"position\":{\"x\":-0.11523247510194778,\"y\":1.614785623550415,\"z\":5.629386901855469},\"rotation\":{\"x\":0.000004823874456938135,\"y\":-0.7737470777041165,\"z\":0}}}"
+    },
+    {
+      "participant": "Beta",
+      "direction": "sent",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277356657,
+      "payload": "{\"object\":{\"User\":\"6963d6cb-3286-4615-8801-05cedb14eb0d\"},\"changes\":{\"position\":{\"x\":2.397486686706543,\"y\":1.6150975346565246,\"z\":3.0574357509613037},\"rotation\":{\"x\":-0.0000867468171087011,\"y\":2.367843083531638,\"z\":0}}}"
+    },
+    {
+      "participant": "Alpha",
+      "direction": "received",
+      "url": "ws://127.0.0.1:18180/vrspace/client",
+      "at": 1792277356665,
+      "payload": "{\"object\":{\"User\":\"6963d6cb-3286-4615-8801-05cedb14eb0d\"},\"changes\":{\"position\":{\"x\":2.397486686706543,\"y\":1.6150975346565246,\"z\":3.0574357509613037},\"rotation\":{\"x\":-0.0000867468171087011,\"y\":2.367843083531638,\"z\":0}}}"
+    }
+  ],
+  "missingEvidence": [
+    "F05 AssetLoader master server is a different unbuilt pin; this run qualifies only v0.8.7 server/client behavior demonstrated.",
+    "No physical headset/controller tracking, actual headphones/spatial voice, SFU, or screen-share service.",
+    "No authoritative multiuser physics, shared editing/ownership, reconnect persistence across server restart, WAN failure, or production authentication/security acceptance.",
+    "No conference capacity, load, latency SLO, mobile/standalone headset, or GPU performance result."
+  ]
+}
