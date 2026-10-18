@@ -1,0 +1,8 @@
+Dirty or incomplete evaluation
+Evaluation has unresolved failures
+Evaluation f05-portable-browser did not pass
+Portable-world evidence must remain an incomplete software browser subset
+Required current 9 portable-world checks are missing, changed or failing
+Portable-world check/error/request counts are invalid
+Portable-world command did not complete successfully
+Portable-world command output does not identify this fresh run

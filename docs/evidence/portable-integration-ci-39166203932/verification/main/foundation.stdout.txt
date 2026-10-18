@@ -1,0 +1,1 @@
+Candidate and report integrity match. Independently verify the actual GitHub checks and review before acceptance.

@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "scripts/ci/verify-evaluation-evidence.mjs",
+    "/workspace/scratch/dc98dcd2981d/engine_work/pr9-receipts/run-39166203932/evaluation/manifest.json",
+    "36588399e28f0e8bb6c28d07ca105639355d4ff1",
+    "6fc08aa80a676e0ff869415f86b6fef8b0d54782",
+    "9088586c9f46f0e740cfe67b3d8b00614ed446eb"
+  ],
+  "status": 0,
+  "errorCode": null,
+  "signal": null
+}

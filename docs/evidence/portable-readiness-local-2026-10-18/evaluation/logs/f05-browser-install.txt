@@ -1,0 +1,1 @@
+Not run: local diagnostic uses the explicit CHROME_EXECUTABLE. It cannot establish hosted completion.

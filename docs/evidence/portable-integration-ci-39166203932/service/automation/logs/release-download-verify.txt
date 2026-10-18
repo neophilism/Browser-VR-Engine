@@ -1,0 +1,1 @@
+{"release": "v0.8.7", "jarBytes": 228055892, "jarSha256": "e5f0ba53f492d07e0f978ae1e15afce9fed2b3632a2d5984c48f3ab27d8004b3", "clientBytes": 39785, "verified": true}

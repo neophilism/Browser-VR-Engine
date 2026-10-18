@@ -1,0 +1,71 @@
+{
+  "release": {
+    "release": "v0.8.7",
+    "commit": "ca0e02ce611e1435e87dcec79de05fd2970dfc2d",
+    "publishedAt": "2026-03-03T11:26:36Z",
+    "jar": {
+      "url": "https://github.com/jalmasi/vrspace/releases/download/v0.8.7/server-0.8.7-executable.jar",
+      "bytes": 228055892,
+      "digest": "sha256:e5f0ba53f492d07e0f978ae1e15afce9fed2b3632a2d5984c48f3ab27d8004b3"
+    },
+    "distinction": "Released server/client evaluation, not the F05 AssetLoader master server at 61f840a3dd0133fc9d357891f37eb1670b147539",
+    "client": {
+      "source": "https://github.com/jalmasi/vrspace/blob/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/babylon/js/client/vrspace.js",
+      "sha256": "05b50269527e2f55095da07fbc767416477cd7eb788be28ac933354e8d7be867",
+      "bytes": 39785,
+      "modified": false,
+      "verifiedRawURL": "https://raw.githubusercontent.com/jalmasi/vrspace/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/babylon/js/client/vrspace.js"
+    },
+    "profile": {
+      "sha256": "cb1bc393a3fbddf97bf99aff931779dc16edf205f3843ebf65465959205e41d5",
+      "purpose": "Loopback-only synthetic guest presence/pose evaluation; authentication and optional integrations disabled"
+    },
+    "license": {
+      "repository": "Apache-2.0",
+      "url": "https://raw.githubusercontent.com/jalmasi/vrspace/ca0e02ce611e1435e87dcec79de05fd2970dfc2d/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    }
+  },
+  "command": [
+    "java",
+    "-Xms128m",
+    "-Xmx768m",
+    "-XX:MaxDirectMemorySize=256m",
+    "-XX:MaxMetaspaceSize=256m",
+    "-XX:ActiveProcessorCount=2",
+    "-Djava.net.preferIPv4Stack=true",
+    "-Ddbms.pagecache.memory.default.override=128m",
+    "-Dslf4j.provider=ch.qos.logback.classic.spi.LogbackServiceProvider",
+    "--add-opens",
+    "java.base/java.lang=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.nio=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.io=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.util=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.util.concurrent=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/sun.net.www.protocol.http=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/sun.nio.ch=ALL-UNNAMED",
+    "-jar",
+    "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/downloads/server-0.8.7-executable.jar",
+    "--spring.config.location=file:///home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/server-vj2u286m/application.properties"
+  ],
+  "config": "server.address=127.0.0.1\nserver.port=18180\nserver.tomcat.threads.max=8\nserver.tomcat.threads.min-spare=2\nserver.tomcat.max-connections=16\nserver.error.include-message=never\nserver.error.include-stacktrace=never\nspring.application.name=vrspace-loopback-release-evaluation\nspring.main.banner-mode=off\nspring.jmx.enabled=false\nspring.neo4j.uri=bolt://127.0.0.1:17687\nspring.ai.model.chat=none\nspring.ai.model.embedding=none\nspring.autoconfigure.exclude=org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration,org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration,org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientAutoConfiguration,org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientWebSecurityAutoConfiguration,org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration,org.springframework.ai.model.ollama.autoconfigure.OllamaApiAutoConfiguration,org.springframework.ai.model.ollama.autoconfigure.OllamaChatAutoConfiguration,org.springframework.ai.model.ollama.autoconfigure.OllamaEmbeddingAutoConfiguration,org.springframework.ai.vectorstore.neo4j.autoconfigure.Neo4jVectorStoreAutoConfiguration,org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchClientAutoConfiguration,org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchRestClientAutoConfiguration,org.springframework.boot.autoconfigure.elasticsearch.ReactiveElasticsearchClientAutoConfiguration,org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchDataAutoConfiguration,org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchRepositoriesAutoConfiguration,org.springframework.boot.autoconfigure.data.elasticsearch.ReactiveElasticsearchRepositoriesAutoConfiguration\nmanagement.endpoints.enabled-by-default=false\nmanagement.endpoint.health.enabled=true\nmanagement.endpoints.web.exposure.include=health\nmanagement.endpoint.health.show-details=never\nspringdoc.api-docs.enabled=false\nspringdoc.swagger-ui.enabled=false\norg.vrspace.db.embedded=true\norg.vrspace.db.cleanup=false\norg.vrspace.server.guestAllowed=true\norg.vrspace.server.createWorlds=true\norg.vrspace.server.maxSessions=4\norg.vrspace.server.allowedOrigins=http://127.0.0.1:4176\norg.vrspace.server.websocketSessions=true\norg.vrspace.server.available=false\norg.vrspace.server.selenium-enabled=false\norg.vrspace.server.writeback.enabled=true\norg.vrspace.server.writeback.delay=1000\norg.vrspace.oauth2.enabled=false\norg.vrspace.ollama.enabled=false\nopenvidu.publicurl=none\nopenvidu.secret=none\nlogging.level.root=INFO\nlogging.level.org.vrspace=INFO\norg.vrspace.db=file:///home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/server-vj2u286m/db\n",
+  "javaVersion": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+  "startedAt": "2026-10-18T21:10:46Z",
+  "runDirectory": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/server-vj2u286m",
+  "pid": 3492,
+  "processStartTicks": 17905,
+  "stoppedAt": "2026-10-18T21:11:45Z",
+  "exitCode": 143,
+  "shutdown": {
+    "terminateSent": true,
+    "killSent": false,
+    "childExitCode": 143,
+    "requestedSignal": 15
+  }
+}

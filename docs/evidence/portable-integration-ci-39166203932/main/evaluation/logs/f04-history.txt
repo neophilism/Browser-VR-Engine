@@ -1,0 +1,5 @@
+
+> @browser-vr-engine/eval-hubs-spoke@0.1.0 verify:evidence
+> node scripts/verify-evidence.mjs
+
+{"status":"captured-artifact-integrity-verified","historicalIntegrity":"verified","currentSourcesMatchCapture":false,"currentSourceDifferences":["README.md","REUSE_ASSESSMENT.md","SECURITY_REVIEW.md","package.json","scripts/verify-evidence.mjs"],"files":68,"F04":"blocked","meaning":"Checks retained bytes and recorded limits only; does not rerun browsers, services, performance routes, or headsets."}

@@ -39,7 +39,7 @@ export const requiredF05SourceFiles = Object.freeze([
   ...requiredF05BuildInputs, 'config.mjs', 'environment.mjs', 'fixtures.mjs', 'server.mjs', 'run.mjs',
   'browser-checks.mjs', 'test/local-server.test.mjs', 'test/import-policy.test.mjs',
   'test/xr-session.test.mjs', 'test/xr-browser-checks.mjs', 'test/browser-finalize.mjs',
-  'test/portable-world.test.mjs', 'test/portable-browser-checks.mjs'
+  'test/portable-world.test.mjs', 'test/portable-browser-checks.mjs', 'test/media-progress.mjs', 'test/media-progress.test.mjs'
 ]);
 export const requiredF05Checks = Object.freeze([
   'real-render-and-frozen-fixtures', 'user-start-activation', 'animated-skinned-creature-and-attached-source',

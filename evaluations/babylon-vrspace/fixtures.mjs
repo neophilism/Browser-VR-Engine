@@ -8,7 +8,7 @@ export const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 
 export const buildInputPaths = ['src/main.js', 'src/xr-session.js', 'src/spatial-audio.js', 'src/audio-meter.js', 'src/import-policy.js', 'src/import-resources.js', 'src/portable-world.js', 'src/media-policy.js', 'contracts-build.mjs', 'index.html', 'package.json', 'package-lock.json', 'fixture-pins.json', 'vendor/vrspace/asset-loader.js', 'build.mjs'];
 export const buildOutputPaths = ['dist/main.js', 'dist/main.js.map', 'dist/audio-meter.js', 'dist/portable-world.mjs'];
-export const evidenceSourcePaths = [...buildInputPaths, 'config.mjs', 'environment.mjs', 'fixtures.mjs', 'server.mjs', 'run.mjs', 'browser-checks.mjs', 'test/local-server.test.mjs', 'test/import-policy.test.mjs', 'test/xr-session.test.mjs', 'test/xr-browser-checks.mjs', 'test/browser-finalize.mjs', 'test/portable-world.test.mjs', 'test/portable-browser-checks.mjs'];
+export const evidenceSourcePaths = [...buildInputPaths, 'config.mjs', 'environment.mjs', 'fixtures.mjs', 'server.mjs', 'run.mjs', 'browser-checks.mjs', 'test/local-server.test.mjs', 'test/import-policy.test.mjs', 'test/xr-session.test.mjs', 'test/xr-browser-checks.mjs', 'test/browser-finalize.mjs', 'test/portable-world.test.mjs', 'test/portable-browser-checks.mjs', 'test/media-progress.mjs', 'test/media-progress.test.mjs'];
 export async function fingerprintFiles(paths) {
   return Object.fromEntries(await Promise.all(paths.map(async path => {
     const bytes = await readFile(resolve(packageRoot, path));

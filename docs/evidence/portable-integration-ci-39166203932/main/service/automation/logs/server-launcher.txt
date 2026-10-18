@@ -1,0 +1,2 @@
+{"pid": 3492, "processStartTicks": 17905, "runDirectory": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/server-vj2u286m", "status": "starting"}
+{"runDirectory": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/server-vj2u286m", "exitCode": 143, "shutdown": {"terminateSent": true, "killSent": false, "childExitCode": 143}}

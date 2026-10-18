@@ -1,0 +1,7 @@
+install: passed
+check: passed
+example: passed
+consumer: passed
+sharding: passed
+dependencies: passed
+Local checks passed; this preview is not hosted acceptance evidence.

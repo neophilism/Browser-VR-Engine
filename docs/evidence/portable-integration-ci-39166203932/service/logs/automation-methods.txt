@@ -1,0 +1,15 @@
+test_audit_requires_consistent_registry_entries_and_success (automation_checks.AutomationChecks.test_audit_requires_consistent_registry_entries_and_success) ... ok
+test_browser_failures_remain_failures_after_consistent_counts (automation_checks.AutomationChecks.test_browser_failures_remain_failures_after_consistent_counts) ... ok
+test_exited_leader_and_detached_term_ignoring_descendants_are_reaped (automation_checks.AutomationChecks.test_exited_leader_and_detached_term_ignoring_descendants_are_reaped) ... ok
+test_missing_and_symlinked_output_directories_are_rejected (automation_checks.AutomationChecks.test_missing_and_symlinked_output_directories_are_rejected) ... ok
+test_real_command_exit_spawn_timeout_and_cancel_fail_closed (automation_checks.AutomationChecks.test_real_command_exit_spawn_timeout_and_cancel_fail_closed) ... ok
+test_screenshot_checks_dimensions_checksums_complete_rows (automation_checks.AutomationChecks.test_screenshot_checks_dimensions_checksums_complete_rows) ... ok
+test_source_snapshot_includes_new_worklet_and_rejects_file_escape (automation_checks.AutomationChecks.test_source_snapshot_includes_new_worklet_and_rejects_file_escape) ... ok
+test_stdout_must_identify_exactly_one_fresh_browser_run (automation_checks.AutomationChecks.test_stdout_must_identify_exactly_one_fresh_browser_run) ... ok
+test_synthetic_browser_binding_accepts_without_execution_claim (automation_checks.AutomationChecks.test_synthetic_browser_binding_accepts_without_execution_claim) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 2.937s
+
+OK
+{"runStatus": "passed", "counts": {"passed": 9, "failed": 0, "skipped": 0, "checks": 9}, "output": "artifacts/automation-checks-snqjk51w"}
