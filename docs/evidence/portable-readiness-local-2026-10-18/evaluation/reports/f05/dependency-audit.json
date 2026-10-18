@@ -1,0 +1,32 @@
+{
+  "assessment": {
+    "status": "passed",
+    "reason": "No reported dependency advisories"
+  },
+  "exitCode": 0,
+  "commandError": null,
+  "report": {
+    "auditReportVersion": 2,
+    "vulnerabilities": {},
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 6,
+        "dev": 33,
+        "optional": 27,
+        "peer": 1,
+        "peerOptional": 0,
+        "total": 39
+      }
+    }
+  },
+  "unparsedStdout": null,
+  "stderr": ""
+}

@@ -1,0 +1,16 @@
+PASS clean-run-passes-after-all-cleanup-settles
+PASS late-error-fails-report-and-process
+PASS late-pageerror-fails-report-and-process
+PASS late-socketerror-fails-report-and-process
+PASS late-failed-request-fails-report-and-process
+PASS late-blocked-external-request-fails-report-and-process
+PASS dispose-cleanup-rejection-still-closes-other-resources
+PASS browser-cleanup-rejection-still-closes-other-resources
+PASS frontend-cleanup-rejection-still-closes-other-resources
+PASS retained-cleanup-error-without-fatal-fails
+PASS fatal-observation-fails
+PASS incomplete-checks-fail
+PASS failed-check-fails
+PASS late-probe-error-fails
+PASS error-during-metadata-read-fails
+{"counts":{"passed":15,"failed":0,"checks":15},"output":"artifacts/finalization-checks-CJ7lgX"}

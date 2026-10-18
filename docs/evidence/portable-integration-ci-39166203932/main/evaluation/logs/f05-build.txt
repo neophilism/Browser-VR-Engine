@@ -1,0 +1,10 @@
+Built isolated F05 evaluation against bve-foundation-0.1.0; 11 verified shared resources.
+
+  dist/main.js      21.9mb ⚠️
+  dist/main.js.map  32.6mb
+
+⚡ Done in 2315ms
+
+  dist/portable-world.mjs  300.7kb
+
+⚡ Done in 82ms

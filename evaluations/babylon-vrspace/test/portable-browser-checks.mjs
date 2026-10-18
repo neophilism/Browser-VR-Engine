@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { join, relative } from 'node:path';
 import assert from 'node:assert/strict';
 import { finalizeBrowserRun } from './browser-finalize.mjs';
+import { observeMediaProgress } from './media-progress.mjs';
 import { packageRoot, artifactRoot, chromeExecutable, softwareRendering } from '../config.mjs';
 import { isolatedEnvironment } from '../environment.mjs';
 import { startEvaluationServer } from '../server.mjs';
@@ -139,13 +140,20 @@ try{
     const nativeNodes=state.roots.flatMap(root=>[root,...root.children]);assert(nativeNodes.some(node=>node.translation.every((value,index)=>Math.abs(value-[4,1,-2][index])<1e-5)&&node.scale.every(value=>Math.abs(value-8)<1e-5)),'Original model-local transform must be preserved below the normalization child');return state;
   });
   await check('portable-media-and-animation-bindings',async()=>{
-    const before=await fresh.page.evaluate(()=>({steps:foundationProbe.physicsSteps,animation:foundationProbe.inspect().animations[0],clock:foundationProbe.audio.context.currentTime,video:foundationProbe.video.currentTime}));
+    await fresh.page.evaluate(()=>{portableTest.mediaProgress={};});
+    await fresh.page.evaluate(observeMediaProgress,{});
     await fresh.page.locator('#start').click();
-    await fresh.page.waitForFunction(before=>{const p=foundationProbe,a=p.inspect().animations[0],wall=p.audio.sources.get('wall-playback');return p.audio.context.state==='running'&&p.audio.context.currentTime>before.clock+.2&&p.physicsSteps>before.steps&&a.frame!==before.animation.frame&&a.position.some((value,index)=>Math.abs(value-before.animation.position[index])>.001)&&p.video.currentTime>before.video+.1&&(wall.meterState.history.at(-1)?.inputRms||0)>.01;},before,{timeout:12000});
+    try {
+      const handle=await fresh.page.waitForFunction(observeMediaProgress,{}, {polling:50,timeout:12000});
+      try {observed.mediaProgress=await handle.jsonValue();} finally {await handle.dispose();}
+    } finally {
+      // Preserve before/last/native samples even when the readiness wait fails.
+      observed.mediaProgress??=await fresh.page.evaluate(()=>portableTest.mediaProgress);
+    }
     const after=await fresh.page.evaluate(()=>{const p=foundationProbe,wall=p.audio.sources.get('wall-playback'),bird=p.nodes.get('bird'),offset=bird.metadata.emitter.localOffset,position=BABYLON.Vector3.TransformCoordinates(BABYLON.Vector3.FromArray(offset),bird.getWorldMatrix()).asArray();return {steps:p.physicsSteps,animation:p.inspect().animations[0],audio:p.audio.inspect(),sameElement:wall.source.mediaElement===p.video&&wall.video===p.video,expectedBird:position,descriptors:p.world.entities.flatMap(entity=>entity.components.filter(component=>component.type==='bve:audio-emitter').map(component=>({entityId:entity.id,data:component.data}))),sourceDescriptors:[...p.audio.sources.values()].map(item=>({id:item.id,data:item.descriptor}))};});
-    assert.equal(after.audio.contextCount,1);assert.equal(after.audio.sources.length,6);assert(after.sameElement);const wall=after.audio.sources.find(source=>source.id==='wall-playback');assert.equal(wall.mediaSourceCount,1);assert.equal(wall.video.loop,true);assert.equal(wall.video.muted,false);assert(wall.meter.window.inputRms>.01);assert(after.audio.sources.every(source=>source.sameContext&&!source.directSourceToDestination));
+    assert.equal(after.audio.contextCount,1);assert.equal(after.audio.sources.length,6);assert(after.sameElement);const wall=after.audio.sources.find(source=>source.id==='wall-playback');assert.equal(wall.mediaSourceCount,1);assert.equal(wall.video.loop,true);assert.equal(wall.video.muted,false);assert(observed.mediaProgress.samples[observed.mediaProgress.milestones.wallAudio].positiveWallWindow.inputRms>.01);assert(after.audio.sources.every(source=>source.sameContext&&!source.directSourceToDestination));
     for(const item of after.descriptors)assert.deepEqual(after.sourceDescriptors.find(source=>source.id===item.data.playbackId).data,item.data);
-    near(after.audio.sources.find(source=>source.id==='bird-playback').position,after.expectedBird,.00001);return {before,after};
+    near(after.audio.sources.find(source=>source.id==='bird-playback').position,after.expectedBird,.00001);return {before:observed.mediaProgress.before,after,progress:'observed.mediaProgress'};
   });
   await check('portable-authored-reexport-restarts-live-state',async()=>{
     const live=await fresh.page.evaluate(()=>({steps:foundationProbe.physicsSteps,videoTime:foundationProbe.video.currentTime,animation:foundationProbe.inspect().animations[0],prop:foundationProbe.nodes.get('prop-0').position.asArray()}));assert(live.steps>0);assert(live.videoTime>0);assert.notDeepEqual(live.prop,[2,4,2]);

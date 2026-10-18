@@ -41,7 +41,7 @@ The [original local foundation receipt](portable-integration-local-2026-10-18/in
 
 ## Review and integration gate
 
-The separate [assistant self security review](../security/F05-portable.md) found no remaining blocker in this bounded implementation after the reported fixes. Current-head hosted foundation, evaluation and real released-service checks, independent verification of all downloaded artifacts, safe merge and subsequent main verification remain required. Their results must be recorded from actual GitHub execution.
+The separate [assistant self security review](../security/F05-portable.md) found no remaining blocker in this bounded implementation after the reported fixes. PR9 subsequently passed all four candidate jobs and all artifact verifiers, then merged at `5979457d6f2f69b710bd08af745ef9f1b048d4ca`. Main `39166555145` failed one portable media-readiness observation, so main verification remains unresolved. The [original candidate/main receipt](portable-integration-ci-39166203932/index.json) and [separate readiness repair](F05-portable-readiness.md) preserve the actual outcomes and required next gates.
 
 The same change permanently retains [PR8's already verified candidate/main artifacts](hubs-runtime-integration-ci-39156160278/index.json). PR8 tooling acceptance remains separate from its undispatched manual Hubs runtime.
 

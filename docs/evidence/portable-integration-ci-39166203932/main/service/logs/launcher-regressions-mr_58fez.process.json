@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "argv": [
+    "python3",
+    "-B",
+    "-O",
+    "test/launcher-checks.py"
+  ],
+  "supervisorPid": 2542,
+  "startedAt": "2026-10-18T21:09:31.872Z",
+  "outcome": "passed",
+  "exitCode": 0,
+  "requestedSignal": null,
+  "commandPid": 2543,
+  "shutdown": {
+    "needed": false,
+    "terminateSent": [],
+    "killSent": [],
+    "stopped": true
+  },
+  "finishedAt": "2026-10-18T21:10:03.412Z"
+}

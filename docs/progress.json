@@ -72,16 +72,18 @@
         "docs/evidence/F04-F05-integration.md",
         "docs/evidence/F05-XR.md",
         "docs/evidence/xr-integration-ci-39154237536/index.json",
-        "docs/evidence/F05-portable.md"
+        "docs/evidence/F05-portable.md",
+        "docs/evidence/portable-integration-ci-39166203932/index.json",
+        "docs/evidence/F05-portable-readiness.md"
       ],
-      "securityReview": "docs/security/F05-portable.md",
+      "securityReview": "docs/security/F05-portable-readiness.md",
       "deployment": null,
       "blockers": [
         "Physical headset/controller/audio and target-device performance evidence are missing.",
-        "Portable authored-world behavior has local browser evidence; hosted integration, complete common qualification, multiuser ownership/physics, SFU voice/media and measured AV synchronization remain required.",
+        "PR9 candidate passed and merged, but its subsequent main evaluation failed portable media readiness (8/9). The local repair pass still needs hosted candidate/main verification; full common qualification, multiuser ownership/physics, SFU voice/media and measured AV synchronization remain required.",
         "The released VRSpace server/client presence test is a different pin from the master AssetLoader evaluation and does not qualify all VRSpace subsystems."
       ],
-      "nextAction": "Complete current-head hosted verification and safe merge of the recovered portable-world follow-up, then main verification. Continue ten-cycle lifecycle, common measurements, shared state and physical-device qualification using docs/qualification/f05-gap-map.md. F05 remains incomplete."
+      "nextAction": "Publish and verify the narrowly reviewed portable-readiness repair on exact PR and main identities while retaining the original failure. Continue ten-cycle lifecycle, native measurements, shared state and physical-device qualification using docs/qualification/f05-gap-map.md. F05 remains incomplete."
     },
     {
       "id": "F06",

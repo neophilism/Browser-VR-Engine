@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "-O",
+    "scripts/ci/verify-service-evidence.py",
+    "/workspace/scratch/dc98dcd2981d/engine_work/pr9-receipts/run-39166203932/service",
+    "--repository",
+    "neophilism/Browser-VR-Engine",
+    "--event",
+    "pull_request",
+    "--head",
+    "36588399e28f0e8bb6c28d07ca105639355d4ff1",
+    "--base",
+    "9088586c9f46f0e740cfe67b3d8b00614ed446eb",
+    "--tested",
+    "6fc08aa80a676e0ff869415f86b6fef8b0d54782",
+    "--tree",
+    "6bb11652bc32b194c50da91007421484e8c8fbbf",
+    "--workflow-sha",
+    "6fc08aa80a676e0ff869415f86b6fef8b0d54782",
+    "--workflow-ref",
+    "neophilism/Browser-VR-Engine/.github/workflows/engine-ci.yml@refs/pull/9/merge",
+    "--run-id",
+    "39166203932",
+    "--attempt",
+    "1"
+  ],
+  "status": 0
+}

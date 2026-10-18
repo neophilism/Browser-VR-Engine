@@ -1,0 +1,22 @@
+✔ looping video progress and an earlier real pulse survive a silent final window (1.988964ms)
+✔ media progress cannot pass with silence (0.912864ms)
+✔ media progress cannot pass with stale pulse (0.184187ms)
+✔ media progress cannot pass with invalid PCM (0.140551ms)
+✔ media progress cannot pass with dropped window (0.366482ms)
+✔ media progress cannot pass with frozen decoded frames (0.230887ms)
+✔ media progress cannot pass with frozen animation (0.158389ms)
+✔ media progress cannot pass with frozen physics (0.127682ms)
+✔ media progress cannot pass with suspended context (0.605522ms)
+✔ media progress cannot pass with seeking video (0.328825ms)
+✔ a transient positive native window is copied instead of retaining mutable history (0.323006ms)
+✔ pending video metadata stays incomplete and binds the first native duration (0.233742ms)
+✔ nonfinite forged worklet values cannot produce progress (1.404895ms)
+✔ invalid samples, clock regression and excess observations fail visibly (2.523099ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 33.75995

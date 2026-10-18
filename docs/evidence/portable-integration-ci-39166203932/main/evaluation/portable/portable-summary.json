@@ -1,0 +1,59 @@
+{
+  "qualificationStatus": "incomplete",
+  "evidenceFile": "portable-browser-checks.json",
+  "checks": [
+    {
+      "id": "portable-browser-export-includes-originals",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "portable-invalid-carrier-no-allocation",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "portable-fresh-world-with-no-fixture-fallback",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "portable-normalization-hierarchy-and-collider",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "portable-media-and-animation-bindings",
+      "status": "failed",
+      "method": "real-browser"
+    },
+    {
+      "id": "portable-authored-reexport-restarts-live-state",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "portable-affine-static-projection",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "portable-native-load-failure-rollback",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "portable-disposal-releases-instance-resources",
+      "status": "passed",
+      "method": "real-browser"
+    }
+  ],
+  "counts": {
+    "passed": 8,
+    "failed": 1,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "logOverflow": 0
+  },
+  "runStatus": "failed"
+}

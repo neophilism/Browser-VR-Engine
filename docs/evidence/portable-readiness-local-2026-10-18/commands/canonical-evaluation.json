@@ -1,0 +1,11 @@
+{
+  "startedAt": "2026-10-18T21:19:55.278Z",
+  "finishedAt": "2026-10-18T21:21:22.736Z",
+  "argv": [
+    "scripts/ci/evaluate.mjs",
+    "--local"
+  ],
+  "status": 0,
+  "errorCode": null,
+  "signal": null
+}
