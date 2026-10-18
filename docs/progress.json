@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "units": [
     {
       "id": "F01",
@@ -30,38 +30,53 @@
     },
     {
       "id": "F03",
-      "status": "implemented",
-      "pullRequest": null,
-      "mergedCommit": null,
+      "status": "accepted",
+      "pullRequest": "https://github.com/neophilism/Browser-VR-Engine/pull/4",
+      "mergedCommit": "64c3dbfc8818c4ebaac64f94103f26815e539c96",
       "verification": [
         "docs/evidence/F03.md"
       ],
       "securityReview": "docs/security/F03.md",
       "deployment": null,
       "blockers": [],
-      "nextAction": "Complete integrated current-commit CI and separate review, merge and verify main; then integrate F04/F05 candidate evaluations."
+      "nextAction": "Complete; current-candidate checks, separate self review, merge and main CI verified. Continue F04/F05 candidate evaluation."
     },
     {
       "id": "F04",
-      "status": "planned",
+      "status": "blocked",
       "pullRequest": null,
       "mergedCommit": null,
-      "verification": [],
-      "securityReview": null,
+      "verification": [
+        "docs/evidence/F04.md"
+      ],
+      "securityReview": "docs/security/F04-F05.md",
       "deployment": null,
-      "blockers": [],
-      "nextAction": "Wait for accepted dependencies."
+      "blockers": [
+        "Pinned Reticulum/Dialog service deployment and complete Hubs runtime scenario have not been exercised.",
+        "Full two-client ownership/media/roundtrip behavior, physical headset/audio and target-device workload evidence are missing.",
+        "The upstream Hubs dependency audit timed out; its result remains unknown.",
+        "Registry dependency metadata audits were explicitly authorized by the owner on 2026-10-18; fresh current-candidate audits, hosted checks, review and merge evidence are still required."
+      ],
+      "nextAction": "Use the pinned reproduction toolkit to complete upstream services, dependency review and common runtime/device scenarios; retain the demonstrated editor/build results."
     },
     {
       "id": "F05",
-      "status": "planned",
+      "status": "blocked",
       "pullRequest": null,
       "mergedCommit": null,
-      "verification": [],
-      "securityReview": null,
+      "verification": [
+        "docs/evidence/F05.md"
+      ],
+      "securityReview": "docs/security/F04-F05.md",
       "deployment": null,
-      "blockers": [],
-      "nextAction": "Wait for accepted dependencies."
+      "blockers": [
+        "The current VR control only checks support; an immersive-session entry/lifecycle path is not yet implemented in this evaluation.",
+        "Physical headset/controller/audio and target-device performance evidence are missing.",
+        "Full canonical-world roundtrip, multiuser ownership/physics, SFU voice/media and measured AV synchronization remain unqualified.",
+        "The released VRSpace server/client presence test is a different pin from the master AssetLoader evaluation and does not qualify all VRSpace subsystems.",
+        "Registry dependency metadata audits were explicitly authorized by the owner on 2026-10-18; fresh current-candidate audits, hosted checks, review and merge evidence are still required."
+      ],
+      "nextAction": "Complete the remaining shared-scenario and device evidence; retain observed browser interactions and released-server presence/reconnect results without claiming full foundation acceptance."
     },
     {
       "id": "F06",

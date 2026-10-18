@@ -1,0 +1,15 @@
+{
+  "worldRevision": "2c7c8a716361aa59aedfa67433074cf0bb0cad4cef77494320024042bae95336",
+  "sourceCatalog": "bve-foundation-0.1.0",
+  "projectEntities": 69,
+  "adaptations": [
+    "Native Spoke project wrappers around byte-identical F03 assets",
+    "Same-origin asset URLs bypass unavailable hosted resolver",
+    "Explicit spatial audio settings"
+  ],
+  "unmapped": [
+    "Spoke editor does not simulate dynamic rigid-body mass",
+    "Custom fadeStart-to-cutoff envelope is not represented by native Spoke maxDistance",
+    "Bird motion route requires runtime adapter"
+  ]
+}

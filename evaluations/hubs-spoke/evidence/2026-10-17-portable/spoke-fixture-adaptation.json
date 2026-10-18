@@ -1,0 +1,31 @@
+{
+  "adaptationVersion": "f04-spoke-wrapper-2",
+  "worldRevision": "2c7c8a716361aa59aedfa67433074cf0bb0cad4cef77494320024042bae95336",
+  "comparison": {
+    "catalogDigest": "ae8f38424e68be31dd85acc066abbb96322cead3d90f580089b89a18d3039593",
+    "deviceTargetDigest": "c3f2dcce2e56da61f1999dc4056d165adbe9ff1601fc93bdf62dfc493e0080f6",
+    "fixtureSetId": "bve-foundation-0.1.0",
+    "scenarioDigest": "6547e68553d86e8294f2d2ea09413bfb45b7c773ba6942a0f25166835d099848",
+    "schemaDigest": "ef7de9b6f72e18063253c28cec464cf09d6fcc0d0e3795ff86f3108947f1224b",
+    "schemaVersion": "0.1.0",
+    "thresholdDigest": "36ca04ae7a569ba2e4c8fc6804db9620ca5a7ca5f63d527ad83cf880611d2a14",
+    "workloadDigest": "b105f1b7772ce039a5d43d098762bef459288ba447019bc6fc8c3dfcd8979e7b",
+    "worldDigest": "c18f890d75db0a8f7124ee14a230751c53aea5f7346b68c130cb499704b7b667"
+  },
+  "projectEntities": 69,
+  "fixtureFiles": 19,
+  "mappings": [
+    "Byte-identical F03 glTF, audio, and video assets wrapped in a native Spoke project.",
+    "Right-handed meters, +Y up, XYZW rotation converted to the pinned Three.js XYZ Euler convention.",
+    "Box collider children follow the edited model; collider-only architectural proxies keep their world transforms.",
+    "Video aspect compensation preserves the F03 unit-quad physical size.",
+    "All six positional emitters retain source, gain, reference distance, rolloff and native panner selection."
+  ],
+  "unmapped": [
+    "Dynamic mass, collisions during play, grabbing, throwing and authoritative ownership are not simulated by this editor wrapper.",
+    "Native maxDistance is not the F03 fadeStart-to-cutoff envelope; audio buses and synchronized playback IDs need a runtime adapter.",
+    "Bird motion route and requested animation playback are not executed by this wrapper; skin/clip presence is inspected on export.",
+    "The editor camera/Spawn Point from the template does not implement the F03 observer locomotion scenario.",
+    "Native project serialization is tested for selected mapped fields; complete canonical-world semantic roundtrip is not implemented."
+  ]
+}

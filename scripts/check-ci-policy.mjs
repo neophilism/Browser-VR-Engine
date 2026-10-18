@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { parseDocument } from 'yaml';
 
-export const gateCommand = 'test "$CHECKS_RESULT" = success';
+export const gateCommand = 'test "$CHECKS_RESULT" = success && test "$EVALUATIONS_RESULT" = success';
 
 // Keep the package list explicit: an omitted workspace was a real F03
 // integration regression, and --if-present would conceal a missing suite.
@@ -33,7 +33,7 @@ export function validateWorkflow(text, pins) {
   }
   if (JSON.stringify(triggers?.merge_group?.types) !== '["checks_requested"]') errors.push('Required merge-group event differs');
   if (JSON.stringify(workflow.permissions) !== '{}') errors.push('Workflow default permissions must be empty');
-  if (!workflow.jobs?.checks || !workflow.jobs?.required || Object.keys(workflow.jobs).length !== 2) errors.push('Required foundation jobs differ; update the policy when adding real suites');
+  if (!workflow.jobs?.checks || !workflow.jobs?.evaluations || !workflow.jobs?.required || Object.keys(workflow.jobs).length !== 3) errors.push('Required foundation/evaluation jobs differ; update the policy when adding real suites');
   for (const [id, job] of Object.entries(workflow.jobs ?? {})) {
     if (job['runs-on'] !== 'ubuntu-24.04' || job.environment || job['continue-on-error']) errors.push(`${id}: unsafe runner, environment or failure override`);
     if (!Number.isInteger(job['timeout-minutes']) || job['timeout-minutes'] < 1 || job['timeout-minutes'] > 30) errors.push(`${id}: missing bounded timeout`);
@@ -45,19 +45,21 @@ export function validateWorkflow(text, pins) {
         if (!/^[a-f0-9]{40}$/.test(sha ?? '') || pins[name]?.sha !== sha) errors.push(`${id}: unverified action pin`);
         if (name === 'actions/checkout' && (step.with?.['persist-credentials'] !== false || step.with?.['allow-unsafe-pr-checkout'] === true)) errors.push(`${id}: checkout persists credentials or permits privileged PR code`);
         if (name === 'actions/setup-node' && step.with?.['package-manager-cache'] !== false) errors.push(`${id}: caching needs an explicit trust review`);
-        if (name === 'actions/upload-artifact' && (step.with?.path !== 'artifacts/ci/' || step.with?.['if-no-files-found'] !== 'error' || step.with?.['include-hidden-files'] !== false || step.with?.overwrite !== false || step.with?.['retention-days'] !== 30)) errors.push(`${id}: unsafe or incomplete artifact retention`);
+        if (name === 'actions/upload-artifact' && (step.with?.path !== (id === 'evaluations' ? 'artifacts/evaluations/' : 'artifacts/ci/') || step.with?.['if-no-files-found'] !== 'error' || step.with?.['include-hidden-files'] !== false || step.with?.overwrite !== false || step.with?.['retention-days'] !== 30)) errors.push(`${id}: unsafe or incomplete artifact retention`);
       }
       if (typeof step.run === 'string' && /(?:^|\n)\s*(?:printenv|env)\s*(?:$|\n)|toJSON\(\s*(?:github|secrets)\s*\)/i.test(step.run)) errors.push(`${id}: environment dump prohibited`);
     }
   }
-  const checks = workflow.jobs?.checks;
-  const steps = Array.isArray(checks?.steps) ? checks.steps : [];
-  const [checkout, setup, run, upload] = steps;
-  if (checks?.name !== 'engine-foundation' || checks.if !== undefined || checks.needs !== undefined) errors.push('Foundation job must run unconditionally under its stable check name');
-  if (steps.length !== 4 || checkout?.uses !== `actions/checkout@${pins['actions/checkout']?.sha}` || setup?.uses !== `actions/setup-node@${pins['actions/setup-node']?.sha}` || run?.run !== 'node scripts/ci/run.mjs' || upload?.uses !== `actions/upload-artifact@${pins['actions/upload-artifact']?.sha}`) errors.push('Required checkout, toolchain, hosted runner and artifact steps must be present in order');
-  if ([checkout, setup, run].some(step => step?.if !== undefined) || upload?.if !== '${{ always() }}' || setup?.with?.['node-version-file'] !== '.nvmrc') errors.push('Required steps cannot be skipped or substitute an unpinned toolchain');
+  for (const [id, name, command] of [['checks', 'engine-foundation', 'node scripts/ci/run.mjs'], ['evaluations', 'engine-evaluations', 'node scripts/ci/evaluate.mjs']]) {
+    const job = workflow.jobs?.[id];
+    const steps = Array.isArray(job?.steps) ? job.steps : [];
+    const [checkout, setup, run, upload] = steps;
+    if (job?.name !== name || job.if !== undefined || job.needs !== undefined) errors.push(`${id}: job must run unconditionally under its stable check name`);
+    if (steps.length !== 4 || checkout?.uses !== `actions/checkout@${pins['actions/checkout']?.sha}` || setup?.uses !== `actions/setup-node@${pins['actions/setup-node']?.sha}` || run?.run !== command || upload?.uses !== `actions/upload-artifact@${pins['actions/upload-artifact']?.sha}`) errors.push(`${id}: required checkout, toolchain, hosted runner and artifact steps must be present in order`);
+    if ([checkout, setup, run].some(step => step?.if !== undefined) || upload?.if !== '${{ always() }}' || setup?.with?.['node-version-file'] !== '.nvmrc') errors.push('Required steps cannot be skipped or substitute an unpinned toolchain');
+  }
   const gate = workflow.jobs?.required;
-  if (gate?.name !== 'engine-required' || gate?.if !== '${{ always() }}' || JSON.stringify(gate?.needs) !== '["checks"]' || JSON.stringify(gate?.permissions) !== '{}' || gate?.steps?.length !== 1 || gate?.steps?.[0]?.if !== undefined || gate?.steps?.[0]?.run !== gateCommand || gate?.steps?.[0]?.env?.CHECKS_RESULT !== '${{ needs.checks.result }}') errors.push('Required aggregator must fail on every non-success prerequisite');
+  if (gate?.name !== 'engine-required' || gate?.if !== '${{ always() }}' || JSON.stringify(gate?.needs) !== '["checks","evaluations"]' || JSON.stringify(gate?.permissions) !== '{}' || gate?.steps?.length !== 1 || gate?.steps?.[0]?.if !== undefined || gate?.steps?.[0]?.run !== gateCommand || gate?.steps?.[0]?.env?.CHECKS_RESULT !== '${{ needs.checks.result }}' || gate?.steps?.[0]?.env?.EVALUATIONS_RESULT !== '${{ needs.evaluations.result }}') errors.push('Required aggregator must fail on every non-success prerequisite');
   if (/\bsecrets\s*(?:\.|\[)|id-token|pull_request_target|workflow_run/i.test(JSON.stringify(workflow))) errors.push('PR workflow cannot request secrets or deployment authority');
   return errors;
 }

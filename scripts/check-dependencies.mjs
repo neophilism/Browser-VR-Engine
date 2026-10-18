@@ -21,17 +21,20 @@ export function classifyAudit(report, exitCode, commandError = null) {
   return { status: 'passed', reason: counts.total ? 'No high/critical advisories; lower-severity findings remain in the report' : 'No reported dependency advisories' };
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  const root = resolve(import.meta.dirname, '..');
-  const result = spawnSync('npm', ['audit', '--json', '--audit-level=high', '--fetch-timeout=10000', '--fetch-retries=0'], { cwd: root, env: childEnvironment(), encoding: 'utf8', timeout: 30_000, maxBuffer: 4 * 1024 * 1024, shell: false });
+export async function auditDependencies(root, { directory = resolve(root, 'artifacts/security'), npmConfig = [] } = {}) {
+  const result = spawnSync('npm', ['audit', '--json', '--audit-level=high', '--fetch-timeout=10000', '--fetch-retries=0', ...npmConfig], { cwd: root, env: childEnvironment(), encoding: 'utf8', timeout: 30_000, maxBuffer: 4 * 1024 * 1024, shell: false });
   let report;
   let unparsedStdout = null;
   try { report = JSON.parse(result.stdout); } catch { report = { error: 'No valid registry JSON result' }; unparsedStdout = result.stdout ?? ''; }
   const commandError = result.error?.code ?? null;
   const assessment = classifyAudit(report, result.status, commandError);
-  const directory = resolve(root, 'artifacts/security');
   await mkdir(directory, { recursive: true });
   await writeFile(resolve(directory, 'dependency-audit.json'), `${JSON.stringify(redactStructured({ assessment, exitCode: result.status, commandError, report, unparsedStdout, stderr: result.stderr ?? '' }), null, 2)}\n`);
   console.log(`${assessment.status}: ${assessment.reason}`);
+  return assessment;
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  const assessment = await auditDependencies(resolve(import.meta.dirname, '..'));
   if (assessment.status !== 'passed') process.exitCode = 1;
 }

@@ -1,0 +1,14 @@
+{
+  "command": "bash",
+  "args": [
+    "bin/init"
+  ],
+  "startedAt": "2026-10-17T22:11:45.523Z",
+  "finishedAt": "2026-10-17T22:11:45.527Z",
+  "exitCode": 1,
+  "signal": null,
+  "processError": null,
+  "timedOut": false,
+  "success": false,
+  "log": "compose-init-blocked.log"
+}

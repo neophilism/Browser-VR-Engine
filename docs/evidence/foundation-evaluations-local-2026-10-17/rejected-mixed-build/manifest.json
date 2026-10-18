@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "mode": "local",
+  "purpose": "Unaffected evaluation stages after explicit automatic-review audit rejection",
+  "startedAt": "2026-10-17T22:45:28.310Z",
+  "complete": false,
+  "commands": [
+    {
+      "id": "f04-install",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "node",
+        "scripts/bootstrap.mjs"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:45:28.314Z",
+      "finishedAt": "2026-10-17T22:45:28.841Z",
+      "durationMs": 527
+    },
+    {
+      "id": "f04-source",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "node",
+        "scripts/checkout-test-source.mjs"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:45:28.847Z",
+      "finishedAt": "2026-10-17T22:45:29.069Z",
+      "durationMs": 222
+    },
+    {
+      "id": "f04-tests",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "npm",
+        "test"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:45:29.071Z",
+      "finishedAt": "2026-10-17T22:45:29.524Z",
+      "durationMs": 453
+    },
+    {
+      "id": "f04-history",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "npm",
+        "run",
+        "verify:evidence"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:45:29.525Z",
+      "finishedAt": "2026-10-17T22:45:29.800Z",
+      "durationMs": 275
+    },
+    {
+      "id": "f04-audit",
+      "cwd": ".",
+      "argv": [
+        "node",
+        "scripts/ci/audit-evaluation.mjs",
+        "f04"
+      ],
+      "outcome": "blocked_auto_review",
+      "exitCode": null,
+      "errorCode": null,
+      "signal": null,
+      "durationMs": 0
+    },
+    {
+      "id": "f05-install",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "install"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:45:29.814Z",
+      "finishedAt": "2026-10-17T22:45:34.369Z",
+      "durationMs": 4555
+    },
+    {
+      "id": "f05-build",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "build"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:45:34.379Z",
+      "finishedAt": "2026-10-17T22:45:36.362Z",
+      "durationMs": 1983
+    },
+    {
+      "id": "f05-tests",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "test-server"
+      ],
+      "outcome": "failed",
+      "exitCode": 1,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:45:36.364Z",
+      "finishedAt": "2026-10-17T22:45:37.353Z",
+      "durationMs": 989
+    }
+  ],
+  "files": [],
+  "failures": [
+    "f05-tests failed"
+  ],
+  "blockers": [
+    "Fresh npm registry audits were rejected by automatic approval review. No audit is attempted or represented as passed."
+  ],
+  "headSha": "64c3dbfc8818c4ebaac64f94103f26815e539c96",
+  "dirty": true,
+  "finishedAt": "2026-10-17T22:45:37.354Z"
+}

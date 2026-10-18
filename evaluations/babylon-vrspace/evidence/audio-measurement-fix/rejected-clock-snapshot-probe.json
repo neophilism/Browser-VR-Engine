@@ -1,0 +1,129 @@
+{
+  "kind": "diagnostic-only-fixed-listener-audio-render-boundary-test-after-coherent-snapshot-fix",
+  "start": 0.2612244897959184,
+  "finish": 3.2914285714285714,
+  "samples": 3897,
+  "crossClock": 342,
+  "incoherent": 0,
+  "maxBalanceDb": 0.1165061099685662,
+  "failures": [
+    {
+      "before": 0.46439909297052157,
+      "after": 0.47020408163265304,
+      "balanceDb": 0.1165061099685662,
+      "gains": [
+        {
+          "id": "corner-playback-0",
+          "input": 0.0634638622873856,
+          "pre": 0.007392639633577954,
+          "expected": 0.1178511306643486,
+          "measured": 0.11648581361313323,
+          "sampleWindow": {
+            "start": 0.46439909297052157,
+            "end": 0.46439909297052157,
+            "coherent": true,
+            "attempts": 1
+          }
+        },
+        {
+          "id": "corner-playback-1",
+          "input": 0.06284279557078228,
+          "pre": 0.007419144664221845,
+          "expected": 0.1178511306643486,
+          "measured": 0.11805879412008931,
+          "sampleWindow": {
+            "start": 0.46439909297052157,
+            "end": 0.46439909297052157,
+            "coherent": true,
+            "attempts": 1
+          }
+        },
+        {
+          "id": "corner-playback-2",
+          "input": 0.06307313743852119,
+          "pre": 0.007433240560361344,
+          "expected": 0.1178511306643486,
+          "measured": 0.11785113064348021,
+          "sampleWindow": {
+            "start": 0.46439909297052157,
+            "end": 0.46439909297052157,
+            "coherent": true,
+            "attempts": 1
+          }
+        },
+        {
+          "id": "corner-playback-3",
+          "input": 0.06308341384066131,
+          "pre": 0.007434451643874092,
+          "expected": 0.1178511306643486,
+          "measured": 0.11785113061021613,
+          "sampleWindow": {
+            "start": 0.46439909297052157,
+            "end": 0.46439909297052157,
+            "coherent": true,
+            "attempts": 1
+          }
+        }
+      ]
+    },
+    {
+      "before": 1.5325170068027212,
+      "after": 1.5412244897959184,
+      "balanceDb": 0.10085233894705738,
+      "gains": [
+        {
+          "id": "corner-playback-0",
+          "input": 0.06342708553969637,
+          "pre": 0.007388663582882269,
+          "expected": 0.1178511306643486,
+          "measured": 0.1164906683006586,
+          "sampleWindow": {
+            "start": 1.5325170068027212,
+            "end": 1.5325170068027212,
+            "coherent": true,
+            "attempts": 1
+          }
+        },
+        {
+          "id": "corner-playback-1",
+          "input": 0.06286739908160217,
+          "pre": 0.007408994067793821,
+          "expected": 0.1178511306643486,
+          "measured": 0.117851130729568,
+          "sampleWindow": {
+            "start": 1.5412244897959184,
+            "end": 1.5412244897959184,
+            "coherent": true,
+            "attempts": 1
+          }
+        },
+        {
+          "id": "corner-playback-2",
+          "input": 0.06303230661022709,
+          "pre": 0.007428428600823445,
+          "expected": 0.1178511306643486,
+          "measured": 0.11785113063938185,
+          "sampleWindow": {
+            "start": 1.5412244897959184,
+            "end": 1.5412244897959184,
+            "coherent": true,
+            "attempts": 1
+          }
+        },
+        {
+          "id": "corner-playback-3",
+          "input": 0.06311546702428789,
+          "pre": 0.007438229149594203,
+          "expected": 0.1178511306643486,
+          "measured": 0.11785113063857783,
+          "sampleWindow": {
+            "start": 1.5412244897959184,
+            "end": 1.5412244897959184,
+            "coherent": true,
+            "attempts": 1
+          }
+        }
+      ]
+    }
+  ]
+}

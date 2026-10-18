@@ -1,0 +1,490 @@
+{
+  "candidate": "Spoke",
+  "sourceCommit": "bd812b0316a05a63ca989e74c8c88c4062b41606",
+  "adaptations": [
+    "Pinned Three.js commit downloaded as archive",
+    "webpack 4.39.3 -> 4.47.0 for Node 24"
+  ],
+  "browser": "151.0.7922.34",
+  "rendererClass": "software SwiftShader",
+  "text": "World\nSelection\n0.5m\n90°\nm\nPublish Scene...\nBack to Projects\nFile\nNew Project\nSave Project\nctrl + S\nSave As\nPublish Scene...\nExport as binary glTF (.glb) ...\nImport legacy .spoke project\nExport legacy .spoke project\nHelp\nTutorial\nKeyboard and Mouse Controls\nGet Support\nSubmit Feedback\nReport an Issue\nJoin us on Discord\nTerms of Use (TBD)\nPrivacy Notice (TBD)\nDeveloper\nEnable Experimental Features\nSubmit Feedback\nViewport\nLit\n[LMB] Orbit / Select | [MMB] Pan | [RMB] Fly\nUpload Asset\nAssets\nElements\nArchitecture Kit\nRock Kit\nSketchfab\nIcosa Gallery\nBing Images\nBing Videos\nHubs Sound Pack\nTenor GIFs\nElements\nGroup\nModel\nGround Plane\nBox Collider\nAmbient Light\nDirectional Light\nHemisphere Light\nSpot Light\nPoint Light\nSpawn Point\nWay Point\nFloor Plan\nImage\nVideo\nAudio\nSpawner\nLink\nParticle Emitter\nSimple Water\nScene Preview Camera\nMedia Frame\nAudio Zone\nTroika Text\nMirror\nPlace Object\nPlace Object at Origin\nUpload Asset\nHierarchy\nF03 synthetic courtyard\nSkybox\nDirectional Light\nSpawn Point\ncourtyard\ncoordinate-markers\ncollision-floor-collision\ncollision-wall-west-collision\ncollision-wall-east-collision\ncollision-wall-north-collision\ncollision-door-left-collision\ncollision-door-right-collision\nRename\nDuplicate\nctrl+ D\nGroup\nctrl+ G\nDelete\nExpand All\nCollapse All\nProperties\nNo node selected",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "text"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Publish Scene...",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "button"
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": null,
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "label": null,
+      "title": null,
+      "placeholder": "Search...",
+      "type": null
+    }
+  ],
+  "editor": {
+    "scene": [
+      {
+        "name": "Skybox",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "Directional Light",
+        "type": "DirectionalLight",
+        "children": 2
+      },
+      {
+        "name": "Spawn Point",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "courtyard",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "coordinate-markers",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "collision-floor-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-wall-west-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-wall-east-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-wall-north-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-door-left-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-door-right-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-door-lintel-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-left-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-right-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-thin-barrier-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-0-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-1-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-2-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-3-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-4-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-5-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-6-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-7-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-8-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-9-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-10-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-arch-segment-11-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-column--8--8-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-column--8--4-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-column--8-4-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-column--8-8-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-column-8--8-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-column-8--4-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-column-8-4-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-column-8-8-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-step-0-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-step-1-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-step-2-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-step-3-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-step-4-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "collision-ramp-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "prop-0",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "prop-0-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "prop-1",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "prop-1-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "prop-2",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "prop-2-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "prop-3",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "prop-3-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "prop-4",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "prop-4-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "prop-5",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "prop-5-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "prop-6",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "prop-6-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "prop-7",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "prop-7-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "prop-8",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "prop-8-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "prop-9",
+        "type": "Model",
+        "children": 1
+      },
+      {
+        "name": "prop-9-collision",
+        "type": "Object3D",
+        "children": 1
+      },
+      {
+        "name": "music-corner-0-audio",
+        "type": "Object3D",
+        "children": 2
+      },
+      {
+        "name": "music-corner-1-audio",
+        "type": "Object3D",
+        "children": 2
+      },
+      {
+        "name": "music-corner-2-audio",
+        "type": "Object3D",
+        "children": 2
+      },
+      {
+        "name": "music-corner-3-audio",
+        "type": "Object3D",
+        "children": 2
+      },
+      {
+        "name": "bird",
+        "type": "Model",
+        "children": 2
+      },
+      {
+        "name": "wall-screen",
+        "type": "Object3D",
+        "children": 2
+      },
+      {
+        "name": "Camera",
+        "type": "PerspectiveCamera",
+        "children": 1
+      },
+      {
+        "name": "",
+        "type": "Mesh",
+        "children": 0
+      }
+    ]
+  },
+  "canvas": [
+    {
+      "width": 883,
+      "height": 510
+    }
+  ],
+  "errors": [],
+  "blockedHosts": [
+    "fonts.googleapis.com",
+    "www.google-analytics.com"
+  ],
+  "limitations": [
+    "Initial browser load only; no complete foundation qualification",
+    "No Reticulum/Dialog service",
+    "No physical headset or GPU"
+  ]
+}

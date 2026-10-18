@@ -1,0 +1,77 @@
+{
+  "scope": "Exact isolated evaluation graph, not production engine dependency selection",
+  "packages": {
+    "@babylonjs/core": {
+      "version": "9.30.0",
+      "resolved": "https://registry.npmjs.org/@babylonjs/core/-/core-9.30.0.tgz",
+      "integrity": "sha512-rV+kc7B9oEtREaWh0YYNinoqYshRbHLHj7t4s4woDjDXFXWKHu1d8S914CNfs3KTOI8V8DvoVKLe2yDHZXfZEA==",
+      "license": "Apache-2.0"
+    },
+    "@babylonjs/loaders": {
+      "version": "9.30.0",
+      "resolved": "https://registry.npmjs.org/@babylonjs/loaders/-/loaders-9.30.0.tgz",
+      "integrity": "sha512-jwA1HqtPzcMDfWxU9v2hp6y1Kat4i+oypBKDOYiatreTsItHRuuA7wXpRteWtJHd5islHOdkfOAVxjU1b7ctIQ==",
+      "license": "Apache-2.0"
+    },
+    "@babylonjs/serializers": {
+      "version": "9.30.0",
+      "resolved": "https://registry.npmjs.org/@babylonjs/serializers/-/serializers-9.30.0.tgz",
+      "integrity": "sha512-8vXF0FqUAItznbk4KEoq5b//gwUDTNrHAkdRjofhhdGEo7UtV5kt+EpcMXB2NTH2belQk/vVOhmlX3i03qKbAQ==",
+      "license": "Apache-2.0"
+    },
+    "@dimforge/rapier3d-compat": {
+      "version": "0.21.0",
+      "resolved": "https://registry.npmjs.org/@dimforge/rapier3d-compat/-/rapier3d-compat-0.21.0.tgz",
+      "integrity": "sha512-tCl1HPGwOhn5aCQbgqWbOH+Nx/5fnr3IPAnzQuR7zIhC/raqi2yxC6LhvZqjdI2El5hQgY5RDAwDrAjAi2FdPA==",
+      "license": "Apache-2.0"
+    },
+    "esbuild": {
+      "version": "0.28.2",
+      "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.28.2.tgz",
+      "integrity": "sha512-HKVLS8dvII+xoKW9kmqxbRKrnWEXfJJr/FZhhJmiqIB0e053QNYFqOBouTMO/k5sID4MvCiUCvv8b9M4h32wIA==",
+      "license": "MIT"
+    },
+    "playwright": {
+      "version": "1.62.1",
+      "resolved": "https://registry.npmjs.org/playwright/-/playwright-1.62.1.tgz",
+      "integrity": "sha512-0M+L3LAD8/nm554LOla9Ayx0j0tmFZ0FBcoQ7F1VuVHpM/XpiC8RcDzBQB8W5+hA8L22THxELzeF+2WcUzvcLg==",
+      "license": "Apache-2.0"
+    },
+    "playwright-core": {
+      "version": "1.62.1",
+      "resolved": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.62.1.tgz",
+      "integrity": "sha512-wPYSwEBJY9GHraISXqyqtx0na0LpO3XEX7jNDhntbex7tzUS7kLnZsOlFruFJB4Hi/rhDMjXGqHewDZ68nYZVw==",
+      "license": "Apache-2.0"
+    }
+  },
+  "vrspace": {
+    "repository": "https://github.com/jalmasi/vrspace",
+    "commit": "61f840a3dd0133fc9d357891f37eb1670b147539",
+    "sourcePath": "babylon/js/core/asset-loader.js",
+    "sourceURL": "https://github.com/jalmasi/vrspace/blob/61f840a3dd0133fc9d357891f37eb1670b147539/babylon/js/core/asset-loader.js",
+    "sourceSha256": "1afa505b193dac8f60ee54ea7ccdfd60e9a0620cf561fa393aa570055d23fa06",
+    "license": "Apache-2.0",
+    "licenseSource": "LICENSE",
+    "licenseSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "modifications": [],
+    "evaluatedScope": "Real-browser load, instance, shared-container identity and cleanup using synthetic F03 prop with Babylon 9.30.0",
+    "notEvaluated": [
+      "VRSpace WorldManager",
+      "XR helper",
+      "avatar IK",
+      "editor",
+      "Java server",
+      "OpenVidu",
+      "multi-user state"
+    ]
+  },
+  "historicalBrowser": {
+    "source": "https://storage.googleapis.com/chrome-for-testing-public/151.0.7922.34/linux64/chrome-headless-shell-linux64.zip",
+    "bytes": 120231126,
+    "sha256": "3cfc2bd00d1bafcf8a68dc74c9c92bb7150ddc8d26ade948a776316e1cec4f14",
+    "version": "151.0.7922.34",
+    "playwright": "1.62.1",
+    "executableName": "chrome-headless-shell",
+    "role": "Browser used for the historical local run; binary is not vendored."
+  }
+}

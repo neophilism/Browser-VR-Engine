@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "mode": "local",
+  "purpose": "Unaffected evaluation stages after explicit automatic-review audit rejection",
+  "startedAt": "2026-10-17T22:47:24.570Z",
+  "complete": false,
+  "commands": [
+    {
+      "id": "f04-install",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "node",
+        "scripts/bootstrap.mjs"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:47:24.575Z",
+      "finishedAt": "2026-10-17T22:47:25.056Z",
+      "durationMs": 481
+    },
+    {
+      "id": "f04-source",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "node",
+        "scripts/checkout-test-source.mjs"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:47:25.058Z",
+      "finishedAt": "2026-10-17T22:47:25.260Z",
+      "durationMs": 202
+    },
+    {
+      "id": "f04-tests",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "npm",
+        "test"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:47:25.261Z",
+      "finishedAt": "2026-10-17T22:47:25.646Z",
+      "durationMs": 385
+    },
+    {
+      "id": "f04-history",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "npm",
+        "run",
+        "verify:evidence"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:47:25.647Z",
+      "finishedAt": "2026-10-17T22:47:25.836Z",
+      "durationMs": 189
+    },
+    {
+      "id": "f04-audit",
+      "cwd": ".",
+      "argv": [
+        "node",
+        "scripts/ci/audit-evaluation.mjs",
+        "f04"
+      ],
+      "outcome": "blocked_auto_review",
+      "exitCode": null,
+      "errorCode": null,
+      "signal": null,
+      "durationMs": 0
+    },
+    {
+      "id": "f05-install",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "install"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:47:25.841Z",
+      "finishedAt": "2026-10-17T22:47:29.493Z",
+      "durationMs": 3652
+    },
+    {
+      "id": "f05-build",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "build"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:47:29.497Z",
+      "finishedAt": "2026-10-17T22:47:30.978Z",
+      "durationMs": 1481
+    },
+    {
+      "id": "f05-tests",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "test-server"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:47:30.980Z",
+      "finishedAt": "2026-10-17T22:47:31.849Z",
+      "durationMs": 869
+    },
+    {
+      "id": "f05-browser-install",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "node_modules/playwright/cli.js",
+        "install",
+        "--with-deps",
+        "chromium"
+      ],
+      "outcome": "skipped_local",
+      "exitCode": null,
+      "errorCode": null,
+      "signal": null,
+      "durationMs": 0
+    },
+    {
+      "id": "f05-browser",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "test"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-17T22:47:31.852Z",
+      "finishedAt": "2026-10-17T22:47:45.708Z",
+      "durationMs": 13856
+    },
+    {
+      "id": "f05-audit",
+      "cwd": ".",
+      "argv": [
+        "node",
+        "scripts/ci/audit-evaluation.mjs",
+        "f05"
+      ],
+      "outcome": "blocked_auto_review",
+      "exitCode": null,
+      "errorCode": null,
+      "signal": null,
+      "durationMs": 0
+    }
+  ],
+  "files": [
+    {
+      "path": "browser/browser-checks.json",
+      "sha256": "c8b9e0f065be0006f5918966d40359d7574762a60ebd1c5d5e128dc3688c668a",
+      "bytes": 271932
+    },
+    {
+      "path": "browser/f05-summary.json",
+      "sha256": "b7483548a4890fdfab06ded87a7196bb382c9350ecd638a0b552b8f217216f09",
+      "bytes": 5742
+    },
+    {
+      "path": "browser/build.json",
+      "sha256": "39c91153603c4c0ae64b90b27ea19721ed672a04e7fe64d6fd273f67bc87e5b4",
+      "bytes": 2701
+    },
+    {
+      "path": "browser/courtyard-verified.png",
+      "sha256": "8ef9b96f24c5a9090fb3bc145f3b59bdf9482799d68506a568fa185155414d57",
+      "bytes": 138062
+    }
+  ],
+  "failures": [],
+  "blockers": [
+    "Fresh npm registry audits were rejected by automatic approval review. No audit is attempted or represented as passed."
+  ],
+  "headSha": "64c3dbfc8818c4ebaac64f94103f26815e539c96",
+  "dirty": true,
+  "browser": {
+    "runDirectory": "artifacts/runs/run-ehkREb",
+    "startedAt": "2026-10-17T22:47:32.172Z",
+    "finishedAt": "2026-10-17T22:47:44.714Z",
+    "reportSha256": "c8b9e0f065be0006f5918966d40359d7574762a60ebd1c5d5e128dc3688c668a",
+    "summarySha256": "b7483548a4890fdfab06ded87a7196bb382c9350ecd638a0b552b8f217216f09",
+    "buildSha256": "39c91153603c4c0ae64b90b27ea19721ed672a04e7fe64d6fd273f67bc87e5b4"
+  },
+  "finishedAt": "2026-10-17T22:47:45.806Z"
+}

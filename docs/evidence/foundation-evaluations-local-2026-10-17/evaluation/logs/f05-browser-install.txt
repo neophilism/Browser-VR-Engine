@@ -1,0 +1,1 @@
+Not executed: local diagnostics use the already installed browser.

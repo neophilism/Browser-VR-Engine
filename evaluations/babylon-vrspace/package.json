@@ -1,0 +1,28 @@
+{
+  "name": "@browser-vr-engine/evaluation-babylon-vrspace",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "node run.mjs build",
+    "start": "node run.mjs serve",
+    "test": "node run.mjs test",
+    "test:server": "node run.mjs test-server",
+    "browser:install": "node run.mjs browser-install",
+    "audit": "node run.mjs audit"
+  },
+  "dependencies": {
+    "@babylonjs/core": "9.30.0",
+    "@babylonjs/loaders": "9.30.0",
+    "@babylonjs/serializers": "9.30.0",
+    "@dimforge/rapier3d-compat": "0.21.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "playwright": "1.62.1"
+  }
+}

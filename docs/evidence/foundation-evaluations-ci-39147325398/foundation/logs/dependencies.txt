@@ -1,0 +1,5 @@
+
+> browser-vr-engine-workspace@0.0.0 check:dependencies
+> node scripts/check-dependencies.mjs
+
+passed: No reported dependency advisories

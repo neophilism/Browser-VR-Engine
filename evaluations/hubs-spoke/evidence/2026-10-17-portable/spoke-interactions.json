@@ -1,0 +1,263 @@
+{
+  "runId": "run-2026-10-17T22-11-00-344Z-spoke-browser-93e22b24",
+  "candidate": "Spoke",
+  "status": "passed-editor-subset",
+  "F04": "blocked",
+  "startedAt": "2026-10-17T22:11:00.345Z",
+  "node": "v24.19.0",
+  "adaptationVersion": "f04-spoke-wrapper-2",
+  "fixturePins": {
+    "catalogDigest": "ae8f38424e68be31dd85acc066abbb96322cead3d90f580089b89a18d3039593",
+    "deviceTargetDigest": "c3f2dcce2e56da61f1999dc4056d165adbe9ff1601fc93bdf62dfc493e0080f6",
+    "fixtureSetId": "bve-foundation-0.1.0",
+    "scenarioDigest": "6547e68553d86e8294f2d2ea09413bfb45b7c773ba6942a0f25166835d099848",
+    "schemaDigest": "ef7de9b6f72e18063253c28cec464cf09d6fcc0d0e3795ff86f3108947f1224b",
+    "schemaVersion": "0.1.0",
+    "thresholdDigest": "36ca04ae7a569ba2e4c8fc6804db9620ca5a7ca5f63d527ad83cf880611d2a14",
+    "workloadDigest": "b105f1b7772ce039a5d43d098762bef459288ba447019bc6fc8c3dfcd8979e7b",
+    "worldDigest": "c18f890d75db0a8f7124ee14a230751c53aea5f7346b68c130cb499704b7b667"
+  },
+  "observations": {
+    "loaded": {
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "canvas": {
+        "width": 883,
+        "height": 654
+      },
+      "video": {
+        "width": 1280,
+        "height": 720
+      },
+      "skinnedMeshes": 1,
+      "sources": [
+        {
+          "name": "music-corner-0-audio",
+          "audioType": "pannernode",
+          "gain": 1
+        },
+        {
+          "name": "music-corner-1-audio",
+          "audioType": "pannernode",
+          "gain": 1
+        },
+        {
+          "name": "music-corner-2-audio",
+          "audioType": "pannernode",
+          "gain": 1
+        },
+        {
+          "name": "music-corner-3-audio",
+          "audioType": "pannernode",
+          "gain": 1
+        },
+        {
+          "name": "bird-audio",
+          "audioType": "pannernode",
+          "gain": 0.2
+        },
+        {
+          "name": "wall-screen",
+          "audioType": "pannernode",
+          "gain": 1
+        }
+      ],
+      "sourceCount": 6,
+      "projectNodes": 70
+    },
+    "beforeEdit": {
+      "prop": [
+        -4,
+        0.6,
+        2
+      ],
+      "colliderParent": "prop-0",
+      "colliderWorldPosition": [
+        -4,
+        0.6,
+        2
+      ],
+      "screenSize": [
+        5.333333333333333,
+        3
+      ],
+      "screenAudioType": "pannernode",
+      "screenSource": "https://127.0.0.1:9194/fixtures/media/screen-marker.webm"
+    },
+    "uiEdit": {
+      "prop": [
+        2,
+        1,
+        2
+      ],
+      "colliderParent": "prop-0",
+      "colliderWorldPosition": [
+        2,
+        1,
+        2
+      ],
+      "screenSize": [
+        5.333333333333333,
+        3
+      ],
+      "screenAudioType": "pannernode",
+      "screenSource": "https://127.0.0.1:9194/fixtures/media/screen-marker.webm"
+    },
+    "glbExport": {
+      "bytes": 45156,
+      "sha256": "257819377db2b01cc5e98337f0f277524667ba3c24bdca1af33097890c0f2a9a",
+      "nodes": 166,
+      "meshes": 6,
+      "skins": 1,
+      "animations": 2,
+      "extensions": [
+        "MOZ_hubs_components"
+      ]
+    },
+    "projectReload": {
+      "prop": [
+        2,
+        1,
+        2
+      ],
+      "colliderParent": "prop-0",
+      "colliderWorldPosition": [
+        2,
+        1,
+        2
+      ],
+      "screenSize": [
+        5.333333333333333,
+        3
+      ],
+      "screenAudioType": "pannernode",
+      "screenSource": "https://127.0.0.1:9194/fixtures/media/screen-marker.webm"
+    }
+  },
+  "passedChecks": [
+    "Actual courtyard glTF and skinned creature loaded in the editor",
+    "Fixture video decoded at 1280 by 720",
+    "Six mapped spatial emitters exist",
+    "Initial movable prop uses the frozen transform",
+    "Numeric field edits move prop to [2,1,2]",
+    "Collision proxy follows its edited prop",
+    "Screen retains the F03 physical size of 5.333 by 3 meters",
+    "Native GLB export includes a skin and both source animation clips",
+    "Native project reload preserves the edited prop",
+    "Native project reload preserves the collider relationship",
+    "Native project reload preserves screen physical size",
+    "Native project reload preserves the positional video setting",
+    "No uncaught browser page exceptions"
+  ],
+  "errors": [],
+  "blockedHosts": [
+    "fonts.googleapis.com",
+    "www.google-analytics.com"
+  ],
+  "limitations": [
+    "A real desktop browser editor subset, not a completed F03 QualificationAdapter scenario.",
+    "Selection uses the public editor API; numeric position fields are changed through real browser input.",
+    "Export uses the unmodified native editor.exportScene API with combineMeshes/removeUnusedObjects disabled.",
+    "The serialized native project is reloaded. The exported GLB is inspected, not reimported into Hubs.",
+    "No Reticulum/Dialog, second participant, reconnect, shared media synchronization, authoritative dynamic physics, actual headset, mobile hardware, frame-time route, or capacity evidence.",
+    "Native spatial-audio settings are preserved; this check is not an audible localization/mixing/occlusion/headset verification."
+  ],
+  "source": {
+    "repository": "https://github.com/Hubs-Foundation/Spoke.git",
+    "commit": "bd812b0316a05a63ca989e74c8c88c4062b41606",
+    "files": {
+      "package.json": "87f66989b7f8019e08a8728615dfd9b6a53e48c235f0acef222c848d3837ee56",
+      "yarn.lock": "82e60b9d1c5cf3484a8fda02f21135bb20585352621cdec2c7b5b57ef55225b7"
+    },
+    "changedFiles": [
+      "package.json",
+      "yarn.lock"
+    ]
+  },
+  "runnerFingerprints": {
+    "fixture-pins.json": "b97cf8e32a92ebc78d61df5aa8d997b0bf8545e838c1819f661f10e008dff628",
+    "package-lock.json": "a328c9c6e6687fea6af89df053e94f3770ba7ef59ef1301d86e5cb474c6e7978",
+    "package.json": "7ceaadf5b6fa4421a3b6b4d5a479bd6f752e736f1f4a4c0dad0d9f3217fa6653",
+    "patches/spoke-node24-and-downloads.patch": "cf2544c7e84b2e440fe5d20f05a69fa6ebd182e7592102e1da53ec5bbaea5831",
+    "scripts/bootstrap.mjs": "07a34292cba2c2e15c9359ab19b0e3cd031932c839485e187c416f617f198941",
+    "scripts/browser-support.mjs": "ae8332cfcb65f0c5e4cafcde6d933b10d3a0c0477231004b247cb95668404451",
+    "scripts/build-hubs.mjs": "95ae386c95faa269ef9f79bf212464bea8723955f608852e6dee019c0f218d83",
+    "scripts/compose-preflight.mjs": "ec3a1f6df87f32686c4fa1841c1ea8e139e89ecc7ee67d81bcf32e46708b07b5",
+    "scripts/config.mjs": "2010dd1003678bab7136eb8afc1771b78fd20a7c61965196bc8521ec4180ff02",
+    "scripts/environment.mjs": "1377949e15508ba004f0ec3435b60b3b83122dfe7c7c0b237f77ec451f225c27",
+    "scripts/evaluate-spoke.mjs": "620e5a15424f59cf5f114de0d59e9ce870938f47cbf98ff39b7c9aef843601cf",
+    "scripts/evaluation.test.mjs": "f82d6555b82e666fefbeac3b92fc96886d2bcd93b9be803441bafe484944bfea",
+    "scripts/fixtures.mjs": "2e5ddd90c6aa5d107656d9fb7c720f5dce0ff999616f6944c1562a4f6905db59",
+    "scripts/install-browser.mjs": "0c96eba686d140ff9509e0bbe64764d86b273548dd2e659bc9ea31111178d63b",
+    "scripts/lib.mjs": "1787b96c4d1401e832284e2cc24313da2edf56408ccd05348347b45a930f5fbb",
+    "scripts/prepare-fixtures.mjs": "ffdb0a4671945e2be8bfa8009ebca0308b19950d7286231322e26824125b451f",
+    "scripts/setup.mjs": "4147858577b83520169d82af5da164b81adc7dd586153ac636523aa45b05979b",
+    "scripts/sources.mjs": "837ac8565524359698a5d6c80859b0cc0a0141f7501e0dc327a58f72bb8dee07",
+    "scripts/verify-evidence.mjs": "00da9c080359d44d0e4f04b2a268320992483c6e3076ea3661594ee56c4e9b0b",
+    "source-pins.json": "0dc1d4841e8c5f84d3e3ac2cb3b15b8e23a15debea346669e0598001bd0d88b6"
+  },
+  "adaptation": {
+    "adaptationVersion": "f04-spoke-wrapper-2",
+    "worldRevision": "2c7c8a716361aa59aedfa67433074cf0bb0cad4cef77494320024042bae95336",
+    "comparison": {
+      "catalogDigest": "ae8f38424e68be31dd85acc066abbb96322cead3d90f580089b89a18d3039593",
+      "deviceTargetDigest": "c3f2dcce2e56da61f1999dc4056d165adbe9ff1601fc93bdf62dfc493e0080f6",
+      "fixtureSetId": "bve-foundation-0.1.0",
+      "scenarioDigest": "6547e68553d86e8294f2d2ea09413bfb45b7c773ba6942a0f25166835d099848",
+      "schemaDigest": "ef7de9b6f72e18063253c28cec464cf09d6fcc0d0e3795ff86f3108947f1224b",
+      "schemaVersion": "0.1.0",
+      "thresholdDigest": "36ca04ae7a569ba2e4c8fc6804db9620ca5a7ca5f63d527ad83cf880611d2a14",
+      "workloadDigest": "b105f1b7772ce039a5d43d098762bef459288ba447019bc6fc8c3dfcd8979e7b",
+      "worldDigest": "c18f890d75db0a8f7124ee14a230751c53aea5f7346b68c130cb499704b7b667"
+    },
+    "projectEntities": 69,
+    "fixtureFiles": 19,
+    "mappings": [
+      "Byte-identical F03 glTF, audio, and video assets wrapped in a native Spoke project.",
+      "Right-handed meters, +Y up, XYZW rotation converted to the pinned Three.js XYZ Euler convention.",
+      "Box collider children follow the edited model; collider-only architectural proxies keep their world transforms.",
+      "Video aspect compensation preserves the F03 unit-quad physical size.",
+      "All six positional emitters retain source, gain, reference distance, rolloff and native panner selection."
+    ],
+    "unmapped": [
+      "Dynamic mass, collisions during play, grabbing, throwing and authoritative ownership are not simulated by this editor wrapper.",
+      "Native maxDistance is not the F03 fadeStart-to-cutoff envelope; audio buses and synchronized playback IDs need a runtime adapter.",
+      "Bird motion route and requested animation playback are not executed by this wrapper; skin/clip presence is inspected on export.",
+      "The editor camera/Spawn Point from the template does not implement the F03 observer locomotion scenario.",
+      "Native project serialization is tested for selected mapped fields; complete canonical-world semantic roundtrip is not implemented."
+    ]
+  },
+  "browser": "151.0.7922.34",
+  "softwareRenderingRequested": true,
+  "sourceAfterRun": {
+    "repository": "https://github.com/Hubs-Foundation/Spoke.git",
+    "commit": "bd812b0316a05a63ca989e74c8c88c4062b41606",
+    "files": {
+      "package.json": "87f66989b7f8019e08a8728615dfd9b6a53e48c235f0acef222c848d3837ee56",
+      "yarn.lock": "82e60b9d1c5cf3484a8fda02f21135bb20585352621cdec2c7b5b57ef55225b7"
+    },
+    "changedFiles": [
+      "package.json",
+      "yarn.lock"
+    ]
+  },
+  "serverExit": {
+    "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "args": [
+      "/workspace/scratch/dc98dcd2981d/engine_work/hubs-eval/spoke/node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+      "--mode",
+      "development",
+      "--content-base",
+      "/workspace/scratch/dc98dcd2981d/engine_work/f04-port/evaluations/hubs-spoke/artifacts/runs/run-2026-10-17T22-11-00-344Z-spoke-browser-93e22b24/served"
+    ],
+    "startedAt": "2026-10-17T22:11:00.394Z",
+    "finishedAt": "2026-10-17T22:11:19.023Z",
+    "exitCode": 0,
+    "signal": null,
+    "processError": null,
+    "timedOut": false,
+    "success": true,
+    "log": "spoke-server.log"
+  },
+  "finishedAt": "2026-10-17T22:11:19.023Z"
+}

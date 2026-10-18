@@ -3,7 +3,7 @@
   "scopes": [
     { "id": "foundation", "status": "required", "activationCard": "F02", "reason": "Real build, unit, package-consumer, policy and evidence tests exist." },
     { "id": "integration", "status": "not_applicable", "activationCard": "F08", "reason": "No control API, database, queue or object-storage service exists yet." },
-    { "id": "browser", "status": "not_applicable", "activationCard": "F04", "reason": "No browser runtime exists yet. Foundation qualification adds real browser fixtures; hardware evidence remains separate." },
+    { "id": "browser", "status": "required", "activationCard": "F04", "reason": "Isolated F05 real-browser and F04 evaluation-toolkit checks have a required runner; full candidate services, target hardware and headset qualification remain separate and incomplete." },
     { "id": "migration", "status": "not_applicable", "activationCard": "F08", "reason": "No durable database schema or migration exists yet." }
   ]
 }

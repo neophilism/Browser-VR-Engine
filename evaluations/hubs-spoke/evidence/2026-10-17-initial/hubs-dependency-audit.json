@@ -1,0 +1,10 @@
+{
+  "source": "986d07a758e9d1184cb355385c6460391bd238d0",
+  "observedAt": "2026-10-17T21:50:01.187Z",
+  "exitCode": null,
+  "processError": "ETIMEDOUT",
+  "report": {
+    "error": "Invalid or missing registry JSON"
+  },
+  "diagnostic": ""
+}

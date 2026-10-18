@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "kind": "local-review-evidence",
+  "hostedAcceptance": false,
+  "fullFoundationQualification": false,
+  "auditStatus": "blocked_auto_review",
+  "sourceIdentity": "The retained browser report binds all19 source files,11 build inputs,three outputs and the frozen F03 resources. The working checkout was dirty and this is not a head-bound hosted receipt.",
+  "separateReview": "Implementation/testing was followed by assistant self security review, including a second read-only agent review; neither is independent human approval.",
+  "files": [
+    {
+      "path": "evaluation/browser/browser-checks.json",
+      "bytes": 271932,
+      "sha256": "c8b9e0f065be0006f5918966d40359d7574762a60ebd1c5d5e128dc3688c668a"
+    },
+    {
+      "path": "evaluation/browser/build.json",
+      "bytes": 2701,
+      "sha256": "39c91153603c4c0ae64b90b27ea19721ed672a04e7fe64d6fd273f67bc87e5b4"
+    },
+    {
+      "path": "evaluation/browser/courtyard-verified.png",
+      "bytes": 138062,
+      "sha256": "8ef9b96f24c5a9090fb3bc145f3b59bdf9482799d68506a568fa185155414d57"
+    },
+    {
+      "path": "evaluation/browser/f05-summary.json",
+      "bytes": 5742,
+      "sha256": "b7483548a4890fdfab06ded87a7196bb382c9350ecd638a0b552b8f217216f09"
+    },
+    {
+      "path": "evaluation/logs/f04-audit.txt",
+      "bytes": 118,
+      "sha256": "644a00420d3ab369f7c5868636e31eb2521e5429e2baaad238e5e3603f78f9ac"
+    },
+    {
+      "path": "evaluation/logs/f04-history.txt",
+      "bytes": 301,
+      "sha256": "a7655b85b2e6f6e655ef301e3f43edb69dadc325f60ac92ceff38491fe17efc2"
+    },
+    {
+      "path": "evaluation/logs/f04-install.txt",
+      "bytes": 173,
+      "sha256": "2ecba24cdb4e80b2c2e7814adb615876d6cab36b70822fe907e729d17b340351"
+    },
+    {
+      "path": "evaluation/logs/f04-source.txt",
+      "bytes": 128,
+      "sha256": "d3235fdcc622846d6bc93974325e344cdc0cccd00be05f74c3dbb1aefd32a224"
+    },
+    {
+      "path": "evaluation/logs/f04-tests.txt",
+      "bytes": 1041,
+      "sha256": "37540bbe1a56eafc2e1e2b048a1f170c13331c0739f7a08a286d949368334d78"
+    },
+    {
+      "path": "evaluation/logs/f05-audit.txt",
+      "bytes": 118,
+      "sha256": "644a00420d3ab369f7c5868636e31eb2521e5429e2baaad238e5e3603f78f9ac"
+    },
+    {
+      "path": "evaluation/logs/f05-browser-install.txt",
+      "bytes": 67,
+      "sha256": "4f399e48fb2ff68e04f76318fdbbe09073b207aab68eb003987f3fac1a84ade6"
+    },
+    {
+      "path": "evaluation/logs/f05-browser.txt",
+      "bytes": 984,
+      "sha256": "3435574e9e3776d33a55f9229426197195885b6f84c5631c579193905596254c"
+    },
+    {
+      "path": "evaluation/logs/f05-build.txt",
+      "bytes": 172,
+      "sha256": "f86e2b6f5d5f8ef2944acb0fc9618d4b816e468c21055b4203186439c5840c7d"
+    },
+    {
+      "path": "evaluation/logs/f05-install.txt",
+      "bytes": 24,
+      "sha256": "9e859e320ecda3b7ac855a0609ad122a490ee6264598a2839789723914dc0773"
+    },
+    {
+      "path": "evaluation/logs/f05-tests.txt",
+      "bytes": 2781,
+      "sha256": "6435c05378d70895d56e65dcc9485511cc28beca8e942a1f2cae9d302e90914a"
+    },
+    {
+      "path": "evaluation/manifest.json",
+      "bytes": 5487,
+      "sha256": "47e029cd4b543a39d08966efbe356219fcb390f46ea6a07f9c57b7827a148947"
+    },
+    {
+      "path": "foundation/check.txt",
+      "bytes": 16473,
+      "sha256": "26578b3b27e60ff13646128061e4b6af8812c231b66eb23c78c6cd9be9ac6925"
+    },
+    {
+      "path": "foundation/consumer.txt",
+      "bytes": 263,
+      "sha256": "b70373de193d55366a7509d6b5c277dc84179256043192e48a139030110c372a"
+    },
+    {
+      "path": "foundation/example.txt",
+      "bytes": 877,
+      "sha256": "2d27e68eff6e50d9447eaeaa621427bb66c8e853a2cceef6c0c055bdcc98e160"
+    },
+    {
+      "path": "foundation/install.txt",
+      "bytes": 28,
+      "sha256": "ed6d787b14921ad8b8d211d5953084ff508e330728931c1041c6b274562c6aae"
+    },
+    {
+      "path": "foundation/manifest.json",
+      "bytes": 1739,
+      "sha256": "11a251d028aeb14a3cdd769cecc164c506f9a8651a3a6f8ef18b382e5f17a72f"
+    },
+    {
+      "path": "foundation/sharding.txt",
+      "bytes": 215,
+      "sha256": "476f29e3597e2f519c7c1ca07931b8f5daeaacd51ba73a62b2dd3a9e8be72d55"
+    },
+    {
+      "path": "rejected-mixed-build/logs/f05-tests.txt",
+      "bytes": 3941,
+      "sha256": "5400fa91961d5f4fac6555bb2f7b52a5ddefad3879524074a1bfe66394fda7e1"
+    },
+    {
+      "path": "rejected-mixed-build/manifest.json",
+      "bytes": 3420,
+      "sha256": "bdd4cd5bf42ff66c6d1b9b130fbad31ed74cf27e1be973d86afa6c1559e4fdf2"
+    },
+    {
+      "path": "rejected-mixed-build/mixed-build-before.json",
+      "bytes": 2422,
+      "sha256": "61654032d212182c13a9d5468da0c8faf2fb8bdcff490135fd11efaf637b28de"
+    }
+  ]
+}

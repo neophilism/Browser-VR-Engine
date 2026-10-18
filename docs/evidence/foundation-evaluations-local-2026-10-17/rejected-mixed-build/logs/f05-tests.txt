@@ -1,0 +1,55 @@
+✔ oversized File is rejected before arrayBuffer is called (1.665119ms)
+✔ File length mismatch is rejected before decoding (0.222074ms)
+✔ ordinary embedded triangle and equivalent GLB retain explicit allocation budgets (1.734624ms)
+✔ tiny unbuffered accessors cannot request huge or non-integer allocations (0.853777ms)
+✔ aggregate accessor allocation budget applies across individually valid declarations (0.306752ms)
+✔ buffer declarations and spans must fit actual embedded bytes (0.812415ms)
+✔ sparse allocations and ranges are checked before loader allocation (1.102031ms)
+✔ external and disguised resource URIs are rejected in both GLB and glTF (2.587349ms)
+✔ optional decoders and URI/media extensions are rejected as well as required extensions (0.874677ms)
+✔ allowed material extension remains usable but must be declared (0.603159ms)
+✔ cyclic, multiply-parented, and deeply nested node graphs are rejected (1.483215ms)
+✔ repeated mesh references have a separate rendered vertex budget (0.360513ms)
+✔ reused index accessors cannot multiply draw work without a bound (0.455316ms)
+✔ reused animation input cannot multiply allocated key objects without a bound (0.496679ms)
+✔ duplicate texture references count their separate pixel allocations (0.684081ms)
+✔ oversized compressed-image dimensions are rejected before browser decoding (0.669539ms)
+✔ large JSON and unsafe object keys fail without loader invocation (15.010958ms)
+✔ truncated, misaligned, extra and duplicate GLB chunks are rejected (0.470529ms)
+✔ teleport propagation keeps controller queries at a valid nonpenetrating pose (131.979612ms)
+✔ paired worklet measures actual same-block gain and reports per-sample extrema (7.855436ms)
+✔ paired worklet marks mismatched channels and non-finite samples invalid (11.111502ms)
+✔ paired worklet stops processing after its disposal message (1.407701ms)
+✔ paired worklet bounds both the unacknowledged port and pending window queue (257.588765ms)
+✔ paired window receiver rejects malformed channel, timing and numeric envelopes (0.521836ms)
+✔ paired window receiver bounds retained history and rejects replayed ranges (0.947998ms)
+✖ loopback server exposes only verified evaluation assets and supports media ranges (16.316474ms)
+✔ changed fixture bytes and fixture symlinks outside their package fail before serving (23.366227ms)
+✖ stale build evidence prevents a browser from testing a different bundle (11.013083ms)
+✔ credential-free launcher does not read or forward unrelated environment entries (1.807554ms)
+✔ vendored VRSpace module retains the pinned upstream source identity (0.387374ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 28
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 566.995379
+
+✖ failing tests:
+
+test at test/local-server.test.mjs:86:1
+✖ loopback server exposes only verified evaluation assets and supports media ranges (16.316474ms)
+  Error: Evaluation build is stale; run node run.mjs build
+      at startEvaluationServer (file:///workspace/scratch/dc98dcd2981d/Browser-VR-Engine/evaluations/babylon-vrspace/server.mjs:18:83)
+      at async TestContext.<anonymous> (file:///workspace/scratch/dc98dcd2981d/Browser-VR-Engine/evaluations/babylon-vrspace/test/local-server.test.mjs:87:18)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at test/local-server.test.mjs:134:1
+✖ stale build evidence prevents a browser from testing a different bundle (11.013083ms)
+  TypeError: Cannot set properties of undefined (setting 'sha256')
+      at TestContext.<anonymous> (file:///workspace/scratch/dc98dcd2981d/Browser-VR-Engine/evaluations/babylon-vrspace/test/local-server.test.mjs:140:38)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

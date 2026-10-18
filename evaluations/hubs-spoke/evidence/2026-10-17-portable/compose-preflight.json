@@ -1,0 +1,37 @@
+{
+  "runId": "run-2026-10-17T22-11-45-503Z-compose-preflight-70510cce",
+  "status": "blocked",
+  "servicesStarted": false,
+  "observedAt": "2026-10-17T22:11:45.505Z",
+  "limitations": [
+    "Compose bin/init clones additional unpinned services and uses development configuration; it is not an approved production deployment recipe."
+  ],
+  "source": {
+    "repository": "https://github.com/Hubs-Foundation/hubs-compose.git",
+    "commit": "54cc996394e715d32aa71c9cf9df4898b1ea1a57",
+    "files": {
+      "bin/init": "4d51fd50c243c38a77284cb88dadcafef0facb415353108b90588168c8f03e5a"
+    },
+    "changedFiles": []
+  },
+  "tools": {
+    "mutagen-compose": false,
+    "docker": false,
+    "docker-compose": false
+  },
+  "initAttempt": {
+    "command": "bash",
+    "args": [
+      "bin/init"
+    ],
+    "startedAt": "2026-10-17T22:11:45.523Z",
+    "finishedAt": "2026-10-17T22:11:45.527Z",
+    "exitCode": 1,
+    "signal": null,
+    "processError": null,
+    "timedOut": false,
+    "success": false,
+    "log": "compose-init-blocked.log"
+  },
+  "reason": "Missing mutagen-compose; the pinned init exits before any service operation. Docker tooling is recorded separately."
+}

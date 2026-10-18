@@ -56,8 +56,8 @@ test('artifact identities are deterministic and distinguish retries; unsafe name
 });
 
 test('the job aggregate requires the exact expected job set and successful outcomes', () => {
-  assert.equal(requiredJobsPassed({ checks: 'success' }), true);
-  for (const result of [{}, { unrelated: 'success' }, { checks: 'success', unrelated: 'success' }, { checks: 'skipped' }, { checks: 'neutral' }, { checks: 'failure' }, { checks: 'cancelled' }]) assert.equal(requiredJobsPassed(result), false);
+  assert.equal(requiredJobsPassed({ checks: 'success', evaluations: 'success' }), true);
+  for (const result of [{}, { unrelated: 'success' }, { checks: 'success' }, { checks: 'success', unrelated: 'success' }, { checks: 'skipped', evaluations: 'success' }, { checks: 'neutral', evaluations: 'success' }, { checks: 'success', evaluations: 'failure' }, { checks: 'success', evaluations: 'cancelled' }]) assert.equal(requiredJobsPassed(result), false);
   assert.equal(requiredJobsPassed({ checks: 'success' }, ['checks', 'browser']), false);
 });
 

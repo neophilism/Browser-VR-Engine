@@ -1,0 +1,31 @@
+✔ oversized File is rejected before arrayBuffer is called (1.345547ms)
+✔ File length mismatch is rejected before decoding (0.254403ms)
+✔ ordinary embedded triangle and equivalent GLB retain explicit allocation budgets (2.884216ms)
+✔ tiny unbuffered accessors cannot request huge or non-integer allocations (0.779765ms)
+✔ aggregate accessor allocation budget applies across individually valid declarations (0.391651ms)
+✔ buffer declarations and spans must fit actual embedded bytes (1.079977ms)
+✔ sparse allocations and ranges are checked before loader allocation (0.488366ms)
+✔ external and disguised resource URIs are rejected in both GLB and glTF (1.124965ms)
+✔ optional decoders and URI/media extensions are rejected as well as required extensions (0.500324ms)
+✔ allowed material extension remains usable but must be declared (0.425401ms)
+✔ cyclic, multiply-parented, and deeply nested node graphs are rejected (1.918932ms)
+✔ repeated mesh references have a separate rendered vertex budget (0.230207ms)
+✔ reused index accessors cannot multiply draw work without a bound (0.349667ms)
+✔ reused animation input cannot multiply allocated key objects without a bound (0.268825ms)
+✔ duplicate texture references count their separate pixel allocations (0.396578ms)
+✔ oversized compressed-image dimensions are rejected before browser decoding (0.509027ms)
+✔ large JSON and unsafe object keys fail without loader invocation (11.105504ms)
+✔ truncated, misaligned, extra and duplicate GLB chunks are rejected (0.315105ms)
+✔ loopback server exposes only verified evaluation assets and supports media ranges (161.396667ms)
+✔ changed fixture bytes and fixture symlinks outside their package fail before serving (32.687665ms)
+✔ stale build evidence prevents a browser from testing a different bundle (67.990249ms)
+✔ credential-free launcher does not read or forward unrelated environment entries (1.569095ms)
+✔ vendored VRSpace module retains the pinned upstream source identity (0.303807ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 323.141786

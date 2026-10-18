@@ -1,0 +1,6846 @@
+{
+  "scope": "F05 local browser adaptation evidence; partial evaluation, not production-card or hardware acceptance",
+  "qualificationStatus": "incomplete",
+  "startedAt": "2026-10-17T22:00:53.435Z",
+  "timestamp": "2026-10-17T22:01:04.503Z",
+  "candidate": {
+    "babylon": "9.30.0",
+    "rapier": "0.21.0",
+    "vrspaceCommit": "61f840a3dd0133fc9d357891f37eb1670b147539"
+  },
+  "environment": {
+    "browser": "151.0.7922.34",
+    "playwright": "1.62.1",
+    "flags": [
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader",
+      "--autoplay-policy=document-user-activation-required"
+    ],
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "dpr": 1
+    },
+    "graphicsMode": "SwiftShader",
+    "physicalGPU": false,
+    "physicalHeadset": false,
+    "physicalAudio": false,
+    "subprocessEnvironment": "Explicit evaluation allowlist; isolated tool home/cache; browser subprocess also receives only the allowlist."
+  },
+  "fixtureDigests": {
+    "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+    "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+    "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+    "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+    "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+    "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+    "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+    "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+  },
+  "comparison": {
+    "catalogDigest": "ae8f38424e68be31dd85acc066abbb96322cead3d90f580089b89a18d3039593",
+    "deviceTargetDigest": "c3f2dcce2e56da61f1999dc4056d165adbe9ff1601fc93bdf62dfc493e0080f6",
+    "fixtureSetId": "bve-foundation-0.1.0",
+    "scenarioDigest": "6547e68553d86e8294f2d2ea09413bfb45b7c773ba6942a0f25166835d099848",
+    "schemaDigest": "ef7de9b6f72e18063253c28cec464cf09d6fcc0d0e3795ff86f3108947f1224b",
+    "schemaVersion": "0.1.0",
+    "thresholdDigest": "36ca04ae7a569ba2e4c8fc6804db9620ca5a7ca5f63d527ad83cf880611d2a14",
+    "workloadDigest": "b105f1b7772ce039a5d43d098762bef459288ba447019bc6fc8c3dfcd8979e7b",
+    "worldDigest": "c18f890d75db0a8f7124ee14a230751c53aea5f7346b68c130cb499704b7b667"
+  },
+  "build": {
+    "schemaVersion": 1,
+    "inputs": {
+      "src/main.js": {
+        "bytes": 33651,
+        "sha256": "6dbe975afc4a94659a8ad5575a301ba34c0900862fb01c5bab4311af1cc0af23"
+      },
+      "src/spatial-audio.js": {
+        "bytes": 7129,
+        "sha256": "632b9872f9db5daffafb001eed645e7339597d3c8290ef8f502a626a0789a933"
+      },
+      "index.html": {
+        "bytes": 5174,
+        "sha256": "a67c337d6e20db44affea29188e55d1a3517582bfb70ae68911b46aad3a4a5b1"
+      },
+      "package.json": {
+        "bytes": 708,
+        "sha256": "5e3bda25bcf6001a27f82ff2e0f9280bdd5c0556e81ff7a686652048b082295e"
+      },
+      "package-lock.json": {
+        "bytes": 18199,
+        "sha256": "436da0200e08676a672c3e0e21f2da2ac609e5a3bf0d96f3d1d48c5f4730b8ec"
+      },
+      "fixture-pins.json": {
+        "bytes": 1199,
+        "sha256": "7c561df8f41f3b016b80e6b4d17258bc3d76dbe4bf8a6fde8ec5d7fa0511add9"
+      },
+      "vendor/vrspace/asset-loader.js": {
+        "bytes": 10336,
+        "sha256": "1afa505b193dac8f60ee54ea7ccdfd60e9a0620cf561fa393aa570055d23fa06"
+      },
+      "build.mjs": {
+        "bytes": 1076,
+        "sha256": "57269ec090f099e60c6f3e291c8a51cf2d89edc23b5e728c7e5630c735180bbc"
+      }
+    },
+    "outputs": {
+      "dist/main.js": {
+        "bytes": 22631373,
+        "sha256": "3a1e20b999824fa1256f36d358c4e67961563a762ab64475e4ad7ac7c47f4836"
+      },
+      "dist/main.js.map": {
+        "bytes": 33378347,
+        "sha256": "039562275d040c94306368728a25a266a8031c3e6cedc60a5e3b3ebfad557e0d"
+      }
+    },
+    "fixtureDigests": {
+      "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+      "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+      "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+      "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+      "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+      "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+      "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+      "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+    }
+  },
+  "sourceDigests": {
+    "src/main.js": {
+      "bytes": 33651,
+      "sha256": "6dbe975afc4a94659a8ad5575a301ba34c0900862fb01c5bab4311af1cc0af23"
+    },
+    "src/spatial-audio.js": {
+      "bytes": 7129,
+      "sha256": "632b9872f9db5daffafb001eed645e7339597d3c8290ef8f502a626a0789a933"
+    },
+    "index.html": {
+      "bytes": 5174,
+      "sha256": "a67c337d6e20db44affea29188e55d1a3517582bfb70ae68911b46aad3a4a5b1"
+    },
+    "package.json": {
+      "bytes": 708,
+      "sha256": "5e3bda25bcf6001a27f82ff2e0f9280bdd5c0556e81ff7a686652048b082295e"
+    },
+    "package-lock.json": {
+      "bytes": 18199,
+      "sha256": "436da0200e08676a672c3e0e21f2da2ac609e5a3bf0d96f3d1d48c5f4730b8ec"
+    },
+    "fixture-pins.json": {
+      "bytes": 1199,
+      "sha256": "7c561df8f41f3b016b80e6b4d17258bc3d76dbe4bf8a6fde8ec5d7fa0511add9"
+    },
+    "vendor/vrspace/asset-loader.js": {
+      "bytes": 10336,
+      "sha256": "1afa505b193dac8f60ee54ea7ccdfd60e9a0620cf561fa393aa570055d23fa06"
+    },
+    "build.mjs": {
+      "bytes": 1076,
+      "sha256": "57269ec090f099e60c6f3e291c8a51cf2d89edc23b5e728c7e5630c735180bbc"
+    },
+    "config.mjs": {
+      "bytes": 580,
+      "sha256": "654e3b737b57eb3885290fc8ee97de6e54ecd4ecc319c888273af0a6ecd2cc1c"
+    },
+    "environment.mjs": {
+      "bytes": 1546,
+      "sha256": "f10a4f9eeb72649796768cab08574a75e2ea0d03fdbc065d36c689b506780689"
+    },
+    "fixtures.mjs": {
+      "bytes": 3000,
+      "sha256": "cbd27feb878c42e0e93f60595488a053d7aae9a1900fc8c7715bd1e099671675"
+    },
+    "server.mjs": {
+      "bytes": 4710,
+      "sha256": "aaa9e2e8b645c18cb2b57f7e5b0c2388a9f4829341dd93f4b21e8e2006b5946a"
+    },
+    "run.mjs": {
+      "bytes": 1524,
+      "sha256": "2b07fe0da33c094c8033f558d63db11bfa1274b95ac1bc3778fb1a7d40993017"
+    },
+    "browser-checks.mjs": {
+      "bytes": 21531,
+      "sha256": "c5908e1a08e76c1dea3c2d5f1fd93b31d79c3a182ff916712fe0aed977888a71"
+    },
+    "test/local-server.test.mjs": {
+      "bytes": 5255,
+      "sha256": "0da11d19982bb677e4a492f40502673f58b6cf81a47f2fc1b43d36155376a852"
+    }
+  },
+  "checks": [
+    {
+      "id": "real-render-and-frozen-fixtures",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "entities": 55,
+        "digests": {
+          "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+          "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+          "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+          "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+          "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+          "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+          "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+          "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+        },
+        "assetCount": 10,
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "meshes": 76,
+        "vertices": 1780,
+        "renderer": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+        }
+      }
+    },
+    {
+      "id": "user-start-activation",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "activation": {
+          "isActive": true,
+          "hasBeenActive": true,
+          "at": 3003,
+          "before": "suspended",
+          "after": "running"
+        },
+        "note": "Application deliberately suspends audio until Start; this does not prove browser autoplay enforcement."
+      }
+    },
+    {
+      "id": "animated-skinned-creature-and-attached-source",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "before": {
+          "entityId": "bird",
+          "clip": "flap",
+          "playing": true,
+          "position": [
+            -2.2640000000004665,
+            5,
+            -4
+          ],
+          "frame": 24.107999999988834
+        },
+        "after": {
+          "entityId": "bird",
+          "clip": "flap",
+          "playing": true,
+          "position": [
+            -1.9595000000004665,
+            5,
+            -4
+          ],
+          "frame": 42.371999999983245
+        },
+        "soundPosition": [
+          -1.9594999551773071,
+          5,
+          -4
+        ]
+      }
+    },
+    {
+      "id": "desktop-keyboard-movement",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "before": [
+          5,
+          1.6007000923156738,
+          -4.880544111074414e-7
+        ],
+        "after": [
+          4.999921798706055,
+          1.602540922164917,
+          -0.8999019861221313
+        ]
+      }
+    },
+    {
+      "id": "wall-solid-and-open-arch-traversal",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "wall": {
+          "position": [
+            -11.484990119934082,
+            0.905381977558136,
+            -0.0011027978034690022
+          ],
+          "eye": [
+            -11.484990119934082,
+            1.605381977558136,
+            -0.0011027978034690022
+          ],
+          "grounded": true
+        },
+        "arch": {
+          "position": [
+            -0.00007416733569698408,
+            0.9059494733810425,
+            -4.600008964538574
+          ],
+          "eye": [
+            -0.00007416733569698408,
+            1.6059494733810424,
+            -4.600008964538574
+          ],
+          "grounded": true
+        },
+        "thinBarrier": {
+          "position": [
+            6.000588417053223,
+            0.903295636177063,
+            3.390092372894287
+          ],
+          "eye": [
+            6.000588417053223,
+            1.603295636177063,
+            3.390092372894287
+          ],
+          "grounded": true
+        },
+        "note": "Real browser Rapier controller steps, including 5cm barrier; single local actor, not server-authoritative multiplayer."
+      }
+    },
+    {
+      "id": "visible-pick-grab-and-throw",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "pixel": {
+          "x": 639.9962055401364,
+          "y": 429.3747459791422,
+          "id": "prop-0"
+        },
+        "thrown": {
+          "id": "prop-0",
+          "type": "dynamic",
+          "position": [
+            -4.391094207763672,
+            0.6169131398200989,
+            2.191899299621582
+          ],
+          "velocity": [
+            -0.051187675446271896,
+            -2.656609058380127,
+            6.42260217666626
+          ],
+          "rotation": [
+            0.00006841406866442412,
+            0.0007311015506274998,
+            0.000030933348170947284,
+            0.9999997615814209
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        "after": {
+          "id": "prop-0",
+          "type": "dynamic",
+          "position": [
+            -4.392049312591553,
+            0.5763564109802246,
+            2.7257375717163086
+          ],
+          "velocity": [
+            0.0020235551055520773,
+            0.010260378010571003,
+            -0.06534051895141602
+          ],
+          "rotation": [
+            0.3394329845905304,
+            0.0008054384379647672,
+            -0.00028950677369721234,
+            0.9406298398971558
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        }
+      }
+    },
+    {
+      "id": "four-simultaneous-corner-sources-and-calibrated-gain",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "center": [
+          {
+            "id": "corner-playback-0",
+            "observedGain": 0.11780395351016201,
+            "expectedGain": 0.11780395358800888,
+            "errorDb": -5.739784123170425e-9
+          },
+          {
+            "id": "corner-playback-1",
+            "observedGain": 0.11780414017541573,
+            "expectedGain": 0.1178041398525238,
+            "errorDb": 2.3807343462809584e-8
+          },
+          {
+            "id": "corner-playback-2",
+            "observedGain": 0.11780413980898083,
+            "expectedGain": 0.1178041398525238,
+            "errorDb": -3.210493968908131e-9
+          },
+          {
+            "id": "corner-playback-3",
+            "observedGain": 0.1178043334589786,
+            "expectedGain": 0.11780433356761932,
+            "errorDb": -8.010242999938982e-9
+          }
+        ],
+        "motion": [
+          {
+            "position": [
+              0,
+              1.6,
+              0
+            ],
+            "audio": [
+              {
+                "id": "corner-playback-0",
+                "gain": 0.11767277866601944,
+                "prePannerRms": 0.0073843278508944855
+              },
+              {
+                "id": "corner-playback-1",
+                "gain": 0.1176626980304718,
+                "prePannerRms": 0.007410738301162769
+              },
+              {
+                "id": "corner-playback-2",
+                "gain": 0.1176626980304718,
+                "prePannerRms": 0.00742377793631559
+              },
+              {
+                "id": "corner-playback-3",
+                "gain": 0.11765261739492416,
+                "prePannerRms": 0.0074208633976267264
+              }
+            ]
+          },
+          {
+            "position": [
+              -2,
+              1.6,
+              -2
+            ],
+            "audio": [
+              {
+                "id": "corner-playback-0",
+                "gain": 0.17619280517101288,
+                "prePannerRms": 0.011176920157012873
+              },
+              {
+                "id": "corner-playback-1",
+                "gain": 0.11163410544395447,
+                "prePannerRms": 0.007075315771409896
+              },
+              {
+                "id": "corner-playback-2",
+                "gain": 0.11163410544395447,
+                "prePannerRms": 0.007045550966494488
+              },
+              {
+                "id": "corner-playback-3",
+                "gain": 0.06562518328428268,
+                "prePannerRms": 0.004145699536978283
+              }
+            ]
+          },
+          {
+            "position": [
+              -4,
+              1.6,
+              -4
+            ],
+            "audio": [
+              {
+                "id": "corner-playback-0",
+                "gain": 0.3535533547401428,
+                "prePannerRms": 0.022439705002744222
+              },
+              {
+                "id": "corner-playback-1",
+                "gain": 0.09736078232526779,
+                "prePannerRms": 0.006118817456107065
+              },
+              {
+                "id": "corner-playback-2",
+                "gain": 0.09736078232526779,
+                "prePannerRms": 0.006140520541297131
+              },
+              {
+                "id": "corner-playback-3",
+                "gain": 0,
+                "prePannerRms": 0
+              }
+            ]
+          },
+          {
+            "position": [
+              -5,
+              1.6,
+              -5
+            ],
+            "audio": [
+              {
+                "id": "corner-playback-0",
+                "gain": 0.7071067094802856,
+                "prePannerRms": 0.044401590508402165
+              },
+              {
+                "id": "corner-playback-1",
+                "gain": 0.07521729916334152,
+                "prePannerRms": 0.00475049345227271
+              },
+              {
+                "id": "corner-playback-2",
+                "gain": 0.07521729916334152,
+                "prePannerRms": 0.004747389211531474
+              },
+              {
+                "id": "corner-playback-3",
+                "gain": 0,
+                "prePannerRms": 0
+              }
+            ]
+          }
+        ],
+        "note": "Each source measured separately before HRTF; bird/video are not included in calibration."
+      }
+    },
+    {
+      "id": "listener-turn-changes-left-right-pan-with-fixed-source",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "before": {
+          "id": "corner-playback-0",
+          "sourceType": "AudioBufferSourceNode",
+          "sameContext": true,
+          "position": [
+            -6,
+            1.600000023841858,
+            -6
+          ],
+          "pannerPosition": [
+            -6,
+            1.600000023841858,
+            -6
+          ],
+          "distanceModel": "inverse",
+          "pannerRolloff": 0,
+          "panningModel": "HRTF",
+          "gain": 0.11774545907974243,
+          "inputRms": 0.062615378607074,
+          "prePannerRms": 0.007372676497983507,
+          "rms": 0.009315081987777871,
+          "stereoRms": [
+            0.011465495222705988,
+            0.008765052315773018
+          ],
+          "connections": [
+            "source>distance-gain",
+            "distance-gain>panner",
+            "panner>gain",
+            "gain>shared-output"
+          ],
+          "directSourceToDestination": false,
+          "mediaSourceCount": 0,
+          "video": null
+        },
+        "after": {
+          "id": "corner-playback-0",
+          "sourceType": "AudioBufferSourceNode",
+          "sameContext": true,
+          "position": [
+            -6,
+            1.600000023841858,
+            -6
+          ],
+          "pannerPosition": [
+            -6,
+            1.600000023841858,
+            -6
+          ],
+          "distanceModel": "inverse",
+          "pannerRolloff": 0,
+          "panningModel": "HRTF",
+          "gain": 0.11746543645858765,
+          "inputRms": 0.06310326245780211,
+          "prePannerRms": 0.0074112307823282165,
+          "rms": 0.007904231479758623,
+          "stereoRms": [
+            0.00782262655184898,
+            0.00981050494158944
+          ],
+          "connections": [
+            "source>distance-gain",
+            "distance-gain>panner",
+            "panner>gain",
+            "gain>shared-output"
+          ],
+          "directSourceToDestination": false,
+          "mediaSourceCount": 0,
+          "video": null
+        },
+        "note": "Chromium analyser evidence of panning; no human headphones or perceptual test."
+      }
+    },
+    {
+      "id": "video-single-source-play-pause-seek-loop",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "played": {
+          "id": "wall-playback",
+          "sourceType": "MediaElementAudioSourceNode",
+          "sameContext": true,
+          "position": [
+            0,
+            2.200000047683716,
+            -11.699999809265137
+          ],
+          "pannerPosition": [
+            0,
+            2.200000047683716,
+            -11.699999809265137
+          ],
+          "distanceModel": "inverse",
+          "pannerRolloff": 0,
+          "panningModel": "HRTF",
+          "gain": 0.2668081820011139,
+          "inputRms": 0,
+          "prePannerRms": 0,
+          "rms": 0,
+          "stereoRms": [
+            0,
+            0
+          ],
+          "connections": [
+            "source>distance-gain",
+            "distance-gain>panner",
+            "panner>gain",
+            "gain>shared-output"
+          ],
+          "directSourceToDestination": false,
+          "mediaSourceCount": 1,
+          "video": {
+            "paused": false,
+            "currentTime": 1.809129,
+            "duration": 2.003,
+            "loop": true,
+            "muted": false,
+            "volume": 1,
+            "readyState": 4,
+            "decodedFrames": 119
+          }
+        },
+        "peakInputRms": 0.010511231099308484,
+        "paused": {
+          "id": "wall-playback",
+          "sourceType": "MediaElementAudioSourceNode",
+          "sameContext": true,
+          "position": [
+            0,
+            2.200000047683716,
+            -11.699999809265137
+          ],
+          "pannerPosition": [
+            0,
+            2.200000047683716,
+            -11.699999809265137
+          ],
+          "distanceModel": "inverse",
+          "pannerRolloff": 0,
+          "panningModel": "HRTF",
+          "gain": 0.26687055826187134,
+          "inputRms": 0,
+          "prePannerRms": 0,
+          "rms": 0,
+          "stereoRms": [
+            0,
+            0
+          ],
+          "connections": [
+            "source>distance-gain",
+            "distance-gain>panner",
+            "panner>gain",
+            "gain>shared-output"
+          ],
+          "directSourceToDestination": false,
+          "mediaSourceCount": 1,
+          "video": {
+            "paused": true,
+            "currentTime": 0.621177,
+            "duration": 2.003,
+            "loop": true,
+            "muted": false,
+            "volume": 1,
+            "readyState": 4,
+            "decodedFrames": 142
+          }
+        },
+        "seek": {
+          "time": 1,
+          "paused": true,
+          "width": 1280,
+          "height": 720
+        },
+        "loop": {
+          "id": "wall-playback",
+          "sourceType": "MediaElementAudioSourceNode",
+          "sameContext": true,
+          "position": [
+            0,
+            2.200000047683716,
+            -11.699999809265137
+          ],
+          "pannerPosition": [
+            0,
+            2.200000047683716,
+            -11.699999809265137
+          ],
+          "distanceModel": "inverse",
+          "pannerRolloff": 0,
+          "panningModel": "HRTF",
+          "gain": 0.26691606640815735,
+          "inputRms": 0,
+          "prePannerRms": 0,
+          "rms": 0,
+          "stereoRms": [
+            0,
+            0
+          ],
+          "connections": [
+            "source>distance-gain",
+            "distance-gain>panner",
+            "panner>gain",
+            "gain>shared-output"
+          ],
+          "directSourceToDestination": false,
+          "mediaSourceCount": 1,
+          "video": {
+            "paused": false,
+            "currentTime": 0.314667,
+            "duration": 2.003,
+            "loop": true,
+            "muted": false,
+            "volume": 1,
+            "readyState": 4,
+            "decodedFrames": 248
+          }
+        },
+        "note": "One native element owns both clocks. Timed-marker AV offset and physical playback latency are still unmeasured."
+      }
+    },
+    {
+      "id": "actual-browser-prop-transform-editor",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "body": {
+          "id": "prop-0",
+          "type": "dynamic",
+          "position": [
+            2,
+            1,
+            2
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0.34587061405181885,
+            0.0007683379808440804,
+            -0.0002775121247395873,
+            0.9382818341255188
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        "status": "Applied position to prop-0."
+      }
+    },
+    {
+      "id": "json-transform-snapshot-reload",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "saved": {
+          "components": [
+            {
+              "data": {
+                "asset": "prop-model"
+              },
+              "required": true,
+              "type": "bve:mesh",
+              "version": "0.1.0"
+            },
+            {
+              "data": {
+                "body": "dynamic",
+                "halfExtents": [
+                  0.6,
+                  0.5,
+                  0.3
+                ],
+                "massKg": 2,
+                "shape": "box"
+              },
+              "required": true,
+              "type": "bve:collider",
+              "version": "0.1.0"
+            }
+          ],
+          "id": "prop-0",
+          "name": "Movable original prop 0",
+          "transform": {
+            "kind": "trs",
+            "translation": [
+              2,
+              1,
+              2
+            ],
+            "rotation": [
+              0.34587061405181885,
+              0.0007683379808440804,
+              -0.0002775121247395873,
+              0.9382818341255188
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "restored": [
+          2,
+          1,
+          2
+        ],
+        "sourceIdentityPreserved": true,
+        "assetIds": [
+          "architecture",
+          "coordinate-model",
+          "prop-model",
+          "creature-model",
+          "corner-audio-0",
+          "corner-audio-1",
+          "corner-audio-2",
+          "corner-audio-3",
+          "calibration-audio",
+          "wall-video",
+          "readability-image"
+        ],
+        "entityIds": [
+          "courtyard",
+          "coordinate-markers",
+          "observer",
+          "collision-floor",
+          "collision-wall-west",
+          "collision-wall-east",
+          "collision-wall-north",
+          "collision-door-left",
+          "collision-door-right",
+          "collision-door-lintel",
+          "collision-arch-left",
+          "collision-arch-right",
+          "collision-thin-barrier",
+          "collision-arch-segment-0",
+          "collision-arch-segment-1",
+          "collision-arch-segment-2",
+          "collision-arch-segment-3",
+          "collision-arch-segment-4",
+          "collision-arch-segment-5",
+          "collision-arch-segment-6",
+          "collision-arch-segment-7",
+          "collision-arch-segment-8",
+          "collision-arch-segment-9",
+          "collision-arch-segment-10",
+          "collision-arch-segment-11",
+          "collision-column--8--8",
+          "collision-column--8--4",
+          "collision-column--8-4",
+          "collision-column--8-8",
+          "collision-column-8--8",
+          "collision-column-8--4",
+          "collision-column-8-4",
+          "collision-column-8-8",
+          "collision-step-0",
+          "collision-step-1",
+          "collision-step-2",
+          "collision-step-3",
+          "collision-step-4",
+          "collision-ramp",
+          "prop-0",
+          "prop-1",
+          "prop-2",
+          "prop-3",
+          "prop-4",
+          "prop-5",
+          "prop-6",
+          "prop-7",
+          "prop-8",
+          "prop-9",
+          "music-corner-0",
+          "music-corner-1",
+          "music-corner-2",
+          "music-corner-3",
+          "bird",
+          "wall-screen"
+        ],
+        "note": "In-session descriptor snapshot only. Full portable world bundle/original-byte reload remains unimplemented."
+      }
+    },
+    {
+      "id": "scene-glb-export-reimport",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "bytes": 45096,
+        "meshes": 70,
+        "vertices": 1752,
+        "skeletons": 1,
+        "animationGroups": 2,
+        "scope": "GLB geometry/material/animation subset; media surfaces and world semantics use the JSON snapshot, not glTF."
+      }
+    },
+    {
+      "id": "drop-glb-through-browser-dnd",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "entityId": "prop-1-81db33",
+        "assetId": "dropped-81db33754445",
+        "name": "derived-prop.glb",
+        "bytes": 1884,
+        "revision": "81db3375444532efae6ba12a0d9726e5c323402264adfc6782161543d4ae89cc",
+        "vertices": 72,
+        "colliderHalfExtents": [
+          0.4499999956751708,
+          0.4374999925494194,
+          0.30000001192092896
+        ],
+        "normalization": {
+          "offset": [
+            0.14999998375424184,
+            -0.06250003725290298,
+            3.2263009686062105e-7
+          ],
+          "scale": 1
+        }
+      }
+    },
+    {
+      "id": "untrusted-external-model-uri-rejected",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "accepted": false,
+        "message": "This isolated evaluation accepts self-contained models; package external textures and buffers as GLB.",
+        "countBefore": 1,
+        "countAfter": 1
+      }
+    },
+    {
+      "id": "unmodified-vrspace-asset-loader-reuse",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "sourceCommit": "61f840a3dd0133fc9d357891f37eb1670b147539",
+        "babylonVersion": "9.30.0",
+        "loadedMeshes": 4,
+        "instancedRoots": 1,
+        "containerIdentity": true,
+        "instanceCount": 2,
+        "networkServer": false,
+        "meshesBefore": 93,
+        "meshesAfter": 93,
+        "remainingContainers": 0
+      }
+    },
+    {
+      "id": "devtools-observed-single-context-audio-routing",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "contexts": [
+          {
+            "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+            "contextType": "realtime",
+            "contextState": "suspended",
+            "callbackBufferSize": 441,
+            "maxOutputChannelCount": 2,
+            "sampleRate": 44100
+          }
+        ],
+        "listeners": 1,
+        "nodeTypes": {
+          "AudioDestination": 1,
+          "Gain": 13,
+          "AudioBufferSource": 5,
+          "Panner": 6,
+          "Analyser": 30,
+          "ChannelSplitter": 6,
+          "MediaElementAudioSource": 1
+        },
+        "routes": [
+          {
+            "source": "MediaElementAudioSource",
+            "sourceId": "240ab241-8add-4271-b1b1-0349222683ef",
+            "types": [
+              "Gain",
+              "Panner",
+              "Gain",
+              "Gain",
+              "AudioDestination"
+            ]
+          },
+          {
+            "source": "AudioBufferSource",
+            "sourceId": "507b4a93-a0f5-4f86-a560-3b14b2b97b96",
+            "types": [
+              "Gain",
+              "Panner",
+              "Gain",
+              "Gain",
+              "AudioDestination"
+            ]
+          },
+          {
+            "source": "AudioBufferSource",
+            "sourceId": "b8a684a8-2b5d-4a0e-a71c-7df58ae36d05",
+            "types": [
+              "Gain",
+              "Panner",
+              "Gain",
+              "Gain",
+              "AudioDestination"
+            ]
+          },
+          {
+            "source": "AudioBufferSource",
+            "sourceId": "464179b7-c95e-4f49-98d3-e6134e95b1a1",
+            "types": [
+              "Gain",
+              "Panner",
+              "Gain",
+              "Gain",
+              "AudioDestination"
+            ]
+          },
+          {
+            "source": "AudioBufferSource",
+            "sourceId": "d5d4a7ef-cecb-4b22-9fdf-1b19a0bac810",
+            "types": [
+              "Gain",
+              "Panner",
+              "Gain",
+              "Gain",
+              "AudioDestination"
+            ]
+          },
+          {
+            "source": "AudioBufferSource",
+            "sourceId": "9426a540-8a94-4a03-82a5-5f8190df7e7c",
+            "types": [
+              "Gain",
+              "Panner",
+              "Gain",
+              "Gain",
+              "AudioDestination"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "dispose-releases-browser-resources",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "state": "disposed",
+        "audioState": "closed",
+        "videoElements": 0,
+        "sceneDisposed": true,
+        "contextsCreated": 1,
+        "note": "One disposal cycle; the F03 10-cycle hardware/release measurement is not claimed."
+      }
+    }
+  ],
+  "observed": {
+    "before": {
+      "state": "ready",
+      "descriptor": {
+        "id": "babylon-native-spatial-rapier-evaluation",
+        "version": "Babylon9.30.0-Rapier0.21.0"
+      },
+      "worldId": "courtyard-v1",
+      "renderer": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+      },
+      "webglVersion": 2,
+      "rightHanded": true,
+      "canvas": {
+        "width": 1280,
+        "height": 720
+      },
+      "meshes": 76,
+      "vertices": 1780,
+      "skeletons": [
+        {
+          "name": "skeleton0",
+          "bones": 5
+        }
+      ],
+      "animations": [
+        {
+          "entityId": "bird",
+          "clip": "flap",
+          "playing": true,
+          "position": [
+            -3.5854000000003725,
+            5,
+            -4
+          ],
+          "frame": 4.793999999994412
+        }
+      ],
+      "bodies": [
+        {
+          "id": "collision-floor",
+          "type": "static",
+          "position": [
+            0,
+            -0.10000000149011612,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            12,
+            0.1,
+            12
+          ]
+        },
+        {
+          "id": "collision-wall-west",
+          "type": "static",
+          "position": [
+            -12,
+            2,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.15,
+            2,
+            12
+          ]
+        },
+        {
+          "id": "collision-wall-east",
+          "type": "static",
+          "position": [
+            12,
+            2,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.15,
+            2,
+            12
+          ]
+        },
+        {
+          "id": "collision-wall-north",
+          "type": "static",
+          "position": [
+            0,
+            2,
+            -12
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            12,
+            2,
+            0.15
+          ]
+        },
+        {
+          "id": "collision-door-left",
+          "type": "static",
+          "position": [
+            -6.300000190734863,
+            2,
+            12
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            5.7,
+            2,
+            0.15
+          ]
+        },
+        {
+          "id": "collision-door-right",
+          "type": "static",
+          "position": [
+            6.300000190734863,
+            2,
+            12
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            5.7,
+            2,
+            0.15
+          ]
+        },
+        {
+          "id": "collision-door-lintel",
+          "type": "static",
+          "position": [
+            0,
+            3.0999999046325684,
+            12
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.6,
+            0.9,
+            0.15
+          ]
+        },
+        {
+          "id": "collision-arch-left",
+          "type": "static",
+          "position": [
+            -1.75,
+            1,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            1,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-right",
+          "type": "static",
+          "position": [
+            1.75,
+            1,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            1,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-thin-barrier",
+          "type": "static",
+          "position": [
+            6,
+            0.75,
+            3
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            2,
+            0.75,
+            0.025
+          ]
+        },
+        {
+          "id": "collision-arch-segment-0",
+          "type": "static",
+          "position": [
+            1.7350285053253174,
+            2.2284207344055176,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.06540312618017197,
+            0.9978589415550232
+          ],
+          "halfExtents": [
+            0.2500000058027027,
+            0.24500000568664865,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-1",
+          "type": "static",
+          "position": [
+            1.6167892217636108,
+            2.669696092605591,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.19509032368659973,
+            0.9807852506637573
+          ],
+          "halfExtents": [
+            0.24999999286642893,
+            0.24499999300910036,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-2",
+          "type": "static",
+          "position": [
+            1.3883683681488037,
+            3.0653324127197266,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.3214394748210907,
+            0.9469301104545593
+          ],
+          "halfExtents": [
+            0.24999999592886898,
+            0.2449999960102916,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-3",
+          "type": "static",
+          "position": [
+            1.0653325319290161,
+            3.3883683681488037,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.44228866696357727,
+            0.8968727588653564
+          ],
+          "halfExtents": [
+            0.24999999592886898,
+            0.2449999960102916,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-4",
+          "type": "static",
+          "position": [
+            0.669696033000946,
+            3.6167891025543213,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.5555702447891235,
+            0.8314695954322815
+          ],
+          "halfExtents": [
+            0.24999999286642893,
+            0.24499999300910036,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-5",
+          "type": "static",
+          "position": [
+            0.22842083871364594,
+            3.7350285053253174,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.659345805644989,
+            0.751839816570282
+          ],
+          "halfExtents": [
+            0.2500000058027027,
+            0.24500000568664865,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-6",
+          "type": "static",
+          "position": [
+            -0.22842083871364594,
+            3.7350285053253174,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.751839816570282,
+            0.659345805644989
+          ],
+          "halfExtents": [
+            0.2500000058027027,
+            0.24500000568664865,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-7",
+          "type": "static",
+          "position": [
+            -0.669696033000946,
+            3.6167891025543213,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.8314695954322815,
+            0.5555702447891235
+          ],
+          "halfExtents": [
+            0.24999999286642893,
+            0.24499999300910036,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-8",
+          "type": "static",
+          "position": [
+            -1.0653325319290161,
+            3.3883683681488037,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.8968727588653564,
+            0.44228866696357727
+          ],
+          "halfExtents": [
+            0.24999999592886898,
+            0.2449999960102916,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-9",
+          "type": "static",
+          "position": [
+            -1.3883683681488037,
+            3.0653324127197266,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.9469301104545593,
+            0.3214394748210907
+          ],
+          "halfExtents": [
+            0.24999999592886898,
+            0.2449999960102916,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-10",
+          "type": "static",
+          "position": [
+            -1.6167892217636108,
+            2.669696092605591,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.9807852506637573,
+            0.19509032368659973
+          ],
+          "halfExtents": [
+            0.24999999286642893,
+            0.24499999300910036,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-11",
+          "type": "static",
+          "position": [
+            -1.7350285053253174,
+            2.2284207344055176,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.9978589415550232,
+            0.06540312618017197
+          ],
+          "halfExtents": [
+            0.2500000058027027,
+            0.24500000568664865,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-column--8--8",
+          "type": "static",
+          "position": [
+            -8,
+            2,
+            -8
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column--8--4",
+          "type": "static",
+          "position": [
+            -8,
+            2,
+            -4
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column--8-4",
+          "type": "static",
+          "position": [
+            -8,
+            2,
+            4
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column--8-8",
+          "type": "static",
+          "position": [
+            -8,
+            2,
+            8
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column-8--8",
+          "type": "static",
+          "position": [
+            8,
+            2,
+            -8
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column-8--4",
+          "type": "static",
+          "position": [
+            8,
+            2,
+            -4
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column-8-4",
+          "type": "static",
+          "position": [
+            8,
+            2,
+            4
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column-8-8",
+          "type": "static",
+          "position": [
+            8,
+            2,
+            8
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-step-0",
+          "type": "static",
+          "position": [
+            3,
+            0.09000000357627869,
+            7
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            1,
+            0.09,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-step-1",
+          "type": "static",
+          "position": [
+            3,
+            0.18000000715255737,
+            6.5
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            1,
+            0.18,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-step-2",
+          "type": "static",
+          "position": [
+            3,
+            0.27000001072883606,
+            6
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            1,
+            0.27,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-step-3",
+          "type": "static",
+          "position": [
+            3,
+            0.36000001430511475,
+            5.5
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            1,
+            0.36,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-step-4",
+          "type": "static",
+          "position": [
+            3,
+            0.44999998807907104,
+            5
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            1,
+            0.44999999999999996,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-ramp",
+          "type": "static",
+          "position": [
+            -4,
+            0.44999998807907104,
+            6
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0.11043152213096619,
+            0,
+            0,
+            0.9938837289810181
+          ],
+          "halfExtents": [
+            1,
+            0.05000000112667317,
+            2.0500000461935994
+          ]
+        },
+        {
+          "id": "prop-0",
+          "type": "dynamic",
+          "position": [
+            -4.376435279846191,
+            0.4999372363090515,
+            1.981196403503418
+          ],
+          "velocity": [
+            -0.030567709356546402,
+            0.00023646015324629843,
+            0.003679888090118766
+          ],
+          "rotation": [
+            -0.000005798811343993293,
+            -0.0042128064669668674,
+            0.00002689496432140004,
+            0.9999911785125732
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-1",
+          "type": "dynamic",
+          "position": [
+            -3.1885926723480225,
+            0.49994510412216187,
+            1.9935646057128906
+          ],
+          "velocity": [
+            0.0021497271955013275,
+            -0.00040614765021018684,
+            0.00006911846867296845
+          ],
+          "rotation": [
+            0.000015068781067384407,
+            -0.0033744131214916706,
+            -0.000008015803359739948,
+            0.9999942779541016
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-2",
+          "type": "dynamic",
+          "position": [
+            -1.9912300109863281,
+            0.49993661046028137,
+            2.0190846920013428
+          ],
+          "velocity": [
+            -0.00002755431705736555,
+            0.0002490338811185211,
+            -0.00006340956315398216
+          ],
+          "rotation": [
+            -0.000011600247489695903,
+            -0.0014616474509239197,
+            0.000013732056686421856,
+            0.999998927116394
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-3",
+          "type": "dynamic",
+          "position": [
+            -0.7927643656730652,
+            0.49993863701820374,
+            2.0132343769073486
+          ],
+          "velocity": [
+            0.04934599995613098,
+            0.00003766559166251682,
+            0.010066425427794456
+          ],
+          "rotation": [
+            0.00001493676427344326,
+            0.011621247977018356,
+            -0.00002450155261612963,
+            0.9999324679374695
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-4",
+          "type": "dynamic",
+          "position": [
+            0.40844932198524475,
+            0.4999367296695709,
+            1.9926106929779053
+          ],
+          "velocity": [
+            0.050829071551561356,
+            0.00001693456397333648,
+            0.00840062741190195
+          ],
+          "rotation": [
+            0.000013353547728911508,
+            0.008869482204318047,
+            -0.000027622301786323078,
+            0.9999606609344482
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-5",
+          "type": "dynamic",
+          "position": [
+            -4.376948833465576,
+            0.4999551773071289,
+            2.9828052520751953
+          ],
+          "velocity": [
+            -0.04431479796767235,
+            -0.0002477038651704788,
+            0.01130400039255619
+          ],
+          "rotation": [
+            0.000013828240298607852,
+            -0.004367497283965349,
+            0.000008034897291508969,
+            0.9999905228614807
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-6",
+          "type": "dynamic",
+          "position": [
+            -3.1889355182647705,
+            0.49991512298583984,
+            2.9936304092407227
+          ],
+          "velocity": [
+            0.0007611737819388509,
+            0.00020351860439404845,
+            -0.00023693533148616552
+          ],
+          "rotation": [
+            0.000011325153536745347,
+            -0.001655154163017869,
+            0.00001940653419296723,
+            0.9999986290931702
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-7",
+          "type": "dynamic",
+          "position": [
+            -1.991783618927002,
+            0.4999585747718811,
+            3.018444061279297
+          ],
+          "velocity": [
+            -0.007785985246300697,
+            -0.00019752462685573846,
+            -0.0059784213081002235
+          ],
+          "rotation": [
+            -0.0000199429014173802,
+            -0.0021705308463424444,
+            -0.000005623415290756384,
+            0.9999976754188538
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-8",
+          "type": "dynamic",
+          "position": [
+            -0.7932332754135132,
+            0.499938428401947,
+            3.0132176876068115
+          ],
+          "velocity": [
+            0.038558479398489,
+            0.00002961629616038408,
+            0.004976934287697077
+          ],
+          "rotation": [
+            0.00001141162465501111,
+            0.011842957697808743,
+            -0.000023965501895872876,
+            0.9999299049377441
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-9",
+          "type": "dynamic",
+          "position": [
+            0.40811339020729065,
+            0.499936044216156,
+            2.9925270080566406
+          ],
+          "velocity": [
+            0.03930298984050751,
+            0.00001178131060441956,
+            0.004876409191638231
+          ],
+          "rotation": [
+            0.000011477004591142759,
+            0.008865692652761936,
+            -0.00002785861215670593,
+            0.9999607801437378
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "player": {
+        "position": [
+          -6.200119173627172e-7,
+          0.9146991968154907,
+          7.999997615814209
+        ],
+        "eye": [
+          -6.200119173627172e-7,
+          1.6146991968154907,
+          7.999997615814209
+        ],
+        "grounded": true
+      },
+      "audio": {
+        "state": "suspended",
+        "initialContextState": "running",
+        "suspendedByApplication": true,
+        "sampleRate": 44100,
+        "currentTime": 0,
+        "activation": null,
+        "listener": {
+          "position": [
+            -6.200119173627172e-7,
+            1.6146992444992065,
+            7.999997615814209
+          ],
+          "forward": [
+            0,
+            0.012499024669338474,
+            -0.9999218841401138
+          ],
+          "up": [
+            0,
+            0.9999218841401138,
+            0.012499024669338474
+          ]
+        },
+        "outputGain": 0.6000000238418579,
+        "contextCount": 1,
+        "sources": [
+          {
+            "id": "corner-playback-0",
+            "sourceType": "AudioBufferSourceNode",
+            "sameContext": true,
+            "position": [
+              -6,
+              1.600000023841858,
+              -6
+            ],
+            "pannerPosition": [
+              -6,
+              1.600000023841858,
+              -6
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0,
+            "inputRms": 0,
+            "prePannerRms": 0,
+            "rms": 0,
+            "stereoRms": [
+              0,
+              0
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 0,
+            "video": null
+          },
+          {
+            "id": "corner-playback-1",
+            "sourceType": "AudioBufferSourceNode",
+            "sameContext": true,
+            "position": [
+              6,
+              1.600000023841858,
+              -6
+            ],
+            "pannerPosition": [
+              6,
+              1.600000023841858,
+              -6
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0,
+            "inputRms": 0,
+            "prePannerRms": 0,
+            "rms": 0,
+            "stereoRms": [
+              0,
+              0
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 0,
+            "video": null
+          },
+          {
+            "id": "corner-playback-2",
+            "sourceType": "AudioBufferSourceNode",
+            "sameContext": true,
+            "position": [
+              -6,
+              1.600000023841858,
+              6
+            ],
+            "pannerPosition": [
+              -6,
+              1.600000023841858,
+              6
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0.158113494515419,
+            "inputRms": 0,
+            "prePannerRms": 0,
+            "rms": 0,
+            "stereoRms": [
+              0,
+              0
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 0,
+            "video": null
+          },
+          {
+            "id": "corner-playback-3",
+            "sourceType": "AudioBufferSourceNode",
+            "sameContext": true,
+            "position": [
+              6,
+              1.600000023841858,
+              6
+            ],
+            "pannerPosition": [
+              6,
+              1.600000023841858,
+              6
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0.15811346471309662,
+            "inputRms": 0,
+            "prePannerRms": 0,
+            "rms": 0,
+            "stereoRms": [
+              0,
+              0
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 0,
+            "video": null
+          },
+          {
+            "id": "bird-playback",
+            "sourceType": "AudioBufferSourceNode",
+            "sameContext": true,
+            "position": [
+              -3.585400104522705,
+              5,
+              -4
+            ],
+            "pannerPosition": [
+              -3.585400104522705,
+              5,
+              -4
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0.002524022609353402,
+            "inputRms": 0,
+            "prePannerRms": 0,
+            "rms": 0,
+            "stereoRms": [
+              0,
+              0
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 0,
+            "video": null
+          },
+          {
+            "id": "wall-playback",
+            "sourceType": "MediaElementAudioSourceNode",
+            "sameContext": true,
+            "position": [
+              0,
+              2.200000047683716,
+              -11.699999809265137
+            ],
+            "pannerPosition": [
+              0,
+              2.200000047683716,
+              -11.699999809265137
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0,
+            "inputRms": 0,
+            "prePannerRms": 0,
+            "rms": 0,
+            "stereoRms": [
+              0,
+              0
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 1,
+            "video": {
+              "paused": true,
+              "currentTime": 0,
+              "duration": 2.003,
+              "loop": true,
+              "muted": false,
+              "volume": 1,
+              "readyState": 1,
+              "decodedFrames": 1
+            }
+          }
+        ]
+      },
+      "imports": [],
+      "selected": null,
+      "physicsSteps": 24,
+      "renderTiming": {
+        "samples": 6,
+        "p50Ms": 20.299999999813735,
+        "p95Ms": 820.1000000000931,
+        "p99Ms": 820.1000000000931,
+        "label": "Isolated software-renderer diagnostic; not target-device capacity evidence."
+      }
+    },
+    "capabilities": [
+      {
+        "feature": "render:webgl2",
+        "status": "available",
+        "method": "real-browser",
+        "detail": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      {
+        "feature": "audio:spatial",
+        "status": "available",
+        "method": "real-browser",
+        "detail": "Browser-native WebAudio graph, a shared listener, one MediaElementAudioSourceNode per video element."
+      },
+      {
+        "feature": "xr:immersive-vr",
+        "status": "unavailable",
+        "method": "real-browser",
+        "detail": "isSessionSupported result only; no physical headset observation."
+      },
+      {
+        "feature": "network:multiuser",
+        "status": "unverified",
+        "method": "real-browser",
+        "detail": "The isolated local prototype does not instantiate a collaboration server."
+      }
+    ],
+    "centerAudio": {
+      "state": "running",
+      "initialContextState": "running",
+      "suspendedByApplication": true,
+      "sampleRate": 44100,
+      "currentTime": 2.4903401360544217,
+      "activation": {
+        "isActive": true,
+        "hasBeenActive": true,
+        "at": 3003,
+        "before": "suspended",
+        "after": "running"
+      },
+      "listener": {
+        "position": [
+          0.00000965945582720451,
+          1.3603180646896362,
+          0.00000965945582720451
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ]
+      },
+      "outputGain": 0.6000000238418579,
+      "contextCount": 1,
+      "sources": [
+        {
+          "id": "corner-playback-0",
+          "sourceType": "AudioBufferSourceNode",
+          "sameContext": true,
+          "position": [
+            -6,
+            1.600000023841858,
+            -6
+          ],
+          "pannerPosition": [
+            -6,
+            1.600000023841858,
+            -6
+          ],
+          "distanceModel": "inverse",
+          "pannerRolloff": 0,
+          "panningModel": "HRTF",
+          "gain": 0.11780395358800888,
+          "inputRms": 0.06355024949208574,
+          "prePannerRms": 0.007486470636724865,
+          "rms": 0.009459147684246463,
+          "stereoRms": [
+            0.011608016820843566,
+            0.008845665284294927
+          ],
+          "connections": [
+            "source>distance-gain",
+            "distance-gain>panner",
+            "panner>gain",
+            "gain>shared-output"
+          ],
+          "directSourceToDestination": false,
+          "mediaSourceCount": 0,
+          "video": null
+        },
+        {
+          "id": "corner-playback-1",
+          "sourceType": "AudioBufferSourceNode",
+          "sameContext": true,
+          "position": [
+            6,
+            1.600000023841858,
+            -6
+          ],
+          "pannerPosition": [
+            6,
+            1.600000023841858,
+            -6
+          ],
+          "distanceModel": "inverse",
+          "pannerRolloff": 0,
+          "panningModel": "HRTF",
+          "gain": 0.1178041398525238,
+          "inputRms": 0.06322024731965618,
+          "prePannerRms": 0.007447606877169228,
+          "rms": 0.007396796302334545,
+          "stereoRms": [
+            0.0079264751549792,
+            0.009764875515965101
+          ],
+          "connections": [
+            "source>distance-gain",
+            "distance-gain>panner",
+            "panner>gain",
+            "gain>shared-output"
+          ],
+          "directSourceToDestination": false,
+          "mediaSourceCount": 0,
+          "video": null
+        },
+        {
+          "id": "corner-playback-2",
+          "sourceType": "AudioBufferSourceNode",
+          "sameContext": true,
+          "position": [
+            -6,
+            1.600000023841858,
+            6
+          ],
+          "pannerPosition": [
+            -6,
+            1.600000023841858,
+            6
+          ],
+          "distanceModel": "inverse",
+          "pannerRolloff": 0,
+          "panningModel": "HRTF",
+          "gain": 0.1178041398525238,
+          "inputRms": 0.06301067382466931,
+          "prePannerRms": 0.007422918228699432,
+          "rms": 0.005061102668634304,
+          "stereoRms": [
+            0.009635138275239227,
+            0.005201631750132402
+          ],
+          "connections": [
+            "source>distance-gain",
+            "distance-gain>panner",
+            "panner>gain",
+            "gain>shared-output"
+          ],
+          "directSourceToDestination": false,
+          "mediaSourceCount": 0,
+          "video": null
+        },
+        {
+          "id": "corner-playback-3",
+          "sourceType": "AudioBufferSourceNode",
+          "sameContext": true,
+          "position": [
+            6,
+            1.600000023841858,
+            6
+          ],
+          "pannerPosition": [
+            6,
+            1.600000023841858,
+            6
+          ],
+          "distanceModel": "inverse",
+          "pannerRolloff": 0,
+          "panningModel": "HRTF",
+          "gain": 0.11780433356761932,
+          "inputRms": 0.06312936367126441,
+          "prePannerRms": 0.007436912608982762,
+          "rms": 0.0047534360991035715,
+          "stereoRms": [
+            0.004777024492196147,
+            0.009637391587106301
+          ],
+          "connections": [
+            "source>distance-gain",
+            "distance-gain>panner",
+            "panner>gain",
+            "gain>shared-output"
+          ],
+          "directSourceToDestination": false,
+          "mediaSourceCount": 0,
+          "video": null
+        },
+        {
+          "id": "bird-playback",
+          "sourceType": "AudioBufferSourceNode",
+          "sameContext": true,
+          "position": [
+            -0.23690000176429749,
+            5,
+            -4
+          ],
+          "pannerPosition": [
+            -0.23690000176429749,
+            5,
+            -4
+          ],
+          "distanceModel": "inverse",
+          "pannerRolloff": 0,
+          "panningModel": "HRTF",
+          "gain": 0.03694624955872072,
+          "inputRms": 0.06311004114694498,
+          "prePannerRms": 0.011658396475712455,
+          "rms": 0.0009909569295686628,
+          "stereoRms": [
+            0.00103495771100449,
+            0.0009518605194518803
+          ],
+          "connections": [
+            "source>distance-gain",
+            "distance-gain>panner",
+            "panner>gain",
+            "gain>shared-output"
+          ],
+          "directSourceToDestination": false,
+          "mediaSourceCount": 0,
+          "video": null
+        },
+        {
+          "id": "wall-playback",
+          "sourceType": "MediaElementAudioSourceNode",
+          "sameContext": true,
+          "position": [
+            0,
+            2.200000047683716,
+            -11.699999809265137
+          ],
+          "pannerPosition": [
+            0,
+            2.200000047683716,
+            -11.699999809265137
+          ],
+          "distanceModel": "inverse",
+          "pannerRolloff": 0,
+          "panningModel": "HRTF",
+          "gain": 0.051201384514570236,
+          "inputRms": 0,
+          "prePannerRms": 0,
+          "rms": 0,
+          "stereoRms": [
+            0,
+            0
+          ],
+          "connections": [
+            "source>distance-gain",
+            "distance-gain>panner",
+            "panner>gain",
+            "gain>shared-output"
+          ],
+          "directSourceToDestination": false,
+          "mediaSourceCount": 1,
+          "video": {
+            "paused": false,
+            "currentTime": 0.428657,
+            "duration": 2.003,
+            "loop": true,
+            "muted": false,
+            "volume": 1,
+            "readyState": 4,
+            "decodedFrames": 74
+          }
+        }
+      ]
+    },
+    "video": {
+      "played": {
+        "id": "wall-playback",
+        "sourceType": "MediaElementAudioSourceNode",
+        "sameContext": true,
+        "position": [
+          0,
+          2.200000047683716,
+          -11.699999809265137
+        ],
+        "pannerPosition": [
+          0,
+          2.200000047683716,
+          -11.699999809265137
+        ],
+        "distanceModel": "inverse",
+        "pannerRolloff": 0,
+        "panningModel": "HRTF",
+        "gain": 0.2668081820011139,
+        "inputRms": 0,
+        "prePannerRms": 0,
+        "rms": 0,
+        "stereoRms": [
+          0,
+          0
+        ],
+        "connections": [
+          "source>distance-gain",
+          "distance-gain>panner",
+          "panner>gain",
+          "gain>shared-output"
+        ],
+        "directSourceToDestination": false,
+        "mediaSourceCount": 1,
+        "video": {
+          "paused": false,
+          "currentTime": 1.809129,
+          "duration": 2.003,
+          "loop": true,
+          "muted": false,
+          "volume": 1,
+          "readyState": 4,
+          "decodedFrames": 119
+        }
+      },
+      "peakInputRms": 0.010511231099308484,
+      "paused": {
+        "id": "wall-playback",
+        "sourceType": "MediaElementAudioSourceNode",
+        "sameContext": true,
+        "position": [
+          0,
+          2.200000047683716,
+          -11.699999809265137
+        ],
+        "pannerPosition": [
+          0,
+          2.200000047683716,
+          -11.699999809265137
+        ],
+        "distanceModel": "inverse",
+        "pannerRolloff": 0,
+        "panningModel": "HRTF",
+        "gain": 0.26687055826187134,
+        "inputRms": 0,
+        "prePannerRms": 0,
+        "rms": 0,
+        "stereoRms": [
+          0,
+          0
+        ],
+        "connections": [
+          "source>distance-gain",
+          "distance-gain>panner",
+          "panner>gain",
+          "gain>shared-output"
+        ],
+        "directSourceToDestination": false,
+        "mediaSourceCount": 1,
+        "video": {
+          "paused": true,
+          "currentTime": 0.621177,
+          "duration": 2.003,
+          "loop": true,
+          "muted": false,
+          "volume": 1,
+          "readyState": 4,
+          "decodedFrames": 142
+        }
+      },
+      "seek": {
+        "time": 1,
+        "paused": true,
+        "width": 1280,
+        "height": 720
+      },
+      "loop": {
+        "id": "wall-playback",
+        "sourceType": "MediaElementAudioSourceNode",
+        "sameContext": true,
+        "position": [
+          0,
+          2.200000047683716,
+          -11.699999809265137
+        ],
+        "pannerPosition": [
+          0,
+          2.200000047683716,
+          -11.699999809265137
+        ],
+        "distanceModel": "inverse",
+        "pannerRolloff": 0,
+        "panningModel": "HRTF",
+        "gain": 0.26691606640815735,
+        "inputRms": 0,
+        "prePannerRms": 0,
+        "rms": 0,
+        "stereoRms": [
+          0,
+          0
+        ],
+        "connections": [
+          "source>distance-gain",
+          "distance-gain>panner",
+          "panner>gain",
+          "gain>shared-output"
+        ],
+        "directSourceToDestination": false,
+        "mediaSourceCount": 1,
+        "video": {
+          "paused": false,
+          "currentTime": 0.314667,
+          "duration": 2.003,
+          "loop": true,
+          "muted": false,
+          "volume": 1,
+          "readyState": 4,
+          "decodedFrames": 248
+        }
+      }
+    },
+    "audioGraph": {
+      "contexts": [
+        {
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "contextType": "realtime",
+          "contextState": "suspended",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      ],
+      "listeners": 1,
+      "nodeTypes": {
+        "AudioDestination": 1,
+        "Gain": 13,
+        "AudioBufferSource": 5,
+        "Panner": 6,
+        "Analyser": 30,
+        "ChannelSplitter": 6,
+        "MediaElementAudioSource": 1
+      },
+      "routes": [
+        {
+          "source": "MediaElementAudioSource",
+          "sourceId": "240ab241-8add-4271-b1b1-0349222683ef",
+          "types": [
+            "Gain",
+            "Panner",
+            "Gain",
+            "Gain",
+            "AudioDestination"
+          ]
+        },
+        {
+          "source": "AudioBufferSource",
+          "sourceId": "507b4a93-a0f5-4f86-a560-3b14b2b97b96",
+          "types": [
+            "Gain",
+            "Panner",
+            "Gain",
+            "Gain",
+            "AudioDestination"
+          ]
+        },
+        {
+          "source": "AudioBufferSource",
+          "sourceId": "b8a684a8-2b5d-4a0e-a71c-7df58ae36d05",
+          "types": [
+            "Gain",
+            "Panner",
+            "Gain",
+            "Gain",
+            "AudioDestination"
+          ]
+        },
+        {
+          "source": "AudioBufferSource",
+          "sourceId": "464179b7-c95e-4f49-98d3-e6134e95b1a1",
+          "types": [
+            "Gain",
+            "Panner",
+            "Gain",
+            "Gain",
+            "AudioDestination"
+          ]
+        },
+        {
+          "source": "AudioBufferSource",
+          "sourceId": "d5d4a7ef-cecb-4b22-9fdf-1b19a0bac810",
+          "types": [
+            "Gain",
+            "Panner",
+            "Gain",
+            "Gain",
+            "AudioDestination"
+          ]
+        },
+        {
+          "source": "AudioBufferSource",
+          "sourceId": "9426a540-8a94-4a03-82a5-5f8190df7e7c",
+          "types": [
+            "Gain",
+            "Panner",
+            "Gain",
+            "Gain",
+            "AudioDestination"
+          ]
+        }
+      ]
+    },
+    "final": {
+      "state": "running",
+      "descriptor": {
+        "id": "babylon-native-spatial-rapier-evaluation",
+        "version": "Babylon9.30.0-Rapier0.21.0"
+      },
+      "worldId": "courtyard-v1",
+      "renderer": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+      },
+      "webglVersion": 2,
+      "rightHanded": true,
+      "canvas": {
+        "width": 1280,
+        "height": 720
+      },
+      "meshes": 79,
+      "vertices": 1852,
+      "skeletons": [
+        {
+          "name": "skeleton0",
+          "bones": 5
+        }
+      ],
+      "animations": [
+        {
+          "entityId": "bird",
+          "clip": "flap",
+          "playing": true,
+          "position": [
+            3.5113999999999104,
+            5,
+            -4
+          ],
+          "frame": 12.420000000000016
+        }
+      ],
+      "bodies": [
+        {
+          "id": "collision-floor",
+          "type": "static",
+          "position": [
+            0,
+            -0.10000000149011612,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            12,
+            0.1,
+            12
+          ]
+        },
+        {
+          "id": "collision-wall-west",
+          "type": "static",
+          "position": [
+            -12,
+            2,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.15,
+            2,
+            12
+          ]
+        },
+        {
+          "id": "collision-wall-east",
+          "type": "static",
+          "position": [
+            12,
+            2,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.15,
+            2,
+            12
+          ]
+        },
+        {
+          "id": "collision-wall-north",
+          "type": "static",
+          "position": [
+            0,
+            2,
+            -12
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            12,
+            2,
+            0.15
+          ]
+        },
+        {
+          "id": "collision-door-left",
+          "type": "static",
+          "position": [
+            -6.300000190734863,
+            2,
+            12
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            5.7,
+            2,
+            0.15
+          ]
+        },
+        {
+          "id": "collision-door-right",
+          "type": "static",
+          "position": [
+            6.300000190734863,
+            2,
+            12
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            5.7,
+            2,
+            0.15
+          ]
+        },
+        {
+          "id": "collision-door-lintel",
+          "type": "static",
+          "position": [
+            0,
+            3.0999999046325684,
+            12
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.6,
+            0.9,
+            0.15
+          ]
+        },
+        {
+          "id": "collision-arch-left",
+          "type": "static",
+          "position": [
+            -1.75,
+            1,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            1,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-right",
+          "type": "static",
+          "position": [
+            1.75,
+            1,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            1,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-thin-barrier",
+          "type": "static",
+          "position": [
+            6,
+            0.75,
+            3
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            2,
+            0.75,
+            0.025
+          ]
+        },
+        {
+          "id": "collision-arch-segment-0",
+          "type": "static",
+          "position": [
+            1.7350285053253174,
+            2.2284207344055176,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.06540312618017197,
+            0.9978589415550232
+          ],
+          "halfExtents": [
+            0.2500000058027027,
+            0.24500000568664865,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-1",
+          "type": "static",
+          "position": [
+            1.6167892217636108,
+            2.669696092605591,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.19509035348892212,
+            0.9807853698730469
+          ],
+          "halfExtents": [
+            0.24999999286642893,
+            0.24499999300910036,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-2",
+          "type": "static",
+          "position": [
+            1.3883683681488037,
+            3.0653324127197266,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.3214394748210907,
+            0.9469301104545593
+          ],
+          "halfExtents": [
+            0.24999999592886898,
+            0.2449999960102916,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-3",
+          "type": "static",
+          "position": [
+            1.0653325319290161,
+            3.3883683681488037,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.44228869676589966,
+            0.8968727588653564
+          ],
+          "halfExtents": [
+            0.24999999592886898,
+            0.2449999960102916,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-4",
+          "type": "static",
+          "position": [
+            0.669696033000946,
+            3.6167891025543213,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.5555702447891235,
+            0.8314695954322815
+          ],
+          "halfExtents": [
+            0.24999999286642893,
+            0.24499999300910036,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-5",
+          "type": "static",
+          "position": [
+            0.22842083871364594,
+            3.7350285053253174,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.659345805644989,
+            0.751839816570282
+          ],
+          "halfExtents": [
+            0.2500000058027027,
+            0.24500000568664865,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-6",
+          "type": "static",
+          "position": [
+            -0.22842083871364594,
+            3.7350285053253174,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.751839816570282,
+            0.659345805644989
+          ],
+          "halfExtents": [
+            0.2500000058027027,
+            0.24500000568664865,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-7",
+          "type": "static",
+          "position": [
+            -0.669696033000946,
+            3.6167891025543213,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.8314695954322815,
+            0.5555702447891235
+          ],
+          "halfExtents": [
+            0.24999999286642893,
+            0.24499999300910036,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-8",
+          "type": "static",
+          "position": [
+            -1.0653325319290161,
+            3.3883683681488037,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.8968727588653564,
+            0.44228869676589966
+          ],
+          "halfExtents": [
+            0.24999999592886898,
+            0.2449999960102916,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-9",
+          "type": "static",
+          "position": [
+            -1.3883683681488037,
+            3.0653324127197266,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.9469301104545593,
+            0.3214394748210907
+          ],
+          "halfExtents": [
+            0.24999999592886898,
+            0.2449999960102916,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-10",
+          "type": "static",
+          "position": [
+            -1.6167892217636108,
+            2.669696092605591,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.9807853698730469,
+            0.19509035348892212
+          ],
+          "halfExtents": [
+            0.24999999286642893,
+            0.24499999300910036,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-arch-segment-11",
+          "type": "static",
+          "position": [
+            -1.7350285053253174,
+            2.2284207344055176,
+            0
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.9978589415550232,
+            0.06540312618017197
+          ],
+          "halfExtents": [
+            0.2500000058027027,
+            0.24500000568664865,
+            0.3
+          ]
+        },
+        {
+          "id": "collision-column--8--8",
+          "type": "static",
+          "position": [
+            -8,
+            2,
+            -8
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column--8--4",
+          "type": "static",
+          "position": [
+            -8,
+            2,
+            -4
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column--8-4",
+          "type": "static",
+          "position": [
+            -8,
+            2,
+            4
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column--8-8",
+          "type": "static",
+          "position": [
+            -8,
+            2,
+            8
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column-8--8",
+          "type": "static",
+          "position": [
+            8,
+            2,
+            -8
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column-8--4",
+          "type": "static",
+          "position": [
+            8,
+            2,
+            -4
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column-8-4",
+          "type": "static",
+          "position": [
+            8,
+            2,
+            4
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-column-8-8",
+          "type": "static",
+          "position": [
+            8,
+            2,
+            8
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.25,
+            2,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-step-0",
+          "type": "static",
+          "position": [
+            3,
+            0.09000000357627869,
+            7
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            1,
+            0.09,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-step-1",
+          "type": "static",
+          "position": [
+            3,
+            0.18000000715255737,
+            6.5
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            1,
+            0.18,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-step-2",
+          "type": "static",
+          "position": [
+            3,
+            0.27000001072883606,
+            6
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            1,
+            0.27,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-step-3",
+          "type": "static",
+          "position": [
+            3,
+            0.36000001430511475,
+            5.5
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            1,
+            0.36,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-step-4",
+          "type": "static",
+          "position": [
+            3,
+            0.44999998807907104,
+            5
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            1,
+            0.44999999999999996,
+            0.25
+          ]
+        },
+        {
+          "id": "collision-ramp",
+          "type": "static",
+          "position": [
+            -4,
+            0.44999998807907104,
+            6
+          ],
+          "velocity": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0.11043152958154678,
+            0,
+            0,
+            0.9938837289810181
+          ],
+          "halfExtents": [
+            1,
+            0.05000000112667317,
+            2.0500000461935994
+          ]
+        },
+        {
+          "id": "prop-0",
+          "type": "dynamic",
+          "position": [
+            2,
+            0.6903514266014099,
+            2
+          ],
+          "velocity": [
+            0,
+            -2.426535129547119,
+            0
+          ],
+          "rotation": [
+            0.34587061405181885,
+            0.0007683379808440804,
+            -0.0002775121247395873,
+            0.9382818341255188
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-1",
+          "type": "dynamic",
+          "position": [
+            -3.1886653900146484,
+            0.49994421005249023,
+            1.9935095310211182
+          ],
+          "velocity": [
+            -1.2778026814430632e-7,
+            -2.113417174598453e-8,
+            -7.523647127527511e-7
+          ],
+          "rotation": [
+            -0.000014368154552357737,
+            -0.001994479214772582,
+            0.00002527197648305446,
+            0.9999980330467224
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-2",
+          "type": "dynamic",
+          "position": [
+            -1.988938808441162,
+            0.4999310374259949,
+            2.018624782562256
+          ],
+          "velocity": [
+            -4.6760837335568795e-7,
+            6.078290937239217e-8,
+            -2.712600917220698e-7
+          ],
+          "rotation": [
+            -0.00002466993646521587,
+            -0.001705648610368371,
+            0.000026467247153050266,
+            0.9999985694885254
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-3",
+          "type": "dynamic",
+          "position": [
+            -0.7835896015167236,
+            0.49993008375167847,
+            2.016218662261963
+          ],
+          "velocity": [
+            -9.234159392690344e-8,
+            3.778594859227269e-8,
+            -3.2679756145626015e-7
+          ],
+          "rotation": [
+            0.000026874098693951964,
+            0.00885641947388649,
+            -0.00003536292933858931,
+            0.9999607801437378
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-4",
+          "type": "dynamic",
+          "position": [
+            0.4160572290420532,
+            0.49994900822639465,
+            1.9953339099884033
+          ],
+          "velocity": [
+            4.04985513569045e-7,
+            1.1706868008332094e-7,
+            -3.309341707335989e-7
+          ],
+          "rotation": [
+            0.000014727004781889264,
+            0.008963514119386673,
+            -0.00002861051689251326,
+            0.9999598860740662
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-5",
+          "type": "dynamic",
+          "position": [
+            -4.408731937408447,
+            0.5785799026489258,
+            3.5273959636688232
+          ],
+          "velocity": [
+            -2.3450827768556337e-7,
+            3.886360104843334e-7,
+            -1.5171458755958156e-7
+          ],
+          "rotation": [
+            0.328838974237442,
+            0.002797901863232255,
+            -0.000013651932931679767,
+            0.9443818926811218
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-6",
+          "type": "dynamic",
+          "position": [
+            -3.1900267601013184,
+            0.4999346435070038,
+            2.9949817657470703
+          ],
+          "velocity": [
+            -3.1278040069082635e-7,
+            -1.0930966354294469e-8,
+            -7.516499636039953e-7
+          ],
+          "rotation": [
+            0.000012986486581212375,
+            -0.0014203585451468825,
+            0.000009525651876174379,
+            0.9999989867210388
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-7",
+          "type": "dynamic",
+          "position": [
+            -1.989803433418274,
+            0.4999433159828186,
+            3.017425775527954
+          ],
+          "velocity": [
+            -2.427011907002452e-7,
+            2.5121650537585083e-8,
+            -3.8932660118007334e-7
+          ],
+          "rotation": [
+            -0.00004119851655559614,
+            -0.0005698269815184176,
+            0.000014582602489099372,
+            0.9999998807907104
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-8",
+          "type": "dynamic",
+          "position": [
+            -0.7848026156425476,
+            0.4999314248561859,
+            3.0135457515716553
+          ],
+          "velocity": [
+            2.481488365901896e-7,
+            6.904062388457533e-8,
+            -3.742786134353082e-7
+          ],
+          "rotation": [
+            0.00003150089833070524,
+            0.008906141854822636,
+            -0.000020771356503246352,
+            0.9999603629112244
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-9",
+          "type": "dynamic",
+          "position": [
+            0.41488444805145264,
+            0.4999449849128723,
+            2.9926555156707764
+          ],
+          "velocity": [
+            2.236250651321825e-7,
+            1.0836584607432087e-7,
+            -5.28659143128607e-7
+          ],
+          "rotation": [
+            -6.137835271147196e-7,
+            0.008966697379946709,
+            -0.000020004883481306024,
+            0.9999598264694214
+          ],
+          "halfExtents": [
+            0.6,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "id": "prop-1-81db33",
+          "type": "dynamic",
+          "position": [
+            0.0000736263464204967,
+            1.9310559034347534,
+            -10.961277961730957
+          ],
+          "velocity": [
+            0,
+            -1.1384204626083374,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "halfExtents": [
+            0.4499999956751708,
+            0.4374999925494194,
+            0.30000001192092896
+          ]
+        }
+      ],
+      "player": {
+        "position": [
+          0.00007757520506856963,
+          0.9149676561355591,
+          -7.999961853027344
+        ],
+        "eye": [
+          0.00007757520506856963,
+          1.614967656135559,
+          -7.999961853027344
+        ],
+        "grounded": true
+      },
+      "audio": {
+        "state": "running",
+        "initialContextState": "running",
+        "suspendedByApplication": true,
+        "sampleRate": 44100,
+        "currentTime": 6.112653061224489,
+        "activation": {
+          "isActive": true,
+          "hasBeenActive": true,
+          "at": 3003,
+          "before": "suspended",
+          "after": "running"
+        },
+        "listener": {
+          "position": [
+            0.00007757520506856963,
+            1.614967703819275,
+            -7.999962329864502
+          ],
+          "forward": [
+            0,
+            0.16007116247781164,
+            -0.9871054771112368
+          ],
+          "up": [
+            0,
+            0.9871054771112365,
+            0.1600711624778116
+          ]
+        },
+        "outputGain": 0.6000000238418579,
+        "contextCount": 1,
+        "sources": [
+          {
+            "id": "corner-playback-0",
+            "sourceType": "AudioBufferSourceNode",
+            "sameContext": true,
+            "position": [
+              -6,
+              1.600000023841858,
+              -6
+            ],
+            "pannerPosition": [
+              -6,
+              1.600000023841858,
+              -6
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0.15811190009117126,
+            "inputRms": 0.06348986626052436,
+            "prePannerRms": 0.010038510973073669,
+            "rms": 0.010916029830933819,
+            "stereoRms": [
+              0.015097782566147234,
+              0.010882494584213302
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 0,
+            "video": null
+          },
+          {
+            "id": "corner-playback-1",
+            "sourceType": "AudioBufferSourceNode",
+            "sameContext": true,
+            "position": [
+              6,
+              1.600000023841858,
+              -6
+            ],
+            "pannerPosition": [
+              6,
+              1.600000023841858,
+              -6
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0.15811558067798615,
+            "inputRms": 0.06286574049806949,
+            "prePannerRms": 0.009940049307608726,
+            "rms": 0.007382410787109022,
+            "stereoRms": [
+              0.008967208664626828,
+              0.013321904551549326
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 0,
+            "video": null
+          },
+          {
+            "id": "corner-playback-2",
+            "sourceType": "AudioBufferSourceNode",
+            "sameContext": true,
+            "position": [
+              -6,
+              1.600000023841858,
+              6
+            ],
+            "pannerPosition": [
+              -6,
+              1.600000023841858,
+              6
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0,
+            "inputRms": 0.06305572989122403,
+            "prePannerRms": 0,
+            "rms": 0,
+            "stereoRms": [
+              0,
+              0
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 0,
+            "video": null
+          },
+          {
+            "id": "corner-playback-3",
+            "sourceType": "AudioBufferSourceNode",
+            "sameContext": true,
+            "position": [
+              6,
+              1.600000023841858,
+              6
+            ],
+            "pannerPosition": [
+              6,
+              1.600000023841858,
+              6
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0,
+            "inputRms": 0.06304333873034405,
+            "prePannerRms": 0,
+            "rms": 0,
+            "stereoRms": [
+              0,
+              0
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 0,
+            "video": null
+          },
+          {
+            "id": "bird-playback",
+            "sourceType": "AudioBufferSourceNode",
+            "sameContext": true,
+            "position": [
+              3.511399984359741,
+              5,
+              -4
+            ],
+            "pannerPosition": [
+              3.511399984359741,
+              5,
+              -4
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0.03170709955255835,
+            "inputRms": 0.06306579633855772,
+            "prePannerRms": 0.010083513790267564,
+            "rms": 0.0006474735625129964,
+            "stereoRms": [
+              0.0007162828359319451,
+              0.0017307891510835547
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 0,
+            "video": null
+          },
+          {
+            "id": "wall-playback",
+            "sourceType": "MediaElementAudioSourceNode",
+            "sameContext": true,
+            "position": [
+              0,
+              2.200000047683716,
+              -11.699999809265137
+            ],
+            "pannerPosition": [
+              0,
+              2.200000047683716,
+              -11.699999809265137
+            ],
+            "distanceModel": "inverse",
+            "pannerRolloff": 0,
+            "panningModel": "HRTF",
+            "gain": 0.26695117354393005,
+            "inputRms": 0,
+            "prePannerRms": 0,
+            "rms": 0,
+            "stereoRms": [
+              0,
+              0
+            ],
+            "connections": [
+              "source>distance-gain",
+              "distance-gain>panner",
+              "panner>gain",
+              "gain>shared-output"
+            ],
+            "directSourceToDestination": false,
+            "mediaSourceCount": 1,
+            "video": {
+              "paused": false,
+              "currentTime": 0.816,
+              "duration": 2.003,
+              "loop": true,
+              "muted": false,
+              "volume": 1,
+              "readyState": 4,
+              "decodedFrames": 275
+            }
+          }
+        ]
+      },
+      "imports": [
+        {
+          "entityId": "prop-1-81db33",
+          "assetId": "dropped-81db33754445",
+          "name": "derived-prop.glb",
+          "bytes": 1884,
+          "revision": "81db3375444532efae6ba12a0d9726e5c323402264adfc6782161543d4ae89cc",
+          "vertices": 72,
+          "colliderHalfExtents": [
+            0.4499999956751708,
+            0.4374999925494194,
+            0.30000001192092896
+          ],
+          "normalization": {
+            "offset": [
+              0.14999998375424184,
+              -0.06250003725290298,
+              3.2263009686062105e-7
+            ],
+            "scale": 1
+          }
+        }
+      ],
+      "selected": "prop-1-81db33",
+      "physicsSteps": 650,
+      "renderTiming": {
+        "samples": 105,
+        "p50Ms": 72.59999999962747,
+        "p95Ms": 151.79999999981374,
+        "p99Ms": 229,
+        "label": "Isolated software-renderer diagnostic; not target-device capacity evidence."
+      }
+    }
+  },
+  "logs": [
+    {
+      "type": "warning",
+      "text": "BJS - [22:01:02]: exportNodeAsync: Light courtyard-sky is not supported in KHR_lights_punctual"
+    },
+    {
+      "type": "warning",
+      "text": "BJS - [22:01:02]: exportNodeAsync: Light courtyard-sky is not supported in EXT_lights_area"
+    },
+    {
+      "type": "warning",
+      "text": "BJS - [22:01:02]: exportNodeAsync: Light falloff for courtyard-sun does not match the KHR_lights_punctual specification!"
+    },
+    {
+      "type": "warning",
+      "text": "BJS - [22:01:02]: exportNodeAsync: Light courtyard-sun is not supported in EXT_lights_area"
+    }
+  ],
+  "failedRequests": [],
+  "missingEvidence": [
+    "Physical headset/controller/recenter/seated/wall-adjacent/sleep-resume and actual output audio.",
+    "Two real clients, SFU/spatial voice, reconnect/server-authoritative state.",
+    "AV marker offset measurement below the 80ms threshold.",
+    "Full F03 warmup60s+duration180s+3 repetitions; target-device p95/p99/thermal performance.",
+    "Ten cleanup cycles and memory trend under target workload.",
+    "Complete portable world export, source-original restoration, general importer/conversion and editor."
+  ],
+  "audioEvents": [
+    {
+      "name": "contextCreated",
+      "payload": {
+        "context": {
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "contextType": "realtime",
+          "contextState": "suspended",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "5e593fc9-9014-4747-8c9b-3bc4926fca0d",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "AudioDestination",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 0,
+          "channelCount": 2,
+          "channelCountMode": "explicit",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioListenerCreated",
+      "payload": {
+        "listener": {
+          "listenerId": "4c47565e-5c1c-47eb-8882-df7335c613a7",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1"
+        }
+      }
+    },
+    {
+      "name": "contextChanged",
+      "payload": {
+        "context": {
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "contextType": "realtime",
+          "contextState": "running",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      }
+    },
+    {
+      "name": "contextChanged",
+      "payload": {
+        "context": {
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "contextType": "realtime",
+          "contextState": "suspended",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "fac506ff-4acc-436a-9744-c0cab46be5e1",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "fac506ff-4acc-436a-9744-c0cab46be5e1",
+        "destinationId": "5e593fc9-9014-4747-8c9b-3bc4926fca0d",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "507b4a93-a0f5-4f86-a560-3b14b2b97b96",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "AudioBufferSource",
+          "numberOfInputs": 0,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "2bdc668a-5f4a-4202-89f7-73b3372a83a3",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Panner",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "clamped-max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "7bca05b1-40af-4962-bb39-00627e3f6184",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "f21341ea-444b-4c23-aac7-06b0bf3d53dc",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "9361f104-e160-46cd-a595-4e94ae546c02",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "9a0ce24d-6083-4bd4-879b-ec440b9ff693",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "89dc1e02-b622-4f91-be1a-d531f71489b7",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "71025104-bede-406b-918d-ef7370b95403",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "ChannelSplitter",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 2,
+          "channelCount": 2,
+          "channelCountMode": "explicit",
+          "channelInterpretation": "discrete"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "8e9b2726-0667-4941-9186-3ef77dc33539",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "d0a5666f-2a7d-43a3-9838-f97047e28499",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "507b4a93-a0f5-4f86-a560-3b14b2b97b96",
+        "destinationId": "7bca05b1-40af-4962-bb39-00627e3f6184",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "7bca05b1-40af-4962-bb39-00627e3f6184",
+        "destinationId": "2bdc668a-5f4a-4202-89f7-73b3372a83a3",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "2bdc668a-5f4a-4202-89f7-73b3372a83a3",
+        "destinationId": "9a0ce24d-6083-4bd4-879b-ec440b9ff693",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "9a0ce24d-6083-4bd4-879b-ec440b9ff693",
+        "destinationId": "fac506ff-4acc-436a-9744-c0cab46be5e1",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "507b4a93-a0f5-4f86-a560-3b14b2b97b96",
+        "destinationId": "f21341ea-444b-4c23-aac7-06b0bf3d53dc",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "7bca05b1-40af-4962-bb39-00627e3f6184",
+        "destinationId": "9361f104-e160-46cd-a595-4e94ae546c02",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "9a0ce24d-6083-4bd4-879b-ec440b9ff693",
+        "destinationId": "89dc1e02-b622-4f91-be1a-d531f71489b7",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "9a0ce24d-6083-4bd4-879b-ec440b9ff693",
+        "destinationId": "71025104-bede-406b-918d-ef7370b95403",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "71025104-bede-406b-918d-ef7370b95403",
+        "destinationId": "8e9b2726-0667-4941-9186-3ef77dc33539",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "71025104-bede-406b-918d-ef7370b95403",
+        "destinationId": "d0a5666f-2a7d-43a3-9838-f97047e28499",
+        "sourceOutputIndex": 1,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "b8a684a8-2b5d-4a0e-a71c-7df58ae36d05",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "AudioBufferSource",
+          "numberOfInputs": 0,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "de6ccce3-2507-4cd2-a8da-3a4560959444",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Panner",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "clamped-max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "734228db-7c7b-4814-a237-f6613b028971",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "7eb2bd56-82e9-46ee-b65f-34ebe57bb869",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "64957a43-04e0-4fcb-883d-731fd66b89d1",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "47eb6e58-9513-4185-9614-b31dc65e2631",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "26411a11-4703-41fe-adb5-cb733493f46c",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "d705568c-5e23-49e9-8499-e98e7ada87d8",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "ChannelSplitter",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 2,
+          "channelCount": 2,
+          "channelCountMode": "explicit",
+          "channelInterpretation": "discrete"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "2ca0058f-73ad-41bd-8ec0-a4f8f18a0043",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "ad868c58-7d01-4876-96aa-a2270e34c8a7",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "b8a684a8-2b5d-4a0e-a71c-7df58ae36d05",
+        "destinationId": "734228db-7c7b-4814-a237-f6613b028971",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "734228db-7c7b-4814-a237-f6613b028971",
+        "destinationId": "de6ccce3-2507-4cd2-a8da-3a4560959444",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "de6ccce3-2507-4cd2-a8da-3a4560959444",
+        "destinationId": "47eb6e58-9513-4185-9614-b31dc65e2631",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "47eb6e58-9513-4185-9614-b31dc65e2631",
+        "destinationId": "fac506ff-4acc-436a-9744-c0cab46be5e1",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "b8a684a8-2b5d-4a0e-a71c-7df58ae36d05",
+        "destinationId": "7eb2bd56-82e9-46ee-b65f-34ebe57bb869",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "734228db-7c7b-4814-a237-f6613b028971",
+        "destinationId": "64957a43-04e0-4fcb-883d-731fd66b89d1",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "47eb6e58-9513-4185-9614-b31dc65e2631",
+        "destinationId": "26411a11-4703-41fe-adb5-cb733493f46c",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "47eb6e58-9513-4185-9614-b31dc65e2631",
+        "destinationId": "d705568c-5e23-49e9-8499-e98e7ada87d8",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d705568c-5e23-49e9-8499-e98e7ada87d8",
+        "destinationId": "2ca0058f-73ad-41bd-8ec0-a4f8f18a0043",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d705568c-5e23-49e9-8499-e98e7ada87d8",
+        "destinationId": "ad868c58-7d01-4876-96aa-a2270e34c8a7",
+        "sourceOutputIndex": 1,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "464179b7-c95e-4f49-98d3-e6134e95b1a1",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "AudioBufferSource",
+          "numberOfInputs": 0,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "442ca80e-f545-4ea1-8688-598f97c3b052",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Panner",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "clamped-max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "357694de-f046-4278-a831-ddc3fabf7862",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "12c44dd4-c161-4e2f-b810-18dca0b40144",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "b082391e-f69d-493c-bf5a-06fea4a8ba06",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "4a94072c-27cc-4330-9eb3-3a108bfa89fa",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "62fbba16-390a-4304-97cd-27605c491a6d",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "a53206fb-6c79-4ac2-bc9b-820bb6906d5c",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "ChannelSplitter",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 2,
+          "channelCount": 2,
+          "channelCountMode": "explicit",
+          "channelInterpretation": "discrete"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "c710416f-c545-47c3-8a6f-6aa63d3a2a09",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "4ca08935-50b3-430d-901a-d0e3c1691051",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "464179b7-c95e-4f49-98d3-e6134e95b1a1",
+        "destinationId": "357694de-f046-4278-a831-ddc3fabf7862",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "357694de-f046-4278-a831-ddc3fabf7862",
+        "destinationId": "442ca80e-f545-4ea1-8688-598f97c3b052",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "442ca80e-f545-4ea1-8688-598f97c3b052",
+        "destinationId": "4a94072c-27cc-4330-9eb3-3a108bfa89fa",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "4a94072c-27cc-4330-9eb3-3a108bfa89fa",
+        "destinationId": "fac506ff-4acc-436a-9744-c0cab46be5e1",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "464179b7-c95e-4f49-98d3-e6134e95b1a1",
+        "destinationId": "12c44dd4-c161-4e2f-b810-18dca0b40144",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "357694de-f046-4278-a831-ddc3fabf7862",
+        "destinationId": "b082391e-f69d-493c-bf5a-06fea4a8ba06",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "4a94072c-27cc-4330-9eb3-3a108bfa89fa",
+        "destinationId": "62fbba16-390a-4304-97cd-27605c491a6d",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "4a94072c-27cc-4330-9eb3-3a108bfa89fa",
+        "destinationId": "a53206fb-6c79-4ac2-bc9b-820bb6906d5c",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "a53206fb-6c79-4ac2-bc9b-820bb6906d5c",
+        "destinationId": "c710416f-c545-47c3-8a6f-6aa63d3a2a09",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "a53206fb-6c79-4ac2-bc9b-820bb6906d5c",
+        "destinationId": "4ca08935-50b3-430d-901a-d0e3c1691051",
+        "sourceOutputIndex": 1,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "d5d4a7ef-cecb-4b22-9fdf-1b19a0bac810",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "AudioBufferSource",
+          "numberOfInputs": 0,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "5845d814-652c-4702-986a-6286b221c47f",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Panner",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "clamped-max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "d1d47c77-260f-4a4f-8632-5d1b0c02999e",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "32f44e3c-02a3-45e1-9347-311233961800",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "d132c4b4-a54a-450a-bb2b-14e8aac7a4b4",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "3000cc01-32c2-44a7-bcde-6c64d899a1b9",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "dd4572eb-0cfe-46f6-9755-629e6ce2bf53",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "94799a2e-c2ae-4adb-af16-a90c968c3aed",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "ChannelSplitter",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 2,
+          "channelCount": 2,
+          "channelCountMode": "explicit",
+          "channelInterpretation": "discrete"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "198da582-c66e-462b-acec-cd029c8508a3",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "1ec94c83-590c-4bb4-9828-3c6809efc53b",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d5d4a7ef-cecb-4b22-9fdf-1b19a0bac810",
+        "destinationId": "d1d47c77-260f-4a4f-8632-5d1b0c02999e",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d1d47c77-260f-4a4f-8632-5d1b0c02999e",
+        "destinationId": "5845d814-652c-4702-986a-6286b221c47f",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "5845d814-652c-4702-986a-6286b221c47f",
+        "destinationId": "3000cc01-32c2-44a7-bcde-6c64d899a1b9",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "3000cc01-32c2-44a7-bcde-6c64d899a1b9",
+        "destinationId": "fac506ff-4acc-436a-9744-c0cab46be5e1",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d5d4a7ef-cecb-4b22-9fdf-1b19a0bac810",
+        "destinationId": "32f44e3c-02a3-45e1-9347-311233961800",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d1d47c77-260f-4a4f-8632-5d1b0c02999e",
+        "destinationId": "d132c4b4-a54a-450a-bb2b-14e8aac7a4b4",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "3000cc01-32c2-44a7-bcde-6c64d899a1b9",
+        "destinationId": "dd4572eb-0cfe-46f6-9755-629e6ce2bf53",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "3000cc01-32c2-44a7-bcde-6c64d899a1b9",
+        "destinationId": "94799a2e-c2ae-4adb-af16-a90c968c3aed",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "94799a2e-c2ae-4adb-af16-a90c968c3aed",
+        "destinationId": "198da582-c66e-462b-acec-cd029c8508a3",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "94799a2e-c2ae-4adb-af16-a90c968c3aed",
+        "destinationId": "1ec94c83-590c-4bb4-9828-3c6809efc53b",
+        "sourceOutputIndex": 1,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "9426a540-8a94-4a03-82a5-5f8190df7e7c",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "AudioBufferSource",
+          "numberOfInputs": 0,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "d82cd051-8f50-4645-89b6-7b0795922435",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Panner",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "clamped-max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "19073693-9058-44fd-a4ff-2deef414723b",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "aa960cf2-5bcb-4ebf-aa5d-e32dc3f53d5e",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "7b5a011b-b96c-4de3-a287-22e63d29f07d",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "d2d40e46-8232-4624-acab-425c0d606c42",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "1b0a7832-357b-4491-a976-b310cd58b7b0",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "09cdde7e-ad4e-4129-ac53-0e09e7b26dfb",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "ChannelSplitter",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 2,
+          "channelCount": 2,
+          "channelCountMode": "explicit",
+          "channelInterpretation": "discrete"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "2353b7e6-e94b-42bd-9bdb-40e661353ca4",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "f7684224-c6f2-4194-842e-186c4e623fef",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "9426a540-8a94-4a03-82a5-5f8190df7e7c",
+        "destinationId": "19073693-9058-44fd-a4ff-2deef414723b",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "19073693-9058-44fd-a4ff-2deef414723b",
+        "destinationId": "d82cd051-8f50-4645-89b6-7b0795922435",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d82cd051-8f50-4645-89b6-7b0795922435",
+        "destinationId": "d2d40e46-8232-4624-acab-425c0d606c42",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d2d40e46-8232-4624-acab-425c0d606c42",
+        "destinationId": "fac506ff-4acc-436a-9744-c0cab46be5e1",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "9426a540-8a94-4a03-82a5-5f8190df7e7c",
+        "destinationId": "aa960cf2-5bcb-4ebf-aa5d-e32dc3f53d5e",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "19073693-9058-44fd-a4ff-2deef414723b",
+        "destinationId": "7b5a011b-b96c-4de3-a287-22e63d29f07d",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d2d40e46-8232-4624-acab-425c0d606c42",
+        "destinationId": "1b0a7832-357b-4491-a976-b310cd58b7b0",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d2d40e46-8232-4624-acab-425c0d606c42",
+        "destinationId": "09cdde7e-ad4e-4129-ac53-0e09e7b26dfb",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "09cdde7e-ad4e-4129-ac53-0e09e7b26dfb",
+        "destinationId": "2353b7e6-e94b-42bd-9bdb-40e661353ca4",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "09cdde7e-ad4e-4129-ac53-0e09e7b26dfb",
+        "destinationId": "f7684224-c6f2-4194-842e-186c4e623fef",
+        "sourceOutputIndex": 1,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "240ab241-8add-4271-b1b1-0349222683ef",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "MediaElementAudioSource",
+          "numberOfInputs": 0,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "49162fea-3668-4abf-aa35-6daacb1a8230",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Panner",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "clamped-max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "cdbfcf19-fbc6-4669-b175-ba17e7472eba",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "4e7ccbff-a9cf-4708-b994-29789e061e69",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "bf023359-5ab5-45ce-9cbe-2c6da7c6a8a9",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "3ff1730c-1fe6-49ca-9517-75bf0914a05f",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Gain",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "1dec7a8c-be23-4921-9a55-2a4c42652fc4",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "66db0fa2-5d7f-4846-8bb3-0fa4d2301083",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "ChannelSplitter",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 2,
+          "channelCount": 2,
+          "channelCountMode": "explicit",
+          "channelInterpretation": "discrete"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "9eff242d-13df-4ce7-b431-034883eed750",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "audioNodeCreated",
+      "payload": {
+        "node": {
+          "nodeId": "baef571f-da60-4e59-95c0-d3ea8d229552",
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "nodeType": "Analyser",
+          "numberOfInputs": 1,
+          "numberOfOutputs": 1,
+          "channelCount": 2,
+          "channelCountMode": "max",
+          "channelInterpretation": "speakers"
+        }
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "240ab241-8add-4271-b1b1-0349222683ef",
+        "destinationId": "cdbfcf19-fbc6-4669-b175-ba17e7472eba",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "cdbfcf19-fbc6-4669-b175-ba17e7472eba",
+        "destinationId": "49162fea-3668-4abf-aa35-6daacb1a8230",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "49162fea-3668-4abf-aa35-6daacb1a8230",
+        "destinationId": "3ff1730c-1fe6-49ca-9517-75bf0914a05f",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "3ff1730c-1fe6-49ca-9517-75bf0914a05f",
+        "destinationId": "fac506ff-4acc-436a-9744-c0cab46be5e1",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "240ab241-8add-4271-b1b1-0349222683ef",
+        "destinationId": "4e7ccbff-a9cf-4708-b994-29789e061e69",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "cdbfcf19-fbc6-4669-b175-ba17e7472eba",
+        "destinationId": "bf023359-5ab5-45ce-9cbe-2c6da7c6a8a9",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "3ff1730c-1fe6-49ca-9517-75bf0914a05f",
+        "destinationId": "1dec7a8c-be23-4921-9a55-2a4c42652fc4",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "3ff1730c-1fe6-49ca-9517-75bf0914a05f",
+        "destinationId": "66db0fa2-5d7f-4846-8bb3-0fa4d2301083",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "66db0fa2-5d7f-4846-8bb3-0fa4d2301083",
+        "destinationId": "9eff242d-13df-4ce7-b431-034883eed750",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesConnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "66db0fa2-5d7f-4846-8bb3-0fa4d2301083",
+        "destinationId": "baef571f-da60-4e59-95c0-d3ea8d229552",
+        "sourceOutputIndex": 1,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "contextChanged",
+      "payload": {
+        "context": {
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "contextType": "realtime",
+          "contextState": "running",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "507b4a93-a0f5-4f86-a560-3b14b2b97b96",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "7bca05b1-40af-4962-bb39-00627e3f6184",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "2bdc668a-5f4a-4202-89f7-73b3372a83a3",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "9a0ce24d-6083-4bd4-879b-ec440b9ff693",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "f21341ea-444b-4c23-aac7-06b0bf3d53dc",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "9361f104-e160-46cd-a595-4e94ae546c02",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "89dc1e02-b622-4f91-be1a-d531f71489b7",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "71025104-bede-406b-918d-ef7370b95403",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "8e9b2726-0667-4941-9186-3ef77dc33539",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d0a5666f-2a7d-43a3-9838-f97047e28499",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "b8a684a8-2b5d-4a0e-a71c-7df58ae36d05",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "734228db-7c7b-4814-a237-f6613b028971",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "de6ccce3-2507-4cd2-a8da-3a4560959444",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "47eb6e58-9513-4185-9614-b31dc65e2631",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "7eb2bd56-82e9-46ee-b65f-34ebe57bb869",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "64957a43-04e0-4fcb-883d-731fd66b89d1",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "26411a11-4703-41fe-adb5-cb733493f46c",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d705568c-5e23-49e9-8499-e98e7ada87d8",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "2ca0058f-73ad-41bd-8ec0-a4f8f18a0043",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "ad868c58-7d01-4876-96aa-a2270e34c8a7",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "464179b7-c95e-4f49-98d3-e6134e95b1a1",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "357694de-f046-4278-a831-ddc3fabf7862",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "442ca80e-f545-4ea1-8688-598f97c3b052",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "4a94072c-27cc-4330-9eb3-3a108bfa89fa",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "12c44dd4-c161-4e2f-b810-18dca0b40144",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "b082391e-f69d-493c-bf5a-06fea4a8ba06",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "62fbba16-390a-4304-97cd-27605c491a6d",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "a53206fb-6c79-4ac2-bc9b-820bb6906d5c",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "c710416f-c545-47c3-8a6f-6aa63d3a2a09",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "4ca08935-50b3-430d-901a-d0e3c1691051",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d5d4a7ef-cecb-4b22-9fdf-1b19a0bac810",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d1d47c77-260f-4a4f-8632-5d1b0c02999e",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "5845d814-652c-4702-986a-6286b221c47f",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "3000cc01-32c2-44a7-bcde-6c64d899a1b9",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "32f44e3c-02a3-45e1-9347-311233961800",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d132c4b4-a54a-450a-bb2b-14e8aac7a4b4",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "dd4572eb-0cfe-46f6-9755-629e6ce2bf53",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "94799a2e-c2ae-4adb-af16-a90c968c3aed",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "198da582-c66e-462b-acec-cd029c8508a3",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "1ec94c83-590c-4bb4-9828-3c6809efc53b",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "9426a540-8a94-4a03-82a5-5f8190df7e7c",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "19073693-9058-44fd-a4ff-2deef414723b",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d82cd051-8f50-4645-89b6-7b0795922435",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "d2d40e46-8232-4624-acab-425c0d606c42",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "aa960cf2-5bcb-4ebf-aa5d-e32dc3f53d5e",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "7b5a011b-b96c-4de3-a287-22e63d29f07d",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "1b0a7832-357b-4491-a976-b310cd58b7b0",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "09cdde7e-ad4e-4129-ac53-0e09e7b26dfb",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "2353b7e6-e94b-42bd-9bdb-40e661353ca4",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "f7684224-c6f2-4194-842e-186c4e623fef",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "240ab241-8add-4271-b1b1-0349222683ef",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "cdbfcf19-fbc6-4669-b175-ba17e7472eba",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "49162fea-3668-4abf-aa35-6daacb1a8230",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "3ff1730c-1fe6-49ca-9517-75bf0914a05f",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "4e7ccbff-a9cf-4708-b994-29789e061e69",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "bf023359-5ab5-45ce-9cbe-2c6da7c6a8a9",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "1dec7a8c-be23-4921-9a55-2a4c42652fc4",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "66db0fa2-5d7f-4846-8bb3-0fa4d2301083",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "9eff242d-13df-4ce7-b431-034883eed750",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "baef571f-da60-4e59-95c0-d3ea8d229552",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "nodesDisconnected",
+      "payload": {
+        "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+        "sourceId": "fac506ff-4acc-436a-9744-c0cab46be5e1",
+        "destinationId": "",
+        "sourceOutputIndex": 0,
+        "destinationInputIndex": 0
+      }
+    },
+    {
+      "name": "contextChanged",
+      "payload": {
+        "context": {
+          "contextId": "91c302fb-64b2-443c-9f19-6892e2840bb1",
+          "contextType": "realtime",
+          "contextState": "closed",
+          "callbackBufferSize": 441,
+          "maxOutputChannelCount": 2,
+          "sampleRate": 44100
+        }
+      }
+    }
+  ],
+  "counts": {
+    "passed": 17,
+    "failed": 0,
+    "pageErrors": 0,
+    "failedRequests": 0
+  },
+  "runStatus": "passed"
+}

@@ -1,0 +1,3581 @@
+{
+  "version": 9,
+  "root": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+  "metadata": {
+    "name": "F03 synthetic courtyard"
+  },
+  "entities": {
+    "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC": {
+      "name": "F03 synthetic courtyard",
+      "components": [
+        {
+          "name": "fog",
+          "props": {
+            "type": "disabled",
+            "color": "#ffffff",
+            "near": 0.0025,
+            "far": 1000,
+            "density": 0.0025
+          }
+        },
+        {
+          "name": "background",
+          "props": {
+            "color": "#aaaaaa"
+          }
+        },
+        {
+          "name": "audio-settings",
+          "props": {
+            "overrideAudioSettings": false,
+            "avatarDistanceModel": "inverse",
+            "avatarRolloffFactor": 5,
+            "avatarRefDistance": 5,
+            "avatarMaxDistance": 10000,
+            "mediaVolume": 0.5,
+            "mediaDistanceModel": "inverse",
+            "mediaRolloffFactor": 5,
+            "mediaRefDistance": 5,
+            "mediaMaxDistance": 10000,
+            "mediaConeInnerAngle": 360,
+            "mediaConeOuterAngle": 0,
+            "mediaConeOuterGain": 0.9
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {}
+          }
+        }
+      ]
+    },
+    "E8D3129B-68BF-473F-92B9-6DAEC83514BB": {
+      "name": "Skybox",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "skybox",
+          "props": {
+            "turbidity": 6.09,
+            "rayleigh": 0.82,
+            "luminance": 1.055,
+            "mieCoefficient": 0.043,
+            "mieDirectionalG": 0.8,
+            "inclination": 0.10471975511965978,
+            "azimuth": 0.2333333333333333,
+            "distance": 8000
+          }
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 0
+    },
+    "D8061EA5-F0C4-4452-ADFE-B179E2F20CB1": {
+      "name": "Directional Light",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -1,
+              "y": 3,
+              "z": 0
+            },
+            "rotation": {
+              "x": 1.0256860445560714,
+              "y": 0.3490658503988659,
+              "z": -0.4417643021697627
+            },
+            "scale": {
+              "x": 0.9999999999999996,
+              "y": 0.9999999999999998,
+              "z": 0.9999999999999997
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "directional-light",
+          "props": {
+            "color": "#ffffff",
+            "intensity": 3,
+            "castShadow": true,
+            "shadowMapResolution": [
+              1024,
+              1024
+            ],
+            "shadowBias": -0.000030000000000000004,
+            "shadowRadius": 1
+          }
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 1
+    },
+    "633CD01A-BC2A-4584-99E2-2A3CFE2C8AD9": {
+      "name": "Spawn Point",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 2,
+              "y": 0,
+              "z": 2
+            },
+            "rotation": {
+              "x": 3.141592653589793,
+              "y": -0.7853981633974483,
+              "z": 3.141592653589793
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "spawn-point",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 2
+    },
+    "courtyard": {
+      "name": "courtyard",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/courtyard.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 3
+    },
+    "coordinate-markers": {
+      "name": "coordinate-markers",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 4,
+              "y": 0.1,
+              "z": -2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/coordinates.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 4
+    },
+    "collision-floor-collision": {
+      "name": "collision-floor-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": -0.1,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 24,
+              "y": 0.2,
+              "z": 24
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 5
+    },
+    "collision-wall-west-collision": {
+      "name": "collision-wall-west-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -12,
+              "y": 2,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.3,
+              "y": 4,
+              "z": 24
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 6
+    },
+    "collision-wall-east-collision": {
+      "name": "collision-wall-east-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 12,
+              "y": 2,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.3,
+              "y": 4,
+              "z": 24
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 7
+    },
+    "collision-wall-north-collision": {
+      "name": "collision-wall-north-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": 2,
+              "z": -12
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 24,
+              "y": 4,
+              "z": 0.3
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 8
+    },
+    "collision-door-left-collision": {
+      "name": "collision-door-left-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -6.3,
+              "y": 2,
+              "z": 12
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 11.4,
+              "y": 4,
+              "z": 0.3
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 9
+    },
+    "collision-door-right-collision": {
+      "name": "collision-door-right-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 6.3,
+              "y": 2,
+              "z": 12
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 11.4,
+              "y": 4,
+              "z": 0.3
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 10
+    },
+    "collision-door-lintel-collision": {
+      "name": "collision-door-lintel-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": 3.1,
+              "z": 12
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 1.8,
+              "z": 0.3
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 11
+    },
+    "collision-arch-left-collision": {
+      "name": "collision-arch-left-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -1.75,
+              "y": 1,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 2,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 12
+    },
+    "collision-arch-right-collision": {
+      "name": "collision-arch-right-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 1.75,
+              "y": 1,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 2,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 13
+    },
+    "collision-thin-barrier-collision": {
+      "name": "collision-thin-barrier-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 6,
+              "y": 0.75,
+              "z": 3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 4,
+              "y": 1.5,
+              "z": 0.05
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 14
+    },
+    "collision-arch-segment-0-collision": {
+      "name": "collision-arch-segment-0-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 1.7350285074041683,
+              "y": 2.2284208363850904,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0.1308996938995747
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 15
+    },
+    "collision-arch-segment-1-collision": {
+      "name": "collision-arch-segment-1-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 1.6167891818947517,
+              "y": 2.6696960066389073,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0.39269908169872414
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 16
+    },
+    "collision-arch-segment-2-collision": {
+      "name": "collision-arch-segment-2-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 1.3883683455096616,
+              "y": 3.065332500765261,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0.6544984694978736
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 17
+    },
+    "collision-arch-segment-3-collision": {
+      "name": "collision-arch-segment-3-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 1.0653325007652612,
+              "y": 3.3883683455096616,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0.9162978572970231
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 18
+    },
+    "collision-arch-segment-4-collision": {
+      "name": "collision-arch-segment-4-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0.6696960066389073,
+              "y": 3.6167891818947515,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 1.1780972450961724
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 19
+    },
+    "collision-arch-segment-5-collision": {
+      "name": "collision-arch-segment-5-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0.2284208363850905,
+              "y": 3.7350285074041683,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 1.4398966328953218
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 20
+    },
+    "collision-arch-segment-6-collision": {
+      "name": "collision-arch-segment-6-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -0.2284208363850903,
+              "y": 3.7350285074041683,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 1.7016960206944713
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 21
+    },
+    "collision-arch-segment-7-collision": {
+      "name": "collision-arch-segment-7-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -0.6696960066389066,
+              "y": 3.616789181894752,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 1.9634954084936203
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 22
+    },
+    "collision-arch-segment-8-collision": {
+      "name": "collision-arch-segment-8-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -1.0653325007652612,
+              "y": 3.3883683455096616,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 2.2252947962927703
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 23
+    },
+    "collision-arch-segment-9-collision": {
+      "name": "collision-arch-segment-9-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -1.3883683455096614,
+              "y": 3.0653325007652614,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 2.4870941840919194
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 24
+    },
+    "collision-arch-segment-10-collision": {
+      "name": "collision-arch-segment-10-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -1.6167891818947517,
+              "y": 2.6696960066389073,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 2.748893571891069
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 25
+    },
+    "collision-arch-segment-11-collision": {
+      "name": "collision-arch-segment-11-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -1.7350285074041683,
+              "y": 2.228420836385091,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 3.010692959690218
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 0.49,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 26
+    },
+    "collision-column--8--8-collision": {
+      "name": "collision-column--8--8-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -8,
+              "y": 2,
+              "z": -8
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 4,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 27
+    },
+    "collision-column--8--4-collision": {
+      "name": "collision-column--8--4-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -8,
+              "y": 2,
+              "z": -4
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 4,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 28
+    },
+    "collision-column--8-4-collision": {
+      "name": "collision-column--8-4-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -8,
+              "y": 2,
+              "z": 4
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 4,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 29
+    },
+    "collision-column--8-8-collision": {
+      "name": "collision-column--8-8-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -8,
+              "y": 2,
+              "z": 8
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 4,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 30
+    },
+    "collision-column-8--8-collision": {
+      "name": "collision-column-8--8-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 8,
+              "y": 2,
+              "z": -8
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 4,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 31
+    },
+    "collision-column-8--4-collision": {
+      "name": "collision-column-8--4-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 8,
+              "y": 2,
+              "z": -4
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 4,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 32
+    },
+    "collision-column-8-4-collision": {
+      "name": "collision-column-8-4-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 8,
+              "y": 2,
+              "z": 4
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 4,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 33
+    },
+    "collision-column-8-8-collision": {
+      "name": "collision-column-8-8-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 8,
+              "y": 2,
+              "z": 8
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.5,
+              "y": 4,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 34
+    },
+    "collision-step-0-collision": {
+      "name": "collision-step-0-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 3,
+              "y": 0.09,
+              "z": 7
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.18,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 35
+    },
+    "collision-step-1-collision": {
+      "name": "collision-step-1-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 3,
+              "y": 0.18,
+              "z": 6.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.36,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 36
+    },
+    "collision-step-2-collision": {
+      "name": "collision-step-2-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 3,
+              "y": 0.27,
+              "z": 6
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.54,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 37
+    },
+    "collision-step-3-collision": {
+      "name": "collision-step-3-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 3,
+              "y": 0.36,
+              "z": 5.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.72,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 38
+    },
+    "collision-step-4-collision": {
+      "name": "collision-step-4-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 3,
+              "y": 0.44999999999999996,
+              "z": 5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.8999999999999999,
+              "z": 0.5
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 39
+    },
+    "collision-ramp-collision": {
+      "name": "collision-ramp-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -4,
+              "y": 0.45,
+              "z": 6
+            },
+            "rotation": {
+              "x": 0.2213144423477913,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2,
+              "y": 0.1,
+              "z": 4.1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 40
+    },
+    "prop-0": {
+      "name": "prop-0",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 2,
+              "y": 1,
+              "z": 2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/prop.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 41
+    },
+    "prop-0-collision": {
+      "name": "prop-0-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -4,
+              "y": 0.6,
+              "z": 2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 1,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 42
+    },
+    "prop-1": {
+      "name": "prop-1",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -3,
+              "y": 0.6,
+              "z": 2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/prop.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 43
+    },
+    "prop-1-collision": {
+      "name": "prop-1-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -3,
+              "y": 0.6,
+              "z": 2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 1,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 44
+    },
+    "prop-2": {
+      "name": "prop-2",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -2,
+              "y": 0.6,
+              "z": 2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/prop.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 45
+    },
+    "prop-2-collision": {
+      "name": "prop-2-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -2,
+              "y": 0.6,
+              "z": 2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 1,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 46
+    },
+    "prop-3": {
+      "name": "prop-3",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -1,
+              "y": 0.6,
+              "z": 2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/prop.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 47
+    },
+    "prop-3-collision": {
+      "name": "prop-3-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -1,
+              "y": 0.6,
+              "z": 2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 1,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 48
+    },
+    "prop-4": {
+      "name": "prop-4",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": 0.6,
+              "z": 2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/prop.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 49
+    },
+    "prop-4-collision": {
+      "name": "prop-4-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": 0.6,
+              "z": 2
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 1,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 50
+    },
+    "prop-5": {
+      "name": "prop-5",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -4,
+              "y": 0.6,
+              "z": 3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/prop.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 51
+    },
+    "prop-5-collision": {
+      "name": "prop-5-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -4,
+              "y": 0.6,
+              "z": 3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 1,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 52
+    },
+    "prop-6": {
+      "name": "prop-6",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -3,
+              "y": 0.6,
+              "z": 3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/prop.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 53
+    },
+    "prop-6-collision": {
+      "name": "prop-6-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -3,
+              "y": 0.6,
+              "z": 3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 1,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 54
+    },
+    "prop-7": {
+      "name": "prop-7",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -2,
+              "y": 0.6,
+              "z": 3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/prop.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 55
+    },
+    "prop-7-collision": {
+      "name": "prop-7-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -2,
+              "y": 0.6,
+              "z": 3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 1,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 56
+    },
+    "prop-8": {
+      "name": "prop-8",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -1,
+              "y": 0.6,
+              "z": 3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/prop.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 57
+    },
+    "prop-8-collision": {
+      "name": "prop-8-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -1,
+              "y": 0.6,
+              "z": 3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 1,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 58
+    },
+    "prop-9": {
+      "name": "prop-9",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": 0.6,
+              "z": 3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/prop.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 59
+    },
+    "prop-9-collision": {
+      "name": "prop-9-collision",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": 0.6,
+              "z": 3
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 1,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "box-collider",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 60
+    },
+    "music-corner-0-audio": {
+      "name": "music-corner-0-audio",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -6,
+              "y": 1.6,
+              "z": -6
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            },
+            "enabledProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            }
+          }
+        },
+        {
+          "name": "audio",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/audio/corner-0.wav",
+            "controls": true,
+            "autoPlay": true,
+            "loop": true
+          }
+        },
+        {
+          "name": "audio-params",
+          "props": {
+            "overrideAudioSettings": true,
+            "audioType": "pannernode",
+            "gain": 1,
+            "distanceModel": "inverse",
+            "rolloffFactor": 1,
+            "refDistance": 1,
+            "maxDistance": 14,
+            "coneInnerAngle": 360,
+            "coneOuterAngle": 360,
+            "coneOuterGain": 1
+          }
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 61
+    },
+    "music-corner-1-audio": {
+      "name": "music-corner-1-audio",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 6,
+              "y": 1.6,
+              "z": -6
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            },
+            "enabledProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            }
+          }
+        },
+        {
+          "name": "audio",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/audio/corner-1.wav",
+            "controls": true,
+            "autoPlay": true,
+            "loop": true
+          }
+        },
+        {
+          "name": "audio-params",
+          "props": {
+            "overrideAudioSettings": true,
+            "audioType": "pannernode",
+            "gain": 1,
+            "distanceModel": "inverse",
+            "rolloffFactor": 1,
+            "refDistance": 1,
+            "maxDistance": 14,
+            "coneInnerAngle": 360,
+            "coneOuterAngle": 360,
+            "coneOuterGain": 1
+          }
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 62
+    },
+    "music-corner-2-audio": {
+      "name": "music-corner-2-audio",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": -6,
+              "y": 1.6,
+              "z": 6
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            },
+            "enabledProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            }
+          }
+        },
+        {
+          "name": "audio",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/audio/corner-2.wav",
+            "controls": true,
+            "autoPlay": true,
+            "loop": true
+          }
+        },
+        {
+          "name": "audio-params",
+          "props": {
+            "overrideAudioSettings": true,
+            "audioType": "pannernode",
+            "gain": 1,
+            "distanceModel": "inverse",
+            "rolloffFactor": 1,
+            "refDistance": 1,
+            "maxDistance": 14,
+            "coneInnerAngle": 360,
+            "coneOuterAngle": 360,
+            "coneOuterGain": 1
+          }
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 63
+    },
+    "music-corner-3-audio": {
+      "name": "music-corner-3-audio",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 6,
+              "y": 1.6,
+              "z": 6
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            },
+            "enabledProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            }
+          }
+        },
+        {
+          "name": "audio",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/audio/corner-3.wav",
+            "controls": true,
+            "autoPlay": true,
+            "loop": true
+          }
+        },
+        {
+          "name": "audio-params",
+          "props": {
+            "overrideAudioSettings": true,
+            "audioType": "pannernode",
+            "gain": 1,
+            "distanceModel": "inverse",
+            "rolloffFactor": 1,
+            "refDistance": 1,
+            "maxDistance": 14,
+            "coneInnerAngle": 360,
+            "coneOuterAngle": 360,
+            "coneOuterGain": 1
+          }
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 64
+    },
+    "bird": {
+      "name": "bird",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": 5,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {},
+            "enabledProperties": {}
+          }
+        },
+        {
+          "name": "gltf-model",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/models/creature.gltf",
+            "attribution": null
+          }
+        },
+        {
+          "name": "shadow",
+          "props": {
+            "cast": true,
+            "receive": true
+          }
+        },
+        {
+          "name": "combine",
+          "props": {}
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 65
+    },
+    "bird-audio": {
+      "name": "bird-audio",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            },
+            "enabledProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            }
+          }
+        },
+        {
+          "name": "audio",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/audio/calibration.wav",
+            "controls": true,
+            "autoPlay": true,
+            "loop": true
+          }
+        },
+        {
+          "name": "audio-params",
+          "props": {
+            "overrideAudioSettings": true,
+            "audioType": "pannernode",
+            "gain": 0.2,
+            "distanceModel": "inverse",
+            "rolloffFactor": 1,
+            "refDistance": 1,
+            "maxDistance": 14,
+            "coneInnerAngle": 360,
+            "coneOuterAngle": 360,
+            "coneOuterGain": 1
+          }
+        }
+      ],
+      "parent": "bird",
+      "index": 0
+    },
+    "wall-screen": {
+      "name": "wall-screen",
+      "components": [
+        {
+          "name": "transform",
+          "props": {
+            "position": {
+              "x": 0,
+              "y": 2.2,
+              "z": -11.7
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 5.333333333333333,
+              "y": 3,
+              "z": 1
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "name": "editor-settings",
+          "props": {
+            "enabled": true,
+            "modifiedProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            },
+            "enabledProperties": {
+              "audio-params": [
+                "audioType",
+                "gain",
+                "distanceModel",
+                "rolloffFactor",
+                "refDistance",
+                "maxDistance",
+                "coneInnerAngle",
+                "coneOuterAngle",
+                "coneOuterGain"
+              ]
+            }
+          }
+        },
+        {
+          "name": "video",
+          "props": {
+            "src": "https://127.0.0.1:9090/qualification/fixtures/media/screen-marker.webm",
+            "controls": true,
+            "autoPlay": true,
+            "loop": true,
+            "projection": "flat"
+          }
+        },
+        {
+          "name": "audio-params",
+          "props": {
+            "overrideAudioSettings": true,
+            "audioType": "pannernode",
+            "gain": 1,
+            "distanceModel": "inverse",
+            "rolloffFactor": 1,
+            "refDistance": 1,
+            "maxDistance": 14,
+            "coneInnerAngle": 360,
+            "coneOuterAngle": 360,
+            "coneOuterGain": 1
+          }
+        }
+      ],
+      "parent": "2266BED7-6CC4-48A6-95DD-9BCD3CF9EAFC",
+      "index": 66
+    }
+  }
+}

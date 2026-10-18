@@ -1,0 +1,18 @@
+{
+  "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+  "args": [
+    "/workspace/scratch/dc98dcd2981d/engine_work/hubs-eval/spoke/node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "--mode",
+    "development",
+    "--content-base",
+    "/workspace/scratch/dc98dcd2981d/engine_work/f04-port/evaluations/hubs-spoke/artifacts/runs/run-2026-10-17T22-11-00-344Z-spoke-browser-93e22b24/served"
+  ],
+  "startedAt": "2026-10-17T22:11:00.394Z",
+  "finishedAt": "2026-10-17T22:11:19.023Z",
+  "exitCode": 0,
+  "signal": null,
+  "processError": null,
+  "timedOut": false,
+  "success": true,
+  "log": "spoke-server.log"
+}
