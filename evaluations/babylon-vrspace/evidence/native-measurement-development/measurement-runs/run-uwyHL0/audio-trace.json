@@ -1,0 +1,405 @@
+{
+  "sampleRate": 44100,
+  "phase": "warmup",
+  "startedPerformanceTime": 4784,
+  "startedAudioFrame": 0,
+  "poses": [
+    {
+      "kind": "initial",
+      "phase": "installed",
+      "performanceTime": 4784.299999999814,
+      "audioFrameBefore": 0,
+      "audioFrameAfter": 0,
+      "listener": [
+        0,
+        1.649999976158142,
+        0
+      ],
+      "sourcePositions": [
+        [
+          -6,
+          1.600000023841858,
+          -6
+        ],
+        [
+          6,
+          1.600000023841858,
+          -6
+        ],
+        [
+          -6,
+          1.600000023841858,
+          6
+        ],
+        [
+          6,
+          1.600000023841858,
+          6
+        ]
+      ],
+      "distanceGains": [
+        0.11784908175468445,
+        0.11784908175468445,
+        0.11784908175468445,
+        0.11784908175468445
+      ],
+      "sceneFrame": 53,
+      "physicsSteps": 178,
+      "keys": []
+    },
+    {
+      "kind": "listener-update",
+      "phase": "installed",
+      "performanceTime": 4787.100000000559,
+      "audioFrameBefore": 0,
+      "audioFrameAfter": 0,
+      "listener": [
+        -0.000007693342922721058,
+        1.6150896549224854,
+        -0.000007693342922721058
+      ],
+      "sourcePositions": [
+        [
+          -6,
+          1.600000023841858,
+          -6
+        ],
+        [
+          6,
+          1.600000023841858,
+          -6
+        ],
+        [
+          -6,
+          1.600000023841858,
+          6
+        ],
+        [
+          6,
+          1.600000023841858,
+          6
+        ]
+      ],
+      "distanceGains": [
+        0.11785109341144562,
+        0.11785094439983368,
+        0.11785094439983368,
+        0.11785079538822174
+      ],
+      "sceneFrame": 53,
+      "physicsSteps": 183,
+      "keys": []
+    },
+    {
+      "kind": "phase",
+      "phase": "warmup",
+      "performanceTime": 4792.700000000186,
+      "audioFrameBefore": 0,
+      "audioFrameAfter": 0,
+      "listener": [
+        -0.000007693342922721058,
+        1.6150896549224854,
+        -0.000007693342922721058
+      ],
+      "sourcePositions": [
+        [
+          -6,
+          1.600000023841858,
+          -6
+        ],
+        [
+          6,
+          1.600000023841858,
+          -6
+        ],
+        [
+          -6,
+          1.600000023841858,
+          6
+        ],
+        [
+          6,
+          1.600000023841858,
+          6
+        ]
+      ],
+      "distanceGains": [
+        0.11785109341144562,
+        0.11785094439983368,
+        0.11785094439983368,
+        0.11785079538822174
+      ],
+      "sceneFrame": 54,
+      "physicsSteps": 183,
+      "keys": []
+    },
+    {
+      "kind": "listener-update",
+      "phase": "warmup",
+      "performanceTime": 4926.4000000003725,
+      "audioFrameBefore": 0,
+      "audioFrameAfter": 0,
+      "listener": [
+        -2.277083694934845e-7,
+        1.6149896383285522,
+        -2.277083694934845e-7
+      ],
+      "sourcePositions": [
+        [
+          -6,
+          1.600000023841858,
+          -6
+        ],
+        [
+          6,
+          1.600000023841858,
+          -6
+        ],
+        [
+          -6,
+          1.600000023841858,
+          6
+        ],
+        [
+          6,
+          1.600000023841858,
+          6
+        ]
+      ],
+      "distanceGains": [
+        0.11785095185041428,
+        0.11785094439983368,
+        0.11785094439983368,
+        0.11785094439983368
+      ],
+      "sceneFrame": 54,
+      "physicsSteps": 191,
+      "keys": []
+    },
+    {
+      "kind": "listener-update",
+      "phase": "warmup",
+      "performanceTime": 4934,
+      "audioFrameBefore": 0,
+      "audioFrameAfter": 0,
+      "listener": [
+        -0.000007864124199841172,
+        1.6150896549224854,
+        -0.000007864124199841172
+      ],
+      "sourcePositions": [
+        [
+          -6,
+          1.600000023841858,
+          -6
+        ],
+        [
+          6,
+          1.600000023841858,
+          -6
+        ],
+        [
+          -6,
+          1.600000023841858,
+          6
+        ],
+        [
+          6,
+          1.600000023841858,
+          6
+        ]
+      ],
+      "distanceGains": [
+        0.11785110086202621,
+        0.11785094439983368,
+        0.11785094439983368,
+        0.11785078793764114
+      ],
+      "sceneFrame": 55,
+      "physicsSteps": 192,
+      "keys": []
+    }
+  ],
+  "renderFrames": [
+    {
+      "performanceTime": 4790.4000000003725,
+      "audioFrame": 0,
+      "sceneFrame": 54,
+      "physicsSteps": 183
+    },
+    {
+      "performanceTime": 4930,
+      "audioFrame": 0,
+      "sceneFrame": 55,
+      "physicsSteps": 191
+    },
+    {
+      "performanceTime": 4941.799999999814,
+      "audioFrame": 0,
+      "sceneFrame": 56,
+      "physicsSteps": 192
+    }
+  ],
+  "windows": {
+    "corner-playback-0": [],
+    "corner-playback-1": [],
+    "corner-playback-2": [],
+    "corner-playback-3": []
+  },
+  "events": [
+    {
+      "phase": "warmup",
+      "performanceTime": 4792.700000000186,
+      "audioFrame": 0,
+      "sceneFrame": 54,
+      "physicsSteps": 183
+    }
+  ],
+  "overflow": {
+    "poses": 0,
+    "renderFrames": 0,
+    "windows": 0
+  },
+  "errors": [],
+  "initial": {
+    "contextState": "suspended",
+    "sources": [
+      {
+        "id": "corner-playback-0",
+        "sourceType": "AudioBufferSourceNode",
+        "sameContext": true,
+        "loop": true,
+        "bufferLength": 44099,
+        "bufferSampleRate": 44100,
+        "position": [
+          -6,
+          1.600000023841858,
+          -6
+        ],
+        "curve": {
+          "cutoff": 14,
+          "fadeStart": 10,
+          "model": "inverse",
+          "referenceDistance": 1,
+          "rolloff": 1
+        },
+        "gain": 0.11784908175468445,
+        "meterInputs": 2,
+        "meterOutputs": 0,
+        "invalidMessages": 0
+      },
+      {
+        "id": "corner-playback-1",
+        "sourceType": "AudioBufferSourceNode",
+        "sameContext": true,
+        "loop": true,
+        "bufferLength": 44099,
+        "bufferSampleRate": 44100,
+        "position": [
+          6,
+          1.600000023841858,
+          -6
+        ],
+        "curve": {
+          "cutoff": 14,
+          "fadeStart": 10,
+          "model": "inverse",
+          "referenceDistance": 1,
+          "rolloff": 1
+        },
+        "gain": 0.11784908175468445,
+        "meterInputs": 2,
+        "meterOutputs": 0,
+        "invalidMessages": 0
+      },
+      {
+        "id": "corner-playback-2",
+        "sourceType": "AudioBufferSourceNode",
+        "sameContext": true,
+        "loop": true,
+        "bufferLength": 44099,
+        "bufferSampleRate": 44100,
+        "position": [
+          -6,
+          1.600000023841858,
+          6
+        ],
+        "curve": {
+          "cutoff": 14,
+          "fadeStart": 10,
+          "model": "inverse",
+          "referenceDistance": 1,
+          "rolloff": 1
+        },
+        "gain": 0.11784908175468445,
+        "meterInputs": 2,
+        "meterOutputs": 0,
+        "invalidMessages": 0
+      },
+      {
+        "id": "corner-playback-3",
+        "sourceType": "AudioBufferSourceNode",
+        "sameContext": true,
+        "loop": true,
+        "bufferLength": 44099,
+        "bufferSampleRate": 44100,
+        "position": [
+          6,
+          1.600000023841858,
+          6
+        ],
+        "curve": {
+          "cutoff": 14,
+          "fadeStart": 10,
+          "model": "inverse",
+          "referenceDistance": 1,
+          "rolloff": 1
+        },
+        "gain": 0.11784908175468445,
+        "meterInputs": 2,
+        "meterOutputs": 0,
+        "invalidMessages": 0
+      }
+    ],
+    "totalSources": 6,
+    "listener": [
+      0,
+      1.649999976158142,
+      0
+    ]
+  },
+  "final": {
+    "contextState": "suspended",
+    "finishedPerformanceTime": 5033.9000000003725,
+    "finishedAudioFrame": 3200,
+    "activation": {
+      "isActive": true,
+      "hasBeenActive": true,
+      "at": 4975.5,
+      "before": "suspended"
+    },
+    "totalSources": 6,
+    "sameGraph": true,
+    "sameSources": true,
+    "singleWallElementSource": true,
+    "invalidMessages": [
+      {
+        "id": "corner-playback-0",
+        "count": 0
+      },
+      {
+        "id": "corner-playback-1",
+        "count": 0
+      },
+      {
+        "id": "corner-playback-2",
+        "count": 0
+      },
+      {
+        "id": "corner-playback-3",
+        "count": 0
+      }
+    ],
+    "listenerMethodRestored": true
+  }
+}

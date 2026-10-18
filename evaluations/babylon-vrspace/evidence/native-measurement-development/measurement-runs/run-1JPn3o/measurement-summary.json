@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "runStatus": "failed",
+  "counts": {
+    "passed": 0,
+    "failed": 0,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "logOverflow": 0,
+    "requestOverflow": 0
+  },
+  "qualificationStatus": "incomplete",
+  "profileSha256": "e86e58b943282bdf4f6becfb07a4309ffa0811dc96153066dc78e097103f1616",
+  "report": {
+    "path": "measurement-checks.json",
+    "bytes": 34979,
+    "sha256": "644a5b708a944d50b85f4fd81bf981bbdacf2a3199d581159a526ad540bc6f8f"
+  },
+  "checks": [],
+  "physicalHeadset": false,
+  "physicalAudio": false,
+  "avTimingMeasured": false
+}

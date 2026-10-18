@@ -1,0 +1,31 @@
+# Measurement slice self-review
+
+This is an author review of the eight new `measurements/` sources. The separate reviewer is `/root/engine_research`; their findings and final reviewed hashes will be recorded in the handoff. No implementation/qualification card is marked complete by these observations.
+
+## Scope and boundaries inspected
+
+- The existing renderer, F03 inputs, source-original fixtures, dependency graph, workflow and service helpers are unchanged. The eight measurement sources have their own exact inventory, alongside the existing base/workspace/build inventory.
+- The existing server serves a fixed in-memory byte allowlist on an ephemeral `127.0.0.1` port. The browser route accepts that origin and native blob/data resources only. No provider credentials, commercial assets, external service or npm audit is used by this slice. The existing subprocess environment allowlist is reused.
+- Loaded anchor readback takes actual native vertex positions and computed native world matrices, and hashes the actual original byte buffer. The expected origin/endpoints are independently frozen; a 2 mm shift, reflection or centimeter-scale model fails the unchanged 1 mm requirement.
+- Audio observers attach listeners to the existing four zero-output paired meters, forward the existing listener-update function unchanged, retain plain bounded data and preserve the original ACK handler. They add no audible route, source, AudioContext, smoothing or clock. The wall element remains bound to its one native source, but no A/V offset is measured.
+- Keyboard input drives the actual controller/physics loop between initial poses. Native listener/source parameters, scene/physics progress and every paired audio window are retained. Positive source input distinguishes correct cutoff from a stopped source. The frozen 0.1 dB balance gate and exact digital zero remain intact. Reference-law residuals and discrete native update steps are diagnostics; no new curve-error or physical-smoothness tolerance is invented.
+- Each browser operation is bounded. A deadline invokes the owned public BrowserServer kill path, whose wait is also bounded. The finalizer attempts both browser and loopback-server closure, checks current source bytes afterward, and includes late errors, requests and cleanup failures in final status.
+- The independent verifier reads six fixed bounded files, rejects symlinks and extra files, checks all leaf/current-source hashes, validates bounded PNG contents, and recalculates results from raw data without executing artifact code. The final 25 focused unit cases include malformed/shifted native data, missing windows, premature/hard cutoff, source identity, report forgery, deadline cancellation, delayed/permanently suspended activation, late-finalization failure and final-clock containment.
+
+## Preserved initial execution record
+
+`run-IYy9uO` passed four real-browser checks on Chrome 151.0.7922.34 using SwiftShader, with zero errors, failed requests or observation overflow. Its six files independently verified against 28 base sources, eight measurement sources, eight workspace inputs and unchanged renderer outputs. The preliminary `run-1JPn3o` failed before browser creation because the default sandbox could not bind loopback; that five-file failed record is retained. The permitted bounded loopback invocation produced the subsequent browser run.
+
+The exact direct-tool 22-case output is in `unit-22.tool-result.json`. Two optional programmatic stdout-capture attempts did not yield accepted receipts (sandbox `spawnSync` EPERM; then empty captured stdout). They did not change source or supply a passing test claim. The direct command returned its actual 22 passing cases and exit 0.
+
+## Review corrections before the final execution
+
+Author review found that the raw validator did not bind trailing delivered windows to `final.finishedAudioFrame` / `final.finishedPerformanceTime`. Existing phase/bin checks prevented future windows from supplying earlier route and calibration results, but a forged trailing stream could inflate the total. The separate reviewer confirmed the gap. The original actual run is coherent: its latest window ends at frame 282624, before finish frame 283136; its latest callback is 10274.6 ms, before finish time 10294.4 ms.
+
+The final validator now requires finite nonnegative start/finish clocks, the declared 45-second total interval including the final flush, contained event/pose/render/window/receipt observations, and ordered phase/pose clocks. It does not equate the earlier finished-phase marker with the later final clock. The separate reviewer also identified truthiness-based fatal handling. Final success now requires `fatalError === null`; false, zero and an empty string fail.
+
+The first correction changed only `measurements/evidence.mjs` and `measurements/test.mjs`. Their hashes and the exact successful 23-case direct command are in `unit-23.tool-result.json`. The following actual run, `run-uwyHL0`, passed anchors and cleanup but failed both audio checks when the harness read the native context immediately after the actual click while asynchronous `resume()` was still pending. Its final activation record contains a genuine active user gesture and no completed `after` field. It has zero errors, failed requests or observation overflow, and all resources were released. Its six original files and direct command receipt are retained unchanged.
+
+The harness now waits at most eight seconds for observed native running after the real click, then applies the unchanged one-second audio-clock warmup. The existing bounded polling loop was moved into a shared helper without changing its owner-cancellation behavior. Two deterministic cases cover delayed running and permanent suspension. The exact 25-case pass and three changed source hashes are in `unit-25.tool-result.json`. This observer-only correction changes no profile, native runtime, audio route or threshold. A fresh current-source browser run remains required after the narrow peer recheck.
+
+Physical headset scale, physical audio/localization/latency, the unchanged 80 ms timed-marker A/V requirement, the F03 performance workload and full foundation comparison remain incomplete.

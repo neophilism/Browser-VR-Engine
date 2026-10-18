@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "method": "actual-local-focused-unit-command",
+  "command": [
+    "node",
+    "measurements/run.mjs",
+    "unit"
+  ],
+  "cwd": "evaluations/babylon-vrspace",
+  "started": {
+    "current_time": "2026-10-18 21:35:16 UTC"
+  },
+  "finished": {
+    "current_time": "2026-10-18 21:35:17 UTC"
+  },
+  "toolResult": {
+    "chunk_id": "efec40",
+    "wall_time_seconds": 0.498997712,
+    "exit_code": 0,
+    "original_token_count": 573,
+    "output": "✔ an unresolved native evaluation triggers bounded owned-browser cancellation (7.227091ms)\n✔ owned-browser cancellation itself has a finite failure deadline (11.146716ms)\n✔ final status includes late error/request events and every owner cleanup failure (2.619407ms)\n✔ the independent report verifier recomputes raw readings and rejects forged success or scope (103.095361ms)\n✔ future or post-finish native evidence cannot inflate an otherwise complete trace (65.955594ms)\n✔ pre-execution profile matches the frozen comparison and thresholds (78.733288ms)\n✔ loaded native vertex and matrix readings resolve all six one-meter anchors (0.376724ms)\n✔ a two-millimeter native translation is rejected by the frozen one-millimeter gate (0.338978ms)\n✔ centimeter-scale import and handedness reflection cannot pass via entity metadata (0.49468ms)\n✔ missing, duplicate and unrelated native mesh identities are rejected (1.601568ms)\n✔ nonfinite, projective and excessive native buffers fail before measurement (0.871455ms)\n✔ four simultaneous paired corner windows preserve the 0.1 dB balance gate (15.992597ms)\n✔ a calibrated corner mismatch above 0.1 dB fails despite all four sources existing (14.182326ms)\n✔ silent source input cannot masquerade as attenuation or cutoff (12.43471ms)\n✔ missing, duplicated, reordered and dropped sample windows fail coverage (22.742784ms)\n✔ outward and return native traces cover each fade bin and exact digital cutoff (20.309231ms)\n✔ an inverse-only hard cutoff cannot replace the resolved fade envelope (17.51114ms)\n✔ nonzero digital output beyond cutoff is rejected without a noise tolerance (11.98756ms)\n✔ premature silence before fourteen meters fails the actual inside-region trace (11.656714ms)\n✔ a stationary listener or missing native movement key cannot supply route evidence (30.595062ms)\n✔ changed source identity, restored-hook failure and observer overflow fail closed (9.522579ms)\n✔ excessive samples, incomplete terminal coverage and missing user activation are rejected (13.926012ms)\n✔ native cleanup must release the observer, context, physics, scene and retained keys (0.468211ms)\nℹ tests 23\nℹ suites 0\nℹ pass 23\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 489.314866\n"
+  },
+  "expectedTests": 23,
+  "sourceScope": {
+    "evidence": "cd25371be6fe15038f98479e7a46d9a0912b8c90478616c15b5e6d42fac9f549",
+    "tests": "6b0e5d024bedfc85db2c7f7a203bf3376ad379881e50bde3aefd29bbd352705b",
+    "profile": "e86e58b943282bdf4f6becfb07a4309ffa0811dc96153066dc78e097103f1616"
+  },
+  "browserExecuted": false
+}

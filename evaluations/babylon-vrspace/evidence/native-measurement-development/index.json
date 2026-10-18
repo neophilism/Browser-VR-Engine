@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "kind": "f05-native-measurement-development-history",
+  "baseCommit": "a017afcfcf10eb1ae188fc883cdd040c1518566d",
+  "sourceTree": "cebaaf67b8fa1c8167c725d38cdcaeef90c341e9",
+  "profileSha256": "e86e58b943282bdf4f6becfb07a4309ffa0811dc96153066dc78e097103f1616",
+  "leafCount": 23,
+  "qualificationStatus": "incomplete",
+  "physicalHeadset": false,
+  "physicalAudio": false,
+  "avTimingMeasured": false,
+  "performanceWorkloadExecuted": false,
+  "currentSourceStatus": "Readiness repair frozen;25 focused unit cases passed; separate read-only three-file readiness review clean. Corrected actual browser capture has not run.",
+  "runs": [
+    {
+      "id": "run-1JPn3o",
+      "status": "failed",
+      "scope": "Default sandbox loopback EPERM before browser startup; retained unchanged."
+    },
+    {
+      "id": "run-IYy9uO",
+      "status": "passed",
+      "counts": {
+        "passed": 4,
+        "failed": 0
+      },
+      "scope": "Historical actual source snapshot before terminal/fatal/readiness fixes; original independent verification retained."
+    },
+    {
+      "id": "run-uwyHL0",
+      "status": "failed",
+      "counts": {
+        "passed": 2,
+        "failed": 2
+      },
+      "scope": "Actual pre-readiness-repair capture; native resume pending at immediate post-click read; anchors and cleanup passed."
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "evaluations/babylon-vrspace/measurements/README.md",
+      "bytes": 4994,
+      "sha256": "773d3aa555d03e9a503f8e5353c7c04c6f4d85b319154e3bc75d596bf83807c6"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/measurements/browser-checks.mjs",
+      "bytes": 12679,
+      "sha256": "c4f9156594ff7f33aa004e032c4655d655be0dfcaf242c1716772f98ace8833e"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/measurements/evidence.mjs",
+      "bytes": 27222,
+      "sha256": "f322b29aaebfbbc5d8b35669b992a6d0dedd11145480b0a1910aef3329669ff4"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/measurements/probes.mjs",
+      "bytes": 9389,
+      "sha256": "8f0af72205b19e8655cf12710535e88b6715fe5bed64b4077e370f350ced62d8"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/measurements/profile.json",
+      "bytes": 3855,
+      "sha256": "e86e58b943282bdf4f6becfb07a4309ffa0811dc96153066dc78e097103f1616"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/measurements/run.mjs",
+      "bytes": 922,
+      "sha256": "35f68c3a2b539451d4e89efd180b0aee3f31b52085cfc9759856566798ef2d1f"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/measurements/test.mjs",
+      "bytes": 17020,
+      "sha256": "2c340961988b02971aecb97acc40ccbd7a799265333a6c3657bece1ff80f031c"
+    },
+    {
+      "path": "evaluations/babylon-vrspace/measurements/verify.mjs",
+      "bytes": 8288,
+      "sha256": "141434fbc992feebb99a217eac0b3223d0d535d966084a9a8e660d9c5753e1cb"
+    }
+  ],
+  "files": [
+    {
+      "path": "measurement-runs/run-1JPn3o/audio-trace.json",
+      "bytes": 53,
+      "sha256": "49e05c5b77708fb84dc54340276b572ebfe0e918c839f37cd8b7d40301660699",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-1JPn3o/audio-trace.json"
+    },
+    {
+      "path": "measurement-runs/run-1JPn3o/build.json",
+      "bytes": 4670,
+      "sha256": "2eb4e817b04b11692863d2069b9c8b09032c07f918a43f7f399708cf252ffd10",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-1JPn3o/build.json"
+    },
+    {
+      "path": "measurement-runs/run-1JPn3o/coordinate-anchors.json",
+      "bytes": 26,
+      "sha256": "2a238680b52e139ec487a453ff3ab0c92ae08d8541bb0f772081a4b7d055f313",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-1JPn3o/coordinate-anchors.json"
+    },
+    {
+      "path": "measurement-runs/run-1JPn3o/measurement-checks.json",
+      "bytes": 34979,
+      "sha256": "644a5b708a944d50b85f4fd81bf981bbdacf2a3199d581159a526ad540bc6f8f",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-1JPn3o/measurement-checks.json"
+    },
+    {
+      "path": "measurement-runs/run-1JPn3o/measurement-summary.json",
+      "bytes": 580,
+      "sha256": "7f1a0d928e24ddafce9c09935b6cb74af0d05cd7d87cf24a52a8281f43c29d87",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-1JPn3o/measurement-summary.json"
+    },
+    {
+      "path": "measurement-runs/run-IYy9uO/audio-trace.json",
+      "bytes": 837772,
+      "sha256": "9916e089b88d0e2230adc0326bb65c0ec7807a321a940e75cb64a52002e1f428",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-IYy9uO/audio-trace.json"
+    },
+    {
+      "path": "measurement-runs/run-IYy9uO/build.json",
+      "bytes": 4670,
+      "sha256": "2eb4e817b04b11692863d2069b9c8b09032c07f918a43f7f399708cf252ffd10",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-IYy9uO/build.json"
+    },
+    {
+      "path": "measurement-runs/run-IYy9uO/coordinate-anchors.json",
+      "bytes": 5165,
+      "sha256": "f07466e8fff9e4d54bf7616fc9208d815bf78e16f3fc27c62214573ab0cf9137",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-IYy9uO/coordinate-anchors.json"
+    },
+    {
+      "path": "measurement-runs/run-IYy9uO/coordinate-markers.png",
+      "bytes": 131392,
+      "sha256": "98cfae96bfb4d325830d8a156b825df4df658aa7e4ea2462ae5c8ef696adff0c",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-IYy9uO/coordinate-markers.png"
+    },
+    {
+      "path": "measurement-runs/run-IYy9uO/measurement-checks.json",
+      "bytes": 189860,
+      "sha256": "65e42237c3314ddbb2846f2dd6f627786024e2896c381b6bae0ef4b4672cdd81",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-IYy9uO/measurement-checks.json"
+    },
+    {
+      "path": "measurement-runs/run-IYy9uO/measurement-summary.json",
+      "bytes": 1073,
+      "sha256": "696b9de8c1159a231e40c39e5ca992935fd4645e73f2b768265b66eb409e4d4d",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-IYy9uO/measurement-summary.json"
+    },
+    {
+      "path": "measurement-runs/run-uwyHL0/audio-trace.json",
+      "bytes": 8359,
+      "sha256": "b34fe770851243b77523bbded226d936de95d4ea9998e5a77fea97d51e415737",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-uwyHL0/audio-trace.json"
+    },
+    {
+      "path": "measurement-runs/run-uwyHL0/build.json",
+      "bytes": 4670,
+      "sha256": "2eb4e817b04b11692863d2069b9c8b09032c07f918a43f7f399708cf252ffd10",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-uwyHL0/build.json"
+    },
+    {
+      "path": "measurement-runs/run-uwyHL0/coordinate-anchors.json",
+      "bytes": 5165,
+      "sha256": "b5afb43078c8c0f80011780aeec4a46eb904ba1ba0bbdd8a8547acfa653b1f45",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-uwyHL0/coordinate-anchors.json"
+    },
+    {
+      "path": "measurement-runs/run-uwyHL0/coordinate-markers.png",
+      "bytes": 131449,
+      "sha256": "c2065c0097ecb2c1ddf5f74d91240ee431e8c91d11c1a33390752a5e768418a0",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-uwyHL0/coordinate-markers.png"
+    },
+    {
+      "path": "measurement-runs/run-uwyHL0/measurement-checks.json",
+      "bytes": 41736,
+      "sha256": "9d796bb31ae2d8ac3380ed31e846c5a228695ecf727090b0aec0684cb4626a28",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-uwyHL0/measurement-checks.json"
+    },
+    {
+      "path": "measurement-runs/run-uwyHL0/measurement-summary.json",
+      "bytes": 1072,
+      "sha256": "76d56bff72cafab2c91badda0067004a990c3b7f82669c056db89defb49d04fa",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-runs/run-uwyHL0/measurement-summary.json"
+    },
+    {
+      "path": "measurement-development/SELF_REVIEW.md",
+      "bytes": 6235,
+      "sha256": "3148b48abfff66f63b4db0e72c13d06000fbb071e1a6a5c2ff7c5413881dfafa",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-development/SELF_REVIEW.md"
+    },
+    {
+      "path": "measurement-development/unit-22.tool-result.json",
+      "bytes": 2804,
+      "sha256": "bb002cb70332919d84cc5714e92d3caa30021b4540120b070f1a8d435fc226f1",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-development/unit-22.tool-result.json"
+    },
+    {
+      "path": "measurement-development/unit-23.tool-result.json",
+      "bytes": 3117,
+      "sha256": "6cfc058de8a26d1833f8a7acc830c5e680ce7177f8f44856fd3324f836223329",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-development/unit-23.tool-result.json"
+    },
+    {
+      "path": "measurement-development/unit-25.tool-result.json",
+      "bytes": 3381,
+      "sha256": "b6bfa963744ae02c2e77f019721fcac3ef9536deafdd74a3384ec56d28c9c64f",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-development/unit-25.tool-result.json"
+    },
+    {
+      "path": "measurement-development/run-uwyHL0.tool-result.json",
+      "bytes": 3189,
+      "sha256": "ae6ff8881eeb811d076575e962f39d3ba1e1aa3c2b98b5ee064425ad48b40111",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-development/run-uwyHL0.tool-result.json"
+    },
+    {
+      "path": "measurement-verification-IYy9uO.json",
+      "bytes": 162321,
+      "sha256": "0e8348af180f7577e1efc1348631a780406e99a8048e2924dcc74eea45fa3c10",
+      "originalPath": "evaluations/babylon-vrspace/artifacts/measurement-verification-IYy9uO.json"
+    }
+  ],
+  "reviewScope": "Separate reviewer inspected all8 sources and rechecked terminal/fatal/readiness corrections. The reviewer executed no browser, tests or network. Native4-check browser success remains historical for the earlier source hashes."
+}

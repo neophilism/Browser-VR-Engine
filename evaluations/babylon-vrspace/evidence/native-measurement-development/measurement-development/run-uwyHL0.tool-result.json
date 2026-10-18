@@ -1,0 +1,33 @@
+{
+  "before": "run-1JPn3o\nrun-IYy9uO\n",
+  "started": {
+    "current_time": "2026-10-18 21:35:49 UTC"
+  },
+  "result": {
+    "chunk_id": "5b2c4a",
+    "wall_time_seconds": 1.000904431,
+    "session_id": 13675,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "polls": [
+    {
+      "chunk_id": "66eff1",
+      "wall_time_seconds": 2.700910785,
+      "exit_code": 1,
+      "original_token_count": 571,
+      "output": "PASS native-loaded-coordinate-anchors\nFAIL native-four-corner-equal-distance: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'suspended'\n- 'running'\n\n    at audioHold (file:///workspace/scratch/dc98dcd2981d/engine_work/f05-measurements/evaluations/babylon-vrspace/measurements/browser-checks.mjs:40:10)\n    at async file:///workspace/scratch/dc98dcd2981d/engine_work/f05-measurements/evaluations/babylon-vrspace/measurements/browser-checks.mjs:82:5\n+ actual - expected\n\n+ 'AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\n' +\n+   '+ actual - expected\\n' +\n+   '\\n' +\n+   \"+ 'suspended'\\n\" +\n+   \"- 'running'\\n\" +\n+   '\\n' +\n+   '    at audioHold (file:///workspace/scratch/dc98dcd2981d/engine_work/f05-measurements/evaluations/babylon-vrspace/measurements/browser-checks.mjs:40:10)\\n' +\n+   '    at async file:///workspace/scratch/dc98dcd2981d/engine_work/f05-measurements/evaluations/babylon-vrspace/measurements/browser-checks.mjs:82:5'\n- undefined\n\nFAIL native-continuous-distance-fade-cutoff: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'suspended'\n- 'running'\n\n    at audioHold (file:///workspace/scratch/dc98dcd2981d/engine_work/f05-measurements/evaluations/babylon-vrspace/measurements/browser-checks.mjs:40:10)\n    at async file:///workspace/scratch/dc98dcd2981d/engine_work/f05-measurements/evaluations/babylon-vrspace/measurements/browser-checks.mjs:82:5\n+ actual - expected\n\n+ 'AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\n' +\n+   '+ actual - expected\\n' +\n+   '\\n' +\n+   \"+ 'suspended'\\n\" +\n+   \"- 'running'\\n\" +\n+   '\\n' +\n+   '    at audioHold (file:///workspace/scratch/dc98dcd2981d/engine_work/f05-measurements/evaluations/babylon-vrspace/measurements/browser-checks.mjs:40:10)\\n' +\n+   '    at async file:///workspace/scratch/dc98dcd2981d/engine_work/f05-measurements/evaluations/babylon-vrspace/measurements/browser-checks.mjs:82:5'\n- undefined\n\nPASS measurement-observers-and-candidate-cleanup\n{\n  \"runStatus\": \"failed\",\n  \"counts\": {\n    \"passed\": 2,\n    \"failed\": 2,\n    \"pageErrors\": 0,\n    \"failedRequests\": 0,\n    \"logOverflow\": 0,\n    \"requestOverflow\": 0\n  },\n  \"output\": \"artifacts/measurement-runs/run-uwyHL0\"\n}\n"
+    }
+  ],
+  "finished": {
+    "current_time": "2026-10-18 21:36:07 UTC"
+  },
+  "after": "run-1JPn3o\nrun-IYy9uO\nrun-uwyHL0\n",
+  "command": [
+    "node",
+    "measurements/run.mjs",
+    "browser"
+  ],
+  "cwd": "evaluations/babylon-vrspace",
+  "scope": "Actual final-source attempt; two audio checks failed at the immediate post-click native suspended state. No passing claim."
+}

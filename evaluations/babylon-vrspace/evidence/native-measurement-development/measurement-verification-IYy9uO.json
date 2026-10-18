@@ -1,0 +1,3663 @@
+{
+  "runStatus": "verified",
+  "directory": "/workspace/scratch/dc98dcd2981d/engine_work/f05-measurements/evaluations/babylon-vrspace/artifacts/measurement-runs/run-IYy9uO",
+  "files": 6,
+  "baseSources": 28,
+  "measurementSources": 8,
+  "workspaceInputs": 8,
+  "profileSha256": "e86e58b943282bdf4f6becfb07a4309ffa0811dc96153066dc78e097103f1616",
+  "result": {
+    "profileSha256": "e86e58b943282bdf4f6becfb07a4309ffa0811dc96153066dc78e097103f1616",
+    "checks": [
+      {
+        "id": "native-loaded-coordinate-anchors",
+        "detail": {
+          "method": "loaded-native-vertex-buffer-and-world-matrix",
+          "maximumAllowedAnchorErrorMeters": 0.001,
+          "maximumObservedAnchorErrorMeters": 2.3841857904605135e-8,
+          "anchors": [
+            {
+              "name": "positive-X",
+              "nativeMeshId": 103,
+              "near": [
+                4,
+                0.10000000149011612,
+                -2
+              ],
+              "far": [
+                5,
+                0.10000000149011612,
+                -2
+              ],
+              "expectedNear": [
+                4,
+                0.1,
+                -2
+              ],
+              "expectedFar": [
+                5,
+                0.1,
+                -2
+              ],
+              "nearErrorMeters": 1.4901161138336505e-9,
+              "farErrorMeters": 1.4901161138336505e-9,
+              "measuredLengthMeters": 1,
+              "declaredLengthMeters": 1
+            },
+            {
+              "name": "positive-Y",
+              "nativeMeshId": 106,
+              "near": [
+                4,
+                0.10000002384185791,
+                -2
+              ],
+              "far": [
+                4,
+                1.100000023841858,
+                -2
+              ],
+              "expectedNear": [
+                4,
+                0.1,
+                -2
+              ],
+              "expectedFar": [
+                4,
+                1.1,
+                -2
+              ],
+              "nearErrorMeters": 2.3841857904605135e-8,
+              "farErrorMeters": 2.3841857821338408e-8,
+              "measuredLengthMeters": 1,
+              "declaredLengthMeters": 1
+            },
+            {
+              "name": "positive-Z",
+              "nativeMeshId": 109,
+              "near": [
+                4,
+                0.10000000149011612,
+                -2
+              ],
+              "far": [
+                4,
+                0.10000000149011612,
+                -1
+              ],
+              "expectedNear": [
+                4,
+                0.1,
+                -2
+              ],
+              "expectedFar": [
+                4,
+                0.1,
+                -1
+              ],
+              "nearErrorMeters": 1.4901161138336505e-9,
+              "farErrorMeters": 1.4901161138336505e-9,
+              "measuredLengthMeters": 1,
+              "declaredLengthMeters": 1
+            }
+          ],
+          "physicalScaleMeasured": false
+        }
+      },
+      {
+        "id": "native-four-corner-equal-distance",
+        "detail": {
+          "overlappingWindows": 22,
+          "maximumDifferenceDb": 0.000020876650579589266,
+          "maximumPerSampleDifferenceDb": 0.000021823607773876932,
+          "maximumAllowedDifferenceDb": 0.1,
+          "measurements": [
+            {
+              "startFrame": 47616,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080287197526,
+                  "inputRms": 0.06407469179635723,
+                  "postGainRms": 0.007551253871975067,
+                  "gainMin": 0.11785079628753271,
+                  "gainMax": 0.11785080965393513
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094448439064,
+                  "inputRms": 0.062472871862237815,
+                  "postGainRms": 0.007362486953617038,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.11785095103984487
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094442466537,
+                  "inputRms": 0.06337124794644433,
+                  "postGainRms": 0.0074683614198581,
+                  "gainMin": 0.11785093761353183,
+                  "gainMax": 0.11785095091713571
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108584142469,
+                  "inputRms": 0.06303064238667574,
+                  "postGainRms": 0.007428229646552265,
+                  "gainMin": 0.11785107921738962,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.0000208555088133628,
+              "sampleDifferenceDb": 0.000021823607773876932
+            },
+            {
+              "startFrame": 48384,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080287509901,
+                  "inputRms": 0.06207960124044459,
+                  "postGainRms": 0.007316130848352388,
+                  "gainMin": 0.1178507964228924,
+                  "gainMax": 0.11785080916721674
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094448223014,
+                  "inputRms": 0.06368340159512095,
+                  "postGainRms": 0.007505149025826166,
+                  "gainMin": 0.11785093763237983,
+                  "gainMax": 0.11785095111258433
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094431528445,
+                  "inputRms": 0.06339687152620908,
+                  "postGainRms": 0.007471381175998509,
+                  "gainMin": 0.11785093794658409,
+                  "gainMax": 0.11785095117163173
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108589988601,
+                  "inputRms": 0.06285960966177757,
+                  "postGainRms": 0.007408073257883454,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.00002085958731472683,
+              "sampleDifferenceDb": 0.000021813631437850032
+            },
+            {
+              "startFrame": 49152,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080280375053,
+                  "inputRms": 0.0631521879764318,
+                  "postGainRms": 0.007442536051835849,
+                  "gainMin": 0.1178507965505848,
+                  "gainMax": 0.11785080976347094
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094448755162,
+                  "inputRms": 0.06252291570222004,
+                  "postGainRms": 0.0073683846676222044,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.11785095056950078
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094462650704,
+                  "inputRms": 0.06253425563211705,
+                  "postGainRms": 0.007369721097760462,
+                  "gainMin": 0.1178509376971583,
+                  "gainMax": 0.11785095096664769
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108585641708,
+                  "inputRms": 0.06289772443578218,
+                  "postGainRms": 0.007412565122654628,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.00002086164211418685,
+              "sampleDifferenceDb": 0.000021804220198217187
+            },
+            {
+              "startFrame": 49920,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.1178508028691773,
+                  "inputRms": 0.06402866166346514,
+                  "postGainRms": 0.007545829183678281,
+                  "gainMin": 0.11785079628753271,
+                  "gainMax": 0.11785080965393513
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094442528579,
+                  "inputRms": 0.063632880723284,
+                  "postGainRms": 0.007499195089740583,
+                  "gainMin": 0.11785093763237983,
+                  "gainMax": 0.11785095111258433
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094426622403,
+                  "inputRms": 0.06329403778408338,
+                  "postGainRms": 0.007459262119276288,
+                  "gainMin": 0.11785093761353183,
+                  "gainMax": 0.11785095091713571
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108581433724,
+                  "inputRms": 0.06311102848784954,
+                  "postGainRms": 0.007437703234152639,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020853718624722854,
+              "sampleDifferenceDb": 0.000021823607773876932
+            },
+            {
+              "startFrame": 50688,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.1178508028379881,
+                  "inputRms": 0.06204002900623803,
+                  "postGainRms": 0.007311467226477221,
+                  "gainMin": 0.1178507964228924,
+                  "gainMax": 0.11785080916721674
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094456770843,
+                  "inputRms": 0.06257593426338912,
+                  "postGainRms": 0.007374632960147238,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.11785095056197312
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094439211193,
+                  "inputRms": 0.0634648500136149,
+                  "postGainRms": 0.007479392509808253,
+                  "gainMin": 0.11785093798478107,
+                  "gainMax": 0.11785095117163173
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108587398557,
+                  "inputRms": 0.06330893620838726,
+                  "postGainRms": 0.007461026877685322,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020860413560087787,
+              "sampleDifferenceDb": 0.000021813631437850032
+            },
+            {
+              "startFrame": 51456,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080281991142,
+                  "inputRms": 0.06323968053841109,
+                  "postGainRms": 0.007452847121526475,
+                  "gainMin": 0.1178507965505848,
+                  "gainMax": 0.11785080976347094
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094445883955,
+                  "inputRms": 0.0635790325915764,
+                  "postGainRms": 0.007492849038696621,
+                  "gainMin": 0.11785093763237983,
+                  "gainMax": 0.11785095111258433
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094464488725,
+                  "inputRms": 0.06254981450559917,
+                  "postGainRms": 0.007371554726847334,
+                  "gainMin": 0.1178509376971583,
+                  "gainMax": 0.11785095096664769
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108588349744,
+                  "inputRms": 0.06331578043348059,
+                  "postGainRms": 0.007461833477646787,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.00002086244689945572,
+              "sampleDifferenceDb": 0.000021804220198217187
+            },
+            {
+              "startFrame": 52224,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.1178508028893262,
+                  "inputRms": 0.06397683658502988,
+                  "postGainRms": 0.0075397215578649895,
+                  "gainMin": 0.11785079628753271,
+                  "gainMax": 0.11785080965393513
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094448503773,
+                  "inputRms": 0.06263231816030704,
+                  "postGainRms": 0.007381277850479566,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.11785095055488062
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094420833425,
+                  "inputRms": 0.06321179252337564,
+                  "postGainRms": 0.007449569433981142,
+                  "gainMin": 0.11785093761353183,
+                  "gainMax": 0.11785095091713571
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.1178510858094905,
+                  "inputRms": 0.06312510248505618,
+                  "postGainRms": 0.007439361869699237,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109220020377
+                }
+              ],
+              "differenceDb": 0.000020851876385668165,
+              "sampleDifferenceDb": 0.00002180945447548957
+            },
+            {
+              "startFrame": 52992,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080275635736,
+                  "inputRms": 0.062006594877550086,
+                  "postGainRms": 0.007307526982507514,
+                  "gainMin": 0.1178507964228924,
+                  "gainMax": 0.11785080976347094
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094443202253,
+                  "inputRms": 0.06352217937513538,
+                  "postGainRms": 0.007486148831740047,
+                  "gainMin": 0.11785093758806559,
+                  "gainMax": 0.11785095111258433
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094449623071,
+                  "inputRms": 0.06352395345694765,
+                  "postGainRms": 0.007486357913035881,
+                  "gainMin": 0.11785093798478107,
+                  "gainMax": 0.11785095117163173
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108573867278,
+                  "inputRms": 0.0629066287848314,
+                  "postGainRms": 0.007413614502452027,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020856457086357413,
+              "sampleDifferenceDb": 0.000021813631437850032
+            },
+            {
+              "startFrame": 53760,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080293268681,
+                  "inputRms": 0.06332603730512866,
+                  "postGainRms": 0.007463024342954691,
+                  "gainMin": 0.1178507965505848,
+                  "gainMax": 0.1178508095973267
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094453130658,
+                  "inputRms": 0.0626909847841599,
+                  "postGainRms": 0.0073881917704110124,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.11785095055488062
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094454349042,
+                  "inputRms": 0.06257831551786848,
+                  "postGainRms": 0.007374913591721364,
+                  "gainMin": 0.1178509376971583,
+                  "gainMax": 0.11785095096664769
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108591575197,
+                  "inputRms": 0.06285520149235863,
+                  "postGainRms": 0.0074075537513278574,
+                  "gainMin": 0.11785107921738962,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.00002085651231325881,
+              "sampleDifferenceDb": 0.000021804220198217187
+            },
+            {
+              "startFrame": 54528,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080283112691,
+                  "inputRms": 0.06391989085491125,
+                  "postGainRms": 0.007533010454129297,
+                  "gainMin": 0.11785079628753271,
+                  "gainMax": 0.11785080965393513
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094441300299,
+                  "inputRms": 0.06346281386021278,
+                  "postGainRms": 0.0074791525485326926,
+                  "gainMin": 0.11785093758806559,
+                  "gainMax": 0.11785095111258433
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.1178509442821764,
+                  "inputRms": 0.06312674726060376,
+                  "postGainRms": 0.007439546774124446,
+                  "gainMin": 0.11785093761353183,
+                  "gainMax": 0.11785095105113852
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108587715228,
+                  "inputRms": 0.06301735950727348,
+                  "postGainRms": 0.007426664247043065,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.00002086115264009832,
+              "sampleDifferenceDb": 0.000021823607773876932
+            },
+            {
+              "startFrame": 55296,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080274638454,
+                  "inputRms": 0.06197971236735611,
+                  "postGainRms": 0.007304358856482935,
+                  "gainMin": 0.1178507964228924,
+                  "gainMax": 0.11785080976347094
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094457953599,
+                  "inputRms": 0.06275224790014407,
+                  "postGainRms": 0.007395411689521182,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.11785095055488062
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.1178509444477696,
+                  "inputRms": 0.0635728727993613,
+                  "postGainRms": 0.007492123100662652,
+                  "gainMin": 0.11785093798478107,
+                  "gainMax": 0.11785095117163173
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.1178510858139658,
+                  "inputRms": 0.06324714356968576,
+                  "postGainRms": 0.007453744544319252,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.00002086274137156958,
+              "sampleDifferenceDb": 0.000021813631437850032
+            },
+            {
+              "startFrame": 56064,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080297391397,
+                  "inputRms": 0.06341107162432179,
+                  "postGainRms": 0.007473045708362694,
+                  "gainMin": 0.1178507965505848,
+                  "gainMax": 0.1178508095973267
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094435343903,
+                  "inputRms": 0.06340111533992077,
+                  "postGainRms": 0.007471881315870971,
+                  "gainMin": 0.11785093758806559,
+                  "gainMax": 0.11785095111258433
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.1178509445684522,
+                  "inputRms": 0.0626189627312717,
+                  "postGainRms": 0.0073797039057770745,
+                  "gainMin": 0.1178509376971583,
+                  "gainMax": 0.11785095096664769
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108586867417,
+                  "inputRms": 0.06334075307981697,
+                  "postGainRms": 0.007464776530195998,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020850004030738595,
+              "sampleDifferenceDb": 0.000021804220198217187
+            },
+            {
+              "startFrame": 56832,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.1178508027617655,
+                  "inputRms": 0.06385804538542941,
+                  "postGainRms": 0.007525721911470111,
+                  "gainMin": 0.11785079628753271,
+                  "gainMax": 0.11785080965393513
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094461638848,
+                  "inputRms": 0.06281549445395535,
+                  "postGainRms": 0.007402865357944149,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.11785095055488062
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094425704207,
+                  "inputRms": 0.06304083906487437,
+                  "postGainRms": 0.00742942241055167,
+                  "gainMin": 0.11785093761353183,
+                  "gainMax": 0.11785095117163173
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108588745069,
+                  "inputRms": 0.06321501214992203,
+                  "postGainRms": 0.0074499578262567,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020867023758267996,
+              "sampleDifferenceDb": 0.000021823607773876932
+            },
+            {
+              "startFrame": 57600,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080275351247,
+                  "inputRms": 0.06195947584408496,
+                  "postGainRms": 0.007301973966412277,
+                  "gainMin": 0.1178507964228924,
+                  "gainMax": 0.11785080976347094
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094434137428,
+                  "inputRms": 0.06333783047088427,
+                  "postGainRms": 0.007464423133527582,
+                  "gainMin": 0.11785093758806559,
+                  "gainMax": 0.11785095111258433
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.1178509444586793,
+                  "inputRms": 0.06361031799556613,
+                  "postGainRms": 0.007496536053094392,
+                  "gainMin": 0.1178509376971583,
+                  "gainMax": 0.11785095114458591
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108585101883,
+                  "inputRms": 0.06298145662976722,
+                  "postGainRms": 0.007422433052296915,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020864946918193615,
+              "sampleDifferenceDb": 0.000021813631437850032
+            },
+            {
+              "startFrame": 58368,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080297318687,
+                  "inputRms": 0.06349386868716102,
+                  "postGainRms": 0.007482803408656012,
+                  "gainMin": 0.1178507965084791,
+                  "gainMax": 0.1178508095973267
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094459794883,
+                  "inputRms": 0.06288031263536054,
+                  "postGainRms": 0.007410504240691576,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.1178509508176463
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094451760154,
+                  "inputRms": 0.06267088598003429,
+                  "postGainRms": 0.007385823106501953,
+                  "gainMin": 0.11785093800253538,
+                  "gainMax": 0.11785095096664769
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.1178510857564762,
+                  "inputRms": 0.06284784807993289,
+                  "postGainRms": 0.007406687133678159,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109220020377
+                }
+              ],
+              "differenceDb": 0.000020841788377743838,
+              "sampleDifferenceDb": 0.00002179317019037533
+            },
+            {
+              "startFrame": 59136,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080289602523,
+                  "inputRms": 0.06379160584223881,
+                  "postGainRms": 0.007517891966534618,
+                  "gainMin": 0.11785079628753271,
+                  "gainMax": 0.11785080965393513
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094430989128,
+                  "inputRms": 0.0632727094374561,
+                  "postGainRms": 0.007456748556249571,
+                  "gainMin": 0.11785093758806559,
+                  "gainMax": 0.11785095111258433
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.1178509442446184,
+                  "inputRms": 0.06295596514415051,
+                  "postGainRms": 0.007419419938069421,
+                  "gainMin": 0.11785093761353183,
+                  "gainMax": 0.11785095117163173
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108579321599,
+                  "inputRms": 0.06293416353612731,
+                  "postGainRms": 0.0074168595062204246,
+                  "gainMin": 0.11785107921738962,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020850183183065283,
+              "sampleDifferenceDb": 0.000021823607773876932
+            },
+            {
+              "startFrame": 59904,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080268570644,
+                  "inputRms": 0.06194609804755571,
+                  "postGainRms": 0.007300397378151913,
+                  "gainMin": 0.1178507964228924,
+                  "gainMax": 0.11785080976347094
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094462783936,
+                  "inputRms": 0.06294611883396616,
+                  "postGainRms": 0.007418259565239142,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.1178509508176463
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094452015807,
+                  "inputRms": 0.06363570392308712,
+                  "postGainRms": 0.007499527812540946,
+                  "gainMin": 0.1178509376971583,
+                  "gainMax": 0.11785095114458591
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108594200919,
+                  "inputRms": 0.063163111366219,
+                  "postGainRms": 0.0074438412659849715,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020876650579589266,
+              "sampleDifferenceDb": 0.000021813631437850032
+            },
+            {
+              "startFrame": 60672,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080295041626,
+                  "inputRms": 0.06357449476774446,
+                  "postGainRms": 0.007492305255545722,
+                  "gainMin": 0.1178507965084791,
+                  "gainMax": 0.1178508095973267
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094429361763,
+                  "inputRms": 0.06320675770767259,
+                  "postGainRms": 0.007448976081587109,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.11785095111258433
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094444371891,
+                  "inputRms": 0.0627327741858481,
+                  "postGainRms": 0.007393116685376748,
+                  "gainMin": 0.11785093807852201,
+                  "gainMax": 0.11785095096664769
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108585275943,
+                  "inputRms": 0.06333026895461198,
+                  "postGainRms": 0.007463540963648322,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020850562916952172,
+              "sampleDifferenceDb": 0.000021807323490717872
+            },
+            {
+              "startFrame": 61440,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080285833421,
+                  "inputRms": 0.0637208709799866,
+                  "postGainRms": 0.007509555803823751,
+                  "gainMin": 0.11785079628753271,
+                  "gainMax": 0.11785080965393513
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094467825542,
+                  "inputRms": 0.06301303393275018,
+                  "postGainRms": 0.007426145576017573,
+                  "gainMin": 0.11785093763237983,
+                  "gainMax": 0.11785095111258433
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094435625314,
+                  "inputRms": 0.06287423715432874,
+                  "postGainRms": 0.00740978822431666,
+                  "gainMin": 0.11785093761353183,
+                  "gainMax": 0.11785095117163173
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108582265863,
+                  "inputRms": 0.06328713530427446,
+                  "postGainRms": 0.007458457614214258,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020855131091058394,
+              "sampleDifferenceDb": 0.000021823607773876932
+            },
+            {
+              "startFrame": 62208,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080276959345,
+                  "inputRms": 0.06193950131793429,
+                  "postGainRms": 0.007299619953466847,
+                  "gainMin": 0.1178507964228924,
+                  "gainMax": 0.11785080976347094
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094431155904,
+                  "inputRms": 0.06313978802461705,
+                  "postGainRms": 0.007441083642332786,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.11785095103984487
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094446976907,
+                  "inputRms": 0.06364832588571434,
+                  "postGainRms": 0.007501015319551086,
+                  "gainMin": 0.1178509376971583,
+                  "gainMax": 0.11785095114458591
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108587391939,
+                  "inputRms": 0.06307232839287338,
+                  "postGainRms": 0.007433142389696565,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020865449534105074,
+              "sampleDifferenceDb": 0.000021813631437850032
+            },
+            {
+              "startFrame": 62976,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080280709495,
+                  "inputRms": 0.06365185197546826,
+                  "postGainRms": 0.007501421855467307,
+                  "gainMin": 0.1178507965084791,
+                  "gainMax": 0.11785080965393513
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094460751382,
+                  "inputRms": 0.06308008985546172,
+                  "postGainRms": 0.007434048175393014,
+                  "gainMin": 0.11785093763237983,
+                  "gainMax": 0.11785095111258433
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094440575125,
+                  "inputRms": 0.06280297511618196,
+                  "postGainRms": 0.00740138992893294,
+                  "gainMin": 0.11785093761353183,
+                  "gainMax": 0.11785095096664769
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108589646222,
+                  "inputRms": 0.06287642477906108,
+                  "postGainRms": 0.007410054937499573,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109239223727
+                }
+              ],
+              "differenceDb": 0.000020864347038518835,
+              "sampleDifferenceDb": 0.000021807323490717872
+            },
+            {
+              "startFrame": 63744,
+              "sources": [
+                {
+                  "id": "corner-playback-0",
+                  "gain": 0.11785080294304942,
+                  "inputRms": 0.06364632175223651,
+                  "postGainRms": 0.007500770122872745,
+                  "gainMin": 0.11785079628753271,
+                  "gainMax": 0.11785080947511654
+                },
+                {
+                  "id": "corner-playback-1",
+                  "gain": 0.11785094441706166,
+                  "inputRms": 0.06307255964306895,
+                  "postGainRms": 0.007433160720737125,
+                  "gainMin": 0.11785093756516817,
+                  "gainMax": 0.11785095103984487
+                },
+                {
+                  "id": "corner-playback-2",
+                  "gain": 0.11785094435560645,
+                  "inputRms": 0.06279760262651098,
+                  "postGainRms": 0.00740075677280243,
+                  "gainMin": 0.11785093794658409,
+                  "gainMax": 0.11785095117163173
+                },
+                {
+                  "id": "corner-playback-3",
+                  "gain": 0.11785108582576095,
+                  "inputRms": 0.06287505719654746,
+                  "postGainRms": 0.007409893761969944,
+                  "gainMin": 0.11785107901975202,
+                  "gainMax": 0.11785109220020377
+                }
+              ],
+              "differenceDb": 0.000020849116022279315,
+              "sampleDifferenceDb": 0.00002180945447548957
+            }
+          ],
+          "physicalLocalizationMeasured": false
+        }
+      },
+      {
+        "id": "native-continuous-distance-fade-cutoff",
+        "detail": {
+          "legs": [
+            {
+              "phase": "outward",
+              "observedKey": "KeyW",
+              "minimumDistanceMeters": 9.499995958580843,
+              "maximumDistanceMeters": 14.703455111817656,
+              "maximumNativeDistanceStepMeters": 0.3500626097250539,
+              "poseSamples": 32,
+              "physicsSteps": 111,
+              "sceneFrames": 30,
+              "bins": [
+                {
+                  "lowerMeters": 10,
+                  "upperMeters": 11,
+                  "windows": 17,
+                  "medianDistanceNormalizedGain": 0.9784414309329196,
+                  "representativeFrame": 96768,
+                  "representativeDistanceNormalizedBounds": [
+                    0.9784413755831467,
+                    0.9784414878925093
+                  ],
+                  "firstFrame": 90624,
+                  "lastFrame": 103680,
+                  "samples": [
+                    {
+                      "startFrame": 90624,
+                      "endFrame": 91392,
+                      "distanceRangeMeters": {
+                        "minimum": 10.049759277580602,
+                        "maximum": 10.049759277580602,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09945905955927814,
+                      "distanceNormalizedGain": 0.9995396065452972,
+                      "distanceNormalizedBounds": [
+                        0.999539548523695,
+                        0.9995396637517155
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09945905918482399,
+                      "referenceResidualDbAtRangeMidpoint": 3.2701570953800225e-8
+                    },
+                    {
+                      "startFrame": 91392,
+                      "endFrame": 92160,
+                      "distanceRangeMeters": {
+                        "minimum": 10.049759277580602,
+                        "maximum": 10.049759277580602,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0994590596055499,
+                      "distanceNormalizedGain": 0.9995396070103172,
+                      "distanceNormalizedBounds": [
+                        0.9995395477498522,
+                        0.9995396638219309
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09945905918482399,
+                      "referenceResidualDbAtRangeMidpoint": 3.6742544684484294e-8
+                    },
+                    {
+                      "startFrame": 92160,
+                      "endFrame": 92928,
+                      "distanceRangeMeters": {
+                        "minimum": 10.049759277580602,
+                        "maximum": 10.049759277580602,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09945905960050486,
+                      "distanceNormalizedGain": 0.9995396069596157,
+                      "distanceNormalizedBounds": [
+                        0.9995395472032762,
+                        0.999539662020432
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09945905918482399,
+                      "referenceResidualDbAtRangeMidpoint": 3.6301953110143345e-8
+                    },
+                    {
+                      "startFrame": 92928,
+                      "endFrame": 93696,
+                      "distanceRangeMeters": {
+                        "minimum": 10.049759277580602,
+                        "maximum": 10.049759277580602,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0994590595591679,
+                      "distanceNormalizedGain": 0.9995396065441892,
+                      "distanceNormalizedBounds": [
+                        0.9995395500650435,
+                        0.9995396637517155
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09945905918482399,
+                      "referenceResidualDbAtRangeMidpoint": 3.26919431084104e-8
+                    },
+                    {
+                      "startFrame": 93696,
+                      "endFrame": 94464,
+                      "distanceRangeMeters": {
+                        "minimum": 10.049759277580602,
+                        "maximum": 10.24941917409256,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.09740884758598752,
+                      "distanceNormalizedGain": 0.9886597899598967,
+                      "distanceNormalizedBounds": [
+                        0.9695581588253318,
+                        1.0193976504986355
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09812307738697071,
+                      "referenceResidualDbAtRangeMidpoint": -0.06345509890418463
+                    },
+                    {
+                      "startFrame": 94464,
+                      "endFrame": 95232,
+                      "distanceRangeMeters": {
+                        "minimum": 10.24941917409256,
+                        "maximum": 10.349412026854303,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.09549576103424066,
+                      "distanceNormalizedGain": 0.9835505309751411,
+                      "distanceNormalizedBounds": [
+                        0.9689879754835591,
+                        0.9984675007780891
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0955422664557848,
+                      "referenceResidualDbAtRangeMidpoint": -0.0042289063846665444
+                    },
+                    {
+                      "startFrame": 95232,
+                      "endFrame": 96000,
+                      "distanceRangeMeters": {
+                        "minimum": 10.349412026854303,
+                        "maximum": 10.349412026854303,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0945407749356505,
+                      "distanceNormalizedGain": 0.978441433147147,
+                      "distanceNormalizedBounds": [
+                        0.9784413759609456,
+                        0.9784414876402333
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09454077745660418,
+                      "referenceResidualDbAtRangeMidpoint": -2.3161144111588266e-7
+                    },
+                    {
+                      "startFrame": 96000,
+                      "endFrame": 96768,
+                      "distanceRangeMeters": {
+                        "minimum": 10.349412026854303,
+                        "maximum": 10.349412026854303,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09454077472170332,
+                      "distanceNormalizedGain": 0.9784414309329196,
+                      "distanceNormalizedBounds": [
+                        0.9784413749894949,
+                        0.9784414871160592
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09454077745660418,
+                      "referenceResidualDbAtRangeMidpoint": -2.5126773921652047e-7
+                    },
+                    {
+                      "startFrame": 96768,
+                      "endFrame": 97536,
+                      "distanceRangeMeters": {
+                        "minimum": 10.349412026854303,
+                        "maximum": 10.349412026854303,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09454077478879493,
+                      "distanceNormalizedGain": 0.9784414316272783,
+                      "distanceNormalizedBounds": [
+                        0.9784413755831467,
+                        0.9784414878925093
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09454077745660418,
+                      "referenceResidualDbAtRangeMidpoint": -2.451037289443609e-7
+                    },
+                    {
+                      "startFrame": 97536,
+                      "endFrame": 98304,
+                      "distanceRangeMeters": {
+                        "minimum": 10.349412026854303,
+                        "maximum": 10.499920069603176,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.09286095872438511,
+                      "distanceNormalizedGain": 0.9680444836200679,
+                      "distanceNormalizedBounds": [
+                        0.9433258058986678,
+                        0.9926706334992799
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09291226077571971,
+                      "referenceResidualDbAtRangeMidpoint": -0.004797289605305834
+                    },
+                    {
+                      "startFrame": 98304,
+                      "endFrame": 99072,
+                      "distanceRangeMeters": {
+                        "minimum": 10.499920069603176,
+                        "maximum": 10.499920069603176,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09114777308308723,
+                      "distanceNormalizedGain": 0.9570443318947438,
+                      "distanceNormalizedBounds": [
+                        0.9570442753767225,
+                        0.9570443859175541
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09114777601525571,
+                      "referenceResidualDbAtRangeMidpoint": -2.794197876836376e-7
+                    },
+                    {
+                      "startFrame": 99072,
+                      "endFrame": 99840,
+                      "distanceRangeMeters": {
+                        "minimum": 10.499920069603176,
+                        "maximum": 10.499920069603176,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09114777294442702,
+                      "distanceNormalizedGain": 0.9570443304388226,
+                      "distanceNormalizedBounds": [
+                        0.9570442762661392,
+                        0.9570443866211656
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09114777601525571,
+                      "referenceResidualDbAtRangeMidpoint": -2.926333550449991e-7
+                    },
+                    {
+                      "startFrame": 99840,
+                      "endFrame": 100608,
+                      "distanceRangeMeters": {
+                        "minimum": 10.499920069603176,
+                        "maximum": 10.499920069603176,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09114777303028258,
+                      "distanceNormalizedGain": 0.9570443313402992,
+                      "distanceNormalizedBounds": [
+                        0.9570442742210468,
+                        0.95704438703901
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09114777601525571,
+                      "referenceResidualDbAtRangeMidpoint": -2.844517855019468e-7
+                    },
+                    {
+                      "startFrame": 100608,
+                      "endFrame": 101376,
+                      "distanceRangeMeters": {
+                        "minimum": 10.499920069603176,
+                        "maximum": 10.499920069603176,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09114777302726718,
+                      "distanceNormalizedGain": 0.9570443313086376,
+                      "distanceNormalizedBounds": [
+                        0.9570442753767225,
+                        0.9570443859175541
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09114777601525571,
+                      "referenceResidualDbAtRangeMidpoint": -2.8473913677417296e-7
+                    },
+                    {
+                      "startFrame": 101376,
+                      "endFrame": 102144,
+                      "distanceRangeMeters": {
+                        "minimum": 10.499920069603176,
+                        "maximum": 10.749909716920957,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.08911691714612047,
+                      "distanceNormalizedGain": 0.9468596602274169,
+                      "distanceNormalizedBounds": [
+                        0.8866259608695217,
+                        0.9798303875709737
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.08794461373803401,
+                      "referenceResidualDbAtRangeMidpoint": 0.11501817210024654
+                    },
+                    {
+                      "startFrame": 102144,
+                      "endFrame": 102912,
+                      "distanceRangeMeters": {
+                        "minimum": 10.749909716920957,
+                        "maximum": 10.749909716920957,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0844412148590617,
+                      "distanceNormalizedGain": 0.9077354361220377,
+                      "distanceNormalizedBounds": [
+                        0.9077353846998821,
+                        0.907735483210599
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.08444121837229814,
+                      "referenceResidualDbAtRangeMidpoint": -3.6138257132382094e-7
+                    },
+                    {
+                      "startFrame": 102912,
+                      "endFrame": 103680,
+                      "distanceRangeMeters": {
+                        "minimum": 10.749909716920957,
+                        "maximum": 10.749909716920957,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.08444121470248726,
+                      "distanceNormalizedGain": 0.9077354344388766,
+                      "distanceNormalizedBounds": [
+                        0.9077353820628661,
+                        0.907735486201453
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.08444121837229814,
+                      "referenceResidualDbAtRangeMidpoint": -3.774883112996699e-7
+                    }
+                  ]
+                },
+                {
+                  "lowerMeters": 11,
+                  "upperMeters": 12,
+                  "windows": 22,
+                  "medianDistanceNormalizedGain": 0.7347193254938542,
+                  "representativeFrame": 112896,
+                  "representativeDistanceNormalizedBounds": [
+                    0.7347192864588213,
+                    0.7347193659443001
+                  ],
+                  "firstFrame": 104448,
+                  "lastFrame": 121344,
+                  "samples": [
+                    {
+                      "startFrame": 104448,
+                      "endFrame": 105216,
+                      "distanceRangeMeters": {
+                        "minimum": 11.000578363219038,
+                        "maximum": 11.000578363219038,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.07668571923136518,
+                      "distanceNormalizedGain": 0.8435872637444458,
+                      "distanceNormalizedBounds": [
+                        0.8435872136388214,
+                        0.8435873104198891
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07668572288994502,
+                      "referenceResidualDbAtRangeMidpoint": -4.143929312971165e-7
+                    },
+                    {
+                      "startFrame": 105216,
+                      "endFrame": 105984,
+                      "distanceRangeMeters": {
+                        "minimum": 11.000578363219038,
+                        "maximum": 11.000578363219038,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.07668571917778529,
+                      "distanceNormalizedGain": 0.8435872631550361,
+                      "distanceNormalizedBounds": [
+                        0.8435872167836136,
+                        0.8435873081199416
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07668572288994502,
+                      "referenceResidualDbAtRangeMidpoint": -4.2046171434748104e-7
+                    },
+                    {
+                      "startFrame": 105984,
+                      "endFrame": 106752,
+                      "distanceRangeMeters": {
+                        "minimum": 11.000578363219038,
+                        "maximum": 11.050578641073157,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.07585254088095118,
+                      "distanceNormalizedGain": 0.8363181440701734,
+                      "distanceNormalizedBounds": [
+                        0.8255366896326275,
+                        0.8474216165068919
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07586860247045007,
+                      "referenceResidualDbAtRangeMidpoint": -0.0018390211309877989
+                    },
+                    {
+                      "startFrame": 106752,
+                      "endFrame": 107520,
+                      "distanceRangeMeters": {
+                        "minimum": 11.050578641073157,
+                        "maximum": 11.050578641073157,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.07504484785693159,
+                      "distanceNormalizedGain": 0.8292889928503929,
+                      "distanceNormalizedBounds": [
+                        0.829288949755366,
+                        0.8292890411824474
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07504484574323064,
+                      "referenceResidualDbAtRangeMidpoint": 2.446453540520851e-7
+                    },
+                    {
+                      "startFrame": 107520,
+                      "endFrame": 108288,
+                      "distanceRangeMeters": {
+                        "minimum": 11.050578641073157,
+                        "maximum": 11.050578641073157,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.07504484805892567,
+                      "distanceNormalizedGain": 0.8292889950825444,
+                      "distanceNormalizedBounds": [
+                        0.8292889475792283,
+                        0.829289041254719
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07504484574323064,
+                      "referenceResidualDbAtRangeMidpoint": 2.6802468396883907e-7
+                    },
+                    {
+                      "startFrame": 108288,
+                      "endFrame": 109056,
+                      "distanceRangeMeters": {
+                        "minimum": 11.050578641073157,
+                        "maximum": 11.050578641073157,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.07504484799012019,
+                      "distanceNormalizedGain": 0.829288994322204,
+                      "distanceNormalizedBounds": [
+                        0.8292889486356322,
+                        0.8292890420202678
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07504484574323064,
+                      "referenceResidualDbAtRangeMidpoint": 2.6006095555003263e-7
+                    },
+                    {
+                      "startFrame": 109056,
+                      "endFrame": 109824,
+                      "distanceRangeMeters": {
+                        "minimum": 11.050578641073157,
+                        "maximum": 11.25116297052646,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.0750448478567514,
+                      "distanceNormalizedGain": 0.8368154030915376,
+                      "distanceNormalizedBounds": [
+                        0.8292889475792283,
+                        0.8443418625460534
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07167969018521186,
+                      "referenceResidualDbAtRangeMidpoint": 0.39849523842713724
+                    },
+                    {
+                      "startFrame": 109824,
+                      "endFrame": 110592,
+                      "distanceRangeMeters": {
+                        "minimum": 11.050578641073157,
+                        "maximum": 11.25116297052646,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.0682321936227659,
+                      "distanceNormalizedGain": 0.7608483758837802,
+                      "distanceNormalizedBounds": [
+                        0.7540051794637136,
+                        0.7676915723349251
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07167969018521186,
+                      "referenceResidualDbAtRangeMidpoint": -0.42813571485025065
+                    },
+                    {
+                      "startFrame": 110592,
+                      "endFrame": 111360,
+                      "distanceRangeMeters": {
+                        "minimum": 11.25116297052646,
+                        "maximum": 11.351337262474644,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.0677637015780447,
+                      "distanceNormalizedGain": 0.7658145403533863,
+                      "distanceNormalizedBounds": [
+                        0.7282354759556194,
+                        0.7745266818319416
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.06648554569594604,
+                      "referenceResidualDbAtRangeMidpoint": 0.16539767068245997
+                    },
+                    {
+                      "startFrame": 111360,
+                      "endFrame": 112128,
+                      "distanceRangeMeters": {
+                        "minimum": 11.351337262474644,
+                        "maximum": 11.351337262474644,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.06472535427312612,
+                      "distanceNormalizedGain": 0.734719325787409,
+                      "distanceNormalizedBounds": [
+                        0.7347192837364002,
+                        0.7347193661489445
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.06472535680740045,
+                      "referenceResidualDbAtRangeMidpoint": -3.40089706015979e-7
+                    },
+                    {
+                      "startFrame": 112128,
+                      "endFrame": 112896,
+                      "distanceRangeMeters": {
+                        "minimum": 11.351337262474644,
+                        "maximum": 11.351337262474644,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0647253542953905,
+                      "distanceNormalizedGain": 0.7347193260401395,
+                      "distanceNormalizedBounds": [
+                        0.7347192841112524,
+                        0.7347193668782533
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.06472535680740045,
+                      "referenceResidualDbAtRangeMidpoint": -3.371019127519916e-7
+                    },
+                    {
+                      "startFrame": 112896,
+                      "endFrame": 113664,
+                      "distanceRangeMeters": {
+                        "minimum": 11.351337262474644,
+                        "maximum": 11.351337262474644,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.06472535422140452,
+                      "distanceNormalizedGain": 0.7347193252002996,
+                      "distanceNormalizedBounds": [
+                        0.7347192864588213,
+                        0.7347193659443001
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.06472535680740045,
+                      "referenceResidualDbAtRangeMidpoint": -3.470305429134873e-7
+                    },
+                    {
+                      "startFrame": 113664,
+                      "endFrame": 114432,
+                      "distanceRangeMeters": {
+                        "minimum": 11.351337262474644,
+                        "maximum": 11.551327856689392,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.063458262852283,
+                      "distanceNormalizedGain": 0.7266816715748623,
+                      "distanceNormalizedBounds": [
+                        0.653908781875482,
+                        0.7476638289218863
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.061179672045333595,
+                      "referenceResidualDbAtRangeMidpoint": 0.31762069311626706
+                    },
+                    {
+                      "startFrame": 114432,
+                      "endFrame": 115200,
+                      "distanceRangeMeters": {
+                        "minimum": 11.551327856689392,
+                        "maximum": 11.551327856689392,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.057606324487530676,
+                      "distanceNormalizedGain": 0.6654295407743014,
+                      "distanceNormalizedBounds": [
+                        0.6654295042497398,
+                        0.6654295793453598
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.05760632370273229,
+                      "referenceResidualDbAtRangeMidpoint": 1.183320112310934e-7
+                    },
+                    {
+                      "startFrame": 115200,
+                      "endFrame": 115968,
+                      "distanceRangeMeters": {
+                        "minimum": 11.551327856689392,
+                        "maximum": 11.551327856689392,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.05760632462294454,
+                      "distanceNormalizedGain": 0.6654295423385113,
+                      "distanceNormalizedBounds": [
+                        0.6654295051941291,
+                        0.6654295776020053
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.05760632370273229,
+                      "referenceResidualDbAtRangeMidpoint": 1.3874973180750753e-7
+                    },
+                    {
+                      "startFrame": 115968,
+                      "endFrame": 116736,
+                      "distanceRangeMeters": {
+                        "minimum": 11.551327856689392,
+                        "maximum": 11.551327856689392,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.057606324372949116,
+                      "distanceNormalizedGain": 0.6654295394507322,
+                      "distanceNormalizedBounds": [
+                        0.6654295027597066,
+                        0.6654295763985174
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.05760632370273229,
+                      "referenceResidualDbAtRangeMidpoint": 1.0105538671289114e-7
+                    },
+                    {
+                      "startFrame": 116736,
+                      "endFrame": 117504,
+                      "distanceRangeMeters": {
+                        "minimum": 11.551327856689392,
+                        "maximum": 11.551327856689392,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.057606324580682426,
+                      "distanceNormalizedGain": 0.6654295418503278,
+                      "distanceNormalizedBounds": [
+                        0.6654295042497398,
+                        0.6654295793453598
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.05760632370273229,
+                      "referenceResidualDbAtRangeMidpoint": 1.3237744443604824e-7
+                    },
+                    {
+                      "startFrame": 117504,
+                      "endFrame": 118272,
+                      "distanceRangeMeters": {
+                        "minimum": 11.551327856689392,
+                        "maximum": 11.801317170408732,
+                        "poseSamples": 3
+                      },
+                      "measuredGain": 0.057606324577167856,
+                      "distanceNormalizedGain": 0.6726300245831996,
+                      "distanceNormalizedBounds": [
+                        0.6654295051941291,
+                        0.6798305439235474
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.053126260049598396,
+                      "referenceResidualDbAtRangeMidpoint": 0.7032184657442959
+                    },
+                    {
+                      "startFrame": 118272,
+                      "endFrame": 119040,
+                      "distanceRangeMeters": {
+                        "minimum": 11.551327856689392,
+                        "maximum": 11.801317170408732,
+                        "poseSamples": 3
+                      },
+                      "measuredGain": 0.048660751483415615,
+                      "distanceNormalizedGain": 0.5681786280720217,
+                      "distanceNormalizedBounds": [
+                        0.5620962622469673,
+                        0.5742609937818594
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.053126260049598396,
+                      "referenceResidualDbAtRangeMidpoint": -0.7626086438185244
+                    },
+                    {
+                      "startFrame": 119040,
+                      "endFrame": 119808,
+                      "distanceRangeMeters": {
+                        "minimum": 11.801317170408732,
+                        "maximum": 11.801317170408732,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.04866075136492159,
+                      "distanceNormalizedGain": 0.5742609606078393,
+                      "distanceNormalizedBounds": [
+                        0.5742609292437335,
+                        0.5742609943605298
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.04866075199360112,
+                      "referenceResidualDbAtRangeMidpoint": -1.1221859224924238e-7
+                    },
+                    {
+                      "startFrame": 119808,
+                      "endFrame": 120576,
+                      "distanceRangeMeters": {
+                        "minimum": 11.801317170408732,
+                        "maximum": 11.801317170408732,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.04866075142407886,
+                      "distanceNormalizedGain": 0.5742609613059729,
+                      "distanceNormalizedBounds": [
+                        0.5742609288399132,
+                        0.5742609937818594
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.04866075199360112,
+                      "referenceResidualDbAtRangeMidpoint": -1.0165908581954415e-7
+                    },
+                    {
+                      "startFrame": 120576,
+                      "endFrame": 121344,
+                      "distanceRangeMeters": {
+                        "minimum": 11.801317170408732,
+                        "maximum": 11.801317170408732,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.04866075149155917,
+                      "distanceNormalizedGain": 0.5742609621023296,
+                      "distanceNormalizedBounds": [
+                        0.5742609294252045,
+                        0.5742609941648749
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.04866075199360112,
+                      "referenceResidualDbAtRangeMidpoint": -8.961392492032679e-8
+                    }
+                  ]
+                },
+                {
+                  "lowerMeters": 12,
+                  "upperMeters": 13,
+                  "windows": 21,
+                  "medianDistanceNormalizedGain": 0.2986626058131946,
+                  "representativeFrame": 129792,
+                  "representativeDistanceNormalizedBounds": [
+                    0.2986625888017703,
+                    0.29866262242965413
+                  ],
+                  "firstFrame": 122112,
+                  "lastFrame": 138240,
+                  "samples": [
+                    {
+                      "startFrame": 122112,
+                      "endFrame": 122880,
+                      "distanceRangeMeters": {
+                        "minimum": 12.050790521193845,
+                        "maximum": 12.050790521193845,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.03991087903385739,
+                      "distanceNormalizedGain": 0.4809576427537228,
+                      "distanceNormalizedBounds": [
+                        0.4809576161843952,
+                        0.4809576691499382
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.03991087955430112,
+                      "referenceResidualDbAtRangeMidpoint": -1.1326527715233504e-7
+                    },
+                    {
+                      "startFrame": 122880,
+                      "endFrame": 123648,
+                      "distanceRangeMeters": {
+                        "minimum": 12.050790521193845,
+                        "maximum": 12.050790521193845,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.039910879024304756,
+                      "distanceNormalizedGain": 0.48095764263860596,
+                      "distanceNormalizedBounds": [
+                        0.48095761454524477,
+                        0.4809576689566328
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.03991087955430112,
+                      "referenceResidualDbAtRangeMidpoint": -1.1534423797770216e-7
+                    },
+                    {
+                      "startFrame": 123648,
+                      "endFrame": 124416,
+                      "distanceRangeMeters": {
+                        "minimum": 12.050790521193845,
+                        "maximum": 12.20079372377239,
+                        "poseSamples": 3
+                      },
+                      "measuredGain": 0.03746460716431652,
+                      "distanceNormalizedGain": 0.4542880384249939,
+                      "distanceNormalizedBounds": [
+                        0.4197306756076444,
+                        0.48694442830352863
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.03734932550011112,
+                      "referenceResidualDbAtRangeMidpoint": 0.02676839913202935
+                    },
+                    {
+                      "startFrame": 124416,
+                      "endFrame": 125184,
+                      "distanceRangeMeters": {
+                        "minimum": 12.20079372377239,
+                        "maximum": 12.20079372377239,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.03483013804904268,
+                      "distanceNormalizedGain": 0.4249553297068859,
+                      "distanceNormalizedBounds": [
+                        0.42495530685919103,
+                        0.4249553527264159
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0348301390465755,
+                      "referenceResidualDbAtRangeMidpoint": -2.487632939243214e-7
+                    },
+                    {
+                      "startFrame": 125184,
+                      "endFrame": 125952,
+                      "distanceRangeMeters": {
+                        "minimum": 12.20079372377239,
+                        "maximum": 12.20079372377239,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0348301381022731,
+                      "distanceNormalizedGain": 0.42495533035633926,
+                      "distanceNormalizedBounds": [
+                        0.42495530563834166,
+                        0.4249553531315505
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0348301390465755,
+                      "referenceResidualDbAtRangeMidpoint": -2.3548876859590184e-7
+                    },
+                    {
+                      "startFrame": 125952,
+                      "endFrame": 126720,
+                      "distanceRangeMeters": {
+                        "minimum": 12.20079372377239,
+                        "maximum": 12.20079372377239,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0348301381335405,
+                      "distanceNormalizedGain": 0.4249553307378264,
+                      "distanceNormalizedBounds": [
+                        0.424955307362823,
+                        0.42495535373641985
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0348301390465755,
+                      "referenceResidualDbAtRangeMidpoint": -2.276913495706414e-7
+                    },
+                    {
+                      "startFrame": 126720,
+                      "endFrame": 127488,
+                      "distanceRangeMeters": {
+                        "minimum": 12.20079372377239,
+                        "maximum": 12.20079372377239,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.03483013806276598,
+                      "distanceNormalizedGain": 0.42495532987432105,
+                      "distanceNormalizedBounds": [
+                        0.42495530685919103,
+                        0.4249553527264159
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0348301390465755,
+                      "referenceResidualDbAtRangeMidpoint": -2.453409969025676e-7
+                    },
+                    {
+                      "startFrame": 127488,
+                      "endFrame": 128256,
+                      "distanceRangeMeters": {
+                        "minimum": 12.20079372377239,
+                        "maximum": 12.450911812505097,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.03218721138396792,
+                      "distanceNormalizedGain": 0.39673482853574793,
+                      "distanceNormalizedBounds": [
+                        0.3270681032376284,
+                        0.43366700117088247
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.030739165846076284,
+                      "referenceResidualDbAtRangeMidpoint": 0.39982548181503186
+                    },
+                    {
+                      "startFrame": 128256,
+                      "endFrame": 129024,
+                      "distanceRangeMeters": {
+                        "minimum": 12.450911812505097,
+                        "maximum": 12.550826963327118,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.026345790348551803,
+                      "distanceNormalizedGain": 0.32934528406866687,
+                      "distanceNormalizedBounds": [
+                        0.29628498426551736,
+                        0.33645152093035646
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.02528629261310554,
+                      "referenceResidualDbAtRangeMidpoint": 0.35652144469689034
+                    },
+                    {
+                      "startFrame": 129024,
+                      "endFrame": 129792,
+                      "distanceRangeMeters": {
+                        "minimum": 12.550826963327118,
+                        "maximum": 12.550826963327118,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.02379624915771855,
+                      "distanceNormalizedGain": 0.29866260555474416,
+                      "distanceNormalizedBounds": [
+                        0.2986625885036999,
+                        0.29866262285658635
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.02379624831238189,
+                      "referenceResidualDbAtRangeMidpoint": 3.0855707483104544e-7
+                    },
+                    {
+                      "startFrame": 129792,
+                      "endFrame": 130560,
+                      "distanceRangeMeters": {
+                        "minimum": 12.550826963327118,
+                        "maximum": 12.550826963327118,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.02379624917831085,
+                      "distanceNormalizedGain": 0.2986626058131946,
+                      "distanceNormalizedBounds": [
+                        0.2986625888017703,
+                        0.29866262242965413
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.02379624831238189,
+                      "referenceResidualDbAtRangeMidpoint": 3.160734902830413e-7
+                    },
+                    {
+                      "startFrame": 130560,
+                      "endFrame": 131328,
+                      "distanceRangeMeters": {
+                        "minimum": 12.550826963327118,
+                        "maximum": 12.550826963327118,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.02379624923300522,
+                      "distanceNormalizedGain": 0.2986626064996542,
+                      "distanceNormalizedBounds": [
+                        0.29866258809319984,
+                        0.2986626229959364
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.02379624831238189,
+                      "referenceResidualDbAtRangeMidpoint": 3.3603752905496833e-7
+                    },
+                    {
+                      "startFrame": 131328,
+                      "endFrame": 132096,
+                      "distanceRangeMeters": {
+                        "minimum": 12.550826963327118,
+                        "maximum": 12.701375623718278,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.023218263996214645,
+                      "distanceNormalizedGain": 0.2931561530759572,
+                      "distanceNormalizedBounds": [
+                        0.244829440307934,
+                        0.3022451164971528
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.02161251559739898,
+                      "referenceResidualDbAtRangeMidpoint": 0.6224885039108927
+                    },
+                    {
+                      "startFrame": 132096,
+                      "endFrame": 132864,
+                      "distanceRangeMeters": {
+                        "minimum": 12.701375623718278,
+                        "maximum": 12.701375623718278,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.019507037498269486,
+                      "distanceNormalizedGain": 0.24776621057147843,
+                      "distanceNormalizedBounds": [
+                        0.24776619598075628,
+                        0.24776622376280635
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.019507037302615653,
+                      "referenceResidualDbAtRangeMidpoint": 8.711869294998078e-8
+                    },
+                    {
+                      "startFrame": 132864,
+                      "endFrame": 133632,
+                      "distanceRangeMeters": {
+                        "minimum": 12.701375623718278,
+                        "maximum": 12.701375623718278,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.019507037494841742,
+                      "distanceNormalizedGain": 0.24776621052794134,
+                      "distanceNormalizedBounds": [
+                        0.247766197157201,
+                        0.24776622235584517
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.019507037302615653,
+                      "referenceResidualDbAtRangeMidpoint": 8.559242295401716e-8
+                    },
+                    {
+                      "startFrame": 133632,
+                      "endFrame": 134400,
+                      "distanceRangeMeters": {
+                        "minimum": 12.701375623718278,
+                        "maximum": 12.701375623718278,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.019507037484630094,
+                      "distanceNormalizedGain": 0.24776621039823937,
+                      "distanceNormalizedBounds": [
+                        0.2477661965082156,
+                        0.24776622291718667
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.019507037302615653,
+                      "referenceResidualDbAtRangeMidpoint": 8.10454878442992e-8
+                    },
+                    {
+                      "startFrame": 134400,
+                      "endFrame": 135168,
+                      "distanceRangeMeters": {
+                        "minimum": 12.701375623718278,
+                        "maximum": 12.902208606909397,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.01950703749465355,
+                      "distanceNormalizedGain": 0.2497250387921872,
+                      "distanceNormalizedBounds": [
+                        0.24776619598075628,
+                        0.2516838805053849
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.016828559844687223,
+                      "referenceResidualDbAtRangeMidpoint": 1.2828873448145017
+                    },
+                    {
+                      "startFrame": 135168,
+                      "endFrame": 135936,
+                      "distanceRangeMeters": {
+                        "minimum": 12.902208606909397,
+                        "maximum": 12.902894131344691,
+                        "poseSamples": 3
+                      },
+                      "measuredGain": 0.014309267517601715,
+                      "distanceNormalizedGain": 0.18462605920043715,
+                      "distanceNormalizedBounds": [
+                        0.18462114407495778,
+                        0.18463097450028473
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.014300953016835656,
+                      "referenceResidualDbAtRangeMidpoint": 0.00504846427141529
+                    },
+                    {
+                      "startFrame": 135936,
+                      "endFrame": 136704,
+                      "distanceRangeMeters": {
+                        "minimum": 12.902208606909397,
+                        "maximum": 12.902894131344691,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.014292640616289418,
+                      "distanceNormalizedGain": 0.18441152975214584,
+                      "distanceNormalizedBounds": [
+                        0.18440662021641005,
+                        0.18441643948354167
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.014300953016835656,
+                      "referenceResidualDbAtRangeMidpoint": -0.005050123935614378
+                    },
+                    {
+                      "startFrame": 136704,
+                      "endFrame": 137472,
+                      "distanceRangeMeters": {
+                        "minimum": 12.902894131344691,
+                        "maximum": 12.902894131344691,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.014292640595337138,
+                      "distanceNormalizedGain": 0.18441642845899445,
+                      "distanceNormalizedBounds": [
+                        0.18441641823921098,
+                        0.18441643876822017
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.014292640817609377,
+                      "referenceResidualDbAtRangeMidpoint": -1.3507875627456364e-7
+                    },
+                    {
+                      "startFrame": 137472,
+                      "endFrame": 138240,
+                      "distanceRangeMeters": {
+                        "minimum": 12.902894131344691,
+                        "maximum": 12.902894131344691,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.01429264063318936,
+                      "distanceNormalizedGain": 0.18441642894739765,
+                      "distanceNormalizedBounds": [
+                        0.18441641817023638,
+                        0.18441643890534518
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.014292640817609377,
+                      "referenceResidualDbAtRangeMidpoint": -1.1207529415018983e-7
+                    }
+                  ]
+                },
+                {
+                  "lowerMeters": 13,
+                  "upperMeters": 14,
+                  "windows": 17,
+                  "medianDistanceNormalizedGain": 0.08059878066855207,
+                  "representativeFrame": 145152,
+                  "representativeDistanceNormalizedBounds": [
+                    0.08059877608314152,
+                    0.08059878516068769
+                  ],
+                  "firstFrame": 139008,
+                  "lastFrame": 152064,
+                  "samples": [
+                    {
+                      "startFrame": 139008,
+                      "endFrame": 139776,
+                      "distanceRangeMeters": {
+                        "minimum": 13.10289102352649,
+                        "maximum": 13.10289102352649,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.009794665501413915,
+                      "distanceNormalizedGain": 0.12833843467692096,
+                      "distanceNormalizedBounds": [
+                        0.1283384272763826,
+                        0.1283384415901553
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.009794665093682401,
+                      "referenceResidualDbAtRangeMidpoint": 3.6157549216943083e-7
+                    },
+                    {
+                      "startFrame": 139776,
+                      "endFrame": 140544,
+                      "distanceRangeMeters": {
+                        "minimum": 13.10289102352649,
+                        "maximum": 13.10289102352649,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.009794665500062251,
+                      "distanceNormalizedGain": 0.12833843465921027,
+                      "distanceNormalizedBounds": [
+                        0.12833842750882438,
+                        0.12833844201487873
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.009794665093682401,
+                      "referenceResidualDbAtRangeMidpoint": 3.6037683896428467e-7
+                    },
+                    {
+                      "startFrame": 140544,
+                      "endFrame": 141312,
+                      "distanceRangeMeters": {
+                        "minimum": 13.10289102352649,
+                        "maximum": 13.10289102352649,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.009794665485225874,
+                      "distanceNormalizedGain": 0.12833843446481086,
+                      "distanceNormalizedBounds": [
+                        0.12833842774891982,
+                        0.12833844176581674
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.009794665093682401,
+                      "referenceResidualDbAtRangeMidpoint": 3.47219970207355e-7
+                    },
+                    {
+                      "startFrame": 141312,
+                      "endFrame": 142080,
+                      "distanceRangeMeters": {
+                        "minimum": 13.10289102352649,
+                        "maximum": 13.302577901969679,
+                        "poseSamples": 3
+                      },
+                      "measuredGain": 0.007474494509523806,
+                      "distanceNormalizedGain": 0.0986837662525113,
+                      "distanceNormalizedBounds": [
+                        0.07938889629284535,
+                        0.1302943072666476
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.007827512631245604,
+                      "referenceResidualDbAtRangeMidpoint": -0.40083899798104106
+                    },
+                    {
+                      "startFrame": 142080,
+                      "endFrame": 142848,
+                      "distanceRangeMeters": {
+                        "minimum": 13.302577901969679,
+                        "maximum": 13.302577901969679,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.006058884320205185,
+                      "distanceNormalizedGain": 0.08059878066855207,
+                      "distanceNormalizedBounds": [
+                        0.08059877596853819,
+                        0.08059878524178718
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.006058884538312611,
+                      "referenceResidualDbAtRangeMidpoint": -3.126742319128647e-7
+                    },
+                    {
+                      "startFrame": 142848,
+                      "endFrame": 143616,
+                      "distanceRangeMeters": {
+                        "minimum": 13.302577901969679,
+                        "maximum": 13.302577901969679,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.006058884322926546,
+                      "distanceNormalizedGain": 0.0805987807047532,
+                      "distanceNormalizedBounds": [
+                        0.08059877608314152,
+                        0.08059878535264182
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.006058884538312611,
+                      "referenceResidualDbAtRangeMidpoint": -3.087729447173047e-7
+                    },
+                    {
+                      "startFrame": 143616,
+                      "endFrame": 144384,
+                      "distanceRangeMeters": {
+                        "minimum": 13.302577901969679,
+                        "maximum": 13.302577901969679,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.006058884301910718,
+                      "distanceNormalizedGain": 0.0805987804251885,
+                      "distanceNormalizedBounds": [
+                        0.08059877591828862,
+                        0.0805987853427113
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.006058884538312611,
+                      "referenceResidualDbAtRangeMidpoint": -3.38900795314943e-7
+                    },
+                    {
+                      "startFrame": 144384,
+                      "endFrame": 145152,
+                      "distanceRangeMeters": {
+                        "minimum": 13.302577901969679,
+                        "maximum": 13.302577901969679,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.00605888432589732,
+                      "distanceNormalizedGain": 0.08059878074427214,
+                      "distanceNormalizedBounds": [
+                        0.08059877623175526,
+                        0.08059878535264182
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.006058884538312611,
+                      "referenceResidualDbAtRangeMidpoint": -3.0451410610156066e-7
+                    },
+                    {
+                      "startFrame": 145152,
+                      "endFrame": 145920,
+                      "distanceRangeMeters": {
+                        "minimum": 13.302577901969679,
+                        "maximum": 13.302577901969679,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.006058884317436429,
+                      "distanceNormalizedGain": 0.08059878063172049,
+                      "distanceNormalizedBounds": [
+                        0.08059877608314152,
+                        0.08059878516068769
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.006058884538312611,
+                      "referenceResidualDbAtRangeMidpoint": -3.166434617686371e-7
+                    },
+                    {
+                      "startFrame": 145920,
+                      "endFrame": 146688,
+                      "distanceRangeMeters": {
+                        "minimum": 13.302577901969679,
+                        "maximum": 13.302577901969679,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.006058884304132943,
+                      "distanceNormalizedGain": 0.08059878045474983,
+                      "distanceNormalizedBounds": [
+                        0.08059877591828862,
+                        0.0805987853427113
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.006058884538312611,
+                      "referenceResidualDbAtRangeMidpoint": -3.357150603306172e-7
+                    },
+                    {
+                      "startFrame": 146688,
+                      "endFrame": 147456,
+                      "distanceRangeMeters": {
+                        "minimum": 13.302577901969679,
+                        "maximum": 13.302577901969679,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.006058884327746518,
+                      "distanceNormalizedGain": 0.08059878076887124,
+                      "distanceNormalizedBounds": [
+                        0.08059877621587974,
+                        0.08059878535264182
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.006058884538312611,
+                      "referenceResidualDbAtRangeMidpoint": -3.0186313412335485e-7
+                    },
+                    {
+                      "startFrame": 147456,
+                      "endFrame": 148224,
+                      "distanceRangeMeters": {
+                        "minimum": 13.302577901969679,
+                        "maximum": 13.302577901969679,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.006058884314890437,
+                      "distanceNormalizedGain": 0.08059878059785222,
+                      "distanceNormalizedBounds": [
+                        0.08059877608314152,
+                        0.08059878516068769
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.006058884538312611,
+                      "referenceResidualDbAtRangeMidpoint": -3.202933430019627e-7
+                    },
+                    {
+                      "startFrame": 148224,
+                      "endFrame": 148992,
+                      "distanceRangeMeters": {
+                        "minimum": 13.302577901969679,
+                        "maximum": 13.652306739486553,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.006058884306967724,
+                      "distanceNormalizedGain": 0.08165826377512225,
+                      "distanceNormalizedBounds": [
+                        0.08059877591828862,
+                        0.08271775203555094
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0034680777196001785,
+                      "referenceResidualDbAtRangeMidpoint": 4.846076767408754
+                    },
+                    {
+                      "startFrame": 148992,
+                      "endFrame": 149760,
+                      "distanceRangeMeters": {
+                        "minimum": 13.302577901969679,
+                        "maximum": 13.652306739486553,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.0029394414560806317,
+                      "distanceNormalizedGain": 0.03961615267948378,
+                      "distanceNormalizedBounds": [
+                        0.020806452984766577,
+                        0.08271775160031365
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0034680777196001785,
+                      "referenceResidualDbAtRangeMidpoint": -1.4364801308704824
+                    },
+                    {
+                      "startFrame": 149760,
+                      "endFrame": 150528,
+                      "distanceRangeMeters": {
+                        "minimum": 13.652306739486553,
+                        "maximum": 13.652306739486553,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0015640918846385008,
+                      "distanceNormalizedGain": 0.021353462177826427,
+                      "distanceNormalizedBounds": [
+                        0.021353460963774346,
+                        0.021353463405024045
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0015640918450035822,
+                      "referenceResidualDbAtRangeMidpoint": 2.201050567643313e-7
+                    },
+                    {
+                      "startFrame": 150528,
+                      "endFrame": 151296,
+                      "distanceRangeMeters": {
+                        "minimum": 13.652306739486553,
+                        "maximum": 13.652306739486553,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0015640918890564737,
+                      "distanceNormalizedGain": 0.02135346223814195,
+                      "distanceNormalizedBounds": [
+                        0.021353461020498572,
+                        0.021353463440023916
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0015640918450035822,
+                      "referenceResidualDbAtRangeMidpoint": 2.44639436938917e-7
+                    },
+                    {
+                      "startFrame": 151296,
+                      "endFrame": 152064,
+                      "distanceRangeMeters": {
+                        "minimum": 13.652306739486553,
+                        "maximum": 13.652306739486553,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0015640918882911651,
+                      "distanceNormalizedGain": 0.02135346222769372,
+                      "distanceNormalizedBounds": [
+                        0.021353460963774346,
+                        0.02135346342769213
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0015640918450035822,
+                      "referenceResidualDbAtRangeMidpoint": 2.4038943954640086e-7
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "phase": "return",
+              "observedKey": "KeyS",
+              "minimumDistanceMeters": 9.404228167768288,
+              "maximumDistanceMeters": 14.703449232481077,
+              "maximumNativeDistanceStepMeters": 0.40011623688399744,
+              "poseSamples": 20,
+              "physicsSteps": 110,
+              "sceneFrames": 18,
+              "bins": [
+                {
+                  "lowerMeters": 10,
+                  "upperMeters": 11,
+                  "windows": 15,
+                  "medianDistanceNormalizedGain": 0.9565525917018186,
+                  "representativeFrame": 244992,
+                  "representativeDistanceNormalizedBounds": [
+                    0.9565525363673901,
+                    0.9565526464984176
+                  ],
+                  "firstFrame": 239616,
+                  "lastFrame": 251136,
+                  "samples": [
+                    {
+                      "startFrame": 239616,
+                      "endFrame": 240384,
+                      "distanceRangeMeters": {
+                        "minimum": 10.753666943336897,
+                        "maximum": 10.753666943336897,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.08433172849202751,
+                      "distanceNormalizedGain": 0.9068753209591787,
+                      "distanceNormalizedBounds": [
+                        0.9068752693453186,
+                        0.9068753735461839
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.08433172800146024,
+                      "referenceResidualDbAtRangeMidpoint": 5.052680921512914e-8
+                    },
+                    {
+                      "startFrame": 240384,
+                      "endFrame": 241152,
+                      "distanceRangeMeters": {
+                        "minimum": 10.753666943336897,
+                        "maximum": 10.753666943336897,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.08433172855250982,
+                      "distanceNormalizedGain": 0.9068753216095853,
+                      "distanceNormalizedBounds": [
+                        0.9068752699657251,
+                        0.9068753718638132
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.08433172800146024,
+                      "referenceResidualDbAtRangeMidpoint": 5.6756287464394586e-8
+                    },
+                    {
+                      "startFrame": 241152,
+                      "endFrame": 241920,
+                      "distanceRangeMeters": {
+                        "minimum": 10.753666943336897,
+                        "maximum": 10.753666943336897,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.08433172859942252,
+                      "distanceNormalizedGain": 0.9068753221140687,
+                      "distanceNormalizedBounds": [
+                        0.9068752761110135,
+                        0.9068753746003225
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.08433172800146024,
+                      "referenceResidualDbAtRangeMidpoint": 6.158814084942492e-8
+                    },
+                    {
+                      "startFrame": 241920,
+                      "endFrame": 242688,
+                      "distanceRangeMeters": {
+                        "minimum": 10.753666943336897,
+                        "maximum": 10.753666943336897,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.08433172846697014,
+                      "distanceNormalizedGain": 0.90687532068972,
+                      "distanceNormalizedBounds": [
+                        0.9068752693453186,
+                        0.906875372859115
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.08433172800146024,
+                      "referenceResidualDbAtRangeMidpoint": 4.794598348833198e-8
+                    },
+                    {
+                      "startFrame": 242688,
+                      "endFrame": 243456,
+                      "distanceRangeMeters": {
+                        "minimum": 10.502910325387585,
+                        "maximum": 10.753666943336897,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.08783049050174503,
+                      "distanceNormalizedGain": 0.9334878039501576,
+                      "distanceNormalizedBounds": [
+                        0.8857285343454637,
+                        0.9793903075938013
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0878537933846151,
+                      "referenceResidualDbAtRangeMidpoint": -0.0023042046285267678
+                    },
+                    {
+                      "startFrame": 243456,
+                      "endFrame": 244224,
+                      "distanceRangeMeters": {
+                        "minimum": 10.502910325387585,
+                        "maximum": 10.502910325387585,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09107500328194704,
+                      "distanceNormalizedGain": 0.9565525923546697,
+                      "distanceNormalizedBounds": [
+                        0.9565525353279066,
+                        0.956552647448437
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09107500252633446,
+                      "referenceResidualDbAtRangeMidpoint": 7.206332338186708e-8
+                    },
+                    {
+                      "startFrame": 244224,
+                      "endFrame": 244992,
+                      "distanceRangeMeters": {
+                        "minimum": 10.502910325387585,
+                        "maximum": 10.502910325387585,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09107500321470702,
+                      "distanceNormalizedGain": 0.9565525916484539,
+                      "distanceNormalizedBounds": [
+                        0.9565525362371322,
+                        0.9565526460669022
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09107500252633446,
+                      "referenceResidualDbAtRangeMidpoint": 6.565059399649764e-8
+                    },
+                    {
+                      "startFrame": 244992,
+                      "endFrame": 245760,
+                      "distanceRangeMeters": {
+                        "minimum": 10.502910325387585,
+                        "maximum": 10.502910325387585,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09107500314484093,
+                      "distanceNormalizedGain": 0.9565525909146566,
+                      "distanceNormalizedBounds": [
+                        0.9565525363673901,
+                        0.9565526464984176
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09107500252633446,
+                      "referenceResidualDbAtRangeMidpoint": 5.8987413335794856e-8
+                    },
+                    {
+                      "startFrame": 245760,
+                      "endFrame": 246528,
+                      "distanceRangeMeters": {
+                        "minimum": 10.502910325387585,
+                        "maximum": 10.502910325387585,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09107500321978797,
+                      "distanceNormalizedGain": 0.9565525917018186,
+                      "distanceNormalizedBounds": [
+                        0.9565525353279066,
+                        0.956552647448437
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09107500252633446,
+                      "referenceResidualDbAtRangeMidpoint": 6.61351685447646e-8
+                    },
+                    {
+                      "startFrame": 246528,
+                      "endFrame": 247296,
+                      "distanceRangeMeters": {
+                        "minimum": 10.20209905185835,
+                        "maximum": 10.502910325387585,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.09307194290658881,
+                      "distanceNormalizedGain": 0.9635277253197099,
+                      "distanceNormalizedBounds": [
+                        0.9291561501204589,
+                        1.0218668020805766
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09447666797880375,
+                      "referenceResidualDbAtRangeMidpoint": -0.13011576101872846
+                    },
+                    {
+                      "startFrame": 247296,
+                      "endFrame": 248064,
+                      "distanceRangeMeters": {
+                        "minimum": 10.20209905185835,
+                        "maximum": 10.20209905185835,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09729367481604331,
+                      "distanceNormalizedGain": 0.99259970759257,
+                      "distanceNormalizedBounds": [
+                        0.9925996529827144,
+                        0.9925997665604789
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09729367400600224,
+                      "referenceResidualDbAtRangeMidpoint": 7.231638990815645e-8
+                    },
+                    {
+                      "startFrame": 248064,
+                      "endFrame": 248832,
+                      "distanceRangeMeters": {
+                        "minimum": 10.20209905185835,
+                        "maximum": 10.20209905185835,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09729367503236434,
+                      "distanceNormalizedGain": 0.9925997097994986,
+                      "distanceNormalizedBounds": [
+                        0.9925996541003917,
+                        0.9925997659260961
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09729367400600224,
+                      "referenceResidualDbAtRangeMidpoint": 9.162844358980157e-8
+                    },
+                    {
+                      "startFrame": 248832,
+                      "endFrame": 249600,
+                      "distanceRangeMeters": {
+                        "minimum": 10.20209905185835,
+                        "maximum": 10.20209905185835,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0972936748879125,
+                      "distanceNormalizedGain": 0.9925997083257866,
+                      "distanceNormalizedBounds": [
+                        0.9925996529827144,
+                        0.9925997661269242
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09729367400600224,
+                      "referenceResidualDbAtRangeMidpoint": 7.873250986394625e-8
+                    },
+                    {
+                      "startFrame": 249600,
+                      "endFrame": 250368,
+                      "distanceRangeMeters": {
+                        "minimum": 10.20209905185835,
+                        "maximum": 10.20209905185835,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09729367485271906,
+                      "distanceNormalizedGain": 0.9925997079667396,
+                      "distanceNormalizedBounds": [
+                        0.9925996531107273,
+                        0.9925997665604789
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09729367400600224,
+                      "referenceResidualDbAtRangeMidpoint": 7.559061721518576e-8
+                    },
+                    {
+                      "startFrame": 250368,
+                      "endFrame": 251136,
+                      "distanceRangeMeters": {
+                        "minimum": 10.20209905185835,
+                        "maximum": 10.20209905185835,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.09729367500045201,
+                      "distanceNormalizedGain": 0.9925997094739258,
+                      "distanceNormalizedBounds": [
+                        0.9925996541003917,
+                        0.9925997659260961
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.09729367400600224,
+                      "referenceResidualDbAtRangeMidpoint": 8.877947119664716e-8
+                    }
+                  ]
+                },
+                {
+                  "lowerMeters": 11,
+                  "upperMeters": 12,
+                  "windows": 19,
+                  "medianDistanceNormalizedGain": 0.7279781751201527,
+                  "representativeFrame": 231168,
+                  "representativeDistanceNormalizedBounds": [
+                    0.6675315563445683,
+                    0.7840603886939207
+                  ],
+                  "firstFrame": 224256,
+                  "lastFrame": 238848,
+                  "samples": [
+                    {
+                      "startFrame": 224256,
+                      "endFrame": 225024,
+                      "distanceRangeMeters": {
+                        "minimum": 11.753029685675168,
+                        "maximum": 11.753029685675168,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.050382167138162695,
+                      "distanceNormalizedGain": 0.5921431060034741,
+                      "distanceNormalizedBounds": [
+                        0.5921430725050163,
+                        0.5921431392797176
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.05038216870534879,
+                      "referenceResidualDbAtRangeMidpoint": -2.7018300375419553e-7
+                    },
+                    {
+                      "startFrame": 225024,
+                      "endFrame": 225792,
+                      "distanceRangeMeters": {
+                        "minimum": 11.753029685675168,
+                        "maximum": 11.753029685675168,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.05038216711550658,
+                      "distanceNormalizedGain": 0.5921431057371961,
+                      "distanceNormalizedBounds": [
+                        0.5921430726241219,
+                        0.5921431406061834
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.05038216870534879,
+                      "referenceResidualDbAtRangeMidpoint": -2.740889197044084e-7
+                    },
+                    {
+                      "startFrame": 225792,
+                      "endFrame": 226560,
+                      "distanceRangeMeters": {
+                        "minimum": 11.753029685675168,
+                        "maximum": 11.753029685675168,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.05038216710590659,
+                      "distanceNormalizedGain": 0.5921431056243671,
+                      "distanceNormalizedBounds": [
+                        0.5921430713522468,
+                        0.5921431382176017
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.05038216870534879,
+                      "referenceResidualDbAtRangeMidpoint": -2.7574395930752105e-7
+                    },
+                    {
+                      "startFrame": 226560,
+                      "endFrame": 227328,
+                      "distanceRangeMeters": {
+                        "minimum": 11.753029685675168,
+                        "maximum": 11.753029685675168,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.05038216713507135,
+                      "distanceNormalizedGain": 0.5921431059671414,
+                      "distanceNormalizedBounds": [
+                        0.5921430725050163,
+                        0.5921431395270915
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.05038216870534879,
+                      "referenceResidualDbAtRangeMidpoint": -2.7071595188143753e-7
+                    },
+                    {
+                      "startFrame": 227328,
+                      "endFrame": 228096,
+                      "distanceRangeMeters": {
+                        "minimum": 11.503472094972384,
+                        "maximum": 11.753029685675168,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.056273760432263384,
+                      "distanceNormalizedGain": 0.6543654048483336,
+                      "distanceNormalizedBounds": [
+                        0.5795698220987578,
+                        0.697176043488745
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.05484921686632903,
+                      "referenceResidualDbAtRangeMidpoint": 0.22271012499989473
+                    },
+                    {
+                      "startFrame": 228096,
+                      "endFrame": 228864,
+                      "distanceRangeMeters": {
+                        "minimum": 11.503472094972384,
+                        "maximum": 11.503472094972384,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.05931883312692525,
+                      "distanceNormalizedGain": 0.6823725415819081,
+                      "distanceNormalizedBounds": [
+                        0.6823725014462477,
+                        0.6823725788214212
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.059318831930634315,
+                      "referenceResidualDbAtRangeMidpoint": 1.7516951357986566e-7
+                    },
+                    {
+                      "startFrame": 228864,
+                      "endFrame": 229632,
+                      "distanceRangeMeters": {
+                        "minimum": 11.503472094972384,
+                        "maximum": 11.503472094972384,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.05931883308581391,
+                      "distanceNormalizedGain": 0.6823725411089849,
+                      "distanceNormalizedBounds": [
+                        0.6823725031561775,
+                        0.682372580384728
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.059318831930634315,
+                      "referenceResidualDbAtRangeMidpoint": 1.6914969563191332e-7
+                    },
+                    {
+                      "startFrame": 229632,
+                      "endFrame": 230400,
+                      "distanceRangeMeters": {
+                        "minimum": 11.503472094972384,
+                        "maximum": 11.503472094972384,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0593188330781368,
+                      "distanceNormalizedGain": 0.6823725410206715,
+                      "distanceNormalizedBounds": [
+                        0.6823725005317585,
+                        0.6823725778277548
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.059318831930634315,
+                      "referenceResidualDbAtRangeMidpoint": 1.6802555791076673e-7
+                    },
+                    {
+                      "startFrame": 230400,
+                      "endFrame": 231168,
+                      "distanceRangeMeters": {
+                        "minimum": 11.503472094972384,
+                        "maximum": 11.503472094972384,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.05931883311568475,
+                      "distanceNormalizedGain": 0.6823725414526033,
+                      "distanceNormalizedBounds": [
+                        0.6823725014462477,
+                        0.6823725788214212
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.059318831930634315,
+                      "referenceResidualDbAtRangeMidpoint": 1.7352359756433502e-7
+                    },
+                    {
+                      "startFrame": 231168,
+                      "endFrame": 231936,
+                      "distanceRangeMeters": {
+                        "minimum": 11.253282621157608,
+                        "maximum": 11.503472094972384,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.06397908526070827,
+                      "distanceNormalizedGain": 0.7279781751201527,
+                      "distanceNormalizedBounds": [
+                        0.6675315563445683,
+                        0.7840603886939207
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.063770262556627,
+                      "referenceResidualDbAtRangeMidpoint": 0.028396427975118096
+                    },
+                    {
+                      "startFrame": 231936,
+                      "endFrame": 232704,
+                      "distanceRangeMeters": {
+                        "minimum": 11.253282621157608,
+                        "maximum": 11.253282621157608,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.06815858177937839,
+                      "distanceNormalizedGain": 0.7670077838206284,
+                      "distanceNormalizedBounds": [
+                        0.76700774156156,
+                        0.7670078280408218
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.068158580883308,
+                      "referenceResidualDbAtRangeMidpoint": 1.1419205511119251e-7
+                    },
+                    {
+                      "startFrame": 232704,
+                      "endFrame": 233472,
+                      "distanceRangeMeters": {
+                        "minimum": 11.253282621157608,
+                        "maximum": 11.253282621157608,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.06815858181624634,
+                      "distanceNormalizedGain": 0.7670077842355139,
+                      "distanceNormalizedBounds": [
+                        0.7670077445331629,
+                        0.7670078280603235
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.068158580883308,
+                      "referenceResidualDbAtRangeMidpoint": 1.1889037804180716e-7
+                    },
+                    {
+                      "startFrame": 233472,
+                      "endFrame": 234240,
+                      "distanceRangeMeters": {
+                        "minimum": 11.253282621157608,
+                        "maximum": 11.253282621157608,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.06815858180889285,
+                      "distanceNormalizedGain": 0.7670077841527629,
+                      "distanceNormalizedBounds": [
+                        0.7670077429261678,
+                        0.7670078280003475
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.068158580883308,
+                      "referenceResidualDbAtRangeMidpoint": 1.17953273552411e-7
+                    },
+                    {
+                      "startFrame": 234240,
+                      "endFrame": 235008,
+                      "distanceRangeMeters": {
+                        "minimum": 11.003887245358477,
+                        "maximum": 11.253282621157608,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.07247142215457943,
+                      "distanceNormalizedGain": 0.8065043766812358,
+                      "distanceNormalizedBounds": [
+                        0.7500093073813021,
+                        0.8617535724549776
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0724352521412813,
+                      "referenceResidualDbAtRangeMidpoint": 0.004336152931068317
+                    },
+                    {
+                      "startFrame": 235008,
+                      "endFrame": 235776,
+                      "distanceRangeMeters": {
+                        "minimum": 11.003887245358477,
+                        "maximum": 11.003887245358477,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.07657796882746742,
+                      "distanceNormalizedGain": 0.8426553344560278,
+                      "distanceNormalizedBounds": [
+                        0.8426552869578009,
+                        0.8426553813684172
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07657796546470773,
+                      "referenceResidualDbAtRangeMidpoint": 3.8142249813191823e-7
+                    },
+                    {
+                      "startFrame": 235776,
+                      "endFrame": 236544,
+                      "distanceRangeMeters": {
+                        "minimum": 11.003887245358477,
+                        "maximum": 11.003887245358477,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.07657796882308011,
+                      "distanceNormalizedGain": 0.8426553344077504,
+                      "distanceNormalizedBounds": [
+                        0.8426552870512891,
+                        0.8426553836529858
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07657796546470773,
+                      "referenceResidualDbAtRangeMidpoint": 3.809248666079163e-7
+                    },
+                    {
+                      "startFrame": 236544,
+                      "endFrame": 237312,
+                      "distanceRangeMeters": {
+                        "minimum": 11.003887245358477,
+                        "maximum": 11.003887245358477,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.07657796884982047,
+                      "distanceNormalizedGain": 0.8426553347019983,
+                      "distanceNormalizedBounds": [
+                        0.8426552889427974,
+                        0.8426553831180532
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07657796546470773,
+                      "referenceResidualDbAtRangeMidpoint": 3.839579039379632e-7
+                    },
+                    {
+                      "startFrame": 237312,
+                      "endFrame": 238080,
+                      "distanceRangeMeters": {
+                        "minimum": 11.003887245358477,
+                        "maximum": 11.003887245358477,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.07657796883461028,
+                      "distanceNormalizedGain": 0.842655334534627,
+                      "distanceNormalizedBounds": [
+                        0.8426552869578009,
+                        0.842655382424173
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07657796546470773,
+                      "referenceResidualDbAtRangeMidpoint": 3.8223267974598274e-7
+                    },
+                    {
+                      "startFrame": 238080,
+                      "endFrame": 238848,
+                      "distanceRangeMeters": {
+                        "minimum": 11.003887245358477,
+                        "maximum": 11.003887245358477,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0765779688387638,
+                      "distanceNormalizedGain": 0.8426553345803319,
+                      "distanceNormalizedBounds": [
+                        0.8426552870512891,
+                        0.8426553836529858
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.07657796546470773,
+                      "referenceResidualDbAtRangeMidpoint": 3.8270379612305775e-7
+                    }
+                  ]
+                },
+                {
+                  "lowerMeters": 12,
+                  "upperMeters": 13,
+                  "windows": 22,
+                  "medianDistanceNormalizedGain": 0.23105523764857255,
+                  "representativeFrame": 214272,
+                  "representativeDistanceNormalizedBounds": [
+                    0.23105522421931407,
+                    0.23105525048806916
+                  ],
+                  "firstFrame": 205824,
+                  "lastFrame": 222720,
+                  "samples": [
+                    {
+                      "startFrame": 205824,
+                      "endFrame": 206592,
+                      "distanceRangeMeters": {
+                        "minimum": 12.953251100905575,
+                        "maximum": 12.953251100905575,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.013093224745648073,
+                      "distanceNormalizedGain": 0.16959982785097003,
+                      "distanceNormalizedBounds": [
+                        0.16959981795269083,
+                        0.1695998370787929
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01309322429086276,
+                      "referenceResidualDbAtRangeMidpoint": 3.01699175432747e-7
+                    },
+                    {
+                      "startFrame": 206592,
+                      "endFrame": 207360,
+                      "distanceRangeMeters": {
+                        "minimum": 12.953251100905575,
+                        "maximum": 12.953251100905575,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.013093224733321137,
+                      "distanceNormalizedGain": 0.1695998276912961,
+                      "distanceNormalizedBounds": [
+                        0.16959981821478204,
+                        0.16959983748118573
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01309322429086276,
+                      "referenceResidualDbAtRangeMidpoint": 2.935216325088493e-7
+                    },
+                    {
+                      "startFrame": 207360,
+                      "endFrame": 208128,
+                      "distanceRangeMeters": {
+                        "minimum": 12.953251100905575,
+                        "maximum": 12.953251100905575,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.013093224736530355,
+                      "distanceNormalizedGain": 0.16959982773286592,
+                      "distanceNormalizedBounds": [
+                        0.16959981792924955,
+                        0.1695998375134846
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01309322429086276,
+                      "referenceResidualDbAtRangeMidpoint": 2.95650589756484e-7
+                    },
+                    {
+                      "startFrame": 208128,
+                      "endFrame": 208896,
+                      "distanceRangeMeters": {
+                        "minimum": 12.953251100905575,
+                        "maximum": 12.953251100905575,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.013093224720991897,
+                      "distanceNormalizedGain": 0.1695998275315924,
+                      "distanceNormalizedBounds": [
+                        0.16959981795269083,
+                        0.16959983748118573
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01309322429086276,
+                      "referenceResidualDbAtRangeMidpoint": 2.8534256208259584e-7
+                    },
+                    {
+                      "startFrame": 208896,
+                      "endFrame": 209664,
+                      "distanceRangeMeters": {
+                        "minimum": 12.752727212334795,
+                        "maximum": 12.953251100905575,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.013993743559350317,
+                      "distanceNormalizedGain": 0.1798614342288532,
+                      "distanceNormalizedBounds": [
+                        0.16697431402402732,
+                        0.23468836163055598
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.015523521539510492,
+                      "referenceResidualDbAtRangeMidpoint": -0.9011267513031256
+                    },
+                    {
+                      "startFrame": 209664,
+                      "endFrame": 210432,
+                      "distanceRangeMeters": {
+                        "minimum": 12.752727212334795,
+                        "maximum": 12.752727212334795,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.018118103985467805,
+                      "distanceNormalizedGain": 0.23105523773138678,
+                      "distanceNormalizedBounds": [
+                        0.23105522421931407,
+                        0.23105525048806916
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01811810342302246,
+                      "referenceResidualDbAtRangeMidpoint": 2.6963849364878765e-7
+                    },
+                    {
+                      "startFrame": 210432,
+                      "endFrame": 211200,
+                      "distanceRangeMeters": {
+                        "minimum": 12.752727212334795,
+                        "maximum": 12.752727212334795,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.018118103969330373,
+                      "distanceNormalizedGain": 0.2310552375255905,
+                      "distanceNormalizedBounds": [
+                        0.23105522449000107,
+                        0.23105525068107577
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01811810342302246,
+                      "referenceResidualDbAtRangeMidpoint": 2.6190214592660135e-7
+                    },
+                    {
+                      "startFrame": 211200,
+                      "endFrame": 211968,
+                      "distanceRangeMeters": {
+                        "minimum": 12.752727212334795,
+                        "maximum": 12.752727212334795,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.018118103956910225,
+                      "distanceNormalizedGain": 0.23105523736719974,
+                      "distanceNormalizedBounds": [
+                        0.23105522403597206,
+                        0.23105524942804992
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01811810342302246,
+                      "referenceResidualDbAtRangeMidpoint": 2.5594787723203985e-7
+                    },
+                    {
+                      "startFrame": 211968,
+                      "endFrame": 212736,
+                      "distanceRangeMeters": {
+                        "minimum": 12.752727212334795,
+                        "maximum": 12.752727212334795,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.018118103981524525,
+                      "distanceNormalizedGain": 0.2310552376810992,
+                      "distanceNormalizedBounds": [
+                        0.23105522421931407,
+                        0.23105525048806916
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01811810342302246,
+                      "referenceResidualDbAtRangeMidpoint": 2.6774807050089927e-7
+                    },
+                    {
+                      "startFrame": 212736,
+                      "endFrame": 213504,
+                      "distanceRangeMeters": {
+                        "minimum": 12.752727212334795,
+                        "maximum": 12.752727212334795,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.01811810397401453,
+                      "distanceNormalizedGain": 0.23105523758532628,
+                      "distanceNormalizedBounds": [
+                        0.23105522403924328,
+                        0.23105525068107577
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01811810342302246,
+                      "referenceResidualDbAtRangeMidpoint": 2.6414774822879385e-7
+                    },
+                    {
+                      "startFrame": 213504,
+                      "endFrame": 214272,
+                      "distanceRangeMeters": {
+                        "minimum": 12.752727212334795,
+                        "maximum": 12.752727212334795,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.018118103960938308,
+                      "distanceNormalizedGain": 0.2310552374185688,
+                      "distanceNormalizedBounds": [
+                        0.23105522403597206,
+                        0.23105524946400682
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01811810342302246,
+                      "referenceResidualDbAtRangeMidpoint": 2.578789564272794e-7
+                    },
+                    {
+                      "startFrame": 214272,
+                      "endFrame": 215040,
+                      "distanceRangeMeters": {
+                        "minimum": 12.752727212334795,
+                        "maximum": 12.752727212334795,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.018118103976423397,
+                      "distanceNormalizedGain": 0.2310552376160459,
+                      "distanceNormalizedBounds": [
+                        0.23105522421931407,
+                        0.23105525048806916
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01811810342302246,
+                      "referenceResidualDbAtRangeMidpoint": 2.653025689078939e-7
+                    },
+                    {
+                      "startFrame": 215040,
+                      "endFrame": 215808,
+                      "distanceRangeMeters": {
+                        "minimum": 12.752727212334795,
+                        "maximum": 12.752727212334795,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.018118103985611252,
+                      "distanceNormalizedGain": 0.23105523773321612,
+                      "distanceNormalizedBounds": [
+                        0.23105522403924328,
+                        0.23105525068107577
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.01811810342302246,
+                      "referenceResidualDbAtRangeMidpoint": 2.697072617669475e-7
+                    },
+                    {
+                      "startFrame": 215808,
+                      "endFrame": 216576,
+                      "distanceRangeMeters": {
+                        "minimum": 12.35402494832642,
+                        "maximum": 12.752727212334795,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.018118103953579157,
+                      "distanceNormalizedGain": 0.22744337279180402,
+                      "distanceNormalizedBounds": [
+                        0.22383149538560143,
+                        0.231055249844918
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.023721070663086655,
+                      "referenceResidualDbAtRangeMidpoint": -2.3404308025894736
+                    },
+                    {
+                      "startFrame": 216576,
+                      "endFrame": 217344,
+                      "distanceRangeMeters": {
+                        "minimum": 12.35402494832642,
+                        "maximum": 12.752727212334795,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.02983863467960299,
+                      "distanceNormalizedGain": 0.37457560285665153,
+                      "distanceNormalizedBounds": [
+                        0.3686272158934785,
+                        0.38052398796391207
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.023721070663086655,
+                      "referenceResidualDbAtRangeMidpoint": 1.992893201681428
+                    },
+                    {
+                      "startFrame": 217344,
+                      "endFrame": 218112,
+                      "distanceRangeMeters": {
+                        "minimum": 12.35402494832642,
+                        "maximum": 12.35402494832642,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.02983863461249995,
+                      "distanceNormalizedGain": 0.36862723642682066,
+                      "distanceNormalizedBounds": [
+                        0.3686272159497916,
+                        0.36862725780104943
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.029838635367211302,
+                      "referenceResidualDbAtRangeMidpoint": -2.1969300906233034e-7
+                    },
+                    {
+                      "startFrame": 218112,
+                      "endFrame": 218880,
+                      "distanceRangeMeters": {
+                        "minimum": 12.35402494832642,
+                        "maximum": 12.35402494832642,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.029838634639646696,
+                      "distanceNormalizedGain": 0.3686272367621922,
+                      "distanceNormalizedBounds": [
+                        0.3686272173467998,
+                        0.3686272580823532
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.029838635367211302,
+                      "referenceResidualDbAtRangeMidpoint": -2.1179071557939454e-7
+                    },
+                    {
+                      "startFrame": 218880,
+                      "endFrame": 219648,
+                      "distanceRangeMeters": {
+                        "minimum": 12.35402494832642,
+                        "maximum": 12.35402494832642,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.02983863464267966,
+                      "distanceNormalizedGain": 0.36862723679966153,
+                      "distanceNormalizedBounds": [
+                        0.3686272158934785,
+                        0.3686272559424165
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.029838635367211302,
+                      "referenceResidualDbAtRangeMidpoint": -2.1090783422485618e-7
+                    },
+                    {
+                      "startFrame": 219648,
+                      "endFrame": 220416,
+                      "distanceRangeMeters": {
+                        "minimum": 12.003011694801575,
+                        "maximum": 12.35402494832642,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.03384516723335535,
+                      "distanceNormalizedGain": 0.4121839892478157,
+                      "distanceNormalizedBounds": [
+                        0.35815346031553,
+                        0.5134595114731728
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.035573573428335434,
+                      "referenceResidualDbAtRangeMidpoint": -0.4326165736323625
+                    },
+                    {
+                      "startFrame": 220416,
+                      "endFrame": 221184,
+                      "distanceRangeMeters": {
+                        "minimum": 12.003011694801575,
+                        "maximum": 12.003011694801575,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.04156212140970156,
+                      "distanceNormalizedGain": 0.49887062934141074,
+                      "distanceNormalizedBounds": [
+                        0.4988705999004206,
+                        0.498870657572726
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.04156212024013297,
+                      "referenceResidualDbAtRangeMidpoint": 2.44423130579639e-7
+                    },
+                    {
+                      "startFrame": 221184,
+                      "endFrame": 221952,
+                      "distanceRangeMeters": {
+                        "minimum": 12.003011694801575,
+                        "maximum": 12.003011694801575,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.04156212135493415,
+                      "distanceNormalizedGain": 0.4988706286840369,
+                      "distanceNormalizedBounds": [
+                        0.49887060136255573,
+                        0.4988706567184149
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.04156212024013297,
+                      "referenceResidualDbAtRangeMidpoint": 2.329775243363493e-7
+                    },
+                    {
+                      "startFrame": 221952,
+                      "endFrame": 222720,
+                      "distanceRangeMeters": {
+                        "minimum": 12.003011694801575,
+                        "maximum": 12.003011694801575,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.04156212135542592,
+                      "distanceNormalizedGain": 0.4988706286899396,
+                      "distanceNormalizedBounds": [
+                        0.4988706001680561,
+                        0.49887065525592095
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.04156212024013297,
+                      "referenceResidualDbAtRangeMidpoint": 2.3308029656901252e-7
+                    }
+                  ]
+                },
+                {
+                  "lowerMeters": 13,
+                  "upperMeters": 14,
+                  "windows": 14,
+                  "medianDistanceNormalizedGain": 0.02123365791581754,
+                  "representativeFrame": 199680,
+                  "representativeDistanceNormalizedBounds": [
+                    0.02123365668096509,
+                    0.021233659113044343
+                  ],
+                  "firstFrame": 194304,
+                  "lastFrame": 205056,
+                  "samples": [
+                    {
+                      "startFrame": 194304,
+                      "endFrame": 195072,
+                      "distanceRangeMeters": {
+                        "minimum": 13.653314373008255,
+                        "maximum": 13.703312515108685,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.0014421628006204509,
+                      "distanceNormalizedGain": 0.01972635482424773,
+                      "distanceNormalizedBounds": [
+                        0.015631049215673834,
+                        0.02131141628460424
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0013424640183382706,
+                      "referenceResidualDbAtRangeMidpoint": 0.6222326969027885
+                    },
+                    {
+                      "startFrame": 195072,
+                      "endFrame": 195840,
+                      "distanceRangeMeters": {
+                        "minimum": 13.653314373008255,
+                        "maximum": 13.653314373008255,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0015552017137558894,
+                      "distanceNormalizedGain": 0.021233657911350356,
+                      "distanceNormalizedBounds": [
+                        0.021233656707468265,
+                        0.021233659113044343
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0015552017704729359,
+                      "referenceResidualDbAtRangeMidpoint": -3.167679101613884e-7
+                    },
+                    {
+                      "startFrame": 195840,
+                      "endFrame": 196608,
+                      "distanceRangeMeters": {
+                        "minimum": 13.653314373008255,
+                        "maximum": 13.653314373008255,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0015552017133768337,
+                      "distanceNormalizedGain": 0.02123365790617499,
+                      "distanceNormalizedBounds": [
+                        0.02123365668096509,
+                        0.021233659099428547
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0015552017704729359,
+                      "referenceResidualDbAtRangeMidpoint": -3.188849581144809e-7
+                    },
+                    {
+                      "startFrame": 196608,
+                      "endFrame": 197376,
+                      "distanceRangeMeters": {
+                        "minimum": 13.653314373008255,
+                        "maximum": 13.653314373008255,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0015552017159570757,
+                      "distanceNormalizedGain": 0.021233657941403843,
+                      "distanceNormalizedBounds": [
+                        0.02123365677584332,
+                        0.02123365908403071
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0015552017704729359,
+                      "referenceResidualDbAtRangeMidpoint": -3.044741597991858e-7
+                    },
+                    {
+                      "startFrame": 197376,
+                      "endFrame": 198144,
+                      "distanceRangeMeters": {
+                        "minimum": 13.653314373008255,
+                        "maximum": 13.653314373008255,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0015552017126227971,
+                      "distanceNormalizedGain": 0.02123365789587989,
+                      "distanceNormalizedBounds": [
+                        0.021233656707468265,
+                        0.021233659113044343
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0015552017704729359,
+                      "referenceResidualDbAtRangeMidpoint": -3.230962949288292e-7
+                    },
+                    {
+                      "startFrame": 198144,
+                      "endFrame": 198912,
+                      "distanceRangeMeters": {
+                        "minimum": 13.653314373008255,
+                        "maximum": 13.653314373008255,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.001555201713763035,
+                      "distanceNormalizedGain": 0.021233657911447917,
+                      "distanceNormalizedBounds": [
+                        0.02123365668096509,
+                        0.021233659099428547
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0015552017704729359,
+                      "referenceResidualDbAtRangeMidpoint": -3.167280024320572e-7
+                    },
+                    {
+                      "startFrame": 198912,
+                      "endFrame": 199680,
+                      "distanceRangeMeters": {
+                        "minimum": 13.653314373008255,
+                        "maximum": 13.653314373008255,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0015552017144799635,
+                      "distanceNormalizedGain": 0.021233657921236365,
+                      "distanceNormalizedBounds": [
+                        0.02123365677950413,
+                        0.02123365908403071
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0015552017704729359,
+                      "referenceResidualDbAtRangeMidpoint": -3.127239159943852e-7
+                    },
+                    {
+                      "startFrame": 199680,
+                      "endFrame": 200448,
+                      "distanceRangeMeters": {
+                        "minimum": 13.653314373008255,
+                        "maximum": 13.653314373008255,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0015552017144031174,
+                      "distanceNormalizedGain": 0.021233657920187162,
+                      "distanceNormalizedBounds": [
+                        0.02123365668096509,
+                        0.021233659113044343
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0015552017704729359,
+                      "referenceResidualDbAtRangeMidpoint": -3.131531053780772e-7
+                    },
+                    {
+                      "startFrame": 200448,
+                      "endFrame": 201216,
+                      "distanceRangeMeters": {
+                        "minimum": 13.653314373008255,
+                        "maximum": 13.653314373008255,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.0015552017127724083,
+                      "distanceNormalizedGain": 0.02123365789792258,
+                      "distanceNormalizedBounds": [
+                        0.021233656686164788,
+                        0.02123365908730565
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.0015552017704729359,
+                      "referenceResidualDbAtRangeMidpoint": -3.222607080410013e-7
+                    },
+                    {
+                      "startFrame": 201216,
+                      "endFrame": 201984,
+                      "distanceRangeMeters": {
+                        "minimum": 13.253198136124258,
+                        "maximum": 13.653314373008255,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.0015552017141563877,
+                      "distanceNormalizedGain": 0.020922527188086584,
+                      "distanceNormalizedBounds": [
+                        0.02061139535536982,
+                        0.02123365908403071
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.003786571486986698,
+                      "referenceResidualDbAtRangeMidpoint": -7.729188681057693
+                    },
+                    {
+                      "startFrame": 201984,
+                      "endFrame": 202752,
+                      "distanceRangeMeters": {
+                        "minimum": 13.253198136124258,
+                        "maximum": 13.653314373008255,
+                        "poseSamples": 2
+                      },
+                      "measuredGain": 0.006908183910008134,
+                      "distanceNormalizedGain": 0.0929375683950109,
+                      "distanceNormalizedBounds": [
+                        0.09155552517462329,
+                        0.09431961215321599
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.003786571486986698,
+                      "referenceResidualDbAtRangeMidpoint": 5.222354610795534
+                    },
+                    {
+                      "startFrame": 202752,
+                      "endFrame": 203520,
+                      "distanceRangeMeters": {
+                        "minimum": 13.253198136124258,
+                        "maximum": 13.253198136124258,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.006908183911924004,
+                      "distanceNormalizedGain": 0.09155553014551479,
+                      "distanceNormalizedBounds": [
+                        0.09155552477840044,
+                        0.09155553543993955
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.006908184036718601,
+                      "referenceResidualDbAtRangeMidpoint": -1.569083995088603e-7
+                    },
+                    {
+                      "startFrame": 203520,
+                      "endFrame": 204288,
+                      "distanceRangeMeters": {
+                        "minimum": 13.253198136124258,
+                        "maximum": 13.253198136124258,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.006908183913129178,
+                      "distanceNormalizedGain": 0.09155553016148721,
+                      "distanceNormalizedBounds": [
+                        0.09155552516775721,
+                        0.09155553540597144
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.006908184036718601,
+                      "referenceResidualDbAtRangeMidpoint": -1.5539309483810317e-7
+                    },
+                    {
+                      "startFrame": 204288,
+                      "endFrame": 205056,
+                      "distanceRangeMeters": {
+                        "minimum": 13.253198136124258,
+                        "maximum": 13.253198136124258,
+                        "poseSamples": 1
+                      },
+                      "measuredGain": 0.006908183911848739,
+                      "distanceNormalizedGain": 0.0915555301445173,
+                      "distanceNormalizedBounds": [
+                        0.09155552517462329,
+                        0.09155553544274998
+                      ],
+                      "referenceGainAtRangeMidpoint": 0.006908184036718601,
+                      "referenceResidualDbAtRangeMidpoint": -1.5700303378650054e-7
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "outsideHoldWindows": 22,
+          "zeroWindows": 52,
+          "positiveWindows": 175,
+          "boundaryWindows": 3,
+          "sourceWindowCounts": {
+            "corner-playback-0": 368,
+            "corner-playback-1": 368,
+            "corner-playback-2": 368,
+            "corner-playback-3": 368
+          },
+          "referenceCurveErrorAcceptanceTolerance": null,
+          "physicalSmoothnessMeasured": false,
+          "note": "Every paired window is retained. Midpoint reference residuals and native update steps are diagnostics; no new numerical curve-error tolerance is applied."
+        }
+      },
+      {
+        "id": "measurement-observers-and-candidate-cleanup",
+        "detail": {
+          "observerPresent": false,
+          "state": "disposed",
+          "nodes": 0,
+          "bodies": 0,
+          "urls": 0,
+          "sources": 0,
+          "audio": "closed",
+          "sceneDisposed": true,
+          "physicsFreed": true,
+          "videos": 0,
+          "keys": 0
+        }
+      }
+    ],
+    "qualificationStatus": "incomplete",
+    "physicalHeadset": false,
+    "physicalAudio": false,
+    "avTimingMeasured": false
+  },
+  "reportSha256": "65e42237c3314ddbb2846f2dd6f627786024e2896c381b6bae0ef4b4672cdd81"
+}
