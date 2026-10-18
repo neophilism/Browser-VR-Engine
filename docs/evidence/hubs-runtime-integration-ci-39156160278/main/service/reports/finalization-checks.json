@@ -1,0 +1,563 @@
+{
+  "scope": "Deterministic production-finalizer process/report regressions; no browser or VRSpace service qualification",
+  "startedAt": "2026-10-18T18:56:30.456Z",
+  "finishedAt": "2026-10-18T18:56:30.766Z",
+  "counts": {
+    "passed": 15,
+    "failed": 0,
+    "checks": 15
+  },
+  "cases": [
+    {
+      "id": "clean-run-passes-after-all-cleanup-settles",
+      "status": "passed",
+      "childExitCode": 0,
+      "finalRunStatus": "passed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 0,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 0
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "late-error-fails-report-and-process",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 1,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 0
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "late-pageerror-fails-report-and-process",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 1,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 0
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "late-socketerror-fails-report-and-process",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 1,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 0
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "late-failed-request-fails-report-and-process",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 0,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 1,
+        "cleanupErrors": 0
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "late-blocked-external-request-fails-report-and-process",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 0,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 1,
+        "cleanupErrors": 0
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "dispose-cleanup-rejection-still-closes-other-resources",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 0,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 1
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "browser-cleanup-rejection-still-closes-other-resources",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 0,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 1
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "frontend-cleanup-rejection-still-closes-other-resources",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 0,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 1
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "retained-cleanup-error-without-fatal-fails",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 0,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 1
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "fatal-observation-fails",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 0,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 0
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "incomplete-checks-fail",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 8,
+        "failed": 0,
+        "checks": 8
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 0,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 0
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "failed-check-fails",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 8,
+        "failed": 1,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 0,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 0
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "late-probe-error-fails",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 0,
+        "probeErrors": 1,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 0
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    },
+    {
+      "id": "error-during-metadata-read-fails",
+      "status": "passed",
+      "childExitCode": 1,
+      "finalRunStatus": "failed",
+      "counts": {
+        "passed": 9,
+        "failed": 0,
+        "checks": 9
+      },
+      "finalization": {
+        "evaluatedAfterCleanupSettled": true,
+        "browserErrors": 1,
+        "probeErrors": 0,
+        "failedOrBlockedRequests": 0,
+        "cleanupErrors": 0
+      },
+      "beforeLateObservation": {
+        "checks": 9,
+        "passed": 9,
+        "errors": 0,
+        "requests": 0,
+        "fatal": false
+      },
+      "trace": [
+        "dispose:started",
+        "dispose:settled",
+        "browser:started",
+        "frontend:started",
+        "browser:settled",
+        "frontend:settled",
+        "metadata:settled",
+        "report:written"
+      ]
+    }
+  ],
+  "sourceDigests": {
+    "frontend.mjs": "c2cc66b70efe078744472f3118ad7a0e8b7490ff9367f564d79cee77dfd73ddf",
+    "network.js": "422ae0f7053317e32dfb9af3f102589a8218cf87fd4e8a48df6480efab0d681d",
+    "browser-checks.mjs": "3d39c3edeb9372b3d6261e2137c4b3f18d29c27e25bc2dd6f51786e7d2a79c73",
+    "finalize-run.mjs": "12c08c4b85665c321239fcaa446618731204ea377e89047f7475985feb83dc4f",
+    "run-clean.py": "8e4b5ceba7e294f51737cf4e69c13ce7f39ed6e1ae93c6789a69875b2e7370c7",
+    "environment.py": "0d5968bf909e05249390f00e6e6c187be0b7a535933071fabf83fad67eb3e102",
+    "setup.py": "1ec4248e08f5fd26f61eeb7e77f033a0332ae246e9ec2a1e2982a60357c95cfc",
+    "server-run.py": "b6233b700b3dad193f1aad5a346aec1039105d4f7077b1c1728f06fe0179cf04",
+    "process_control.py": "54dd8f76f85612313f45eb73a9d5b5268d847f0192ca1577d07e7be898c450f7",
+    "server.properties": "cb1bc393a3fbddf97bf99aff931779dc16edf205f3843ebf65465959205e41d5",
+    "stop-server.py": "0b8d8acbf72549e6e54a174850b454cee2f243500fdead0fdfbb195a10deb343",
+    "observe-server.py": "656b461970f6422b77b4164d146fcb338951ed22e2b52dcadc956031691624dc",
+    "source-pins.json": "2cbc0249af606a85d3139be1d7e67694a29039d11913d2503278b2e8582708f1",
+    "vendor/vrspace/client.js": "05b50269527e2f55095da07fbc767416477cd7eb788be28ac933354e8d7be867",
+    "package.json": "4ec82be323d0f588a70e6c8a131612d043fd8f04c83405cd708367bc08685713",
+    "package-lock.json": "5be3491734cf57b12fe0d36440d88d7762977f56cffafb569485422d3217a445",
+    "test/launcher-checks.py": "b24861a2e5a2a71c5e3b6b0137f5d99d2315b095c149f881a110cdff40f84d86",
+    "test/frontend-checks.mjs": "d9757fd0ae7f4ddb9f16bbe503366412e003251608515a5cb09d85bb49a9994d",
+    "test/finalization-checks.mjs": "6bd87b6ea622580a99aa99bd969420a9a67b04828412a75dc46a5cd644470090",
+    "automate.py": "7bda4d2edbc8f5aeb356cf08d6a4c80b4fd50ee7a6ada238f43bda94f86a70bf",
+    "command-supervisor.py": "8908746dd988cf39074faf2b9408d59d33a765cb9d6d3c946a14bdd0c064137b",
+    "test/automation-checks.py": "e91721df996c8a0ef27dfd3ab0725551492c641c44a7aa77b704c69d332a22d4",
+    "test/report-automation-checks.py": "d0f03cbd304451675b9115afebac9b086c696fb0902b39b2b36e7c15bb32a2c6",
+    "source-files.json": "1590114b385a35f720be5b0b919295ff9f6e54386e40a0f4d4065a7ded62ad9d"
+  }
+}

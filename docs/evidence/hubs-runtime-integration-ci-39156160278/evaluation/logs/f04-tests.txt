@@ -1,0 +1,68 @@
+
+> @browser-vr-engine/eval-hubs-spoke@0.1.0 test
+> node scripts/test-all.mjs
+
+✔ all frozen comparison inputs and actual resources have the expected identity (14.457127ms)
+✔ changed world content cannot be reported against the frozen comparison (18.907607ms)
+✔ changed asset bytes cannot reuse the frozen resource hashes (19.543033ms)
+✔ Spoke fixture mapping preserves collider parent and real video dimensions (12.26224ms)
+✔ nontrivial quaternion is converted in the declared XYZ convention (0.276367ms)
+✔ only transport and OS settings survive the child environment allowlist (1.34065ms)
+✔ process errors and failed commands are never reported as success (33.064192ms)
+✔ exact Spoke patch reproduces pinned bytes and unexpected registry configuration is rejected (138.97867ms)
+✔ captured GLB has the expected envelope, skin and clips; truncation is rejected (1.246785ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 269.368156
+✔ only the declared loopback-resolved HTTP and native WebSocket origins are allowed (1.045682ms)
+✔ final status is decided after all cleanup and fails on any late contradiction (0.642773ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15.8361
+✔ changed current toolkit source does not become fresh execution evidence (24.799386ms)
+✔ changed original source snapshot fails historical integrity (12.164092ms)
+✔ actual captured artifacts cannot be redirected through source snapshots (5.946203ms)
+✔ a changed capture and an escaped snapshot both fail (11.130681ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 71.895553
+test_archive_unpack_rejects_traversal_links_and_special_files (__main__.RuntimeChecks.test_archive_unpack_rejects_traversal_links_and_special_files) ... ok
+test_artifact_collection_excludes_private_keys_and_unlisted_files (__main__.RuntimeChecks.test_artifact_collection_excludes_private_keys_and_unlisted_files) ... ok
+test_audit_must_be_valid_and_agree_with_real_exit (__main__.RuntimeChecks.test_audit_must_be_valid_and_agree_with_real_exit) ... ok
+test_browser_verifier_rejects_stale_and_contradictory_success (__main__.RuntimeChecks.test_browser_verifier_rejects_stale_and_contradictory_success) ... ok
+test_compose_is_four_bounded_internal_services_with_loopback_publishing (__main__.RuntimeChecks.test_compose_is_four_bounded_internal_services_with_loopback_publishing) ... ok
+test_compose_rejects_nonlocal_or_privileged_scope (__main__.RuntimeChecks.test_compose_rejects_nonlocal_or_privileged_scope) ... ok
+test_container_ownership_scope_and_host_bindings_are_verified (__main__.RuntimeChecks.test_container_ownership_scope_and_host_bindings_are_verified) ... ok
+test_diagnostic_continuation_cannot_waive_a_failed_audit (__main__.RuntimeChecks.test_diagnostic_continuation_cannot_waive_a_failed_audit) ... ok
+test_download_child_verifies_bytes_and_never_overwrites_a_prior_file (__main__.RuntimeChecks.test_download_child_verifies_bytes_and_never_overwrites_a_prior_file) ... ok
+test_environment_has_no_credentials_home_rewrite_or_inherited_docker_target (__main__.RuntimeChecks.test_environment_has_no_credentials_home_rewrite_or_inherited_docker_target) ... ok
+test_fixture_symlink_cannot_read_outside_fixture_root (__main__.RuntimeChecks.test_fixture_symlink_cannot_read_outside_fixture_root) ... ok
+test_frozen_fixture_bytes_and_metadata_are_all_checked (__main__.RuntimeChecks.test_frozen_fixture_bytes_and_metadata_are_all_checked) ... ok
+test_glb_relocation_rejects_external_or_unknown_resource_urls (__main__.RuntimeChecks.test_glb_relocation_rejects_external_or_unknown_resource_urls) ... ok
+test_project_package_configuration_is_rejected_before_npm (__main__.RuntimeChecks.test_project_package_configuration_is_rejected_before_npm) ... ok
+test_proxy_credentials_and_control_characters_never_reach_child_environment (__main__.RuntimeChecks.test_proxy_credentials_and_control_characters_never_reach_child_environment) ... ok
+test_regular_source_archive_is_extracted_and_hash_checked (__main__.RuntimeChecks.test_regular_source_archive_is_extracted_and_hash_checked) ... ok
+test_retained_native_glb_is_relocated_without_geometry_or_clip_changes (__main__.RuntimeChecks.test_retained_native_glb_is_relocated_without_geometry_or_clip_changes) ... ok
+test_reviewed_shared_supervisor_hashes_are_current (__main__.RuntimeChecks.test_reviewed_shared_supervisor_hashes_are_current) ... ok
+test_source_and_image_pins_are_immutable_and_existing_pins_match (__main__.RuntimeChecks.test_source_and_image_pins_are_immutable_and_existing_pins_match) ... ok
+test_stage_budget_cannot_extend_the_original_overall_deadline (__main__.RuntimeChecks.test_stage_budget_cannot_extend_the_original_overall_deadline) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.098s
+
+OK

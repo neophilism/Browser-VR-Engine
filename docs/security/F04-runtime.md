@@ -1,6 +1,6 @@
 # Separate self security review: F04 manual runtime diagnostic
 
-This is an assistant self-review of the prepared runtime integration, with separately identified automated peer reviews. It is not independent human approval, production-security certification or evidence of an executed backend. The final GitHub review must bind the published head after current required checks.
+This is an assistant self-review of the runtime integration, with separately identified automated peer reviews. It is not independent human approval, production-security certification or evidence of an executed backend. GitHub self-review `5564391735` binds the published PR8 head `d94b4ecb5a5484591bc87c05db8e2ade78f2790b`.
 
 ## Boundaries reviewed
 
@@ -33,6 +33,6 @@ The `runtime/` entries are under `evaluations/hubs-spoke/`. The [preparation rec
 
 ## Verification limits
 
-Actual local pure/policy/history results are recorded in [the evidence guide](../evidence/F04-runtime.md). The integrated foundation sequence passed all six stages, including 39 package tests, 269 tooling tests and the real authorized root audit. A separate bookkeeping review verified every one of the 156 retained PR7 candidate/main files, their hashes, linked documents and explicit qualification limits; the identified historical-tense and scope-label corrections were applied without changing raw evidence. The two real watchdog process methods and the backend/browser combination remain unexecuted until the compatible hosted run. Current-head prerequisite CI, artifact verification, head-bound review, safe merge and main verification are still required for this tooling integration. The manual runtime's later result must retain its separate identity and outcome.
+Actual local pure/policy/history results are recorded in [the evidence guide](../evidence/F04-runtime.md). The integrated foundation sequence passed all six stages, including 39 package tests, 269 tooling tests and the real authorized root audit. A separate bookkeeping review verified every one of the 156 retained PR7 candidate/main files, their hashes, linked documents and explicit qualification limits; the identified historical-tense and scope-label corrections were applied without changing raw evidence. PR8 subsequently passed exact-head CI/artifact verification, the recorded self-review and fresh merge gates. Its merged commit `9088586c9f46f0e740cfe67b3d8b00614ed446eb` also passed all main jobs and all three downloaded-artifact verifiers; the [receipt](../evidence/hubs-runtime-integration-ci-39156160278/index.json) preserves those distinct original runs. The two real watchdog process methods and the backend/browser combination remain unexecuted until the manual hosted dispatch. Its later result must retain its separate identity and outcome.
 
 The known legacy Hubs audit remains failed. Hex/Python/OS/native dependencies, complete software obligations, full authorization/media/authoring behavior, physical VR/audio and target-device workloads remain qualification work. No provider credential or paid API was used. No marketplace policy limits the engine's planned import, conversion, editing or export capabilities.

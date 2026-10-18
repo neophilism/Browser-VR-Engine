@@ -1,0 +1,2 @@
+{"pid": 3215, "processStartTicks": 16657, "runDirectory": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/server-gkeef4zl", "status": "starting"}
+{"runDirectory": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/server-gkeef4zl", "exitCode": 143, "shutdown": {"terminateSent": true, "killSent": false, "childExitCode": 143}}

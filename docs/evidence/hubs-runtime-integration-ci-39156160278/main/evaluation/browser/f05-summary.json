@@ -1,0 +1,173 @@
+{
+  "scope": "F05 local browser adaptation evidence; partial evaluation, not production-card or hardware acceptance",
+  "qualificationStatus": "incomplete",
+  "startedAt": "2026-10-18T18:56:31.075Z",
+  "timestamp": "2026-10-18T18:56:56.059Z",
+  "candidate": {
+    "babylon": "9.30.0",
+    "rapier": "0.21.0",
+    "vrspaceCommit": "61f840a3dd0133fc9d357891f37eb1670b147539"
+  },
+  "environment": {
+    "browser": "151.0.7922.34",
+    "playwright": "1.62.1",
+    "flags": [
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader",
+      "--autoplay-policy=document-user-activation-required"
+    ],
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "dpr": 1
+    },
+    "graphicsMode": "SwiftShader",
+    "physicalGPU": false,
+    "physicalHeadset": false,
+    "physicalAudio": false,
+    "subprocessEnvironment": "Explicit evaluation allowlist; empty npm configuration and separate cache/browser paths; HOME/USERPROFILE are not overridden or forwarded."
+  },
+  "fixtureDigests": {
+    "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+    "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+    "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+    "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+    "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+    "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+    "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+    "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+  },
+  "comparison": {
+    "catalogDigest": "ae8f38424e68be31dd85acc066abbb96322cead3d90f580089b89a18d3039593",
+    "deviceTargetDigest": "c3f2dcce2e56da61f1999dc4056d165adbe9ff1601fc93bdf62dfc493e0080f6",
+    "fixtureSetId": "bve-foundation-0.1.0",
+    "scenarioDigest": "6547e68553d86e8294f2d2ea09413bfb45b7c773ba6942a0f25166835d099848",
+    "schemaDigest": "ef7de9b6f72e18063253c28cec464cf09d6fcc0d0e3795ff86f3108947f1224b",
+    "schemaVersion": "0.1.0",
+    "thresholdDigest": "36ca04ae7a569ba2e4c8fc6804db9620ca5a7ca5f63d527ad83cf880611d2a14",
+    "workloadDigest": "b105f1b7772ce039a5d43d098762bef459288ba447019bc6fc8c3dfcd8979e7b",
+    "worldDigest": "c18f890d75db0a8f7124ee14a230751c53aea5f7346b68c130cb499704b7b667"
+  },
+  "runStatus": "passed",
+  "counts": {
+    "passed": 19,
+    "failed": 0,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "logOverflow": 0
+  },
+  "finalizationErrors": [],
+  "checks": [
+    {
+      "id": "real-render-and-frozen-fixtures",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "user-start-activation",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "animated-skinned-creature-and-attached-source",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "desktop-keyboard-movement",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "wall-solid-and-open-arch-traversal",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "visible-pick-grab-and-throw",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "four-simultaneous-corner-sources-and-calibrated-gain",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "listener-turn-changes-left-right-pan-with-fixed-source",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "video-single-source-play-pause-seek-loop",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "actual-browser-prop-transform-editor",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "json-transform-snapshot-reload",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "scene-glb-export-reimport",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "drop-glb-through-browser-dnd",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "untrusted-external-model-uri-rejected",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "failed-babylon-load-rolls-back-partial-resources",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "failed-collider-publication-rolls-back-real-body-and-model",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "unmodified-vrspace-asset-loader-reuse",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "devtools-observed-single-context-audio-routing",
+      "status": "passed",
+      "method": "real-browser"
+    },
+    {
+      "id": "dispose-releases-browser-resources-and-input-ownership",
+      "status": "passed",
+      "method": "real-browser"
+    }
+  ],
+  "softwareRenderTiming": {
+    "samples": 58,
+    "p50Ms": 218.60000000000582,
+    "p95Ms": 545.1999999999971,
+    "p99Ms": 859.3000000000029,
+    "label": "Isolated software-renderer diagnostic; not target-device capacity evidence."
+  },
+  "missingEvidence": [
+    "Physical headset/controller/recenter/seated/wall-adjacent/sleep-resume and actual output audio.",
+    "Two real clients, SFU/spatial voice, reconnect/server-authoritative state.",
+    "AV marker offset measurement below the 80ms threshold.",
+    "Full F03 warmup60s+duration180s+3 repetitions; target-device p95/p99/thermal performance.",
+    "Ten cleanup cycles and memory trend under target workload.",
+    "Complete portable world export, source-original restoration, general importer/conversion and editor."
+  ],
+  "evidenceFile": "browser-checks.json"
+}

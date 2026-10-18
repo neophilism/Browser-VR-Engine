@@ -1,0 +1,14 @@
+f04-install: passed
+f04-source: passed
+f04-tests: passed
+f04-history: passed
+f04-audit: passed
+f05-install: passed
+f05-build: passed
+f05-tests: passed
+f05-browser-install: skipped_local
+f05-browser: passed
+f05-xr-browser: passed
+f05-portable-browser: passed
+f05-audit: passed
+Local evaluation diagnostics passed; hosted complete remains false.

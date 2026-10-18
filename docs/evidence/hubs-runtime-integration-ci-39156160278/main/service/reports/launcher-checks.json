@@ -1,0 +1,256 @@
+{
+  "scope": "Synthetic optimized-mode integrity, ownership and cleanup regression probes; no VRSpace service, headset or capacity qualification",
+  "startedAt": "2026-10-18T18:56:02Z",
+  "finishedAt": "2026-10-18T18:56:30Z",
+  "python": "3.12.3",
+  "pythonOptimized": true,
+  "platform": "linux",
+  "counts": {
+    "passed": 14,
+    "failed": 0,
+    "checks": 14
+  },
+  "cases": [
+    {
+      "id": "optimized-process-controls-reject-mismatched-procfs-namespace",
+      "status": "passed",
+      "elapsedSeconds": 0.553,
+      "detail": {
+        "pythonOptimized": true,
+        "syntheticSelfPidMismatchRejected": true,
+        "namespaceControlsChanged": false,
+        "processSignaled": false
+      }
+    },
+    {
+      "id": "optimized-launch-rejects-wrong-jar-length",
+      "status": "passed",
+      "elapsedSeconds": 0.364,
+      "detail": {
+        "entryPoint": "server-run.py",
+        "pythonOptimized": true,
+        "exitCode": 1,
+        "expectedRejection": "length mismatch",
+        "serverRunCreated": false
+      }
+    },
+    {
+      "id": "optimized-launch-rejects-wrong-jar-digest",
+      "status": "passed",
+      "elapsedSeconds": 0.416,
+      "detail": {
+        "entryPoint": "server-run.py",
+        "pythonOptimized": true,
+        "exitCode": 1,
+        "expectedRejection": "SHA-256 mismatch",
+        "serverRunCreated": false
+      }
+    },
+    {
+      "id": "optimized-launch-rejects-profile-change",
+      "status": "passed",
+      "elapsedSeconds": 0.357,
+      "detail": {
+        "entryPoint": "server-run.py",
+        "pythonOptimized": true,
+        "exitCode": 1,
+        "expectedRejection": "Sterile profile changed",
+        "serverRunCreated": false
+      }
+    },
+    {
+      "id": "optimized-setup-rejects-wrong-jar",
+      "status": "passed",
+      "elapsedSeconds": 0.376,
+      "detail": {
+        "entryPoint": "setup.py",
+        "pythonOptimized": true,
+        "exitCode": 1,
+        "expectedRejection": "SHA-256 mismatch",
+        "serverRunCreated": false
+      }
+    },
+    {
+      "id": "optimized-setup-rejects-wrong-client",
+      "status": "passed",
+      "elapsedSeconds": 0.358,
+      "detail": {
+        "entryPoint": "setup.py",
+        "pythonOptimized": true,
+        "exitCode": 1,
+        "expectedRejection": "client SHA-256 mismatch",
+        "serverRunCreated": false
+      }
+    },
+    {
+      "id": "optimized-stop-and-observe-reject-unrelated-process",
+      "status": "passed",
+      "elapsedSeconds": 0.678,
+      "detail": {
+        "pythonOptimized": true,
+        "unrelatedProcessSurvived": true,
+        "rejections": [
+          {
+            "entryPoint": "stop-server.py",
+            "exitCode": 1
+          },
+          {
+            "entryPoint": "observe-server.py",
+            "exitCode": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "optimized-stop-and-observe-reject-malformed-proc-path-record",
+      "status": "passed",
+      "elapsedSeconds": 0.754,
+      "detail": {
+        "pythonOptimized": true,
+        "missingProcPrefixedRunDirectoryRejected": true,
+        "alreadyExitedNotClaimed": true,
+        "unrelatedProcessSurvived": true
+      }
+    },
+    {
+      "id": "optimized-stop-and-observe-reject-stale-creation-identity",
+      "status": "passed",
+      "elapsedSeconds": 1.698,
+      "detail": {
+        "pythonOptimized": true,
+        "matchingArgumentsButWrongStartTicksRejected": true,
+        "childAndUnrelatedSentinelSurvived": true
+      }
+    },
+    {
+      "id": "optimized-pidfd-stop-kills-only-verified-hung-child",
+      "status": "passed",
+      "elapsedSeconds": 0.337,
+      "detail": {
+        "pythonOptimized": true,
+        "syntheticChildIgnoresSigterm": true,
+        "probeTimeoutsSeconds": {
+          "terminate": 0.2,
+          "kill": 1
+        },
+        "result": {
+          "pid": 2263,
+          "terminateSent": true,
+          "killSent": true,
+          "stopped": true
+        },
+        "unrelatedProcessSurvived": true
+      }
+    },
+    {
+      "id": "optimized-observer-rejects-nonloopback-and-missing-listeners",
+      "status": "passed",
+      "elapsedSeconds": 1.152,
+      "detail": {
+        "pythonOptimized": true,
+        "invalidSyntheticSnapshotsRejected": 3,
+        "validSyntheticSnapshotAccepted": true,
+        "nonLoopbackSocketOpened": false
+      }
+    },
+    {
+      "id": "optimized-parent-sigterm-bounded-kill-and-reap",
+      "status": "passed",
+      "elapsedSeconds": 20.447,
+      "detail": {
+        "pythonOptimized": true,
+        "entryPath": "run-clean.py execs server-run.py without an extra wrapper process",
+        "syntheticChildIgnoresSigterm": true,
+        "launcherSignals": [
+          "SIGTERM",
+          "SIGTERM"
+        ],
+        "launcherExitCode": 143,
+        "shutdown": {
+          "terminateSent": true,
+          "killSent": true,
+          "childExitCode": -9,
+          "requestedSignal": 15
+        },
+        "elapsedSeconds": 20.22,
+        "childReaped": true,
+        "unrelatedProcessSurvived": true
+      }
+    },
+    {
+      "id": "optimized-post-popen-metadata-failure-cleans-owned-child",
+      "status": "passed",
+      "elapsedSeconds": 0.36,
+      "detail": {
+        "pythonOptimized": true,
+        "failureAfterPopen": {
+          "type": "IsADirectoryError",
+          "message": "[Errno 21] Is a directory: '/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/launcher-checks-jqihiunx/metadata-write-failure/artifacts/current-server.json-oeu694pd.tmp' -> '/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/launcher-checks-jqihiunx/metadata-write-failure/artifacts/current-server.json'"
+        },
+        "shutdown": {
+          "terminateSent": true,
+          "killSent": false,
+          "childExitCode": -15,
+          "requestedSignal": null
+        },
+        "childReaped": true,
+        "unrelatedProcessSurvived": true
+      }
+    },
+    {
+      "id": "frontend-failure-paths-close-all-owned-loopback-listeners",
+      "status": "passed",
+      "elapsedSeconds": 0.117,
+      "detail": {
+        "scope": "Synthetic fixture backend; real owned loopback HTTP listener cleanup",
+        "counts": {
+          "passed": 2,
+          "failed": 0,
+          "checks": 2
+        },
+        "checks": [
+          {
+            "id": "read-failure-after-base-listen",
+            "status": "passed",
+            "realLoopbackBackendOpened": true,
+            "baseClosedAfterFailure": true,
+            "failure": "ENOENT: no such file or directory, open '/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/frontend-checks-CEkV67/read-failure-after-base-listen/service/network.js'"
+          },
+          {
+            "id": "frontend-close-rejection",
+            "status": "passed",
+            "realLoopbackBackendOpened": true,
+            "baseClosedAfterFailure": true,
+            "failure": "synthetic frontend close failure"
+          }
+        ]
+      }
+    }
+  ],
+  "sourceDigests": {
+    "frontend.mjs": "c2cc66b70efe078744472f3118ad7a0e8b7490ff9367f564d79cee77dfd73ddf",
+    "network.js": "422ae0f7053317e32dfb9af3f102589a8218cf87fd4e8a48df6480efab0d681d",
+    "browser-checks.mjs": "3d39c3edeb9372b3d6261e2137c4b3f18d29c27e25bc2dd6f51786e7d2a79c73",
+    "finalize-run.mjs": "12c08c4b85665c321239fcaa446618731204ea377e89047f7475985feb83dc4f",
+    "run-clean.py": "8e4b5ceba7e294f51737cf4e69c13ce7f39ed6e1ae93c6789a69875b2e7370c7",
+    "environment.py": "0d5968bf909e05249390f00e6e6c187be0b7a535933071fabf83fad67eb3e102",
+    "setup.py": "1ec4248e08f5fd26f61eeb7e77f033a0332ae246e9ec2a1e2982a60357c95cfc",
+    "server-run.py": "b6233b700b3dad193f1aad5a346aec1039105d4f7077b1c1728f06fe0179cf04",
+    "process_control.py": "54dd8f76f85612313f45eb73a9d5b5268d847f0192ca1577d07e7be898c450f7",
+    "server.properties": "cb1bc393a3fbddf97bf99aff931779dc16edf205f3843ebf65465959205e41d5",
+    "stop-server.py": "0b8d8acbf72549e6e54a174850b454cee2f243500fdead0fdfbb195a10deb343",
+    "observe-server.py": "656b461970f6422b77b4164d146fcb338951ed22e2b52dcadc956031691624dc",
+    "source-pins.json": "2cbc0249af606a85d3139be1d7e67694a29039d11913d2503278b2e8582708f1",
+    "vendor/vrspace/client.js": "05b50269527e2f55095da07fbc767416477cd7eb788be28ac933354e8d7be867",
+    "package.json": "4ec82be323d0f588a70e6c8a131612d043fd8f04c83405cd708367bc08685713",
+    "package-lock.json": "5be3491734cf57b12fe0d36440d88d7762977f56cffafb569485422d3217a445",
+    "test/launcher-checks.py": "b24861a2e5a2a71c5e3b6b0137f5d99d2315b095c149f881a110cdff40f84d86",
+    "test/frontend-checks.mjs": "d9757fd0ae7f4ddb9f16bbe503366412e003251608515a5cb09d85bb49a9994d",
+    "test/finalization-checks.mjs": "6bd87b6ea622580a99aa99bd969420a9a67b04828412a75dc46a5cd644470090",
+    "automate.py": "7bda4d2edbc8f5aeb356cf08d6a4c80b4fd50ee7a6ada238f43bda94f86a70bf",
+    "command-supervisor.py": "8908746dd988cf39074faf2b9408d59d33a765cb9d6d3c946a14bdd0c064137b",
+    "test/automation-checks.py": "e91721df996c8a0ef27dfd3ab0725551492c641c44a7aa77b704c69d332a22d4",
+    "test/report-automation-checks.py": "d0f03cbd304451675b9115afebac9b086c696fb0902b39b2b36e7c15bb32a2c6",
+    "source-files.json": "1590114b385a35f720be5b0b919295ff9f6e54386e40a0f4d4065a7ded62ad9d"
+  }
+}

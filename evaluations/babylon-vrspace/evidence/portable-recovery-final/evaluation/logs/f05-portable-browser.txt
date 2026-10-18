@@ -1,0 +1,18 @@
+PASS portable-browser-export-includes-originals
+PASS portable-invalid-carrier-no-allocation
+PASS portable-fresh-world-with-no-fixture-fallback
+PASS portable-normalization-hierarchy-and-collider
+PASS portable-media-and-animation-bindings
+PASS portable-authored-reexport-restarts-live-state
+PASS portable-affine-static-projection
+PASS portable-native-load-failure-rollback
+PASS portable-disposal-releases-instance-resources
+{
+  "runStatus": "passed",
+  "passed": 9,
+  "failed": 0,
+  "pageErrors": 0,
+  "failedRequests": 0,
+  "logOverflow": 0,
+  "output": "artifacts/portable-runs/run-lBXHkM"
+}

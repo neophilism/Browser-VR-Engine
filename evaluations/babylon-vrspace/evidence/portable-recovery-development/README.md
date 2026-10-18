@@ -1,6 +1,6 @@
 # Recovered development observations
 
-These are original bytes copied from actual post-rollback runs. They are not reconstructed copies of the erased portable-world reports. `inventory.json` hashes every copied report, artifact and log.
+These are original bytes copied from actual post-rollback runs. They are not reconstructed copies of the erased portable-world reports. `inventory.json` hashes the original sixteen copied development run files. The later `ci-development` subdirectory preserves the seven separate verifier development files, including their own exact source/log hash receipt.
 
 `portable-run-moctFp` passed all nine portable browser checks with no recorded errors, failed requests, overflow or finalization errors. It binds 28 source files, 15 local and 8 workspace build inputs, and 4 outputs. All seven portable artifacts are retained, including exact exported/re-exported and affine-variant carrier bytes. `desktop-run-0ip09K` passed the existing nineteen desktop checks against that reconstructed runtime. `portable-recovery-unit.txt` records eighty actually registered and passed unit cases. A prior default-sandbox unit attempt passed79/80 and failed only loopback listen with EPERM; the complete retained log is the subsequent scoped run.
 

@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "status": "main-retained-evidence-verified",
+  "identity": {
+    "head": "9088586c9f46f0e740cfe67b3d8b00614ed446eb",
+    "tree": "6ce2aa09bd6e3dc9b55d94cb4f719a2dc550c115",
+    "dirty": false
+  },
+  "sourceUnchanged": true,
+  "node": "v24.19.0",
+  "commands": [
+    {
+      "name": "foundation",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "scripts/ci/verify-evidence.mjs",
+        "/workspace/scratch/dc98dcd2981d/engine_work/pr8-receipts/main-39156404932/foundation/manifest.json",
+        "9088586c9f46f0e740cfe67b3d8b00614ed446eb",
+        "9088586c9f46f0e740cfe67b3d8b00614ed446eb"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/pr8-main-recovered",
+      "startedAt": "2026-10-18T20:33:38.313Z",
+      "finishedAt": "2026-10-18T20:33:38.365Z",
+      "exitCode": 0,
+      "signal": null,
+      "errorCode": null,
+      "passed": true,
+      "stdout": "/workspace/scratch/dc98dcd2981d/engine_work/pr8-receipts/verification-main-39156404932/foundation.stdout.txt",
+      "stderr": "/workspace/scratch/dc98dcd2981d/engine_work/pr8-receipts/verification-main-39156404932/foundation.stderr.txt"
+    },
+    {
+      "name": "evaluation",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "scripts/ci/verify-evaluation-evidence.mjs",
+        "/workspace/scratch/dc98dcd2981d/engine_work/pr8-receipts/main-39156404932/evaluation/manifest.json",
+        "9088586c9f46f0e740cfe67b3d8b00614ed446eb",
+        "9088586c9f46f0e740cfe67b3d8b00614ed446eb"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/pr8-main-recovered",
+      "startedAt": "2026-10-18T20:33:38.366Z",
+      "finishedAt": "2026-10-18T20:33:38.512Z",
+      "exitCode": 0,
+      "signal": null,
+      "errorCode": null,
+      "passed": true,
+      "stdout": "/workspace/scratch/dc98dcd2981d/engine_work/pr8-receipts/verification-main-39156404932/evaluation.stdout.txt",
+      "stderr": "/workspace/scratch/dc98dcd2981d/engine_work/pr8-receipts/verification-main-39156404932/evaluation.stderr.txt"
+    },
+    {
+      "name": "service",
+      "argv": [
+        "python3",
+        "-B",
+        "-O",
+        "scripts/ci/verify-service-evidence.py",
+        "/workspace/scratch/dc98dcd2981d/engine_work/pr8-receipts/main-39156404932/service",
+        "--repository",
+        "neophilism/Browser-VR-Engine",
+        "--event",
+        "push",
+        "--head",
+        "9088586c9f46f0e740cfe67b3d8b00614ed446eb",
+        "--tested",
+        "9088586c9f46f0e740cfe67b3d8b00614ed446eb",
+        "--tree",
+        "6ce2aa09bd6e3dc9b55d94cb4f719a2dc550c115",
+        "--workflow-sha",
+        "9088586c9f46f0e740cfe67b3d8b00614ed446eb",
+        "--workflow-ref",
+        "neophilism/Browser-VR-Engine/.github/workflows/engine-ci.yml@refs/heads/main",
+        "--run-id",
+        "39156404932",
+        "--attempt",
+        "1",
+        "--base",
+        "none"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/pr8-main-recovered",
+      "startedAt": "2026-10-18T20:33:38.512Z",
+      "finishedAt": "2026-10-18T20:33:38.819Z",
+      "exitCode": 0,
+      "signal": null,
+      "errorCode": null,
+      "passed": true,
+      "stdout": "/workspace/scratch/dc98dcd2981d/engine_work/pr8-receipts/verification-main-39156404932/service.stdout.txt",
+      "stderr": "/workspace/scratch/dc98dcd2981d/engine_work/pr8-receipts/verification-main-39156404932/service.stderr.txt"
+    }
+  ],
+  "sourceFiles": {
+    "scripts/ci/verify-evidence.mjs": {
+      "bytes": 1221,
+      "sha256": "162be2ceabbd9c0ce15bb1a9778aa6368377c89a29c33461a1b8a101ddd9d423"
+    },
+    "scripts/ci/evidence.mjs": {
+      "bytes": 7273,
+      "sha256": "efc0dddaf6bf195578175458df587edca887ea9ae19bb7115c295a7a06240f94"
+    },
+    "scripts/ci/verify-evaluation-evidence.mjs": {
+      "bytes": 5126,
+      "sha256": "073ac2569de3164577c7eb4e105d20c96ddb1571d26dfbdf3e3d5aeb46a2befe"
+    },
+    "scripts/ci/evaluation-evidence.mjs": {
+      "bytes": 7513,
+      "sha256": "038dd622cc8ead442028115a2b61efd0f18679cf5b7b45397eb716f3c21a3b66"
+    },
+    "scripts/ci/evaluate.mjs": {
+      "bytes": 42115,
+      "sha256": "e75fac3f4caf94979441966e268e9f9d1fcdc0708be9425574bfd90dd2c5ca29"
+    },
+    "scripts/ci/verify-service-evidence.py": {
+      "bytes": 2954,
+      "sha256": "61d91af82814f15b46d2baba711fa36867f620ecbc6661adeb1b33f5e2527dbc"
+    },
+    "scripts/ci/service_evidence.py": {
+      "bytes": 21109,
+      "sha256": "7d6c383186cd21bf0bacde64ce9fb3c49b126a2abfb3f958fb0c645bb4889687"
+    },
+    "scripts/ci/service.py": {
+      "bytes": 13884,
+      "sha256": "08add48b6f4c41b9e9e14ce408260af9f35e7113dffd435e5784a8a32e80b75a"
+    }
+  },
+  "outputFiles": {
+    "verification-main-39156404932/foundation.stdout.txt": {
+      "bytes": 114,
+      "sha256": "88e387faeb42a721f9b1ffd57c95971017322173c20aed592abf8eca5ce22511"
+    },
+    "verification-main-39156404932/foundation.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "verification-main-39156404932/evaluation.stdout.txt": {
+      "bytes": 258,
+      "sha256": "fe93d90353b6bc17042ab09c244720164d3da9bca401ddd8db8d5560b9ec7309"
+    },
+    "verification-main-39156404932/evaluation.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "verification-main-39156404932/service.stdout.txt": {
+      "bytes": 220,
+      "sha256": "add48b42423d4113bf12a091433116fa48cce93d88be1c30d120cbd7c4ae3973"
+    },
+    "verification-main-39156404932/service.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "newRuntimeExecution": false,
+  "newTestsExecuted": false,
+  "newAuditsExecuted": false
+}
