@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "repository": "neophilism/Browser-VR-Engine",
+  "mode": "github",
+  "eventName": "pull_request",
+  "headSha": "cdf6bf1135210c6cbcc34c2d550dffbdfcd13636",
+  "baseSha": "64c3dbfc8818c4ebaac64f94103f26815e539c96",
+  "testedSha": "f925c7b0abd09db33fcd55c334b30757724f32d0",
+  "treeSha": "593773282cfb076b0a1252d4d8ab5ad883ce6e30",
+  "dirty": false,
+  "runId": "39147325398",
+  "runAttempt": 1,
+  "workflowRef": "neophilism/Browser-VR-Engine/.github/workflows/engine-ci.yml@refs/pull/5/merge",
+  "workflowSha": "f925c7b0abd09db33fcd55c334b30757724f32d0",
+  "lockfileSha256": "0b02cc9619d396fad6f67d9d653421ab7b2c51166d2587b9ad5a6d8d31a58299",
+  "planSha256": "076d8750880f1117633c7619331a0b52cce4f412e72b3466c42ffedc1faa1932",
+  "toolchain": {
+    "node": "v24.19.0",
+    "npm": "11.17.0",
+    "os": "linux",
+    "arch": "x64",
+    "runnerImage": "20261012.334.1"
+  },
+  "startedAt": "2026-10-18T16:57:13.670Z",
+  "scopeRegistry": {
+    "schemaVersion": 1,
+    "scopes": [
+      {
+        "id": "foundation",
+        "status": "required",
+        "activationCard": "F02",
+        "reason": "Real build, unit, package-consumer, policy and evidence tests exist."
+      },
+      {
+        "id": "integration",
+        "status": "not_applicable",
+        "activationCard": "F08",
+        "reason": "No control API, database, queue or object-storage service exists yet."
+      },
+      {
+        "id": "browser",
+        "status": "required",
+        "activationCard": "F04",
+        "reason": "Isolated F05 real-browser and F04 evaluation-toolkit checks have a required runner; full candidate services, target hardware and headset qualification remain separate and incomplete."
+      },
+      {
+        "id": "migration",
+        "status": "not_applicable",
+        "activationCard": "F08",
+        "reason": "No durable database schema or migration exists yet."
+      }
+    ]
+  },
+  "commands": [
+    {
+      "id": "install",
+      "argv": [
+        "npm",
+        "ci",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 1468
+    },
+    {
+      "id": "check",
+      "argv": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 5187
+    },
+    {
+      "id": "example",
+      "argv": [
+        "npm",
+        "run",
+        "example:all"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 668
+    },
+    {
+      "id": "consumer",
+      "argv": [
+        "npm",
+        "run",
+        "test:consumer"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 3129
+    },
+    {
+      "id": "sharding",
+      "argv": [
+        "npm",
+        "run",
+        "test:sharding"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 783
+    },
+    {
+      "id": "dependencies",
+      "argv": [
+        "npm",
+        "run",
+        "check:dependencies"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 544
+    }
+  ],
+  "files": [
+    {
+      "path": "logs/install.txt",
+      "bytes": 25,
+      "sha256": "34bf0571dedf29c5408f36ef7fe7829529577bba89525cd30c3f3c72ae3c0643"
+    },
+    {
+      "path": "logs/check.txt",
+      "bytes": 16476,
+      "sha256": "aa9beaafc3ed3cb1eb4c4448dbfbb080e4ebcad535442236cda3e86b76cade9e"
+    },
+    {
+      "path": "logs/example.txt",
+      "bytes": 877,
+      "sha256": "2d27e68eff6e50d9447eaeaa621427bb66c8e853a2cceef6c0c055bdcc98e160"
+    },
+    {
+      "path": "logs/consumer.txt",
+      "bytes": 263,
+      "sha256": "b70373de193d55366a7509d6b5c277dc84179256043192e48a139030110c372a"
+    },
+    {
+      "path": "logs/sharding.txt",
+      "bytes": 215,
+      "sha256": "476f29e3597e2f519c7c1ca07931b8f5daeaacd51ba73a62b2dd3a9e8be72d55"
+    },
+    {
+      "path": "logs/dependencies.txt",
+      "bytes": 137,
+      "sha256": "48d456d1d29a34ea0f3f70174bb236277e220b3edc3f6ca559791c14fcc7a354"
+    },
+    {
+      "path": "reports/dependency-audit.json",
+      "bytes": 600,
+      "sha256": "82c5f5d010b7bb31c3d305ff8b5221dd516fdc52f15aef53df66cda7aaa44f9f"
+    }
+  ],
+  "complete": true,
+  "finishedAt": "2026-10-18T16:57:25.604Z"
+}

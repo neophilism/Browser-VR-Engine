@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "scope": "Historical failed first hosted evaluation integration; not candidate acceptance",
+  "repository": "neophilism/Browser-VR-Engine",
+  "pullRequest": 5,
+  "headSha": "cdf6bf1135210c6cbcc34c2d550dffbdfcd13636",
+  "baseSha": "64c3dbfc8818c4ebaac64f94103f26815e539c96",
+  "testedSha": "f925c7b0abd09db33fcd55c334b30757724f32d0",
+  "treeSha": "593773282cfb076b0a1252d4d8ab5ad883ce6e30",
+  "runId": 39147325398,
+  "runAttempt": 1,
+  "runUrl": "https://github.com/neophilism/Browser-VR-Engine/actions/runs/39147325398",
+  "outcome": "failed",
+  "foundation": "passed",
+  "evaluation": "failed",
+  "browserPassed": 18,
+  "browserFailed": 1,
+  "failedCheck": "desktop-keyboard-movement",
+  "causeLimit": "The failed check did not retain its before/after input state or physics-step count; the exact movement failure cause is not established. Other eighteen checks passed.",
+  "artifacts": [
+    {
+      "id": 12144090749,
+      "directory": "foundation",
+      "bytes": 9088,
+      "sha256": "5835eaad68668bc2b855f9e57cff2e6619013ee4a403693bbefd856af25a0001"
+    },
+    {
+      "id": 12144190643,
+      "directory": "evaluation",
+      "bytes": 307106,
+      "sha256": "7328e5bf6adede848aa73a9e8c7225149759f13f76aef2383927cc6178d6b40f"
+    }
+  ],
+  "files": [
+    {
+      "path": "evaluation/browser/browser-checks.json",
+      "bytes": 271742,
+      "sha256": "706c22d228d933b32a3423e301169265f346c9bc7d921411fdc570d2ab7e8ee9"
+    },
+    {
+      "path": "evaluation/browser/build.json",
+      "bytes": 2701,
+      "sha256": "39c91153603c4c0ae64b90b27ea19721ed672a04e7fe64d6fd273f67bc87e5b4"
+    },
+    {
+      "path": "evaluation/browser/courtyard-verified.png",
+      "bytes": 136724,
+      "sha256": "9a37de3de0ccf215904217c4c086074dc094188dd4c37f240221529660843c0a"
+    },
+    {
+      "path": "evaluation/browser/derived-prop.glb",
+      "bytes": 1924,
+      "sha256": "0c20e6a53dff9ab6cf08681c47c30d286a664ef5155f8a1b0439f31a2ec97be0"
+    },
+    {
+      "path": "evaluation/browser/f03-before-activation.png",
+      "bytes": 129782,
+      "sha256": "0978b5876adbe2b54834c641086f8f68886d5b412a01d76e2a98e38c91d29dee"
+    },
+    {
+      "path": "evaluation/browser/f05-summary.json",
+      "bytes": 5727,
+      "sha256": "b5d84001ae2cc646d03e8a70b9b48bd3f9172a0d66726fd2fa454534ac5cc62c"
+    },
+    {
+      "path": "evaluation/logs/f04-audit.txt",
+      "bytes": 42,
+      "sha256": "01ab317b6b75f3a88b6242746cbaad8fc76d83db620c2a6feb562026aa7c7cb0"
+    },
+    {
+      "path": "evaluation/logs/f04-history.txt",
+      "bytes": 301,
+      "sha256": "a7655b85b2e6f6e655ef301e3f43edb69dadc325f60ac92ceff38491fe17efc2"
+    },
+    {
+      "path": "evaluation/logs/f04-install.txt",
+      "bytes": 177,
+      "sha256": "fb438e8f41898134b92769569fcc836e421fc7a0ca1591c3d21c6fda0d5f10ef"
+    },
+    {
+      "path": "evaluation/logs/f04-source.txt",
+      "bytes": 128,
+      "sha256": "d3235fdcc622846d6bc93974325e344cdc0cccd00be05f74c3dbb1aefd32a224"
+    },
+    {
+      "path": "evaluation/logs/f04-tests.txt",
+      "bytes": 1044,
+      "sha256": "cb4ebb835ab357eb7a310589d83bd5e6ad866439279c88ad9d488ed2db14b282"
+    },
+    {
+      "path": "evaluation/logs/f05-audit.txt",
+      "bytes": 42,
+      "sha256": "01ab317b6b75f3a88b6242746cbaad8fc76d83db620c2a6feb562026aa7c7cb0"
+    },
+    {
+      "path": "evaluation/logs/f05-browser-install.txt",
+      "bytes": 16467,
+      "sha256": "e2aef938ff3d41c598071ca73099866b247ca2d67433537b281d69142baba058"
+    },
+    {
+      "path": "evaluation/logs/f05-browser.txt",
+      "bytes": 1062,
+      "sha256": "ed35a0f05f5eb861d0ad5343edaa87b9d264d420b4c55bc58ad7ee3e5287ac51"
+    },
+    {
+      "path": "evaluation/logs/f05-build.txt",
+      "bytes": 172,
+      "sha256": "36da432a60f012535689ed857380c9c73c90e3168e34b5f9178ca09281f70fd5"
+    },
+    {
+      "path": "evaluation/logs/f05-install.txt",
+      "bytes": 24,
+      "sha256": "c14acfaacab7514b1c429046d3fd4afe531afbe72b5a012dfd6d5d8f88d392fc"
+    },
+    {
+      "path": "evaluation/logs/f05-tests.txt",
+      "bytes": 2781,
+      "sha256": "1176e14dd89acfd1ad63391f5e5c1946d71839813c9999f394ee0347eddca3ac"
+    },
+    {
+      "path": "evaluation/manifest.json",
+      "bytes": 9570,
+      "sha256": "93848bfab22be50268265afe7e64fe9178eab835c6d86dcd086210f30991dc5d"
+    },
+    {
+      "path": "evaluation/reports/f04/dependency-audit.json",
+      "bytes": 596,
+      "sha256": "bd2d26afd50f981870b6a8c045465caab2fb588142f9b14d65113330721723f1"
+    },
+    {
+      "path": "evaluation/reports/f05/dependency-audit.json",
+      "bytes": 599,
+      "sha256": "7daabf7f6cd8c0d252345a8aff0bd3b404edc2c3e56043426bd94e0d9d9cd65e"
+    },
+    {
+      "path": "foundation/logs/check.txt",
+      "bytes": 16476,
+      "sha256": "aa9beaafc3ed3cb1eb4c4448dbfbb080e4ebcad535442236cda3e86b76cade9e"
+    },
+    {
+      "path": "foundation/logs/consumer.txt",
+      "bytes": 263,
+      "sha256": "b70373de193d55366a7509d6b5c277dc84179256043192e48a139030110c372a"
+    },
+    {
+      "path": "foundation/logs/dependencies.txt",
+      "bytes": 137,
+      "sha256": "48d456d1d29a34ea0f3f70174bb236277e220b3edc3f6ca559791c14fcc7a354"
+    },
+    {
+      "path": "foundation/logs/example.txt",
+      "bytes": 877,
+      "sha256": "2d27e68eff6e50d9447eaeaa621427bb66c8e853a2cceef6c0c055bdcc98e160"
+    },
+    {
+      "path": "foundation/logs/install.txt",
+      "bytes": 25,
+      "sha256": "34bf0571dedf29c5408f36ef7fe7829529577bba89525cd30c3f3c72ae3c0643"
+    },
+    {
+      "path": "foundation/logs/sharding.txt",
+      "bytes": 215,
+      "sha256": "476f29e3597e2f519c7c1ca07931b8f5daeaacd51ba73a62b2dd3a9e8be72d55"
+    },
+    {
+      "path": "foundation/manifest.json",
+      "bytes": 4240,
+      "sha256": "e853d6a3497d6a35cfacebb011624a1b61224c66cee9c2d2d9470869e70b5e98"
+    },
+    {
+      "path": "foundation/reports/dependency-audit.json",
+      "bytes": 600,
+      "sha256": "82c5f5d010b7bb31c3d305ff8b5221dd516fdc52f15aef53df66cda7aaa44f9f"
+    }
+  ]
+}

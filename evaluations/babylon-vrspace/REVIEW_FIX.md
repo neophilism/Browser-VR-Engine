@@ -48,6 +48,14 @@ The final run is **`evidence/audio-measurement-fix`**, completed at **2026-10-17
 
 The current source still uses one native audio context and one shared listener. This is assistant implementation and self review with local automated evidence, not human approval or hosted candidate acceptance.
 
+## First hosted integration run and movement observation
+
+After the owner authorized registry audits, PR #5 head `cdf6bf1135210c6cbcc34c2d550dffbdfcd13636` ran on GitHub Actions as `39147325398`. All six foundation stages and both nested toolkit audits passed with zero reported advisories. The actual pinned Chromium run passed 18 of 19 checks; `desktop-keyboard-movement` failed its original greater-than-0.1-meter assertion. The required aggregate rejected the candidate. The downloaded artifact digests and unchanged failed reports are retained in [the historical run directory](../../docs/evidence/foundation-evaluations-ci-39147325398/index.json).
+
+The old keyboard check held W for 350 wall-clock milliseconds and saved its before/after positions only on success. It did not retain key delivery, focus or simulation-step progress on this failure, so the exact cause is not established. A separate actual Rapier diagnostic moved about one meter over 21 steps at both tested starting heights; it did not reproduce this browser failure.
+
+The revised check holds the actual browser key through 21 observed 60 Hz physics steps, with a bounded 10-second observation timeout, and retains focus, held/released input, positions, frame/step counts and elapsed browser time even if an assertion fails. It preserves the greater-than-0.1-meter movement requirement and uses the existing valid 1.65-meter spawn clearance. It does not inject movement or call physics directly. This measures functional input in a software-rendered runner; it does not supply an input-latency or target-device performance qualification. A fresh hosted candidate must pass the complete unchanged 19-check inventory before integration.
+
 ## Integration gate
 
 The evaluation has its own lockfile outside the production workspaces. Candidate CI must explicitly run `node run.mjs install`, `browser-install`, `build`, `test-server`, `test` and `audit`; retain that run's reports and screenshot; verify the exact expected check IDs and source/build/fixture keys; and attach current-commit CI provenance. A local Chrome override is recorded as such and is not a hardware qualification claim. Historical reports or a subset of source fingerprints cannot replace a fresh candidate run.

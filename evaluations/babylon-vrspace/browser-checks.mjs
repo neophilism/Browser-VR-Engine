@@ -74,8 +74,26 @@ try {
    return {before:a.animations[0],after:b.animations[0],soundPosition:sound.position};
  });
  await check('desktop-keyboard-movement',async()=>{
-   await page.evaluate(()=>{foundationProbe.setPlayer([5,1.6,0]);foundationProbe.camera.rotationQuaternion=null;foundationProbe.camera.rotation.set(0,0,0);});
-   await page.locator('#scene').focus();const before=(await inspect()).player.eye;await page.keyboard.down('KeyW');await wait(350);await page.keyboard.up('KeyW');const after=(await inspect()).player.eye;assert(after[2]<before[2]-.1);return {before,after};
+   // Measure a fixed amount of actual simulation progress, not the number of
+   // frames a software-rendered CI machine happens to schedule in 350 ms.
+   // This remains real DOM keyboard input through the running frame loop.
+   const inputState=()=>page.evaluate(()=>({eye:foundationProbe.inspect().player.eye,steps:foundationProbe.physicsSteps,keys:[...foundationProbe.keys],focus:document.activeElement?.id,frames:foundationProbe.frames.length,time:performance.now()}));
+   await page.evaluate(()=>{foundationProbe.setPlayer([5,1.65,0]);foundationProbe.camera.rotationQuaternion=null;foundationProbe.camera.rotation.set(0,0,0);});
+   await page.locator('#scene').focus();
+   const observation=observed.keyboardMovement={before:await inputState(),requiredPhysicsSteps:21,timeoutMs:10000};
+   try {
+     assert.equal(observation.before.focus,'scene');
+     await page.keyboard.down('KeyW');observation.pressed=await inputState();
+     assert(observation.pressed.keys.includes('KeyW'),'The actual keydown must reach the engine');
+     await page.waitForFunction(start=>foundationProbe.physicsSteps>=start+21,observation.pressed.steps,{polling:50,timeout:10000});
+     observation.moved=await inputState();
+   } finally {
+     await page.keyboard.up('KeyW');observation.released=await inputState();
+   }
+   assert(observation.moved.keys.includes('KeyW'),'The key must remain held during the measured simulation steps');
+   assert(!observation.released.keys.includes('KeyW'),'The actual keyup must release engine input');
+   assert(observation.moved.eye[2]<observation.before.eye[2]-.1);
+   return observation;
  });
  await check('wall-solid-and-open-arch-traversal',async()=>{
    const result=await page.evaluate(()=>{

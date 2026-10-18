@@ -6,7 +6,8 @@ import { tmpdir } from 'node:os';
 import { digest } from '../ci/evidence.mjs';
 import { childEnvironment } from '../ci/environment.mjs';
 import { runEvaluationCommand, validateBrowserEvidence, validateCheckedEvaluationInputs,
-  validateEvaluationAudits, readContainedEvaluationFile, validateEvaluationScreenshot } from '../ci/evaluate.mjs';
+  validateEvaluationAudits, readContainedEvaluationFile, validateEvaluationScreenshot,
+  requiredF05SourceFiles, requiredF05BuildInputs } from '../ci/evaluate.mjs';
 
 const root = resolve(import.meta.dirname, '../..');
 const historical = resolve(root, 'evaluations/babylon-vrspace/evidence/audio-measurement-fix');
@@ -19,6 +20,14 @@ const pretty = value => Buffer.from(`${JSON.stringify(value, null, 2)}\n`);
 async function fixture() {
   const report = await json(join(historical, 'browser-checks.json'));
   const summary = await json(join(historical, 'f05-summary.json'));
+  // Only this in-memory synthetic fixture is rebound to the checked source.
+  // Never rewrite a historical report or use this as execution evidence.
+  const fingerprints = async names => Object.fromEntries(await Promise.all(names.map(async name => {
+    const bytes = await readFile(resolve(root, 'evaluations/babylon-vrspace', name));
+    return [name, { bytes: bytes.length, sha256: digest(bytes) }];
+  })));
+  report.sourceDigests = await fingerprints(requiredF05SourceFiles);
+  report.build.inputs = await fingerprints(requiredF05BuildInputs);
   const start = new Date(Date.parse(report.startedAt) - 1000).toISOString();
   const end = new Date(Date.parse(report.timestamp) + 1000).toISOString();
   const runDirectory = 'artifacts/runs/run-Synthetic';
