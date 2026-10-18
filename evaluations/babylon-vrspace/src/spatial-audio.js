@@ -125,13 +125,29 @@ export class SpatialGraph {
     return {state:this.context.state,initialContextState:this.initialContextState,suspendedByApplication:true,sampleRate:this.context.sampleRate,currentTime:this.context.currentTime,activation:this.activation,listener:this.listener,outputGain:this.output.gain.value,contextCount:this.closed?0:1,sources:[...this.sources.values()].map(item=>({id:item.id,sourceType:item.source.constructor.name,sameContext:item.source.context===this.context,position:item.position,pannerPosition:[item.panner.positionX.value,item.panner.positionY.value,item.panner.positionZ.value],distanceModel:item.descriptor.curve.model,pannerRolloff:item.panner.rolloffFactor,panningModel:item.panner.panningModel,gain:item.gain.gain.value*item.distanceGain.gain.value,inputRms:SpatialGraph.rms(item.inputAnalyser),prePannerRms:SpatialGraph.rms(item.prePannerAnalyser),rms:SpatialGraph.rms(item.analyser),stereoRms:item.channels.map(SpatialGraph.rms),meter:{inputs:item.meter.numberOfInputs,outputs:item.meter.numberOfOutputs,window:item.meterState.history.at(-1)||null,retainedWindows:item.meterState.history.length,invalidMessages:item.meterState.invalidMessages},connections:['source>distance-gain','distance-gain>panner','panner>gain','gain>shared-output'],directSourceToDestination:false,mediaSourceCount:item.video?Number(this.mediaSources.get(item.video)===item.source):0,video:item.video?{paused:item.video.paused,currentTime:item.video.currentTime,duration:item.video.duration,loop:item.video.loop,muted:item.video.muted,volume:item.video.volume,readyState:item.video.readyState,decodedFrames:item.video.getVideoPlaybackQuality?.().totalVideoFrames??null}:null}))};
   }
   async dispose() {
+    if(this.disposeTask)return this.disposeTask;
     if(this.closed)return;
-    for(const item of this.sources.values()) {
-      if(item.video) {item.video.pause();item.video.removeAttribute('src');item.video.load();item.video.remove();}
-      else {try{item.source.stop();}catch{}}
-      item.meter.port.postMessage({type:'dispose'});item.meter.port.onmessage=null;item.meter.port.close();item.meterState.history.length=0;
-      for(const node of [item.source,item.distanceGain,item.panner,item.gain,item.inputAnalyser,item.prePannerAnalyser,item.analyser,item.splitter,item.meter,...item.channels])node.disconnect();
-    }
-    this.sources.clear();this.output.disconnect();await this.context.close();this.closed=true;
+    this.cleanupDone??=new Set();
+    this.disposeTask=(async()=>{
+      const errors=[],attempt=async(key,action)=>{if(this.cleanupDone.has(key))return;try{await action();this.cleanupDone.add(key);}catch(error){errors.push(error);}};
+      for(const item of this.sources.values()){
+        if(item.video){
+          await attempt(item.id+':video-pause',()=>item.video.pause());
+          await attempt(item.id+':video-src',()=>item.video.removeAttribute('src'));
+          await attempt(item.id+':video-load',()=>item.video.load());
+          await attempt(item.id+':video-remove',()=>item.video.remove());
+        }else await attempt(item.id+':stop',()=>{try{item.source.stop();}catch(error){if(error.name!=='InvalidStateError')throw error;}});
+        await attempt(item.id+':meter-message',()=>item.meter.port.postMessage({type:'dispose'}));
+        await attempt(item.id+':meter-handler',()=>{item.meter.port.onmessage=null;});
+        await attempt(item.id+':meter-close',()=>item.meter.port.close());
+        item.meterState.history.length=0;
+        for(const node of [item.source,item.distanceGain,item.panner,item.gain,item.inputAnalyser,item.prePannerAnalyser,item.analyser,item.splitter,item.meter,...item.channels])await attempt(node,()=>node.disconnect());
+      }
+      await attempt(this.output,()=>this.output.disconnect());
+      await attempt('context-close',async()=>{if(this.context.state!=='closed')await this.context.close();});
+      if(errors.length)throw new AggregateError(errors,'Spatial audio cleanup is incomplete and remains owned');
+      this.sources.clear();this.closed=true;
+    })().finally(()=>{this.disposeTask=null;});
+    return this.disposeTask;
   }
 }

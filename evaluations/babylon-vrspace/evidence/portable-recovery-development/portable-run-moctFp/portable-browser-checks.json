@@ -1,0 +1,3133 @@
+{
+  "scope": "F05 bounded portable authored-world carrier with exact originals and fresh browser contexts; evaluation only",
+  "method": "real-browser",
+  "physicalHeadset": false,
+  "physicalAudio": false,
+  "qualificationStatus": "incomplete",
+  "startedAt": "2026-10-18T20:49:15.131Z",
+  "candidate": {
+    "babylon": "9.30.0",
+    "rapier": "0.21.0",
+    "typebox": "0.34.52"
+  },
+  "environment": {
+    "browser": "151.0.7922.34",
+    "playwright": "1.62.1",
+    "flags": [
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader",
+      "--autoplay-policy=document-user-activation-required"
+    ],
+    "graphicsMode": "SwiftShader",
+    "physicalGPU": false,
+    "physicalHeadset": false,
+    "physicalAudio": false,
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "dpr": 1
+    }
+  },
+  "fixtureDigests": {
+    "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+    "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+    "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+    "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+    "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+    "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+    "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+    "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+  },
+  "comparison": {
+    "catalogDigest": "ae8f38424e68be31dd85acc066abbb96322cead3d90f580089b89a18d3039593",
+    "deviceTargetDigest": "c3f2dcce2e56da61f1999dc4056d165adbe9ff1601fc93bdf62dfc493e0080f6",
+    "fixtureSetId": "bve-foundation-0.1.0",
+    "scenarioDigest": "6547e68553d86e8294f2d2ea09413bfb45b7c773ba6942a0f25166835d099848",
+    "schemaDigest": "ef7de9b6f72e18063253c28cec464cf09d6fcc0d0e3795ff86f3108947f1224b",
+    "schemaVersion": "0.1.0",
+    "thresholdDigest": "36ca04ae7a569ba2e4c8fc6804db9620ca5a7ca5f63d527ad83cf880611d2a14",
+    "workloadDigest": "b105f1b7772ce039a5d43d098762bef459288ba447019bc6fc8c3dfcd8979e7b",
+    "worldDigest": "c18f890d75db0a8f7124ee14a230751c53aea5f7346b68c130cb499704b7b667"
+  },
+  "build": {
+    "schemaVersion": 1,
+    "inputs": {
+      "src/main.js": {
+        "bytes": 61848,
+        "sha256": "167d92a8fb7ba46db9c473bf1ad36485cf542307f7588a2527bf800fa261801d"
+      },
+      "src/xr-session.js": {
+        "bytes": 11809,
+        "sha256": "fefeae1a64899d6552a7420e09b388c88d2b59dfbd75e05fc5f2ffb126972c64"
+      },
+      "src/spatial-audio.js": {
+        "bytes": 10814,
+        "sha256": "16a4a798e18934515ec725868880520fa99b45f6abf9b3709a222ccce0c05725"
+      },
+      "src/audio-meter.js": {
+        "bytes": 2929,
+        "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+      },
+      "src/import-policy.js": {
+        "bytes": 14112,
+        "sha256": "a66d799731635bdf335a45faf3343bee88e2af7bad71a244e9c8ca57b4359bc2"
+      },
+      "src/import-resources.js": {
+        "bytes": 1300,
+        "sha256": "756a4931cd4348a336a659aab87e49bee53b2f798bddfa2e0a4cac49b696c4c4"
+      },
+      "src/portable-world.js": {
+        "bytes": 14717,
+        "sha256": "5650e8556c4d53145defed4f2d930756d9d8c3c0ed2b738910e9d462e75e4e85"
+      },
+      "src/media-policy.js": {
+        "bytes": 663,
+        "sha256": "31e9611f4d41e81dcd3075aae339aed51af0c64f648c039623cf7a5853daa241"
+      },
+      "contracts-build.mjs": {
+        "bytes": 3887,
+        "sha256": "4ae4f20576037f37f030976b4656ce369f82f2db5cd813fb9148895fcc78acae"
+      },
+      "index.html": {
+        "bytes": 5409,
+        "sha256": "2a9a38f5e70c2dd0349413af9c7bfc4096fbaa4fd2a1ae549bafb53c86965f00"
+      },
+      "package.json": {
+        "bytes": 849,
+        "sha256": "8bad2e362548f9fdd4cb007049f0ff1287515c489c08fa353a7afb70062194b9"
+      },
+      "package-lock.json": {
+        "bytes": 19680,
+        "sha256": "495570320efa26e784a6a99d6337b0283d959b869a3a41b414a87863de7bf60b"
+      },
+      "fixture-pins.json": {
+        "bytes": 1199,
+        "sha256": "7c561df8f41f3b016b80e6b4d17258bc3d76dbe4bf8a6fde8ec5d7fa0511add9"
+      },
+      "vendor/vrspace/asset-loader.js": {
+        "bytes": 10336,
+        "sha256": "1afa505b193dac8f60ee54ea7ccdfd60e9a0620cf561fa393aa570055d23fa06"
+      },
+      "build.mjs": {
+        "bytes": 2007,
+        "sha256": "0dc6369e5af9148a515f7455533478eb47d8e720e447d726c6ed92228461d96b"
+      }
+    },
+    "workspaceInputs": {
+      "packages/contracts/package.json": {
+        "bytes": 413,
+        "sha256": "6816f9621e16609212409c15ae51d81da10dccbb8f50f160e9d4b40688cfc4be"
+      },
+      "packages/contracts/src/index.ts": {
+        "bytes": 186,
+        "sha256": "e799890f267109d7eeba15d1370bfc6e42802c82970d76270fb2e1ff951a1dad"
+      },
+      "packages/contracts/src/schemas.ts": {
+        "bytes": 15431,
+        "sha256": "20d131f0b8c232abdc9fd52987a9786219f50243becf7c11464ff2049d5541fb"
+      },
+      "packages/contracts/src/ports.ts": {
+        "bytes": 2548,
+        "sha256": "21d7d373c6a6510e5eaea03496973943fdfad6997b48f0d5a8e5ec3a522cc7bb"
+      },
+      "packages/contracts/src/canonical.ts": {
+        "bytes": 2692,
+        "sha256": "fc17b257bff9ea620e7000bd544a282a86c7f178d272d72705cf52c7da484e11"
+      },
+      "packages/contracts/src/validation.ts": {
+        "bytes": 16779,
+        "sha256": "72290955a94cc691ce4073f952840f5f54d237768f8810b2989dcfe139cbff1e"
+      },
+      "packages/contracts/src/math.ts": {
+        "bytes": 3723,
+        "sha256": "e12369f36a3dcc9e0e159d4abcfde8e744617c505e4f4fb319fc3581b15ec20d"
+      },
+      "packages/contracts/src/qualification.ts": {
+        "bytes": 5517,
+        "sha256": "d29c6996b135fefc911f166db7a4b2996cc1f84e682dd67a65f75db9440088f0"
+      }
+    },
+    "outputs": {
+      "dist/main.js": {
+        "bytes": 22992182,
+        "sha256": "68601baa73db924cc590bedec2126ba13c9e12282b982d0d53980c6becac7f20"
+      },
+      "dist/main.js.map": {
+        "bytes": 34132484,
+        "sha256": "957537d793508ab6b694592f5d0b2762c65aaae94966b611fcc429ac288f04b7"
+      },
+      "dist/audio-meter.js": {
+        "bytes": 2929,
+        "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+      },
+      "dist/portable-world.mjs": {
+        "bytes": 307897,
+        "sha256": "45b6e1b53ef9456cec14eea37a0034fe8f7864d6411873ed17a0f526bce8bac9"
+      }
+    },
+    "fixtureDigests": {
+      "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+      "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+      "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+      "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+      "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+      "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+      "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+      "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+    }
+  },
+  "checks": [
+    {
+      "id": "portable-browser-export-includes-originals",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "bootBefore": {
+          "host": {
+            "phase": "starting",
+            "createdInstances": 0,
+            "source": null,
+            "receipt": null,
+            "error": null,
+            "lastFailure": null,
+            "pendingCleanup": null
+          },
+          "contexts": [],
+          "urls": 0,
+          "videoElements": 0,
+          "ready": false,
+          "hasApp": false
+        },
+        "bootAfter": {
+          "host": {
+            "phase": "starting",
+            "createdInstances": 0,
+            "source": null,
+            "receipt": null,
+            "error": null,
+            "lastFailure": null,
+            "pendingCleanup": null
+          },
+          "contexts": [],
+          "urls": 0,
+          "videoElements": 0,
+          "ready": false,
+          "hasApp": false
+        },
+        "publicPreflight": {
+          "outcomes": [
+            {
+              "kind": "numeric-bytes",
+              "error": "Invalid or excessive original bytes before copying",
+              "getters": 0,
+              "physics": false,
+              "audio": false
+            },
+            {
+              "kind": "too-many-originals",
+              "error": "Original table must exactly match the declared asset count before copying",
+              "getters": 0,
+              "physics": false,
+              "audio": false
+            },
+            {
+              "kind": "getters",
+              "error": "NOT_JSON /id: Accessors are not JSON data",
+              "getters": 0,
+              "physics": false,
+              "audio": false
+            }
+          ],
+          "concurrent": {
+            "entered": true,
+            "duplicate": "Load requires a fresh evaluation instance",
+            "cancelled": "Evaluation was disposed before loading completed",
+            "physics": false,
+            "audio": false
+          }
+        },
+        "importRace": {
+          "error": "Wait for a ready, stable evaluation before authoring a transform",
+          "before": {
+            "components": [
+              {
+                "data": {
+                  "asset": "prop-model"
+                },
+                "required": true,
+                "type": "bve:mesh",
+                "version": "0.1.0"
+              },
+              {
+                "data": {
+                  "body": "dynamic",
+                  "halfExtents": [
+                    0.6,
+                    0.5,
+                    0.3
+                  ],
+                  "massKg": 2,
+                  "shape": "box"
+                },
+                "required": true,
+                "type": "bve:collider",
+                "version": "0.1.0"
+              }
+            ],
+            "id": "prop-0",
+            "name": "Movable original prop 0",
+            "transform": {
+              "kind": "trs",
+              "translation": [
+                2,
+                4,
+                2
+              ],
+              "rotation": [
+                0.000009781329026736785,
+                -0.0032903561368584633,
+                0.00001935303953359835,
+                0.9999946355819702
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ]
+            }
+          },
+          "after": {
+            "components": [
+              {
+                "data": {
+                  "asset": "prop-model"
+                },
+                "required": true,
+                "type": "bve:mesh",
+                "version": "0.1.0"
+              },
+              {
+                "data": {
+                  "body": "dynamic",
+                  "halfExtents": [
+                    0.6,
+                    0.5,
+                    0.3
+                  ],
+                  "massKg": 2,
+                  "shape": "box"
+                },
+                "required": true,
+                "type": "bve:collider",
+                "version": "0.1.0"
+              }
+            ],
+            "id": "prop-0",
+            "name": "Movable original prop 0",
+            "transform": {
+              "kind": "trs",
+              "translation": [
+                2,
+                4,
+                2
+              ],
+              "rotation": [
+                0.000009781329026736785,
+                -0.0032903561368584633,
+                0.00001935303953359835,
+                0.9999946355819702
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ]
+            }
+          }
+        },
+        "export": {
+          "file": "exported-world.bveworld",
+          "bytes": 648189,
+          "sha256": "01eb46115bdf5301ac4b79bcd4dcbc1f752f8a145d307c48850d20c46c4f8ddd",
+          "worldId": "courtyard-v1",
+          "worldRevision": "05d8b5bf80856321172c6bb6cf7700a104356f61b134fd48aff6332ba860c8c8",
+          "manifestIntegrity": "5479712da147c28a000e5c6baccbbf3bb36ee684e6a5d02a1bf963356ecbb698",
+          "assetReceipts": [
+            {
+              "byteLength": 7323,
+              "id": "architecture",
+              "mediaType": "model/gltf+json",
+              "revision": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+            },
+            {
+              "byteLength": 5085,
+              "id": "coordinate-model",
+              "mediaType": "model/gltf+json",
+              "revision": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+            },
+            {
+              "byteLength": 2116,
+              "id": "prop-model",
+              "mediaType": "model/gltf+json",
+              "revision": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+            },
+            {
+              "byteLength": 12139,
+              "id": "creature-model",
+              "mediaType": "model/gltf+json",
+              "revision": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-0",
+              "mediaType": "audio/wav",
+              "revision": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-1",
+              "mediaType": "audio/wav",
+              "revision": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-2",
+              "mediaType": "audio/wav",
+              "revision": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-3",
+              "mediaType": "audio/wav",
+              "revision": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+            },
+            {
+              "byteLength": 96044,
+              "id": "calibration-audio",
+              "mediaType": "audio/wav",
+              "revision": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+            },
+            {
+              "byteLength": 116192,
+              "id": "wall-video",
+              "mediaType": "video/webm",
+              "revision": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+            },
+            {
+              "byteLength": 460,
+              "id": "readability-image",
+              "mediaType": "image/svg+xml",
+              "revision": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+            },
+            {
+              "byteLength": 1920,
+              "id": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+              "mediaType": "model/gltf-binary",
+              "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7"
+            }
+          ],
+          "authoredProp": {
+            "components": [
+              {
+                "data": {
+                  "asset": "prop-model"
+                },
+                "required": true,
+                "type": "bve:mesh",
+                "version": "0.1.0"
+              },
+              {
+                "data": {
+                  "body": "dynamic",
+                  "halfExtents": [
+                    0.6,
+                    0.5,
+                    0.3
+                  ],
+                  "massKg": 2,
+                  "shape": "box"
+                },
+                "required": true,
+                "type": "bve:collider",
+                "version": "0.1.0"
+              }
+            ],
+            "id": "prop-0",
+            "name": "Movable original prop 0",
+            "transform": {
+              "kind": "trs",
+              "rotation": [
+                0.000009781329026736785,
+                -0.0032903561368584633,
+                0.00001935303953359835,
+                0.9999946355819702
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "translation": [
+                2,
+                4,
+                2
+              ]
+            }
+          },
+          "imported": {
+            "entityId": "prop-1-a82b2e",
+            "meshEntityId": "prop-1-a82b2e-model",
+            "assetId": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+            "name": "off-center-scaled-prop.glb",
+            "bytes": 1920,
+            "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+            "vertices": 72,
+            "colliderHalfExtents": [
+              2,
+              1.944444464680589,
+              1.3333333774849216
+            ],
+            "normalization": {
+              "offset": [
+                5.199999928474426,
+                0.5000000596046448,
+                -2
+              ],
+              "scale": 0.5555555518762565
+            }
+          },
+          "entityCount": 57
+        },
+        "authorContextClosed": true
+      }
+    },
+    {
+      "id": "portable-invalid-carrier-no-allocation",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "before": {
+          "host": {
+            "phase": "empty",
+            "createdInstances": 0,
+            "source": "empty",
+            "receipt": null,
+            "error": null,
+            "lastFailure": null,
+            "pendingCleanup": null
+          },
+          "contexts": [],
+          "urls": 0,
+          "videoElements": 0,
+          "ready": false,
+          "hasApp": false
+        },
+        "after": {
+          "host": {
+            "phase": "empty",
+            "createdInstances": 0,
+            "source": "empty",
+            "receipt": null,
+            "error": "Portable world: unknown carrier header",
+            "lastFailure": null,
+            "pendingCleanup": null
+          },
+          "contexts": [],
+          "urls": 0,
+          "videoElements": 0,
+          "ready": false,
+          "hasApp": false
+        }
+      }
+    },
+    {
+      "id": "portable-fresh-world-with-no-fixture-fallback",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "host": {
+          "phase": "ready",
+          "createdInstances": 1,
+          "source": "portable",
+          "receipt": {
+            "integrity": "01eb46115bdf5301ac4b79bcd4dcbc1f752f8a145d307c48850d20c46c4f8ddd",
+            "manifestIntegrity": "5479712da147c28a000e5c6baccbbf3bb36ee684e6a5d02a1bf963356ecbb698",
+            "worldId": "courtyard-v1",
+            "worldRevision": "05d8b5bf80856321172c6bb6cf7700a104356f61b134fd48aff6332ba860c8c8",
+            "assetReceipts": [
+              {
+                "byteLength": 7323,
+                "id": "architecture",
+                "mediaType": "model/gltf+json",
+                "revision": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+              },
+              {
+                "byteLength": 5085,
+                "id": "coordinate-model",
+                "mediaType": "model/gltf+json",
+                "revision": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+              },
+              {
+                "byteLength": 2116,
+                "id": "prop-model",
+                "mediaType": "model/gltf+json",
+                "revision": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+              },
+              {
+                "byteLength": 12139,
+                "id": "creature-model",
+                "mediaType": "model/gltf+json",
+                "revision": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-0",
+                "mediaType": "audio/wav",
+                "revision": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-1",
+                "mediaType": "audio/wav",
+                "revision": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-2",
+                "mediaType": "audio/wav",
+                "revision": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-3",
+                "mediaType": "audio/wav",
+                "revision": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+              },
+              {
+                "byteLength": 96044,
+                "id": "calibration-audio",
+                "mediaType": "audio/wav",
+                "revision": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+              },
+              {
+                "byteLength": 116192,
+                "id": "wall-video",
+                "mediaType": "video/webm",
+                "revision": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+              },
+              {
+                "byteLength": 460,
+                "id": "readability-image",
+                "mediaType": "image/svg+xml",
+                "revision": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+              },
+              {
+                "byteLength": 1920,
+                "id": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+                "mediaType": "model/gltf-binary",
+                "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7"
+              }
+            ],
+            "authoredReload": true,
+            "liveSessionResume": false
+          },
+          "error": null,
+          "lastFailure": null,
+          "pendingCleanup": null
+        },
+        "originals": [
+          {
+            "id": "architecture",
+            "bytes": 7323,
+            "revision": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+          },
+          {
+            "id": "coordinate-model",
+            "bytes": 5085,
+            "revision": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+          },
+          {
+            "id": "prop-model",
+            "bytes": 2116,
+            "revision": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+          },
+          {
+            "id": "creature-model",
+            "bytes": 12139,
+            "revision": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+          },
+          {
+            "id": "corner-audio-0",
+            "bytes": 96044,
+            "revision": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+          },
+          {
+            "id": "corner-audio-1",
+            "bytes": 96044,
+            "revision": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+          },
+          {
+            "id": "corner-audio-2",
+            "bytes": 96044,
+            "revision": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+          },
+          {
+            "id": "corner-audio-3",
+            "bytes": 96044,
+            "revision": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+          },
+          {
+            "id": "calibration-audio",
+            "bytes": 96044,
+            "revision": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+          },
+          {
+            "id": "wall-video",
+            "bytes": 116192,
+            "revision": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+          },
+          {
+            "id": "readability-image",
+            "bytes": 460,
+            "revision": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+          },
+          {
+            "id": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+            "bytes": 1920,
+            "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7"
+          }
+        ],
+        "sideTableImports": 0,
+        "sources": 6
+      }
+    },
+    {
+      "id": "portable-normalization-hierarchy-and-collider",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "parent": "prop-1-a82b2e",
+        "offset": [
+          -2.8888888300201043,
+          -0.2777778090518196,
+          1.111111103752513
+        ],
+        "scale": [
+          0.5555555518762565,
+          0.5555555518762565,
+          0.5555555518762565
+        ],
+        "half": {
+          "x": 2,
+          "y": 1.9444444179534912,
+          "z": 1.3333333730697632
+        },
+        "body": {
+          "x": -0.0034665470011532307,
+          "y": 1.9443843364715576,
+          "z": 4.996300220489502
+        },
+        "visual": [
+          -0.0034665470011532307,
+          1.9443843364715576,
+          4.996300220489502
+        ],
+        "vertices": 72,
+        "roots": [
+          {
+            "name": "__root__",
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "children": [
+              {
+                "name": "asymmetric-statue",
+                "translation": [
+                  4,
+                  1,
+                  -2
+                ],
+                "scale": [
+                  8,
+                  8,
+                  8
+                ]
+              }
+            ]
+          }
+        ],
+        "solidCenter": true
+      }
+    },
+    {
+      "id": "portable-media-and-animation-bindings",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "before": {
+          "steps": 30,
+          "animation": {
+            "entityId": "bird",
+            "clip": "flap",
+            "playing": true,
+            "position": [
+              -3.4996000000000933,
+              5,
+              -4
+            ],
+            "frame": 46.133999999994415
+          },
+          "clock": 0,
+          "video": 0
+        },
+        "after": {
+          "steps": 87,
+          "animation": {
+            "entityId": "bird",
+            "clip": "flap",
+            "playing": true,
+            "position": [
+              -2.3975999999998603,
+              5,
+              -4
+            ],
+            "frame": 53.91
+          },
+          "audio": {
+            "state": "running",
+            "initialContextState": "running",
+            "suspendedByApplication": true,
+            "sampleRate": 44100,
+            "currentTime": 1.0448979591836736,
+            "activation": {
+              "isActive": true,
+              "hasBeenActive": true,
+              "at": 1752.6999999999534,
+              "before": "suspended",
+              "after": "running"
+            },
+            "listener": {
+              "position": [
+                0.000021205893062870018,
+                1.6147820949554443,
+                8
+              ],
+              "forward": [
+                0,
+                0.012499024669338474,
+                -0.9999218841401138
+              ],
+              "up": [
+                0,
+                0.9999218841401138,
+                0.012499024669338474
+              ]
+            },
+            "outputGain": 0.6000000238418579,
+            "contextCount": 1,
+            "sources": [
+              {
+                "id": "corner-playback-0",
+                "sourceType": "AudioBufferSourceNode",
+                "sameContext": true,
+                "position": [
+                  -6,
+                  1.600000023841858,
+                  -6
+                ],
+                "pannerPosition": [
+                  -6,
+                  1.600000023841858,
+                  -6
+                ],
+                "distanceModel": "inverse",
+                "pannerRolloff": 0,
+                "panningModel": "HRTF",
+                "gain": 0,
+                "inputRms": 0.06357603513849734,
+                "prePannerRms": 0,
+                "rms": 0,
+                "stereoRms": [
+                  0,
+                  0
+                ],
+                "meter": {
+                  "inputs": 2,
+                  "outputs": 0,
+                  "window": {
+                    "type": "paired-audio-window",
+                    "startFrame": 44544,
+                    "endFrame": 45312,
+                    "frames": 768,
+                    "sampleRate": 44100,
+                    "inputChannels": 1,
+                    "postChannels": 1,
+                    "invalidFrames": 0,
+                    "inputRms": 0.06297630346749693,
+                    "postGainRms": 0,
+                    "gainMin": 0,
+                    "gainMax": 0,
+                    "gainSamples": 768,
+                    "droppedWindows": 0
+                  },
+                  "retainedWindows": 59,
+                  "invalidMessages": 0
+                },
+                "connections": [
+                  "source>distance-gain",
+                  "distance-gain>panner",
+                  "panner>gain",
+                  "gain>shared-output"
+                ],
+                "directSourceToDestination": false,
+                "mediaSourceCount": 0,
+                "video": null
+              },
+              {
+                "id": "corner-playback-1",
+                "sourceType": "AudioBufferSourceNode",
+                "sameContext": true,
+                "position": [
+                  6,
+                  1.600000023841858,
+                  -6
+                ],
+                "pannerPosition": [
+                  6,
+                  1.600000023841858,
+                  -6
+                ],
+                "distanceModel": "inverse",
+                "pannerRolloff": 0,
+                "panningModel": "HRTF",
+                "gain": 0,
+                "inputRms": 0.06291589229543511,
+                "prePannerRms": 0,
+                "rms": 0,
+                "stereoRms": [
+                  0,
+                  0
+                ],
+                "meter": {
+                  "inputs": 2,
+                  "outputs": 0,
+                  "window": {
+                    "type": "paired-audio-window",
+                    "startFrame": 44544,
+                    "endFrame": 45312,
+                    "frames": 768,
+                    "sampleRate": 44100,
+                    "inputChannels": 1,
+                    "postChannels": 1,
+                    "invalidFrames": 0,
+                    "inputRms": 0.062384484353027556,
+                    "postGainRms": 0,
+                    "gainMin": 0,
+                    "gainMax": 0,
+                    "gainSamples": 768,
+                    "droppedWindows": 0
+                  },
+                  "retainedWindows": 59,
+                  "invalidMessages": 0
+                },
+                "connections": [
+                  "source>distance-gain",
+                  "distance-gain>panner",
+                  "panner>gain",
+                  "gain>shared-output"
+                ],
+                "directSourceToDestination": false,
+                "mediaSourceCount": 0,
+                "video": null
+              },
+              {
+                "id": "corner-playback-2",
+                "sourceType": "AudioBufferSourceNode",
+                "sameContext": true,
+                "position": [
+                  -6,
+                  1.600000023841858,
+                  6
+                ],
+                "pannerPosition": [
+                  -6,
+                  1.600000023841858,
+                  6
+                ],
+                "distanceModel": "inverse",
+                "pannerRolloff": 0,
+                "panningModel": "HRTF",
+                "gain": 0.15811294317245483,
+                "inputRms": 0.06305915615187047,
+                "prePannerRms": 0.00997046877091989,
+                "rms": 0.007408238881848907,
+                "stereoRms": [
+                  0.01359182659504595,
+                  0.009132160692650857
+                ],
+                "meter": {
+                  "inputs": 2,
+                  "outputs": 0,
+                  "window": {
+                    "type": "paired-audio-window",
+                    "startFrame": 44544,
+                    "endFrame": 45312,
+                    "frames": 768,
+                    "sampleRate": 44100,
+                    "inputChannels": 1,
+                    "postChannels": 1,
+                    "invalidFrames": 0,
+                    "inputRms": 0.06254268839928612,
+                    "postGainRms": 0.00988880853797252,
+                    "gainMin": 0.15811293428362772,
+                    "gainMax": 0.1581129523185452,
+                    "gainSamples": 768,
+                    "droppedWindows": 0
+                  },
+                  "retainedWindows": 59,
+                  "invalidMessages": 0
+                },
+                "connections": [
+                  "source>distance-gain",
+                  "distance-gain>panner",
+                  "panner>gain",
+                  "gain>shared-output"
+                ],
+                "directSourceToDestination": false,
+                "mediaSourceCount": 0,
+                "video": null
+              },
+              {
+                "id": "corner-playback-3",
+                "sourceType": "AudioBufferSourceNode",
+                "sameContext": true,
+                "position": [
+                  6,
+                  1.600000023841858,
+                  6
+                ],
+                "pannerPosition": [
+                  6,
+                  1.600000023841858,
+                  6
+                ],
+                "distanceModel": "inverse",
+                "pannerRolloff": 0,
+                "panningModel": "HRTF",
+                "gain": 0.15811395645141602,
+                "inputRms": 0.06309635489826106,
+                "prePannerRms": 0.009976414310050434,
+                "rms": 0.0053576896285654286,
+                "stereoRms": [
+                  0.006400639217417691,
+                  0.013370292502727298
+                ],
+                "meter": {
+                  "inputs": 2,
+                  "outputs": 0,
+                  "window": {
+                    "type": "paired-audio-window",
+                    "startFrame": 44544,
+                    "endFrame": 45312,
+                    "frames": 768,
+                    "sampleRate": 44100,
+                    "inputChannels": 1,
+                    "postChannels": 1,
+                    "invalidFrames": 0,
+                    "inputRms": 0.06296873222554858,
+                    "postGainRms": 0.009956235388947755,
+                    "gainMin": 0.15811394717414387,
+                    "gainMax": 0.15811396446871137,
+                    "gainSamples": 768,
+                    "droppedWindows": 0
+                  },
+                  "retainedWindows": 59,
+                  "invalidMessages": 0
+                },
+                "connections": [
+                  "source>distance-gain",
+                  "distance-gain>panner",
+                  "panner>gain",
+                  "gain>shared-output"
+                ],
+                "directSourceToDestination": false,
+                "mediaSourceCount": 0,
+                "video": null
+              },
+              {
+                "id": "bird-playback",
+                "sourceType": "AudioBufferSourceNode",
+                "sameContext": true,
+                "position": [
+                  -2.397599935531616,
+                  5,
+                  -4
+                ],
+                "pannerPosition": [
+                  -2.397599935531616,
+                  5,
+                  -4
+                ],
+                "distanceModel": "inverse",
+                "pannerRolloff": 0,
+                "panningModel": "HRTF",
+                "gain": 0.003926635219553637,
+                "inputRms": 0.06305577944329002,
+                "prePannerRms": 0.0012184804356368867,
+                "rms": 0.00011032401217072109,
+                "stereoRms": [
+                  0.000142909488609474,
+                  0.00011286403621434528
+                ],
+                "meter": {
+                  "inputs": 2,
+                  "outputs": 0,
+                  "window": {
+                    "type": "paired-audio-window",
+                    "startFrame": 44544,
+                    "endFrame": 45312,
+                    "frames": 768,
+                    "sampleRate": 44100,
+                    "inputChannels": 1,
+                    "postChannels": 1,
+                    "invalidFrames": 0,
+                    "inputRms": 0.06322737919548033,
+                    "postGainRms": 0.0012064819146798058,
+                    "gainMin": 0.019081636305810043,
+                    "gainMax": 0.019081638371685892,
+                    "gainSamples": 768,
+                    "droppedWindows": 0
+                  },
+                  "retainedWindows": 59,
+                  "invalidMessages": 0
+                },
+                "connections": [
+                  "source>distance-gain",
+                  "distance-gain>panner",
+                  "panner>gain",
+                  "gain>shared-output"
+                ],
+                "directSourceToDestination": false,
+                "mediaSourceCount": 0,
+                "video": null
+              },
+              {
+                "id": "wall-playback",
+                "sourceType": "MediaElementAudioSourceNode",
+                "sameContext": true,
+                "position": [
+                  0,
+                  2.200000047683716,
+                  -11.699999809265137
+                ],
+                "pannerPosition": [
+                  0,
+                  2.200000047683716,
+                  -11.699999809265137
+                ],
+                "distanceModel": "inverse",
+                "pannerRolloff": 0,
+                "panningModel": "HRTF",
+                "gain": 0,
+                "inputRms": 0.01047234591693096,
+                "prePannerRms": 0,
+                "rms": 0,
+                "stereoRms": [
+                  0,
+                  0
+                ],
+                "meter": {
+                  "inputs": 2,
+                  "outputs": 0,
+                  "window": {
+                    "type": "paired-audio-window",
+                    "startFrame": 44544,
+                    "endFrame": 45312,
+                    "frames": 768,
+                    "sampleRate": 44100,
+                    "inputChannels": 1,
+                    "postChannels": 1,
+                    "invalidFrames": 0,
+                    "inputRms": 0.010174889673145743,
+                    "postGainRms": 0,
+                    "gainMin": 0,
+                    "gainMax": 0,
+                    "gainSamples": 768,
+                    "droppedWindows": 0
+                  },
+                  "retainedWindows": 59,
+                  "invalidMessages": 0
+                },
+                "connections": [
+                  "source>distance-gain",
+                  "distance-gain>panner",
+                  "panner>gain",
+                  "gain>shared-output"
+                ],
+                "directSourceToDestination": false,
+                "mediaSourceCount": 1,
+                "video": {
+                  "paused": false,
+                  "currentTime": 1.046675,
+                  "duration": 2.003,
+                  "loop": true,
+                  "muted": false,
+                  "volume": 1,
+                  "readyState": 4,
+                  "decodedFrames": 38
+                }
+              }
+            ]
+          },
+          "sameElement": true,
+          "expectedBird": [
+            -2.397599935531616,
+            5,
+            -4
+          ],
+          "descriptors": [
+            {
+              "entityId": "music-corner-0",
+              "data": {
+                "bus": "music",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 1,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "corner-playback-0",
+                "sourceAsset": "corner-audio-0",
+                "spatial": true
+              }
+            },
+            {
+              "entityId": "music-corner-1",
+              "data": {
+                "bus": "music",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 1,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "corner-playback-1",
+                "sourceAsset": "corner-audio-1",
+                "spatial": true
+              }
+            },
+            {
+              "entityId": "music-corner-2",
+              "data": {
+                "bus": "music",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 1,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "corner-playback-2",
+                "sourceAsset": "corner-audio-2",
+                "spatial": true
+              }
+            },
+            {
+              "entityId": "music-corner-3",
+              "data": {
+                "bus": "music",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 1,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "corner-playback-3",
+                "sourceAsset": "corner-audio-3",
+                "spatial": true
+              }
+            },
+            {
+              "entityId": "bird",
+              "data": {
+                "bus": "effects",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 0.2,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "bird-playback",
+                "sourceAsset": "calibration-audio",
+                "spatial": true
+              }
+            },
+            {
+              "entityId": "wall-screen",
+              "data": {
+                "bus": "video",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 1,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "wall-playback",
+                "sourceAsset": "wall-video",
+                "spatial": true
+              }
+            }
+          ],
+          "sourceDescriptors": [
+            {
+              "id": "corner-playback-0",
+              "data": {
+                "bus": "music",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 1,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "corner-playback-0",
+                "sourceAsset": "corner-audio-0",
+                "spatial": true
+              }
+            },
+            {
+              "id": "corner-playback-1",
+              "data": {
+                "bus": "music",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 1,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "corner-playback-1",
+                "sourceAsset": "corner-audio-1",
+                "spatial": true
+              }
+            },
+            {
+              "id": "corner-playback-2",
+              "data": {
+                "bus": "music",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 1,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "corner-playback-2",
+                "sourceAsset": "corner-audio-2",
+                "spatial": true
+              }
+            },
+            {
+              "id": "corner-playback-3",
+              "data": {
+                "bus": "music",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 1,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "corner-playback-3",
+                "sourceAsset": "corner-audio-3",
+                "spatial": true
+              }
+            },
+            {
+              "id": "bird-playback",
+              "data": {
+                "bus": "effects",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 0.2,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "bird-playback",
+                "sourceAsset": "calibration-audio",
+                "spatial": true
+              }
+            },
+            {
+              "id": "wall-playback",
+              "data": {
+                "bus": "video",
+                "channels": "mono",
+                "curve": {
+                  "cutoff": 14,
+                  "fadeStart": 10,
+                  "model": "inverse",
+                  "referenceDistance": 1,
+                  "rolloff": 1
+                },
+                "gain": 1,
+                "localOffset": [
+                  0,
+                  0,
+                  0
+                ],
+                "loop": true,
+                "playbackId": "wall-playback",
+                "sourceAsset": "wall-video",
+                "spatial": true
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "portable-authored-reexport-restarts-live-state",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "live": {
+          "steps": 87,
+          "videoTime": 1.070667,
+          "animation": {
+            "entityId": "bird",
+            "clip": "flap",
+            "playing": true,
+            "position": [
+              -2.3975999999998603,
+              5,
+              -4
+            ],
+            "frame": 53.91
+          },
+          "prop": [
+            2.0369086265563965,
+            0.5428876876831055,
+            2.003714084625244
+          ]
+        },
+        "reexport": {
+          "file": "reexported-world.bveworld",
+          "bytes": 648189,
+          "sha256": "01eb46115bdf5301ac4b79bcd4dcbc1f752f8a145d307c48850d20c46c4f8ddd",
+          "worldId": "courtyard-v1",
+          "worldRevision": "05d8b5bf80856321172c6bb6cf7700a104356f61b134fd48aff6332ba860c8c8",
+          "manifestIntegrity": "5479712da147c28a000e5c6baccbbf3bb36ee684e6a5d02a1bf963356ecbb698",
+          "assetReceipts": [
+            {
+              "byteLength": 7323,
+              "id": "architecture",
+              "mediaType": "model/gltf+json",
+              "revision": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+            },
+            {
+              "byteLength": 5085,
+              "id": "coordinate-model",
+              "mediaType": "model/gltf+json",
+              "revision": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+            },
+            {
+              "byteLength": 2116,
+              "id": "prop-model",
+              "mediaType": "model/gltf+json",
+              "revision": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+            },
+            {
+              "byteLength": 12139,
+              "id": "creature-model",
+              "mediaType": "model/gltf+json",
+              "revision": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-0",
+              "mediaType": "audio/wav",
+              "revision": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-1",
+              "mediaType": "audio/wav",
+              "revision": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-2",
+              "mediaType": "audio/wav",
+              "revision": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-3",
+              "mediaType": "audio/wav",
+              "revision": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+            },
+            {
+              "byteLength": 96044,
+              "id": "calibration-audio",
+              "mediaType": "audio/wav",
+              "revision": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+            },
+            {
+              "byteLength": 116192,
+              "id": "wall-video",
+              "mediaType": "video/webm",
+              "revision": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+            },
+            {
+              "byteLength": 460,
+              "id": "readability-image",
+              "mediaType": "image/svg+xml",
+              "revision": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+            },
+            {
+              "byteLength": 1920,
+              "id": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+              "mediaType": "model/gltf-binary",
+              "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7"
+            }
+          ],
+          "authoredProp": {
+            "components": [
+              {
+                "data": {
+                  "asset": "prop-model"
+                },
+                "required": true,
+                "type": "bve:mesh",
+                "version": "0.1.0"
+              },
+              {
+                "data": {
+                  "body": "dynamic",
+                  "halfExtents": [
+                    0.6,
+                    0.5,
+                    0.3
+                  ],
+                  "massKg": 2,
+                  "shape": "box"
+                },
+                "required": true,
+                "type": "bve:collider",
+                "version": "0.1.0"
+              }
+            ],
+            "id": "prop-0",
+            "name": "Movable original prop 0",
+            "transform": {
+              "kind": "trs",
+              "rotation": [
+                0.000009781329026736785,
+                -0.0032903561368584633,
+                0.00001935303953359835,
+                0.9999946355819702
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "translation": [
+                2,
+                4,
+                2
+              ]
+            }
+          },
+          "imported": {
+            "entityId": "prop-1-a82b2e",
+            "meshEntityId": "prop-1-a82b2e-model",
+            "assetId": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+            "name": "off-center-scaled-prop.glb",
+            "bytes": 1920,
+            "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+            "vertices": 72,
+            "colliderHalfExtents": [
+              2,
+              1.944444464680589,
+              1.3333333774849216
+            ],
+            "normalization": {
+              "offset": [
+                5.199999928474426,
+                0.5000000596046448,
+                -2
+              ],
+              "scale": 0.5555555518762565
+            }
+          },
+          "entityCount": 57
+        },
+        "authoredReload": true,
+        "liveSessionResume": false
+      }
+    },
+    {
+      "id": "portable-affine-static-projection",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "host": {
+          "phase": "ready",
+          "createdInstances": 2,
+          "source": "portable",
+          "receipt": {
+            "integrity": "0d1ed84e8dfe592a9d854b47b43319f066a639a8694bfb1e6820b248f6adcb8c",
+            "manifestIntegrity": "e1f9904c3019c4ff0f2f30701d1b10a6e3d7d933f88ab7d9cb4a1656352f25c7",
+            "worldId": "courtyard-v1",
+            "worldRevision": "ce5148eb15ad99b7d99b64388440a77d169c943735435313e620591b491cfa47",
+            "assetReceipts": [
+              {
+                "byteLength": 7323,
+                "id": "architecture",
+                "mediaType": "model/gltf+json",
+                "revision": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+              },
+              {
+                "byteLength": 5085,
+                "id": "coordinate-model",
+                "mediaType": "model/gltf+json",
+                "revision": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+              },
+              {
+                "byteLength": 2116,
+                "id": "prop-model",
+                "mediaType": "model/gltf+json",
+                "revision": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+              },
+              {
+                "byteLength": 12139,
+                "id": "creature-model",
+                "mediaType": "model/gltf+json",
+                "revision": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-0",
+                "mediaType": "audio/wav",
+                "revision": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-1",
+                "mediaType": "audio/wav",
+                "revision": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-2",
+                "mediaType": "audio/wav",
+                "revision": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-3",
+                "mediaType": "audio/wav",
+                "revision": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+              },
+              {
+                "byteLength": 96044,
+                "id": "calibration-audio",
+                "mediaType": "audio/wav",
+                "revision": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+              },
+              {
+                "byteLength": 116192,
+                "id": "wall-video",
+                "mediaType": "video/webm",
+                "revision": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+              },
+              {
+                "byteLength": 460,
+                "id": "readability-image",
+                "mediaType": "image/svg+xml",
+                "revision": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+              },
+              {
+                "byteLength": 1920,
+                "id": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+                "mediaType": "model/gltf-binary",
+                "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7"
+              }
+            ],
+            "authoredReload": true,
+            "liveSessionResume": false
+          },
+          "error": null,
+          "lastFailure": null,
+          "pendingCleanup": null
+        },
+        "expectedMatrix": [
+          -1.3509996299037241,
+          -0.13000000000000003,
+          -0.5200000000000001,
+          0,
+          0.32000000000000006,
+          0.8800000000000001,
+          0,
+          0,
+          -0.36000000000000004,
+          0.10392304845413264,
+          0.41569219381653055,
+          0,
+          -6.1,
+          1.675,
+          2.6,
+          1
+        ],
+        "expectedCorners": [
+          [
+            -5.305400222057765,
+            1.271430780618347,
+            2.745723122473388
+          ],
+          [
+            -5.593400222057765,
+            1.354569219381653,
+            3.0782768775266125
+          ],
+          [
+            -4.985400222057765,
+            2.1514307806183472,
+            2.745723122473388
+          ],
+          [
+            -5.273400222057765,
+            2.234569219381653,
+            3.0782768775266125
+          ],
+          [
+            -6.926599777942235,
+            1.115430780618347,
+            2.1217231224733877
+          ],
+          [
+            -7.214599777942234,
+            1.198569219381653,
+            2.4542768775266124
+          ],
+          [
+            -6.606599777942234,
+            1.995430780618347,
+            2.1217231224733877
+          ],
+          [
+            -6.8945997779422346,
+            2.078569219381653,
+            2.4542768775266124
+          ]
+        ],
+        "before": {
+          "matrix": {
+            "0": -1.3509997129440308,
+            "1": -0.12999999523162842,
+            "2": -0.5199999809265137,
+            "3": 0,
+            "4": 0.320000022649765,
+            "5": 0.8800000548362732,
+            "6": 0,
+            "7": 0,
+            "8": -0.36000001430511475,
+            "9": 0.10392304509878159,
+            "10": 0.41569218039512634,
+            "11": 0,
+            "12": -6.099999904632568,
+            "13": 1.6749999523162842,
+            "14": 2.5999999046325684,
+            "15": 1
+          },
+          "points": [
+            [
+              -5.30540007352829,
+              1.2714307010173798,
+              2.7457230240106583
+            ],
+            [
+              -5.5934001207351685,
+              1.354569137096405,
+              3.078276753425598
+            ],
+            [
+              -4.985400080680847,
+              2.151430755853653,
+              2.7457230240106583
+            ],
+            [
+              -5.273400068283081,
+              2.2345691919326782,
+              3.078276753425598
+            ],
+            [
+              -6.926599740982056,
+              1.1154307126998901,
+              2.1217230558395386
+            ],
+            [
+              -7.2145997285842896,
+              1.1985691487789154,
+              2.4542767852544785
+            ],
+            [
+              -6.606599688529968,
+              1.9954307675361633,
+              2.1217230558395386
+            ],
+            [
+              -6.894599735736847,
+              2.0785692036151886,
+              2.4542767852544785
+            ]
+          ],
+          "position": {
+            "x": -6.099999904632568,
+            "y": 1.6749999523162842,
+            "z": 2.5999999046325684
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          }
+        },
+        "after": {
+          "matrix": {
+            "0": -1.3509997129440308,
+            "1": -0.12999999523162842,
+            "2": -0.5199999809265137,
+            "3": 0,
+            "4": 0.320000022649765,
+            "5": 0.8800000548362732,
+            "6": 0,
+            "7": 0,
+            "8": -0.36000001430511475,
+            "9": 0.10392304509878159,
+            "10": 0.41569218039512634,
+            "11": 0,
+            "12": -6.099999904632568,
+            "13": 1.6749999523162842,
+            "14": 2.5999999046325684,
+            "15": 1
+          },
+          "points": [
+            [
+              -5.30540007352829,
+              1.2714307010173798,
+              2.7457230240106583
+            ],
+            [
+              -5.5934001207351685,
+              1.354569137096405,
+              3.078276753425598
+            ],
+            [
+              -4.985400080680847,
+              2.151430755853653,
+              2.7457230240106583
+            ],
+            [
+              -5.273400068283081,
+              2.2345691919326782,
+              3.078276753425598
+            ],
+            [
+              -6.926599740982056,
+              1.1154307126998901,
+              2.1217230558395386
+            ],
+            [
+              -7.2145997285842896,
+              1.1985691487789154,
+              2.4542767852544785
+            ],
+            [
+              -6.606599688529968,
+              1.9954307675361633,
+              2.1217230558395386
+            ],
+            [
+              -6.894599735736847,
+              2.0785692036151886,
+              2.4542767852544785
+            ]
+          ],
+          "position": {
+            "x": -6.099999904632568,
+            "y": 1.6749999523162842,
+            "z": 2.5999999046325684
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          }
+        },
+        "parent": {
+          "components": [],
+          "id": "portable-affine-parent",
+          "name": "Signed affine parent",
+          "transform": {
+            "elements": [
+              -1.2,
+              0,
+              0,
+              0,
+              0.4,
+              1.1,
+              0,
+              0,
+              0,
+              0.2,
+              0.8,
+              0,
+              -5,
+              1.5,
+              3,
+              1
+            ],
+            "kind": "matrix"
+          }
+        },
+        "variant": {
+          "file": "authored-world.bveworld",
+          "bytes": 648828,
+          "sha256": "0d1ed84e8dfe592a9d854b47b43319f066a639a8694bfb1e6820b248f6adcb8c",
+          "worldId": "courtyard-v1",
+          "worldRevision": "ce5148eb15ad99b7d99b64388440a77d169c943735435313e620591b491cfa47",
+          "manifestIntegrity": "e1f9904c3019c4ff0f2f30701d1b10a6e3d7d933f88ab7d9cb4a1656352f25c7",
+          "assetReceipts": [
+            {
+              "byteLength": 7323,
+              "id": "architecture",
+              "mediaType": "model/gltf+json",
+              "revision": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+            },
+            {
+              "byteLength": 5085,
+              "id": "coordinate-model",
+              "mediaType": "model/gltf+json",
+              "revision": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+            },
+            {
+              "byteLength": 2116,
+              "id": "prop-model",
+              "mediaType": "model/gltf+json",
+              "revision": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+            },
+            {
+              "byteLength": 12139,
+              "id": "creature-model",
+              "mediaType": "model/gltf+json",
+              "revision": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-0",
+              "mediaType": "audio/wav",
+              "revision": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-1",
+              "mediaType": "audio/wav",
+              "revision": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-2",
+              "mediaType": "audio/wav",
+              "revision": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+            },
+            {
+              "byteLength": 96044,
+              "id": "corner-audio-3",
+              "mediaType": "audio/wav",
+              "revision": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+            },
+            {
+              "byteLength": 96044,
+              "id": "calibration-audio",
+              "mediaType": "audio/wav",
+              "revision": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+            },
+            {
+              "byteLength": 116192,
+              "id": "wall-video",
+              "mediaType": "video/webm",
+              "revision": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+            },
+            {
+              "byteLength": 460,
+              "id": "readability-image",
+              "mediaType": "image/svg+xml",
+              "revision": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+            },
+            {
+              "byteLength": 1920,
+              "id": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+              "mediaType": "model/gltf-binary",
+              "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7"
+            }
+          ],
+          "authoredProp": {
+            "components": [
+              {
+                "data": {
+                  "asset": "prop-model"
+                },
+                "required": true,
+                "type": "bve:mesh",
+                "version": "0.1.0"
+              },
+              {
+                "data": {
+                  "body": "dynamic",
+                  "halfExtents": [
+                    0.6,
+                    0.5,
+                    0.3
+                  ],
+                  "massKg": 2,
+                  "shape": "box"
+                },
+                "required": true,
+                "type": "bve:collider",
+                "version": "0.1.0"
+              }
+            ],
+            "id": "prop-0",
+            "name": "Movable original prop 0",
+            "transform": {
+              "kind": "trs",
+              "rotation": [
+                0.000009781329026736785,
+                -0.0032903561368584633,
+                0.00001935303953359835,
+                0.9999946355819702
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "translation": [
+                2,
+                4,
+                2
+              ]
+            }
+          },
+          "imported": {
+            "entityId": "prop-1-a82b2e",
+            "meshEntityId": "prop-1-a82b2e-model",
+            "assetId": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+            "name": "off-center-scaled-prop.glb",
+            "bytes": 1920,
+            "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+            "vertices": 72,
+            "colliderHalfExtents": [
+              2,
+              1.944444464680589,
+              1.3333333774849216
+            ],
+            "normalization": {
+              "offset": [
+                5.199999928474426,
+                0.5000000596046448,
+                -2
+              ],
+              "scale": 0.5555555518762565
+            }
+          },
+          "entityCount": 59
+        }
+      }
+    },
+    {
+      "id": "portable-native-load-failure-rollback",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "bootFailed": {
+          "host": {
+            "phase": "empty",
+            "createdInstances": 1,
+            "source": null,
+            "receipt": null,
+            "error": "Intentional portable decode failure",
+            "lastFailure": {
+              "disposed": true,
+              "state": "disposed",
+              "nodes": 0,
+              "bodies": 0,
+              "urls": 0,
+              "mediaElements": 0,
+              "audioClosed": true,
+              "sceneDisposed": true,
+              "physicsFreed": true,
+              "errors": []
+            },
+            "pendingCleanup": null
+          },
+          "contexts": [
+            "closed"
+          ],
+          "urls": 0,
+          "videoElements": 0,
+          "ready": false,
+          "hasApp": false
+        },
+        "failed": {
+          "phase": "empty",
+          "createdInstances": 2,
+          "source": null,
+          "receipt": null,
+          "error": "Intentional portable decode failure",
+          "lastFailure": {
+            "disposed": true,
+            "state": "disposed",
+            "nodes": 0,
+            "bodies": 0,
+            "urls": 0,
+            "mediaElements": 0,
+            "audioClosed": true,
+            "sceneDisposed": true,
+            "physicsFreed": true,
+            "errors": []
+          },
+          "pendingCleanup": null
+        },
+        "retained": {
+          "phase": "cleanup-failed",
+          "createdInstances": 3,
+          "source": null,
+          "receipt": null,
+          "error": "World loading failed (Intentional portable decode failure); cleanup is incomplete and remains owned",
+          "lastFailure": {
+            "disposed": false,
+            "state": "cleanup-failed",
+            "nodes": 0,
+            "bodies": 0,
+            "urls": 0,
+            "mediaElements": 0,
+            "audioClosed": false,
+            "sceneDisposed": true,
+            "physicsFreed": true,
+            "errors": [
+              "Evaluation cleanup audio: Spatial audio cleanup is incomplete and remains owned"
+            ]
+          },
+          "pendingCleanup": {
+            "disposed": false,
+            "state": "cleanup-failed",
+            "nodes": 0,
+            "bodies": 0,
+            "urls": 0,
+            "mediaElements": 0,
+            "audioClosed": false,
+            "sceneDisposed": true,
+            "physicsFreed": true,
+            "errors": [
+              "Evaluation cleanup audio: Spatial audio cleanup is incomplete and remains owned"
+            ]
+          }
+        },
+        "refused": {
+          "phase": "cleanup-failed",
+          "createdInstances": 3,
+          "source": null,
+          "receipt": null,
+          "error": "World cleanup is incomplete; retained ownership must be retried before replacement",
+          "lastFailure": {
+            "disposed": false,
+            "state": "cleanup-failed",
+            "nodes": 0,
+            "bodies": 0,
+            "urls": 0,
+            "mediaElements": 0,
+            "audioClosed": false,
+            "sceneDisposed": true,
+            "physicsFreed": true,
+            "errors": [
+              "Evaluation cleanup audio: Spatial audio cleanup is incomplete and remains owned"
+            ]
+          },
+          "pendingCleanup": {
+            "disposed": false,
+            "state": "cleanup-failed",
+            "nodes": 0,
+            "bodies": 0,
+            "urls": 0,
+            "mediaElements": 0,
+            "audioClosed": false,
+            "sceneDisposed": true,
+            "physicsFreed": true,
+            "errors": [
+              "Evaluation cleanup audio: Spatial audio cleanup is incomplete and remains owned"
+            ]
+          }
+        },
+        "recovered": {
+          "phase": "ready",
+          "createdInstances": 4,
+          "source": "portable",
+          "receipt": {
+            "integrity": "01eb46115bdf5301ac4b79bcd4dcbc1f752f8a145d307c48850d20c46c4f8ddd",
+            "manifestIntegrity": "5479712da147c28a000e5c6baccbbf3bb36ee684e6a5d02a1bf963356ecbb698",
+            "worldId": "courtyard-v1",
+            "worldRevision": "05d8b5bf80856321172c6bb6cf7700a104356f61b134fd48aff6332ba860c8c8",
+            "assetReceipts": [
+              {
+                "byteLength": 7323,
+                "id": "architecture",
+                "mediaType": "model/gltf+json",
+                "revision": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+              },
+              {
+                "byteLength": 5085,
+                "id": "coordinate-model",
+                "mediaType": "model/gltf+json",
+                "revision": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+              },
+              {
+                "byteLength": 2116,
+                "id": "prop-model",
+                "mediaType": "model/gltf+json",
+                "revision": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+              },
+              {
+                "byteLength": 12139,
+                "id": "creature-model",
+                "mediaType": "model/gltf+json",
+                "revision": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-0",
+                "mediaType": "audio/wav",
+                "revision": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-1",
+                "mediaType": "audio/wav",
+                "revision": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-2",
+                "mediaType": "audio/wav",
+                "revision": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+              },
+              {
+                "byteLength": 96044,
+                "id": "corner-audio-3",
+                "mediaType": "audio/wav",
+                "revision": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+              },
+              {
+                "byteLength": 96044,
+                "id": "calibration-audio",
+                "mediaType": "audio/wav",
+                "revision": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+              },
+              {
+                "byteLength": 116192,
+                "id": "wall-video",
+                "mediaType": "video/webm",
+                "revision": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+              },
+              {
+                "byteLength": 460,
+                "id": "readability-image",
+                "mediaType": "image/svg+xml",
+                "revision": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+              },
+              {
+                "byteLength": 1920,
+                "id": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+                "mediaType": "model/gltf-binary",
+                "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7"
+              }
+            ],
+            "authoredReload": true,
+            "liveSessionResume": false
+          },
+          "error": null,
+          "lastFailure": null,
+          "pendingCleanup": null
+        },
+        "ownership": {
+          "host": {
+            "phase": "ready",
+            "createdInstances": 4,
+            "source": "portable",
+            "receipt": {
+              "integrity": "01eb46115bdf5301ac4b79bcd4dcbc1f752f8a145d307c48850d20c46c4f8ddd",
+              "manifestIntegrity": "5479712da147c28a000e5c6baccbbf3bb36ee684e6a5d02a1bf963356ecbb698",
+              "worldId": "courtyard-v1",
+              "worldRevision": "05d8b5bf80856321172c6bb6cf7700a104356f61b134fd48aff6332ba860c8c8",
+              "assetReceipts": [
+                {
+                  "byteLength": 7323,
+                  "id": "architecture",
+                  "mediaType": "model/gltf+json",
+                  "revision": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+                },
+                {
+                  "byteLength": 5085,
+                  "id": "coordinate-model",
+                  "mediaType": "model/gltf+json",
+                  "revision": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+                },
+                {
+                  "byteLength": 2116,
+                  "id": "prop-model",
+                  "mediaType": "model/gltf+json",
+                  "revision": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+                },
+                {
+                  "byteLength": 12139,
+                  "id": "creature-model",
+                  "mediaType": "model/gltf+json",
+                  "revision": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+                },
+                {
+                  "byteLength": 96044,
+                  "id": "corner-audio-0",
+                  "mediaType": "audio/wav",
+                  "revision": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+                },
+                {
+                  "byteLength": 96044,
+                  "id": "corner-audio-1",
+                  "mediaType": "audio/wav",
+                  "revision": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+                },
+                {
+                  "byteLength": 96044,
+                  "id": "corner-audio-2",
+                  "mediaType": "audio/wav",
+                  "revision": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+                },
+                {
+                  "byteLength": 96044,
+                  "id": "corner-audio-3",
+                  "mediaType": "audio/wav",
+                  "revision": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+                },
+                {
+                  "byteLength": 96044,
+                  "id": "calibration-audio",
+                  "mediaType": "audio/wav",
+                  "revision": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+                },
+                {
+                  "byteLength": 116192,
+                  "id": "wall-video",
+                  "mediaType": "video/webm",
+                  "revision": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+                },
+                {
+                  "byteLength": 460,
+                  "id": "readability-image",
+                  "mediaType": "image/svg+xml",
+                  "revision": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+                },
+                {
+                  "byteLength": 1920,
+                  "id": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+                  "mediaType": "model/gltf-binary",
+                  "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7"
+                }
+              ],
+              "authoredReload": true,
+              "liveSessionResume": false
+            },
+            "error": null,
+            "lastFailure": null,
+            "pendingCleanup": null
+          },
+          "contexts": [
+            "closed",
+            "closed",
+            "closed",
+            "suspended"
+          ],
+          "urls": 15,
+          "videoElements": 1,
+          "ready": true,
+          "hasApp": true
+        }
+      }
+    },
+    {
+      "id": "portable-disposal-releases-instance-resources",
+      "status": "passed",
+      "method": "real-browser",
+      "detail": {
+        "disposed": [
+          {
+            "state": "disposed",
+            "nodes": 0,
+            "bodies": 0,
+            "urls": 0,
+            "sources": 0,
+            "audio": "closed",
+            "sceneDisposed": true,
+            "physicsFreed": true,
+            "videos": 0,
+            "keys": 0,
+            "contexts": [
+              "closed",
+              "closed"
+            ]
+          },
+          {
+            "state": "disposed",
+            "nodes": 0,
+            "bodies": 0,
+            "urls": 0,
+            "sources": 0,
+            "audio": "closed",
+            "sceneDisposed": true,
+            "physicsFreed": true,
+            "videos": 0,
+            "keys": 0,
+            "contexts": [
+              "closed",
+              "closed",
+              "closed",
+              "closed"
+            ]
+          }
+        ],
+        "pending": {
+          "settled": false,
+          "state": "loading",
+          "disposing": true,
+          "duplicate": "Load requires a fresh evaluation instance"
+        },
+        "cancelled": {
+          "state": "disposed",
+          "nodes": 0,
+          "bodies": 0,
+          "urls": 0,
+          "sources": 0,
+          "audio": "closed",
+          "sceneDisposed": true,
+          "physicsFreed": true,
+          "videos": 0,
+          "loadResult": "Evaluation was disposed before loading completed"
+        },
+        "note": "Two opened-instance disposals and a held native load cancellation; longer repeated-cycle and device-memory qualification remain pending."
+      }
+    }
+  ],
+  "observed": {
+    "exported": {
+      "file": "exported-world.bveworld",
+      "bytes": 648189,
+      "sha256": "01eb46115bdf5301ac4b79bcd4dcbc1f752f8a145d307c48850d20c46c4f8ddd",
+      "worldId": "courtyard-v1",
+      "worldRevision": "05d8b5bf80856321172c6bb6cf7700a104356f61b134fd48aff6332ba860c8c8",
+      "manifestIntegrity": "5479712da147c28a000e5c6baccbbf3bb36ee684e6a5d02a1bf963356ecbb698",
+      "assetReceipts": [
+        {
+          "byteLength": 7323,
+          "id": "architecture",
+          "mediaType": "model/gltf+json",
+          "revision": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+        },
+        {
+          "byteLength": 5085,
+          "id": "coordinate-model",
+          "mediaType": "model/gltf+json",
+          "revision": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+        },
+        {
+          "byteLength": 2116,
+          "id": "prop-model",
+          "mediaType": "model/gltf+json",
+          "revision": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+        },
+        {
+          "byteLength": 12139,
+          "id": "creature-model",
+          "mediaType": "model/gltf+json",
+          "revision": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-0",
+          "mediaType": "audio/wav",
+          "revision": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-1",
+          "mediaType": "audio/wav",
+          "revision": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-2",
+          "mediaType": "audio/wav",
+          "revision": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-3",
+          "mediaType": "audio/wav",
+          "revision": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+        },
+        {
+          "byteLength": 96044,
+          "id": "calibration-audio",
+          "mediaType": "audio/wav",
+          "revision": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+        },
+        {
+          "byteLength": 116192,
+          "id": "wall-video",
+          "mediaType": "video/webm",
+          "revision": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+        },
+        {
+          "byteLength": 460,
+          "id": "readability-image",
+          "mediaType": "image/svg+xml",
+          "revision": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+        },
+        {
+          "byteLength": 1920,
+          "id": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+          "mediaType": "model/gltf-binary",
+          "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7"
+        }
+      ],
+      "authoredProp": {
+        "components": [
+          {
+            "data": {
+              "asset": "prop-model"
+            },
+            "required": true,
+            "type": "bve:mesh",
+            "version": "0.1.0"
+          },
+          {
+            "data": {
+              "body": "dynamic",
+              "halfExtents": [
+                0.6,
+                0.5,
+                0.3
+              ],
+              "massKg": 2,
+              "shape": "box"
+            },
+            "required": true,
+            "type": "bve:collider",
+            "version": "0.1.0"
+          }
+        ],
+        "id": "prop-0",
+        "name": "Movable original prop 0",
+        "transform": {
+          "kind": "trs",
+          "rotation": [
+            0.000009781329026736785,
+            -0.0032903561368584633,
+            0.00001935303953359835,
+            0.9999946355819702
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "translation": [
+            2,
+            4,
+            2
+          ]
+        }
+      },
+      "imported": {
+        "entityId": "prop-1-a82b2e",
+        "meshEntityId": "prop-1-a82b2e-model",
+        "assetId": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+        "name": "off-center-scaled-prop.glb",
+        "bytes": 1920,
+        "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+        "vertices": 72,
+        "colliderHalfExtents": [
+          2,
+          1.944444464680589,
+          1.3333333774849216
+        ],
+        "normalization": {
+          "offset": [
+            5.199999928474426,
+            0.5000000596046448,
+            -2
+          ],
+          "scale": 0.5555555518762565
+        }
+      },
+      "entityCount": 57
+    },
+    "reexported": {
+      "file": "reexported-world.bveworld",
+      "bytes": 648189,
+      "sha256": "01eb46115bdf5301ac4b79bcd4dcbc1f752f8a145d307c48850d20c46c4f8ddd",
+      "worldId": "courtyard-v1",
+      "worldRevision": "05d8b5bf80856321172c6bb6cf7700a104356f61b134fd48aff6332ba860c8c8",
+      "manifestIntegrity": "5479712da147c28a000e5c6baccbbf3bb36ee684e6a5d02a1bf963356ecbb698",
+      "assetReceipts": [
+        {
+          "byteLength": 7323,
+          "id": "architecture",
+          "mediaType": "model/gltf+json",
+          "revision": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+        },
+        {
+          "byteLength": 5085,
+          "id": "coordinate-model",
+          "mediaType": "model/gltf+json",
+          "revision": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+        },
+        {
+          "byteLength": 2116,
+          "id": "prop-model",
+          "mediaType": "model/gltf+json",
+          "revision": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+        },
+        {
+          "byteLength": 12139,
+          "id": "creature-model",
+          "mediaType": "model/gltf+json",
+          "revision": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-0",
+          "mediaType": "audio/wav",
+          "revision": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-1",
+          "mediaType": "audio/wav",
+          "revision": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-2",
+          "mediaType": "audio/wav",
+          "revision": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-3",
+          "mediaType": "audio/wav",
+          "revision": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+        },
+        {
+          "byteLength": 96044,
+          "id": "calibration-audio",
+          "mediaType": "audio/wav",
+          "revision": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+        },
+        {
+          "byteLength": 116192,
+          "id": "wall-video",
+          "mediaType": "video/webm",
+          "revision": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+        },
+        {
+          "byteLength": 460,
+          "id": "readability-image",
+          "mediaType": "image/svg+xml",
+          "revision": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+        },
+        {
+          "byteLength": 1920,
+          "id": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+          "mediaType": "model/gltf-binary",
+          "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7"
+        }
+      ],
+      "authoredProp": {
+        "components": [
+          {
+            "data": {
+              "asset": "prop-model"
+            },
+            "required": true,
+            "type": "bve:mesh",
+            "version": "0.1.0"
+          },
+          {
+            "data": {
+              "body": "dynamic",
+              "halfExtents": [
+                0.6,
+                0.5,
+                0.3
+              ],
+              "massKg": 2,
+              "shape": "box"
+            },
+            "required": true,
+            "type": "bve:collider",
+            "version": "0.1.0"
+          }
+        ],
+        "id": "prop-0",
+        "name": "Movable original prop 0",
+        "transform": {
+          "kind": "trs",
+          "rotation": [
+            0.000009781329026736785,
+            -0.0032903561368584633,
+            0.00001935303953359835,
+            0.9999946355819702
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "translation": [
+            2,
+            4,
+            2
+          ]
+        }
+      },
+      "imported": {
+        "entityId": "prop-1-a82b2e",
+        "meshEntityId": "prop-1-a82b2e-model",
+        "assetId": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+        "name": "off-center-scaled-prop.glb",
+        "bytes": 1920,
+        "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+        "vertices": 72,
+        "colliderHalfExtents": [
+          2,
+          1.944444464680589,
+          1.3333333774849216
+        ],
+        "normalization": {
+          "offset": [
+            5.199999928474426,
+            0.5000000596046448,
+            -2
+          ],
+          "scale": 0.5555555518762565
+        }
+      },
+      "entityCount": 57
+    },
+    "variant": {
+      "file": "authored-world.bveworld",
+      "bytes": 648828,
+      "sha256": "0d1ed84e8dfe592a9d854b47b43319f066a639a8694bfb1e6820b248f6adcb8c",
+      "worldId": "courtyard-v1",
+      "worldRevision": "ce5148eb15ad99b7d99b64388440a77d169c943735435313e620591b491cfa47",
+      "manifestIntegrity": "e1f9904c3019c4ff0f2f30701d1b10a6e3d7d933f88ab7d9cb4a1656352f25c7",
+      "assetReceipts": [
+        {
+          "byteLength": 7323,
+          "id": "architecture",
+          "mediaType": "model/gltf+json",
+          "revision": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+        },
+        {
+          "byteLength": 5085,
+          "id": "coordinate-model",
+          "mediaType": "model/gltf+json",
+          "revision": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+        },
+        {
+          "byteLength": 2116,
+          "id": "prop-model",
+          "mediaType": "model/gltf+json",
+          "revision": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+        },
+        {
+          "byteLength": 12139,
+          "id": "creature-model",
+          "mediaType": "model/gltf+json",
+          "revision": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-0",
+          "mediaType": "audio/wav",
+          "revision": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-1",
+          "mediaType": "audio/wav",
+          "revision": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-2",
+          "mediaType": "audio/wav",
+          "revision": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+        },
+        {
+          "byteLength": 96044,
+          "id": "corner-audio-3",
+          "mediaType": "audio/wav",
+          "revision": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+        },
+        {
+          "byteLength": 96044,
+          "id": "calibration-audio",
+          "mediaType": "audio/wav",
+          "revision": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+        },
+        {
+          "byteLength": 116192,
+          "id": "wall-video",
+          "mediaType": "video/webm",
+          "revision": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+        },
+        {
+          "byteLength": 460,
+          "id": "readability-image",
+          "mediaType": "image/svg+xml",
+          "revision": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+        },
+        {
+          "byteLength": 1920,
+          "id": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+          "mediaType": "model/gltf-binary",
+          "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7"
+        }
+      ],
+      "authoredProp": {
+        "components": [
+          {
+            "data": {
+              "asset": "prop-model"
+            },
+            "required": true,
+            "type": "bve:mesh",
+            "version": "0.1.0"
+          },
+          {
+            "data": {
+              "body": "dynamic",
+              "halfExtents": [
+                0.6,
+                0.5,
+                0.3
+              ],
+              "massKg": 2,
+              "shape": "box"
+            },
+            "required": true,
+            "type": "bve:collider",
+            "version": "0.1.0"
+          }
+        ],
+        "id": "prop-0",
+        "name": "Movable original prop 0",
+        "transform": {
+          "kind": "trs",
+          "rotation": [
+            0.000009781329026736785,
+            -0.0032903561368584633,
+            0.00001935303953359835,
+            0.9999946355819702
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "translation": [
+            2,
+            4,
+            2
+          ]
+        }
+      },
+      "imported": {
+        "entityId": "prop-1-a82b2e",
+        "meshEntityId": "prop-1-a82b2e-model",
+        "assetId": "dropped-a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+        "name": "off-center-scaled-prop.glb",
+        "bytes": 1920,
+        "revision": "a82b2ec124e9d2a5a10ad1f32afccd6dd725207b87161f009401e614bd638fb7",
+        "vertices": 72,
+        "colliderHalfExtents": [
+          2,
+          1.944444464680589,
+          1.3333333774849216
+        ],
+        "normalization": {
+          "offset": [
+            5.199999928474426,
+            0.5000000596046448,
+            -2
+          ],
+          "scale": 0.5555555518762565
+        }
+      },
+      "entityCount": 59
+    }
+  },
+  "fixtureAttempts": {
+    "author": 0,
+    "fresh": 0,
+    "rollback": 0
+  },
+  "sourceDigests": {
+    "src/main.js": {
+      "bytes": 61848,
+      "sha256": "167d92a8fb7ba46db9c473bf1ad36485cf542307f7588a2527bf800fa261801d"
+    },
+    "src/xr-session.js": {
+      "bytes": 11809,
+      "sha256": "fefeae1a64899d6552a7420e09b388c88d2b59dfbd75e05fc5f2ffb126972c64"
+    },
+    "src/spatial-audio.js": {
+      "bytes": 10814,
+      "sha256": "16a4a798e18934515ec725868880520fa99b45f6abf9b3709a222ccce0c05725"
+    },
+    "src/audio-meter.js": {
+      "bytes": 2929,
+      "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+    },
+    "src/import-policy.js": {
+      "bytes": 14112,
+      "sha256": "a66d799731635bdf335a45faf3343bee88e2af7bad71a244e9c8ca57b4359bc2"
+    },
+    "src/import-resources.js": {
+      "bytes": 1300,
+      "sha256": "756a4931cd4348a336a659aab87e49bee53b2f798bddfa2e0a4cac49b696c4c4"
+    },
+    "src/portable-world.js": {
+      "bytes": 14717,
+      "sha256": "5650e8556c4d53145defed4f2d930756d9d8c3c0ed2b738910e9d462e75e4e85"
+    },
+    "src/media-policy.js": {
+      "bytes": 663,
+      "sha256": "31e9611f4d41e81dcd3075aae339aed51af0c64f648c039623cf7a5853daa241"
+    },
+    "contracts-build.mjs": {
+      "bytes": 3887,
+      "sha256": "4ae4f20576037f37f030976b4656ce369f82f2db5cd813fb9148895fcc78acae"
+    },
+    "index.html": {
+      "bytes": 5409,
+      "sha256": "2a9a38f5e70c2dd0349413af9c7bfc4096fbaa4fd2a1ae549bafb53c86965f00"
+    },
+    "package.json": {
+      "bytes": 849,
+      "sha256": "8bad2e362548f9fdd4cb007049f0ff1287515c489c08fa353a7afb70062194b9"
+    },
+    "package-lock.json": {
+      "bytes": 19680,
+      "sha256": "495570320efa26e784a6a99d6337b0283d959b869a3a41b414a87863de7bf60b"
+    },
+    "fixture-pins.json": {
+      "bytes": 1199,
+      "sha256": "7c561df8f41f3b016b80e6b4d17258bc3d76dbe4bf8a6fde8ec5d7fa0511add9"
+    },
+    "vendor/vrspace/asset-loader.js": {
+      "bytes": 10336,
+      "sha256": "1afa505b193dac8f60ee54ea7ccdfd60e9a0620cf561fa393aa570055d23fa06"
+    },
+    "build.mjs": {
+      "bytes": 2007,
+      "sha256": "0dc6369e5af9148a515f7455533478eb47d8e720e447d726c6ed92228461d96b"
+    },
+    "config.mjs": {
+      "bytes": 580,
+      "sha256": "654e3b737b57eb3885290fc8ee97de6e54ecd4ecc319c888273af0a6ecd2cc1c"
+    },
+    "environment.mjs": {
+      "bytes": 1660,
+      "sha256": "4b1c895d0f7264b72bbfdad33d12c8589f87e42234f9dd36a0173e049cd46d33"
+    },
+    "fixtures.mjs": {
+      "bytes": 4132,
+      "sha256": "21143fce48744d9ed438b3b52a15e31ec218e86769090c5e48edd2f82c486010"
+    },
+    "server.mjs": {
+      "bytes": 4908,
+      "sha256": "ab34e104fb09eb13e40d8c04cd407fb23265889ff6219ba31edecd205f2ef560"
+    },
+    "run.mjs": {
+      "bytes": 1822,
+      "sha256": "9d0b44d0521d0af4f0be24ed116c68f4b70d166512d61bd4ba4e7461ba0d14de"
+    },
+    "browser-checks.mjs": {
+      "bytes": 34960,
+      "sha256": "db8caa0a2773af74f6c5b32c42c3f49c60c9980e9b5bcc0ce78c9d10f6bfbd5c"
+    },
+    "test/local-server.test.mjs": {
+      "bytes": 11694,
+      "sha256": "1bc9ed0a74eb476063a0946e5b45d32af9e8e061b85bf147d375b395cc19ac37"
+    },
+    "test/import-policy.test.mjs": {
+      "bytes": 8376,
+      "sha256": "0607930398f8cc3a54b56ebfe8cdbc46047481f9a813617cf0127e060c0c2fd9"
+    },
+    "test/xr-session.test.mjs": {
+      "bytes": 22143,
+      "sha256": "fdf726cf251d04c09030805f3214f35652187f43629d6586a9312c7409ec3d55"
+    },
+    "test/xr-browser-checks.mjs": {
+      "bytes": 21113,
+      "sha256": "352baf7b329a11429821e15a67dd9b88876fcba93b05d31c87e6cc124ec10305"
+    },
+    "test/browser-finalize.mjs": {
+      "bytes": 1389,
+      "sha256": "0c48a4c12bbf0fa425ccebd89fc5267c099acce2c4091e25e2e62e0ecaf0e3a3"
+    },
+    "test/portable-world.test.mjs": {
+      "bytes": 14694,
+      "sha256": "082c586945e2d3644a2320137388444415344b3f1085746f60d066e4ead23ca9"
+    },
+    "test/portable-browser-checks.mjs": {
+      "bytes": 30192,
+      "sha256": "76c30877b9adefe67a5cc0f8010d1b175f7740444fef76b2f6542bbee9f8667e"
+    }
+  },
+  "logs": [],
+  "failedRequests": [],
+  "finalizationErrors": [],
+  "counts": {
+    "passed": 9,
+    "failed": 0,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "logOverflow": 0
+  },
+  "runStatus": "passed",
+  "timestamp": "2026-10-18T20:49:45.929Z",
+  "missingEvidence": [
+    "Production publication, service persistence and authorized multiuser edits.",
+    "Generic media upload/transcode and unsupported model conversion.",
+    "Live physics, animation or playback session resume; this carrier restores authored state.",
+    "Physical headset/audio and target-device performance, memory trend and ten cleanup cycles."
+  ]
+}

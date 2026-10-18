@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import { digest } from '../ci/evidence.mjs';
 import { evaluationCommands } from '../ci/evaluation-evidence.mjs';
 import { childEnvironment } from '../ci/environment.mjs';
+import { rebindF05Inputs } from './evaluation-fixtures.mjs';
 import { runEvaluationCommand, validateBrowserEvidence, validateCheckedEvaluationInputs,
   validateEvaluationAudits, readContainedEvaluationFile, validateEvaluationScreenshot,
   requiredF05SourceFiles, requiredF05BuildInputs } from '../ci/evaluate.mjs';
@@ -23,12 +24,7 @@ async function fixture() {
   const summary = await json(join(historical, 'f05-summary.json'));
   // Only this in-memory synthetic fixture is rebound to the checked source.
   // Never rewrite a historical report or use this as execution evidence.
-  const fingerprints = async names => Object.fromEntries(await Promise.all(names.map(async name => {
-    const bytes = await readFile(resolve(root, 'evaluations/babylon-vrspace', name));
-    return [name, { bytes: bytes.length, sha256: digest(bytes) }];
-  })));
-  report.sourceDigests = await fingerprints(requiredF05SourceFiles);
-  report.build.inputs = await fingerprints(requiredF05BuildInputs);
+  await rebindF05Inputs(report, root);
   report.counts.logOverflow = 0; summary.counts.logOverflow = 0;
   report.finalizationErrors = []; summary.finalizationErrors = [];
   const start = new Date(Date.parse(report.startedAt) - 1000).toISOString();
@@ -63,12 +59,16 @@ for (const [name, change, pattern] of [
   ['missing source fingerprint', value => { delete value.report.sourceDigests['src/import-policy.js']; }, /source.*coverage/],
   ['changed source bytes', value => { value.report.sourceDigests['src/main.js'].sha256 = '0'.repeat(64); }, /Changed source/],
   ['changed build input', value => { value.report.build.inputs['src/import-resources.js'].sha256 = '0'.repeat(64); }, /Changed build input/],
+  ['missing shared contracts source', value => { delete value.report.build.workspaceInputs['packages/contracts/src/schemas.ts']; }, /workspace build input.*coverage/],
+  ['changed shared contracts source', value => { value.report.build.workspaceInputs['packages/contracts/src/canonical.ts'].sha256 = '0'.repeat(64); }, /Changed workspace build input/],
+  ['missing standalone carrier output', value => { delete value.report.build.outputs['dist/portable-world.mjs']; }, /output inventory/],
   ['changed frozen comparison', value => { value.report.comparison.fixtureSetId = 'other'; }, /fixture\/comparison|summary differs/],
   ['stale run before its command', value => { value.browserCommand.startedAt = new Date(Date.parse(value.report.timestamp) + 500).toISOString(); }, /stale|time bounds/],
   ['different stdout run directory', value => { value.browserCommand.log = value.browserCommand.log.replace('run-Synthetic', 'run-Older'); }, /command output/],
   ['duplicate success line', value => { value.browserCommand.log += `\n${value.browserCommand.log}`; }, /command output/],
   ['substituted browser command', value => { value.browserCommand.argv = ['true']; }, /command did not complete/],
   ['late finalization failure', value => { value.report.finalizationErrors.push({ stage: 'browser-close', message: 'Synthetic failure' }); }, /finalization/],
+  ...['', false, 0, {}, [], 'late fatal'].map(fatal => ['non-null fatal ' + JSON.stringify(fatal), value => { value.report.fatalError = fatal; }, /fatal/]),
   ['log overflow', value => { value.report.counts.logOverflow = 1; }, /counts/],
   ['nonzero browser exit', value => { value.browserCommand.exitCode = 1; }, /command did not complete/],
   ['browser spawn error with zero exit', value => { value.browserCommand.errorCode = 'EPERM'; }, /command did not complete/],

@@ -112,6 +112,7 @@ async function checkedWorld(world,assets) {
   if(await authoredRevision(world)!==world.revision)fail('authored world revision does not match its content');
   for(const reference of world.assets)if(await hash(assets.get(reference.id).bytes)!==reference.revision)fail(`original asset hash mismatch: ${reference.id}`);
 }
+export { checkedWorld as validateWorldOriginals };
 
 export async function encodePortableWorld(source,resolveAsset) {
   requireDocument('world',source);

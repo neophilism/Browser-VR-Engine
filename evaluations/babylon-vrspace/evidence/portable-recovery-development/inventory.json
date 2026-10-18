@@ -1,0 +1,69 @@
+{
+  "scope": "Actual recovered development captures before final scope-text correction; no hosted completion",
+  "files": {
+    "desktop-run-0ip09K/browser-checks.json": {
+      "bytes": 283142,
+      "sha256": "8d12e74c34b8c1673c67fba6dfaa173e2a241310a03b774f7fb30a67475be8ad"
+    },
+    "desktop-run-0ip09K/courtyard-verified.png": {
+      "bytes": 144194,
+      "sha256": "28c5a21fa90871a45fb1aa6bf02ad22534148577533926cf3fd5834b2cada94d"
+    },
+    "desktop-run-0ip09K/derived-prop.glb": {
+      "bytes": 1924,
+      "sha256": "0c20e6a53dff9ab6cf08681c47c30d286a664ef5155f8a1b0439f31a2ec97be0"
+    },
+    "desktop-run-0ip09K/f03-before-activation.png": {
+      "bytes": 129644,
+      "sha256": "1391786f33b25ce2541b9a1a6cc17d8bf2dfabcde4f9bdca5c1d9ce28d6f829d"
+    },
+    "desktop-run-0ip09K/f05-summary.json": {
+      "bytes": 5779,
+      "sha256": "9786141631fd4e585ea523ee989fac54cdb2b2c0d0f6fd96c124bdb2b5f73512"
+    },
+    "portable-recovery-desktop-run.txt": {
+      "bytes": 1004,
+      "sha256": "f30bc4b12b33423487197580191d795e2c0444cf53ea491d665beedc1d16e169"
+    },
+    "portable-recovery-desktop.txt": {
+      "bytes": 553,
+      "sha256": "e31c896808edf3195100cc46ab0fa072b311893e78484a2446f598f8ddfd954e"
+    },
+    "portable-recovery-first-browser.txt": {
+      "bytes": 592,
+      "sha256": "8f3256a8435a82c1c5cc10b03526a05fa8ae9705a5488fcd4ddfc2b0199fa4b4"
+    },
+    "portable-recovery-unit.txt": {
+      "bytes": 7880,
+      "sha256": "8496e9526a065a835c5bf5a85cce81481cf5e7cbb0289622ccb14aa508b3ab29"
+    },
+    "portable-run-moctFp/authored-world.bveworld": {
+      "bytes": 648828,
+      "sha256": "0d1ed84e8dfe592a9d854b47b43319f066a639a8694bfb1e6820b248f6adcb8c"
+    },
+    "portable-run-moctFp/build.json": {
+      "bytes": 4670,
+      "sha256": "892ae50db5e80d4536460e3e8a8d142f0d40fd4c3060bcf6ae37a77ef39ef1f3"
+    },
+    "portable-run-moctFp/exported-world.bveworld": {
+      "bytes": 648189,
+      "sha256": "01eb46115bdf5301ac4b79bcd4dcbc1f752f8a145d307c48850d20c46c4f8ddd"
+    },
+    "portable-run-moctFp/portable-browser-checks.json": {
+      "bytes": 102835,
+      "sha256": "4a27f76a44311a4ed02ad7c868f61a9ef91ca6903cd7a5e7709dbcd483b34056"
+    },
+    "portable-run-moctFp/portable-summary.json": {
+      "bytes": 1397,
+      "sha256": "61ba740acbdb9bae4c5e78c6b628e9c5c8021b54f6458d2706ad7ba89b6a03a9"
+    },
+    "portable-run-moctFp/portable-world.png": {
+      "bytes": 131399,
+      "sha256": "ef3686d79767a6c680f6390c11063b38cc3ab61fce5bfb3132d84c395b0e885a"
+    },
+    "portable-run-moctFp/reexported-world.bveworld": {
+      "bytes": 648189,
+      "sha256": "01eb46115bdf5301ac4b79bcd4dcbc1f752f8a145d307c48850d20c46c4f8ddd"
+    }
+  }
+}
