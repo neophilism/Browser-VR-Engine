@@ -1,0 +1,44 @@
+{
+  "before": "run-1JPn3o\nrun-IYy9uO\nrun-uwyHL0\n",
+  "started": {
+    "current_time": "2026-10-18 21:41:31 UTC"
+  },
+  "result": {
+    "chunk_id": "4a2a92",
+    "wall_time_seconds": 1.000380692,
+    "session_id": 31388,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "polls": [
+    {
+      "chunk_id": "99631d",
+      "wall_time_seconds": 5.001268756,
+      "session_id": 31388,
+      "original_token_count": 10,
+      "output": "PASS native-loaded-coordinate-anchors\n"
+    },
+    {
+      "chunk_id": "ccff56",
+      "wall_time_seconds": 2.791061846,
+      "exit_code": 0,
+      "original_token_count": 90,
+      "output": "PASS native-four-corner-equal-distance\nPASS native-continuous-distance-fade-cutoff\nPASS measurement-observers-and-candidate-cleanup\n{\n  \"runStatus\": \"passed\",\n  \"counts\": {\n    \"passed\": 4,\n    \"failed\": 0,\n    \"pageErrors\": 0,\n    \"failedRequests\": 0,\n    \"logOverflow\": 0,\n    \"requestOverflow\": 0\n  },\n  \"output\": \"artifacts/measurement-runs/run-ajfa0U\"\n}\n"
+    }
+  ],
+  "finished": {
+    "current_time": "2026-10-18 21:41:50 UTC"
+  },
+  "after": "run-1JPn3o\nrun-IYy9uO\nrun-ajfa0U\nrun-uwyHL0\n",
+  "command": [
+    "node",
+    "measurements/run.mjs",
+    "browser"
+  ],
+  "cwd": "evaluations/babylon-vrspace",
+  "sourceCheckpoint": {
+    "commit": "93ca0356e3f8a5347c6c645ecb51bc03f50db09a",
+    "tree": "a037293919b01da0cdf9985fe768daf2c9383518"
+  },
+  "scope": "Actual corrected four-check browser run; all4 passed and owned browser/server closure completed. No physical or full F05 qualification."
+}

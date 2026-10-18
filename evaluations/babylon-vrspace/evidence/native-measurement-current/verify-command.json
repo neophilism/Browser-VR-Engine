@@ -1,0 +1,23 @@
+{
+  "before": {
+    "current_time": "2026-10-18 21:41:59 UTC"
+  },
+  "after": {
+    "current_time": "2026-10-18 21:41:59 UTC"
+  },
+  "result": {
+    "chunk_id": "3a6630",
+    "wall_time_seconds": 0.21033117,
+    "exit_code": 0,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "command": [
+    "node",
+    "measurements/run.mjs",
+    "verify",
+    "artifacts/measurement-runs/run-ajfa0U"
+  ],
+  "stdoutFile": "artifacts/measurement-verification-ajfa0U.json",
+  "scope": "Read-only independent verifier recalculates all4 results from six retained raw files and current-source hashes; no new browser executed."
+}
