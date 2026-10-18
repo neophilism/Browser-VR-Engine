@@ -1,0 +1,1 @@
+Evaluation files, current source, exact candidate identity and separate fresh desktop/emulated XR bindings match. Independently verify the actual GitHub checks and required reviews; this remains subset evidence, not completed hardware/service qualification.

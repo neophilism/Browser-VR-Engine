@@ -14,13 +14,15 @@
     "test:server": "node run.mjs test-server",
     "browser:install": "node run.mjs browser-install",
     "audit": "node run.mjs audit",
-    "test:xr": "node run.mjs test-xr"
+    "test:xr": "node run.mjs test-xr",
+    "test:world": "node run.mjs test-world"
   },
   "dependencies": {
     "@babylonjs/core": "9.30.0",
     "@babylonjs/loaders": "9.30.0",
     "@babylonjs/serializers": "9.30.0",
-    "@dimforge/rapier3d-compat": "0.21.0"
+    "@dimforge/rapier3d-compat": "0.21.0",
+    "@sinclair/typebox": "0.34.52"
   },
   "devDependencies": {
     "esbuild": "0.28.2",

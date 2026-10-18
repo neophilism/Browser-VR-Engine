@@ -63,6 +63,12 @@
       "integrity": "sha512-GqWE6IFlut8a1Lnh9t1RPnOXud1rZ7wLPvWp7mqTDOYtgorXqlNMhEnI9EqjU33grBx0v3jm0Oc13opkAdmgMQ==",
       "license": "Apache-2.0",
       "role": "Test-only WebXR emulation; excluded from normal application bundle"
+    },
+    "@sinclair/typebox": {
+      "version": "0.34.52",
+      "resolved": "https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.34.52.tgz",
+      "integrity": "sha512-XiMQh7qqVlxZzcVD+kkGMNGMzcTrDMLWI7S4x7z1MkCkbDPrekpZXEUK0eZqZFMuHQg2a2DZOcDIh9o5v3Gonw==",
+      "license": "MIT"
     }
   },
   "vrspace": {

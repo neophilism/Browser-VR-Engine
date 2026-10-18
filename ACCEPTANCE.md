@@ -22,4 +22,16 @@ R09 is a core beta. R12 requires every engine unit, including expanded/native ca
 
 Store non-sensitive evidence under `docs/evidence/`; use external protected artifact storage for private source assets, recordings and large traces. Never commit credentials or content from private participants.
 
-The immersive F05 follow-up makes separate 19-check desktop and 10-check emulated XR reports mandatory, with final cleanup diagnostics and current source/build bindings. Its service verifier follows the 12-input renderer build. PR7 merged as `647240bd5493940f60caaec246970a86a2a4238f`; subsequent main run `39154772861` passed all four jobs and independently verified artifacts. That completes verification of the observation and startup repairs. The original failed PR6 main run and first PR7 run remain unchanged. See [the follow-up evidence](docs/evidence/F05-XR.md).
+The immersive F05 follow-up makes separate 19-check desktop and 10-check emulated XR reports mandatory, with final cleanup diagnostics and current source/build bindings. PR7's service verifier followed the then-current 12-input renderer build. PR7 merged as `647240bd5493940f60caaec246970a86a2a4238f`; subsequent main run `39154772861` passed all four jobs and independently verified artifacts. That completes verification of the observation and startup repairs. The original failed PR6 main run and first PR7 run remain unchanged. See [the follow-up evidence](docs/evidence/F05-XR.md).
+
+## Hubs runtime tooling integration (PR8)
+
+[PR8](https://github.com/neophilism/Browser-VR-Engine/pull/8) passed the exact-head review, all four candidate jobs and three artifact verifiers before its expected-head merge at `9088586c9f46f0e740cfe67b3d8b00614ed446eb`. Main run `39156404932` also passed all four jobs and all three downloaded-artifact verifiers. The [complete original candidate/main receipt](docs/evidence/hubs-runtime-integration-ci-39156160278/index.json) records the separate identities and restoration after a transient workspace rollback.
+
+The manual Hubs backend diagnostic has not been dispatched. Signed-in GitHub workflow access is the immediate external prerequisite. F04/F05 remain blocked and F06 unselected; this tooling acceptance does not waive audits or physical/shared-world requirements.
+
+## Portable authored-world follow-up
+
+The [portable evaluation](docs/evidence/F05-portable.md) adds a separate nine-check real-browser lane to the existing desktop 19/emulated XR 10 lanes. Its build and service source bindings cover 15 evaluation inputs, eight workspace inputs, four outputs and 28 evaluation source files. All original carrier bytes and canonical authored state are independently inspected. The current local thirteen-stage graph records twelve passes and its explicit browser-install omission; it does not establish hosted acceptance. The separate self security review is recorded, and all four current-candidate jobs, downloaded artifact verification, merge and main checks remain required. Full F04/F05 and physical/shared-world qualification remain incomplete.
+
+The integrated local foundation sequence passed all six stages, 39 package tests and 350 tooling tests with no skips; [its original receipt](docs/evidence/portable-integration-local-2026-10-18/index.json) remains local and incomplete for hosted acceptance.

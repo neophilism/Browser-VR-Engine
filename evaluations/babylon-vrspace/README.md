@@ -1,6 +1,6 @@
 # Babylon / VRSpace foundation evaluation
 
-This is a runnable, isolated **F05 evaluation** using Babylon 9.30.0, Rapier 0.21.0, browser-native spatial audio, and one unmodified VRSpace module. It demonstrates a real browser courtyard, solid movable props, an animated skinned creature, four simultaneous corner sources and a positional wall video. Its user-activated **Enter VR** path now requests an immersive session, uses Babylon XR rendering and tracked head pose, and retains Rapier collision for thumbstick locomotion. It does not complete F05 or select the production engine foundation.
+This is a runnable, isolated **F05 evaluation** using Babylon 9.30.0, Rapier 0.21.0, browser-native spatial audio, and one unmodified VRSpace module. It demonstrates a real browser courtyard, solid movable props, an animated skinned creature, four simultaneous corner sources and a positional wall video. Its user-activated **Enter VR** path requests an immersive session, uses Babylon XR rendering and tracked head pose, and retains Rapier collision for thumbstick locomotion. **Export world** and **Open world** now carry the complete bounded authored document and every original file into a fresh browser context. It does not complete F05 or select the production engine foundation.
 
 The dependency graph has its own exact lockfile so evaluating a candidate does not add it to the production workspace. The package is private and is not included in the repository's `packages/*` or `examples/*` workspaces. Keep this boundary until the foundation decision and subsequent production adapters are reviewed.
 
@@ -16,9 +16,10 @@ node run.mjs build
 node run.mjs test-server
 node run.mjs test
 node run.mjs test-xr
+node run.mjs test-world
 ```
 
-`install` runs `npm ci --ignore-scripts` against the exact evaluation lockfile. The explicit browser install uses the pinned Playwright CLI; it does not install operating-system packages. The build verifies the frozen F03 bytes and the vendored VRSpace module before bundling. The desktop browser test and the separately labeled test-only IWER XR test each start their own loopback server on an available port and close it afterward. A separately running server is unnecessary.
+`install` runs `npm ci --ignore-scripts` against the exact evaluation lockfile. The explicit browser install uses the pinned Playwright CLI; it does not install operating-system packages. The build verifies the frozen F03 bytes and the vendored VRSpace module before bundling. It compiles the checked contracts source directly with the evaluation's pinned TypeBox dependency; a root workspace build or incidental root `node_modules` cannot supply that dependency. Desktop, test-only IWER XR, and portable-world tests each start their own loopback server on an available port and close it afterward. A separately running server is unnecessary.
 
 To explore the scene interactively:
 
@@ -64,7 +65,9 @@ The four music sources are measured before HRTF panning, separately from the bir
 
 The fixture reader checks all eight frozen metadata files, including the schema set and comparison tuple, and every catalog resource. It serves only validated bytes. The build records input/output fingerprints; the server refuses stale build records. The local server test also exercises private-path rejection, media ranges, Host/Origin handling, modified fixture bytes, symlink escape rejection and subprocess environment isolation.
 
-The review fixes and their source-bound results are documented in `REVIEW_FIX.md`. The previous audio revision is `evidence/audio-measurement-fix`: paired zero-output AudioWorklet measurements, complete marker-period sampling and synchronized teleported colliders. The earlier `evidence/review-fix` and `evidence/xr-session-lifecycle` results remain unchanged and apply to their earlier sources. The current `evidence/xr-finalization-ci` capture passed all 19 desktop and 10 emulated XR checks with zero page errors, failed requests, log overflow or finalization errors. Fifty evaluation unit cases and 94 CI verifier cases passed; the actual local XR collector accepted the fresh command, build, sources and PNG. These are local software observations; fresh candidate hosted CI remains required.
+The review fixes and their source-bound results are documented in `REVIEW_FIX.md`. The previous audio revision is `evidence/audio-measurement-fix`: paired zero-output AudioWorklet measurements, complete marker-period sampling and synchronized teleported colliders. The earlier `evidence/review-fix`, `evidence/xr-session-lifecycle` and `evidence/xr-finalization-ci` results remain unchanged and apply to their earlier sources.
+
+The current recovered-source capture is [portable-recovery-final](evidence/portable-recovery-final/README.md). The real 13-stage local collector passed all twelve executable stages, including 80 evaluation unit cases, 19 desktop checks, 10 explicitly emulated XR checks and 9 portable-world checks. Both current dependency audits reported zero advisories. The explicit local browser makes the hosted browser-install stage `skipped_local`, and the manifest remains `complete: false`; this is not a hosted acceptance receipt. Separate CI verifier tests passed 175 Node cases and 7 Python methods. Recovery history and earlier development captures are described in [RECOVERY.md](RECOVERY.md).
 
 The adapter exposes `descriptor`, `probe`, `load`, `perform` and `dispose` with the F03 testing-port shape. `load` clones its world before making edits. The general `perform` route executes supported actions but returns `not-run` for assertions that lack a dedicated measurement, and `unsupported` for unimplemented actions. It does not invent passing qualification observations from successful action dispatch.
 
@@ -76,11 +79,11 @@ One import runs at a time. Local imports and immersive entry are mutually exclus
 
 Disposal first awaits confirmed native XR session end, including a late permission grant. An end failure remains visible and retryable while the renderer remains owned by that session. Successful disposal then aborts window/canvas listeners, releases pointer capture, disables and clears control callbacks, awaits any active import rollback, closes audio and disposes physics/rendering resources. Fresh browser checks dispatch input after disposal and call disposal twice. The planned ten-cycle memory trend is still unmeasured.
 
-**Export GLB** writes the geometry/material/animation subset. **Save world** writes descriptor/transform JSON. **Reload world** restores an in-session snapshot using already loaded assets. These do not implement the planned portable world bundle containing original bytes, media, revisions, scripts and component bindings. Native-format conversion, broader import/export and durable asset storage remain planned engine work.
+**Export GLB** writes the geometry/material/animation subset. **Export world** writes the bounded canonical authored document, component/media bindings and all original bytes to `.bveworld`. **Open world** validates that carrier before replacing the current instance. Opening `/?world=empty` does not fetch fixture originals. The legacy `snapshotWorld` / `restoreWorld` helper remains a separate in-session transform operation. See [PORTABLE_WORLD.md](PORTABLE_WORLD.md) for exact carrier limits, hierarchy normalization, affine/static collider semantics and retryable cleanup ownership. Physics, animation and media clocks restart when opening authored state. Native-format conversion, general media import, production publication and durable storage remain planned engine work.
 
 ## Evidence boundaries and remaining work
 
-All recorded browser execution so far uses Chrome for Testing 151.0.7922.34 through ANGLE/Vulkan SwiftShader in a container without a physical GPU, headset or audio listening setup. The original short run had approximately 145 ms p95 frame periods; it did not meet the 30 Hz reference and is not a capacity benchmark. The bundle is approximately 21.6 MiB unminified because it deliberately exposes the Babylon namespace at the compatibility boundary for the old global module.
+All recorded browser execution so far uses Chrome for Testing 151.0.7922.34 through ANGLE/Vulkan SwiftShader in a container without a physical GPU, headset or audio listening setup. The original short run had approximately 145 ms p95 frame periods; it did not meet the 30 Hz reference and is not a capacity benchmark. The recovered bundle is approximately 21.9 MiB unminified because it deliberately exposes the Babylon namespace at the compatibility boundary for the old global module.
 
 F05 remains incomplete. The following have no successful evidence in this package:
 
@@ -88,7 +91,7 @@ F05 remains incomplete. The following have no successful evidence in this packag
 - Two connected clients, microphones, SFU voice, reconnect, shared authority or service-stack operation.
 - Timed-marker audio/video offset against the 80 ms requirement; native pause/seek/loop routing alone does not establish this.
 - The complete 60-second warmup, 180-second workload and three repetitions, or the ten-cycle cleanup/memory trend.
-- A complete production RuntimePort, general editor, full portable world round trip, upload/conversion service, tenancy, caching or production performance budgets.
+- A complete production RuntimePort, general editor, production world publication or live-session resume, upload/conversion service, tenancy, caching or production performance budgets.
 
 The VRSpace result applies only to `AssetLoader`. No compatibility claim is made for WorldManager, avatar IK, editor, XR helpers, Java services or OpenVidu. The immersive path uses Babylon's own XR helper and camera, with narrow strict-floor and confirmed-end adapters. IWER tests exercise this software path in a real Chromium renderer; they do not qualify physical hardware or VRSpace's XR helper.
 
@@ -96,7 +99,7 @@ The VRSpace result applies only to `AssetLoader`. No compatibility claim is made
 
 `source-pins.json` identifies exact npm versions/integrities, the upstream module commit and the historical browser archive. `vendor/vrspace/provenance.json` records the module's exact byte digest and absence of changes. Upstream license/notice files are preserved in `vendor/vrspace` and `licenses`; see `THIRD_PARTY_NOTICES.md`. F03 originals remain in their owning package.
 
-The root evaluation runner now requires separate desktop and emulated XR commands and retains their source-bound results; see [CI evidence](../../docs/ci/README.md). This package does not mark F05 accepted or select the foundation. Integration still requires separate security review and current-commit hosted checks. Physical and multi-client qualification remain separate acceptance gates.
+The root evaluation runner requires separate desktop, emulated XR and portable-world commands and retains their source-bound results; see [CI evidence](../../docs/ci/README.md). It binds fifteen local build inputs, eight checked workspace inputs, four outputs and twenty-eight evaluation sources. This package does not mark F05 accepted or select the foundation. Integration still requires separate security review and current-commit hosted checks. Physical and multi-client qualification remain separate acceptance gates.
 
 Primary sources:
 

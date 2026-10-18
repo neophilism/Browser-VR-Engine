@@ -1,0 +1,12 @@
+test_all_nine_methods_and_both_historical_regression_sets_are_required (__main__.ServiceEvidenceChecks.test_all_nine_methods_and_both_historical_regression_sets_are_required) ... ok
+test_full_automation_rejects_green_status_with_late_browser_errors_or_bad_shutdown (__main__.ServiceEvidenceChecks.test_full_automation_rejects_green_status_with_late_browser_errors_or_bad_shutdown) ... ok
+test_hosted_identity_rejects_stale_head_base_tested_tree_and_attempt (__main__.ServiceEvidenceChecks.test_hosted_identity_rejects_stale_head_base_tested_tree_and_attempt) ... ok
+test_renderer_source_and_worklet_inventory_cannot_be_silently_shortened (__main__.ServiceEvidenceChecks.test_renderer_source_and_worklet_inventory_cannot_be_silently_shortened) ... ok
+test_required_commands_keep_optimized_full_automation_and_browser_install (__main__.ServiceEvidenceChecks.test_required_commands_keep_optimized_full_automation_and_browser_install) ... ok
+test_retained_file_inventory_rejects_changes_extras_binary_payloads_and_symlinks (__main__.ServiceEvidenceChecks.test_retained_file_inventory_rejects_changes_extras_binary_payloads_and_symlinks) ... ok
+test_success_requires_real_owned_command_and_no_leaked_descendants (__main__.ServiceEvidenceChecks.test_success_requires_real_owned_command_and_no_leaked_descendants) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.188s
+
+OK

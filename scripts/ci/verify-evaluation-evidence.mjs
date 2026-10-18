@@ -6,7 +6,7 @@ import { shaPattern } from './evidence.mjs';
 import { validateEvaluationEvidence, validateEvaluationFiles } from './evaluation-evidence.mjs';
 import { childEnvironment } from './environment.mjs';
 import { redact } from '../check-secret-exposure.mjs';
-import { readContainedEvaluationFile, validateCheckedEvaluationInputs, validateBrowserEvidence, validateXRBrowserEvidence, validateEvaluationAudits, validateEvaluationScreenshot } from './evaluate.mjs';
+import { readContainedEvaluationFile, validateCheckedEvaluationInputs, validateBrowserEvidence, validateXRBrowserEvidence, validatePortableBrowserEvidence, validateEvaluationAudits, validateEvaluationScreenshot } from './evaluate.mjs';
 
 export async function verifyEvaluationEvidence(file, { headSha, testedSha, baseSha, root = resolve(import.meta.dirname, '../..') } = {}) {
   const path = resolve(file), directory = dirname(path);
@@ -45,6 +45,18 @@ export async function verifyEvaluationEvidence(file, { headSha, testedSha, baseS
       root, record, xrCommand: { ...command, log }, requireBuildOutputs: false, reportBytes, buildBytes, screenshotBytes
     }));
   } catch { errors.push('Fresh bound emulated XR report, build, screenshot or log is missing/invalid'); }
+  try {
+    const read = (name, limit = 16 * 1024 * 1024) => readContainedEvaluationFile(directory, 'portable/' + name, limit);
+    const reportBytes = await read('portable-browser-checks.json'), summaryBytes = await read('portable-summary.json'), buildBytes = await read('build.json');
+    const screenshotBytes = await read('portable-world.png'), exportedBytes = await read('exported-world.bveworld', 4 * 1024 * 1024);
+    const reexportedBytes = await read('reexported-world.bveworld', 4 * 1024 * 1024), authoredBytes = await read('authored-world.bveworld', 4 * 1024 * 1024);
+    const log = (await readContainedEvaluationFile(directory, 'logs/f05-portable-browser.txt', 32 * 1024 * 1024)).toString();
+    const command = Array.isArray(record.commands) ? record.commands.find(item => item?.id === 'f05-portable-browser') : null;
+    errors.push(...await validatePortableBrowserEvidence(JSON.parse(reportBytes), JSON.parse(summaryBytes), {
+      root, record, portableCommand: { ...command, log }, requireBuildOutputs: false,
+      reportBytes, summaryBytes, buildBytes, screenshotBytes, exportedBytes, reexportedBytes, authoredBytes,
+    }));
+  } catch { errors.push('Fresh bound portable-world report, summary, build, screenshot, carriers or log is missing/invalid'); }
   return errors;
 }
 
@@ -55,7 +67,7 @@ async function main() {
   }
   const errors = await verifyEvaluationEvidence(file, { headSha, testedSha, baseSha });
   if (errors.length) { console.error(errors.join('\n')); process.exitCode = 1; }
-  else console.log('Evaluation files, current source, exact candidate identity and separate fresh desktop/emulated XR bindings match. Independently verify the actual GitHub checks and required reviews; this remains subset evidence, not completed hardware/service qualification.');
+  else console.log('Evaluation files, current source, exact candidate identity and separate fresh desktop/emulated XR/portable-world bindings match. Independently verify the actual GitHub checks and required reviews; this remains subset evidence, not completed hardware/service qualification.');
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

@@ -1,0 +1,182 @@
+{
+  "kind": "portable-ci-reconstruction-source-freeze",
+  "recordedAt": "2026-10-18T20:52:48.676924+00:00",
+  "baseCommit": "9088586c9f46f0e740cfe67b3d8b00614ed446eb",
+  "scope": "Eleven CI/evidence/test files only; no new browser, service, audit or network execution by this reviewer; no workflow or pinned service helper changes.",
+  "sourceFreeze": true,
+  "sourceHashTiming": "Captured after the passing test runs. These are source freeze hashes, not a fabricated before/after execution envelope.",
+  "files": [
+    {
+      "path": "scripts/ci/evaluate.mjs",
+      "bytes": 52650,
+      "sha256": "5ea8133f07a7a119eda554097e868ecc5ea03170437dd4710cbe701a3d6c9833"
+    },
+    {
+      "path": "scripts/ci/evaluation-evidence.mjs",
+      "bytes": 8628,
+      "sha256": "36c736c2538d07ed3a73ddcfd652fc68366324b5278b005d90bd35a71be06bd8"
+    },
+    {
+      "path": "scripts/ci/verify-evaluation-evidence.mjs",
+      "bytes": 6448,
+      "sha256": "31a08efb38aff6517b005da70cea8c2296ded0538b424965abd5885e7ee38331"
+    },
+    {
+      "path": "scripts/ci/portable-carrier-evidence.mjs",
+      "bytes": 23298,
+      "sha256": "a1afed5513262420bfe79dbda0ff152740543e76e03b8bcb2031edc8148266b9"
+    },
+    {
+      "path": "scripts/ci/service_evidence.py",
+      "bytes": 22179,
+      "sha256": "7c8e5a43b8a151b385d137cdc21185dccc013f01a8869a9712d4698427a3cd31"
+    },
+    {
+      "path": "scripts/test/evaluation-evidence.test.mjs",
+      "bytes": 7268,
+      "sha256": "28038fa8e79b57c6c594ea658d8dba09899a0199421b1e2ea2ea599f864743d2"
+    },
+    {
+      "path": "scripts/test/evaluation-runner.test.mjs",
+      "bytes": 12041,
+      "sha256": "6386c90fd8945890ca958a6c3c333e49ea220883c2d5b208bb268adc67313d30"
+    },
+    {
+      "path": "scripts/test/xr-evaluation.test.mjs",
+      "bytes": 17517,
+      "sha256": "078c16664ba98e939b0e07f0911fdb4f66b65605609eb5f9286eeaf83ae5e71d"
+    },
+    {
+      "path": "scripts/test/service-evidence-checks.py",
+      "bytes": 21240,
+      "sha256": "4ea27085d7d0299687346fde305f6f48a4c9291467335b02b9f3b16d7fa2fe38"
+    },
+    {
+      "path": "scripts/test/evaluation-fixtures.mjs",
+      "bytes": 9166,
+      "sha256": "c498bf8b8df332afaffa8f9c4c1d60518a636116264932970e8fbb6ed2d0cbc4"
+    },
+    {
+      "path": "scripts/test/portable-evaluation.test.mjs",
+      "bytes": 18828,
+      "sha256": "7fd641377cdeacd84264bb58586e1a8c3204143ae68579bf60723544c3f94ccb"
+    }
+  ],
+  "tests": [
+    {
+      "kind": "named-node-verifier-methods",
+      "command": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "--test-reporter=tap",
+        "scripts/test/evaluation-evidence.test.mjs",
+        "scripts/test/evaluation-runner.test.mjs",
+        "scripts/test/xr-evaluation.test.mjs",
+        "scripts/test/portable-evaluation.test.mjs"
+      ],
+      "exitCode": 0,
+      "passed": 175,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "log": {
+        "path": "artifacts/portable-ci-development/run-1792356564275/node-verifiers.txt",
+        "bytes": 39486,
+        "sha256": "4ff54e9930d776ed74c690a639b28825d0d3cfc758ae9d7689316dd0268bf2a0"
+      }
+    },
+    {
+      "kind": "optimized-python-service-evidence-methods",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "scripts/test/service-evidence-checks.py"
+      ],
+      "exitCode": 0,
+      "passed": 7,
+      "failed": 0,
+      "log": {
+        "path": "artifacts/portable-ci-development/run-1792356508761/service-bindings.txt",
+        "bytes": 1412,
+        "sha256": "83e62063dd16bb9639683d1415fa57dcf2aff8b4ed7f4c5fc958102a4acd7d8a"
+      }
+    },
+    {
+      "kind": "whitespace-check",
+      "commandScope": [
+        "scripts/ci/evaluate.mjs",
+        "scripts/ci/evaluation-evidence.mjs",
+        "scripts/ci/verify-evaluation-evidence.mjs",
+        "scripts/ci/portable-carrier-evidence.mjs",
+        "scripts/ci/service_evidence.py",
+        "scripts/test/evaluation-evidence.test.mjs",
+        "scripts/test/evaluation-runner.test.mjs",
+        "scripts/test/xr-evaluation.test.mjs",
+        "scripts/test/service-evidence-checks.py",
+        "scripts/test/evaluation-fixtures.mjs",
+        "scripts/test/portable-evaluation.test.mjs"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "retainedEarlierFailure": {
+    "log": {
+      "path": "artifacts/portable-ci-development/run-1792356508761/node-verifiers.txt",
+      "bytes": 40357,
+      "sha256": "ffe45117b55a8ceab74df68483057dd17582d50565249e4cc8aeb18fbc2956a2"
+    },
+    "passed": 174,
+    "failed": 1,
+    "cause": "Synthetic mutation selected a nonexistent sourceCoordinates field in the frozen fixtures, so the test fixture threw before exercising the verifier.",
+    "resolution": "Mutation now adds a valid but unauthorized source-coordinate metadata block and rebinding remains internally consistent; subsequent 175-method run passed. Additional original-byte and imported-byte substitutions rehash their complete envelopes before expected rejection."
+  },
+  "separateReview": {
+    "reviewer": "asset_research",
+    "method": "read-only source review",
+    "result": "No blocking findings in the implementation within the reviewed scope; emitted scope text correction was separately reread and hash-confirmed.",
+    "implementationHashSet": [
+      {
+        "path": "scripts/ci/evaluate.mjs",
+        "bytes": 52650,
+        "sha256": "5ea8133f07a7a119eda554097e868ecc5ea03170437dd4710cbe701a3d6c9833"
+      },
+      {
+        "path": "scripts/ci/evaluation-evidence.mjs",
+        "bytes": 8628,
+        "sha256": "36c736c2538d07ed3a73ddcfd652fc68366324b5278b005d90bd35a71be06bd8"
+      },
+      {
+        "path": "scripts/ci/verify-evaluation-evidence.mjs",
+        "bytes": 6448,
+        "sha256": "31a08efb38aff6517b005da70cea8c2296ded0538b424965abd5885e7ee38331"
+      },
+      {
+        "path": "scripts/ci/portable-carrier-evidence.mjs",
+        "bytes": 23298,
+        "sha256": "a1afed5513262420bfe79dbda0ff152740543e76e03b8bcb2031edc8148266b9"
+      },
+      {
+        "path": "scripts/ci/service_evidence.py",
+        "bytes": 22179,
+        "sha256": "7c8e5a43b8a151b385d137cdc21185dccc013f01a8869a9712d4698427a3cd31"
+      }
+    ],
+    "limitation": "Final synthetic test-fixture corrections are supported by actual passing method logs; source-only peer review does not establish runtime execution."
+  },
+  "directDevelopmentCaptureInspection": {
+    "receipt": {
+      "path": "artifacts/portable-ci-development/direct-capture-validation.json",
+      "bytes": 2126,
+      "sha256": "9f157ce56dbab1c6d7eaee4561eba6e76a027654fefd06a8b4b21db975be4644"
+    },
+    "complete": false,
+    "result": "At inspection time, all source/build/fixture/carrier/PNG/report constraints passed except the intentionally absent independent command start/end and before-directory evidence.",
+    "subsequentSourceChange": "Realtime reported an explanatory main.js scope-string edit after this inspection. Retained direct browser files and inspection receipt stay unchanged and are historical for that later source.",
+    "requiredNextStep": "Fresh canonical collector run with an actual before-directory inventory, command process result, UTC bounds, current source/build closure and unique run directories."
+  },
+  "qualificationStatus": "incomplete",
+  "hostedComplete": false,
+  "staging": "No staging or commit performed by this agent; realtime_research owns checkpoint02."
+}

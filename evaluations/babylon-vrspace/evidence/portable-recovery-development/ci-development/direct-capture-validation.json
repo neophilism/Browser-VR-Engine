@@ -1,0 +1,64 @@
+{
+  "kind": "portable-development-capture-inspection",
+  "scope": "Retained real browser artifacts only; no new runtime execution and no complete command/freshness envelope",
+  "complete": false,
+  "runDirectory": "artifacts/portable-runs/run-moctFp",
+  "files": [
+    {
+      "path": "portable/portable-browser-checks.json",
+      "bytes": 102835,
+      "sha256": "4a27f76a44311a4ed02ad7c868f61a9ef91ca6903cd7a5e7709dbcd483b34056"
+    },
+    {
+      "path": "portable/portable-summary.json",
+      "bytes": 1397,
+      "sha256": "61ba740acbdb9bae4c5e78c6b628e9c5c8021b54f6458d2706ad7ba89b6a03a9"
+    },
+    {
+      "path": "portable/build.json",
+      "bytes": 4670,
+      "sha256": "892ae50db5e80d4536460e3e8a8d142f0d40fd4c3060bcf6ae37a77ef39ef1f3"
+    },
+    {
+      "path": "portable/portable-world.png",
+      "bytes": 131399,
+      "sha256": "ef3686d79767a6c680f6390c11063b38cc3ab61fce5bfb3132d84c395b0e885a"
+    },
+    {
+      "path": "portable/exported-world.bveworld",
+      "bytes": 648189,
+      "sha256": "01eb46115bdf5301ac4b79bcd4dcbc1f752f8a145d307c48850d20c46c4f8ddd"
+    },
+    {
+      "path": "portable/reexported-world.bveworld",
+      "bytes": 648189,
+      "sha256": "01eb46115bdf5301ac4b79bcd4dcbc1f752f8a145d307c48850d20c46c4f8ddd"
+    },
+    {
+      "path": "portable/authored-world.bveworld",
+      "bytes": 648828,
+      "sha256": "0d1ed84e8dfe592a9d854b47b43319f066a639a8694bfb1e6820b248f6adcb8c"
+    }
+  ],
+  "log": {
+    "path": "evaluations/babylon-vrspace/artifacts/portable-recovery-first-browser.txt",
+    "bytes": 592,
+    "sha256": "8f3256a8435a82c1c5cc10b03526a05fa8ae9705a5488fcd4ddfc2b0199fa4b4"
+  },
+  "browserCounts": {
+    "passed": 9,
+    "failed": 0,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "logOverflow": 0
+  },
+  "artifactSourceBuildAndCarrierBindingsConsistent": true,
+  "unresolvedValidationErrors": [
+    "Portable-world evidence is stale or outside its command time bounds"
+  ],
+  "missingEvidence": [
+    "Independently captured command UTC start/finish times",
+    "Observed directory inventory before the command"
+  ],
+  "capturedAt": "2026-10-18T20:51:09.224Z"
+}

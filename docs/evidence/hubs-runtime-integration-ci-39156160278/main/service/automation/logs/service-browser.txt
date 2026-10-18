@@ -1,0 +1,19 @@
+Release health HTTP 200
+PASS two-independent-real-service-sessions
+PASS same-frozen-f03-venue-in-both-canvases
+PASS mutual-presence-from-server-add-events
+PASS alpha-keyboard-pose-visible-to-beta
+PASS beta-keyboard-pose-visible-to-alpha
+PASS disconnect-removes-remote-guest
+PASS same-browser-rejoin-restores-pose-flow
+PASS upstream-sdk-automatic-reconnect-after-controlled-close
+PASS wire-evidence-and-no-browser-errors
+{
+  "runStatus": "passed",
+  "counts": {
+    "passed": 9,
+    "failed": 0,
+    "checks": 9
+  },
+  "output": "artifacts/browser-runs/run-BZo7xL"
+}

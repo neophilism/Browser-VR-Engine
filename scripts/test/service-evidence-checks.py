@@ -102,12 +102,20 @@ class ServiceEvidenceChecks(unittest.TestCase):
                   'serviceBrowserSources': evidence.automation.read_json(evidence.SERVICE, 'source-files.json'),
                   'sourcePins': evidence.automation.read_json(evidence.SERVICE, 'source-pins.json'),
                   'build': {'inputs': {name: before['sibling'][name] for name in evidence.BUILD_INPUTS},
+                            'workspaceInputs': copy.deepcopy(before['workspace']),
                             'outputs': {name: {'bytes': 1, 'sha256': 'a' * 64} for name in evidence.BUILD_OUTPUTS}}}
         evidence.validate_inputs(inputs, before)
         for mutate in (lambda x: x['build']['inputs'].pop('src/audio-meter.js'),
                        lambda x: x['build']['inputs'].pop('src/xr-session.js'),
                        lambda x: x['build']['inputs']['src/xr-session.js'].update(sha256='f' * 64),
                        lambda x: x['build']['outputs'].pop('dist/audio-meter.js'),
+                       lambda x: x['build']['outputs'].pop('dist/portable-world.mjs'),
+                       lambda x: x['build']['outputs']['dist/portable-world.mjs'].update(bytes=True),
+                       lambda x: x['build']['inputs'].pop('src/portable-world.js'),
+                       lambda x: x['build']['inputs'].pop('contracts-build.mjs'),
+                       lambda x: x['build'].pop('workspaceInputs'),
+                       lambda x: x['build']['workspaceInputs'].pop('packages/contracts/src/canonical.ts'),
+                       lambda x: x['build']['workspaceInputs']['packages/contracts/src/schemas.ts'].update(sha256='f' * 64),
                        lambda x: x['siblingSource'].pop('src/main.js'),
                        lambda x: x['siblingSource'].pop('test/browser-finalize.mjs'),
                        lambda x: x['serviceBrowserSources'].remove('command-supervisor.py'),
@@ -203,6 +211,7 @@ class ServiceEvidenceChecks(unittest.TestCase):
             fixture_pins = evidence.automation.read_json(ROOT / 'evaluations/babylon-vrspace', 'fixture-pins.json')
             digests = {name.removesuffix('.json'): value['sha256'] for name, value in fixture_pins['files'].items()}
             build = {'schemaVersion': 1, 'inputs': {name: before['sibling'][name] for name in evidence.BUILD_INPUTS},
+                     'workspaceInputs': copy.deepcopy(before['workspace']),
                      'outputs': {name: {'bytes': 1, 'sha256': 'a' * 64} for name in evidence.BUILD_OUTPUTS}, 'fixtureDigests': digests}
             with tempfile.TemporaryDirectory() as hosted_directory:
                 hosted = Path(hosted_directory)

@@ -15,9 +15,12 @@ require = automation.require
 REPOSITORY = 'neophilism/Browser-VR-Engine'
 SHA = r'[a-f0-9]{40}'
 BUILD_INPUTS = {'src/main.js', 'src/xr-session.js', 'src/spatial-audio.js', 'src/audio-meter.js', 'src/import-policy.js',
-                'src/import-resources.js', 'index.html', 'package.json', 'package-lock.json',
+                'src/import-resources.js', 'src/portable-world.js', 'src/media-policy.js', 'contracts-build.mjs',
+                'index.html', 'package.json', 'package-lock.json',
                 'fixture-pins.json', 'vendor/vrspace/asset-loader.js', 'build.mjs'}
-BUILD_OUTPUTS = {'dist/main.js', 'dist/main.js.map', 'dist/audio-meter.js'}
+WORKSPACE_INPUTS = {'packages/contracts/package.json', *['packages/contracts/src/' + name + '.ts'
+                    for name in ('index', 'schemas', 'ports', 'canonical', 'validation', 'math', 'qualification')]}
+BUILD_OUTPUTS = {'dist/main.js', 'dist/main.js.map', 'dist/audio-meter.js', 'dist/portable-world.mjs'}
 AUTOMATION_METHODS = sorted([
     'test_synthetic_browser_binding_accepts_without_execution_claim',
     'test_browser_failures_remain_failures_after_consistent_counts',
@@ -112,7 +115,8 @@ def validate_regression(report, name, stage, sources):
 def snapshot(root):
     return {'ci': {name: automation.fingerprint(root, name) for name in CI_SOURCES},
             'service': automation.source_snapshot(root / 'evaluations/vrspace-service'),
-            'sibling': automation.source_snapshot(root / 'evaluations/babylon-vrspace')}
+            'sibling': automation.source_snapshot(root / 'evaluations/babylon-vrspace'),
+            'workspace': {name: automation.fingerprint(root, name) for name in sorted(WORKSPACE_INPUTS)}}
 
 
 def validate_inputs(inputs, before):
@@ -124,8 +128,17 @@ def validate_inputs(inputs, before):
     build = inputs.get('build', {})
     require(set(build.get('inputs', {})) == BUILD_INPUTS and set(build.get('outputs', {})) == BUILD_OUTPUTS,
             'Renderer build input/output coverage differs')
+    require(isinstance(build.get('workspaceInputs'), dict)
+            and set(build['workspaceInputs']) == WORKSPACE_INPUTS
+            and build['workspaceInputs'] == before.get('workspace'),
+            'Renderer workspace build input coverage or source differs')
     for name, value in build['inputs'].items():
         require(before['sibling'].get(name) == value, 'Renderer build input does not match checkout: ' + name)
+    for value in build['outputs'].values():
+        require(isinstance(value, dict) and set(value) == {'bytes', 'sha256'}
+                and type(value.get('bytes')) is int and value['bytes'] > 0
+                and isinstance(value.get('sha256'), str) and re.fullmatch(r'[a-f0-9]{64}', value['sha256']),
+                'Malformed renderer build output fingerprint')
 
 
 def inventory(root):

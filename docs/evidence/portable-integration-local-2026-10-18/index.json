@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "kind": "portable-integration-local-foundation",
+  "scope": "Local integrated foundation execution; not hosted acceptance",
+  "startedAt": "2026-10-18T20:59:17.754Z",
+  "finishedAt": "2026-10-18T20:59:38.815Z",
+  "checkoutHead": "a017afcfcf10eb1ae188fc883cdd040c1518566d",
+  "dirty": true,
+  "complete": false,
+  "commands": 6,
+  "packageTests": 39,
+  "toolingTests": 350,
+  "skippedTests": 0,
+  "files": {
+    "logs/check.txt": {
+      "bytes": 35082,
+      "sha256": "8fe057247dc736ed3a1684e723d7cbb028a5fd8d1358b693149fd9a0ae12aa6b"
+    },
+    "logs/consumer.txt": {
+      "bytes": 263,
+      "sha256": "b70373de193d55366a7509d6b5c277dc84179256043192e48a139030110c372a"
+    },
+    "logs/dependencies.txt": {
+      "bytes": 137,
+      "sha256": "48d456d1d29a34ea0f3f70174bb236277e220b3edc3f6ca559791c14fcc7a354"
+    },
+    "logs/example.txt": {
+      "bytes": 877,
+      "sha256": "2d27e68eff6e50d9447eaeaa621427bb66c8e853a2cceef6c0c055bdcc98e160"
+    },
+    "logs/install.txt": {
+      "bytes": 233,
+      "sha256": "89a4a80aa7b20642d14777143d8ed2a1b6eff254b0a0ce8721a90e5eb1113752"
+    },
+    "logs/sharding.txt": {
+      "bytes": 215,
+      "sha256": "476f29e3597e2f519c7c1ca07931b8f5daeaacd51ba73a62b2dd3a9e8be72d55"
+    },
+    "manifest.json": {
+      "bytes": 4257,
+      "sha256": "9e82ec60629f38ae3d83c8f90ce054ee04091211e6eac41f703bd886bc6ec216"
+    },
+    "reports/dependency-audit.json": {
+      "bytes": 600,
+      "sha256": "82c5f5d010b7bb31c3d305ff8b5221dd516fdc52f15aef53df66cda7aaa44f9f"
+    }
+  },
+  "formatting": "Original PR8 install logs retain CR progress output. The ordinary diff whitespace check reports only those four original logs; a CR-aware diff check passes. No retained log bytes were altered.",
+  "next": "Exact final-head hosted foundation, evaluation and released-service jobs; independently verified artifacts; reviewed safe merge and main verification."
+}

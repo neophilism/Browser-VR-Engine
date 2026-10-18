@@ -6,6 +6,8 @@ import {SpatialGraph} from './spatial-audio.js';
 import {IMPORT_LIMITS, readModelFile, validateModelBytes} from './import-policy.js';
 import {resourceCollections, captureResources, newResources, resourceCounts, disposeResources} from './import-resources.js';
 import {XRSessionController, createBabylonXRExperience, xrMovementAxes} from './xr-session.js';
+import {PORTABLE_LIMITS, canonicalJson, effectiveComponents, encodePortableWorld, readPortableFile, validateEvaluationWorld, validateWorldOriginals, selectExactAnimationGroup} from './portable-world.js';
+import {requireDocument} from '@bve-evaluation/contracts';
 
 const $=id=>document.getElementById(id);
 const status=message=>{$('status').textContent=message;};
@@ -22,7 +24,7 @@ class Evaluation {
   constructor() {
     this.descriptor={id:'babylon-native-spatial-rapier-evaluation',version:'Babylon9.30.0-Rapier0.21.0'};
     this.state='created';this.nodes=new Map();this.bodies=new Map();this.containers=[];this.animations=[];
-    this.urls=[];this.assetCache=new Map();this.localAssets=new Map();this.keys=new Set();this.frames=[];
+    this.urls=[];this.assetCache=new Map();this.localAssets=new Map();this.originals=new Map();this.videoElements=new Set();this.keys=new Set();this.frames=[];
     this.physicsSteps=0;this.selected=null;this.held=null;this.lastTime=performance.now();this.accumulator=0;
     this.imports=[];this.audio=null;this.video=null;this.xr=null;this.vrspace=null;this.stopped=false;
     this.xrPose=null;this.xrVisuals=null;this.xrMutedOutput=null;this.disposing=false;
@@ -56,37 +58,63 @@ class Evaluation {
     ];
   }
   async load(world,context) {
-    this.state='loading';this.world=structuredClone(world);this.context=context;
-    await RAPIER.init();
+    if(this.state!=='created')throw new Error('Load requires a fresh evaluation instance');
+    this.state='loading';
+    const task=this.loadOwned(world,context);this.loadTask=task;
+    try{return await task;}finally{if(this.loadTask===task)this.loadTask=null;}
+  }
+  async loadOwned(world,context) {
+    const live=()=>{if(this.stopped||this.disposing)throw new Error('Evaluation was disposed before loading completed');};
+    requireDocument('world',world);
+    if(world.assets.length>PORTABLE_LIMITS.assets||world.entities.length>PORTABLE_LIMITS.entities)throw new Error('Evaluation entity/asset budget exceeded before copying');
+    const authored=structuredClone(world),originals=new Map();
+    let totalBytes=0;
+    const copyOriginal=(reference,asset)=>{
+      if(!(asset?.bytes instanceof Uint8Array)||!asset.bytes.byteLength||asset.bytes.byteLength>IMPORT_LIMITS.fileBytes)throw new Error('Invalid or excessive original bytes before copying');
+      totalBytes+=asset.bytes.byteLength;if(totalBytes>PORTABLE_LIMITS.payloadBytes)throw new Error('Original byte budget exceeded before copying');
+      originals.set(reference.id,{reference:structuredClone(reference),mediaType:asset.mediaType,bytes:new Uint8Array(asset.bytes)});
+    };
+    if(context.originals instanceof Map){
+      if(context.originals.size!==authored.assets.length)throw new Error('Original table must exactly match the declared asset count before copying');
+      for(const reference of authored.assets){const asset=context.originals.get(reference.id);if(canonicalJson(asset?.reference)!==canonicalJson(reference))throw new Error('Original asset identity does not match the declared reference');copyOriginal(reference,asset);}
+    }else{
+      for(const reference of authored.assets){const asset=await context.assets.resolve(reference);if(canonicalJson(asset?.reference)!==canonicalJson(reference))throw new Error('Resolved asset identity does not match the declared reference');copyOriginal(reference,asset);}
+    }
+    await validateWorldOriginals(authored,originals);
+    live();this.world=authored;this.context=context;this.originals=originals;
+    await RAPIER.init();live();
     this.physics=new RAPIER.World({x:0,y:-9.81,z:0});this.physics.timestep=1/60;
     this.audio=new SpatialGraph();
-    for(const entity of world.entities) {
+    for(const entity of authored.entities) {
       const node=new B.TransformNode(entity.id,this.scene);node.metadata={entityId:entity.id};
       this.applyTransform(node,entity.transform);this.nodes.set(entity.id,node);
     }
-    for(const entity of world.entities) if(entity.parentId)this.nodes.get(entity.id).parent=this.nodes.get(entity.parentId);
-    for(const entity of world.entities) {
+    for(const entity of authored.entities) if(entity.parentId)this.nodes.get(entity.id).parent=this.nodes.get(entity.parentId);
+    // Finish the visual hierarchy before evaluating any composed collider shape.
+    for(const entity of authored.entities){
+      const node=this.nodes.get(entity.id),components=effectiveComponents(entity),model=components['bve:mesh']?.asset||components['bve:animation']?.asset;
+      if(model){await this.attachAsset(node,model);live();}
+    }
+    for(const entity of authored.entities){const body=effectiveComponents(entity)['bve:collider'];if(body)this.addBody(entity.id,this.nodes.get(entity.id),body);}
+    for(const entity of authored.entities) {
       const node=this.nodes.get(entity.id);
-      const components=Object.fromEntries(entity.components.map(c=>[c.type,c.data]));
-      if(components['bve:mesh']) await this.attachAsset(node,components['bve:mesh'].asset);
-      if(components['bve:collider'])this.addBody(entity.id,node,components['bve:collider']);
+      const components=effectiveComponents(entity);
       if(components['bve:animation']) {
         const data=components['bve:animation'];
         const loaded=node.metadata.container;
-        if(!loaded)await this.attachAsset(node,data.asset);
+        if(!loaded){await this.attachAsset(node,data.asset);live();}
         const groups=node.metadata.container?.animationGroups||[];
-        const group=groups.find(g=>g.name===data.clip||g.name.endsWith(data.clip));
-        if(group)group.start(data.loop);
+        const group=selectExactAnimationGroup(groups,data.clip);group.start(data.loop);
         this.animations.push({entityId:entity.id,node,data,group,segment:0,progress:0});
       }
       const media=components['bve:media-surface'];
-      if(media) await this.addMediaSurface(entity.id,node,media);
+      if(media){await this.addMediaSurface(entity.id,node,media);live();}
       const emitter=components['bve:audio-emitter'];
       if(emitter) {
         node.computeWorldMatrix(true);
         const position=B.Vector3.TransformCoordinates(vec(emitter.localOffset),node.getWorldMatrix());
-        const asset=await this.resolveAsset(emitter.sourceAsset);
-        await this.audio.add(emitter.playbackId,emitter,serialVec(position),asset.bytes.buffer,media?node.metadata.video:null);
+        const asset=await this.resolveAsset(emitter.sourceAsset);live();
+        await this.audio.add(emitter.playbackId,emitter,serialVec(position),new Uint8Array(asset.bytes).buffer,media?node.metadata.video:null);live();
         node.metadata.emitter=emitter;
       }
     }
@@ -100,6 +128,7 @@ class Evaluation {
     $('world-id').textContent=world.id;$('graphics').textContent=`WebGL ${this.engine.webGLVersion}`;
     $('sources').textContent=`${this.audio.sources.size} / ${this.audio.sources.size}`;
     $('start').disabled=false;$('start').textContent='Enter courtyard & enable audio';
+    for(const control of document.querySelectorAll('button,input'))control.disabled=false;
     status('Ready. Enter to enable sound, then explore.');
     this.setupXR();
   }
@@ -190,37 +219,49 @@ class Evaluation {
     this.xrVisuals=null;
   }
   applyTransform(node,transform) {
+    node.setPreTransformMatrix(B.Matrix.Identity());
     if(transform.kind==='trs') {node.position.copyFromFloats(...transform.translation);node.rotationQuaternion=B.Quaternion.FromArray(transform.rotation);node.scaling.copyFromFloats(...transform.scale);}
-    else {node.rotationQuaternion=new B.Quaternion();B.Matrix.FromArray(transform.elements).decompose(node.scaling,node.rotationQuaternion,node.position);}
+    else {node.position.setAll(0);node.rotationQuaternion=B.Quaternion.Identity();node.scaling.setAll(1);node.setPreTransformMatrix(B.Matrix.FromArray(transform.elements));}
     node.computeWorldMatrix(true);
   }
   async resolveAsset(id) {
     if(this.assetCache.has(id))return this.assetCache.get(id);
     if(this.localAssets.has(id))return this.localAssets.get(id);
     const reference=this.world.assets.find(a=>a.id===id);if(!reference)throw new Error(`Unknown asset ${id}`);
-    const resolved=await this.context.assets.resolve(reference);
+    const resolved=this.originals.get(id);if(!resolved||resolved.reference.revision!==reference.revision)throw new Error(`Original asset is not present: ${id}`);
     this.assetCache.set(id,resolved);return resolved;
   }
   async attachAsset(node,id) {
     const asset=await this.resolveAsset(id);
     const url=URL.createObjectURL(new Blob([asset.bytes],{type:asset.mediaType}));this.urls.push(url);
-    const container=await B.LoadAssetContainerAsync(url,this.scene,{pluginExtension:asset.mediaType==='model/gltf-binary'?'.glb':'.gltf'});
+    const container=await B.LoadAssetContainerAsync(url,this.scene,{pluginExtension:asset.mediaType==='model/gltf-binary'?'.glb':'.gltf',pluginOptions:{gltf:{animationStartMode:0,preprocessUrlAsync:async value=>{if(value===url||value.startsWith('data:'))return value;throw new Error('External model resource rejected');}}}});
     container.addAllToScene();
     for(const mesh of container.rootNodes)mesh.parent=node;
     for(const mesh of container.meshes) {mesh.metadata={...mesh.metadata,entityId:node.metadata.entityId};mesh.receiveShadows=true;if(mesh.getTotalVertices())this.shadow.addShadowCaster(mesh);}
     node.metadata.container=container;node.metadata.assetId=id;this.containers.push(container);
     return container;
   }
+  colliderProjection(node,data) {
+    node.computeWorldMatrix(true);
+    if(data.body==='static'){
+      const matrix=node.getWorldMatrix(),position=B.Vector3.TransformCoordinates(B.Vector3.Zero(),matrix),points=[];
+      for(const x of [-1,1])for(const y of [-1,1])for(const z of [-1,1])points.push(...serialVec(B.Vector3.TransformCoordinates(new B.Vector3(x*data.halfExtents[0],y*data.halfExtents[1],z*data.halfExtents[2]),matrix).subtract(position)));
+      const descriptor=RAPIER.ColliderDesc.convexHull(new Float32Array(points));if(!descriptor)throw new Error('Static affine collider has no nondegenerate hull');
+      return {position,rotation:B.Quaternion.Identity(),descriptor,half:[...data.halfExtents]};
+    }
+    const scale=new B.Vector3(),rotation=new B.Quaternion(),position=new B.Vector3();node.getWorldMatrix().decompose(scale,rotation,position);
+    const half=data.halfExtents.map((value,index)=>value*Math.abs(scale.asArray()[index]));
+    return {position,rotation,half,descriptor:RAPIER.ColliderDesc.cuboid(...half)};
+  }
   addBody(id,node,data) {
-    node.computeWorldMatrix(true);const scale=new B.Vector3(),rotation=new B.Quaternion(),position=new B.Vector3();node.getWorldMatrix().decompose(scale,rotation,position);
+    const {position,rotation,half,descriptor}=this.colliderProjection(node,data);
     let desc=data.body==='dynamic'?RAPIER.RigidBodyDesc.dynamic():data.body==='kinematic'?RAPIER.RigidBodyDesc.kinematicPositionBased():RAPIER.RigidBodyDesc.fixed();
     desc=desc.setTranslation(position.x,position.y,position.z).setRotation(rotation);
     if(data.body==='dynamic')desc.setCcdEnabled(true).setLinearDamping(.08).setAngularDamping(.1);
     const body=this.physics.createRigidBody(desc);node.metadata.pendingBody=body;
-    const half=data.halfExtents.map((n,i)=>n*Math.abs(scale.asArray()[i]));
-    const collider=this.physics.createCollider(RAPIER.ColliderDesc.cuboid(...half).setFriction(.65).setRestitution(.2).setMass(data.massKg||1),body);
+    const collider=this.physics.createCollider(descriptor.setFriction(.65).setRestitution(.2).setMass(data.massKg||1),body);
     this.bodies.set(id,{body,collider,node,data,half});node.metadata.bodyId=id;delete node.metadata.pendingBody;
-    if(!node.metadata.container&&data.body!=='static') {
+    if(!node.metadata.container&&!node.getChildMeshes().some(mesh=>mesh.getTotalVertices()>0)&&data.body!=='static') {
       const visual=B.MeshBuilder.CreateBox(id+'-collider-visual',{width:2*data.halfExtents[0],height:2*data.halfExtents[1],depth:2*data.halfExtents[2]},this.scene);
       visual.parent=node;visual.metadata={entityId:id};visual.receiveShadows=true;
       const material=new B.StandardMaterial(id+'-surface',this.scene);material.diffuseColor=data.body==='dynamic'?new B.Color3(.25,.52,.56):new B.Color3(.7,.68,.59);visual.material=material;
@@ -233,7 +274,7 @@ class Evaluation {
     if(asset.mediaType.startsWith('video/')) {
       const url=URL.createObjectURL(new Blob([asset.bytes],{type:asset.mediaType}));this.urls.push(url);
       const video=document.createElement('video');video.src=url;video.loop=true;video.preload='auto';video.playsInline=true;video.muted=false;video.volume=1;video.style.display='none';video.dataset.playbackId=data.playbackId;document.body.append(video);video.load();
-      node.metadata.video=video;this.video=video;
+      node.metadata.video=video;this.video=video;this.videoElements.add(video);
       texture=new B.VideoTexture(id+'-video',video,this.scene,false,false,B.Texture.BILINEAR_SAMPLINGMODE,{autoPlay:false,loop:true,muted:false});
     } else {
       const url=URL.createObjectURL(new Blob([asset.bytes],{type:asset.mediaType}));this.urls.push(url);texture=new B.Texture(url,this.scene,false,false);
@@ -317,6 +358,8 @@ class Evaluation {
     this.scene.render();
   }
   select(id) {
+    // A mesh-only canonical child can still select its movable ancestor.
+    for(let node=this.nodes.get(id);node&&!this.bodies.has(id)&&node.parent?.metadata?.entityId;node=node.parent)id=node.parent.metadata.entityId;
     if(this.selected)for(const mesh of this.nodes.get(this.selected)?.getChildMeshes()||[])mesh.showBoundingBox=false;
     this.selected=this.nodes.has(id)?id:null;
     if(this.selected)for(const mesh of this.nodes.get(id).getChildMeshes())mesh.showBoundingBox=true;
@@ -349,10 +392,9 @@ class Evaluation {
     this.listen(window,'dragover',e=>{e.preventDefault();document.body.classList.add('dragging');});this.listen(window,'dragleave',e=>{if(!e.relatedTarget)document.body.classList.remove('dragging');});
     this.listen(window,'drop',async e=>{e.preventDefault();document.body.classList.remove('dragging');for(const file of e.dataTransfer.files)try{await this.importFile(file);}catch(error){if(!this.stopped)status(error.message);}});
     $('export').onclick=async()=>{try{const result=await this.exportGLB();if(this.stopped)return;download(result.blob,'courtyard.glb');status(`Exported ${result.bytes.toLocaleString()} bytes of scene geometry.`);}catch(e){if(!this.stopped)safeError(e);}};
-    $('save').onclick=()=>{this.saved=this.snapshotWorld();download(new Blob([JSON.stringify(this.saved,null,2)],{type:'application/json'}),'courtyard.world.json');status('World transforms and component descriptors saved. Original imported bytes stay in this local session.');};
-    $('reload').onclick=()=>{try{this.restoreWorld(this.saved||this.snapshotWorld());status('World transforms restored; asset identity and audio source bindings preserved.');}catch(e){if(!this.stopped)safeError(e);}};
+    $('save').onclick=async()=>{try{const saved=await this.exportPortableWorld();if(this.stopped)return;download(new Blob([saved.bytes],{type:'application/octet-stream'}),`${this.world.id}.bveworld`);status(`Exported authored world and ${saved.assetReceipts.length} exact originals. Runtime clocks restart when opened.`);}catch(error){if(!this.stopped)status(error.message);}};
     $('video-toggle').onclick=async()=>{const video=this.video;if(!video)return;if(video.paused)await video.play();else video.pause();if(this.stopped)return;$('video-toggle').textContent=video.paused?'Play video':'Pause video';};
-    $('apply-transform').onclick=()=>{if(!this.selected)return;const position=['x','y','z'].map(axis=>Number($('edit-'+axis).value));if(!position.every(v=>Number.isFinite(v)&&Math.abs(v)<=1000)){status('Use finite coordinates between -1000 and 1000 meters.');return;}const node=this.nodes.get(this.selected),body=this.bodies.get(this.selected)?.body;node.position.copyFromFloats(...position);if(body){body.setTranslation(node.position,true);body.setLinvel({x:0,y:0,z:0},true);}status(`Applied position to ${this.selected}.`);};
+    $('apply-transform').onclick=()=>{if(!this.selected)return;const position=['x','y','z'].map(axis=>Number($('edit-'+axis).value));if(!position.every(v=>Number.isFinite(v)&&Math.abs(v)<=1000)){status('Use finite coordinates between -1000 and 1000 meters.');return;}const node=this.nodes.get(this.selected);try{this.authorTransform(this.selected,{kind:'trs',translation:position,rotation:serialQuat(node.rotationQuaternion||B.Quaternion.FromEulerVector(node.rotation)),scale:serialVec(node.scaling)});status(`Applied and authored position for ${this.selected}.`);}catch(error){status(error.message);}};
     $('xr').onclick=async()=>{
       if(!this.xr||this.stopped||this.disposing)return;
       if(this.importTask){$('xr-status').textContent='Wait for the local model import to finish before entering VR.';return;}
@@ -364,6 +406,24 @@ class Evaluation {
     $('xr-dismiss').onclick=()=>this.xr?.dismissError();
   }
   validateModel(bytes,extension) { return validateModelBytes(bytes,extension).json; }
+  allOriginalAssets() {return new Map([...this.originals,...this.localAssets]);}
+  async exportPortableWorld() {
+    if(this.stopped||this.disposing||this.importTask)throw new Error('Wait for a ready, stable evaluation before exporting');
+    return encodePortableWorld(this.world,reference=>this.resolveAsset(reference.id));
+  }
+  authorTransform(id,transform) {
+    if(!['ready','running'].includes(this.state)||this.stopped||this.disposing||this.importTask)throw new Error('Wait for a ready, stable evaluation before authoring a transform');
+    const entity=this.world.entities.find(value=>value.id===id),item=this.bodies.get(id);
+    if(!entity||!item||item.data.body!=='dynamic'||entity.parentId||transform.kind!=='trs')throw new Error('The evaluation prop editor currently authors root dynamic TRS props only');
+    const next=structuredClone(this.world);next.entities.find(value=>value.id===id).transform=structuredClone(transform);
+    validateEvaluationWorld(next,this.allOriginalAssets());
+    this.applyTransform(item.node,transform);
+    const half=item.data.halfExtents.map((value,index)=>value*Math.abs(transform.scale[index]));
+    item.collider.setShape(new RAPIER.Cuboid(...half));item.half=half;
+    item.body.setTranslation(item.node.position,true);item.body.setRotation(item.node.rotationQuaternion,true);item.body.setLinvel({x:0,y:0,z:0},true);item.body.setAngvel({x:0,y:0,z:0},true);
+    this.physics.propagateModifiedBodyPositionsToColliders();this.world=next;
+    return structuredClone(next.entities.find(value=>value.id===id));
+  }
   importState() {
     return {resources:resourceCounts(this.scene),nodes:this.nodes.size,bodies:this.bodies.size,
       rigidBodies:this.physics.bodies.len(),colliders:this.physics.colliders.len(),
@@ -383,11 +443,20 @@ class Evaluation {
     if(this.imports.length>=IMPORT_LIMITS.sessionImports || this.imports.reduce((sum,item)=>sum+item.bytes,0)+file.size>IMPORT_LIMITS.sessionOriginalBytes)throw new Error('Local import session budget exceeded');
     const {bytes,extension}=await readModelFile(file);
     if(this.stopped)throw new Error('Evaluation is disposed');
-    const revision=await digest(bytes),id=`dropped-${revision}`,entityId=`prop-${this.imports.length+1}-${revision.slice(0,6)}`;
+    if(typeof file.name!=='string'||file.name.length>256)throw new Error('Model display name exceeds the authored document limit');
+    const revision=await digest(bytes),id=`dropped-${revision}`;let sequence=this.imports.length+1;
+    while(this.nodes.has(`prop-${sequence}-${revision.slice(0,6)}`))sequence++;
+    const entityId=`prop-${sequence}-${revision.slice(0,6)}`,meshEntityId=entityId+'-model';
     const reference={id,revision,kind:'model'},before=this.importState(),resourcesBefore=captureResources(this.scene);
+    const sourceAsset={reference,bytes,mediaType:extension==='.glb'?'model/gltf-binary':'model/gltf+json'},previewWorld=structuredClone(this.world),previewAssets=this.allOriginalAssets();
+    previewAssets.set(id,sourceAsset);if(!previewWorld.assets.some(asset=>asset.id===id))previewWorld.assets.push(reference);
+    const identity=()=>({kind:'trs',translation:[0,0,0],rotation:[0,0,0,1],scale:[1,1,1]});
+    const authoredRoot={id:entityId,name:file.name,transform:identity(),components:[]};
+    const authoredMesh={id:meshEntityId,name:(file.name+' model').slice(0,256),parentId:entityId,transform:identity(),components:[{type:'bve:mesh',version:'0.1.0',required:true,data:{asset:id}}]};
+    previewWorld.entities.push(authoredRoot,authoredMesh);validateEvaluationWorld(previewWorld,previewAssets);
     const priorAsset=this.localAssets.get(id),activeCamera=this.scene.activeCamera;
     const url=URL.createObjectURL(new Blob([bytes],{type:extension==='.glb'?'model/gltf-binary':'model/gltf+json'}));
-    let node=null,container=null,committed=false;
+    let node=null,meshNode=null,container=null,committed=false;
     try {
       await B.ImportMeshAsync(url,this.scene,{pluginExtension:extension,pluginOptions:{gltf:{animationStartMode:0,
         preprocessUrlAsync:async value=>{if(value===url||value.startsWith('data:'))return value;throw new Error('External import resource rejected');},
@@ -396,22 +465,25 @@ class Evaluation {
       container=new B.AssetContainer(this.scene);
       for(const key of resourceCollections)container[key]=newResources(this.scene,resourcesBefore)[key];
       container.populateRootNodes();container.removeAllFromScene();container.addAllToScene();
-      node=new B.TransformNode(entityId,this.scene);node.metadata={entityId,container,assetId:id};
+      node=new B.TransformNode(entityId,this.scene);node.metadata={entityId};
+      meshNode=new B.TransformNode(meshEntityId,this.scene);meshNode.parent=node;meshNode.metadata={entityId:meshEntityId,container,assetId:id};
       const ahead=this.camera.position.add(this.camera.getForwardRay().direction.scale(3));node.position.set(ahead.x,2,ahead.z);node.rotationQuaternion=B.Quaternion.Identity();
-      for(const root of container.rootNodes)root.parent=node;
+      for(const root of container.rootNodes)root.parent=meshNode;
       for(const mesh of container.meshes) {mesh.metadata={...mesh.metadata,entityId};mesh.receiveShadows=true;if(mesh.getTotalVertices())this.shadow.addShadowCaster(mesh);}
       const bounds=node.getHierarchyBoundingVectors(true),half=bounds.max.subtract(bounds.min).scale(.5),center=bounds.max.add(bounds.min).scale(.5).subtract(node.position);
       if(![...serialVec(half),...serialVec(center)].every(Number.isFinite)||container.meshes.reduce((sum,mesh)=>sum+mesh.getTotalVertices(),0)===0)throw new Error('Imported model has no finite visible geometry');
-      for(const root of container.rootNodes)root.position.subtractInPlace(center);
-      const max=Math.max(half.x,half.y,half.z);if(max>2){const factor=2/max;for(const root of container.rootNodes){root.position.scaleInPlace(factor);root.scaling.scaleInPlace(factor);}half.scaleInPlace(factor);}
+      const max=Math.max(half.x,half.y,half.z),factor=max>2?2/max:1;
+      meshNode.position.copyFrom(center.scale(-factor));meshNode.scaling.setAll(factor);meshNode.rotationQuaternion=B.Quaternion.Identity();half.scaleInPlace(factor);
       const bodyData={shape:'box',halfExtents:serialVec(half).map(value=>Math.max(.05,value)),body:'dynamic',massKg:3};
+      authoredRoot.transform={kind:'trs',translation:serialVec(node.position),rotation:[0,0,0,1],scale:[1,1,1]};
+      authoredRoot.components=[{type:'bve:collider',version:'0.1.0',required:true,data:bodyData}];
+      authoredMesh.transform={kind:'trs',translation:serialVec(meshNode.position),rotation:[0,0,0,1],scale:serialVec(meshNode.scaling)};
+      validateEvaluationWorld(previewWorld,previewAssets);
       this.addBody(entityId,node,bodyData);
       // All potentially rejecting loader/geometry/physics work precedes world publication.
-      this.localAssets.set(id,{reference,bytes,mediaType:extension==='.glb'?'model/gltf-binary':'model/gltf+json'});
-      if(!this.world.assets.some(asset=>asset.id===id))this.world.assets.push(reference);
-      this.nodes.set(entityId,node);this.containers.push(container);this.urls.push(url);
-      this.world.entities.push({id:entityId,name:file.name,transform:{kind:'trs',translation:serialVec(node.position),rotation:[0,0,0,1],scale:[1,1,1]},components:[{type:'bve:mesh',version:'0.1.0',required:true,data:{asset:id}},{type:'bve:collider',version:'0.1.0',required:true,data:bodyData}]});
-      const imported={entityId,assetId:id,name:file.name,bytes:bytes.length,revision,vertices:node.getChildMeshes().reduce((sum,mesh)=>sum+mesh.getTotalVertices(),0),colliderHalfExtents:bodyData.halfExtents,normalization:{offset:serialVec(center),scale:max>2?2/max:1}};
+      this.localAssets.set(id,sourceAsset);this.world=previewWorld;
+      this.nodes.set(entityId,node);this.nodes.set(meshEntityId,meshNode);this.containers.push(container);this.urls.push(url);
+      const imported={entityId,meshEntityId,assetId:id,name:file.name,bytes:bytes.length,revision,vertices:node.getChildMeshes().reduce((sum,mesh)=>sum+mesh.getTotalVertices(),0),colliderHalfExtents:bodyData.halfExtents,normalization:{offset:serialVec(center),scale:factor}};
       this.imports.push(imported);this.select(entityId);status(`Imported ${file.name} as a solid movable prop. Conservative box collider; original bytes preserved.`);committed=true;return imported;
     } catch(error) {
       const allocated=newResources(this.scene,resourcesBefore),created=Object.fromEntries(resourceCollections.map(key=>[key,allocated[key].length]));
@@ -422,7 +494,7 @@ class Evaluation {
       for(const mesh of allocated.meshes)cleanup(()=>this.shadow.removeShadowCaster(mesh));
       if(container)cleanup(()=>container.dispose());
       cleanup(()=>disposeResources(newResources(this.scene,resourcesBefore)));
-      this.scene.activeCamera=activeCamera;this.nodes.delete(entityId);
+      this.scene.activeCamera=activeCamera;this.nodes.delete(entityId);this.nodes.delete(meshEntityId);
       if(priorAsset)this.localAssets.set(id,priorAsset);else this.localAssets.delete(id);
       this.world.assets.length=before.worldAssets;this.world.entities.length=before.entities;
       this.containers.length=before.containers;this.urls.length=before.urls;this.imports.length=before.imports;
@@ -433,12 +505,19 @@ class Evaluation {
   }
   snapshotWorld() {
     const world=structuredClone(this.world);
-    for(const entity of world.entities) {const node=this.nodes.get(entity.id);entity.transform={kind:'trs',translation:serialVec(node.position),rotation:serialQuat(node.rotationQuaternion||B.Quaternion.FromEulerVector(node.rotation)),scale:serialVec(node.scaling)};}
+    for(const entity of world.entities)if(entity.transform.kind==='trs'){const node=this.nodes.get(entity.id);entity.transform={kind:'trs',translation:serialVec(node.position),rotation:serialQuat(node.rotationQuaternion||B.Quaternion.FromEulerVector(node.rotation)),scale:serialVec(node.scaling)};}
     return world;
   }
   restoreWorld(world) {
-    if(world.id!==this.world.id)throw new Error('This evaluation restores snapshots of its loaded world only.');
-    for(const entity of world.entities) {const node=this.nodes.get(entity.id);if(!node)throw new Error(`Missing local asset/entity ${entity.id}`);this.applyTransform(node,entity.transform);const item=this.bodies.get(entity.id);if(item){item.body.setTranslation(node.position,true);item.body.setRotation(node.rotationQuaternion,true);item.body.setLinvel({x:0,y:0,z:0},true);item.body.setAngvel({x:0,y:0,z:0},true);}}
+    const identity=source=>{const result=structuredClone(source);for(const entity of result.entities)delete entity.transform;return canonicalJson(result);};
+    if(identity(world)!==identity(this.world))throw new Error('Legacy snapshots can only restore transforms of the same authored identities, hierarchy, assets and components');
+    validateEvaluationWorld(world,this.allOriginalAssets());
+    for(const entity of world.entities){const node=this.nodes.get(entity.id);if(!node)throw new Error(`Missing local asset/entity ${entity.id}`);this.applyTransform(node,entity.transform);}
+    for(const item of this.bodies.values()){
+      const projection=this.colliderProjection(item.node,item.data);item.collider.setShape(projection.descriptor.shape);item.half=projection.half;
+      item.body.setTranslation(projection.position,true);item.body.setRotation(projection.rotation,true);item.body.setLinvel({x:0,y:0,z:0},true);item.body.setAngvel({x:0,y:0,z:0},true);
+    }
+    this.physics.propagateModifiedBodyPositionsToColliders();
     return {entityCount:world.entities.length,assetCount:world.assets.length};
   }
   async exportGLB() {
@@ -448,7 +527,7 @@ class Evaluation {
   async checkGLBRoundTrip() {
     const {blob,bytes}=await this.exportGLB();const url=URL.createObjectURL(blob);
     const container=await B.LoadAssetContainerAsync(url,this.scene,{pluginExtension:'.glb'});
-    const result={bytes,meshes:container.meshes.filter(m=>m.getTotalVertices()>0).length,vertices:container.meshes.reduce((s,m)=>s+m.getTotalVertices(),0),skeletons:container.skeletons.length,animationGroups:container.animationGroups.length,scope:'GLB geometry/material/animation subset; media surfaces and world semantics use the JSON snapshot, not glTF.'};container.dispose();URL.revokeObjectURL(url);return result;
+    const result={bytes,meshes:container.meshes.filter(m=>m.getTotalVertices()>0).length,vertices:container.meshes.reduce((s,m)=>s+m.getTotalVertices(),0),skeletons:container.skeletons.length,animationGroups:container.animationGroups.length,scope:'GLB geometry/material/animation subset; media and world semantics use the portable authored-world carrier. The legacy transform snapshot is a separate local helper.'};container.dispose();URL.revokeObjectURL(url);return result;
   }
   inspectXR() {
     const helper=this.xr?.experience?.helper,camera=helper?.camera;
@@ -466,7 +545,7 @@ class Evaluation {
     else if(step.action==='select') {supported=!!this.select(step.targetId);detail='Selection resolved by stable world entity identity.';}
     else if(step.action==='grab') {supported=this.grab(step.targetId);detail='Dynamic body entered held kinematic state.';}
     else if(step.action==='release') {supported=this.held===step.targetId&&this.release(step.velocity);detail='Held body returned to Rapier dynamics with explicit velocity.';}
-    else if(step.action==='edit') {const node=this.nodes.get(step.targetId);supported=!!node;if(node){this.applyTransform(node,step.transform);const item=this.bodies.get(step.targetId);if(item){item.body.setTranslation(node.position,true);item.body.setRotation(node.rotationQuaternion,true);}}detail='Transform applied to render and collision representation.';}
+    else if(step.action==='edit') {this.authorTransform(step.targetId,step.transform);detail='Root dynamic prop transform authored and applied to render/collision representation.';}
     else if(['play','pause','seek'].includes(step.action)) {const node=this.nodes.get(step.targetId);const video=node?.metadata.video;supported=!!video;if(video){if(step.action==='play')await video.play();if(step.action==='pause')video.pause();if(step.action==='seek'){video.currentTime=step.seconds;await new Promise(resolve=>video.addEventListener('seeked',resolve,{once:true}));}}detail='Native media element controls the video and its own routed audio clock.';}
     else if(step.action==='export-reload') {detail=JSON.stringify(this.restoreWorld(this.snapshotWorld()));}
     else supported=false;
@@ -489,23 +568,43 @@ class Evaluation {
   }
   async dispose() {
     if(this.disposeTask)return this.disposeTask;
-    if(this.stopped)return;
+    if(this.state==='disposed')return;
     this.disposing=true;this.keys.clear();
     const controls=[...document.querySelectorAll('button,input')].map(element=>({element,disabled:element.disabled}));
     for(const {element} of controls)element.disabled=true;
     this.disposeTask=(async()=>{
+      // The single load owns partial native resources until its pending decode
+      // settles. It observes disposing after each await and cannot publish ready.
+      if(this.loadTask)await this.loadTask.catch(()=>{});
       // A rejected native end retains renderer ownership and leaves disposal
       // retryable. Do not free a live session's camera, framebuffer or audio.
       await this.xr?.dispose();
-      this.stopped=true;this.engine.stopRenderLoop();this.inputController.abort();
-      for(const id of this.pointerIds)if(this.canvas.hasPointerCapture(id))this.canvas.releasePointerCapture(id);this.pointerIds.clear();
-      for(const {element} of controls){element.onclick=null;element.onchange=null;}
-      document.body.classList.remove('dragging');
+      this.stopped=true;
+      const errors=[],attempt=async(key,action)=>{
+        this.cleanupCompleted??=new Set();if(this.cleanupCompleted.has(key))return;
+        try{await action();this.cleanupCompleted.add(key);}catch(error){errors.push(new Error(`Evaluation cleanup ${key}: ${error.message}`,{cause:error}));}
+      };
+      await attempt('render-loop',()=>this.engine.stopRenderLoop());
+      await attempt('input',()=>this.inputController.abort());
+      await attempt('pointer-capture',()=>{for(const id of this.pointerIds)if(this.canvas.hasPointerCapture(id))this.canvas.releasePointerCapture(id);this.pointerIds.clear();});
+      await attempt('controls',()=>{for(const {element} of controls){element.onclick=null;element.onchange=null;}document.body.classList.remove('dragging');});
       if(this.importTask)await this.importTask.catch(()=>{});
-      this.release();this.clearXRVisuals();await this.audio?.dispose();for(const url of this.urls)URL.revokeObjectURL(url);this.urls=[];
-      this.physics?.free();this.scene.dispose();this.engine.dispose();
-      this.nodes.clear();this.bodies.clear();this.assetCache.clear();this.localAssets.clear();this.containers=[];this.animations=[];
-      this.player=null;this.playerCollider=null;this.controller=null;this.selected=null;this.video=null;this.state='disposed';
+      await attempt('held-body',()=>this.release());
+      await attempt('xr-visuals',()=>this.clearXRVisuals());
+      await attempt('audio',()=>this.audio?.dispose());
+      for(const video of [...this.videoElements]){
+        const failures=errors.length;
+        for(const action of [()=>video.pause(),()=>video.removeAttribute('src'),()=>video.load(),()=>video.remove()])try{action();}catch(error){errors.push(error);}
+        if(errors.length===failures)this.videoElements.delete(video);
+      }
+      for(const url of [...this.urls])try{URL.revokeObjectURL(url);this.urls.splice(this.urls.indexOf(url),1);}catch(error){errors.push(error);}
+      await attempt('physics',()=>{this.physics?.free();this.physics=null;this.bodies.clear();this.player=null;this.playerCollider=null;this.controller=null;this.held=null;});
+      await attempt('scene',()=>{if(!this.scene.isDisposed)this.scene.dispose();this.nodes.clear();this.containers=[];this.animations=[];this.xrVisuals=null;});
+      await attempt('engine',()=>this.engine.dispose());
+      this.assetCache.clear();this.localAssets.clear();this.originals.clear();this.selected=null;this.video=null;
+      this.cleanupErrors=errors.map(error=>error.message);
+      if(errors.length){this.state='cleanup-failed';throw new AggregateError(errors,'World cleanup is incomplete; retained ownership must be retried before replacement');}
+      this.state='disposed';
     })().finally(()=>{
       this.disposing=false;this.disposeTask=null;
       if(!this.stopped){for(const {element,disabled} of controls)element.disabled=disabled;this.updateXRControls(this.xr.inspect());}
@@ -515,11 +614,70 @@ class Evaluation {
 
 }
 
-async function boot() {
-  const manifest=await fetch('/fixtures/evaluation.json').then(r=>{if(!r.ok)throw new Error('The frozen F03 fixture snapshot is not installed.');return r.json();});
-  const app=new Evaluation();app.manifest=manifest;window.foundationProbe=app;window.qualificationAdapter=app;
-  const assets={resolve:async reference=>{const resource=manifest.catalog.resources.find(r=>r.id===reference.id||r.sha256===reference.revision);if(!resource)throw new Error(`No fixture resource for ${reference.id}`);const response=await fetch('/fixtures/'+resource.path);if(!response.ok)throw new Error(`Fixture ${resource.path} unavailable`);const bytes=new Uint8Array(await response.arrayBuffer());if(bytes.byteLength!==resource.sizeBytes||await digest(bytes)!==reference.revision)throw new Error(`Fixture digest or size mismatch: ${resource.path}`);return {reference,mediaType:resource.mediaType,bytes};}};
-  await app.load(manifest.world,{world:manifest.world,scenario:manifest.scenario,assets});
-  window.foundationReady=true;
+const portableHost={phase:'starting',createdInstances:0,source:null,receipt:null,error:null,task:null,lastFailure:null,failedInstance:null};
+const cleanupState=app=>({disposed:app.state==='disposed',state:app.state,nodes:app.nodes.size,bodies:app.bodies.size,urls:app.urls.length,mediaElements:app.videoElements.size,audioClosed:!app.audio||app.audio.closed,sceneDisposed:app.scene.isDisposed,physicsFreed:!app.physics,errors:app.cleanupErrors||[]});
+window.portableHost={inspect:()=>structuredClone({phase:portableHost.phase,createdInstances:portableHost.createdInstances,source:portableHost.source,receipt:portableHost.receipt,error:portableHost.error,lastFailure:portableHost.lastFailure,pendingCleanup:portableHost.failedInstance?cleanupState(portableHost.failedInstance):null})};
+
+async function disposeOwnedInstance(app) {
+  try{await app.dispose();if(portableHost.failedInstance===app)portableHost.failedInstance=null;}
+  catch(error){portableHost.failedInstance=app;portableHost.lastFailure=cleanupState(app);throw error;}
 }
-boot().catch(safeError);
+async function createEvaluation(world,originals,context={}) {
+  portableHost.createdInstances++;
+  let app;
+  try{
+    app=new Evaluation();app.manifest=context.manifest;
+    await app.load(world,{...context,world,originals});
+    window.foundationProbe=app;window.qualificationAdapter=app;window.foundationReady=true;
+    return app;
+  }catch(error){
+    if(app){
+      try{await disposeOwnedInstance(app);}catch(cleanup){throw new AggregateError([error,cleanup],`World loading failed (${error.message}); cleanup is incomplete and remains owned`);}
+      portableHost.lastFailure=cleanupState(app);
+    }
+    throw error;
+  }
+}
+async function openPortableFile(file) {
+  if(portableHost.task)throw new Error('One world import may run at a time');
+  const task=(async()=>{
+    const prior=window.foundationProbe;
+    const busy=app=>app&&!app.stopped&&(app.xr?.blocksDesktopPose||app.importTask||app.disposing);
+    if(busy(prior))throw new Error('Leave VR and finish the model import before opening a world');
+    portableHost.phase='validating';portableHost.error=null;portableHost.lastFailure=null;
+    const prepared=await readPortableFile(file);
+    if(busy(prior))throw new Error('The current evaluation became busy while the world was validated');
+    portableHost.phase='loading';window.foundationReady=false;
+    if(portableHost.failedInstance)await disposeOwnedInstance(portableHost.failedInstance);
+    if(prior&&prior.state!=='disposed')await disposeOwnedInstance(prior);
+    delete window.foundationProbe;delete window.qualificationAdapter;
+    await createEvaluation(prepared.world,prepared.assets);
+    portableHost.phase='ready';portableHost.source='portable';portableHost.receipt={integrity:prepared.integrity,manifestIntegrity:prepared.manifestIntegrity,worldId:prepared.world.id,worldRevision:prepared.world.revision,assetReceipts:prepared.assetReceipts,authoredReload:true,liveSessionResume:false};
+    $('world-file').disabled=false;status('Portable authored world opened from its original bytes. Physics, animation and playback start fresh.');
+  })();
+  portableHost.task=task;
+  try{await task;}catch(error){portableHost.phase=portableHost.failedInstance?'cleanup-failed':window.foundationProbe&&!window.foundationProbe.stopped?'ready':'empty';portableHost.error=error.message;$('world-file').disabled=!!window.foundationProbe&&!window.foundationProbe.stopped&&!!window.foundationProbe.xr?.blocksDesktopPose;status(error.message);throw error;}finally{portableHost.task=null;}
+}
+$('world-file').addEventListener('change',event=>{const file=event.target.files?.[0];event.target.value='';if(file)void openPortableFile(file).catch(()=>{});});
+
+async function boot() {
+  if(new URL(location.href).searchParams.get('world')==='empty'){
+    for(const control of document.querySelectorAll('button,input'))control.disabled=true;
+    $('world-file').disabled=false;$('start').textContent='Choose a portable world';$('world-id').textContent='No world';
+    portableHost.phase='empty';portableHost.source='empty';status('Open a .bveworld file. No fixture world or original assets have been loaded.');return;
+  }
+  const manifest=await fetch('/fixtures/evaluation.json').then(r=>{if(!r.ok)throw new Error('The frozen F03 fixture snapshot is not installed.');return r.json();});
+  const assets={resolve:async reference=>{const resource=manifest.catalog.resources.find(r=>r.id===reference.id||r.sha256===reference.revision);if(!resource)throw new Error(`No fixture resource for ${reference.id}`);const response=await fetch('/fixtures/'+resource.path);if(!response.ok)throw new Error(`Fixture ${resource.path} unavailable`);const bytes=new Uint8Array(await response.arrayBuffer());if(bytes.byteLength!==resource.sizeBytes||await digest(bytes)!==reference.revision)throw new Error(`Fixture digest or size mismatch: ${resource.path}`);return {reference,mediaType:resource.mediaType,bytes};}};
+  const originals=new Map();for(const reference of manifest.world.assets)originals.set(reference.id,await assets.resolve(reference));
+  await validateWorldOriginals(manifest.world,originals);
+  await createEvaluation(manifest.world,originals,{manifest,scenario:manifest.scenario});
+  portableHost.phase='ready';portableHost.source='fixtures';
+}
+// Startup is an owned load just like a file open. The disabled control provides
+// feedback; the shared task also rejects a programmatic change event during it.
+for(const control of document.querySelectorAll('button,input'))control.disabled=true;
+portableHost.task=boot();
+void portableHost.task.catch(error=>{
+  portableHost.phase=portableHost.failedInstance?'cleanup-failed':'empty';portableHost.error=error.message;
+  status(`Initial world could not be loaded: ${error.message}. Open a portable world to retry.`);
+}).finally(()=>{portableHost.task=null;$('world-file').disabled=false;});

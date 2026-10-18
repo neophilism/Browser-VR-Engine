@@ -1,0 +1,262 @@
+TAP version 13
+# Subtest: complete synthetic evaluation envelope validates without claiming actual browser execution
+ok 1 - complete synthetic evaluation envelope validates without claiming actual browser execution
+  ---
+  duration_ms: 3.722117
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects local evidence
+ok 2 - evaluation evidence rejects local evidence
+  ---
+  duration_ms: 0.601957
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects dirty source
+ok 3 - evaluation evidence rejects dirty source
+  ---
+  duration_ms: 0.773502
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects incomplete run
+ok 4 - evaluation evidence rejects incomplete run
+  ---
+  duration_ms: 0.297243
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects unresolved failure
+ok 5 - evaluation evidence rejects unresolved failure
+  ---
+  duration_ms: 0.326687
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing merge-group base
+ok 6 - evaluation evidence rejects missing merge-group base
+  ---
+  duration_ms: 0.359776
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing installation
+ok 7 - evaluation evidence rejects missing installation
+  ---
+  duration_ms: 0.359916
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects reordered stages
+ok 8 - evaluation evidence rejects reordered stages
+  ---
+  duration_ms: 0.507496
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects substituted command
+ok 9 - evaluation evidence rejects substituted command
+  ---
+  duration_ms: 0.373596
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects wrong cwd
+ok 10 - evaluation evidence rejects wrong cwd
+  ---
+  duration_ms: 0.762867
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects failed browser step
+ok 11 - evaluation evidence rejects failed browser step
+  ---
+  duration_ms: 0.585332
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects process error alongside zero exit
+ok 12 - evaluation evidence rejects process error alongside zero exit
+  ---
+  duration_ms: 0.283483
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects process signal alongside zero exit
+ok 13 - evaluation evidence rejects process signal alongside zero exit
+  ---
+  duration_ms: 0.4365
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects skipped browser install
+ok 14 - evaluation evidence rejects skipped browser install
+  ---
+  duration_ms: 0.258646
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing nested lock
+ok 15 - evaluation evidence rejects missing nested lock
+  ---
+  duration_ms: 0.507626
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing XR stage
+ok 16 - evaluation evidence rejects missing XR stage
+  ---
+  duration_ms: 0.374719
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing portable stage
+ok 17 - evaluation evidence rejects missing portable stage
+  ---
+  duration_ms: 0.279747
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects substituted portable stage
+ok 18 - evaluation evidence rejects substituted portable stage
+  ---
+  duration_ms: 0.564161
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing portable binding
+ok 19 - evaluation evidence rejects missing portable binding
+  ---
+  duration_ms: 0.434247
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects historical portable run
+ok 20 - evaluation evidence rejects historical portable run
+  ---
+  duration_ms: 0.226828
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects invalid portable time bounds
+ok 21 - evaluation evidence rejects invalid portable time bounds
+  ---
+  duration_ms: 0.275971
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing exported carrier
+ok 22 - evaluation evidence rejects missing exported carrier
+  ---
+  duration_ms: 1.213027
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing authored digest
+ok 23 - evaluation evidence rejects missing authored digest
+  ---
+  duration_ms: 0.202522
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects oversized portable carrier
+ok 24 - evaluation evidence rejects oversized portable carrier
+  ---
+  duration_ms: 0.203374
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects arbitrary portable file
+ok 25 - evaluation evidence rejects arbitrary portable file
+  ---
+  duration_ms: 0.184375
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects substituted XR stage
+ok 26 - evaluation evidence rejects substituted XR stage
+  ---
+  duration_ms: 0.224394
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing XR run
+ok 27 - evaluation evidence rejects missing XR run
+  ---
+  duration_ms: 0.18092
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects historical XR run
+ok 28 - evaluation evidence rejects historical XR run
+  ---
+  duration_ms: 0.163814
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing XR screenshot
+ok 29 - evaluation evidence rejects missing XR screenshot
+  ---
+  duration_ms: 0.211535
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects invalid XR time bounds
+ok 30 - evaluation evidence rejects invalid XR time bounds
+  ---
+  duration_ms: 0.226678
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects oversized XR evidence
+ok 31 - evaluation evidence rejects oversized XR evidence
+  ---
+  duration_ms: 0.270603
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects arbitrary XR file
+ok 32 - evaluation evidence rejects arbitrary XR file
+  ---
+  duration_ms: 0.217775
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing fresh browser run
+ok 33 - evaluation evidence rejects missing fresh browser run
+  ---
+  duration_ms: 0.22854
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects historical browser path
+ok 34 - evaluation evidence rejects historical browser path
+  ---
+  duration_ms: 0.348569
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects invalid browser time bounds
+ok 35 - evaluation evidence rejects invalid browser time bounds
+  ---
+  duration_ms: 0.486245
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing browser report
+ok 36 - evaluation evidence rejects missing browser report
+  ---
+  duration_ms: 0.641455
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing build report
+ok 37 - evaluation evidence rejects missing build report
+  ---
+  duration_ms: 0.221149
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects missing toolkit audit
+ok 38 - evaluation evidence rejects missing toolkit audit
+  ---
+  duration_ms: 0.204494
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects traversal report
+ok 39 - evaluation evidence rejects traversal report
+  ---
+  duration_ms: 0.337994
+  type: 'test'
+  ...
+# Subtest: evaluation evidence rejects duplicate report
+ok 40 - evaluation evidence rejects duplicate report
+  ---
+  duration_ms: 0.374378
+  type: 'test'
+  ...
+# Subtest: changed evaluation head, tested source, base or attempt invalidates the receipt
+ok 41 - changed evaluation head, tested source, base or attempt invalidates the receipt
+  ---
+  duration_ms: 1.164205
+  type: 'test'
+  ...
+# Subtest: downloaded evaluation report bytes and paths are independently verified
+ok 42 - downloaded evaluation report bytes and paths are independently verified
+  ---
+  duration_ms: 73.818349
+  type: 'test'
+  ...
+1..42
+# tests 42
+# suites 0
+# pass 42
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 116.784042

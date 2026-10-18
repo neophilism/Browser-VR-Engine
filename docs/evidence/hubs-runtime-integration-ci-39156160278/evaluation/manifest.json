@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "kind": "foundation-evaluations",
+  "repository": "neophilism/Browser-VR-Engine",
+  "mode": "github",
+  "eventName": "pull_request",
+  "startedAt": "2026-10-18T18:52:41.729Z",
+  "commands": [
+    {
+      "id": "f04-install",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "node",
+        "scripts/bootstrap.mjs"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:52:41.889Z",
+      "finishedAt": "2026-10-18T18:52:42.809Z",
+      "durationMs": 920
+    },
+    {
+      "id": "f04-source",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "node",
+        "scripts/checkout-test-source.mjs"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:52:42.813Z",
+      "finishedAt": "2026-10-18T18:52:44.078Z",
+      "durationMs": 1265
+    },
+    {
+      "id": "f04-tests",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "npm",
+        "test"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:52:44.079Z",
+      "finishedAt": "2026-10-18T18:52:45.957Z",
+      "durationMs": 1878
+    },
+    {
+      "id": "f04-history",
+      "cwd": "evaluations/hubs-spoke",
+      "argv": [
+        "npm",
+        "run",
+        "verify:evidence"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:52:45.960Z",
+      "finishedAt": "2026-10-18T18:52:46.176Z",
+      "durationMs": 216
+    },
+    {
+      "id": "f04-audit",
+      "cwd": ".",
+      "argv": [
+        "node",
+        "scripts/ci/audit-evaluation.mjs",
+        "f04"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:52:46.178Z",
+      "finishedAt": "2026-10-18T18:52:46.670Z",
+      "durationMs": 492
+    },
+    {
+      "id": "f05-install",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "install"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:52:46.672Z",
+      "finishedAt": "2026-10-18T18:52:52.266Z",
+      "durationMs": 5594
+    },
+    {
+      "id": "f05-build",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "build"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:52:52.268Z",
+      "finishedAt": "2026-10-18T18:52:54.617Z",
+      "durationMs": 2349
+    },
+    {
+      "id": "f05-tests",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "test-server"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:52:54.622Z",
+      "finishedAt": "2026-10-18T18:52:55.854Z",
+      "durationMs": 1232
+    },
+    {
+      "id": "f05-browser-install",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "node_modules/playwright/cli.js",
+        "install",
+        "--with-deps",
+        "chromium"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:52:55.856Z",
+      "finishedAt": "2026-10-18T18:53:23.934Z",
+      "durationMs": 28078
+    },
+    {
+      "id": "f05-browser",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "test"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:53:23.937Z",
+      "finishedAt": "2026-10-18T18:53:49.028Z",
+      "durationMs": 25091
+    },
+    {
+      "id": "f05-xr-browser",
+      "cwd": "evaluations/babylon-vrspace",
+      "argv": [
+        "node",
+        "run.mjs",
+        "test-xr"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:53:49.140Z",
+      "finishedAt": "2026-10-18T18:54:46.492Z",
+      "durationMs": 57352
+    },
+    {
+      "id": "f05-audit",
+      "cwd": ".",
+      "argv": [
+        "node",
+        "scripts/ci/audit-evaluation.mjs",
+        "f05"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "errorCode": null,
+      "signal": null,
+      "startedAt": "2026-10-18T18:54:46.576Z",
+      "finishedAt": "2026-10-18T18:54:46.982Z",
+      "durationMs": 406
+    }
+  ],
+  "files": [
+    {
+      "path": "logs/f04-install.txt",
+      "bytes": 177,
+      "sha256": "3d5271167782527f64b68f658e5c960822616e5c9912afe01d2348544ae85c12"
+    },
+    {
+      "path": "logs/f04-source.txt",
+      "bytes": 128,
+      "sha256": "d3235fdcc622846d6bc93974325e344cdc0cccd00be05f74c3dbb1aefd32a224"
+    },
+    {
+      "path": "logs/f04-tests.txt",
+      "bytes": 4967,
+      "sha256": "370facdb83a766e3d3fc7f59b2f2fbf8c280002a88fecc0c823cb451783d4911"
+    },
+    {
+      "path": "logs/f04-history.txt",
+      "bytes": 498,
+      "sha256": "df6f08382f8e9aea18bf10a7f8433d4e57cc418ec9b580496beda7560922ed88"
+    },
+    {
+      "path": "logs/f04-audit.txt",
+      "bytes": 42,
+      "sha256": "01ab317b6b75f3a88b6242746cbaad8fc76d83db620c2a6feb562026aa7c7cb0"
+    },
+    {
+      "path": "reports/f04/dependency-audit.json",
+      "bytes": 596,
+      "sha256": "bd2d26afd50f981870b6a8c045465caab2fb588142f9b14d65113330721723f1"
+    },
+    {
+      "path": "logs/f05-install.txt",
+      "bytes": 25,
+      "sha256": "38f77027a2deee3d2841ac3964f426617b8a628705e10d66c4b8b20210863c78"
+    },
+    {
+      "path": "logs/f05-build.txt",
+      "bytes": 172,
+      "sha256": "c149a3d582ac3c6c7880eb06631be7ddf2231db1eb2707c7f51d2d3524b5cbe5"
+    },
+    {
+      "path": "logs/f05-tests.txt",
+      "bytes": 5361,
+      "sha256": "c14b467a265ad22bff9176093e451e3def929e4adcc503f42d026cbefd65b8b0"
+    },
+    {
+      "path": "logs/f05-browser-install.txt",
+      "bytes": 16467,
+      "sha256": "75b3ab706b3351bf0388910816f4f66f233d3e3fcb84df98fced30c88465632a"
+    },
+    {
+      "path": "logs/f05-browser.txt",
+      "bytes": 1004,
+      "sha256": "f0c18714cb755dd83e69c1887ee7a7505f93b7d797163ec55e23206cf58a4c6f"
+    },
+    {
+      "path": "browser/browser-checks.json",
+      "bytes": 280924,
+      "sha256": "dca45c9be5d633a26f45422f8ae3dae8444d663d12e4039ad5af49c67276ff93"
+    },
+    {
+      "path": "browser/f05-summary.json",
+      "bytes": 5790,
+      "sha256": "a64d8f456657ea658df594b05b1226327a0cd8468f5d3830bfa0eeeb700c5b4c"
+    },
+    {
+      "path": "browser/courtyard-verified.png",
+      "bytes": 144778,
+      "sha256": "826eaec26aceac2849ad9408617f17927933cf1e598d25afa18fdd5a1ef59a61"
+    },
+    {
+      "path": "browser/f03-before-activation.png",
+      "bytes": 123490,
+      "sha256": "e3736d307c5a5f430486deb081f7d41a1273c838520270d6b08f0ee1028ebc72"
+    },
+    {
+      "path": "browser/derived-prop.glb",
+      "bytes": 1924,
+      "sha256": "0c20e6a53dff9ab6cf08681c47c30d286a664ef5155f8a1b0439f31a2ec97be0"
+    },
+    {
+      "path": "browser/build.json",
+      "bytes": 2840,
+      "sha256": "a1b5fef069c386aaa1023e171602cf1a0b927871fe0afe69d493f1f191ddceca"
+    },
+    {
+      "path": "logs/f05-xr-browser.txt",
+      "bytes": 769,
+      "sha256": "22a0ac4c308df4508bbd28a59e179a6c89fe904281c0e10824d174fb441ad839"
+    },
+    {
+      "path": "xr/xr-browser-checks.json",
+      "bytes": 23708,
+      "sha256": "4013966405f4464620fac8feb45a091d0cf4816d9d70eb2735f38c3880b0f566"
+    },
+    {
+      "path": "xr/emulated-stereo.png",
+      "bytes": 33584,
+      "sha256": "5203e3ca018ee1e3bfc9e032e1697309b0c6a10771185944caf705876a931e67"
+    },
+    {
+      "path": "xr/build.json",
+      "bytes": 2840,
+      "sha256": "a1b5fef069c386aaa1023e171602cf1a0b927871fe0afe69d493f1f191ddceca"
+    },
+    {
+      "path": "logs/f05-audit.txt",
+      "bytes": 42,
+      "sha256": "01ab317b6b75f3a88b6242746cbaad8fc76d83db620c2a6feb562026aa7c7cb0"
+    },
+    {
+      "path": "reports/f05/dependency-audit.json",
+      "bytes": 599,
+      "sha256": "a45233b7ce5541f8bd875bd801b4d0c3f0725cd4745c977abea859af5f4bce37"
+    }
+  ],
+  "failures": [],
+  "complete": true,
+  "scope": {
+    "f04": "Pinned toolkit tests, historical evidence integrity and modern toolkit audit; no fresh Hubs/Spoke runtime, services or headset execution.",
+    "f05": "Fresh 19-check desktop and separate 10-check emulated XR software-rendering subsets; full runtime/device/service/production qualification remains incomplete."
+  },
+  "testedSha": "f311bfd762c22a698a1f41f4f2e4e4beac014c93",
+  "treeSha": "6ce2aa09bd6e3dc9b55d94cb4f719a2dc550c115",
+  "dirty": false,
+  "headSha": "d94b4ecb5a5484591bc87c05db8e2ade78f2790b",
+  "baseSha": "647240bd5493940f60caaec246970a86a2a4238f",
+  "runId": "39156160278",
+  "runAttempt": 1,
+  "workflowRef": "neophilism/Browser-VR-Engine/.github/workflows/engine-ci.yml@refs/pull/8/merge",
+  "workflowSha": "f311bfd762c22a698a1f41f4f2e4e4beac014c93",
+  "packageLocks": {
+    "f04": "a328c9c6e6687fea6af89df053e94f3770ba7ef59ef1301d86e5cb474c6e7978",
+    "f05": "5247d7d4737c6772e9a1654ec395279ab6cf6ffd5263d0ea19d3ce490bcc73b7"
+  },
+  "planSha256": "076d8750880f1117633c7619331a0b52cce4f412e72b3466c42ffedc1faa1932",
+  "comparisonSha256": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4",
+  "toolchain": {
+    "node": "v24.19.0",
+    "npm": "11.17.0",
+    "os": "linux",
+    "arch": "x64",
+    "runnerImage": "20261012.334.1"
+  },
+  "browser": {
+    "runDirectory": "artifacts/runs/run-YKXpm3",
+    "startedAt": "2026-10-18T18:53:24.323Z",
+    "finishedAt": "2026-10-18T18:53:48.999Z",
+    "reportSha256": "dca45c9be5d633a26f45422f8ae3dae8444d663d12e4039ad5af49c67276ff93",
+    "summarySha256": "a64d8f456657ea658df594b05b1226327a0cd8468f5d3830bfa0eeeb700c5b4c",
+    "buildSha256": "a1b5fef069c386aaa1023e171602cf1a0b927871fe0afe69d493f1f191ddceca"
+  },
+  "xr": {
+    "runDirectory": "artifacts/xr-runs/run-5LLUHa",
+    "startedAt": "2026-10-18T18:53:49.582Z",
+    "finishedAt": "2026-10-18T18:54:46.465Z",
+    "reportSha256": "4013966405f4464620fac8feb45a091d0cf4816d9d70eb2735f38c3880b0f566",
+    "buildSha256": "a1b5fef069c386aaa1023e171602cf1a0b927871fe0afe69d493f1f191ddceca",
+    "screenshotSha256": "5203e3ca018ee1e3bfc9e032e1697309b0c6a10771185944caf705876a931e67"
+  },
+  "finishedAt": "2026-10-18T18:54:47.011Z"
+}

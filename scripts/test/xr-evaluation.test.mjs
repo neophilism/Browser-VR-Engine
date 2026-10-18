@@ -10,6 +10,7 @@ import { evaluationCommands, requiredEvaluationReports, validateEvaluationFiles 
 import { validateXRBrowserEvidence, collectXREvidence, evaluationRunDirectories,
   requiredF05SourceFiles, requiredF05BuildInputs } from '../ci/evaluate.mjs';
 import { verifyEvaluationEvidence } from '../ci/verify-evaluation-evidence.mjs';
+import { rebindF05Inputs, portableFixture, bindPortableFixture } from './evaluation-fixtures.mjs';
 
 const root = resolve(import.meta.dirname, '../..');
 const candidate = 'evaluations/babylon-vrspace';
@@ -25,8 +26,7 @@ const fingerprints = async names => Object.fromEntries(await Promise.all(names.m
 // rebinding this in-memory fixture does not constitute new execution evidence.
 async function fixture() {
   const report = await json(join(history, 'xr-browser-checks.json'));
-  report.sourceDigests = await fingerprints(requiredF05SourceFiles);
-  report.build.inputs = await fingerprints(requiredF05BuildInputs);
+  await rebindF05Inputs(report, root);
   report.finalizationErrors = []; report.counts.logOverflow = 0;
   report.environment.physicalHeadset = false; report.environment.physicalAudio = false;
   report.comparison = await json(resolve(root, 'packages/qualification-fixtures/fixtures/comparison.json'));
@@ -73,6 +73,9 @@ for (const [name, change, pattern] of [
   ['missing XR harness hash', value => { delete value.report.sourceDigests['test/xr-browser-checks.mjs']; }, /source.*coverage/],
   ['changed XR runtime source', value => { value.report.sourceDigests['src/xr-session.js'].sha256 = '0'.repeat(64); }, /Changed source/],
   ['missing XR build input', value => { delete value.report.build.inputs['src/xr-session.js']; }, /build input.*coverage/],
+  ['missing workspace build source', value => { delete value.report.build.workspaceInputs['packages/contracts/src/ports.ts']; }, /workspace build input.*coverage/],
+  ['changed workspace build source', value => { value.report.build.workspaceInputs['packages/contracts/src/validation.ts'].sha256 = '0'.repeat(64); }, /Changed workspace build input/],
+  ['missing standalone carrier output', value => { delete value.report.build.outputs['dist/portable-world.mjs']; }, /output inventory/],
   ['wrong frozen fixture', value => { value.report.fixtureDigests.world = '0'.repeat(64); }, /fixture\/comparison/],
   ['wrong comparison', value => { value.report.comparison.fixtureSetId = 'synthetic-other'; }, /fixture\/comparison/],
   ['wrong emulator pin', value => { value.report.candidate.iwer = '0.0.0'; }, /candidate differs/],
@@ -87,6 +90,7 @@ for (const [name, change, pattern] of [
   ['late page error', value => { value.report.logs.push({ type: 'pageerror', text: 'Synthetic late event' }); }, /page errors/],
   ['late failed request', value => { value.report.failedRequests.push({ url: 'https://synthetic.invalid/' }); }, /failed requests/],
   ['browser cleanup failure', value => { value.report.finalizationErrors.push({ stage: 'browser-close', message: 'Synthetic failure' }); }, /finalization/],
+  ...['', false, 0, {}, [], 'late fatal'].map(fatal => ['non-null fatal ' + JSON.stringify(fatal), value => { value.report.fatalError = fatal; }, /fatal/]),
   ['log overflow', value => { value.report.counts.logOverflow = 1; }, /counts/],
   ['truncated PNG with a recomputed hash', value => { value.screenshotBytes = value.screenshotBytes.subarray(0, 24); }, /complete 1280x720 PNG/],
   ['failed-run screenshot alongside a pass', value => { value.record.files.push({ path: 'xr/emulated-failed.png', bytes: 1, sha256: '0'.repeat(64) }); }, /failed-run artifact/],
@@ -128,7 +132,7 @@ test('downloaded XR file size limits are checked before reading the contents', a
   } finally { await rm(directory, { recursive: true, force: true }); }
 });
 
-test('download verification actually requires the separate XR report and complete PNG', async () => {
+test('download verification requires each separate browser lane, carrier and complete PNG', async () => {
   const directory = await mkdtemp(join(tmpdir(), 'bve-xr-download-'));
   try {
     const value = bind(await fixture());
@@ -143,7 +147,7 @@ test('download verification actually requires the separate XR report and complet
     for (const [id, name] of [['f04', 'hubs-spoke'], ['f05', 'babylon-vrspace']]) record.packageLocks[id] = digest(await readFile(resolve(root, `evaluations/${name}/package-lock.json`)));
     const contents = new Map(requiredEvaluationReports.map(path => [path, Buffer.from('Synthetic unit fixture\n')]));
     const desktop = await json(join(history, 'browser-checks.json')), summary = await json(join(history, 'f05-summary.json'));
-    desktop.sourceDigests = await fingerprints(requiredF05SourceFiles); desktop.build.inputs = await fingerprints(requiredF05BuildInputs);
+    await rebindF05Inputs(desktop, root);
     desktop.counts.logOverflow = 0; summary.counts.logOverflow = 0; desktop.finalizationErrors = []; summary.finalizationErrors = [];
     record.browser = { runDirectory: 'artifacts/runs/run-Synthetic', startedAt: desktop.startedAt, finishedAt: desktop.timestamp };
     for (const [field, path, bytes] of [
@@ -157,6 +161,16 @@ test('download verification actually requires the separate XR report and complet
     record.commands[record.commands.findIndex(command => command.id === xrCommand.id)] = xrCommand;
     contents.set('logs/f05-xr-browser.txt', Buffer.from(log));
     contents.set('xr/xr-browser-checks.json', value.reportBytes); contents.set('xr/build.json', value.buildBytes); contents.set('xr/emulated-stereo.png', value.screenshotBytes);
+    const portable = bindPortableFixture(await portableFixture(root));
+    record.portable = portable.record.portable;
+    const { log: portableLog, ...portableCommand } = portable.portableCommand;
+    record.commands[record.commands.findIndex(command => command.id === portableCommand.id)] = portableCommand;
+    contents.set('logs/f05-portable-browser.txt', Buffer.from(portableLog));
+    for (const [name, bytes] of [
+      ['portable-browser-checks.json', portable.reportBytes], ['portable-summary.json', portable.summaryBytes], ['build.json', portable.buildBytes],
+      ['portable-world.png', portable.screenshotBytes], ['exported-world.bveworld', portable.exportedBytes],
+      ['reexported-world.bveworld', portable.reexportedBytes], ['authored-world.bveworld', portable.authoredBytes]
+    ]) contents.set('portable/' + name, bytes);
     const audit = await json(join(history, 'dependency-audit.json'));
     for (const id of ['f04', 'f05']) contents.set(`reports/${id}/dependency-audit.json`, pretty({ report: audit, exitCode: 0, commandError: null, assessment: { status: 'passed', reason: 'No reported dependency advisories' } }));
     record.files = [];
@@ -173,5 +187,20 @@ test('download verification actually requires the separate XR report and complet
     Object.assign(record.files.find(item => item.path === 'xr/emulated-stereo.png'), { bytes: partialPNG.length, sha256: digest(partialPNG) });
     await writeFile(manifest, pretty(record));
     assert.match((await verify()).join('\n'), /complete 1280x720 PNG/);
+    await writeFile(join(directory, 'xr/emulated-stereo.png'), value.screenshotBytes);
+    record.xr.screenshotSha256 = digest(value.screenshotBytes);
+    Object.assign(record.files.find(item => item.path === 'xr/emulated-stereo.png'), { bytes: value.screenshotBytes.length, sha256: digest(value.screenshotBytes) });
+    await writeFile(manifest, pretty(record));
+    for (const path of ['portable/portable-browser-checks.json', 'portable/authored-world.bveworld']) {
+      await rm(join(directory, path));
+      assert.match((await verify()).join('\n'), /Fresh bound portable-world|Missing report portable/);
+      await writeFile(join(directory, path), contents.get(path));
+    }
+    const invalidCarrier = Buffer.from(portable.exportedBytes); invalidCarrier[invalidCarrier.length - 1] ^= 1;
+    await writeFile(join(directory, 'portable/exported-world.bveworld'), invalidCarrier);
+    record.portable.exportedSha256 = digest(invalidCarrier);
+    Object.assign(record.files.find(item => item.path === 'portable/exported-world.bveworld'), { bytes: invalidCarrier.length, sha256: digest(invalidCarrier) });
+    await writeFile(manifest, pretty(record));
+    assert.match((await verify()).join('\n'), /Complete body digest differs/);
   } finally { await rm(directory, { recursive: true, force: true }); }
 });

@@ -4,7 +4,7 @@ import { resolve, sep } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { isDeepStrictEqual } from 'node:util';
 import { packageRoot, fixtureRoot, serverPort } from './config.mjs';
-import { loadFixtureSet, verifyVendor, fingerprintFiles, buildInputPaths } from './fixtures.mjs';
+import { loadFixtureSet, verifyVendor, fingerprintFiles, fingerprintWorkspaceFiles, buildInputPaths, buildOutputPaths } from './fixtures.mjs';
 
 const csp = "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; media-src 'self' blob:; connect-src 'self' blob: data:; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'";
 
@@ -14,7 +14,8 @@ export async function startEvaluationServer({ port = 0, fixtures = fixtureRoot }
   const { manifest, resources } = await loadFixtureSet(fixtures);
   const build = JSON.parse(await readFile(resolve(root, 'dist/build.json'), 'utf8'));
   if (!isDeepStrictEqual(build.inputs, await fingerprintFiles(buildInputPaths)) ||
-      !isDeepStrictEqual(build.outputs, await fingerprintFiles(['dist/main.js', 'dist/main.js.map', 'dist/audio-meter.js'])) ||
+      !isDeepStrictEqual(build.workspaceInputs, await fingerprintWorkspaceFiles()) ||
+      !isDeepStrictEqual(build.outputs, await fingerprintFiles(buildOutputPaths)) ||
       !isDeepStrictEqual(build.fixtureDigests, manifest.sourceFileDigests)) throw new Error('Evaluation build is stale; run node run.mjs build');
   const files = new Map([
     ['/fixtures/evaluation.json', { bytes: Buffer.from(JSON.stringify(manifest)), mediaType: 'application/json' }],

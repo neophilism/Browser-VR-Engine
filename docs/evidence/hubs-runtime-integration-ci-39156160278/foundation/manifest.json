@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "repository": "neophilism/Browser-VR-Engine",
+  "mode": "github",
+  "eventName": "pull_request",
+  "headSha": "d94b4ecb5a5484591bc87c05db8e2ade78f2790b",
+  "baseSha": "647240bd5493940f60caaec246970a86a2a4238f",
+  "testedSha": "f311bfd762c22a698a1f41f4f2e4e4beac014c93",
+  "treeSha": "6ce2aa09bd6e3dc9b55d94cb4f719a2dc550c115",
+  "dirty": false,
+  "runId": "39156160278",
+  "runAttempt": 1,
+  "workflowRef": "neophilism/Browser-VR-Engine/.github/workflows/engine-ci.yml@refs/pull/8/merge",
+  "workflowSha": "f311bfd762c22a698a1f41f4f2e4e4beac014c93",
+  "lockfileSha256": "0b02cc9619d396fad6f67d9d653421ab7b2c51166d2587b9ad5a6d8d31a58299",
+  "planSha256": "076d8750880f1117633c7619331a0b52cce4f412e72b3466c42ffedc1faa1932",
+  "toolchain": {
+    "node": "v24.19.0",
+    "npm": "11.17.0",
+    "os": "linux",
+    "arch": "x64",
+    "runnerImage": "20261012.334.1"
+  },
+  "startedAt": "2026-10-18T18:52:39.572Z",
+  "scopeRegistry": {
+    "schemaVersion": 1,
+    "scopes": [
+      {
+        "id": "foundation",
+        "status": "required",
+        "activationCard": "F02",
+        "reason": "Real build, unit, package-consumer, policy and evidence tests exist."
+      },
+      {
+        "id": "integration",
+        "status": "not_applicable",
+        "activationCard": "F08",
+        "reason": "No engine control API, durable engine database, queue or object-storage service exists yet. The isolated upstream release probe has its own required service-evaluation job and does not implement F08."
+      },
+      {
+        "id": "browser",
+        "status": "required",
+        "activationCard": "F04",
+        "reason": "F05 rendering and F04 toolkit checks have a required evaluation job. A separate required service job covers the released VRSpace pair and all supervisor tests; full candidate semantics, target hardware and headset qualification remain incomplete."
+      },
+      {
+        "id": "migration",
+        "status": "not_applicable",
+        "activationCard": "F08",
+        "reason": "No durable database schema or migration exists yet."
+      }
+    ]
+  },
+  "commands": [
+    {
+      "id": "install",
+      "argv": [
+        "npm",
+        "ci",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 1516
+    },
+    {
+      "id": "check",
+      "argv": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 9149
+    },
+    {
+      "id": "example",
+      "argv": [
+        "npm",
+        "run",
+        "example:all"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 769
+    },
+    {
+      "id": "consumer",
+      "argv": [
+        "npm",
+        "run",
+        "test:consumer"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 3502
+    },
+    {
+      "id": "sharding",
+      "argv": [
+        "npm",
+        "run",
+        "test:sharding"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 873
+    },
+    {
+      "id": "dependencies",
+      "argv": [
+        "npm",
+        "run",
+        "check:dependencies"
+      ],
+      "outcome": "passed",
+      "exitCode": 0,
+      "durationMs": 545
+    }
+  ],
+  "files": [
+    {
+      "path": "logs/install.txt",
+      "bytes": 25,
+      "sha256": "34bf0571dedf29c5408f36ef7fe7829529577bba89525cd30c3f3c72ae3c0643"
+    },
+    {
+      "path": "logs/check.txt",
+      "bytes": 27123,
+      "sha256": "36031e1a4f6fc3ac7792dea951bfd4abb0389740134d62164ff458db1ab9f197"
+    },
+    {
+      "path": "logs/example.txt",
+      "bytes": 877,
+      "sha256": "2d27e68eff6e50d9447eaeaa621427bb66c8e853a2cceef6c0c055bdcc98e160"
+    },
+    {
+      "path": "logs/consumer.txt",
+      "bytes": 263,
+      "sha256": "b70373de193d55366a7509d6b5c277dc84179256043192e48a139030110c372a"
+    },
+    {
+      "path": "logs/sharding.txt",
+      "bytes": 215,
+      "sha256": "476f29e3597e2f519c7c1ca07931b8f5daeaacd51ba73a62b2dd3a9e8be72d55"
+    },
+    {
+      "path": "logs/dependencies.txt",
+      "bytes": 137,
+      "sha256": "48d456d1d29a34ea0f3f70174bb236277e220b3edc3f6ca559791c14fcc7a354"
+    },
+    {
+      "path": "reports/dependency-audit.json",
+      "bytes": 600,
+      "sha256": "82c5f5d010b7bb31c3d305ff8b5221dd516fdc52f15aef53df66cda7aaa44f9f"
+    }
+  ],
+  "complete": true,
+  "finishedAt": "2026-10-18T18:52:55.938Z"
+}
