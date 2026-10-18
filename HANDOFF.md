@@ -24,6 +24,8 @@ F03 is accepted after PR #4, current-candidate review/checks, merge and main ver
 
 Run `npm run check` before updating status. Do not infer acceptance from a passing unrelated job, a documentation-only PR, a mock provider, or an unavailable hardware test. Record blockers precisely and continue independent ready work.
 
-## Current audit approval blocker
+## Audit authorization and current execution
 
-A fresh dependency audit was rejected by automatic approval review, then rejected again after offline verification of the exact public-dependency payload. The stated requirement is explicit end-user authorization to send repository-derived package names and versions to the npm registry. See `docs/security/evaluation-audit-egress.md` and its payload record. Do not retry the audit indirectly through the evaluation runner, service automation or GitHub Actions. Complete unaffected local checks and prepare the reviewable branch; creating a PR triggers the rejected audit and therefore waits for this approval. Retain existing audit results as historical only. No additional NPC credentials are needed for this gate.
+On 2026-10-18 the owner explicitly authorized the engine's dependency audits to send package names and versions from evolving lockfiles to `https://registry.npmjs.org`, locally and in reviewed GitHub Actions CI. This resolves the earlier automatic approval-review rejection. See `docs/security/evaluation-audit-egress.md` for the scope and unchanged historical payload record.
+
+Resume fresh audits, current-candidate PR checks, separate head-bound review, safe merge and applicable main verification. Keep every required audit stage and treat registry errors or high/critical advisories as failures requiring resolution. Earlier blocked/successful captures remain historical. The foundation comparisons and the separate released-service proposal still have their documented runtime, automation and physical-device qualification requirements. No additional NPC credentials are needed at this stage; `MESHY_API_KEY` remains the owner-configured repository Actions secret for a future implemented provider integration.

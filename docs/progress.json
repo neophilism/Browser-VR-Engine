@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "units": [
     {
       "id": "F01",
@@ -55,7 +55,7 @@
         "Pinned Reticulum/Dialog service deployment and complete Hubs runtime scenario have not been exercised.",
         "Full two-client ownership/media/roundtrip behavior, physical headset/audio and target-device workload evidence are missing.",
         "The upstream Hubs dependency audit timed out; its result remains unknown.",
-        "Fresh candidate dependency audits are blocked by automatic approval review pending explicit end-user authorization to send package names and versions to the npm registry; current-candidate hosted checks and merge have not run."
+        "Registry dependency metadata audits were explicitly authorized by the owner on 2026-10-18; fresh current-candidate audits, hosted checks, review and merge evidence are still required."
       ],
       "nextAction": "Use the pinned reproduction toolkit to complete upstream services, dependency review and common runtime/device scenarios; retain the demonstrated editor/build results."
     },
@@ -74,7 +74,7 @@
         "Physical headset/controller/audio and target-device performance evidence are missing.",
         "Full canonical-world roundtrip, multiuser ownership/physics, SFU voice/media and measured AV synchronization remain unqualified.",
         "The released VRSpace server/client presence test is a different pin from the master AssetLoader evaluation and does not qualify all VRSpace subsystems.",
-        "Fresh candidate dependency audits are blocked by automatic approval review pending explicit end-user authorization to send package names and versions to the npm registry; current-candidate hosted checks and merge have not run."
+        "Registry dependency metadata audits were explicitly authorized by the owner on 2026-10-18; fresh current-candidate audits, hosted checks, review and merge evidence are still required."
       ],
       "nextAction": "Complete the remaining shared-scenario and device evidence; retain observed browser interactions and released-server presence/reconnect results without claiming full foundation acceptance."
     },
