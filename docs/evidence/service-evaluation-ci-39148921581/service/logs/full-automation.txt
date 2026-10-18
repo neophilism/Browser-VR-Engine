@@ -1,0 +1,12 @@
+{
+  "runStatus": "passed",
+  "qualificationStatus": "incomplete",
+  "ciAcceptance": false,
+  "counts": {
+    "passed": 9,
+    "failed": 0,
+    "checks": 9
+  },
+  "output": "/home/runner/work/Browser-VR-Engine/Browser-VR-Engine/evaluations/vrspace-service/artifacts/automation-runs/run-ezvsdhcn",
+  "failures": []
+}

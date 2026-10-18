@@ -5,7 +5,8 @@ import { packageRoot } from './config.mjs';
 
 export const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 
-export const buildInputPaths = ['src/main.js', 'src/spatial-audio.js', 'src/audio-meter.js', 'src/import-policy.js', 'src/import-resources.js', 'index.html', 'package.json', 'package-lock.json', 'fixture-pins.json', 'vendor/vrspace/asset-loader.js', 'build.mjs'];
+export const buildInputPaths = ['src/main.js', 'src/xr-session.js', 'src/spatial-audio.js', 'src/audio-meter.js', 'src/import-policy.js', 'src/import-resources.js', 'index.html', 'package.json', 'package-lock.json', 'fixture-pins.json', 'vendor/vrspace/asset-loader.js', 'build.mjs'];
+export const evidenceSourcePaths = [...buildInputPaths, 'config.mjs', 'environment.mjs', 'fixtures.mjs', 'server.mjs', 'run.mjs', 'browser-checks.mjs', 'test/local-server.test.mjs', 'test/import-policy.test.mjs', 'test/xr-session.test.mjs', 'test/xr-browser-checks.mjs', 'test/browser-finalize.mjs'];
 export async function fingerprintFiles(paths) {
   return Object.fromEntries(await Promise.all(paths.map(async path => {
     const bytes = await readFile(resolve(packageRoot, path));

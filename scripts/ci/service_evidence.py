@@ -14,7 +14,7 @@ spec.loader.exec_module(automation)
 require = automation.require
 REPOSITORY = 'neophilism/Browser-VR-Engine'
 SHA = r'[a-f0-9]{40}'
-BUILD_INPUTS = {'src/main.js', 'src/spatial-audio.js', 'src/audio-meter.js', 'src/import-policy.js',
+BUILD_INPUTS = {'src/main.js', 'src/xr-session.js', 'src/spatial-audio.js', 'src/audio-meter.js', 'src/import-policy.js',
                 'src/import-resources.js', 'index.html', 'package.json', 'package-lock.json',
                 'fixture-pins.json', 'vendor/vrspace/asset-loader.js', 'build.mjs'}
 BUILD_OUTPUTS = {'dist/main.js', 'dist/main.js.map', 'dist/audio-meter.js'}

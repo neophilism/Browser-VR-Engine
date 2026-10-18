@@ -14,6 +14,7 @@ function fixture() {
     toolchain: { node: 'v24.19.0', npm: '11.9.0', os: 'linux', arch: 'x64' },
     packageLocks: { f04: '0'.repeat(64), f05: '1'.repeat(64) }, comparisonSha256: '2'.repeat(64), planSha256: '3'.repeat(64),
     browser: { runDirectory: 'artifacts/runs/run-Abc123', startedAt: '2026-10-17T00:00:00Z', finishedAt: '2026-10-17T00:01:00Z', reportSha256: '4'.repeat(64), summarySha256: '5'.repeat(64), buildSha256: '6'.repeat(64) },
+    xr: { runDirectory: 'artifacts/xr-runs/run-Xr123', startedAt: '2026-10-17T00:02:00Z', finishedAt: '2026-10-17T00:03:00Z', reportSha256: '7'.repeat(64), buildSha256: '8'.repeat(64), screenshotSha256: '9'.repeat(64) },
     commands: evaluationCommands.map(item => ({ ...structuredClone(item), outcome: 'passed', exitCode: 0, durationMs: 1 })),
     files: requiredEvaluationReports.map(path => ({ path, bytes: 7, sha256: digest('fixture') }))
   };
@@ -36,6 +37,14 @@ for (const [name, change] of [
   ['process signal alongside zero exit', r => { r.commands[0].signal = 'SIGTERM'; }],
   ['skipped browser install', r => { r.commands.find(c => c.id === 'f05-browser-install').outcome = 'skipped'; }],
   ['missing nested lock', r => { delete r.packageLocks.f05; }],
+  ['missing XR stage', r => { r.commands = r.commands.filter(command => command.id !== 'f05-xr-browser'); }],
+  ['substituted XR stage', r => { r.commands.find(command => command.id === 'f05-xr-browser').argv = ['node', 'run.mjs', 'test']; }],
+  ['missing XR run', r => { delete r.xr; }],
+  ['historical XR run', r => { r.xr.runDirectory = 'evidence/xr-session-lifecycle'; }],
+  ['missing XR screenshot', r => { r.files = r.files.filter(file => file.path !== 'xr/emulated-stereo.png'); }],
+  ['invalid XR time bounds', r => { r.xr.finishedAt = '2025-01-01'; }],
+  ['oversized XR evidence', r => { r.files.find(file => file.path === 'xr/xr-browser-checks.json').bytes = 16 * 1024 * 1024 + 1; }],
+  ['arbitrary XR file', r => { r.files.push({ path: 'xr/unapproved.txt', bytes: 1, sha256: '0'.repeat(64) }); }],
   ['missing fresh browser run', r => { delete r.browser; }],
   ['historical browser path', r => { r.browser.runDirectory = 'evidence/previous'; }],
   ['invalid browser time bounds', r => { r.browser.finishedAt = '2025-01-01'; }],

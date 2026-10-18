@@ -4,6 +4,7 @@ import { readFile, mkdtemp, mkdir, writeFile, symlink, rm } from 'node:fs/promis
 import { resolve, join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { digest } from '../ci/evidence.mjs';
+import { evaluationCommands } from '../ci/evaluation-evidence.mjs';
 import { childEnvironment } from '../ci/environment.mjs';
 import { runEvaluationCommand, validateBrowserEvidence, validateCheckedEvaluationInputs,
   validateEvaluationAudits, readContainedEvaluationFile, validateEvaluationScreenshot,
@@ -28,11 +29,13 @@ async function fixture() {
   })));
   report.sourceDigests = await fingerprints(requiredF05SourceFiles);
   report.build.inputs = await fingerprints(requiredF05BuildInputs);
+  report.counts.logOverflow = 0; summary.counts.logOverflow = 0;
+  report.finalizationErrors = []; summary.finalizationErrors = [];
   const start = new Date(Date.parse(report.startedAt) - 1000).toISOString();
   const end = new Date(Date.parse(report.timestamp) + 1000).toISOString();
   const runDirectory = 'artifacts/runs/run-Synthetic';
   const record = { files: [], browser: { runDirectory, startedAt: report.startedAt, finishedAt: report.timestamp } };
-  const browserCommand = { id: 'f05-browser', outcome: 'passed', exitCode: 0, errorCode: null, signal: null,
+  const browserCommand = { ...structuredClone(evaluationCommands.find(command => command.id === 'f05-browser')), outcome: 'passed', exitCode: 0, errorCode: null, signal: null,
     startedAt: start, finishedAt: end, log: JSON.stringify({ runStatus: 'passed', ...report.counts, output: runDirectory }) };
   return { report, summary, record, browserCommand, root };
 }
@@ -64,6 +67,9 @@ for (const [name, change, pattern] of [
   ['stale run before its command', value => { value.browserCommand.startedAt = new Date(Date.parse(value.report.timestamp) + 500).toISOString(); }, /stale|time bounds/],
   ['different stdout run directory', value => { value.browserCommand.log = value.browserCommand.log.replace('run-Synthetic', 'run-Older'); }, /command output/],
   ['duplicate success line', value => { value.browserCommand.log += `\n${value.browserCommand.log}`; }, /command output/],
+  ['substituted browser command', value => { value.browserCommand.argv = ['true']; }, /command did not complete/],
+  ['late finalization failure', value => { value.report.finalizationErrors.push({ stage: 'browser-close', message: 'Synthetic failure' }); }, /finalization/],
+  ['log overflow', value => { value.report.counts.logOverflow = 1; }, /counts/],
   ['nonzero browser exit', value => { value.browserCommand.exitCode = 1; }, /command did not complete/],
   ['browser spawn error with zero exit', value => { value.browserCommand.errorCode = 'EPERM'; }, /command did not complete/],
   ['failure hidden by passing counts', value => { value.report.failedRequests.push({ url: 'https://example.invalid/' }); }, /failed requests/],

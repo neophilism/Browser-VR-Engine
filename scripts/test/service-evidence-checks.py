@@ -105,8 +105,11 @@ class ServiceEvidenceChecks(unittest.TestCase):
                             'outputs': {name: {'bytes': 1, 'sha256': 'a' * 64} for name in evidence.BUILD_OUTPUTS}}}
         evidence.validate_inputs(inputs, before)
         for mutate in (lambda x: x['build']['inputs'].pop('src/audio-meter.js'),
+                       lambda x: x['build']['inputs'].pop('src/xr-session.js'),
+                       lambda x: x['build']['inputs']['src/xr-session.js'].update(sha256='f' * 64),
                        lambda x: x['build']['outputs'].pop('dist/audio-meter.js'),
                        lambda x: x['siblingSource'].pop('src/main.js'),
+                       lambda x: x['siblingSource'].pop('test/browser-finalize.mjs'),
                        lambda x: x['serviceBrowserSources'].remove('command-supervisor.py'),
                        lambda x: x['sourcePins'].update(release='unqualified-master')):
             with self.assertRaises(RuntimeError):

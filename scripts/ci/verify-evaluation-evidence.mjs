@@ -6,7 +6,7 @@ import { shaPattern } from './evidence.mjs';
 import { validateEvaluationEvidence, validateEvaluationFiles } from './evaluation-evidence.mjs';
 import { childEnvironment } from './environment.mjs';
 import { redact } from '../check-secret-exposure.mjs';
-import { readContainedEvaluationFile, validateCheckedEvaluationInputs, validateBrowserEvidence, validateEvaluationAudits, validateEvaluationScreenshot } from './evaluate.mjs';
+import { readContainedEvaluationFile, validateCheckedEvaluationInputs, validateBrowserEvidence, validateXRBrowserEvidence, validateEvaluationAudits, validateEvaluationScreenshot } from './evaluate.mjs';
 
 export async function verifyEvaluationEvidence(file, { headSha, testedSha, baseSha, root = resolve(import.meta.dirname, '../..') } = {}) {
   const path = resolve(file), directory = dirname(path);
@@ -35,6 +35,16 @@ export async function verifyEvaluationEvidence(file, { headSha, testedSha, baseS
       root, record, browserCommand: { ...command, log }, requireBuildOutputs: false, reportBytes, summaryBytes, buildBytes
     }));
   } catch { errors.push('Fresh bound browser report, summary, build or log is missing/invalid'); }
+  try {
+    const reportBytes = await readContainedEvaluationFile(directory, 'xr/xr-browser-checks.json', 16 * 1024 * 1024);
+    const buildBytes = await readContainedEvaluationFile(directory, 'xr/build.json', 16 * 1024 * 1024);
+    const screenshotBytes = await readContainedEvaluationFile(directory, 'xr/emulated-stereo.png', 16 * 1024 * 1024);
+    const log = (await readContainedEvaluationFile(directory, 'logs/f05-xr-browser.txt', 32 * 1024 * 1024)).toString();
+    const command = Array.isArray(record.commands) ? record.commands.find(item => item?.id === 'f05-xr-browser') : null;
+    errors.push(...await validateXRBrowserEvidence(JSON.parse(reportBytes), {
+      root, record, xrCommand: { ...command, log }, requireBuildOutputs: false, reportBytes, buildBytes, screenshotBytes
+    }));
+  } catch { errors.push('Fresh bound emulated XR report, build, screenshot or log is missing/invalid'); }
   return errors;
 }
 
@@ -45,7 +55,7 @@ async function main() {
   }
   const errors = await verifyEvaluationEvidence(file, { headSha, testedSha, baseSha });
   if (errors.length) { console.error(errors.join('\n')); process.exitCode = 1; }
-  else console.log('Evaluation files, current source, exact candidate identity and fresh browser binding match. Independently verify the actual GitHub checks and required reviews; this remains subset evidence, not completed hardware/service qualification.');
+  else console.log('Evaluation files, current source, exact candidate identity and separate fresh desktop/emulated XR bindings match. Independently verify the actual GitHub checks and required reviews; this remains subset evidence, not completed hardware/service qualification.');
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

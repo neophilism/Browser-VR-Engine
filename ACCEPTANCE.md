@@ -21,3 +21,5 @@ The separate [released-service proposal](docs/evidence/F05-service.md) has histo
 R09 is a core beta. R12 requires every engine unit, including expanded/native capabilities and actual required hardware, asset and provider evidence. C26 follows completion of the application and the engine. Missing mandatory evidence keeps the relevant gate incomplete.
 
 Store non-sensitive evidence under `docs/evidence/`; use external protected artifact storage for private source assets, recordings and large traces. Never commit credentials or content from private participants.
+
+The immersive F05 follow-up makes separate 19-check desktop and 10-check emulated XR reports mandatory, with final cleanup diagnostics and current source/build bindings. Its service verifier follows the 12-input renderer build. PR6's passed service result and failed post-merge main desktop observation remain recorded separately; a local repaired run cannot resolve main acceptance. See [the follow-up evidence](docs/evidence/F05-XR.md).

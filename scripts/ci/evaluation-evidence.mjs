@@ -13,14 +13,17 @@ export const evaluationCommands = Object.freeze([
   ['f05-tests', 'evaluations/babylon-vrspace', ['node', 'run.mjs', 'test-server']],
   ['f05-browser-install', 'evaluations/babylon-vrspace', ['node', 'node_modules/playwright/cli.js', 'install', '--with-deps', 'chromium']],
   ['f05-browser', 'evaluations/babylon-vrspace', ['node', 'run.mjs', 'test']],
+  ['f05-xr-browser', 'evaluations/babylon-vrspace', ['node', 'run.mjs', 'test-xr']],
   ['f05-audit', '.', ['node', 'scripts/ci/audit-evaluation.mjs', 'f05']]
 ].map(([id, cwd, argv]) => Object.freeze({ id, cwd, argv: Object.freeze(argv) })));
 export const requiredEvaluationReports = Object.freeze([
   ...evaluationCommands.map(({ id }) => `logs/${id}.txt`),
   'reports/f04/dependency-audit.json', 'reports/f05/dependency-audit.json',
-  'browser/browser-checks.json', 'browser/f05-summary.json', 'browser/build.json', 'browser/courtyard-verified.png'
+  'browser/browser-checks.json', 'browser/f05-summary.json', 'browser/build.json', 'browser/courtyard-verified.png',
+  'xr/xr-browser-checks.json', 'xr/build.json', 'xr/emulated-stereo.png'
 ]);
-export const evaluationReportPath = /^(?:logs\/[a-z0-9-]+\.txt|reports\/f0[45]\/dependency-audit\.json|browser\/[a-z0-9-]+\.(?:json|png|glb))$/;
+export const evaluationReportPath = /^(?:logs\/[a-z0-9-]+\.txt|reports\/f0[45]\/dependency-audit\.json|browser\/[a-z0-9-]+\.(?:json|png|glb)|xr\/(?:xr-browser-checks\.json|build\.json|emulated-(?:stereo|failed)\.png))$/;
+export const evaluationFileLimit = path => path.startsWith('logs/') ? 32 * 1024 * 1024 : 16 * 1024 * 1024;
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 
 export function validateEvaluationEvidence(record, expected = {}) {
@@ -39,6 +42,7 @@ export function validateEvaluationEvidence(record, expected = {}) {
   for (const field of ['planSha256', 'comparisonSha256']) if (!/^[a-f0-9]{64}$/.test(record[field] ?? '')) errors.push(`Invalid ${field}`);
   if (!object(record.packageLocks) || Object.keys(record.packageLocks).sort().join(',') !== 'f04,f05' || Object.values(record.packageLocks).some(value => !/^[a-f0-9]{64}$/.test(value))) errors.push('Both evaluation locks must be bound');
   if (!object(record.browser) || !/^artifacts\/runs\/run-[A-Za-z0-9]+$/.test(record.browser.runDirectory ?? '') || ['reportSha256', 'summarySha256', 'buildSha256'].some(field => !/^[a-f0-9]{64}$/.test(record.browser[field] ?? '')) || !Number.isFinite(Date.parse(record.browser.startedAt)) || !Number.isFinite(Date.parse(record.browser.finishedAt)) || Date.parse(record.browser.finishedAt) < Date.parse(record.browser.startedAt)) errors.push('Fresh browser run identity is required');
+  if (!object(record.xr) || !/^artifacts\/xr-runs\/run-[A-Za-z0-9]+$/.test(record.xr.runDirectory ?? '') || ['reportSha256', 'buildSha256', 'screenshotSha256'].some(field => !/^[a-f0-9]{64}$/.test(record.xr[field] ?? '')) || !Number.isFinite(Date.parse(record.xr.startedAt)) || !Number.isFinite(Date.parse(record.xr.finishedAt)) || Date.parse(record.xr.finishedAt) < Date.parse(record.xr.startedAt)) errors.push('Fresh emulated XR run identity is required');
   if (!Array.isArray(record.commands) || record.commands.length !== evaluationCommands.length) errors.push('Required evaluation commands are missing');
   else for (const [index, command] of record.commands.entries()) {
     const expectedCommand = evaluationCommands[index];
@@ -48,7 +52,7 @@ export function validateEvaluationEvidence(record, expected = {}) {
   const paths = new Set();
   if (!Array.isArray(record.files)) errors.push('Missing evaluation files');
   else for (const file of record.files) {
-    if (!object(file) || !evaluationReportPath.test(file.path ?? '') || paths.has(file.path) || !/^[a-f0-9]{64}$/.test(file.sha256 ?? '') || !Number.isSafeInteger(file.bytes) || file.bytes < 0) errors.push('Invalid evaluation report inventory');
+    if (!object(file) || !evaluationReportPath.test(file.path ?? '') || paths.has(file.path) || !/^[a-f0-9]{64}$/.test(file.sha256 ?? '') || !Number.isSafeInteger(file.bytes) || file.bytes < 0 || file.bytes > evaluationFileLimit(file.path ?? '')) errors.push('Invalid evaluation report inventory');
     paths.add(file?.path);
   }
   for (const path of requiredEvaluationReports) if (!paths.has(path)) errors.push(`Missing ${path}`);
@@ -62,7 +66,9 @@ export async function validateEvaluationFiles(record, directory) {
     if (!evaluationReportPath.test(item?.path ?? '')) { errors.push('Unsafe report path'); continue; }
     try {
       const file = await realpath(resolve(root, item.path)), rel = relative(root, file);
-      if (rel.startsWith('..') || isAbsolute(rel) || !(await stat(file)).isFile()) { errors.push('Escaped report path'); continue; }
+      const info = await stat(file);
+      if (rel.startsWith('..') || isAbsolute(rel) || !info.isFile()) { errors.push('Escaped report path'); continue; }
+      if (info.size > evaluationFileLimit(item.path) || info.size !== item.bytes) { errors.push(`Changed or oversized report ${item.path}`); continue; }
       const bytes = await readFile(file);
       if (bytes.length !== item.bytes || digest(bytes) !== item.sha256) errors.push(`Changed report ${item.path}`);
     } catch { errors.push(`Missing report ${item.path}`); }

@@ -1,0 +1,81 @@
+{
+  "scope": "Locally observed evaluation working-tree verification; not current-commit hosted CI or physical-device acceptance",
+  "baseCommit": "64f095d6b65530ca57a97de26f7929593032a51d",
+  "recordedAt": "2026-10-18T17:11:35.126024+00:00",
+  "commands": [
+    {
+      "argv": [
+        "node",
+        "run.mjs",
+        "build"
+      ],
+      "status": 0
+    },
+    {
+      "argv": [
+        "node",
+        "run.mjs",
+        "test-server"
+      ],
+      "status": 0,
+      "registeredTests": 46,
+      "passed": 46,
+      "failed": 0,
+      "xrCases": 16
+    },
+    {
+      "argv": [
+        "node",
+        "run.mjs",
+        "test-xr"
+      ],
+      "status": 0,
+      "passed": 10,
+      "failed": 0,
+      "report": "xr-browser-checks.json",
+      "method": "emulated-browser"
+    },
+    {
+      "argv": [
+        "node",
+        "run.mjs",
+        "test"
+      ],
+      "status": 0,
+      "passed": 19,
+      "failed": 0,
+      "report": "browser-checks.json",
+      "method": "real-browser"
+    },
+    {
+      "argv": [
+        "npm",
+        "audit",
+        "--json",
+        "--audit-level=high",
+        "--registry=https://registry.npmjs.org"
+      ],
+      "status": 0,
+      "reportedAdvisories": 0,
+      "report": "dependency-audit.json"
+    }
+  ],
+  "sourceFingerprintsMatch": true,
+  "sourceCount": 22,
+  "buildInputCount": 12,
+  "buildOutputCount": 3,
+  "physicalHeadset": false,
+  "physicalAudio": false,
+  "securityReview": "Implementation self-review complete; independent review and root current-head CI still required",
+  "historicalFailures": {
+    "run-yFbquW": "failed-ended-error-code.json",
+    "run-MZgKpH": "failed-emulator-reference-offset.json",
+    "run-THprLC": "failed-wait-after-successful-ray-exit.json"
+  },
+  "imagesVisuallyInspected": [
+    "emulated-stereo.png"
+  ],
+  "noProviderCredentialsOrPaidCalls": true,
+  "iwerOrLayersPolyfillInApplicationSourceMap": false,
+  "applicationSourceMapSha256": "80f88c54601daeb360f76dd94fdf4de5b94b0ae0f41aabc56d6d61d78ff08ee1"
+}

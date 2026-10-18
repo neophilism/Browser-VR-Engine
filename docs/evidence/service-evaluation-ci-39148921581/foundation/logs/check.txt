@@ -1,0 +1,274 @@
+
+> browser-vr-engine-workspace@0.0.0 check
+> npm run check:plan && npm run check:boundaries && npm run check:ci-policy && npm run check:secret-exposure && npm test && npm run test:tooling
+
+
+> browser-vr-engine-workspace@0.0.0 check:plan
+> node scripts/check-plan.mjs
+
+Plan validated: 176 units, engine-first sequencing, consistent evidence.
+
+> browser-vr-engine-workspace@0.0.0 check:boundaries
+> node scripts/check-boundaries.mjs
+
+Engine static imports and package dependencies respect the application boundary.
+
+> browser-vr-engine-workspace@0.0.0 check:ci-policy
+> node scripts/check-ci-policy.mjs
+
+CI events, pins, permissions, failure gate and artifact policy passed.
+
+> browser-vr-engine-workspace@0.0.0 check:secret-exposure
+> node scripts/check-secret-exposure.mjs
+
+Baseline credential filename/pattern scan passed; this is not a comprehensive secret audit.
+
+> browser-vr-engine-workspace@0.0.0 test
+> npm run build && npm run test --workspace @browser-vr-engine/core && npm run test --workspace @browser-vr-engine/contracts && npm run test --workspace @browser-vr-engine/qualification-fixtures
+
+
+> browser-vr-engine-workspace@0.0.0 build
+> tsc -b
+
+
+> @browser-vr-engine/core@0.0.0 test
+> node --test test/*.test.mjs
+
+✔ the public ESM export loads in a Node host without browser or conference services (5.823701ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 60.642927
+
+> @browser-vr-engine/contracts@0.1.0 test
+> tsc -p test/tsconfig.json && node --test --test-isolation=none test/*.test.mjs
+
+✔ canonical schema version, coordinate convention and unknown fields are enforced (7.678436ms)
+✔ optional extensions round trip unchanged while required unsupported components fail (2.926418ms)
+✔ hierarchy references, cycles, duplicate identifiers and depth limits fail before loading (4.266732ms)
+✔ finite normalized transforms and affine invertibility are required (1.517435ms)
+✔ prototype-sensitive data, cycles, sparse arrays and executable accessors are rejected (0.923295ms)
+✔ plain data validation enforces depth, string, value, byte and error budgets (1.177229ms)
+✔ resource bindings and collider constraints produce actionable diagnostics (1.119892ms)
+✔ one media playback identity cannot refer to different source assets (1.729241ms)
+✔ scenario order, targets and unique assertion checkpoints are validated (2.294066ms)
+✔ canonical JSON is stable, hashes content, and rejects hidden or non-JSON state (8.906531ms)
+✔ JSON Schema export has stable IDs and comes from the same authored schemas (1.971674ms)
+✔ source units and handedness conversion use independently specified points (0.290453ms)
+✔ parent-first column-major composition preserves hierarchy and signed scale (0.34785ms)
+✔ listener forward is minus Z and yaw rotates head/listener together (0.379489ms)
+✔ reference attenuation has equal calibrated corner gains and smooth finite cutoff (3.362433ms)
+✔ nonfinite math inputs and overflowing output cannot silently enter runtime state (0.270325ms)
+✔ logical replay is reproducible and releases its resources (8.69967ms)
+✔ a simulated success cannot satisfy a browser or physical headset requirement (2.925165ms)
+✔ missing observations stay not-run and failed or unsupported evidence is explicit (3.153052ms)
+✔ assessment rejects stale input hashes, unknown assertions and duplicate records (2.005147ms)
+✔ a real harness supplies scheduling while unscheduled replay makes no timing claim (1.119201ms)
+✔ runs use frozen input snapshots and bind results to the original input content (1.256136ms)
+✔ load/action/observation failures still dispose the adapter exactly once (2.94351ms)
+✔ aborting after load prevents actions and disposes partial resources (0.767794ms)
+✔ invalid inputs and pre-aborted runs also release the supplied adapter (0.799023ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 178.33405
+
+> @browser-vr-engine/qualification-fixtures@0.1.0 test
+> node --test --test-isolation=none test/*.test.mjs && npm run check:fixtures
+
+✔ the executable generator detects changed, missing and untracked fixture files (994.159955ms)
+✔ generation refuses symlink destinations and cannot overwrite their target (324.35754ms)
+✔ every document validates and comparison hashes bind the entire fixture input set (19.753446ms)
+✔ regeneration is byte-identical and catalog integrity matches every original resource (21.551175ms)
+✔ all generated model files pass the official Khronos glTF validator without issues (37.494293ms)
+✔ the bird contains actual skin weights, inverse binds, two animation clips and a morph (1.20935ms)
+✔ architecture and invisible box colliders have identical transforms and open passage geometry (0.965444ms)
+✔ the coordinate model has meter axes and triangle winding agrees with surface normals (0.751144ms)
+✔ four music corners, creature audio and wall audio are independently bound (0.304569ms)
+✔ calibrated PCM loops have their declared format, RMS and integer-cycle frequency (12.777282ms)
+✔ local asset port verifies hashes, denies undeclared revisions and copies bytes at boundaries (3.157399ms)
+✔ fixture grants are explicit and scoped, with denied grants as the default (0.462935ms)
+✔ catalog traversal, unsupported versions and mislabeled workload clients fail validation (1.226542ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1592.704933
+
+> @browser-vr-engine/qualification-fixtures@0.1.0 check:fixtures
+> node scripts/generate.mjs --check
+
+Verified 19 reproducible fixture files (55 entities).
+
+> browser-vr-engine-workspace@0.0.0 test:tooling
+> node --test scripts/test/*.test.mjs
+
+✔ explicit package inventories require public declarations, fixture data and regeneration sources (5.709628ms)
+✔ packed files cannot include undeclared private files, traversal or duplicate entries (0.554045ms)
+✔ the root TypeBox declaration must match an exact public URL and complete SHA-512 pin (1.335865ms)
+✔ external installation accepts only the verified local archives and pinned TypeBox (0.715116ms)
+✔ external lock rejects missing TypeBox (0.352138ms)
+✔ external lock rejects changed dependency version (0.282227ms)
+✔ external lock rejects changed dependency integrity (0.605862ms)
+✔ external lock rejects changed dependency URL (0.512638ms)
+✔ external lock rejects workspace link (0.474687ms)
+✔ external lock rejects workspace path (0.64786ms)
+✔ external lock rejects changed local archive (0.423822ms)
+✔ external lock rejects unexpected dependency (0.244336ms)
+✔ external lock rejects substituted root dependency (0.211555ms)
+✔ child environments allow tool settings and exclude arbitrary credentials and code injection (2.11441ms)
+✔ allowlisting never reads unrelated parent keys (0.209631ms)
+✔ actual child commands cannot observe synthetic provider, publishing or runtime credentials (32.309906ms)
+✔ complete synthetic evaluation envelope validates without claiming actual browser execution (7.188861ms)
+✔ evaluation evidence rejects local evidence (1.086129ms)
+✔ evaluation evidence rejects dirty source (0.504002ms)
+✔ evaluation evidence rejects incomplete run (0.686563ms)
+✔ evaluation evidence rejects unresolved failure (0.538205ms)
+✔ evaluation evidence rejects missing merge-group base (0.460671ms)
+✔ evaluation evidence rejects missing installation (0.59419ms)
+✔ evaluation evidence rejects reordered stages (0.448919ms)
+✔ evaluation evidence rejects substituted command (0.522095ms)
+✔ evaluation evidence rejects wrong cwd (0.652419ms)
+✔ evaluation evidence rejects failed browser step (0.439642ms)
+✔ evaluation evidence rejects process error alongside zero exit (2.118358ms)
+✔ evaluation evidence rejects process signal alongside zero exit (0.713493ms)
+✔ evaluation evidence rejects skipped browser install (0.46018ms)
+✔ evaluation evidence rejects missing nested lock (1.068065ms)
+✔ evaluation evidence rejects missing fresh browser run (0.435925ms)
+✔ evaluation evidence rejects historical browser path (0.626491ms)
+✔ evaluation evidence rejects invalid browser time bounds (0.580505ms)
+✔ evaluation evidence rejects missing browser report (0.601805ms)
+✔ evaluation evidence rejects missing build report (0.899711ms)
+✔ evaluation evidence rejects missing toolkit audit (0.643512ms)
+✔ evaluation evidence rejects traversal report (0.465559ms)
+✔ evaluation evidence rejects duplicate report (0.392303ms)
+✔ changed evaluation head, tested source, base or attempt invalidates the receipt (2.211502ms)
+✔ downloaded evaluation report bytes and paths are independently verified (65.44856ms)
+✔ browser binding validator accepts internally consistent synthetic input without establishing execution (64.696916ms)
+✔ browser verifier rejects old 17-check suite even after recalculating report hashes (50.77817ms)
+✔ browser verifier rejects missing source fingerprint even after recalculating report hashes (38.440149ms)
+✔ browser verifier rejects changed source bytes even after recalculating report hashes (45.775665ms)
+✔ browser verifier rejects changed build input even after recalculating report hashes (70.11914ms)
+✔ browser verifier rejects changed frozen comparison even after recalculating report hashes (45.863835ms)
+✔ browser verifier rejects stale run before its command even after recalculating report hashes (40.683641ms)
+✔ browser verifier rejects different stdout run directory even after recalculating report hashes (34.821158ms)
+✔ browser verifier rejects duplicate success line even after recalculating report hashes (39.601824ms)
+✔ browser verifier rejects nonzero browser exit even after recalculating report hashes (59.139127ms)
+✔ browser verifier rejects browser spawn error with zero exit even after recalculating report hashes (56.950764ms)
+✔ browser verifier rejects failure hidden by passing counts even after recalculating report hashes (72.472504ms)
+✔ browser verifier rejects unsupported full qualification claim even after recalculating report hashes (51.999467ms)
+✔ browser verifier rejects physical-device claim in software run even after recalculating report hashes (58.940257ms)
+✔ browser verifier rejects malformed nested check even after recalculating report hashes (56.250445ms)
+✔ browser verifier checks raw retained bytes against manifest digests (62.311072ms)
+✔ evaluation runner preserves real child failure and excludes unrelated credentials (162.404026ms)
+✔ downloaded evidence is checked against current nested locks and immutable shared inputs (8.688529ms)
+✔ audit validation rejects blocked or inconsistent registry evidence and failed audit commands (7.455169ms)
+✔ evaluation file reader rejects traversal and symlink escapes before reading (3.610395ms)
+✔ retained screenshots must be a complete, bounded image rather than a PNG signature (6.323043ms)
+✔ complete synthetic evidence validates its schema, without asserting actual execution (3.841878ms)
+✔ evidence mutation rejects local result promoted to hosted (0.67999ms)
+✔ evidence mutation rejects dirty checkout (0.400328ms)
+✔ evidence mutation rejects wrong repository (0.394216ms)
+✔ evidence mutation rejects missing command (0.477663ms)
+✔ evidence mutation rejects duplicate command (0.55658ms)
+✔ evidence mutation rejects substituted command under valid ID (0.409435ms)
+✔ evidence mutation rejects failed command with uploaded logs (0.35323ms)
+✔ evidence mutation rejects missing dependency report (0.377976ms)
+✔ evidence mutation rejects duplicate report (0.537665ms)
+✔ evidence mutation rejects failed completion (0.368488ms)
+✔ evidence mutation rejects wrong workflow (1.218587ms)
+✔ evidence mutation rejects inactive suite promoted without runner (0.298498ms)
+✔ a changed head/base/tested commit or run attempt invalidates the candidate evidence (0.618807ms)
+✔ artifact identities are deterministic and distinguish retries; unsafe names fail (1.131514ms)
+✔ the job aggregate requires the exact expected job set and successful outcomes (0.950977ms)
+✔ report bytes, omissions, and traversal are independently checked (42.567436ms)
+✔ real child-command exits propagate failure and redact synthetic credential markers (87.116663ms)
+✔ suite registry and shard evidence reject disabled, missing, duplicate or failed work (0.764348ms)
+✔ the actual current plan and ledger pass structural validation (4.67261ms)
+✔ plan mutation rejects duplicate card (4.534886ms)
+✔ plan mutation rejects malformed card (4.770684ms)
+✔ plan mutation rejects unknown dependency (2.112828ms)
+✔ plan mutation rejects dependency cycle (2.188619ms)
+✔ plan mutation rejects non-array dependencies (4.292195ms)
+✔ plan mutation rejects application import in dependency graph (3.792486ms)
+✔ plan mutation rejects removed engine-first gate (1.379497ms)
+✔ plan mutation rejects missing progress (2.054037ms)
+✔ plan mutation rejects duplicate progress (2.01007ms)
+✔ plan mutation rejects malformed progress (2.934458ms)
+✔ plan mutation rejects empty acceptance (2.174653ms)
+✔ plan mutation rejects blocked without reason (1.781058ms)
+✔ plan mutation rejects unproved verification (1.75541ms)
+✔ plan mutation rejects accepted before dependency (2.624213ms)
+✔ plan mutation rejects wrong PR repository (1.984722ms)
+✔ plan mutation rejects deployment inferred from acceptance (1.542642ms)
+✔ plan mutation rejects qualification without device evidence (1.697221ms)
+✔ historical accepted evidence survives a new implementing card without claiming deployment (4.426089ms)
+✔ new plan namespaces can be added without a fixed total-card assertion (3.186604ms)
+✔ missing evidence files cannot satisfy a structural reference (22.147275ms)
+✔ the actual workflow conforms to the checked-in policy (23.706022ms)
+✔ required package and example commands include every foundation host and suite (2.924263ms)
+✔ workflow policy rejects floating action (30.903457ms)
+✔ workflow policy rejects privileged trigger (17.445935ms)
+✔ workflow policy rejects write token (12.814923ms)
+✔ workflow policy rejects persistent checkout credentials (16.833932ms)
+✔ workflow policy rejects ignored failure (8.171907ms)
+✔ workflow policy rejects local preview replacing hosted run (7.745021ms)
+✔ workflow policy rejects skipped hosted run (12.445301ms)
+✔ workflow policy rejects missing hosted runner (10.162658ms)
+✔ workflow policy rejects missing artifact upload (7.796556ms)
+✔ workflow policy rejects missing evaluation job (13.794993ms)
+✔ workflow policy rejects skipped evaluation job (9.859ms)
+✔ workflow policy rejects local evaluation replacing hosted run (10.217019ms)
+✔ workflow policy rejects missing evaluation artifact (10.877557ms)
+✔ workflow policy rejects missing service job (11.582961ms)
+✔ workflow policy rejects skipped service job (7.567685ms)
+✔ workflow policy rejects local service replacing hosted run (8.718921ms)
+✔ workflow policy rejects skipped service runner (12.421759ms)
+✔ workflow policy rejects missing Java setup (13.919437ms)
+✔ workflow policy rejects floating Java action (13.144899ms)
+✔ workflow policy rejects wrong Java generation (10.206669ms)
+✔ workflow policy rejects Java settings overwrite (11.707364ms)
+✔ workflow policy rejects missing service artifact (11.337392ms)
+✔ workflow policy rejects service artifact includes binary cache (9.806693ms)
+✔ workflow policy rejects service artifact reuses a stale name (12.379489ms)
+✔ workflow policy rejects service omitted from required gate (8.286821ms)
+✔ workflow policy rejects service result replaced by constant (5.589233ms)
+✔ workflow policy rejects evaluation omitted from required gate (5.629428ms)
+✔ workflow policy rejects conditional artifact upload (5.633926ms)
+✔ workflow policy rejects skipped foundation job (7.226752ms)
+✔ workflow policy rejects skipped required gate (8.383394ms)
+✔ workflow policy rejects skipped required shell step (9.159874ms)
+✔ workflow policy rejects always-green gate (8.540676ms)
+✔ workflow policy rejects broad artifact upload (12.28864ms)
+✔ workflow policy rejects hidden artifact upload (9.480597ms)
+✔ workflow policy rejects secret access (7.029323ms)
+✔ workflow policy rejects bracketed secret access (12.287668ms)
+✔ workflow policy rejects path-filtered required check (7.333131ms)
+✔ workflow policy rejects changed target branch (7.50923ms)
+✔ the actual required shell gate fails on failed, skipped, cancelled and absent jobs (56.963974ms)
+✔ duplicate YAML keys cannot hide a workflow definition (4.11087ms)
+✔ static engine boundary catches imports, re-exports, require and package dependencies (3.260291ms)
+✔ secret diagnostics never include the synthetic secret value (1.569833ms)
+✔ assignment and structured redaction cover arbitrary credential names without breaking JSON (0.972016ms)
+✔ dependency auditing distinguishes advisories, lower findings and registry/tool failures (0.826644ms)
+✔ package inventory rejects missing public exports and leaked private files (1.331528ms)
+✔ service CI receipts reject stale, incomplete and unsafe synthetic evidence (915.3896ms)
+ℹ tests 150
+ℹ suites 0
+ℹ pass 150
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1325.844438

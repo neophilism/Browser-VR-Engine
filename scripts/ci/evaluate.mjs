@@ -5,7 +5,7 @@ import { resolve, relative, isAbsolute } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { crc32, inflateSync } from 'node:zlib';
 import { digest, repository, shaPattern } from './evidence.mjs';
-import { evaluationCommands, evaluationReportPath, validateEvaluationEvidence, validateEvaluationFiles } from './evaluation-evidence.mjs';
+import { evaluationCommands, evaluationReportPath, evaluationFileLimit, validateEvaluationEvidence, validateEvaluationFiles } from './evaluation-evidence.mjs';
 import { childEnvironment } from './environment.mjs';
 import { classifyAudit } from '../check-dependencies.mjs';
 import { redact } from '../check-secret-exposure.mjs';
@@ -26,12 +26,13 @@ const fixtureDirectory = 'packages/qualification-fixtures/fixtures';
 const candidateDirectory = 'evaluations/babylon-vrspace';
 const metadataFiles = ['world.json', 'catalog.json', 'scenario.json', 'thresholds.json', 'workloads.json', 'devices.json', 'schema-set.json', 'comparison.json'];
 export const requiredF05BuildInputs = Object.freeze([
-  'src/main.js', 'src/spatial-audio.js', 'src/audio-meter.js', 'src/import-policy.js', 'src/import-resources.js',
+  'src/main.js', 'src/xr-session.js', 'src/spatial-audio.js', 'src/audio-meter.js', 'src/import-policy.js', 'src/import-resources.js',
   'index.html', 'package.json', 'package-lock.json', 'fixture-pins.json', 'vendor/vrspace/asset-loader.js', 'build.mjs'
 ]);
 export const requiredF05SourceFiles = Object.freeze([
   ...requiredF05BuildInputs, 'config.mjs', 'environment.mjs', 'fixtures.mjs', 'server.mjs', 'run.mjs',
-  'browser-checks.mjs', 'test/local-server.test.mjs', 'test/import-policy.test.mjs'
+  'browser-checks.mjs', 'test/local-server.test.mjs', 'test/import-policy.test.mjs',
+  'test/xr-session.test.mjs', 'test/xr-browser-checks.mjs', 'test/browser-finalize.mjs'
 ]);
 export const requiredF05Checks = Object.freeze([
   'real-render-and-frozen-fixtures', 'user-start-activation', 'animated-skinned-creature-and-attached-source',
@@ -43,6 +44,15 @@ export const requiredF05Checks = Object.freeze([
   'unmodified-vrspace-asset-loader-reuse', 'devtools-observed-single-context-audio-routing',
   'dispose-releases-browser-resources-and-input-ownership'
 ]);
+export const requiredF05XRChecks = Object.freeze([
+  'emulated-capability-does-not-request-session', 'emulated-permission-denial-visible-and-dismissible',
+  'emulated-cancelled-late-grant-never-starts-xr-renderer', 'emulated-session-renders-stereo-through-babylon',
+  'emulated-head-pose-drives-one-shared-spatial-listener', 'emulated-visibility-mutes-pauses-input-and-restores-output',
+  'emulated-thumbstick-moves-and-collides-with-frozen-thin-barrier',
+  'emulated-physical-head-overlap-warns-without-clamping-tracking',
+  'emulated-controller-ray-select-exits-with-renderer-cleanup', 'emulated-dispose-ends-live-session-and-removes-controls'
+]);
+const xrFiles = Object.freeze(['xr-browser-checks.json', 'emulated-stereo.png', 'emulated-failed.png']);
 const browserFiles = Object.freeze([
   'browser-checks.json', 'f05-summary.json', 'courtyard-verified.png', 'f03-before-activation.png',
   'derived-prop.glb', 'browser-checks-fatal.json', 'browser-checks-fatal.png'
@@ -203,8 +213,9 @@ export async function validateBrowserEvidence(report, summary, {
   if (report.runStatus !== 'passed' || summary.runStatus !== 'passed' || report.qualificationStatus !== 'incomplete' || summary.qualificationStatus !== 'incomplete') errors.push('Browser subset did not pass with honest incomplete qualification');
   if (!Array.isArray(report.checks) || !equal(report.checks.map(check => check?.id), requiredF05Checks)
     || report.checks.some(check => check?.status !== 'passed' || check?.method !== 'real-browser')) errors.push('Required current 19 browser checks are missing, changed or failing');
-  const counts = { passed: requiredF05Checks.length, failed: 0, pageErrors: 0, failedRequests: 0 };
+  const counts = { passed: requiredF05Checks.length, failed: 0, pageErrors: 0, failedRequests: 0, logOverflow: 0 };
   if (!equal(report.counts, counts) || !equal(summary.counts, counts)) errors.push('Browser check/error/request counts are invalid');
+  if (!Array.isArray(report.finalizationErrors) || report.finalizationErrors.length || !equal(summary.finalizationErrors, report.finalizationErrors)) errors.push('Browser finalization did not complete cleanly');
   if (!Array.isArray(report.failedRequests) || report.failedRequests.length !== 0) errors.push('Browser contains failed requests');
   if (!Array.isArray(report.logs) || report.logs.some(log => !object(log) || !['warning', 'warn'].includes(log.type))) errors.push('Browser contains page errors or invalid diagnostics');
   if (!Array.isArray(report.missingEvidence) || !report.missingEvidence.length || report.missingEvidence.some(item => typeof item !== 'string' || !item.trim()) || !equal(summary.missingEvidence, report.missingEvidence)) errors.push('Browser qualification limitations are missing or inconsistent');
@@ -217,7 +228,9 @@ export async function validateBrowserEvidence(report, summary, {
   const times = [browserCommand?.startedAt, report.startedAt, report.timestamp, browserCommand?.finishedAt].map(value => typeof value === 'string' ? Date.parse(value) : NaN);
   if (times.some(time => !Number.isFinite(time)) || times.some((time, i) => i > 0 && time < times[i - 1])
     || binding.startedAt !== report.startedAt || binding.finishedAt !== report.timestamp) errors.push('Browser evidence is stale or outside its command time bounds');
-  if (browserCommand?.id !== 'f05-browser' || browserCommand?.outcome !== 'passed' || browserCommand?.exitCode !== 0 || browserCommand.errorCode || browserCommand.signal) errors.push('Browser command did not complete successfully');
+  const expectedCommand = evaluationCommands.find(command => command.id === 'f05-browser');
+  if (browserCommand?.id !== expectedCommand.id || browserCommand?.cwd !== expectedCommand.cwd || !equal(browserCommand?.argv, expectedCommand.argv)
+    || browserCommand?.outcome !== 'passed' || browserCommand?.exitCode !== 0 || browserCommand.errorCode || browserCommand.signal) errors.push('Browser command did not complete successfully');
   const consoleResults = browserConsoleResults(browserCommand?.log);
   if (consoleResults.length !== 1 || consoleResults[0].output !== binding.runDirectory || consoleResults[0].runStatus !== 'passed'
     || !Object.entries(counts).every(([key, value]) => consoleResults[0][key] === value)) errors.push('Browser command output does not identify this fresh run');
@@ -230,6 +243,56 @@ export async function validateBrowserEvidence(report, summary, {
     if (!Buffer.isBuffer(bytes) || typeof binding[field] !== 'string' || !hashPattern.test(binding[field])
       || digest(bytes) !== binding[field] || entry?.sha256 !== binding[field] || entry?.bytes !== bytes.length) errors.push(`Browser ${field} is not bound to the collected file`);
   }
+  errors.push(...await validateF05RunInputs(report, { root, binding, buildBytes, requireBuildOutputs, kind: 'desktop' }));
+  return errors;
+}
+
+export async function validateXRBrowserEvidence(report, {
+  root, record, xrCommand, requireBuildOutputs = false,
+  reportBytes = report ? Buffer.from(pretty(report)) : null,
+  buildBytes = report?.build ? Buffer.from(pretty(report.build)) : null,
+  screenshotBytes = null,
+} = {}) {
+  const errors = [];
+  if (!object(report) || !object(record?.xr)) return ['Missing fresh emulated XR result binding'];
+  const binding = record.xr, files = Array.isArray(record.files) ? record.files : [];
+  if (typeof binding.runDirectory !== 'string' || !/^artifacts\/xr-runs\/run-[A-Za-z0-9]+$/.test(binding.runDirectory)) errors.push('Invalid fresh XR run directory');
+  if (files.some(item => item?.path === 'xr/emulated-failed.png')) errors.push('Passing XR evidence contains a failed-run artifact');
+  if (report.runStatus !== 'passed' || report.qualificationStatus !== 'incomplete'
+    || report.method !== 'emulated-browser' || report.physicalHeadset !== false || report.physicalAudio !== false) errors.push('XR evidence must remain explicitly emulated with incomplete physical qualification');
+  if (!Array.isArray(report.checks) || !equal(report.checks.map(check => check?.id), requiredF05XRChecks)
+    || report.checks.some(check => check?.status !== 'passed' || check?.method !== 'emulated-browser')) errors.push('Required current 10 emulated XR checks are missing, changed or failing');
+  const counts = { passed: requiredF05XRChecks.length, failed: 0, pageErrors: 0, failedRequests: 0, logOverflow: 0 };
+  if (!equal(report.counts, counts)) errors.push('XR check/error/request counts are invalid');
+  if (!Array.isArray(report.finalizationErrors) || report.finalizationErrors.length) errors.push('XR finalization did not complete cleanly');
+  if (!Array.isArray(report.failedRequests) || report.failedRequests.length) errors.push('XR contains failed requests');
+  if (!Array.isArray(report.logs) || report.logs.some(log => !object(log) || !['warning', 'warn'].includes(log.type))) errors.push('XR contains page errors or invalid diagnostics');
+  if (!Array.isArray(report.missingEvidence) || !report.missingEvidence.length || report.missingEvidence.some(item => typeof item !== 'string' || !item.trim())) errors.push('XR qualification limitations are missing');
+  const times = [xrCommand?.startedAt, report.startedAt, report.timestamp, xrCommand?.finishedAt].map(value => typeof value === 'string' ? Date.parse(value) : NaN);
+  if (times.some(time => !Number.isFinite(time)) || times.some((time, index) => index > 0 && time < times[index - 1])
+    || binding.startedAt !== report.startedAt || binding.finishedAt !== report.timestamp) errors.push('XR evidence is stale or outside its command time bounds');
+  const expectedCommand = evaluationCommands.find(command => command.id === 'f05-xr-browser');
+  if (xrCommand?.id !== expectedCommand.id || xrCommand?.cwd !== expectedCommand.cwd || !equal(xrCommand?.argv, expectedCommand.argv)
+    || xrCommand?.outcome !== 'passed' || xrCommand?.exitCode !== 0 || xrCommand.errorCode || xrCommand.signal) errors.push('XR command did not complete successfully');
+  const consoleResults = browserConsoleResults(xrCommand?.log);
+  if (consoleResults.length !== 1 || consoleResults[0].output !== binding.runDirectory || consoleResults[0].runStatus !== 'passed'
+    || !Object.entries(counts).every(([key, value]) => consoleResults[0][key] === value)) errors.push('XR command output does not identify this fresh run');
+  for (const [field, path, bytes] of [
+    ['reportSha256', 'xr/xr-browser-checks.json', reportBytes],
+    ['buildSha256', 'xr/build.json', buildBytes],
+    ['screenshotSha256', 'xr/emulated-stereo.png', screenshotBytes],
+  ]) {
+    const entry = files.find(item => item?.path === path);
+    if (!Buffer.isBuffer(bytes) || typeof binding[field] !== 'string' || !hashPattern.test(binding[field])
+      || digest(bytes) !== binding[field] || entry?.sha256 !== binding[field] || entry?.bytes !== bytes.length) errors.push(`XR ${field} is not bound to the collected file`);
+  }
+  errors.push(...validateEvaluationScreenshot(screenshotBytes));
+  errors.push(...await validateF05RunInputs(report, { root, binding, buildBytes, requireBuildOutputs, kind: 'xr' }));
+  return errors;
+}
+
+async function validateF05RunInputs(report, { root, binding, buildBytes, requireBuildOutputs, kind }) {
+  const errors = [];
   let build;
   try { build = JSON.parse(buildBytes); if (!equal(build, report.build)) errors.push('Browser report uses a different build'); }
   catch { errors.push('Missing or invalid browser build report'); }
@@ -262,7 +325,9 @@ export async function validateBrowserEvidence(report, summary, {
     }
     const pkg = await jsonFile(root, `${candidateDirectory}/package.json`);
     const vendor = await jsonFile(root, `${candidateDirectory}/vendor/vrspace/provenance.json`);
-    const expectedCandidate = { babylon: pkg.dependencies['@babylonjs/core'], rapier: pkg.dependencies['@dimforge/rapier3d-compat'], vrspaceCommit: vendor.commit };
+    const expectedCandidate = kind === 'xr'
+      ? { babylon: pkg.dependencies['@babylonjs/core'], rapier: pkg.dependencies['@dimforge/rapier3d-compat'], iwer: pkg.devDependencies.iwer, testOnlyAdapter: 'IWER getOffsetReferenceSpace forwards originOffset.matrix; pre-patch negative control required' }
+      : { babylon: pkg.dependencies['@babylonjs/core'], rapier: pkg.dependencies['@dimforge/rapier3d-compat'], vrspaceCommit: vendor.commit };
     if (!equal(report.candidate, expectedCandidate)) errors.push('Browser candidate differs from checked dependencies/provenance');
     if (digest(await readContainedEvaluationFile(root, `${candidateDirectory}/vendor/vrspace/asset-loader.js`)) !== vendor.sourceSha256) errors.push('Vendor source differs from checked provenance');
     const env = report.environment;
@@ -287,8 +352,9 @@ export async function validateEvaluationAudits(record, directory) {
   return errors;
 }
 
-async function runDirectories(root) {
-  const directory = resolve(root, candidateDirectory, 'artifacts/runs');
+export async function evaluationRunDirectories(root, kind = 'desktop') {
+  if (!['desktop', 'xr'].includes(kind)) throw new Error('Unknown evaluation run kind');
+  const directory = resolve(root, candidateDirectory, kind === 'xr' ? 'artifacts/xr-runs' : 'artifacts/runs');
   try {
     const resolved = await realpath(directory), rel = relative(await realpath(root), resolved);
     if (rel.startsWith('..') || isAbsolute(rel) || (await lstat(directory)).isSymbolicLink()) throw new Error('Unsafe browser run directory');
@@ -300,13 +366,13 @@ async function runDirectories(root) {
   } catch (error) { if (error.code === 'ENOENT') return new Set(); throw error; }
 }
 async function putFile(record, output, path, bytes) {
-  if (!evaluationReportPath.test(path)) throw new Error('Report is outside the evaluation allowlist');
+  if (!evaluationReportPath.test(path) || Buffer.byteLength(bytes) > evaluationFileLimit(path)) throw new Error('Report is outside the evaluation path/size allowlist');
   await writeFile(resolve(output, path), bytes);
   record.files = record.files.filter(item => item.path !== path);
   record.files.push({ path, bytes: Buffer.byteLength(bytes), sha256: digest(bytes) });
 }
 async function collectBrowser(record, root, output, before, command) {
-  const after = await runDirectories(root), added = [...after].filter(name => !before.has(name));
+  const after = await evaluationRunDirectories(root), added = [...after].filter(name => !before.has(name));
   if (added.length !== 1) throw new Error('Browser command did not create exactly one new unique run directory');
   const runDirectory = `artifacts/runs/${added[0]}`;
   const directory = resolve(root, candidateDirectory, runDirectory);
@@ -330,6 +396,28 @@ async function collectBrowser(record, root, output, before, command) {
   if (errors.length) throw new Error(errors.join('\n'));
 }
 
+export async function collectXREvidence(record, root, output, before, command) {
+  const after = await evaluationRunDirectories(root, 'xr'), added = [...after].filter(name => !before.has(name));
+  if (added.length !== 1) throw new Error('XR command did not create exactly one new unique run directory');
+  const runDirectory = `artifacts/xr-runs/${added[0]}`;
+  const directory = resolve(root, candidateDirectory, runDirectory), copied = new Map();
+  for (const name of xrFiles) {
+    try {
+      const bytes = await readContainedEvaluationFile(directory, name, evaluationFileLimit(`xr/${name}`));
+      await putFile(record, output, `xr/${name}`, bytes); copied.set(name, bytes);
+    } catch (error) { if (error.code !== 'ENOENT') throw error; }
+  }
+  const reportBytes = copied.get('xr-browser-checks.json'), screenshotBytes = copied.get('emulated-stereo.png');
+  if (!reportBytes || !screenshotBytes) throw new Error('Fresh XR report or screenshot is missing');
+  const report = JSON.parse(reportBytes);
+  const buildBytes = await readContainedEvaluationFile(root, `${candidateDirectory}/dist/build.json`, evaluationFileLimit('xr/build.json'));
+  await putFile(record, output, 'xr/build.json', buildBytes);
+  record.xr = { runDirectory, startedAt: report.startedAt, finishedAt: report.timestamp,
+    reportSha256: digest(reportBytes), buildSha256: digest(buildBytes), screenshotSha256: digest(screenshotBytes) };
+  const errors = await validateXRBrowserEvidence(report, { root, record, xrCommand: command, requireBuildOutputs: true, reportBytes, buildBytes, screenshotBytes });
+  if (errors.length) throw new Error(errors.join('\n'));
+}
+
 async function main() {
   if (process.argv.slice(2).some(arg => arg !== '--local') || process.argv.length > 3) throw new Error('Usage: node scripts/ci/evaluate.mjs [--local]');
   const local = process.argv.includes('--local');
@@ -337,7 +425,7 @@ async function main() {
   const root = resolve(import.meta.dirname, '../..');
   const output = await ensureDirectory(root, 'artifacts/evaluations');
   await rm(output, { recursive: true, force: true });
-  for (const path of ['artifacts/evaluations/logs', 'artifacts/evaluations/reports/f04', 'artifacts/evaluations/reports/f05', 'artifacts/evaluations/browser', 'artifacts/evaluation-tools/config', 'artifacts/evaluation-tools/npm-cache', 'artifacts/evaluation-tools/browsers']) await ensureDirectory(root, path);
+  for (const path of ['artifacts/evaluations/logs', 'artifacts/evaluations/reports/f04', 'artifacts/evaluations/reports/f05', 'artifacts/evaluations/browser', 'artifacts/evaluations/xr', 'artifacts/evaluation-tools/config', 'artifacts/evaluation-tools/npm-cache', 'artifacts/evaluation-tools/browsers']) await ensureDirectory(root, path);
   const config = resolve(root, 'artifacts/evaluation-tools/config');
   for (const file of ['user.npmrc', 'global.npmrc']) await writeFile(resolve(config, file), '');
   const env = { ...childEnvironment(),
@@ -351,7 +439,7 @@ async function main() {
     mode: local ? 'local' : 'github', eventName: local ? 'local' : process.env.GITHUB_EVENT_NAME,
     startedAt: new Date().toISOString(), commands: [], files: [], failures: [], complete: false,
     scope: { f04: 'Pinned toolkit tests, historical evidence integrity and modern toolkit audit; no fresh Hubs/Spoke runtime, services or headset execution.',
-      f05: 'Fresh real-browser software-rendering subset; full runtime/device/service/production qualification remains incomplete.' }
+      f05: 'Fresh 19-check desktop and separate 10-check emulated XR software-rendering subsets; full runtime/device/service/production qualification remains incomplete.' }
   };
   const write = () => writeFile(resolve(output, 'manifest.json'), pretty(record));
   await write();
@@ -385,7 +473,8 @@ async function main() {
     const prerequisites = {
       'f04-source': ['f04-install'], 'f04-tests': ['f04-install', 'f04-source'], 'f04-history': ['f04-install'],
       'f05-build': ['f05-install'], 'f05-tests': ['f05-install'], 'f05-browser-install': ['f05-install'],
-      'f05-browser': ['f05-install', 'f05-build', 'f05-tests', ...(local ? [] : ['f05-browser-install'])]
+      'f05-browser': ['f05-install', 'f05-build', 'f05-tests', ...(local ? [] : ['f05-browser-install'])],
+      'f05-xr-browser': ['f05-install', 'f05-build', 'f05-tests', ...(local ? [] : ['f05-browser-install'])]
     };
     const timeouts = { 'f04-source': 360_000, 'f05-browser-install': 600_000, 'f04-audit': 45_000, 'f05-audit': 45_000 };
     for (const command of evaluationCommands) {
@@ -395,7 +484,7 @@ async function main() {
       else if (unmet.length) result = { argv: [...command.argv], outcome: 'not_run', exitCode: null, errorCode: null, signal: null, durationMs: 0, log: `Not run: failed prerequisites ${unmet.join(', ')}.\n` };
       else {
         try {
-          if (command.id === 'f05-browser') before = await runDirectories(root);
+          if (command.id === 'f05-browser' || command.id === 'f05-xr-browser') before = await evaluationRunDirectories(root, command.id === 'f05-xr-browser' ? 'xr' : 'desktop');
           if (command.id === 'f05-build') {
             const parent = await ensureDirectory(root, candidateDirectory);
             const dist = resolve(parent, 'dist');
@@ -413,6 +502,10 @@ async function main() {
       await putFile(record, output, `logs/${command.id}.txt`, log);
       if (command.id === 'f05-browser' && before) {
         try { await collectBrowser(record, root, output, before, { id: command.id, cwd: command.cwd, ...result }); }
+        catch (error) { record.failures.push(redact(error.message)); }
+      }
+      if (command.id === 'f05-xr-browser' && before) {
+        try { await collectXREvidence(record, root, output, before, { id: command.id, cwd: command.cwd, ...result }); }
         catch (error) { record.failures.push(redact(error.message)); }
       }
       if (command.id.endsWith('-audit')) {

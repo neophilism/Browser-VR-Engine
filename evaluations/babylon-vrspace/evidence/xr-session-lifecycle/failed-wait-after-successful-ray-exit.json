@@ -1,0 +1,1073 @@
+{
+  "scope": "F05 WebXR software lifecycle under test-only IWER; physical headset qualification remains pending",
+  "method": "emulated-browser",
+  "physicalHeadset": false,
+  "physicalAudio": false,
+  "qualificationStatus": "incomplete",
+  "startedAt": "2026-10-18T17:07:17.322Z",
+  "timestamp": "2026-10-18T17:07:54.195Z",
+  "candidate": {
+    "babylon": "9.30.0",
+    "rapier": "0.21.0",
+    "iwer": "2.6.0",
+    "testOnlyAdapter": "IWER getOffsetReferenceSpace forwards originOffset.matrix; pre-patch negative control required"
+  },
+  "environment": {
+    "browser": "151.0.7922.34",
+    "playwright": "1.62.1",
+    "flags": [
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader",
+      "--autoplay-policy=document-user-activation-required"
+    ],
+    "graphicsMode": "SwiftShader",
+    "physicalGPU": false,
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "dpr": 1
+    }
+  },
+  "fixtureDigests": {
+    "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+    "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+    "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+    "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+    "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+    "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+    "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+    "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+  },
+  "build": {
+    "schemaVersion": 1,
+    "inputs": {
+      "src/main.js": {
+        "bytes": 47970,
+        "sha256": "59f2b4f048530111fa74865758f98eb23b400587465a4da0a220e82a3ca410f9"
+      },
+      "src/xr-session.js": {
+        "bytes": 11219,
+        "sha256": "234a4f478a8f984b2dd4b02450604193c54d58a3554e96cc23d7ee0e768d182f"
+      },
+      "src/spatial-audio.js": {
+        "bytes": 9722,
+        "sha256": "c8e252517b5f6a3ad0119d00c05d1ca401fd04b0ea0eef7a38b9cd4b610d64f0"
+      },
+      "src/audio-meter.js": {
+        "bytes": 2929,
+        "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+      },
+      "src/import-policy.js": {
+        "bytes": 14112,
+        "sha256": "a66d799731635bdf335a45faf3343bee88e2af7bad71a244e9c8ca57b4359bc2"
+      },
+      "src/import-resources.js": {
+        "bytes": 1300,
+        "sha256": "756a4931cd4348a336a659aab87e49bee53b2f798bddfa2e0a4cac49b696c4c4"
+      },
+      "index.html": {
+        "bytes": 5308,
+        "sha256": "47ab476d0419ace4255100c11bab2f430c7ffe0ff9d060d0ce0ffcb3ae126ecd"
+      },
+      "package.json": {
+        "bytes": 768,
+        "sha256": "7584f5bd1d434da3a1f05b531210e369d59eb07b24a626e66e5409fa2c238dc3"
+      },
+      "package-lock.json": {
+        "bytes": 19336,
+        "sha256": "5247d7d4737c6772e9a1654ec395279ab6cf6ffd5263d0ea19d3ce490bcc73b7"
+      },
+      "fixture-pins.json": {
+        "bytes": 1199,
+        "sha256": "7c561df8f41f3b016b80e6b4d17258bc3d76dbe4bf8a6fde8ec5d7fa0511add9"
+      },
+      "vendor/vrspace/asset-loader.js": {
+        "bytes": 10336,
+        "sha256": "1afa505b193dac8f60ee54ea7ccdfd60e9a0620cf561fa393aa570055d23fa06"
+      },
+      "build.mjs": {
+        "bytes": 1211,
+        "sha256": "edafe75c96202949a07a8f328ffcbfa8458b15842afd127bd76adf2dedf016a0"
+      }
+    },
+    "outputs": {
+      "dist/main.js": {
+        "bytes": 22681434,
+        "sha256": "df92a632c5ef7ce9e69e759c16c15a79ca8d2448ca5b28d8a5125af5da5e0ca0"
+      },
+      "dist/main.js.map": {
+        "bytes": 33461899,
+        "sha256": "895d48f2a6dd0ce3798b95d607d822dd418958aeed05bdfcd9442f8aaf8624af"
+      },
+      "dist/audio-meter.js": {
+        "bytes": 2929,
+        "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+      }
+    },
+    "fixtureDigests": {
+      "world": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812",
+      "catalog": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c",
+      "scenario": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d",
+      "thresholds": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0",
+      "workloads": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1",
+      "devices": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932",
+      "schema-set": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b",
+      "comparison": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+    }
+  },
+  "sourceDigests": {
+    "src/main.js": {
+      "bytes": 47970,
+      "sha256": "59f2b4f048530111fa74865758f98eb23b400587465a4da0a220e82a3ca410f9"
+    },
+    "src/xr-session.js": {
+      "bytes": 11219,
+      "sha256": "234a4f478a8f984b2dd4b02450604193c54d58a3554e96cc23d7ee0e768d182f"
+    },
+    "src/spatial-audio.js": {
+      "bytes": 9722,
+      "sha256": "c8e252517b5f6a3ad0119d00c05d1ca401fd04b0ea0eef7a38b9cd4b610d64f0"
+    },
+    "src/audio-meter.js": {
+      "bytes": 2929,
+      "sha256": "715960571f2eab51ba0caddc3fe88c324789f35b5d5bbed979393be23c1a7908"
+    },
+    "src/import-policy.js": {
+      "bytes": 14112,
+      "sha256": "a66d799731635bdf335a45faf3343bee88e2af7bad71a244e9c8ca57b4359bc2"
+    },
+    "src/import-resources.js": {
+      "bytes": 1300,
+      "sha256": "756a4931cd4348a336a659aab87e49bee53b2f798bddfa2e0a4cac49b696c4c4"
+    },
+    "index.html": {
+      "bytes": 5308,
+      "sha256": "47ab476d0419ace4255100c11bab2f430c7ffe0ff9d060d0ce0ffcb3ae126ecd"
+    },
+    "package.json": {
+      "bytes": 768,
+      "sha256": "7584f5bd1d434da3a1f05b531210e369d59eb07b24a626e66e5409fa2c238dc3"
+    },
+    "package-lock.json": {
+      "bytes": 19336,
+      "sha256": "5247d7d4737c6772e9a1654ec395279ab6cf6ffd5263d0ea19d3ce490bcc73b7"
+    },
+    "fixture-pins.json": {
+      "bytes": 1199,
+      "sha256": "7c561df8f41f3b016b80e6b4d17258bc3d76dbe4bf8a6fde8ec5d7fa0511add9"
+    },
+    "vendor/vrspace/asset-loader.js": {
+      "bytes": 10336,
+      "sha256": "1afa505b193dac8f60ee54ea7ccdfd60e9a0620cf561fa393aa570055d23fa06"
+    },
+    "build.mjs": {
+      "bytes": 1211,
+      "sha256": "edafe75c96202949a07a8f328ffcbfa8458b15842afd127bd76adf2dedf016a0"
+    },
+    "config.mjs": {
+      "bytes": 580,
+      "sha256": "654e3b737b57eb3885290fc8ee97de6e54ecd4ecc319c888273af0a6ecd2cc1c"
+    },
+    "environment.mjs": {
+      "bytes": 1660,
+      "sha256": "4b1c895d0f7264b72bbfdad33d12c8589f87e42234f9dd36a0173e049cd46d33"
+    },
+    "fixtures.mjs": {
+      "bytes": 3366,
+      "sha256": "a3e532c9308c3bd6bab6589bdf0991d209dc3c87756dd813f6d49a3a605b1790"
+    },
+    "server.mjs": {
+      "bytes": 4820,
+      "sha256": "3fc12ab773d844a8b0dac0b71cd40142aeefa2311803c1b85b92e6bdaf7a8e24"
+    },
+    "run.mjs": {
+      "bytes": 1717,
+      "sha256": "0c6bfc35af4f0451aa18e42e091826af5f6d97060dff557f9cf8aa1b7e39634f"
+    },
+    "browser-checks.mjs": {
+      "bytes": 31264,
+      "sha256": "31edd197ee00c24dcd45d75a7b670e58c16400fe1018f35d2e373c5c523cdbe8"
+    },
+    "test/local-server.test.mjs": {
+      "bytes": 11694,
+      "sha256": "1bc9ed0a74eb476063a0946e5b45d32af9e8e061b85bf147d375b395cc19ac37"
+    },
+    "test/import-policy.test.mjs": {
+      "bytes": 8376,
+      "sha256": "0607930398f8cc3a54b56ebfe8cdbc46047481f9a813617cf0127e060c0c2fd9"
+    },
+    "test/xr-session.test.mjs": {
+      "bytes": 14235,
+      "sha256": "30de566a982bf8d7c964ab6d7adf7f2a58f0d216850bd557bbe7cd1a9b70c56e"
+    },
+    "test/xr-browser-checks.mjs": {
+      "bytes": 18972,
+      "sha256": "3e5af4a158fcc7a78f879947ce793d0492346b1ddbf0a9bad935fd941bb78be4"
+    }
+  },
+  "checks": [
+    {
+      "id": "emulated-capability-does-not-request-session",
+      "status": "passed",
+      "method": "emulated-browser",
+      "detail": {
+        "xr": {
+          "phase": "ready",
+          "supported": true,
+          "active": false,
+          "busy": false,
+          "visibility": null,
+          "frames": 0,
+          "referenceSpace": null,
+          "error": null,
+          "qualification": "physical-device-evidence-pending",
+          "pose": null,
+          "activeCamera": "desktop-camera",
+          "rigCameras": 1,
+          "baseLayer": false,
+          "visuals": null
+        },
+        "requests": [],
+        "offsetAdapter": {
+          "invalidBefore": 16,
+          "corrected": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            3,
+            0,
+            -7,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "id": "emulated-permission-denial-visible-and-dismissible",
+      "status": "passed",
+      "method": "emulated-browser",
+      "detail": {
+        "xr": {
+          "phase": "error",
+          "supported": true,
+          "active": false,
+          "busy": false,
+          "visibility": null,
+          "frames": 0,
+          "referenceSpace": null,
+          "error": {
+            "code": "NotAllowedError",
+            "message": "VR permission was denied. Allow access in the browser, then try again."
+          },
+          "qualification": "physical-device-evidence-pending",
+          "pose": null,
+          "activeCamera": "desktop-camera",
+          "rigCameras": 1,
+          "baseLayer": false,
+          "visuals": null
+        },
+        "syntheticFault": "requestSession rejection"
+      }
+    },
+    {
+      "id": "emulated-cancelled-late-grant-never-starts-xr-renderer",
+      "status": "passed",
+      "method": "emulated-browser",
+      "detail": {
+        "xr": {
+          "phase": "ready",
+          "supported": true,
+          "active": false,
+          "busy": false,
+          "visibility": null,
+          "frames": 0,
+          "referenceSpace": null,
+          "error": null,
+          "qualification": "physical-device-evidence-pending",
+          "pose": null,
+          "activeCamera": "desktop-camera",
+          "rigCameras": 1,
+          "baseLayer": false,
+          "visuals": null
+        },
+        "lateEnd": {
+          "events": 1,
+          "deviceActive": false
+        },
+        "syntheticFault": "permission grant held until after cancellation"
+      }
+    },
+    {
+      "id": "emulated-session-renders-stereo-through-babylon",
+      "status": "passed",
+      "method": "emulated-browser",
+      "detail": {
+        "xr": {
+          "phase": "immersive",
+          "supported": true,
+          "active": true,
+          "busy": false,
+          "visibility": "visible",
+          "frames": 16,
+          "referenceSpace": "local-floor",
+          "error": null,
+          "qualification": "physical-device-evidence-pending",
+          "pose": {
+            "position": [
+              -0.0000026826091925613582,
+              1.599782109260559,
+              8.000005722045898
+            ],
+            "forward": [
+              0,
+              0,
+              -1
+            ],
+            "up": [
+              0,
+              1,
+              0
+            ],
+            "tracking": true,
+            "nearGeometry": false
+          },
+          "activeCamera": "webxr",
+          "rigCameras": 2,
+          "baseLayer": true,
+          "visuals": {
+            "rays": 2,
+            "exitEnabled": true,
+            "warningEnabled": false
+          }
+        },
+        "rendering": {
+          "customRequester": true,
+          "inXRSession": true,
+          "framebuffer": [
+            1280,
+            720
+          ],
+          "rigs": [
+            {
+              "projection": {
+                "0": 1.125,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": -1.000166654586792,
+                "11": -1,
+                "12": 0,
+                "13": 0,
+                "14": -0.10000833123922348,
+                "15": 0
+              },
+              "position": [
+                -0.03150268271565437,
+                1.599782109260559,
+                8.000005722045898
+              ]
+            },
+            {
+              "projection": {
+                "0": 1.125,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": -1.000166654586792,
+                "11": -1,
+                "12": 0,
+                "13": 0,
+                "14": -0.10000833123922348,
+                "15": 0
+              },
+              "position": [
+                0.03149731829762459,
+                1.599782109260559,
+                8.000005722045898
+              ]
+            }
+          ],
+          "request": {
+            "mode": "immersive-vr",
+            "options": {
+              "requiredFeatures": [
+                "local-floor"
+              ],
+              "optionalFeatures": [
+                "local-floor"
+              ]
+            },
+            "activation": true
+          }
+        }
+      }
+    },
+    {
+      "id": "emulated-head-pose-drives-one-shared-spatial-listener",
+      "status": "passed",
+      "method": "emulated-browser",
+      "detail": {
+        "frames": {
+          "start": 50,
+          "end": 58
+        },
+        "before": {
+          "position": [
+            -0.0000026826091925613582,
+            1.599782109260559,
+            8.000005722045898
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ],
+          "tracking": true,
+          "nearGeometry": false
+        },
+        "after": {
+          "position": [
+            0.3999973237514496,
+            1.7497820854187012,
+            8.200005531311035
+          ],
+          "forward": [
+            -0.9999999999999996,
+            0,
+            -3.422854533141616e-8
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ],
+          "tracking": true,
+          "nearGeometry": false
+        },
+        "listener": {
+          "position": [
+            0.3999973237514496,
+            1.7497820854187012,
+            8.200005531311035
+          ],
+          "forward": [
+            -0.9999999999999996,
+            0,
+            -3.422854533141616e-8
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ]
+        },
+        "contexts": 1,
+        "wallMediaSources": 1
+      }
+    },
+    {
+      "id": "emulated-visibility-mutes-pauses-input-and-restores-output",
+      "status": "passed",
+      "method": "emulated-browser",
+      "detail": {
+        "steps": {
+          "start": 390,
+          "end": 426
+        },
+        "hiddenGain": 0,
+        "restoredGain": 0.6000000238418579,
+        "returned": {
+          "phase": "ready",
+          "supported": true,
+          "active": false,
+          "busy": false,
+          "visibility": null,
+          "frames": 110,
+          "referenceSpace": null,
+          "error": null,
+          "qualification": "physical-device-evidence-pending",
+          "pose": null,
+          "activeCamera": "desktop-camera",
+          "rigCameras": 2,
+          "baseLayer": true,
+          "visuals": null
+        }
+      }
+    },
+    {
+      "id": "emulated-thumbstick-moves-and-collides-with-frozen-thin-barrier",
+      "status": "passed",
+      "method": "emulated-browser",
+      "detail": {
+        "steps": {
+          "start": 612,
+          "end": 707
+        },
+        "before": {
+          "position": [
+            5.999989986419678,
+            0.9150749444961548,
+            3.799997568130493
+          ],
+          "eye": [
+            5.999989986419678,
+            1.6000750064849854,
+            3.799997568130493
+          ],
+          "grounded": true
+        },
+        "after": {
+          "position": [
+            5.998408794403076,
+            0.9146564602851868,
+            3.3900625705718994
+          ],
+          "eye": [
+            5.9984130859375,
+            1.5999563932418823,
+            3.390068531036377
+          ],
+          "grounded": true
+        },
+        "pose": {
+          "position": [
+            5.9984130859375,
+            1.5999563932418823,
+            3.390068531036377
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ],
+          "tracking": true,
+          "nearGeometry": false
+        }
+      }
+    },
+    {
+      "id": "emulated-physical-head-overlap-warns-without-clamping-tracking",
+      "status": "passed",
+      "method": "emulated-browser",
+      "detail": {
+        "frames": {
+          "start": 12,
+          "end": 18
+        },
+        "before": {
+          "position": [
+            5.999989986419678,
+            1.6000750064849854,
+            3.799997568130493
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ],
+          "tracking": true,
+          "nearGeometry": false
+        },
+        "after": {
+          "position": [
+            5.999989986419678,
+            1.6000750064849854,
+            2.999997615814209
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ],
+          "tracking": true,
+          "nearGeometry": true
+        },
+        "body": [
+          5.999989986419678,
+          0.9150749444961548,
+          3.799997568130493
+        ]
+      }
+    },
+    {
+      "id": "emulated-controller-ray-select-exits-with-renderer-cleanup",
+      "status": "failed",
+      "method": "emulated-browser",
+      "detail": "page.waitForFunction: Timeout 15000ms exceeded.\n    at frameWindow (/workspace/scratch/dc98dcd2981d/engine_work/f05-xr-review/evaluations/babylon-vrspace/test/xr-browser-checks.mjs:43:14)\n    at async file:///workspace/scratch/dc98dcd2981d/engine_work/f05-xr-review/evaluations/babylon-vrspace/test/xr-browser-checks.mjs:137:93\n    at async check (/workspace/scratch/dc98dcd2981d/engine_work/f05-xr-review/evaluations/babylon-vrspace/test/xr-browser-checks.mjs:52:20)\n    at async file:///workspace/scratch/dc98dcd2981d/engine_work/f05-xr-review/evaluations/babylon-vrspace/test/xr-browser-checks.mjs:135:3",
+      "observed": {
+        "xr": {
+          "phase": "ready",
+          "supported": true,
+          "active": false,
+          "busy": false,
+          "visibility": null,
+          "frames": 17,
+          "referenceSpace": null,
+          "error": null,
+          "qualification": "physical-device-evidence-pending",
+          "pose": null,
+          "activeCamera": "desktop-camera",
+          "rigCameras": 2,
+          "baseLayer": true,
+          "visuals": null
+        },
+        "player": {
+          "position": [
+            -0.0000026826091925613582,
+            0.9147821068763733,
+            8.000005722045898
+          ],
+          "eye": [
+            -0.0000026826091925613582,
+            1.6147821068763732,
+            8.000005722045898
+          ],
+          "grounded": true
+        },
+        "audio": {
+          "state": "running",
+          "initialContextState": "suspended",
+          "suspendedByApplication": true,
+          "sampleRate": 44100,
+          "currentTime": 32.920090702947846,
+          "activation": {
+            "isActive": true,
+            "hasBeenActive": true,
+            "at": 18264.800000000047,
+            "before": "running",
+            "after": "running"
+          },
+          "listener": {
+            "position": [
+              -0.0000026826091925613582,
+              1.6147820949554443,
+              8.000005722045898
+            ],
+            "forward": [
+              0,
+              0,
+              -1
+            ],
+            "up": [
+              0,
+              1,
+              0
+            ]
+          },
+          "outputGain": 0.6000000238418579,
+          "contextCount": 1,
+          "sources": [
+            {
+              "id": "corner-playback-0",
+              "sourceType": "AudioBufferSourceNode",
+              "sameContext": true,
+              "position": [
+                -6,
+                1.600000023841858,
+                -6
+              ],
+              "pannerPosition": [
+                -6,
+                1.600000023841858,
+                -6
+              ],
+              "distanceModel": "inverse",
+              "pannerRolloff": 0,
+              "panningModel": "HRTF",
+              "gain": 0,
+              "inputRms": 0.06264697281969493,
+              "prePannerRms": 0,
+              "rms": 0,
+              "stereoRms": [
+                0,
+                0
+              ],
+              "meter": {
+                "inputs": 2,
+                "outputs": 0,
+                "window": {
+                  "type": "paired-audio-window",
+                  "startFrame": 1450752,
+                  "endFrame": 1451520,
+                  "frames": 768,
+                  "sampleRate": 44100,
+                  "inputChannels": 1,
+                  "postChannels": 1,
+                  "invalidFrames": 0,
+                  "inputRms": 0.06322662894844916,
+                  "postGainRms": 0,
+                  "gainMin": 0,
+                  "gainMax": 0,
+                  "gainSamples": 768,
+                  "droppedWindows": 333
+                },
+                "retainedWindows": 128,
+                "invalidMessages": 0
+              },
+              "connections": [
+                "source>distance-gain",
+                "distance-gain>panner",
+                "panner>gain",
+                "gain>shared-output"
+              ],
+              "directSourceToDestination": false,
+              "mediaSourceCount": 0,
+              "video": null
+            },
+            {
+              "id": "corner-playback-1",
+              "sourceType": "AudioBufferSourceNode",
+              "sameContext": true,
+              "position": [
+                6,
+                1.600000023841858,
+                -6
+              ],
+              "pannerPosition": [
+                6,
+                1.600000023841858,
+                -6
+              ],
+              "distanceModel": "inverse",
+              "pannerRolloff": 0,
+              "panningModel": "HRTF",
+              "gain": 0,
+              "inputRms": 0.0633352664783928,
+              "prePannerRms": 0,
+              "rms": 0,
+              "stereoRms": [
+                0,
+                0
+              ],
+              "meter": {
+                "inputs": 2,
+                "outputs": 0,
+                "window": {
+                  "type": "paired-audio-window",
+                  "startFrame": 1450752,
+                  "endFrame": 1451520,
+                  "frames": 768,
+                  "sampleRate": 44100,
+                  "inputChannels": 1,
+                  "postChannels": 1,
+                  "invalidFrames": 0,
+                  "inputRms": 0.06359118519634063,
+                  "postGainRms": 0,
+                  "gainMin": 0,
+                  "gainMax": 0,
+                  "gainSamples": 768,
+                  "droppedWindows": 332
+                },
+                "retainedWindows": 128,
+                "invalidMessages": 0
+              },
+              "connections": [
+                "source>distance-gain",
+                "distance-gain>panner",
+                "panner>gain",
+                "gain>shared-output"
+              ],
+              "directSourceToDestination": false,
+              "mediaSourceCount": 0,
+              "video": null
+            },
+            {
+              "id": "corner-playback-2",
+              "sourceType": "AudioBufferSourceNode",
+              "sameContext": true,
+              "position": [
+                -6,
+                1.600000023841858,
+                6
+              ],
+              "pannerPosition": [
+                -6,
+                1.600000023841858,
+                6
+              ],
+              "distanceModel": "inverse",
+              "pannerRolloff": 0,
+              "panningModel": "HRTF",
+              "gain": 0.15811346471309662,
+              "inputRms": 0.06302244642233167,
+              "prePannerRms": 0.009964697357771975,
+              "rms": 0.007413951012337925,
+              "stereoRms": [
+                0.013557680090957286,
+                0.00915039655178365
+              ],
+              "meter": {
+                "inputs": 2,
+                "outputs": 0,
+                "window": {
+                  "type": "paired-audio-window",
+                  "startFrame": 1450752,
+                  "endFrame": 1451520,
+                  "frames": 768,
+                  "sampleRate": 44100,
+                  "inputChannels": 1,
+                  "postChannels": 1,
+                  "invalidFrames": 0,
+                  "inputRms": 0.06254666970310131,
+                  "postGainRms": 0.009889470653819177,
+                  "gainMin": 0.15811345575710564,
+                  "gainMax": 0.15811347380433982,
+                  "gainSamples": 768,
+                  "droppedWindows": 333
+                },
+                "retainedWindows": 128,
+                "invalidMessages": 0
+              },
+              "connections": [
+                "source>distance-gain",
+                "distance-gain>panner",
+                "panner>gain",
+                "gain>shared-output"
+              ],
+              "directSourceToDestination": false,
+              "mediaSourceCount": 0,
+              "video": null
+            },
+            {
+              "id": "corner-playback-3",
+              "sourceType": "AudioBufferSourceNode",
+              "sameContext": true,
+              "position": [
+                6,
+                1.600000023841858,
+                6
+              ],
+              "pannerPosition": [
+                6,
+                1.600000023841858,
+                6
+              ],
+              "distanceModel": "inverse",
+              "pannerRolloff": 0,
+              "panningModel": "HRTF",
+              "gain": 0.15811334550380707,
+              "inputRms": 0.0630659453252775,
+              "prePannerRms": 0.009971567604874844,
+              "rms": 0.0053614548353493816,
+              "stereoRms": [
+                0.006401047375572337,
+                0.013367423005477108
+              ],
+              "meter": {
+                "inputs": 2,
+                "outputs": 0,
+                "window": {
+                  "type": "paired-audio-window",
+                  "startFrame": 1450752,
+                  "endFrame": 1451520,
+                  "frames": 768,
+                  "sampleRate": 44100,
+                  "inputChannels": 1,
+                  "postChannels": 1,
+                  "invalidFrames": 0,
+                  "inputRms": 0.06331248558005945,
+                  "postGainRms": 0.010010548910689001,
+                  "gainMin": 0.158113336981269,
+                  "gainMax": 0.15811335458690268,
+                  "gainSamples": 768,
+                  "droppedWindows": 332
+                },
+                "retainedWindows": 128,
+                "invalidMessages": 0
+              },
+              "connections": [
+                "source>distance-gain",
+                "distance-gain>panner",
+                "panner>gain",
+                "gain>shared-output"
+              ],
+              "directSourceToDestination": false,
+              "mediaSourceCount": 0,
+              "video": null
+            },
+            {
+              "id": "bird-playback",
+              "sourceType": "AudioBufferSourceNode",
+              "sameContext": true,
+              "position": [
+                -4,
+                5,
+                -3.782099962234497
+              ],
+              "pannerPosition": [
+                -4,
+                5,
+                -3.782099962234497
+              ],
+              "distanceModel": "inverse",
+              "pannerRolloff": 0,
+              "panningModel": "HRTF",
+              "gain": 0.0028975461110107015,
+              "inputRms": 0.06307642594155832,
+              "prePannerRms": 0.0009138342512409123,
+              "rms": 0.00007430193174035648,
+              "stereoRms": [
+                0.0001104868701200426,
+                0.000044977717245270365
+              ],
+              "meter": {
+                "inputs": 2,
+                "outputs": 0,
+                "window": {
+                  "type": "paired-audio-window",
+                  "startFrame": 1450752,
+                  "endFrame": 1451520,
+                  "frames": 768,
+                  "sampleRate": 44100,
+                  "inputChannels": 1,
+                  "postChannels": 1,
+                  "invalidFrames": 0,
+                  "inputRms": 0.06322231259785152,
+                  "postGainRms": 0.000915947817760907,
+                  "gainMin": 0.014487729583879316,
+                  "gainMax": 0.014487731190693737,
+                  "gainSamples": 768,
+                  "droppedWindows": 332
+                },
+                "retainedWindows": 128,
+                "invalidMessages": 0
+              },
+              "connections": [
+                "source>distance-gain",
+                "distance-gain>panner",
+                "panner>gain",
+                "gain>shared-output"
+              ],
+              "directSourceToDestination": false,
+              "mediaSourceCount": 0,
+              "video": null
+            },
+            {
+              "id": "wall-playback",
+              "sourceType": "MediaElementAudioSourceNode",
+              "sameContext": true,
+              "position": [
+                0,
+                2.200000047683716,
+                -11.699999809265137
+              ],
+              "pannerPosition": [
+                0,
+                2.200000047683716,
+                -11.699999809265137
+              ],
+              "distanceModel": "inverse",
+              "pannerRolloff": 0,
+              "panningModel": "HRTF",
+              "gain": 0,
+              "inputRms": 0,
+              "prePannerRms": 0,
+              "rms": 0,
+              "stereoRms": [
+                0,
+                0
+              ],
+              "meter": {
+                "inputs": 2,
+                "outputs": 0,
+                "window": {
+                  "type": "paired-audio-window",
+                  "startFrame": 1450752,
+                  "endFrame": 1451520,
+                  "frames": 768,
+                  "sampleRate": 44100,
+                  "inputChannels": 1,
+                  "postChannels": 1,
+                  "invalidFrames": 0,
+                  "inputRms": 0,
+                  "postGainRms": 0,
+                  "gainMin": 0,
+                  "gainMax": 0,
+                  "gainSamples": 0,
+                  "droppedWindows": 332
+                },
+                "retainedWindows": 128,
+                "invalidMessages": 0
+              },
+              "connections": [
+                "source>distance-gain",
+                "distance-gain>panner",
+                "panner>gain",
+                "gain>shared-output"
+              ],
+              "directSourceToDestination": false,
+              "mediaSourceCount": 1,
+              "video": {
+                "paused": false,
+                "currentTime": 1.709333,
+                "duration": 2.003,
+                "loop": true,
+                "muted": false,
+                "volume": 1,
+                "readyState": 4,
+                "decodedFrames": 953
+              }
+            }
+          ]
+        },
+        "physicsSteps": 1898
+      }
+    }
+  ],
+  "logs": [],
+  "failedRequests": [],
+  "missingEvidence": [
+    "Actual supported headset/controller/browser, permission system UI and cancellation timing.",
+    "Headset audio output, perceptual direction, device suspend/resume, recenter and seated use.",
+    "XR grabbing/throwing, teleportation/snap turn, full authoring and multiuser networking.",
+    "Target-device frame budgets, memory trends, long sessions and ten repeated cleanup cycles."
+  ],
+  "counts": {
+    "passed": 8,
+    "failed": 1,
+    "pageErrors": 0,
+    "failedRequests": 0
+  },
+  "runStatus": "failed"
+}

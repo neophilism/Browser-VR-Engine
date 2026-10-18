@@ -1,0 +1,9 @@
+# Bird observation follow-up
+
+The main push run [39149232337](https://github.com/neophilism/Browser-VR-Engine/actions/runs/39149232337), tested commit `315b0283f598b1bef7f2c6c38c90c01d562fe6c5`, failed the bird check while its other 18 desktop checks passed. Its two positions were identical. The fixed 300 ms wait did not retain per-check scene or animation counters. Overall recorded frame periods reached 681.7 ms p95 and 962.6 ms p99, so a wait without a rendered update is plausible, but that cause is not proven for the specific interval. Original failure bytes are retained by the parent integration record; their exact archive/report identities are in `verification.json`.
+
+Only the desktop harness changes here. It waits at most 10 seconds for actual scene, simulation and skinned-clip progress, and records before/after scene frames, physics steps, animation frames, route progress and sound positions even on timeout. It does not move the bird or advance the runtime manually. The original root-position difference, clip-frame difference and emitter-follow tolerance of 0.00001 meters are preserved.
+
+Fresh local run `run-PZDmUP` passed all 19 desktop checks with zero browser errors, failed requests, overflow or finalization errors. The bird observation advanced scene frame 61 to 62 and physics step 123 to 128; the clip and root position changed and the emitter followed within the original tolerance. All 23 source fingerprints match the captured revision. This is a functional software-renderer check, not a frame-rate benchmark.
+
+Runtime and build inputs are unchanged. The earlier 50-unit, 94-verifier and 10-emulated-XR results remain their original observations; neither those captures nor their fingerprints are relabeled as a fresh run after this harness edit. Fresh current-head hosted desktop/XR evidence and successful main verification are still required. No new XR, device, provider or audit execution is claimed by this follow-up.

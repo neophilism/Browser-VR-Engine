@@ -1,0 +1,99 @@
+{
+  "scope": "Fresh local desktop verification after a test-only observation-window repair; no new runtime/XR or hosted acceptance claim",
+  "recordedAt": "2026-10-18T17:27:01.090219+00:00",
+  "baseCommit": "64f095d6b65530ca57a97de26f7929593032a51d",
+  "changedSincePreviousFreeze": [
+    "evaluations/babylon-vrspace/browser-checks.mjs"
+  ],
+  "browserCheckSha256": "ffe27331ea779a2b8e81ca17cbce34359c8dc52b12541c89e67c5699b1c45850",
+  "command": [
+    "node",
+    "run.mjs",
+    "test"
+  ],
+  "processExitCode": 0,
+  "runDirectory": "artifacts/runs/run-PZDmUP",
+  "counts": {
+    "passed": 19,
+    "failed": 0,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "logOverflow": 0
+  },
+  "finalizationErrors": [],
+  "observation": {
+    "before": {
+      "time": 3913.5,
+      "sceneFrame": 61,
+      "physicsSteps": 123,
+      "renderSamples": 41,
+      "animation": {
+        "entityId": "bird",
+        "clip": "flap",
+        "playing": true,
+        "position": [
+          -1.9337999999998137,
+          5,
+          -4
+        ],
+        "frame": 8.801999999983224
+      },
+      "route": {
+        "segment": 0,
+        "progress": 0.2582750000000233
+      },
+      "soundPosition": [
+        -1.9337999820709229,
+        5,
+        -4
+      ]
+    },
+    "timeoutMs": 10000,
+    "after": {
+      "time": 4027.3000000002794,
+      "sceneFrame": 62,
+      "physicsSteps": 128,
+      "renderSamples": 42,
+      "animation": {
+        "entityId": "bird",
+        "clip": "flap",
+        "playing": true,
+        "position": [
+          -1.8596000000000932,
+          5,
+          -4
+        ],
+        "frame": 13.24799999998882
+      },
+      "route": {
+        "segment": 0,
+        "progress": 0.26754999999998835
+      },
+      "soundPosition": [
+        -1.8595999479293823,
+        5,
+        -4
+      ]
+    }
+  },
+  "sourceCount": 23,
+  "sourceDigestsMatch": true,
+  "buildInputsUnchanged": true,
+  "runtimeUnchanged": true,
+  "mainFailure": {
+    "runId": "39149232337",
+    "testedSha": "315b0283f598b1bef7f2c6c38c90c01d562fe6c5",
+    "artifactId": "12144238621",
+    "archiveSha256": "a28c867d5205f1965cd6de487beee061ea5c5b258c6ddbf7da64d0b7936b3d95",
+    "reportSha256": "c6028c698e7f4a31ea5029b032182c651ba7423c9be739c6df2ff5e87ed7cdda",
+    "passed": 18,
+    "failed": 1,
+    "hypothesis": "The fixed300ms window may have contained no rendered update; the exact interval was not instrumented, so this cause is not proven."
+  },
+  "priorEvidence": "xr-finalization-ci and xr-session-lifecycle remain unchanged historical captures; the previous XR source binding does not match the newly edited desktop harness",
+  "nextRequired": "Fresh current-head hosted desktop and XR/source-binding checks and subsequent main verification",
+  "physicalHeadset": false,
+  "physicalAudio": false,
+  "newXRRun": false,
+  "providerCalls": false
+}

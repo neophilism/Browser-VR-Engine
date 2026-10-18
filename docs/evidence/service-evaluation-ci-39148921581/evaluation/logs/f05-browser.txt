@@ -1,0 +1,27 @@
+PASS real-render-and-frozen-fixtures
+PASS user-start-activation
+PASS animated-skinned-creature-and-attached-source
+PASS desktop-keyboard-movement
+PASS wall-solid-and-open-arch-traversal
+PASS visible-pick-grab-and-throw
+PASS four-simultaneous-corner-sources-and-calibrated-gain
+PASS listener-turn-changes-left-right-pan-with-fixed-source
+PASS video-single-source-play-pause-seek-loop
+PASS actual-browser-prop-transform-editor
+PASS json-transform-snapshot-reload
+PASS scene-glb-export-reimport
+PASS drop-glb-through-browser-dnd
+PASS untrusted-external-model-uri-rejected
+PASS failed-babylon-load-rolls-back-partial-resources
+PASS failed-collider-publication-rolls-back-real-body-and-model
+PASS unmodified-vrspace-asset-loader-reuse
+PASS devtools-observed-single-context-audio-routing
+PASS dispose-releases-browser-resources-and-input-ownership
+{
+  "runStatus": "passed",
+  "passed": 19,
+  "failed": 0,
+  "pageErrors": 0,
+  "failedRequests": 0,
+  "output": "artifacts/runs/run-BqFHvO"
+}

@@ -1,5 +1,5 @@
 {
-  "scope": "Historical evaluations retained unchanged; current paired-audio measurement/teleport review-fix evidence. F05 remains incomplete.",
+  "scope": "Historical evaluations retained unchanged; current WebXR lifecycle software evidence with physical qualification pending. F05 remains incomplete.",
   "qualificationStatus": "incomplete",
   "runs": [
     {
@@ -48,11 +48,51 @@
       "localTestsPassed": 30,
       "freshDependencyAudit": "blocked by automatic approval review; public-registry package metadata disclosure requires end-user approval",
       "imageVisuallyInspected": true
+    },
+    {
+      "directory": "xr-session-lifecycle",
+      "purpose": "User-activated immersive entry/lifecycle, strict floor/confirmed end, shared head-pose listener, solid thumbstick locomotion, current desktop regression; test-only IWER offset correction disclosed",
+      "timestamp": "2026-10-18T17:09:22.598Z",
+      "desktopChecksPassed": 19,
+      "emulatedXRChecksPassed": 10,
+      "browserErrors": 0,
+      "failedRequests": 0,
+      "sourceDigestCount": 22,
+      "sourceDigestMatch": true,
+      "buildInputCount": 12,
+      "buildOutputCount": 3,
+      "localTestsPassed": 46,
+      "dependencyAuditTotalAdvisories": 0,
+      "physicalHeadset": false,
+      "physicalAudio": false,
+      "imageVisuallyInspected": true
+    },
+    {
+      "directory": "xr-finalization-ci",
+      "purpose": "Fresh desktop and emulated XR runs after concurrent-disposal, late-activation and post-close evidence finalization fixes; canonical XR stage and collector verified locally",
+      "timestamp": "2026-10-18T17:21:48.380Z",
+      "desktopChecksPassed": 19,
+      "emulatedXRChecksPassed": 10,
+      "browserErrors": 0,
+      "failedRequests": 0,
+      "logOverflow": 0,
+      "finalizationErrors": 0,
+      "sourceDigestCount": 23,
+      "sourceDigestMatch": true,
+      "buildInputCount": 12,
+      "buildOutputCount": 3,
+      "localTestsPassed": 50,
+      "ciVerifierTestsPassed": 94,
+      "actualLocalXRCollector": "passed; hostedComplete remains false",
+      "dependencyAudit": "Unchanged lockfile; original zero-advisory audit retained in xr-session-lifecycle without relabeling its date",
+      "physicalHeadset": false,
+      "physicalAudio": false,
+      "imageVisuallyInspected": true
     }
   ],
   "missingEvidence": [
-    "Real immersive-session entry remains unimplemented; Check VR performs capability detection only.",
     "Physical headset/controller/recenter/seated/wall-adjacent/sleep-resume and actual output audio.",
+    "XR grabbing/throwing, teleportation/snap turn and richer XR authoring remain unimplemented.",
     "Two real clients, SFU/spatial voice, reconnect/server-authoritative state.",
     "AV marker offset measurement below the 80ms threshold.",
     "Full F03 warmup60s+duration180s+3 repetitions; target-device p95/p99/thermal performance.",
