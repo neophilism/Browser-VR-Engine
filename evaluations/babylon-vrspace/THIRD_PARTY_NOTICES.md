@@ -15,3 +15,5 @@ The evaluation's authored project files retain the engine repository's current `
 The complete npm graph is pinned in `package-lock.json`; installed packages retain their own notices. No browser binary is distributed in this source bundle. The historical Chrome archive URL, version and digest are metadata, not a browser redistribution. F03's original synthetic fixtures are read from their owning engine package and are not duplicated here.
 
 The VRSpace module is the only vendored runtime source. Its bytes are unchanged from the recorded commit. The adaptation changes the importing URL and supplies the evaluated Babylon namespace at one explicit compatibility boundary; it does not claim that the remainder of VRSpace was extracted, tested or relicensed.
+
+The portable-world evaluation explicitly bundles the public checked contracts source with TypeBox 0.34.52 (MIT). Its exact package URL and integrity are in `source-pins.json`; the complete installed upstream license is retained in `licenses/TypeBox-LICENSE`. Carrier test content is derived only from the repository-generated frozen F03 fixtures; no privately obtained model or provider output is included.
