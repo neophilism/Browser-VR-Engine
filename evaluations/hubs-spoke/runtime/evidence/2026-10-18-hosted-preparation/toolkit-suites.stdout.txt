@@ -1,0 +1,39 @@
+✔ all frozen comparison inputs and actual resources have the expected identity (13.534518ms)
+✔ changed world content cannot be reported against the frozen comparison (19.391658ms)
+✔ changed asset bytes cannot reuse the frozen resource hashes (25.144341ms)
+✔ Spoke fixture mapping preserves collider parent and real video dimensions (13.285043ms)
+✔ nontrivial quaternion is converted in the declared XYZ convention (0.276949ms)
+✔ only transport and OS settings survive the child environment allowlist (1.391135ms)
+✔ process errors and failed commands are never reported as success (41.277626ms)
+✔ exact Spoke patch reproduces pinned bytes and unexpected registry configuration is rejected (186.437315ms)
+✔ captured GLB has the expected envelope, skin and clips; truncation is rejected (1.353897ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 333.00898
+✔ only the declared loopback-resolved HTTP and native WebSocket origins are allowed (1.130217ms)
+✔ final status is decided after all cleanup and fails on any late contradiction (0.650412ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13.469146
+✔ changed current toolkit source does not become fresh execution evidence (27.583933ms)
+✔ changed original source snapshot fails historical integrity (10.657946ms)
+✔ actual captured artifacts cannot be redirected through source snapshots (5.81191ms)
+✔ a changed capture and an escaped snapshot both fail (11.599785ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 70.229167

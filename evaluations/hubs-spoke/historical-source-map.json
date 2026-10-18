@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "captureIndexSha256": "2a42d4de5ab79c80ad7734c03b7749a69ba54d9642c4ecc13ed1b1fd17407874",
+  "snapshotSourceCommit": "315b0283f598b1bef7f2c6c38c90c01d562fe6c5",
+  "meaning": "Original indexed toolkit source bytes, preserved when current source changed. No historical result is recast as current execution.",
+  "files": {
+    "README.md": {
+      "snapshot": "evidence/2026-10-18-runtime-extension/original-toolkit-sources/README.md",
+      "sha256": "6ad85125a01c70b5d13980a6f560a479ef3252bcff5faefed2d33299e9b55bc2",
+      "sizeBytes": 9404
+    },
+    "REUSE_ASSESSMENT.md": {
+      "snapshot": "evidence/2026-10-18-runtime-extension/original-toolkit-sources/REUSE_ASSESSMENT.md",
+      "sha256": "7b78d0902dc40aa9da50b45047a72d2acd8606902b0ea51814dac0c64fd16e65",
+      "sizeBytes": 8803
+    },
+    "SECURITY_REVIEW.md": {
+      "snapshot": "evidence/2026-10-18-runtime-extension/original-toolkit-sources/SECURITY_REVIEW.md",
+      "sha256": "b4899767e285428ad4662f2a24155d67c02b07c03a13e1815a10682a30a76ab5",
+      "sizeBytes": 4482
+    },
+    "package.json": {
+      "snapshot": "evidence/2026-10-18-runtime-extension/original-toolkit-sources/package.json",
+      "sha256": "7ceaadf5b6fa4421a3b6b4d5a479bd6f752e736f1f4a4c0dad0d9f3217fa6653",
+      "sizeBytes": 836
+    },
+    "scripts/verify-evidence.mjs": {
+      "snapshot": "evidence/2026-10-18-runtime-extension/original-toolkit-sources/scripts/verify-evidence.mjs",
+      "sha256": "00da9c080359d44d0e4f04b2a268320992483c6e3076ea3661594ee56c4e9b0b",
+      "sizeBytes": 2159
+    }
+  }
+}

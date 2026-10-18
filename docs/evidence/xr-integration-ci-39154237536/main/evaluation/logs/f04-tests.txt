@@ -1,0 +1,21 @@
+
+> @browser-vr-engine/eval-hubs-spoke@0.1.0 test
+> node --test --test-isolation=none scripts/evaluation.test.mjs
+
+✔ all frozen comparison inputs and actual resources have the expected identity (8.324477ms)
+✔ changed world content cannot be reported against the frozen comparison (11.257162ms)
+✔ changed asset bytes cannot reuse the frozen resource hashes (11.792048ms)
+✔ Spoke fixture mapping preserves collider parent and real video dimensions (6.986622ms)
+✔ nontrivial quaternion is converted in the declared XYZ convention (0.186945ms)
+✔ only transport and OS settings survive the child environment allowlist (0.722271ms)
+✔ process errors and failed commands are never reported as success (24.6496ms)
+✔ exact Spoke patch reproduces pinned bytes and unexpected registry configuration is rejected (90.41896ms)
+✔ captured GLB has the expected envelope, skin and clips; truncation is rejected (1.233631ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 175.292922

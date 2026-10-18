@@ -1,0 +1,436 @@
+TAP version 13
+# Subtest: manual F04 failed-artifact verifier and watchdog contracts reject contradictory synthetic evidence
+ok 1 - manual F04 failed-artifact verifier and watchdog contracts reject contradictory synthetic evidence
+  ---
+  duration_ms: 1103.322642
+  type: 'test'
+  ...
+# Subtest: the actual manual F04 workflow satisfies its separate policy
+ok 2 - the actual manual F04 workflow satisfies its separate policy
+  ---
+  duration_ms: 13.253896
+  type: 'test'
+  ...
+# Subtest: literal display text and mapping order do not define executable policy
+ok 3 - literal display text and mapping order do not define executable policy
+  ---
+  duration_ms: 16.298892
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects automatic push trigger
+ok 4 - manual F04 policy rejects automatic push trigger
+  ---
+  duration_ms: 5.9137
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects privileged pull request trigger
+ok 5 - manual F04 policy rejects privileged pull request trigger
+  ---
+  duration_ms: 5.007195
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects reusable workflow trigger
+ok 6 - manual F04 policy rejects reusable workflow trigger
+  ---
+  duration_ms: 6.849958
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects missing explicit dispatch input
+ok 7 - manual F04 policy rejects missing explicit dispatch input
+  ---
+  duration_ms: 3.648462
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects extra arbitrary input
+ok 8 - manual F04 policy rejects extra arbitrary input
+  ---
+  duration_ms: 3.612847
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects free-form mode
+ok 9 - manual F04 policy rejects free-form mode
+  ---
+  duration_ms: 4.087012
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects optional mode
+ok 10 - manual F04 policy rejects optional mode
+  ---
+  duration_ms: 3.721872
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects implicit evaluation default
+ok 11 - manual F04 policy rejects implicit evaluation default
+  ---
+  duration_ms: 2.546078
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects additional mode
+ok 12 - manual F04 policy rejects additional mode
+  ---
+  duration_ms: 3.13919
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects changed mode ordering
+ok 13 - manual F04 policy rejects changed mode ordering
+  ---
+  duration_ms: 3.597108
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects workflow token permission
+ok 14 - manual F04 policy rejects workflow token permission
+  ---
+  duration_ms: 3.609963
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects write token permission
+ok 15 - manual F04 policy rejects write token permission
+  ---
+  duration_ms: 2.163563
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects OIDC privilege
+ok 16 - manual F04 policy rejects OIDC privilege
+  ---
+  duration_ms: 2.3669
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects extra workflow environment
+ok 17 - manual F04 policy rejects extra workflow environment
+  ---
+  duration_ms: 2.642193
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects shell override
+ok 18 - manual F04 policy rejects shell override
+  ---
+  duration_ms: 2.439941
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects default working-directory override
+ok 19 - manual F04 policy rejects default working-directory override
+  ---
+  duration_ms: 2.33331
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects cancelling an active run
+ok 20 - manual F04 policy rejects cancelling an active run
+  ---
+  duration_ms: 2.799556
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects different concurrency scope
+ok 21 - manual F04 policy rejects different concurrency scope
+  ---
+  duration_ms: 2.346947
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects additional job
+ok 22 - manual F04 policy rejects additional job
+  ---
+  duration_ms: 3.31723
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects unstable job check name
+ok 23 - manual F04 policy rejects unstable job check name
+  ---
+  duration_ms: 2.597286
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects floating runner
+ok 24 - manual F04 policy rejects floating runner
+  ---
+  duration_ms: 2.467705
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects self-hosted runner
+ok 25 - manual F04 policy rejects self-hosted runner
+  ---
+  duration_ms: 3.138353
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects longer job lifetime
+ok 26 - manual F04 policy rejects longer job lifetime
+  ---
+  duration_ms: 2.213745
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects job-level failure override
+ok 27 - manual F04 policy rejects job-level failure override
+  ---
+  duration_ms: 3.859089
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects job conditional
+ok 28 - manual F04 policy rejects job conditional
+  ---
+  duration_ms: 3.191264
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects job dependency
+ok 29 - manual F04 policy rejects job dependency
+  ---
+  duration_ms: 2.658905
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects deployment environment
+ok 30 - manual F04 policy rejects deployment environment
+  ---
+  duration_ms: 1.992439
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects container execution context
+ok 31 - manual F04 policy rejects container execution context
+  ---
+  duration_ms: 3.147829
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects unreviewed service container
+ok 32 - manual F04 policy rejects unreviewed service container
+  ---
+  duration_ms: 2.294039
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects matrix or strategy
+ok 33 - manual F04 policy rejects matrix or strategy
+  ---
+  duration_ms: 3.0704
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects provider credential
+ok 34 - manual F04 policy rejects provider credential
+  ---
+  duration_ms: 1.936916
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects bracketed credential in expected environment
+ok 35 - manual F04 policy rejects bracketed credential in expected environment
+  ---
+  duration_ms: 2.083259
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects hardcoded mode replacing dispatch evidence
+ok 36 - manual F04 policy rejects hardcoded mode replacing dispatch evidence
+  ---
+  duration_ms: 1.788543
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects missing workflow SHA binding
+ok 37 - manual F04 policy rejects missing workflow SHA binding
+  ---
+  duration_ms: 2.155794
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects different workflow reference binding
+ok 38 - manual F04 policy rejects different workflow reference binding
+  ---
+  duration_ms: 1.623014
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects boolean CI environment value
+ok 39 - manual F04 policy rejects boolean CI environment value
+  ---
+  duration_ms: 2.706209
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects missing work stage
+ok 40 - manual F04 policy rejects missing work stage
+  ---
+  duration_ms: 1.897655
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects missing watchdog cleanup
+ok 41 - manual F04 policy rejects missing watchdog cleanup
+  ---
+  duration_ms: 3.260701
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects missing finalization
+ok 42 - manual F04 policy rejects missing finalization
+  ---
+  duration_ms: 2.966936
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects missing artifact upload
+ok 43 - manual F04 policy rejects missing artifact upload
+  ---
+  duration_ms: 2.864435
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects additional action
+ok 44 - manual F04 policy rejects additional action
+  ---
+  duration_ms: 1.94514
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects reordered cleanup and finalization
+ok 45 - manual F04 policy rejects reordered cleanup and finalization
+  ---
+  duration_ms: 2.66259
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects checkout of branch instead of event commit
+ok 46 - manual F04 policy rejects checkout of branch instead of event commit
+  ---
+  duration_ms: 1.94544
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects checkout of an unrelated event reference
+ok 47 - manual F04 policy rejects checkout of an unrelated event reference
+  ---
+  duration_ms: 2.141311
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects persisted checkout credentials
+ok 48 - manual F04 policy rejects persisted checkout credentials
+  ---
+  duration_ms: 2.501243
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects different checkout depth
+ok 49 - manual F04 policy rejects different checkout depth
+  ---
+  duration_ms: 2.644881
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects unexpected checkout input
+ok 50 - manual F04 policy rejects unexpected checkout input
+  ---
+  duration_ms: 1.714626
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects unbound Node version
+ok 51 - manual F04 policy rejects unbound Node version
+  ---
+  duration_ms: 1.978276
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects package manager cache
+ok 52 - manual F04 policy rejects package manager cache
+  ---
+  duration_ms: 1.749808
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects extra setup-node input
+ok 53 - manual F04 policy rejects extra setup-node input
+  ---
+  duration_ms: 3.344759
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects swallowed work failure
+ok 54 - manual F04 policy rejects swallowed work failure
+  ---
+  duration_ms: 2.212255
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects shell input interpolation
+ok 55 - manual F04 policy rejects shell input interpolation
+  ---
+  duration_ms: 2.527846
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects diagnostic replacing the wrapper
+ok 56 - manual F04 policy rejects diagnostic replacing the wrapper
+  ---
+  duration_ms: 2.054534
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects conditional cleanup
+ok 57 - manual F04 policy rejects conditional cleanup
+  ---
+  duration_ms: 2.252044
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects conditional finalization
+ok 58 - manual F04 policy rejects conditional finalization
+  ---
+  duration_ms: 2.275269
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects conditional artifact retention
+ok 59 - manual F04 policy rejects conditional artifact retention
+  ---
+  duration_ms: 2.467135
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects missing attempt in artifact identity
+ok 60 - manual F04 policy rejects missing attempt in artifact identity
+  ---
+  duration_ms: 1.528146
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects broad artifact directory
+ok 61 - manual F04 policy rejects broad artifact directory
+  ---
+  duration_ms: 2.747516
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects silently missing artifact
+ok 62 - manual F04 policy rejects silently missing artifact
+  ---
+  duration_ms: 2.77956
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects hidden artifact upload
+ok 63 - manual F04 policy rejects hidden artifact upload
+  ---
+  duration_ms: 2.432467
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects overwriting prior run artifacts
+ok 64 - manual F04 policy rejects overwriting prior run artifacts
+  ---
+  duration_ms: 2.312782
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects different artifact retention
+ok 65 - manual F04 policy rejects different artifact retention
+  ---
+  duration_ms: 1.972296
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects unknown upload input
+ok 66 - manual F04 policy rejects unknown upload input
+  ---
+  duration_ms: 2.140606
+  type: 'test'
+  ...
+# Subtest: manual F04 policy rejects display-name expression
+ok 67 - manual F04 policy rejects display-name expression
+  ---
+  duration_ms: 2.01258
+  type: 'test'
+  ...
+# Subtest: every action must retain its checked-in full SHA and exact action name
+ok 68 - every action must retain its checked-in full SHA and exact action name
+  ---
+  duration_ms: 18.427249
+  type: 'test'
+  ...
+# Subtest: each step rejects undeclared failure, environment, shell and location overrides
+ok 69 - each step rejects undeclared failure, environment, shell and location overrides
+  ---
+  duration_ms: 68.871871
+  type: 'test'
+  ...
+# Subtest: duplicate YAML keys and aliases cannot conceal an alternate definition
+ok 70 - duplicate YAML keys and aliases cannot conceal an alternate definition
+  ---
+  duration_ms: 5.928873
+  type: 'test'
+  ...
+# Subtest: malformed structures and missing pin metadata fail with bounded diagnostics
+ok 71 - malformed structures and missing pin metadata fail with bounded diagnostics
+  ---
+  duration_ms: 7.798256
+  type: 'test'
+  ...
+1..71
+# tests 71
+# suites 0
+# pass 71
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1472.691741

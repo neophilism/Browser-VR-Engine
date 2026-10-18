@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "argv": [
+    "node",
+    "node_modules/playwright/cli.js",
+    "install",
+    "--with-deps",
+    "chromium"
+  ],
+  "supervisorPid": 2535,
+  "startedAt": "2026-10-18T18:35:28.532Z",
+  "outcome": "passed",
+  "exitCode": 0,
+  "requestedSignal": null,
+  "commandPid": 2536,
+  "shutdown": {
+    "needed": false,
+    "terminateSent": [],
+    "killSent": [],
+    "stopped": true
+  },
+  "finishedAt": "2026-10-18T18:35:51.199Z"
+}

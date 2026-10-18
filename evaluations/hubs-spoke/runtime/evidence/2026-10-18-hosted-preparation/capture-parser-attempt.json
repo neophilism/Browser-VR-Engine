@@ -1,0 +1,905 @@
+{
+  "schemaVersion": 1,
+  "kind": "f04-manual-hosted-proposal-offline-preparation",
+  "status": "failed",
+  "qualificationStatus": "incomplete",
+  "hostedRuntimeExecuted": false,
+  "actualWatchdogProcessMethodsExecuted": false,
+  "startedAt": "2026-10-18T18:42:49.184Z",
+  "finishedAt": "2026-10-18T18:42:53.280Z",
+  "baseCommit": "315b0283f598b1bef7f2c6c38c90c01d562fe6c5",
+  "preservedOriginalProposalTree": "c82960759704fda3dd71dca049746425e21a061a",
+  "sourceState": "Uncommitted isolated proposal. Exact files are bound below; this is not hosted/head acceptance.",
+  "sourcesUnchangedDuringChecks": true,
+  "inputs": {
+    "files": {
+      ".github/workflows/f04-hubs-runtime.yml": {
+        "bytes": 2056,
+        "sha256": "928fe20436e29fab5fb9aba38ba89ff7f9bf5962cb3f8d4a1b4747b89bafa904"
+      },
+      ".nvmrc": {
+        "bytes": 8,
+        "sha256": "7e8a2fa94951112b894a3dbe3d05efef5e9263741fa49125f0a70f40fedab4cc"
+      },
+      "docs/ci/action-pins.json": {
+        "bytes": 912,
+        "sha256": "0c7bb8fe079be877c441db163e2216f8b6d9f06a196a715b80fd27cf6b92defa"
+      },
+      "docs/plan/pr-plan.json": {
+        "bytes": 239460,
+        "sha256": "076d8750880f1117633c7619331a0b52cce4f412e72b3466c42ffedc1faa1932"
+      },
+      "evaluations/hubs-spoke/evidence/index.json": {
+        "bytes": 15469,
+        "sha256": "2a42d4de5ab79c80ad7734c03b7749a69ba54d9642c4ecc13ed1b1fd17407874"
+      },
+      "evaluations/hubs-spoke/fixture-pins.json": {
+        "bytes": 688,
+        "sha256": "b97cf8e32a92ebc78d61df5aa8d997b0bf8545e838c1819f661f10e008dff628"
+      },
+      "evaluations/hubs-spoke/historical-source-map.json": {
+        "bytes": 1570,
+        "sha256": "16b068ba29bf6b370617d8b7367d9d102f6beb6e184a3cb92350077a4bd866bd"
+      },
+      "evaluations/hubs-spoke/package-lock.json": {
+        "bytes": 2367,
+        "sha256": "a328c9c6e6687fea6af89df053e94f3770ba7ef59ef1301d86e5cb474c6e7978"
+      },
+      "evaluations/hubs-spoke/package.json": {
+        "bytes": 800,
+        "sha256": "556d1dd5fb96387834110e12136c08698fb1d6b392a435f12fd14852ab706a13"
+      },
+      "evaluations/hubs-spoke/runtime/audit.mjs": {
+        "bytes": 2091,
+        "sha256": "e6f27b30516b152d712f7b0efc9013980e02972191cd9a7657bf5d12489f90f3"
+      },
+      "evaluations/hubs-spoke/runtime/browser-checks.mjs": {
+        "bytes": 14077,
+        "sha256": "fddfb4819fb486e81f5b490c6bc42cc46397d962f669b4aa9b414e3667920b26"
+      },
+      "evaluations/hubs-spoke/runtime/browser-policy.mjs": {
+        "bytes": 1322,
+        "sha256": "da813a0c9da43516e7ee370b702a60500df082d993d83cfd8c1f59fc40386cd2"
+      },
+      "evaluations/hubs-spoke/runtime/cleanup.py": {
+        "bytes": 4921,
+        "sha256": "7b1b0f723068bbb92603a94b3bfd4c99933ed3b38209948bdf28d28c689f160a"
+      },
+      "evaluations/hubs-spoke/runtime/config.py": {
+        "bytes": 14235,
+        "sha256": "ca6eb2206985d7322d74ae7f5df786342ac5b72c9414fcc99fb9801425d3afa6"
+      },
+      "evaluations/hubs-spoke/runtime/dockerfiles/dialog.Dockerfile": {
+        "bytes": 977,
+        "sha256": "ec85c33ec771d399251935252f1ac679550f66526ac1630e81e83cc2db2fb4d4"
+      },
+      "evaluations/hubs-spoke/runtime/dockerfiles/hubs.Dockerfile": {
+        "bytes": 424,
+        "sha256": "1455ecb90b291891d538e0c2605a2b803873d87b7d68b0a5f516ee40cd5a3c06"
+      },
+      "evaluations/hubs-spoke/runtime/dockerfiles/reticulum.Dockerfile": {
+        "bytes": 521,
+        "sha256": "5515dc7b87a767eb4aa5a0bf5bb825e597ae641f50cd0e691eb4faff1d9b018b"
+      },
+      "evaluations/hubs-spoke/runtime/download.py": {
+        "bytes": 1968,
+        "sha256": "b496cc410cc2e4246b994ffde0e1e2c8c3721909ca03ab9901e77fea30f6ee5c"
+      },
+      "evaluations/hubs-spoke/runtime/git-config": {
+        "bytes": 115,
+        "sha256": "1f6383c4e0a40e62b81542376a602dd49ae1dcb277be26c34912c638688f11d9"
+      },
+      "evaluations/hubs-spoke/runtime/pins.json": {
+        "bytes": 9597,
+        "sha256": "54e71d2b9d2dd690060030c0e4b12b46a5274c654f2a78fa00e3813431c46692"
+      },
+      "evaluations/hubs-spoke/runtime/prepare.py": {
+        "bytes": 6490,
+        "sha256": "378c801b6bb4b9fa2cb127eb379077b4a13821c3384e05d7c52526cea5aa9035"
+      },
+      "evaluations/hubs-spoke/runtime/readiness.py": {
+        "bytes": 1559,
+        "sha256": "010250f0aa61a73ebd1a186d3ac93cde9ab398ede71d3df0258cf4945b025325"
+      },
+      "evaluations/hubs-spoke/runtime/reticulum-config.exs": {
+        "bytes": 1263,
+        "sha256": "adab03b11a1bdfb5412e0a5d6500368b36c49e5c1b98cfffe3e60d0d27805cd8"
+      },
+      "evaluations/hubs-spoke/runtime/run.py": {
+        "bytes": 29805,
+        "sha256": "cc61f33f1c553ab5be6163fb5f17f0c77b974941447cbb4948d99bbdc5333df1"
+      },
+      "evaluations/hubs-spoke/runtime/test/browser-policy.test.mjs": {
+        "bytes": 1768,
+        "sha256": "a40fa5fbf737b8a2a941b3ea13ec5ee678dd3d831acfa3b3ce86afb7e2bdfb6d"
+      },
+      "evaluations/hubs-spoke/runtime/test/runtime-checks.py": {
+        "bytes": 19938,
+        "sha256": "ae7738d2d9e788623250db2a93be15587aa5fc40ba1cb2362c6c16d7fc12dad2"
+      },
+      "evaluations/hubs-spoke/runtime/test/watchdog-checks.py": {
+        "bytes": 9152,
+        "sha256": "920286b552660b8d397e1d93395fffb80865bad302266fec24aca4a6fcdbe675"
+      },
+      "evaluations/hubs-spoke/runtime/watchdog.py": {
+        "bytes": 5971,
+        "sha256": "a1b61a93b4fdada6bef0091fb818d8938bd82ad83b22bcfe85275905e3dafd40"
+      },
+      "evaluations/hubs-spoke/scripts/bootstrap.mjs": {
+        "bytes": 871,
+        "sha256": "07a34292cba2c2e15c9359ab19b0e3cd031932c839485e187c416f617f198941"
+      },
+      "evaluations/hubs-spoke/scripts/browser-support.mjs": {
+        "bytes": 3593,
+        "sha256": "ae8332cfcb65f0c5e4cafcde6d933b10d3a0c0477231004b247cb95668404451"
+      },
+      "evaluations/hubs-spoke/scripts/build-hubs.mjs": {
+        "bytes": 1246,
+        "sha256": "95ae386c95faa269ef9f79bf212464bea8723955f608852e6dee019c0f218d83"
+      },
+      "evaluations/hubs-spoke/scripts/checkout-test-source.mjs": {
+        "bytes": 1744,
+        "sha256": "0179110e17b8f760cb6f2e9951ca15e2f547ad833344ed01beea771ca7048089"
+      },
+      "evaluations/hubs-spoke/scripts/compose-preflight.mjs": {
+        "bytes": 2230,
+        "sha256": "ec3a1f6df87f32686c4fa1841c1ea8e139e89ecc7ee67d81bcf32e46708b07b5"
+      },
+      "evaluations/hubs-spoke/scripts/config.mjs": {
+        "bytes": 1059,
+        "sha256": "2010dd1003678bab7136eb8afc1771b78fd20a7c61965196bc8521ec4180ff02"
+      },
+      "evaluations/hubs-spoke/scripts/environment.mjs": {
+        "bytes": 2145,
+        "sha256": "1377949e15508ba004f0ec3435b60b3b83122dfe7c7c0b237f77ec451f225c27"
+      },
+      "evaluations/hubs-spoke/scripts/evaluate-spoke.mjs": {
+        "bytes": 10678,
+        "sha256": "620e5a15424f59cf5f114de0d59e9ce870938f47cbf98ff39b7c9aef843601cf"
+      },
+      "evaluations/hubs-spoke/scripts/evaluation.test.mjs": {
+        "bytes": 6789,
+        "sha256": "f82d6555b82e666fefbeac3b92fc96886d2bcd93b9be803441bafe484944bfea"
+      },
+      "evaluations/hubs-spoke/scripts/fixtures.mjs": {
+        "bytes": 8989,
+        "sha256": "2e5ddd90c6aa5d107656d9fb7c720f5dce0ff999616f6944c1562a4f6905db59"
+      },
+      "evaluations/hubs-spoke/scripts/historical-integrity.mjs": {
+        "bytes": 2760,
+        "sha256": "b9b07bb810ba0bb3d9a9a04d5bf427746ae84da1c4331630866dfe8b3ee3276e"
+      },
+      "evaluations/hubs-spoke/scripts/historical-integrity.test.mjs": {
+        "bytes": 2996,
+        "sha256": "17d2dc269cb83928015d5799795dfbcd7f61afc729add5807842518689862f32"
+      },
+      "evaluations/hubs-spoke/scripts/install-browser.mjs": {
+        "bytes": 580,
+        "sha256": "0c96eba686d140ff9509e0bbe64764d86b273548dd2e659bc9ea31111178d63b"
+      },
+      "evaluations/hubs-spoke/scripts/lib.mjs": {
+        "bytes": 4304,
+        "sha256": "1787b96c4d1401e832284e2cc24313da2edf56408ccd05348347b45a930f5fbb"
+      },
+      "evaluations/hubs-spoke/scripts/prepare-fixtures.mjs": {
+        "bytes": 759,
+        "sha256": "ffdb0a4671945e2be8bfa8009ebca0308b19950d7286231322e26824125b451f"
+      },
+      "evaluations/hubs-spoke/scripts/setup.mjs": {
+        "bytes": 2775,
+        "sha256": "4147858577b83520169d82af5da164b81adc7dd586153ac636523aa45b05979b"
+      },
+      "evaluations/hubs-spoke/scripts/sources.mjs": {
+        "bytes": 2177,
+        "sha256": "837ac8565524359698a5d6c80859b0cc0a0141f7501e0dc327a58f72bb8dee07"
+      },
+      "evaluations/hubs-spoke/scripts/test-all.mjs": {
+        "bytes": 1227,
+        "sha256": "a5bb32e1c8cf12330b98ed7dd70a0f2edd0f95d522617b641a8f51b86d2dd7e4"
+      },
+      "evaluations/hubs-spoke/scripts/verify-evidence.mjs": {
+        "bytes": 1916,
+        "sha256": "ef9ea25715b5cf68859a0236fccfa61be98d9a4a04803f6b4a56795e661f8201"
+      },
+      "evaluations/hubs-spoke/source-pins.json": {
+        "bytes": 1942,
+        "sha256": "0dc1d4841e8c5f84d3e3ac2cb3b15b8e23a15debea346669e0598001bd0d88b6"
+      },
+      "evaluations/vrspace-service/automate.py": {
+        "bytes": 32517,
+        "sha256": "7bda4d2edbc8f5aeb356cf08d6a4c80b4fd50ee7a6ada238f43bda94f86a70bf"
+      },
+      "evaluations/vrspace-service/command-supervisor.py": {
+        "bytes": 7496,
+        "sha256": "8908746dd988cf39074faf2b9408d59d33a765cb9d6d3c946a14bdd0c064137b"
+      },
+      "scripts/check-ci-policy.mjs": {
+        "bytes": 8757,
+        "sha256": "7785e73d23f2128964368cffbd270c4bde9ef7cb894f78f17ac574f4b04ce2ea"
+      },
+      "scripts/check-f04-runtime-policy.mjs": {
+        "bytes": 5729,
+        "sha256": "cb806a56375fa497ee988e79a66575592d183c43b1d2db673cac6e403f037d62"
+      },
+      "scripts/ci/f04-runtime.py": {
+        "bytes": 20877,
+        "sha256": "aa0fcbbd867b92f7bf898339df3dafaaeb4205d7c5ebd730cd3729ab92cc8100"
+      },
+      "scripts/ci/f04_runtime_evidence.py": {
+        "bytes": 45278,
+        "sha256": "333909d29448d13d246a740699c246885bab51ed5ef5066aadb285dbe9317ba1"
+      },
+      "scripts/ci/verify-f04-runtime-evidence.py": {
+        "bytes": 1875,
+        "sha256": "4e8224abdb9a4a787ed25b04016b43d79744c847e20c84b4c0188e8ba0947028"
+      },
+      "scripts/test/f04-runtime-evidence-checks.py": {
+        "bytes": 31440,
+        "sha256": "53a73ec1d10994a4f2f852f5f693d787126e80ce52fe9363ff63eb822da5e1f4"
+      },
+      "scripts/test/f04-runtime-evidence.test.mjs": {
+        "bytes": 661,
+        "sha256": "3a50b86b3253c9b8f50008011eca9bece06c729d71110fb0e7a0becff25101ea"
+      },
+      "scripts/test/f04-runtime-policy.test.mjs": {
+        "bytes": 9928,
+        "sha256": "f844f3c575f062f49c0e870c327683d32b19aa60fb57ec747fc46235a9c3deeb"
+      }
+    },
+    "fixtures": {
+      "comparison": {
+        "catalogDigest": "ae8f38424e68be31dd85acc066abbb96322cead3d90f580089b89a18d3039593",
+        "deviceTargetDigest": "c3f2dcce2e56da61f1999dc4056d165adbe9ff1601fc93bdf62dfc493e0080f6",
+        "fixtureSetId": "bve-foundation-0.1.0",
+        "scenarioDigest": "6547e68553d86e8294f2d2ea09413bfb45b7c773ba6942a0f25166835d099848",
+        "schemaDigest": "ef7de9b6f72e18063253c28cec464cf09d6fcc0d0e3795ff86f3108947f1224b",
+        "schemaVersion": "0.1.0",
+        "thresholdDigest": "36ca04ae7a569ba2e4c8fc6804db9620ca5a7ca5f63d527ad83cf880611d2a14",
+        "workloadDigest": "b105f1b7772ce039a5d43d098762bef459288ba447019bc6fc8c3dfcd8979e7b",
+        "worldDigest": "c18f890d75db0a8f7124ee14a230751c53aea5f7346b68c130cb499704b7b667"
+      },
+      "files": {
+        "world.json": {
+          "bytes": 20707,
+          "sha256": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812"
+        },
+        "catalog.json": {
+          "bytes": 2692,
+          "sha256": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c"
+        },
+        "scenario.json": {
+          "bytes": 3840,
+          "sha256": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d"
+        },
+        "thresholds.json": {
+          "bytes": 349,
+          "sha256": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0"
+        },
+        "workloads.json": {
+          "bytes": 2899,
+          "sha256": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1"
+        },
+        "devices.json": {
+          "bytes": 829,
+          "sha256": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932"
+        },
+        "schema-set.json": {
+          "bytes": 23133,
+          "sha256": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b"
+        },
+        "comparison.json": {
+          "bytes": 651,
+          "sha256": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+        },
+        "models/courtyard.gltf": {
+          "bytes": 7323,
+          "sha256": "7ea1ca783e91d46f615fd42e6849066adae2434db3cb78c389e874c78d8e6347"
+        },
+        "models/coordinates.gltf": {
+          "bytes": 5085,
+          "sha256": "48498e1816f57a77b8cb19c192be9d1ecdbbb097ce67e33810c42caf9a579cb2"
+        },
+        "models/prop.gltf": {
+          "bytes": 2116,
+          "sha256": "f5b5e5642880242d81a88af44f1267cf0c2d3089cf8f98bfd2bfdacba5a55d80"
+        },
+        "models/creature.gltf": {
+          "bytes": 12139,
+          "sha256": "b9efbb9b9dc9bdbd7a3f942cbc6708f058f1521b7bf2f8970af808826b5b2026"
+        },
+        "audio/corner-0.wav": {
+          "bytes": 96044,
+          "sha256": "a6090a5fba36ad0d8b54b3fdde296cf5109975dbd5c9684645dfd3e40b06e85c"
+        },
+        "audio/corner-1.wav": {
+          "bytes": 96044,
+          "sha256": "e9ee1c6b7c0838bef441bc3fb775b6f02350f972fd0e24bc1145b3432520faae"
+        },
+        "audio/corner-2.wav": {
+          "bytes": 96044,
+          "sha256": "82be760413fd1ef13cb67efd42e60389ae1835138e3ac22ebce2f6e46194cdab"
+        },
+        "audio/corner-3.wav": {
+          "bytes": 96044,
+          "sha256": "17f6da531217b233fca09cf6185da91c2fcac39b1ab62d9e89f8ac3b48cce703"
+        },
+        "audio/calibration.wav": {
+          "bytes": 96044,
+          "sha256": "bcffa22ff8ceca4778649ab0d27394458c87690386a18a1a412ee703be97e5e3"
+        },
+        "media/screen-marker.webm": {
+          "bytes": 116192,
+          "sha256": "079cf6f8de18fd74df68b690955cec9e4ff1eaad05063a5992e773fba8e9acc8"
+        },
+        "media/readability.svg": {
+          "bytes": 460,
+          "sha256": "817d6b838c847c4fa8a4f8b719bfd7e1373516eada8e6ece2390e8a8964bcb8b"
+        }
+      },
+      "export": {
+        "path": "evidence/2026-10-17-portable/spoke-courtyard-export.glb",
+        "bytes": 45156,
+        "sha256": "257819377db2b01cc5e98337f0f277524667ba3c24bdca1af33097890c0f2a9a",
+        "role": "Retained native Spoke export from historical F03 editor interaction; prop remains at [2,1,2]. URL and documented spawn relocation only in generated copy."
+      }
+    },
+    "runtime": {
+      "audit.mjs": {
+        "bytes": 2091,
+        "sha256": "e6f27b30516b152d712f7b0efc9013980e02972191cd9a7657bf5d12489f90f3"
+      },
+      "browser-checks.mjs": {
+        "bytes": 14077,
+        "sha256": "fddfb4819fb486e81f5b490c6bc42cc46397d962f669b4aa9b414e3667920b26"
+      },
+      "browser-policy.mjs": {
+        "bytes": 1322,
+        "sha256": "da813a0c9da43516e7ee370b702a60500df082d993d83cfd8c1f59fc40386cd2"
+      },
+      "cleanup.py": {
+        "bytes": 4921,
+        "sha256": "7b1b0f723068bbb92603a94b3bfd4c99933ed3b38209948bdf28d28c689f160a"
+      },
+      "config.py": {
+        "bytes": 14235,
+        "sha256": "ca6eb2206985d7322d74ae7f5df786342ac5b72c9414fcc99fb9801425d3afa6"
+      },
+      "dockerfiles/dialog.Dockerfile": {
+        "bytes": 977,
+        "sha256": "ec85c33ec771d399251935252f1ac679550f66526ac1630e81e83cc2db2fb4d4"
+      },
+      "dockerfiles/hubs.Dockerfile": {
+        "bytes": 424,
+        "sha256": "1455ecb90b291891d538e0c2605a2b803873d87b7d68b0a5f516ee40cd5a3c06"
+      },
+      "dockerfiles/reticulum.Dockerfile": {
+        "bytes": 521,
+        "sha256": "5515dc7b87a767eb4aa5a0bf5bb825e597ae641f50cd0e691eb4faff1d9b018b"
+      },
+      "download.py": {
+        "bytes": 1968,
+        "sha256": "b496cc410cc2e4246b994ffde0e1e2c8c3721909ca03ab9901e77fea30f6ee5c"
+      },
+      "git-config": {
+        "bytes": 115,
+        "sha256": "1f6383c4e0a40e62b81542376a602dd49ae1dcb277be26c34912c638688f11d9"
+      },
+      "pins.json": {
+        "bytes": 9597,
+        "sha256": "54e71d2b9d2dd690060030c0e4b12b46a5274c654f2a78fa00e3813431c46692"
+      },
+      "prepare.py": {
+        "bytes": 6490,
+        "sha256": "378c801b6bb4b9fa2cb127eb379077b4a13821c3384e05d7c52526cea5aa9035"
+      },
+      "readiness.py": {
+        "bytes": 1559,
+        "sha256": "010250f0aa61a73ebd1a186d3ac93cde9ab398ede71d3df0258cf4945b025325"
+      },
+      "reticulum-config.exs": {
+        "bytes": 1263,
+        "sha256": "adab03b11a1bdfb5412e0a5d6500368b36c49e5c1b98cfffe3e60d0d27805cd8"
+      },
+      "run.py": {
+        "bytes": 29805,
+        "sha256": "cc61f33f1c553ab5be6163fb5f17f0c77b974941447cbb4948d99bbdc5333df1"
+      },
+      "test/browser-policy.test.mjs": {
+        "bytes": 1768,
+        "sha256": "a40fa5fbf737b8a2a941b3ea13ec5ee678dd3d831acfa3b3ce86afb7e2bdfb6d"
+      },
+      "test/runtime-checks.py": {
+        "bytes": 19938,
+        "sha256": "ae7738d2d9e788623250db2a93be15587aa5fc40ba1cb2362c6c16d7fc12dad2"
+      },
+      "test/watchdog-checks.py": {
+        "bytes": 9152,
+        "sha256": "920286b552660b8d397e1d93395fffb80865bad302266fec24aca4a6fcdbe675"
+      },
+      "watchdog.py": {
+        "bytes": 5971,
+        "sha256": "a1b61a93b4fdada6bef0091fb818d8938bd82ad83b22bcfe85275905e3dafd40"
+      }
+    },
+    "pins": {
+      "schemaVersion": 1,
+      "status": "Prepared; exact-source and container compatibility not yet executed",
+      "sources": {
+        "hubs": {
+          "repository": "https://github.com/Hubs-Foundation/hubs.git",
+          "commit": "986d07a758e9d1184cb355385c6460391bd238d0",
+          "license": "MPL-2.0",
+          "files": {
+            "package.json": {
+              "bytes": 9741,
+              "sha256": "90ea536f10020d417c63d21bfb4056d6716a0ce68e3fb535d2425bf58dabc542"
+            },
+            "package-lock.json": {
+              "bytes": 791722,
+              "sha256": "f1630148e2e4c03c70bf0fbe55182ef4fc0b0506b82625b321109c2d71adf4d3"
+            },
+            "webpack.config.js": {
+              "bytes": 26865,
+              "sha256": "6ab02fa34bb25d90445a3b07516474e2aaa19f29c2885ef81b1daeb4fe7bce9e"
+            },
+            "src/naf-dialog-adapter.js": {
+              "bytes": 31885,
+              "sha256": "a509d2d7ab1fdd5793c98bc3c4577a88764eb354eda7569691fa7bb8d5c99f18"
+            }
+          }
+        },
+        "compose": {
+          "repository": "https://github.com/Hubs-Foundation/hubs-compose.git",
+          "commit": "54cc996394e715d32aa71c9cf9df4898b1ea1a57",
+          "license": "MPL-2.0",
+          "files": {
+            "docker-compose.yml": {
+              "bytes": 3881,
+              "sha256": "aaecdec125473742ff9129138281b7e878d6d470ac32b109be4fab6881a79b7a"
+            },
+            "bin/init": {
+              "bytes": 1462,
+              "sha256": "4d51fd50c243c38a77284cb88dadcafef0facb415353108b90588168c8f03e5a"
+            }
+          }
+        },
+        "reticulum": {
+          "repository": "https://github.com/Hubs-Foundation/reticulum.git",
+          "commit": "10364b17b50a6801ebceaf760188182e753860ec",
+          "license": "MPL-2.0",
+          "files": {
+            "mix.exs": {
+              "bytes": 3570,
+              "sha256": "f4057fe7c22e43785772e69743e7a13dfca033cb9c63ce411727d3f9ded0a8a4"
+            },
+            "mix.lock": {
+              "bytes": 28193,
+              "sha256": "e65796788f57bab27da75fb51a39edb88e04ad91f7824ec50e748db0f294e0ec"
+            },
+            "config/dev.exs": {
+              "bytes": 6955,
+              "sha256": "edd8f22d51744beaf4d87b7137537f41fcfde8d28a78ed7a42e7cde56fdea4d6"
+            },
+            "config/runtime.exs": {
+              "bytes": 2083,
+              "sha256": "c9c21adbe4f6e4ccc8071848b53d5890f1b1509a9ca657db6aeff1484aeede17"
+            },
+            "lib/ret_web/controllers/api/v1/hub_controller.ex": {
+              "bytes": 2703,
+              "sha256": "dd830f1b79660e272e244ee9adbb7fa16ad1ff1c6315bab78bfd1a35f54e0f0c"
+            },
+            "LICENSE": {
+              "bytes": 16725,
+              "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+            }
+          }
+        },
+        "dialog": {
+          "repository": "https://github.com/Hubs-Foundation/dialog.git",
+          "commit": "9da31c58c35fd9047ff9c52a426a230769c1a1e0",
+          "license": "MPL-2.0",
+          "files": {
+            "package.json": {
+              "bytes": 990,
+              "sha256": "a4ed4d4b16cb413a5f0e424408b7cbfac318e861e46d004528fbc3b302d4e48d"
+            },
+            "package-lock.json": {
+              "bytes": 91812,
+              "sha256": "9839c71a5162daff713d55ae0b8ed94c7ab67c424133bbae472065cc7b73b2ad"
+            },
+            "config.js": {
+              "bytes": 4040,
+              "sha256": "fbf1b48e3a3c862901dfabdb1f431f93e348314bcb108de32c06b068c770bca7"
+            },
+            "index.js": {
+              "bytes": 9002,
+              "sha256": "eadf5f32e3439195cb731a3d01ab0d5603f56b3363400527eee57121cd930337"
+            },
+            "LICENSE": {
+              "bytes": 16725,
+              "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+            }
+          }
+        }
+      },
+      "images": {
+        "observedAt": "2026-10-18T17:24:16.312726+00:00",
+        "images": {
+          "hubs": {
+            "repository": "library/node",
+            "observedTag": "22-bookworm",
+            "image": "library/node@sha256:c4d5523090a817b7aa86d2111241fdd4f66d1e27782b44160e6aa63b357ecb2d",
+            "platform": "linux/amd64",
+            "indexDigest": "sha256:0e5f906573693feaa1e21057ebdcfdb5bd5021f050b2dc7c9deceb629c7da2a8",
+            "manifestDigest": "sha256:c4d5523090a817b7aa86d2111241fdd4f66d1e27782b44160e6aa63b357ecb2d",
+            "manifestBytes": 2493,
+            "sourceUrl": "https://registry-1.docker.io/v2/library/node/manifests/22-bookworm"
+          },
+          "dialog": {
+            "repository": "library/node",
+            "observedTag": "18-bookworm",
+            "image": "library/node@sha256:eb29363371ee2859fad6a3c5af88d4abc6ff7d399addb13b7de3c1f11bdee6b9",
+            "platform": "linux/amd64",
+            "indexDigest": "sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783",
+            "manifestDigest": "sha256:eb29363371ee2859fad6a3c5af88d4abc6ff7d399addb13b7de3c1f11bdee6b9",
+            "manifestBytes": 2493,
+            "sourceUrl": "https://registry-1.docker.io/v2/library/node/manifests/18-bookworm"
+          },
+          "reticulum": {
+            "repository": "library/elixir",
+            "observedTag": "1.16.3-otp-25",
+            "image": "library/elixir@sha256:74bf732be6954ddb3876ac29462a3b04737e101d7b5046bdf27662b7558a173e",
+            "platform": "linux/amd64",
+            "indexDigest": "sha256:d3c1538021e234ba54cd2dc8ac6a40ed1989b8d6b1bdabfecbec1f738b6d4bf2",
+            "manifestDigest": "sha256:74bf732be6954ddb3876ac29462a3b04737e101d7b5046bdf27662b7558a173e",
+            "manifestBytes": 2499,
+            "sourceUrl": "https://registry-1.docker.io/v2/library/elixir/manifests/1.16.3-otp-25"
+          },
+          "db": {
+            "repository": "library/postgres",
+            "observedTag": "14-alpine",
+            "image": "library/postgres@sha256:7116ab7df71ef638eda416adbb92466b58a9da423f5476f2b830aae0a97b4fa5",
+            "platform": "linux/amd64",
+            "indexDigest": "sha256:4ea9e5ed06591da7ea23eb65465e8d3187fe79f4d5ec3ae976d29a33b013e77a",
+            "manifestDigest": "sha256:7116ab7df71ef638eda416adbb92466b58a9da423f5476f2b830aae0a97b4fa5",
+            "manifestBytes": 3054,
+            "sourceUrl": "https://registry-1.docker.io/v2/library/postgres/manifests/14-alpine"
+          }
+        }
+      },
+      "bootstrap": {
+        "hex": {
+          "url": "https://repo.hex.pm/installs/1.14.0/hex-2.2.1.ez",
+          "bytes": 739152,
+          "sha256": "d151bbaf3d226d604958d0bf072f923c3dd061d53847e83866f32f83a1227eed"
+        },
+        "rebar3": {
+          "url": "https://github.com/erlang/rebar3/releases/download/3.23.0/rebar3",
+          "bytes": 815571,
+          "sha256": "195591a13abf6a337aecbbc4c9b33d3684b0f3b14c76e84c007baff38db20393"
+        }
+      },
+      "wheels": {
+        "pip": {
+          "version": "23.0.1",
+          "filename": "pip-23.0.1-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/07/51/2c0959c5adf988c44d9e1e0d940f5b074516ecc87e96b1af25f59de9ba38/pip-23.0.1-py3-none-any.whl",
+          "bytes": 2055563,
+          "sha256": "236bcb61156d76c4b8a05821b988c7b8c35bf0da28a4b614e8d6ab5212c25c6f"
+        },
+        "setuptools": {
+          "version": "65.5.1",
+          "filename": "setuptools-65.5.1-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/b6/40/353c051f77ee5618adaf1fd96f4f6bae9714ed0a22c7142c01c24eb77fe4/setuptools-65.5.1-py3-none-any.whl",
+          "bytes": 1232712,
+          "sha256": "d0b9a8433464d5800cbe05094acf5c6d52a91bfac9b52bcfc4d41382be5d5d31"
+        },
+        "meson": {
+          "version": "0.61.5",
+          "filename": "meson-0.61.5-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/18/db/3feb3cfa102553b9329d0c887b3c10480381de69abf6e8629f6b32f450df/meson-0.61.5-py3-none-any.whl",
+          "bytes": 862509,
+          "sha256": "58c2ddb5f885da0e929f15d89f38d8a7d97f981f56815bcba008414f8511f59a"
+        },
+        "ninja": {
+          "version": "1.10.2.4",
+          "filename": "ninja-1.10.2.4-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.whl",
+          "url": "https://files.pythonhosted.org/packages/48/d2/5c106c854b0f2366679747b2a9c5377cc59e03e2b80d72e41588d143abbc/ninja-1.10.2.4-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.whl",
+          "bytes": 120718,
+          "sha256": "327c319176c5a4af21908b727b776e9f5caf275680403da632821ba071fd6296"
+        }
+      },
+      "sharedSupervisor": {
+        "automate.py": {
+          "sha256": "7bda4d2edbc8f5aeb356cf08d6a4c80b4fd50ee7a6ada238f43bda94f86a70bf"
+        },
+        "command-supervisor.py": {
+          "sha256": "8908746dd988cf39074faf2b9408d59d33a765cb9d6d3c946a14bdd0c064137b"
+        }
+      },
+      "spokeExport": {
+        "path": "evidence/2026-10-17-portable/spoke-courtyard-export.glb",
+        "bytes": 45156,
+        "sha256": "257819377db2b01cc5e98337f0f277524667ba3c24bdca1af33097890c0f2a9a",
+        "role": "Retained native Spoke export from historical F03 editor interaction; prop remains at [2,1,2]. URL and documented spawn relocation only in generated copy."
+      },
+      "fixtureMetadata": {
+        "world.json": {
+          "bytes": 20707,
+          "sha256": "ba6e9c1a5dd8a43c69534fca6fb031549be3d0301d3a4158b76a4c6cd5e73812"
+        },
+        "catalog.json": {
+          "bytes": 2692,
+          "sha256": "3207fd87f664bdb18668e9e8e03792c9d1074057b30b98cf3349115f94c3813c"
+        },
+        "scenario.json": {
+          "bytes": 3840,
+          "sha256": "372f07de72cf6bd1943f5a327bc407d310d1cd33c3416bca6494d4615c41a93d"
+        },
+        "thresholds.json": {
+          "bytes": 349,
+          "sha256": "b78f3c7a07217d6286f05fd0ee6b14df5612ea2712fc54e2802375163c1d00a0"
+        },
+        "workloads.json": {
+          "bytes": 2899,
+          "sha256": "c365dcac1440c4df221ca05ae4d691d0b451fd92ce69345b1247834a029e82e1"
+        },
+        "devices.json": {
+          "bytes": 829,
+          "sha256": "4386e6a63bd53ac425f8bec5a46555229ec8c6a6dbbae245fdfe8f957b25f932"
+        },
+        "schema-set.json": {
+          "bytes": 23133,
+          "sha256": "b0ebe25078210c841a168a85c0c2414b2bd8d0937d2a72d56a1a72bb0bc3610b"
+        },
+        "comparison.json": {
+          "bytes": 651,
+          "sha256": "9bbcc7ce56e2b112447143a1668bd2ea5e1d552518c7fbfc16c4d1d0570387a4"
+        }
+      }
+    }
+  },
+  "documentation": {
+    "evaluations/hubs-spoke/README.md": {
+      "bytes": 10999,
+      "sha256": "a4e68c8208998284e9dd1e93f5225d9ce435bdef73c943dee5ba00d0505078c4"
+    },
+    "evaluations/hubs-spoke/runtime/README.md": {
+      "bytes": 14688,
+      "sha256": "4630cbfebb11dda95826cf9a2890faf0cc76e1c60ff1b15b69470edb7d41db68"
+    },
+    "evaluations/hubs-spoke/runtime/HOSTED_REPLAY.md": {
+      "bytes": 7877,
+      "sha256": "1ac5b6046272015bd21c6c1ce13100cf25cfa3b5c9962d05456f0cec6de9cf21"
+    },
+    "evaluations/hubs-spoke/runtime/SECURITY_REVIEW.md": {
+      "bytes": 6473,
+      "sha256": "1b0b3879c17ce728fa9683cfee224e9824fb86b70b156458a86739e47f272ab5"
+    }
+  },
+  "historicalReceiptsUnchanged": {
+    "evaluations/hubs-spoke/evidence/index.json": {
+      "bytes": 15469,
+      "sha256": "2a42d4de5ab79c80ad7734c03b7749a69ba54d9642c4ecc13ed1b1fd17407874"
+    },
+    "evaluations/hubs-spoke/runtime/evidence/2026-10-18-preparation/receipt.json": {
+      "bytes": 11248,
+      "sha256": "5aedb5eb4d5f34168686dbc7d3dc87d2642bf24209739a553edbed9b6040167b"
+    }
+  },
+  "commands": [
+    {
+      "id": "node-version",
+      "argv": [
+        "node",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T18:42:49.322Z",
+      "exitCode": 0,
+      "passed": true,
+      "finishedAt": "2026-10-18T18:42:49.329Z"
+    },
+    {
+      "id": "python-version",
+      "argv": [
+        "python3",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T18:42:49.329Z",
+      "exitCode": 0,
+      "passed": true,
+      "finishedAt": "2026-10-18T18:42:49.331Z"
+    },
+    {
+      "id": "toolkit-suites",
+      "argv": [
+        "node",
+        "scripts/test-all.mjs"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree/evaluations/hubs-spoke",
+      "startedAt": "2026-10-18T18:42:49.331Z",
+      "exitCode": 0,
+      "passed": false,
+      "namedNodeCases": 0,
+      "nodeSuiteTotals": [],
+      "pythonMethods": 20,
+      "finishedAt": "2026-10-18T18:42:50.432Z"
+    },
+    {
+      "id": "hosted-policy-and-evidence",
+      "argv": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "--test-reporter=tap",
+        "scripts/test/f04-runtime-policy.test.mjs",
+        "scripts/test/f04-runtime-evidence.test.mjs"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T18:42:50.432Z",
+      "exitCode": 0,
+      "passed": true,
+      "namedNodeCases": 71,
+      "finishedAt": "2026-10-18T18:42:51.944Z"
+    },
+    {
+      "id": "python-evidence",
+      "argv": [
+        "python3",
+        "-B",
+        "-O",
+        "scripts/test/f04-runtime-evidence-checks.py"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T18:42:51.944Z",
+      "exitCode": 0,
+      "passed": true,
+      "pythonMethods": 14,
+      "finishedAt": "2026-10-18T18:42:53.041Z"
+    },
+    {
+      "id": "workflow-policy",
+      "argv": [
+        "node",
+        "scripts/check-ci-policy.mjs"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T18:42:53.041Z",
+      "exitCode": 0,
+      "passed": true,
+      "finishedAt": "2026-10-18T18:42:53.150Z"
+    },
+    {
+      "id": "historical-integrity",
+      "argv": [
+        "node",
+        "scripts/verify-evidence.mjs"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree/evaluations/hubs-spoke",
+      "startedAt": "2026-10-18T18:42:53.150Z",
+      "exitCode": 0,
+      "passed": true,
+      "finishedAt": "2026-10-18T18:42:53.265Z"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "separate assistant /root",
+      "scope": "Exact manual workflow policy; original-dispatch/Git recovery, observed cleanup absence, and failed-diagnostic runtime/browser proof bindings.",
+      "result": "No remaining blocker in the reviewed subset",
+      "reviewedFiles": {
+        "scripts/check-f04-runtime-policy.mjs": {
+          "bytes": 5729,
+          "sha256": "cb806a56375fa497ee988e79a66575592d183c43b1d2db673cac6e403f037d62"
+        },
+        "scripts/test/f04-runtime-policy.test.mjs": {
+          "bytes": 9928,
+          "sha256": "f844f3c575f062f49c0e870c327683d32b19aa60fb57ec747fc46235a9c3deeb"
+        },
+        "scripts/ci/f04-runtime.py": {
+          "bytes": 20877,
+          "sha256": "aa0fcbbd867b92f7bf898339df3dafaaeb4205d7c5ebd730cd3729ab92cc8100"
+        },
+        "scripts/ci/f04_runtime_evidence.py": {
+          "bytes": 45278,
+          "sha256": "333909d29448d13d246a740699c246885bab51ed5ef5066aadb285dbe9317ba1"
+        },
+        "scripts/ci/verify-f04-runtime-evidence.py": {
+          "bytes": 1875,
+          "sha256": "4e8224abdb9a4a787ed25b04016b43d79744c847e20c84b4c0188e8ba0947028"
+        }
+      }
+    },
+    {
+      "reviewer": "separate assistant /root/asset_research",
+      "scope": "Historical integrity, extracted Docker cleanup, held-pidfd watchdog, original-helper recovery, lossless process stat/argv and its deterministic regression.",
+      "result": "No remaining blocker in the reviewed subset; source reads only, no new process/service/browser execution",
+      "reviewedFiles": {
+        "evaluations/hubs-spoke/runtime/cleanup.py": {
+          "bytes": 4921,
+          "sha256": "7b1b0f723068bbb92603a94b3bfd4c99933ed3b38209948bdf28d28c689f160a"
+        },
+        "evaluations/hubs-spoke/runtime/watchdog.py": {
+          "bytes": 5971,
+          "sha256": "a1b61a93b4fdada6bef0091fb818d8938bd82ad83b22bcfe85275905e3dafd40"
+        },
+        "evaluations/hubs-spoke/runtime/test/watchdog-checks.py": {
+          "bytes": 9152,
+          "sha256": "920286b552660b8d397e1d93395fffb80865bad302266fec24aca4a6fcdbe675"
+        },
+        "scripts/test/f04-runtime-evidence-checks.py": {
+          "bytes": 31440,
+          "sha256": "53a73ec1d10994a4f2f852f5f693d787126e80ce52fe9363ff63eb822da5e1f4"
+        }
+      }
+    }
+  ],
+  "limits": [
+    "No Docker or required same-namespace procfs task/children surface in this workspace; no backend build/readiness/browser or new real watchdog-process execution claimed.",
+    "Synthetic envelope tests exercise verifier contradictions. They are not observations of successful services or cleanup.",
+    "The original editor captures, upstream failed audit, preparation receipt and capture index are unchanged historical evidence.",
+    "A reviewed main-branch workflow_dispatch run remains required. Mandatory failed audits must keep the diagnostic and workflow failed.",
+    "No fresh audit, browser, service, network transfer, GitHub mutation, commit or dispatch was executed by this preparation capture.",
+    "Separate assistant reviews are automated peer contributions, not independent human approval."
+  ],
+  "files": {
+    "historical-integrity.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "historical-integrity.stdout.txt": {
+      "bytes": 402,
+      "sha256": "86c697db8f1d94cfd6b6748792e39a959273863eafd1f5f4c8cf52be51a46250"
+    },
+    "hosted-policy-and-evidence.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "hosted-policy-and-evidence.stdout.txt": {
+      "bytes": 12717,
+      "sha256": "3293418444308d776c36d0a863d9cc188543df1d7444b9d902400414d89a573b"
+    },
+    "node-version.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-version.stdout.txt": {
+      "bytes": 9,
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
+    },
+    "python-evidence.stderr.txt": {
+      "bytes": 2423,
+      "sha256": "44410d01717f9ae5275531f94f8f51aecc0a5f8488af3ded1420d25bc0fb014d"
+    },
+    "python-evidence.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "python-version.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "python-version.stdout.txt": {
+      "bytes": 15,
+      "sha256": "4c3569f5da09975434dd9fd9a91fadbc4367a91d8f3c3fab59e9241ab9ee4bd8"
+    },
+    "toolkit-suites.stderr.txt": {
+      "bytes": 3215,
+      "sha256": "2c1d728f29ba3dcb2b5bced832bac09a30d8c8960d93644d4ad0bbcc16be76f2"
+    },
+    "toolkit-suites.stdout.txt": {
+      "bytes": 1677,
+      "sha256": "1bc0176e0ef19a1bcdea55158ffa4fd6fe63f3656c8c363dc06ca428f214b8b3"
+    },
+    "workflow-policy.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "workflow-policy.stdout.txt": {
+      "bytes": 71,
+      "sha256": "8401791765634727e349628c944023de65e6ece4b19b691b660f55548327e908"
+    }
+  }
+}

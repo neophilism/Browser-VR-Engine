@@ -2,6 +2,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { parseDocument } from 'yaml';
+import { validateF04RuntimeWorkflow } from './check-f04-runtime-policy.mjs';
 
 export const gateCommand = 'test "$CHECKS_RESULT" = success && test "$EVALUATIONS_RESULT" = success && test "$SERVICE_RESULT" = success';
 
@@ -74,7 +75,12 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   const files = (await readdir(resolve(root, '.github/workflows'))).filter(name => /\.ya?ml$/.test(name));
   const errors = validatePackageCommands(JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8')));
   if (!files.includes('engine-ci.yml')) errors.push('Missing engine CI workflow');
-  for (const file of files) errors.push(...validateWorkflow(await readFile(resolve(root, '.github/workflows', file), 'utf8'), pins).map(error => `${file}: ${error}`));
+  if (!files.includes('f04-hubs-runtime.yml')) errors.push('Missing reviewed manual F04 workflow');
+  for (const file of files) {
+    const validate = file === 'engine-ci.yml' ? validateWorkflow : file === 'f04-hubs-runtime.yml' ? validateF04RuntimeWorkflow : null;
+    if (!validate) errors.push(`${file}: workflow has no reviewed policy`);
+    else errors.push(...validate(await readFile(resolve(root, '.github/workflows', file), 'utf8'), pins).map(error => `${file}: ${error}`));
+  }
   if (errors.length) { console.error(errors.join('\n')); process.exitCode = 1; }
   else console.log('CI events, pins, permissions, failure gate and artifact policy passed.');
 }

@@ -1,0 +1,1 @@
+CI events, pins, permissions, failure gate and artifact policy passed.

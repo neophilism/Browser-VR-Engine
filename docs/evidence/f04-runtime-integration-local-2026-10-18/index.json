@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "kind": "local-foundation-integration-preview",
+  "status": "passed-local-checks",
+  "completeFoundationQualification": false,
+  "preparedTreeAtExecution": "91dba3533b530406656f0bc241c95ba4b22f2543",
+  "baseCommit": "647240bd5493940f60caaec246970a86a2a4238f",
+  "sourceState": "Reviewed staged proposal; local dirty preview, not hosted acceptance. Subsequent documentation and receipt additions do not relabel this captured tree.",
+  "files": [
+    {
+      "path": "foundation/logs/check.txt",
+      "bytes": 27109,
+      "sha256": "ed529f622a6d5c47c24be8f98df547a9f09faaab384e11fcc96cffeb9582f894"
+    },
+    {
+      "path": "foundation/logs/consumer.txt",
+      "bytes": 263,
+      "sha256": "b70373de193d55366a7509d6b5c277dc84179256043192e48a139030110c372a"
+    },
+    {
+      "path": "foundation/logs/dependencies.txt",
+      "bytes": 137,
+      "sha256": "48d456d1d29a34ea0f3f70174bb236277e220b3edc3f6ca559791c14fcc7a354"
+    },
+    {
+      "path": "foundation/logs/example.txt",
+      "bytes": 877,
+      "sha256": "2d27e68eff6e50d9447eaeaa621427bb66c8e853a2cceef6c0c055bdcc98e160"
+    },
+    {
+      "path": "foundation/logs/install.txt",
+      "bytes": 233,
+      "sha256": "89a4a80aa7b20642d14777143d8ed2a1b6eff254b0a0ce8721a90e5eb1113752"
+    },
+    {
+      "path": "foundation/logs/sharding.txt",
+      "bytes": 215,
+      "sha256": "476f29e3597e2f519c7c1ca07931b8f5daeaacd51ba73a62b2dd3a9e8be72d55"
+    },
+    {
+      "path": "foundation/manifest.json",
+      "bytes": 4257,
+      "sha256": "8ac70cc0b065f4411fc394b93caa7afd25a595eb049fcca3cba37c923b81f2e8"
+    },
+    {
+      "path": "foundation/reports/dependency-audit.json",
+      "bytes": 600,
+      "sha256": "82c5f5d010b7bb31c3d305ff8b5221dd516fdc52f15aef53df66cda7aaa44f9f"
+    }
+  ]
+}

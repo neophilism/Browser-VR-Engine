@@ -4,6 +4,8 @@
 
 The demonstrated subset is useful: the real Spoke editor loads the original F03 courtyard, skinned creature and media; a numeric-field edit moves a prop and its collision proxy; native GLB export retains the creature skin and both animation clips; native project reload retains the mapped edit, collision relationship, screen size and positional-video setting. A fresh Hubs typecheck, its one upstream unit test, and a production client build also pass. See `evidence/index.json` and `REUSE_ASSESSMENT.md` for what this evidence can support.
 
+The next [real Hubs runtime diagnostic](runtime/README.md) is prepared separately: exact Hubs/Reticulum/Dialog sources, immutable container contexts, mandatory audits, real loopback readiness and a native two-browser room/rejoin harness. Its pure checks pass, but the new container/backend/browser path is unexecuted because local Docker and the required procfs supervision surface are unavailable. The [manual Ubuntu replay](runtime/HOSTED_REPLAY.md) provides the next compatible host through an explicit reviewed-main dispatch. It has no required runtime job and does not change the existing evidence claims.
+
 ## Reproduce
 
 Use Node 24 and Git. The bundle is a private standalone npm project, outside the root workspaces; its two pinned tools do not enter the engine runtime dependency graph. Run these commands from `evaluations/hubs-spoke` in the engine repository:
@@ -65,12 +67,14 @@ Full repository URLs, commits and original/patched file hashes are in `source-pi
 - Yarn registry tarball URLs are changed to the npm registry while preserving the common locked package versions and integrity hashes.
 - Direct webpack is changed from 4.39.3 to exactly 4.47.0 to run on Node 24 without the obsolete MD4 hashing failure. Its required dependency entries are included in the patch.
 
-These are bounded reproducibility adaptations. They do not establish that either upstream dependency tree is secure or current. The retained Hubs dependency audit timed out with invalid/missing registry JSON; it is **unknown**, not clean.
+These are bounded reproducibility adaptations. They do not establish that either upstream dependency tree is secure or current. The original 2026-10-17 Hubs audit timed out with invalid/missing registry JSON. A separate [2026-10-18 source-lock audit](../../docs/evidence/f04-upstream-audit-2026-10-18/receipt.json) obtained a valid failing report: 106 npm package/metavulnerability entries, including 14 critical and 64 high. The original timeout capture remains unchanged. The modern toolkit graph and the legacy upstream graph are separate audit scopes.
 
 Unmodified upstream license texts are under `licenses/`. Hubs and Compose use MPL-2.0; Spoke includes MPL-2.0 and MIT notices for editor-derived portions. The private toolkit uses Playwright (Apache-2.0) and Yarn (BSD-2-Clause); source and lockfile retain those identities. This evaluation is not a completed transitive-license or legal review, and does not change the engine repository's license. Preserve notices and review file-level source obligations when distributing a chosen fork.
 
 ## Evidence interpretation
 
-`npm run verify:evidence` checks the committed artifact hashes and recorded bounds. It does not run hardware or turn a past observation into a new test. `npm test` exercises fixture identity, tamper rejection, transform conventions, collider/video mapping, environment filtering, failed subprocess handling, exact patch reproduction and GLB envelope checks. These are different from a fresh browser run.
+`npm run verify:evidence` checks the committed artifact hashes and recorded bounds. It does not run hardware or turn a past observation into a new test. The original capture index and bytes are unchanged. A fixed five-file source-snapshot map preserves the original README/assessment/security/package/verifier fingerprints while explicitly reporting current-source differences; actual captured editor/build/audit files still resolve at their original paths. A verified historical capture is not a rerun of the current source.
+
+`npm test` requires the original nine editor checks, 20 Python runtime methods, two Node browser-policy methods and four historical-integrity methods. These exercise fixture identity, tamper rejection, transform conventions, collider/video mapping, environment filtering, failed subprocess handling, exact patch reproduction, GLB bounds and diagnostic failure rules. They are different from a fresh browser run. The real watchdog-process regressions and native two-client runtime harness are required separately in the manual hosted workflow.
 
 Neither the original nor portable editor run supplies physical-headset evidence, audio listening evidence, frame-time percentiles, event-scale capacity, server authorization, multiuser ownership, reconnect convergence, avatar tracking/IK, or full world export/import fidelity. `REUSE_ASSESSMENT.md` lists the qualification work needed before F06 can choose this foundation. `SECURITY_REVIEW.md` records the scoped assistant self review; it is not independent human approval.

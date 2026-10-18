@@ -1,0 +1,19 @@
+test_artifact_byte_filter_runs_before_copy_or_upload (__main__.EvidenceChecks.test_artifact_byte_filter_runs_before_copy_or_upload) ... ok
+test_cleanup_force_error_and_missing_resource_proof_remain_failures (__main__.EvidenceChecks.test_cleanup_force_error_and_missing_resource_proof_remain_failures) ... ok
+test_command_supervision_failure_cannot_hide_behind_zero_exit (__main__.EvidenceChecks.test_command_supervision_failure_cannot_hide_behind_zero_exit) ... ok
+test_current_main_dispatch_identity_is_exact (__main__.EvidenceChecks.test_current_main_dispatch_identity_is_exact) ... ok
+test_dirty_or_malformed_commit_run_and_attempt_are_rejected (__main__.EvidenceChecks.test_dirty_or_malformed_commit_run_and_attempt_are_rejected) ... ok
+test_dispatch_rejects_branch_event_workflow_override_and_runner_changes (__main__.EvidenceChecks.test_dispatch_rejects_branch_event_workflow_override_and_runner_changes) ... ok
+test_docker_cleanup_requires_both_ownership_labels_and_attempts_down_after_log_failure (__main__.EvidenceChecks.test_docker_cleanup_requires_both_ownership_labels_and_attempts_down_after_log_failure) ... ok
+test_late_browser_error_is_rejected_even_with_all_nine_passed (__main__.EvidenceChecks.test_late_browser_error_is_rejected_even_with_all_nine_passed) ... ok
+test_original_cleanup_blobs_are_checked_without_reading_changed_working_helpers (__main__.EvidenceChecks.test_original_cleanup_blobs_are_checked_without_reading_changed_working_helpers) ... ok
+test_run_attempt_source_and_inventory_binding_cannot_be_substituted (__main__.EvidenceChecks.test_run_attempt_source_and_inventory_binding_cannot_be_substituted) ... ok
+test_unknown_symlink_and_escaping_artifact_paths_are_rejected (__main__.EvidenceChecks.test_unknown_symlink_and_escaping_artifact_paths_are_rejected) ... ok
+test_unrelated_non_utf8_process_arguments_do_not_abort_owned_path_scanning (__main__.EvidenceChecks.test_unrelated_non_utf8_process_arguments_do_not_abort_owned_path_scanning) ... ok
+test_valid_failed_audit_remains_a_failure_with_exact_lock_and_exit_binding (__main__.EvidenceChecks.test_valid_failed_audit_remains_a_failure_with_exact_lock_and_exit_binding) ... ok
+test_valid_failed_partial_artifact_does_not_become_acceptance (__main__.EvidenceChecks.test_valid_failed_partial_artifact_does_not_become_acceptance) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.688s
+
+OK

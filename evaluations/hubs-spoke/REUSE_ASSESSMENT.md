@@ -12,7 +12,7 @@
 | Spoke export and native reload | GLB retains one skin and two animation clips. Native `.spoke` reload preserves the mapped edit, collision hierarchy, screen dimensions and panner selection. | Preserve native exporter/serializer when possible. Canonical semantic roundtrip and Hubs GLB reimport still need evidence. |
 | Spatial-media authoring | Six native panner selections, source references and configured gains load; positional video setting survives native reload. | Existing authoring controls are reusable candidates. This does not verify audible placement, occlusion, independent per-source mix, explicit cutoff, synchronized playback or headset output. |
 | Compose deployment | Missing mutagen-compose prevents pinned `bin/init` from reaching service setup. | No Reticulum/Dialog stack was deployed; service and security assumptions remain untested. |
-| Dependency security | Hubs audit timed out. | No clean-audit or production dependency-security conclusion is justified. |
+| Dependency security | The original Hubs audit timed out. The separate 2026-10-18 pinned-lock report has 106 package/metavulnerability entries, including 14 critical and 64 high. | Known failed upstream graph; modern toolkit audits remain a separate scope. Remediation is unresolved. |
 
 No frame-time or capacity estimate is inferred from shared-machine SwiftShader captures. The fixture is small synthetic geometry, not either referenced Acropolis, Giiman architecture, or a production detailed animal.
 
@@ -51,6 +51,6 @@ The F03 world/scenario/threshold/workload/device digests must stay frozen for co
 3. A working, pinned and reviewed service deployment with authorization/default-access boundaries, asset endpoints and operational dependency limits documented.
 4. Physical headset/controller checks and spatial-audio listening/calibration. Emulator, SwiftShader and offline gain-math results do not count as hardware evidence.
 5. The defined frame-time routes on recorded target hardware and qualification of retained avatar/media/collision features. No event-scale or detailed-marketplace-asset claim follows from this courtyard.
-6. A dependency-security result or a documented explicit unresolved-risk disposition. The retained timeout is not a passing audit.
+6. Resolve the current dependency-security findings and retain fresh results. The 2026-10-18 report replaces the active unknown with a known failed graph; it is not a waiver or a passing audit.
 
 Until then, a Hubs/Spoke fork remains a credible but incompletely qualified option. The demonstrated builder functionality should inform the eventual reuse decision regardless of which runtime wins.

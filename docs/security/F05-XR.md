@@ -20,7 +20,7 @@ The released-service build contract now includes `src/xr-session.js`, matching t
 
 The first main run after PR6 really failed the bird check; its unchanged artifact is retained. The narrow correction replaces the fixed 300 ms observation window with a bounded wait for actual scene/simulation/clip progress. It retains the original position-change, clip-change and source-follow assertions and does not control or advance the bird. Before/after diagnostics remain available on timeout. The failed report lacks interval counters, so its exact scheduling cause remains unproven.
 
-Fresh desktop evidence and source hashes were inspected separately from the author. The repaired runner hash is `ffe27331ea779a2b8e81ca17cbce34359c8dc52b12541c89e67c5699b1c45850`. No remaining source blocker was found in this correction. Current hosted results and subsequent main verification remain necessary; the local pass does not erase the failed main run.
+Fresh desktop evidence and source hashes were inspected separately from the author. The repaired runner hash is `ffe27331ea779a2b8e81ca17cbce34359c8dc52b12541c89e67c5699b1c45850`. No remaining source blocker was found in this correction. At that stage, current hosted results and subsequent main verification were still necessary. They later passed as recorded below; the local pass did not erase the failed main run.
 
 ## Service-startup correction
 
@@ -28,7 +28,7 @@ The first PR7 run passed the desktop/XR subsets but exposed a real service-start
 
 Review verified that entry sets ownership synchronously before hooks and the native request, and keeps it through pending/cancelled grants, active rendering, failed/unconfirmed native end and disposal. A separately found synchronous pre-request hook failure now clears ownership before publishing an error, so no nonexistent session can permanently lock desktop placement. Deterministic cases assert zero requests after that failure and successful retry. The native-support hold in the browser is test instrumentation; it does not substitute a device or count as headset evidence.
 
-The old-runtime negative control rejected both Alpha/Beta placements during preparation. Final local evidence is 55/55 cases, 19/19 desktop and 10/10 emulated XR with unchanged required check counts, complete source inventories and zero late diagnostics. Separate source reviews found no remaining blocker in the five-file correction. The real released-service run, current-head review, artifact verification and subsequent main checks remain required.
+The old-runtime negative control rejected both Alpha/Beta placements during preparation. Final local evidence is 55/55 cases, 19/19 desktop and 10/10 emulated XR with unchanged required check counts, complete source inventories and zero late diagnostics. Separate source reviews found no remaining blocker in the five-file correction. The real released-service run, current-head review, artifact verification and subsequent main checks were required before acceptance and subsequently passed as recorded below.
 
 ## Reviewed source identities
 
@@ -43,5 +43,11 @@ The old-runtime negative control rejected both Alpha/Beta placements during prep
 | `scripts/ci/evaluate.mjs` | `e75fac3f4caf94979441966e268e9f9d1fcdc0708be9425574bfd90dd2c5ca29` |
 | `scripts/ci/evaluation-evidence.mjs` | `038dd622cc8ead442028115a2b61efd0f18679cf5b7b45397eb716f3c21a3b66` |
 | `scripts/ci/verify-evaluation-evidence.mjs` | `073ac2569de3164577c7eb4e105d20c96ddb1571d26dfbdf3e3d5aeb46a2befe` |
+
+## Completed corrected-head and main verification
+
+Self-review `5564279753` was submitted for corrected head `b3bb098d2be04d7c848378e710c01426aac9004e`. All four required jobs and all three uploads passed in run `39154237536`; the downloaded archives passed digest checks and checked-in verification from exact clean tested merge `0d8fefc38c6acbc5c792b387f15dd9afcf80a480`. Fresh branch, review, rules, tree/parents and check state were inspected before the expected-head squash merge.
+
+Merged main `647240bd5493940f60caaec246970a86a2a4238f` has the reviewed tree `dc7fbb0b7f8a573ce6556e97d845ff3bc9998be5`. Main run `39154772861` passed all four jobs and three uploads, and all three downloaded main archives passed exact-clean-checkout verification. The [complete receipt](../evidence/xr-integration-ci-39154237536/index.json) retains both runs. Earlier failure records remain unchanged.
 
 The full foundation remains incomplete. This review does not qualify user authentication, shared authority, media authorization, hostile production content, real headset/audio behavior or conference capacity.

@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "kind": "f04-runtime-preparation",
+  "status": "offline-checks-passed-runtime-blocked",
+  "startedAt": "2026-10-18T17:51:35.124Z",
+  "finishedAt": "2026-10-18T17:51:36.031Z",
+  "baseCommit": "315b0283f598b1bef7f2c6c38c90c01d562fe6c5",
+  "baseAcceptanceClaim": false,
+  "implementationCommitted": false,
+  "qualification": "incomplete",
+  "runtimeExecuted": false,
+  "auditExecutedByThisReceipt": false,
+  "sourceFiles": {
+    "audit.mjs": {
+      "bytes": 2091,
+      "sha256": "e6f27b30516b152d712f7b0efc9013980e02972191cd9a7657bf5d12489f90f3"
+    },
+    "browser-checks.mjs": {
+      "bytes": 14077,
+      "sha256": "fddfb4819fb486e81f5b490c6bc42cc46397d962f669b4aa9b414e3667920b26"
+    },
+    "browser-policy.mjs": {
+      "bytes": 1322,
+      "sha256": "da813a0c9da43516e7ee370b702a60500df082d993d83cfd8c1f59fc40386cd2"
+    },
+    "config.py": {
+      "bytes": 14235,
+      "sha256": "ca6eb2206985d7322d74ae7f5df786342ac5b72c9414fcc99fb9801425d3afa6"
+    },
+    "dockerfiles/dialog.Dockerfile": {
+      "bytes": 977,
+      "sha256": "ec85c33ec771d399251935252f1ac679550f66526ac1630e81e83cc2db2fb4d4"
+    },
+    "dockerfiles/hubs.Dockerfile": {
+      "bytes": 424,
+      "sha256": "1455ecb90b291891d538e0c2605a2b803873d87b7d68b0a5f516ee40cd5a3c06"
+    },
+    "dockerfiles/reticulum.Dockerfile": {
+      "bytes": 521,
+      "sha256": "5515dc7b87a767eb4aa5a0bf5bb825e597ae641f50cd0e691eb4faff1d9b018b"
+    },
+    "download.py": {
+      "bytes": 1968,
+      "sha256": "b496cc410cc2e4246b994ffde0e1e2c8c3721909ca03ab9901e77fea30f6ee5c"
+    },
+    "git-config": {
+      "bytes": 115,
+      "sha256": "1f6383c4e0a40e62b81542376a602dd49ae1dcb277be26c34912c638688f11d9"
+    },
+    "pins.json": {
+      "bytes": 9597,
+      "sha256": "54e71d2b9d2dd690060030c0e4b12b46a5274c654f2a78fa00e3813431c46692"
+    },
+    "prepare.py": {
+      "bytes": 6490,
+      "sha256": "378c801b6bb4b9fa2cb127eb379077b4a13821c3384e05d7c52526cea5aa9035"
+    },
+    "readiness.py": {
+      "bytes": 1559,
+      "sha256": "010250f0aa61a73ebd1a186d3ac93cde9ab398ede71d3df0258cf4945b025325"
+    },
+    "reticulum-config.exs": {
+      "bytes": 1263,
+      "sha256": "adab03b11a1bdfb5412e0a5d6500368b36c49e5c1b98cfffe3e60d0d27805cd8"
+    },
+    "run.py": {
+      "bytes": 32716,
+      "sha256": "966a743f64039225bc46b2dc7af4c75f17717df5133eb9a8207b5c6a5c2183b0"
+    },
+    "test/browser-policy.test.mjs": {
+      "bytes": 1768,
+      "sha256": "a40fa5fbf737b8a2a941b3ea13ec5ee678dd3d831acfa3b3ce86afb7e2bdfb6d"
+    },
+    "test/runtime-checks.py": {
+      "bytes": 19938,
+      "sha256": "ae7738d2d9e788623250db2a93be15587aa5fc40ba1cb2362c6c16d7fc12dad2"
+    }
+  },
+  "sharedSupervisor": {
+    "automate.py": {
+      "bytes": 32517,
+      "sha256": "7bda4d2edbc8f5aeb356cf08d6a4c80b4fd50ee7a6ada238f43bda94f86a70bf"
+    },
+    "command-supervisor.py": {
+      "bytes": 7496,
+      "sha256": "8908746dd988cf39074faf2b9408d59d33a765cb9d6d3c946a14bdd0c064137b"
+    }
+  },
+  "files": {
+    "blocked-preflight.json": {
+      "bytes": 14177,
+      "sha256": "5434392cb01e4109cbeea5c968e3dd874531bb85ab50d40f4243e5441cd00791"
+    },
+    "node-checks.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-checks.stdout.txt": {
+      "bytes": 308,
+      "sha256": "d7b75a15a3c60841d57991c61b3f80b892e0782d416923c18932927ceb8eb9d6"
+    },
+    "node-version.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-version.stdout.txt": {
+      "bytes": 9,
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
+    },
+    "preflight.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "preflight.stdout.txt": {
+      "bytes": 461,
+      "sha256": "53856ee05ba30f9d66801a0a8ce8da0a5055fe366f085021b97c9451be0f4172"
+    },
+    "public-input-resolution.json": {
+      "bytes": 4721,
+      "sha256": "8900757e1431f12594587c05f479d4e0fe46e07cccd1b21dc14e9b63b6682a12"
+    },
+    "python-checks.stderr.txt": {
+      "bytes": 3215,
+      "sha256": "266f6762f44f501f81cbb5d8e3ef66689b04d03d2b8514744a4ee48e11b0df7a"
+    },
+    "python-checks.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "python-version.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "python-version.stdout.txt": {
+      "bytes": 15,
+      "sha256": "4c3569f5da09975434dd9fd9a91fadbc4367a91d8f3c3fab59e9241ab9ee4bd8"
+    },
+    "source-adaptations.json": {
+      "bytes": 7922,
+      "sha256": "438bd4b27f7caa0d2cca638ba85441b30073ec14698e023bbdf8a6b6b5ff66dc"
+    },
+    "syntax-audit.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "syntax-audit.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "syntax-browser-checks.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "syntax-browser-checks.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "syntax-browser-policy.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "syntax-browser-policy.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "commands": [
+    {
+      "id": "node-version",
+      "argv": [
+        "node",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T17:51:35.124Z",
+      "finishedAt": "2026-10-18T17:51:35.130Z",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdout": "node-version.stdout.txt",
+      "stderr": "node-version.stderr.txt"
+    },
+    {
+      "id": "python-version",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "--version"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T17:51:35.130Z",
+      "finishedAt": "2026-10-18T17:51:35.131Z",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdout": "python-version.stdout.txt",
+      "stderr": "python-version.stderr.txt"
+    },
+    {
+      "id": "python-checks",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-O",
+        "evaluations/hubs-spoke/runtime/test/runtime-checks.py"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T17:51:35.133Z",
+      "finishedAt": "2026-10-18T17:51:35.599Z",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdout": "python-checks.stdout.txt",
+      "stderr": "python-checks.stderr.txt"
+    },
+    {
+      "id": "node-checks",
+      "argv": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "evaluations/hubs-spoke/runtime/test/browser-policy.test.mjs"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T17:51:35.599Z",
+      "finishedAt": "2026-10-18T17:51:35.651Z",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdout": "node-checks.stdout.txt",
+      "stderr": "node-checks.stderr.txt"
+    },
+    {
+      "id": "syntax-audit",
+      "argv": [
+        "node",
+        "--check",
+        "evaluations/hubs-spoke/runtime/audit.mjs"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T17:51:35.651Z",
+      "finishedAt": "2026-10-18T17:51:35.678Z",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdout": "syntax-audit.stdout.txt",
+      "stderr": "syntax-audit.stderr.txt"
+    },
+    {
+      "id": "syntax-browser-checks",
+      "argv": [
+        "node",
+        "--check",
+        "evaluations/hubs-spoke/runtime/browser-checks.mjs"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T17:51:35.678Z",
+      "finishedAt": "2026-10-18T17:51:35.704Z",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdout": "syntax-browser-checks.stdout.txt",
+      "stderr": "syntax-browser-checks.stderr.txt"
+    },
+    {
+      "id": "syntax-browser-policy",
+      "argv": [
+        "node",
+        "--check",
+        "evaluations/hubs-spoke/runtime/browser-policy.mjs"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T17:51:35.704Z",
+      "finishedAt": "2026-10-18T17:51:35.728Z",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "stdout": "syntax-browser-policy.stdout.txt",
+      "stderr": "syntax-browser-policy.stderr.txt"
+    },
+    {
+      "id": "preflight",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-O",
+        "evaluations/hubs-spoke/runtime/run.py",
+        "preflight"
+      ],
+      "cwd": "/workspace/scratch/dc98dcd2981d/engine_work/f04-runtime-worktree",
+      "startedAt": "2026-10-18T17:51:35.742Z",
+      "finishedAt": "2026-10-18T17:51:36.014Z",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "stdout": "preflight.stdout.txt",
+      "stderr": "preflight.stderr.txt"
+    }
+  ],
+  "toolchain": {
+    "node": "v24.19.0",
+    "python": "Python 3.12.14"
+  },
+  "pythonMethodsPassed": 20,
+  "nodeMethodsPassed": 2,
+  "pythonSyntaxFiles": [
+    "config.py",
+    "download.py",
+    "prepare.py",
+    "readiness.py",
+    "run.py",
+    "test/runtime-checks.py"
+  ],
+  "sourceRehearsal": {
+    "hubs": {
+      "checkedFiles": 4,
+      "appliedAdaptations": 1
+    },
+    "dialog": {
+      "checkedFiles": 5,
+      "appliedAdaptations": 1
+    },
+    "reticulum": {
+      "checkedFiles": 6,
+      "appliedAdaptations": 2
+    },
+    "compose": {
+      "checkedFiles": 2,
+      "appliedAdaptations": 0
+    }
+  },
+  "blockedPrerequisites": [
+    "docker",
+    "same-namespace procfs task/children and pidfd supervision",
+    "local Docker daemon socket /var/run/docker.sock"
+  ],
+  "separateReview": {
+    "type": "automated assistant peer input to self review",
+    "scope": "Ownership, audit/container boundaries, bounded stages, project configuration and shared helper identity; three findings corrected and rechecked",
+    "independentHumanApproval": false
+  },
+  "limits": [
+    "No Docker image build or backend/service/browser execution.",
+    "No new npm audit ran while recording preparation; both future runtime modes require fresh real reports.",
+    "No physical headset, native GPU, capacity, WAN/TURN or complete F04 qualification.",
+    "New supervised runtime stages require their first compatible Linux Docker replay.",
+    "The separate historical Hubs root audit remains a known failed 106-entry graph."
+  ]
+}
