@@ -1,0 +1,2819 @@
+{
+  "repository": "neophilism/Browser-VR-Engine",
+  "title": "Browser-VR-Engine canonical PR development plan",
+  "schemaVersion": 1,
+  "roadmapVersion": 1,
+  "observedAt": "2026-10-19T01:30:32.153Z",
+  "planVerified": true,
+  "plannedPrCount": 135,
+  "sourceFiles": [
+    "docs/plan/pr-plan.json",
+    "DEVELOPMENT_PLAN.md",
+    "docs/progress.json"
+  ],
+  "units": [
+    {
+      "id": "F01",
+      "title": "Bootstrap the engine repository and durable project record",
+      "prs": [
+        1
+      ],
+      "dependsOn": [],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A fresh checkout builds the minimal SDK and example with documented commands. Every planned card has an ID, owner lane, dependency and truthful planned status; repository ownership and distribution policy are recorded.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Foundations",
+        "release": "core",
+        "deliverable": "Create the engine workspace, package/service boundaries, local commands, architecture decision directory, development plan, handoff record and machine-readable progress ledger. Reserve interface packages for consumers and examples without conference imports.",
+        "tests": "Run the clean-checkout build and package import smoke check; validate progress schema and reject application imports in engine packages.",
+        "security": "Exclude credentials and source assets from accidental publication. Record dependency trust boundaries and repository protection settings."
+      }
+    },
+    {
+      "id": "F02",
+      "title": "Establish CI evidence and the merge procedure",
+      "prs": [
+        2
+      ],
+      "dependsOn": [
+        "F01"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A deliberately failing required check blocks acceptance. A changed commit invalidates prior review/check evidence. Progress distinguishes implemented, verified, merged, deployed and release-qualified work.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Foundations",
+        "release": "core",
+        "deliverable": "Add scoped build, unit, integration, browser, migration and security jobs, shared fixtures, artifact retention and a reproducible acceptance record keyed to commit and environment. Document separate self security review followed by required checks and merge verification.",
+        "tests": "Exercise passing and failing workflow fixtures, stale-evidence rejection, test sharding and deterministic artifact naming.",
+        "security": "Use minimal workflow permissions, pinned actions and secret redaction; untrusted pull-request code cannot receive deployment credentials."
+      }
+    },
+    {
+      "id": "F03",
+      "title": "Define shared contracts and qualification fixtures",
+      "prs": [
+        3
+      ],
+      "dependsOn": [
+        "F02"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "The same fixtures and scripted interactions can run against either candidate foundation. Thresholds, feature requirements and evidence formats are fixed before comparative results are reviewed.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Foundations",
+        "release": "core",
+        "deliverable": "Define versioned runtime, asset, world, media, identity and service interface contracts. Select canonical meters/axes and prepare test architecture, animated creature, screens, movable props and four audio corners. Establish reference device and workload manifests.",
+        "tests": "Validate manifests, schema compatibility fixtures, coordinate transforms and scripted scenario reproducibility.",
+        "security": "Use redistributable synthetic fixtures for CI and protect privately obtained originals in controlled test storage; fixture provenance does not constrain product import capabilities."
+      }
+    },
+    {
+      "id": "F04",
+      "title": "Qualify Hubs and Spoke as a complete foundation",
+      "prs": [
+        4
+      ],
+      "dependsOn": [
+        "F03"
+      ],
+      "externalPrerequisites": [
+        "An actual target headset for comparative XR evidence"
+      ],
+      "acceptanceCriteria": "Publish runnable evidence against F03 requirements, an extraction/deployment assessment and concrete adaptation estimates. Feature claims without exercised behavior remain unverified.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Foundations",
+        "release": "core",
+        "deliverable": "Build a reproducible Hubs/Spoke evaluation branch or isolated package using pinned sources. Exercise imported venue, avatar, object manipulation, shared media, browser editing, export/reload and headset entry; record components retained and required changes.",
+        "tests": "Run the common desktop/two-client scenario and actual-headset checklist; capture frame timing and reconnect behavior without claiming production capacity.",
+        "security": "Inventory covered licenses, exposed services, default access policies and stale dependencies; document necessary patches rather than imposing marketplace feature restrictions."
+      }
+    },
+    {
+      "id": "F05",
+      "title": "Qualify Babylon and reusable VRSpace subsystems",
+      "prs": [
+        5
+      ],
+      "dependsOn": [
+        "F03"
+      ],
+      "externalPrerequisites": [
+        "An actual target headset for comparative XR evidence"
+      ],
+      "acceptanceCriteria": "The evidence is directly comparable with F04. The proposed combination demonstrates the critical interactions and identifies functionality still requiring implementation.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Foundations",
+        "release": "core",
+        "deliverable": "Build the equivalent F03 evaluation using Babylon and candidate VRSpace client subsystems. Test scene authoring, avatars, media surfaces, spatial audio, physics integration and portable world state. Record reusable modules and server coupling.",
+        "tests": "Run the same desktop, multi-client and headset scenarios; inspect bundle size, frame cost and service boundaries.",
+        "security": "Check client/server separation, dependency notices, untrusted media routes and credential handling. Do not import an entire service stack merely to obtain a small client module."
+      }
+    },
+    {
+      "id": "F06",
+      "title": "Select the foundation and map retained subsystems",
+      "prs": [],
+      "dependsOn": [
+        "F04",
+        "F05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "All required outcomes remain assigned. A Hubs selection may retain its working networking/media/editor systems; it does not force replacement by the default libraries. Reused functionality closes a card only after its acceptance checks pass.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Foundations",
+        "release": "core",
+        "deliverable": "Record the foundation decision against capability coverage, adaptation effort, graphics, operations and maintainability. Map every remaining card to reuse, adapt or implement. Keep one runtime foundation; retire the losing production path while retaining its evaluation evidence.",
+        "tests": "Validate the capability mapping, full dependency graph and a build of the selected foundation.",
+        "security": "Document software obligations and patch ownership. Preserve full import, editing and export goals and an application-independent engine boundary."
+      }
+    },
+    {
+      "id": "F07",
+      "title": "Pin upstream components and establish fork maintenance",
+      "prs": [],
+      "dependsOn": [
+        "F06"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A clean build resolves the recorded dependency set and can identify the source of every shipped binary. Local modifications have a reproducible patch or branch history.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Foundations",
+        "release": "core",
+        "deliverable": "Create only necessary source forks; otherwise pin upstream packages and service images. Record source versions, patches, notices, software bill of materials and update responsibilities. Define regression checks for upstream upgrades and supported toolchain versions.",
+        "tests": "Rebuild from lockfiles and verify artifact provenance, license inventory and an example dependency update/revert.",
+        "security": "Review build scripts, supply-chain exposure and distribution obligations, including native converter builds. No secret or private asset enters a package by default."
+      }
+    },
+    {
+      "id": "F08",
+      "title": "Establish the engine control API and data services",
+      "prs": [],
+      "dependsOn": [
+        "F07"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A standalone host can create a scoped workspace and call engine APIs without conference records. Two tenants cannot access each other; retries preserve one result and failed migrations recover predictably.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Foundations",
+        "release": "core",
+        "deliverable": "Implement host-injected identity, tenant/project namespaces, scoped capabilities and basic control API middleware. Add durable schema migrations, object-store/queue interfaces, idempotent job contracts and a local service stack. Keep product roles in the host application.",
+        "tests": "Run real database, object-store and queue integration tests plus authorization, token expiry, migration rollback/forward and idempotency cases.",
+        "security": "Apply transport encryption, secret isolation, least-privilege service grants and explicit processing trust boundaries; do not claim participant-held encryption for server-readable simulation data."
+      }
+    },
+    {
+      "id": "W01",
+      "title": "Version complete world, entity and prefab schemas",
+      "prs": [],
+      "dependsOn": [
+        "F06"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A fixture containing nested prefabs, negative scales, media references and behavior data validates and round-trips without losing identity. Unknown optional components survive preservation; unsupported required components produce actionable errors. Meters, right-handed axes and Y-up remain invariant.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Extend foundation contracts into versioned world, entity, prefab and asset-reference schemas, including component extension points, stable identifiers, hierarchy, source coordinates and migration hooks. Map the selected foundation into these contracts instead of introducing a second scene model.",
+        "tests": "Exercise malformed references, parent cycles, duplicate identifiers, schema migration and coordinate round-trips against independent fixtures.",
+        "security": "Bound nesting, component sizes and numeric ranges; reject prototype-polluting keys and unresolved external references before instantiation."
+      }
+    },
+    {
+      "id": "W02",
+      "title": "Implement runtime lifecycle and injectable local services",
+      "prs": [],
+      "dependsOn": [
+        "W01",
+        "F07"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A minimal world starts without a conference account, application API or media server. Loading another world cancels obsolete work and disposes previous resources. Repeated mount/unmount and suspended-tab recovery leave one active frame loop and consistent lifecycle events.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Expose create, load, start, suspend, resume, unload and dispose operations around the chosen runtime. Provide injectable asset, authorization, persistence and transport interfaces with local implementations. Separate scene state from rendering resources and host application UI.",
+        "tests": "Run lifecycle integration tests covering cancellation, failed loads, late asynchronous results and repeated mounting; inspect retained resource counts.",
+        "security": "Local mode grants only its explicit local capabilities; absent host authorization must never silently authorize a remote world."
+      }
+    },
+    {
+      "id": "W03",
+      "title": "Load canonical assets into the selected renderer",
+      "prs": [],
+      "dependsOn": [
+        "A04"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "The reference scene loads meshes, textures, lights and animation clips with preserved transforms and source diagnostics. Repeated instances share eligible resources, while disposing one instance leaves others intact. Required unsupported features fail visibly instead of silently disappearing.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Connect published asset manifests to the selected renderer, reusing its glTF, material, lighting, animation and texture facilities. Support dependency resolution, loading placeholders, cancellation, shared-resource ownership and documented advanced renderer extensions without rebuilding the upstream rendering pipeline.",
+        "tests": "Compare representative render fixtures and test missing textures, corrupt resources, cancelled loads, negative scales and shared-resource disposal.",
+        "security": "Load only authorized manifest resources; enforce resource ceilings and prevent renderer plugins from fetching arbitrary asset URLs."
+      }
+    },
+    {
+      "id": "W04",
+      "title": "Provide desktop, touch and accessible action input",
+      "prs": [],
+      "dependsOn": [
+        "W03"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Users navigate and select objects with desktop or touch controls without triggering movement while typing. Pointer-lock refusal, focus loss, orientation changes and device disconnection recover predictably. Host UI can consume an action without depending on renderer internals or conference roles.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Add application-neutral action bindings for movement, look, selection, interaction and cancellation across keyboard, mouse, touch and gamepad. Provide remapping, focus ownership, pointer-lock lifecycle and accessible equivalents for essential non-spatial controls.",
+        "tests": "Use browser interaction tests for input capture, remapping, focus transitions, touch gestures and stuck-key prevention; verify keyboard-only operation manually.",
+        "security": "Validate incoming synthetic actions through the same bounded action contract; user gestures cannot bypass remote permissions or object capabilities."
+      }
+    },
+    {
+      "id": "W05",
+      "title": "Integrate WebXR sessions, controllers and comfort controls",
+      "prs": [],
+      "dependsOn": [
+        "W04"
+      ],
+      "externalPrerequisites": [
+        "Physical WebXR headset and controllers for acceptance."
+      ],
+      "acceptanceCriteria": "Capability detection exposes only available entry modes. A supported headset enters, exits, recenters and resumes without duplicate inputs or displaced world scale. Session denial and controller loss return usable controls. Locomotion requests remain subject to later collision and authority validation.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Adapt the selected foundation's WebXR session and controller support into shared input actions, reference-space handling and session lifecycle. Implement snap turning, teleport requests, seated/recenter controls and optional smooth locomotion with explicit comfort settings.",
+        "tests": "Combine mocked session/error tests with recorded physical-headset checks for controller profiles, reference-space resets, sleep/resume and comfort settings.",
+        "security": "Tracking stays ephemeral by default; XR availability never grants movement, editing or media capabilities."
+      }
+    },
+    {
+      "id": "W06",
+      "title": "Add VR-safe controls and qualified hand interaction",
+      "prs": [],
+      "dependsOn": [
+        "W05"
+      ],
+      "externalPrerequisites": [
+        "Qualified hand-tracking headset for the advertised hand profile."
+      ],
+      "acceptanceCriteria": "Users can dismiss errors, adjust comfort, select objects and leave the session inside the headset. Essential controls do not depend on invisible HTML overlays. Hand/controller switching does not duplicate activation, and unsupported tracking preserves a complete interaction route.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Provide reusable XR panels, readable prompts, focus states and interaction targets for controller rays and direct selection. Add hand-tracking adaptation where supported, with pinch/debounce handling and controller or desktop fallback; reuse qualified upstream UI components.",
+        "tests": "Test focus and action routing automatically; verify target reach, text legibility, hand occlusion, accidental pinches and device switching on actual hardware.",
+        "security": "UI visibility is independent of authority; repeated or spoofed activations still pass object capability and rate checks."
+      }
+    },
+    {
+      "id": "W07",
+      "title": "Bridge collision assets and fixed-step physics",
+      "prs": [],
+      "dependsOn": [
+        "W02"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Architectural openings remain traversable while floors and walls are solid. Physics owns simulated transforms; rendering interpolates without altering authority. Repeated loads release bodies and shapes. Fixed-step behavior is bounded under frame stalls without claiming universal cross-platform deterministic lockstep.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Implement the selected physics bridge, defaulting to Rapier, for static, kinematic and dynamic bodies, collider manifests, mass properties, collision filters, contacts and transform interpolation. Expose a headless simulation interface suitable for local and authoritative hosting. Use independent collider fixtures first; A13 subsequently supplies production-derived geometry.",
+        "tests": "Exercise stairs, arches, negative-scale assets, thin barriers, falling bodies, contact events and frame stalls using independent geometry fixtures.",
+        "security": "Reject malformed collider data, excessive body counts, invalid numeric values and unbounded catch-up simulation."
+      }
+    },
+    {
+      "id": "W08",
+      "title": "Implement character traversal, seating and safe teleportation",
+      "prs": [],
+      "dependsOn": [
+        "W05",
+        "W07"
+      ],
+      "externalPrerequisites": [
+        "Physical headset for tracked-camera boundary and seating acceptance."
+      ],
+      "acceptanceCriteria": "The traversal fixture supports stairs, ramps, doorways and moving platforms without falling through unloaded collision. Invalid teleports fail clearly. Removing a floor triggers a safe recovery. Real head movement remains tracked; boundary feedback handles wall penetration without forcibly moving the camera.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Build a capsule-based character controller with walking, slopes, steps, ground detection, seating, configurable participant collision and validated teleport destinations. Connect shared input and comfort actions while keeping tracked headset motion distinct from virtual body constraints.",
+        "tests": "Run reproducible traversal scenarios plus headset checks for seated scale, recentering, wall approach and interrupted teleport requests.",
+        "security": "Bound speed, acceleration, teleport range and spawn choices; authoritative validation can replay the same movement intent contract."
+      }
+    },
+    {
+      "id": "W09",
+      "title": "Implement object manipulation, throwing and joints",
+      "prs": [],
+      "dependsOn": [
+        "W06",
+        "W08"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A statue can be carried, placed or thrown with predictable release velocity and collisions. Jointed doors obey limits. Losing input, deleting an object or suspending a session releases control safely. The same command/result contract can be hosted by the network authority.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Define reusable interaction intents and control-lease state for selecting, grabbing, carrying, placing and throwing dynamic objects. Implement local physics constraints and bounded joints for doors, levers and attached props, using desktop and XR interaction adapters.",
+        "tests": "Exercise heavy/light props, fast release, collision during grabs, joint limits, simultaneous local requests and interrupted interactions.",
+        "security": "Enforce interaction distance, object capability, force and velocity ceilings; imported properties cannot create unlimited constraints."
+      }
+    },
+    {
+      "id": "W10",
+      "title": "Connect physics interactions to room authority",
+      "prs": [],
+      "dependsOn": [
+        "N05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Two clients contesting one object receive one valid owner. Late joiners see current poses, joints and control state. Packet delay, duplicate messages and disconnects produce bounded correction and lease release. A client cannot tunnel, teleport or launch objects by submitting unchecked transforms.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Bind movement and manipulation intents to the authoritative room service with lease arbitration, acknowledgments, local prediction, correction and remote interpolation. Reuse the selected networking primitives; keep shared body ownership separate from collaborative document state.",
+        "tests": "Run two-client browser scenarios and headless fault tests for delayed commands, stale leases, replayed releases and prediction reconciliation.",
+        "security": "Review all client-controlled movement fields; validate principal, instance epoch, object scope and replay handling before accepting state changes."
+      }
+    },
+    {
+      "id": "W11",
+      "title": "Integrate navigation meshes, routes and world transitions",
+      "prs": [],
+      "dependsOn": [
+        "A13"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Routes pass through real doorways and avoid blocked or unloaded regions. A removed bridge invalidates affected paths and safe spawn recovery works. A portal resolves a destination without assuming conference sessions; remote authorization and transition orchestration remain host-service responsibilities.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Integrate Recast/Detour or the qualified reused navigation subsystem for tiled walkability, path queries, off-mesh connections, NPC routing and portal destination contracts. Invalidate impacted navigation regions when geometry changes and expose rebuild status to the runtime.",
+        "tests": "Compare paths against independent obstacle fixtures; exercise disconnected islands, stale tiles, moved blockers and cancellation during transitions.",
+        "security": "Bound pathfinding work and destination requests; reject unauthorized destination references and malformed navigation links."
+      }
+    },
+    {
+      "id": "W12",
+      "title": "Load generic avatars and a qualified VRM adapter",
+      "prs": [],
+      "dependsOn": [
+        "W03"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Multiple independently sourced fixture avatars load at correct scale with stable bone references and valid bounds. Unsupported rigs return useful diagnostics or a safe placeholder. Replacing an avatar disposes resources without changing participant identity or losing host capabilities.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Create an avatar resource contract for skinned glTF, morph targets, skeleton mappings, body bounds and attachment sockets. Adapt VRM where qualified and preserve unsupported metadata for export. Reuse existing avatar loading rather than imposing one hosted avatar vendor.",
+        "tests": "Cover differing bone names, absent optional bones, morph targets, oversized skeletons, malformed skin indices and repeated avatar replacement.",
+        "security": "Enforce texture, bone, morph and material budgets; avatar metadata and extensions must not execute embedded code."
+      }
+    },
+    {
+      "id": "W13",
+      "title": "Add avatar animation, retargeting and emote playback",
+      "prs": [],
+      "dependsOn": [
+        "W08",
+        "W12"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Compatible fixture rigs play walking, seated transitions and several emotes without scale drift or losing foot contact beyond the agreed tolerance. Unsupported retarget mappings are reported. Interrupting an emote returns smoothly to locomotion; root motion never bypasses the physics controller.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Provide animation state machines, clip libraries, blending, root-motion policy and qualified skeleton retargeting. Define generic locomotion, seating, gestures and emote actions with authored fallback mappings rather than assuming every humanoid shares one rig.",
+        "tests": "Check clip transitions, missing clips, loop boundaries, different frame rates, root offsets and retargeted reference poses.",
+        "security": "Bound animation events and clip resource use; event markers invoke approved actions instead of arbitrary code or privileged commands."
+      }
+    },
+    {
+      "id": "W14",
+      "title": "Add avatar presence, inverse kinematics and attachments",
+      "prs": [],
+      "dependsOn": [
+        "W06",
+        "W13"
+      ],
+      "externalPrerequisites": [
+        "Physical headset for head/hand calibration and optional tracking claims."
+      ],
+      "acceptanceCriteria": "An avatar follows tracked head/hands at the configured scale, while absent tracking produces a stable fallback rather than invented measured poses. Attachments remain aligned through animation and avatar replacement. Local and remote pose contracts distinguish tracked, estimated and unavailable data.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Map available head and hand poses onto avatar bones using qualified inverse kinematics, calibration and bounded fallback poses. Add wearable/held attachment sockets, local source offsets and capability adapters for optional face/body tracking without requiring that hardware.",
+        "tests": "Exercise seated calibration, tracking loss, arm reach limits, controller changes and attachment motion on fixture rigs and hardware.",
+        "security": "Minimize tracking retention and bound pose updates; attachment assets retain ordinary ownership and resource restrictions."
+      }
+    },
+    {
+      "id": "W15",
+      "title": "Implement animated wildlife and reusable NPC behaviors",
+      "prs": [],
+      "dependsOn": [
+        "W11",
+        "W13",
+        "M02"
+      ],
+      "externalPrerequisites": [
+        "A usable rigged animal asset for the final fidelity check."
+      ],
+      "acceptanceCriteria": "A rigged bird follows a route, changes clips and carries its sound emitter without requiring human bone names. Lower-detail clients preserve its authoritative location and behavior. Missing optional audio or clips produces a documented fallback; authored routes stay within configured bounds.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Add reusable path-following, flying-route, idle and scheduled-behavior components for non-humanoid actors. Bind imported clips, simple interaction bounds and entity-attached audio while separating shared behavior timing from locally evaluated skeletal animation.",
+        "tests": "Use synthetic animal fixtures for clip timing, route loops and LOD changes; inspect one actual animated wildlife asset before claiming fidelity.",
+        "security": "Cap active actors, route complexity and event frequency; decorative actors cannot acquire participant or editor privileges."
+      }
+    },
+    {
+      "id": "W16",
+      "title": "Add terrain tiles and environmental scene components",
+      "prs": [],
+      "dependsOn": [
+        "W11"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A tiled landscape loads without visible or physical cracks at approved borders. Terrain edits invalidate affected collision/navigation revisions before traversal resumes. Water and weather have lower-cost fallbacks, and disabling decorative effects leaves navigation and world state unchanged.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Implement versioned terrain tiles, heightfield/mesh rendering and collision bindings, plus reusable sky, water and bounded weather components. Reuse renderer facilities and material presets; keep environmental simulation and quality policy independent of conference venue themes.",
+        "tests": "Exercise neighboring tile seams, origin/scale conversions, terrain replacement, unloaded boundaries and reduced-effects rendering against reference fixtures.",
+        "security": "Bound tile size, update frequency, particle counts and environmental parameters; malformed height data cannot exhaust memory or destabilize simulation."
+      }
+    },
+    {
+      "id": "W17",
+      "title": "Provide declarative object behaviors and trusted extensions",
+      "prs": [],
+      "dependsOn": [
+        "W09"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A fixture game uses interaction, timed events and state transitions without conference code. Behaviors run in the correct local or authoritative context, survive save/reload and handle entity deletion. Cyclic trigger graphs stop at declared execution budgets with useful diagnostics.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Implement versioned triggers, conditions, timers and approved actions for doors, exhibits, object interaction and simple games. Supply a documented trusted-plugin interface and renderer escape hatch while preserving behavior metadata in the world manifest.",
+        "tests": "Exercise event ordering, timer cancellation, graph cycles, missing action providers and replay after restoring a world revision.",
+        "security": "Authorize every privileged action, constrain event amplification and keep imported script text inert unless an explicitly supported runtime admits it."
+      }
+    },
+    {
+      "id": "W18",
+      "title": "Qualify and integrate isolated creator scripting",
+      "prs": [],
+      "dependsOn": [
+        "W17"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A creator-authored object performs useful logic through approved APIs and survives revision export/reload. Infinite loops, excessive allocation and unauthorized host calls terminate without taking down the world. Browser/server differences are explicit; a worker alone is not accepted as isolation.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "expanded",
+        "deliverable": "Select and integrate an isolated creator-code runtime with an explicit capability bridge, bounded execution, controlled storage/network access and termination, plus an optional browser script-editor panel. Keep trusted engine plugins separate. Document supported language/runtime versions, execution locations and serialization of script state.",
+        "tests": "Run adversarial scripts, cancellation, upgrade compatibility and capability-revocation cases in the actual selected isolation mechanism.",
+        "security": "Complete a separate escape/broker review covering ambient credentials, origin access, imports, resource ceilings and authoritative command validation."
+      }
+    },
+    {
+      "id": "W19",
+      "title": "Implement scene streaming and adaptive quality budgets",
+      "prs": [],
+      "dependsOn": [
+        "W12",
+        "W16"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A low-power profile reduces decorative detail while preserving presentation readability, authoritative geometry and usable movement. Collision arrives before entry into streamed regions. Repeated quality changes do not oscillate, leak assets or duplicate entities; premium source variants remain available.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Connect asset variants and spatial cells to projected-size LOD, culling, instancing, staged loading and bounded animation updates. Add separate rendering, memory, transfer and decode budgets with manual quality settings, downgrade hysteresis and gradual recovery.",
+        "tests": "Replay representative camera routes under bandwidth and frame-load limits; inspect resource counts, variant selection and collision-before-traversal ordering.",
+        "security": "Enforce world and client budgets despite hostile asset metadata; quality selection must not bypass content authorization."
+      }
+    },
+    {
+      "id": "W20",
+      "title": "Harden renderer selection and graphics recovery",
+      "prs": [],
+      "dependsOn": [
+        "W19"
+      ],
+      "externalPrerequisites": [
+        "Actual target browsers and headsets for each advertised backend profile."
+      ],
+      "acceptanceCriteria": "Unsupported XR/backend combinations offer a working fallback before entry or reconstruct predictably. Simulated context loss restores the current world without duplicate physics or audio. Failed restoration exposes a recoverable user action while preserving independent meeting connections where possible.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Implement capability-based backend selection and recovery around the chosen foundation: conservative WebGL2 immersive entry, qualified WebGPU paths and controlled scene reconstruction. Handle context/device loss without conflating graphics resources with world state or media connections.",
+        "tests": "Exercise capability matrices, denied sessions, resource recreation, backend changes, headset sleep and repeated device/context loss on supported profiles.",
+        "security": "Recreated resources recheck authorized manifests; recovery cannot revive revoked assets, stale grants or superseded world instances."
+      }
+    },
+    {
+      "id": "W21",
+      "title": "Ship independent offline and multiplayer game examples",
+      "prs": [],
+      "dependsOn": [
+        "W10",
+        "W17",
+        "W23"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "The offline example works with network access disabled after its packaged assets load. The multiplayer example joins an engine world service directly and supports two interacting clients. Both examples use the same contracts and document deployment/configuration without hidden conference dependencies.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Publish a local physics playground and a small multiplayer game using only released engine interfaces. Demonstrate loading, movement, collision, object rules, reset/save and host-provided identity without importing conference routes, account models, agendas or presenter roles.",
+        "tests": "Run import-boundary checks, offline browser tests and a two-client game flow including save/reset and reconnection.",
+        "security": "Use explicit demonstration permissions; sample credentials and permissive development settings must not enter published production defaults."
+      }
+    },
+    {
+      "id": "W22",
+      "title": "Qualify runtime performance and supported device profiles",
+      "prs": [],
+      "dependsOn": [
+        "W15",
+        "W20",
+        "W21",
+        "M10",
+        "M11"
+      ],
+      "externalPrerequisites": [
+        "Reference laptops/headsets and approved representative venue/animal assets."
+      ],
+      "acceptanceCriteria": "Each advertised profile sustains its selected desktop or headset target and preserves traversal, essential controls and readable presentations. Low-quality fallbacks and graphics recovery work during active media. Failures narrow the published claim and produce corrective work before that profile is accepted.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Run integrated runtime qualification with representative venues, actors, avatars and media. Publish supported device/backend profiles, reproducible scene versions, p95/p99 frame timings, memory/decoder observations and outstanding fidelity limits rather than one unqualified frame-rate claim.",
+        "tests": "Replay camera/interaction workloads on actual laptops and headsets, varying active avatars, animals, screens and network conditions independently.",
+        "security": "Review telemetry for sensitive tracking/media leakage and confirm resource ceilings remain effective during overload and recovery."
+      }
+    },
+    {
+      "id": "W23",
+      "title": "Implement persistent inventories and object ownership",
+      "prs": [],
+      "dependsOn": [
+        "N05",
+        "N14",
+        "A05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A player can collect, carry, store, equip and re-place an object across reconnects without duplicating its identity. Shared venue props and personal items follow distinct ownership rules and remain usable by non-conference examples.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Runtime",
+        "release": "core",
+        "deliverable": "Add application-neutral inventories, object ownership, prefab instances, pickup/stow/drop operations and equipment/attachment slots. Persist item identity separately from shared render assets and connect state changes to authoritative capabilities and revisions.",
+        "tests": "Test concurrent pickup, reconnect during transfer, duplicate retries, destroyed items, attachment replacement and persistence restoration.",
+        "security": "Check item, inventory and world capabilities at every transfer; clients cannot mint items, seize another inventory or export private dependencies by changing ownership metadata."
+      }
+    },
+    {
+      "id": "A01",
+      "title": "Asset revisions, preserved sources and converter contracts",
+      "prs": [],
+      "dependsOn": [
+        "F08"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "An uploaded source receives a stable revision and can be retrieved byte-for-byte after a derived revision changes. Capability declarations distinguish native import, exchange import and export without marketplace-specific feature restrictions.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Define versioned asset, source-bundle, dependency, conversion-recipe and diagnostic schemas. Register importer/exporter adapters with explicit format, version and feature declarations. Preserve original bytes, companion files, authoring coordinates, names, pivots and hashes independently of derived runtime outputs. Provide application-neutral catalog and operation contracts.",
+        "tests": "Round-trip schema fixtures, malformed dependency graphs, source-hash verification and recipe-version migration prove identity preservation and compatibility failures.",
+        "security": "Check tenant ownership on every source, dependency and revision operation; reject ambient filesystem references."
+      }
+    },
+    {
+      "id": "A02",
+      "title": "Resumable intake for files, folders and archives",
+      "prs": [],
+      "dependsOn": [
+        "A01"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A network interruption resumes verified chunks without restarting the complete upload. Folder and archive submissions retain equivalent dependency paths, and canceling removes only the intended incomplete session. Unsupported archive types produce actionable results.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Implement browser and API intake for individual files, folder selections, drag-and-drop directories and supported archives. Stage a dependency bundle with relative paths, checksums, multipart/resumable progress, cancellation and expiration. Preserve companion textures and nested directories; identify archives by signatures rather than extensions.",
+        "tests": "Exercise interrupted and repeated completion, duplicate filenames in different folders, Unicode paths, mobile file selection, oversized entries and corrupt chunk hashes.",
+        "security": "Bind upload tokens to one tenant/session; enforce quotas, path containment, bounded entry counts and safe archive expansion limits."
+      }
+    },
+    {
+      "id": "A03",
+      "title": "Isolated conversion jobs and recoverable execution",
+      "prs": [],
+      "dependsOn": [
+        "A02"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A real conversion job survives worker loss through a safe retry and publishes at most one result. A canceled or timed-out job stops its subprocesses, releases its lease and leaves original data intact.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Run pinned converters in disposable workers with durable jobs, leases, checkpoints where supported, cancellation, bounded retries and structured progress. Separate staged sources from writable outputs. Record actual tool versions and build inventories. Implement process termination, cleanup and terminal failure classification.",
+        "tests": "Kill workers before and after output commit; inject queue redelivery, disk exhaustion, malformed parser input and converter hangs. Verify resource accounting and cleanup.",
+        "security": "Use nonprivileged isolation, no ambient credentials, restricted filesystem/network access and CPU, memory, disk and wall-time limits."
+      }
+    },
+    {
+      "id": "A04",
+      "title": "Canonical glTF and GLB ingestion with feature validation",
+      "prs": [],
+      "dependsOn": [
+        "A03",
+        "W02"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Representative static and animated fixtures render with correct scale, orientation, hierarchy and materials. Required unsupported extensions prevent a false success; optional approximations remain visible in diagnostics. A valid small GLB can preview before hosted optimization finishes.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Implement glTF/GLB loading through the selected runtime and canonical compiler path. Validate buffers, references, skins, clips, morph targets, materials and supported extensions. Normalize source coordinates once while retaining original conventions and stable sub-object identifiers. Publish an explicit extension/fidelity matrix.",
+        "tests": "Use Khronos fixtures plus mirrored transforms, interleaved buffers, sparse accessors, missing textures, invalid numeric values and oversized allocations; compare rendered reference views.",
+        "security": "Bound decoded resources and resolve only authorized bundle dependencies; never execute asset-provided code."
+      }
+    },
+    {
+      "id": "A05",
+      "title": "Immutable publication, reusable results and asset lifecycle",
+      "prs": [],
+      "dependsOn": [
+        "A04"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Concurrent identical jobs converge on one valid published result; changing any meaningful recipe input creates a distinct revision. Worlds remain pinned to their selected assets. Unreferenced outputs can be reclaimed without deleting active world or export dependencies.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Publish immutable manifests and derivative objects atomically, keyed by source hashes, tool versions and complete recipes. Add catalog lookup, asynchronous job-result retrieval, CDN delivery, original retrieval endpoints and reference-aware lifecycle management. Support rebuilding with new recipes without rewriting older worlds.",
+        "tests": "Exercise interrupted publication, duplicate completion, cache invalidation, expired delivery grants, concurrent references, deletion races and restoration from retained originals.",
+        "security": "Authorize every catalog and byte-delivery request; prevent cross-tenant existence leaks and unsafe shared-cache keys."
+      }
+    },
+    {
+      "id": "A06",
+      "title": "OBJ, MTL, COLLADA and legacy 3DS conversion",
+      "prs": [],
+      "dependsOn": [
+        "A05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A folder containing an architectural OBJ, its MTL and textures becomes an editable runtime asset. A DAE venue retains its hierarchy and openings. Missing dependencies produce specific repair instructions, and static OBJ never claims to preserve skeletal animation.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Add qualified OBJ/MTL, DAE and legacy .3ds adapters using pinned open-source tools. Preserve supported geometry, object grouping, transforms, texture references and basic material properties. Record tested exporter variants and supported animation features. Keep .3ds distinct from native .max scenes.",
+        "tests": "Convert exporter-diverse fixtures with relative texture paths, negative scale, differing units, transparency, large indices and unsupported DAE features; inspect reference renders.",
+        "security": "Disable XML external entities and reject escaped paths, excessive nesting and unbounded material/mesh counts."
+      }
+    },
+    {
+      "id": "A07",
+      "title": "FBX meshes, skins, morphs and animation clips",
+      "prs": [],
+      "dependsOn": [
+        "A05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Binary and ASCII FBX fixtures load as the same animated characters at representative poses. Clip names and duration survive conversion, and a file needing native baking cannot silently become a static success.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Qualify ufbx and the selected Blender route against the same corpus, then implement the better supported FBX adapter. Preserve hierarchy, units, pivots, skins, blend shapes, clip ranges and supported material bindings. Report constraints, expressions or shader features that require evaluation in the source application.",
+        "tests": "Compare skinned poses, morph weights, inverse bind transforms, loop seams, reflected coordinates and multiple animation takes against exported references. Include malformed and truncated FBX inputs.",
+        "security": "Use isolated parsing with allocation limits; embedded media and external references remain within the authorized source bundle."
+      }
+    },
+    {
+      "id": "A08",
+      "title": "Native Blender scene conversion",
+      "prs": [],
+      "dependsOn": [
+        "A05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Supported .blend scenes produce editable runtime assets with correct objects, clips and appearance. Sources requiring missing libraries or unsafe embedded execution report the issue without losing originals or automatically enabling scripts.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Implement a version-qualified headless Blender adapter for .blend sources using trusted pipeline scripts. Resolve bundled textures and linked libraries, preserve supported geometry and animation, and identify unsupported node, modifier or driver behavior. Record the exact Blender build and conversion settings in every result.",
+        "tests": "Run real Blender conversions covering packed/unpacked textures, linked assets, modifiers, geometry nodes within the supported subset and animations; compare outputs and expected failure diagnostics.",
+        "security": "Disable embedded autoexecution, isolate subprocesses and limit dependency resolution; inventory distributed Blender scripts and binaries."
+      }
+    },
+    {
+      "id": "A09",
+      "title": "USD family composition and conversion",
+      "prs": [],
+      "dependsOn": [
+        "A05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A packaged USD scene with local references converts reproducibly using an explicit variant selection. Missing payloads and unsupported curves, volumes or materials appear as identified issues rather than an apparently complete empty asset.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Add version-qualified USD, USDA, USDC and USDZ intake through Blender/OpenUSD tools. Resolve declared references, payloads and selected variants within the source bundle; convert the documented mesh, hierarchy, material and animation subset. Preserve source composition metadata and report every unsupported semantic.",
+        "tests": "Compare composed transforms, instancing, selected variants, time samples and material references against native source inspection; exercise broken references, cycles and archive faults.",
+        "security": "Block arbitrary filesystem or network resolution and custom resolver/plugin execution; bound composition depth and expanded resource size."
+      }
+    },
+    {
+      "id": "A10",
+      "title": "STL, PLY and 3MF geometry classification",
+      "prs": [],
+      "dependsOn": [
+        "A05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Ordinary geometry imports at the chosen physical scale with preserved supported colors and assemblies. A splat or point file is never misreported as a broken triangle mesh. Users can inspect and correct unknown-unit assumptions before placement.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Implement tested STL, mesh-PLY and 3MF conversion with geometry, color, assembly and unit handling appropriate to each format. Classify point-cloud and Gaussian-splat PLY schemas explicitly and dispatch them to their specialized adapter status. Offer scale calibration when the source omits units.",
+        "tests": "Use ASCII/binary STL and PLY, colored meshes, 3MF assemblies, mixed-schema PLY, degenerate faces, missing units and malformed container relationships.",
+        "security": "Apply shared archive containment, XML safety and decoded vertex/face limits; reject nonfinite coordinates and oversized declared counts."
+      }
+    },
+    {
+      "id": "A11",
+      "title": "Material and animation baking with fidelity reports",
+      "prs": [],
+      "dependsOn": [
+        "A06",
+        "A07",
+        "A08"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Procedural fixtures within the supported subset produce stable PBR outputs and animated clips. Unsupported renderer or rig features produce a correction-required result; static exchange geometry never substitutes silently for a promised animated asset.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Build shared baking recipes for supported materials, UV preparation, textures, animation resampling, skin/morph outputs and named clips. Separate source evaluation from runtime encoding so native connectors can contribute evaluated data later. Preserve original high-quality assets and record approximations, missing renderers and deformation losses.",
+        "tests": "Compare reference views, UV seams, normal orientation, feather silhouettes, clip endpoints, morph deformation and baked transform poses using real supported toolchains.",
+        "security": "Execute only trusted recipes; imported expressions or scripts cannot run outside qualified isolated source-application evaluation."
+      }
+    },
+    {
+      "id": "A12",
+      "title": "Mesh, texture, LOD and spatial-cell optimization",
+      "prs": [],
+      "dependsOn": [
+        "A11"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A large venue streams nearby cells and appropriate LODs without loading its full detail first. Animated assets retain valid skins and clips across tiers. High-quality sources remain available, and all rendering variants refer to the same authoritative object locations.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Generate device-tier derivatives using glTF Transform, meshoptimizer and KTX/Basis tooling. Separate byte compression, mesh simplification, texture resizing, material consolidation, instancing and spatial partitioning. Preserve artist-provided LODs and stable entity/sub-object mappings; record recipe-specific resource and quality statistics.",
+        "tests": "Measure transfer, decoded memory, draw calls, geometric error, texture artifacts, LOD transitions and animation deformation on fixed fixtures; prove cache invalidation when recipes change.",
+        "security": "Cap expansion and optimization work; validate compressed outputs and prevent shared-buffer corruption or oversized GPU allocations."
+      }
+    },
+    {
+      "id": "A13",
+      "title": "Derived colliders, navigation and safe placement data",
+      "prs": [],
+      "dependsOn": [
+        "A12",
+        "W08"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "The reference venue remains traversable without passing through walls or enclosing its interior in one convex hull. A throwable statue uses stable bounded collision geometry. Collision readiness is distinct from visual readiness for streamed cells.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Generate separate collision and navigation artifacts from normalized geometry. Use simplified static meshes or suitable primitives for venues, bounded convex compounds for movable props, and authored overrides where needed. Preserve doorways, arches and courtyards; produce walkable areas, teleport surfaces, interaction bounds and safe spawn candidates.",
+        "tests": "Exercise doorway clearance, stairs, thin floors, concave props, mirrored scale, missing geometry and collider simplification error through the reference controller and physics adapter.",
+        "security": "Enforce collider complexity and decomposition time limits; reject unsafe spawn data and unbounded navigation generation."
+      }
+    },
+    {
+      "id": "A14",
+      "title": "Unified browser import, diagnostics and preview workflow",
+      "prs": [],
+      "dependsOn": [
+        "A09",
+        "A10",
+        "A13",
+        "B01",
+        "A25"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A user drops a venue, sees truthful progress, checks scale and traversal, then places repeated props. Ready GLBs preview quickly; large scenes remain usable while processing. Failed or canceled imports leave no ghost scene entities or lost originals.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Connect the shared drop target to editor placement, immediate placeholders, progress, cancellation, preview generation and repairable diagnostics. Display detected formats, units, missing dependencies, clip/material coverage and resource estimates. Support replacing dependencies and rerunning a recipe without duplicating the intended object. Integrate A25 remote URL sources into the same import progress, diagnostics and publication flow.",
+        "tests": "Run desktop and supported headset upload/placement flows, reconnect during processing, cancel/delete races, dependency repair and repeated completion events; compare thumbnails with runtime output.",
+        "security": "Authorize import-to-world attachment separately from upload; sanitize diagnostics, filenames and preview metadata shown in the browser."
+      }
+    },
+    {
+      "id": "A15",
+      "title": "Original retrieval and interoperable scene export",
+      "prs": [],
+      "dependsOn": [
+        "A14"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Users retrieve identical originals and export editable supported geometry, materials and animation without supplier-specific product restrictions. Reimported exchange files preserve their documented subset; engine-only behaviors are identified for complete-bundle export.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Expose complete original-bundle retrieval and an export adapter registry with GLB/glTF and a documented OBJ subset. Export selected objects or supported scene snapshots with stable metadata sidecars and explicit feature-loss reports. Document and test foreign-engine exchange-export intake without treating native project containers or scripts as interchange.",
+        "tests": "Reimport exported scenes in this engine and an independent compatible viewer; verify transforms, names, materials, skins and clips. Exercise foreign-engine-produced exchange fixtures.",
+        "security": "Check export scope and dependency access; strip session credentials and never execute source-project scripts during intake."
+      }
+    },
+    {
+      "id": "A16",
+      "title": "Complete world bundles and editable round trips",
+      "prs": [],
+      "dependsOn": [
+        "A15",
+        "M09",
+        "W16",
+        "W17"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "An exported world opens in a clean workspace with preserved stable IDs, editable relationships and essential behaviors. Clone mode remaps references consistently. Live credentials are replaced by explicit reconnect requirements, while file-backed content remains portable.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Export and reimport versioned world bundles containing the manifest, dependency graph, assets, optional originals, terrain, prefabs, colliders, navigation, behaviors, media/audio bindings and revision metadata. Provide explicit portable-source inclusion and external-media references. Implement schema migration, collision-safe clone mapping and transactional import.",
+        "tests": "Compare semantic snapshots and interactive behavior after export/reimport; exercise migrations, missing dependencies, duplicate IDs, partial upload and rollback after late validation failure.",
+        "security": "Verify bundle integrity and access scope; treat imported behaviors as untrusted data until the behavior system authorizes activation."
+      }
+    },
+    {
+      "id": "A17",
+      "title": "Qualified native SketchUp connector",
+      "prs": [],
+      "dependsOn": [
+        "A15"
+      ],
+      "externalPrerequisites": [
+        "Provisioned SketchUp SDK/application access and supported deployment rights; real native fixtures are required for acceptance."
+      ],
+      "acceptanceCriteria": "Real SKP fixtures convert through the deployed native toolchain and compare correctly with source views. A DAE workaround or mocked connector cannot mark native SKP import accepted. Unavailable native software reports its provisioning dependency accurately.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "expanded",
+        "deliverable": "Implement a version-qualified SKP connector using an actually provisioned supported native SDK or application route. Preserve geometry, components, instance transforms, materials and dependency metadata within the declared subset. Expose qualified native export capabilities through the adapter registry; keep DAE exchange as an independent usable route.",
+        "tests": "Run native component, nested-instance, texture, units and version fixtures; exercise actual process failure and unsupported source-version diagnostics.",
+        "security": "Isolate native execution and validate source dependencies and generated output."
+      }
+    },
+    {
+      "id": "A18",
+      "title": "Qualified native Maya rig and scene connector",
+      "prs": [],
+      "dependsOn": [
+        "A15"
+      ],
+      "externalPrerequisites": [
+        "Provisioned supported Maya installation, necessary renderer/plugins and deployment rights; actual native conversion runs are mandatory."
+      ],
+      "acceptanceCriteria": "A real complex animated Maya fixture preserves its expected clips, feather or attachment motion and supported material appearance. Artist-provided FBX remains useful independently but does not satisfy native MA/MB acceptance. Missing plugins or licenses produce explicit dependency failures.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "expanded",
+        "deliverable": "Implement MA/MB conversion through provisioned version-qualified Maya workers. Evaluate supported rig constraints and expressions, bake named clips and deformation, resolve dependencies, and export tested exchange/runtime outputs. Integrate shared baking and diagnostics while retaining original scenes and documented source-renderer requirements.",
+        "tests": "Compare native sampled poses and reference renders with converted clips; test multiple takes, source-version mismatch, missing plugins and worker interruption.",
+        "security": "Constrain native script evaluation inside disposable workers without secrets or arbitrary external access."
+      }
+    },
+    {
+      "id": "A19",
+      "title": "Qualified native 3ds Max scene connector",
+      "prs": [],
+      "dependsOn": [
+        "A15"
+      ],
+      "externalPrerequisites": [
+        "Provisioned supported 3ds Max platform, required renderer/plugins and deployment rights; real MAX files and native runs required."
+      ],
+      "acceptanceCriteria": "A real architectural MAX scene becomes a correctly scaled, grouped runtime venue with verified materials and openings. Legacy .3ds or seller-provided OBJ/DAE conversion does not falsely complete native MAX support. Unsupported plugin evaluation remains an explicit technical result.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "expanded",
+        "deliverable": "Implement native .max conversion through a provisioned supported 3ds Max worker and qualified exporter. Resolve scene dependencies, supported modifiers and instances; bake supported renderer materials and export documented runtime features. Record exact source/application/plugin versions and preserve originals.",
+        "tests": "Compare source views, instance transforms, material assignments and modifier output; exercise missing renderer, unsupported file version, cancellation and native application crashes.",
+        "security": "Isolate native scene evaluation, restrict file/network access and validate generated resources before publication."
+      }
+    },
+    {
+      "id": "A20",
+      "title": "Qualified native Cinema 4D connector",
+      "prs": [],
+      "dependsOn": [
+        "A15"
+      ],
+      "externalPrerequisites": [
+        "Provisioned Cinema 4D application/SDK and necessary plugins with supported deployment rights; real native runs required."
+      ],
+      "acceptanceCriteria": "Real C4D fixtures produce matching supported geometry and animation through the deployed toolchain. Generic parser success or exchange-file conversion cannot establish native C4D completion. Missing renderers, generators or unsupported versions produce identified diagnostics.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "expanded",
+        "deliverable": "Implement a Cinema 4D connector through a provisioned supported native application or SDK route. Qualify generators, instance hierarchies, materials, animation and dependency resolution before claiming each feature. Feed evaluated results into the shared compiler and export registry, preserving original scene data.",
+        "tests": "Run native instances, generator evaluation, animated transforms, material references and missing-plugin cases; compare source views and output pose samples.",
+        "security": "Run native evaluation with bounded privileges, resources and dependency access; verify output integrity before publishing."
+      }
+    },
+    {
+      "id": "A21",
+      "title": "CAD and BIM tessellation with retained metadata",
+      "prs": [],
+      "dependsOn": [
+        "A15"
+      ],
+      "externalPrerequisites": [
+        "Representative CAD/BIM source files and reference outputs; specialist binary builds must be qualified on deployment workers."
+      ],
+      "acceptanceCriteria": "Reference CAD assemblies and IFC buildings import at correct scale with selectable component identity and usable derived traversal. Changing tessellation tolerances creates new derivatives without changing originals. Export states precisely which metadata and geometry representations survive.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "expanded",
+        "deliverable": "Add specialist STEP/IGES and IFC adapters using qualified OCCT and IfcOpenShell builds. Tessellate supported surfaces/solids with configurable tolerances while retaining assemblies, units, object identifiers and useful BIM properties. Preserve construction sources and document semantics that runtime meshes cannot express.",
+        "tests": "Compare bounds, tolerances, assembly transforms, IFC identifiers and property mappings against native references; test complex surfaces, absent units and unsupported entity types.",
+        "security": "Bound tessellation complexity, schema expansion and metadata payloads; isolate parsers and inventory actual dependency licenses."
+      }
+    },
+    {
+      "id": "A22",
+      "title": "Alembic and bounded simulation-cache playback",
+      "prs": [],
+      "dependsOn": [
+        "A16"
+      ],
+      "externalPrerequisites": [
+        "Representative native cache sequences and reference samples are needed to qualify each advertised cache feature."
+      ],
+      "acceptanceCriteria": "Qualified cache sequences play, seek, loop and restore after world export/reimport with their intended timing. Unsupported topology or storage requirements produce actionable results. Cache loading remains incremental and respects declared memory budgets.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "expanded",
+        "deliverable": "Implement an Alembic/cache adapter with explicit support for constant-topology deformation and a bounded changing-topology sequence route. Preserve source timing and dependency data; supply runtime playback and bundle serialization without mislabeling every cache as skeletal glTF. Define independent static or authored collision representations.",
+        "tests": "Compare sampled vertices and frame timing with source references; exercise sparse frames, topology changes, seeking, interrupted loading, loop seams and bundle round trips.",
+        "security": "Enforce decompressed-frame, sequence-duration, memory and decoder-time budgets; isolate archive/cache parsers."
+      }
+    },
+    {
+      "id": "A23",
+      "title": "Point-cloud and Gaussian-splat streaming adapters",
+      "prs": [],
+      "dependsOn": [
+        "A16"
+      ],
+      "externalPrerequisites": [
+        "Selected renderer-adapter support and representative scan datasets must pass actual browser/device qualification."
+      ],
+      "acceptanceCriteria": "Representative scans stream at the selected device profile, retain scale and placement, and round-trip through complete world export. Visual splats are never treated automatically as solid meshes. Unsupported splat schemas are identified before placement.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "expanded",
+        "deliverable": "Implement specialized point-cloud and Gaussian-splat adapters with explicit schema detection, spatial streaming, picking and renderer integration. Preserve originals and component metadata; generate or attach separately qualified collision/traversal surfaces. Store adapter state and dependencies in world bundles and expose honest edit/export capabilities.",
+        "tests": "Measure memory and frame timing, compare representative views, test point/splat classification, picking, cell transitions, collider alignment and bundle reconstruction.",
+        "security": "Bound point counts, attribute sizes and GPU allocations; validate custom attributes and isolate specialized decoding."
+      }
+    },
+    {
+      "id": "A24",
+      "title": "Complete asset coverage and representative venue acceptance",
+      "prs": [],
+      "dependsOn": [
+        "A17",
+        "A18",
+        "A19",
+        "A20",
+        "A21",
+        "A22",
+        "A23"
+      ],
+      "externalPrerequisites": [
+        "Obtain representative source and runtime assets directly or by commission; native tools and required reference hardware must be available."
+      ],
+      "acceptanceCriteria": "Every advertised native connector has passed real provisioned-toolchain conversion, and every format has meaningful feature and failure evidence. Venue openings, clips, materials and editable round trips pass; incomplete native dependencies remain visibly incomplete rather than credited to exchange workarounds.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "expanded",
+        "deliverable": "Publish the complete format/version/feature matrix and reproducible qualification corpus. Run the full intake, conversion, edit, optimization, physics and export workflow on substantial architecture and complex animated wildlife. Include direct-artist source/runtime deliverables, foreign-engine exchange exports, reference views and machine-readable results.",
+        "tests": "Run corpus regression, cold/warm cache paths, corrupt dependencies, retry/cancel recovery and representative-device resource measurements against pinned builds.",
+        "security": "Perform malicious-import and cross-tenant export probes against the integrated pipeline and verify source preservation after failures."
+      }
+    },
+    {
+      "id": "A25",
+      "title": "Implement authenticated remote URL import and fetch brokerage",
+      "prs": [],
+      "dependsOn": [
+        "A05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "An authorized user imports a permitted remote model or media file through the same publication workflow as an upload. Invalid destinations, redirects or failed downloads cannot create a misleading published asset or expose internal services.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Assets",
+        "release": "core",
+        "deliverable": "Implement authenticated remote-source submission and a tenant-scoped fetch broker. Identify formats, preserve retrieved originals and provenance, and hand successful downloads to the existing asset/media preparation pipeline. Support bounded streaming downloads, cancellation, retries and actionable failure states.",
+        "tests": "Run real permitted fetches plus private-address, DNS-change, redirect-chain, oversized-body, timeout and interrupted-transfer cases; verify source preservation, idempotency and cleanup.",
+        "security": "Authorize destination and tenant scope, revalidate DNS and every redirect, bind connections to validated addresses, restrict private/internal destinations and egress, strip unrelated credentials and enforce size/time limits."
+      }
+    },
+    {
+      "id": "N01",
+      "title": "Define versioned world networking contracts and adapters",
+      "prs": [],
+      "dependsOn": [
+        "F08"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "An engine client negotiates a compatible protocol, joins a fixture room and exchanges typed state without conference imports. Unsupported versions fail with an actionable upgrade result. Commands and disposable poses have distinct documented delivery requirements.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Publish application-neutral contracts for room joins, input commands, acknowledgments, snapshots, transient poses, simulation clocks and connection lifecycle. Define message versions, entity identifiers, sequence numbers, idempotency keys and compatibility negotiation. Implement the selected networking adapter behind those contracts, with local and deterministic fixture transports for development.",
+        "tests": "Exercise valid and malformed wire fixtures, version negotiation, duplicate commands, stale sequences and adapter teardown; retain compatibility fixtures for future releases.",
+        "security": "Bound decoded sizes and collection lengths before allocation. Treat client identifiers, timestamps and requested operations as untrusted input."
+      }
+    },
+    {
+      "id": "N02",
+      "title": "Implement authenticated authoritative room membership",
+      "prs": [],
+      "dependsOn": [
+        "N01",
+        "W02"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Two generic applications can join authorized worlds through the same API. Expired, revoked, wrong-instance and wrong-tenant grants fail. Rejoining retains the intended principal identity while duplicate active sessions follow an explicit policy.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Implement Colyseus-backed room creation, join, leave and lifecycle APIs using the foundation choice. Bind each room to an immutable world revision and tenant. Exchange host-application authorization for short-lived engine grants, then maintain server-verified membership, capabilities, participant identity and connection status without embedding conference roles.",
+        "tests": "Run multi-tenant integration cases covering grant renewal, disconnect, duplicate identity, incompatible world revision, denied join and clean room disposal.",
+        "security": "Recheck capabilities on protected operations; a successful join is not permission to edit, publish media or administer the room. Keep service credentials server-side."
+      }
+    },
+    {
+      "id": "N03",
+      "title": "Run the world through a fixed-step authoritative simulation",
+      "prs": [],
+      "dependsOn": [
+        "N02",
+        "W07"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Multiple clients observe one authoritative object state, floor and wall layout. Client quality settings do not change collision. Unauthorized teleports, excessive command rates and attempts to create unbounded bodies are rejected predictably.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Connect room lifecycle to the renderer-independent physics runtime and a bounded fixed-step input queue. Separate simulation frequency, publication rate and client rendering. Validate movement and interactions against authoritative collision, apply explicit limits to dynamic entities, and expose snapshots without writing every tick into persistent authoring history.",
+        "tests": "Run shared collision fixtures at configured tick rates; inject delayed inputs, overloaded ticks and invalid movement while measuring tick headroom and queue limits.",
+        "security": "Treat client transforms as requests. Validate magnitude, finite numbers, world bounds and capabilities before modifying the physics state."
+      }
+    },
+    {
+      "id": "N04",
+      "title": "Add client prediction, reconciliation and remote interpolation",
+      "prs": [],
+      "dependsOn": [
+        "N03",
+        "W14"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Local movement responds immediately while server corrections converge. Remote avatars move smoothly through publication gaps. Crossing a wall cannot become permanent through prediction, and correction never forcibly replaces the headset's real tracked pose.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Integrate qualified Colyseus prediction and reconciliation primitives with the shared movement simulation. Buffer and acknowledge inputs, replay unacknowledged movement after authoritative corrections, and interpolate remote entity poses. Keep actual headset tracking local while reconciling the avatar body and validated locomotion; publish measurable correction and interpolation diagnostics.",
+        "tests": "Exercise latency, jitter, reordered snapshots, reconnect and correction under the qualified browser/runtime versions; measure error without assuming cross-platform bitwise physics determinism.",
+        "security": "Server validation remains authoritative regardless of prediction. Bound retained input history, reconciliation work and accepted client clock skew."
+      }
+    },
+    {
+      "id": "N05",
+      "title": "Arbitrate object interactions through expiring control leases",
+      "prs": [],
+      "dependsOn": [
+        "N04",
+        "W09"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Only one authorized holder controls a contested object. Disconnect, expiry, deletion and authority changes release or invalidate ownership. An explicit save can later persist selected transforms; routine object movement does not modify the reusable world template.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Implement a reusable server-owned lease primitive and apply it to grab, carry, release, throw and interaction commands. Bind leases to principal, entity, operation, expiry and authority epoch. Resolve simultaneous requests deterministically, validate ongoing movement, and emit interaction results that clients can predict and reconcile.",
+        "tests": "Exercise competing grabs, stale holder commands, lease renewal races, disconnect while carrying, excessive throws and entity deletion during an interaction.",
+        "security": "Check capability, reach, allowed velocity and object constraints server-side. Never accept possession merely because the client renders an object as selected."
+      }
+    },
+    {
+      "id": "N06",
+      "title": "Bound network traffic and protect reliable commands",
+      "prs": [],
+      "dependsOn": [
+        "N03"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A slow client cannot accumulate unlimited memory. Release commands outrank unsent decorative updates; transport head-of-line delay remains measured. Queue overflow follows explicit degradation and reconnect rules, and pose publication can slow independently of simulation and rendering.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Add separate outbound scheduling for acknowledged commands, essential state and replaceable poses. Begin with secure WebSockets: coalesce superseded poses before sending, bound all queues, apply backpressure and prioritize control traffic. Expose byte, queue-age and drop metrics; keep a transport extension point without claiming WebSocket frames are unreliable datagrams.",
+        "tests": "Throttle links, suspend receivers, flood decorative changes and resume traffic; verify memory bounds, command acknowledgments, coalescing and stale-update rejection.",
+        "security": "Enforce per-principal message and byte limits, bounded parsing and fair scheduling. Disconnect abusive senders without starving unrelated room members."
+      }
+    },
+    {
+      "id": "N07",
+      "title": "Add spatial relevance and per-client state filtering",
+      "prs": [],
+      "dependsOn": [
+        "N04",
+        "N06"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Crossing a relevance boundary adds and removes entities without flicker or stale ghosts. Nearby interactions retain required fidelity, while distant traffic decreases. Private entities remain absent from unauthorized state even when geometrically close.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Maintain a spatial index and explicit relevance tiers for avatars, props and transient events. Use qualified Colyseus per-client filtering for bounded state sets, reduce distant pose detail and expose authorized proximity signals to media adapters. Send immutable assets through manifests and storage rather than frequent room patches.",
+        "tests": "Move clients through dense cells, teleports and rapidly changing visibility; measure filtering CPU, serialization time, payload size and transition correctness with realistic avatar data.",
+        "security": "Intersect relevance with permissions before serialization. Distance and visibility are optimization inputs, never authorization. Bound per-client tracked sets and transition work."
+      }
+    },
+    {
+      "id": "N08",
+      "title": "Route rooms to fenced owners across a worker fleet",
+      "prs": [],
+      "dependsOn": [
+        "N02"
+      ],
+      "externalPrerequisites": [
+        "A qualified coordination service with the required Redis protocol behavior and a deployment path that can route connections to room owners."
+      ],
+      "acceptanceCriteria": "A join reaches its current owner behind a nonsticky load balancer. Fenced workers cannot commit as concurrent authorities. Adding workers increases room capacity without claiming that one room spans unlimited processes.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Implement room placement, owner discovery and routing to the process that hosts each room. Add owner leases with monotonically changing epochs, admission based on measured capacity profiles, and drain-aware placement. Qualify the selected Redis-compatible coordination implementation, including Valkey only after testing the exact commands, scripts, TTLs and failover behavior used.",
+        "tests": "Exercise owner contention, expired leases, coordinator restart, TLS, script compatibility, network partitions and randomized reconnect routing in a multi-worker harness.",
+        "security": "Authenticate coordination and worker traffic; validate routing grants and epochs. Prevent clients from selecting an unauthorized internal worker or tenant."
+      }
+    },
+    {
+      "id": "N09",
+      "title": "Recover rooms through checkpoints and controlled reconnects",
+      "prs": [],
+      "dependsOn": [
+        "N05",
+        "N08"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A crashed room restores to a declared checkpoint and clients converge on its new authority. Stale leases and duplicate commands cannot replay ownership or saved edits. Planned deployment drains stop new admissions and guide existing clients through recovery.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Persist versioned checkpoints of recoverable transient state, world revision references and command progress. Implement reconnect negotiation, checkpoint restoration, owner-epoch changes and planned drain handoff. Distinguish durable edits from recoverable motion and document potential checkpoint loss; use controlled reconnects until uninterrupted migration is actually demonstrated.",
+        "tests": "Kill workers during grabs and checkpoints, corrupt a snapshot, retry commands and roll service versions forward/back within the supported compatibility window.",
+        "security": "Reauthorize returning principals and validate checkpoint provenance. Do not restore expired credentials or persist unnecessary detailed head/hand tracking history."
+      }
+    },
+    {
+      "id": "N10",
+      "title": "Provide authenticated Yjs collaboration and persistence",
+      "prs": [],
+      "dependsOn": [
+        "N02"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Concurrent edits converge after disconnect and reload. A document can be shared across authorized instances without leaking into another tenant. Read-only members cannot submit persisted changes, and transient cursor awareness does not become permanent tracking history.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Create an application-neutral Yjs provider for notes, whiteboards and annotations with document-scoped authorization, persistence, bounded updates and ephemeral awareness. Separate document identity from room identity so explicitly permitted documents can survive sessions. Define an opaque encrypted-update transport extension without treating Yjs as the authority for physics or presenter control.",
+        "tests": "Exercise concurrent edits, compaction/reload, reconnect, oversized updates, revocation, denied document IDs and persistence failure with recovery.",
+        "security": "Authorize every document subscription and write. Limit update size and processing cost; sanitize rendered content separately from CRDT convergence."
+      }
+    },
+    {
+      "id": "N11",
+      "title": "Add scoped chat and ephemeral collaboration channels",
+      "prs": [],
+      "dependsOn": [
+        "N06"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Authorized members can exchange messages across reconnects without duplicates. Membership changes stop future delivery, and ephemeral signals expire. Applications select retention and deletion policies through engine APIs rather than modifying the transport implementation.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Provide generic room, group and direct-participant message channels with server-assigned ordering, idempotent sends, pagination and configurable retention. Add bounded ephemeral channels for reactions, pointers and presence. Expose moderation capabilities and lifecycle events for applications without implementing event roles, agendas or a conference-specific moderation interface.",
+        "tests": "Verify ordering, repeated sends, private group transitions, deletion, pagination, denied recipients, rate limiting and reconnect after missed traffic.",
+        "security": "Check channel membership on send and receive. Render untrusted text safely, bound attachments, and prevent user-controlled identifiers from crossing tenant boundaries."
+      }
+    },
+    {
+      "id": "N12",
+      "title": "Qualify networking under realistic load and failure",
+      "prs": [],
+      "dependsOn": [
+        "N07",
+        "N09",
+        "N10",
+        "N11"
+      ],
+      "externalPrerequisites": [
+        "Representative load hosts and target network profiles sized to the proposed qualification scenarios."
+      ],
+      "acceptanceCriteria": "A standalone networking qualification harness works without conference services; W21 separately verifies the packaged game examples. Load and fault results identify the supported interaction profile, software versions and hardware. Rooms recover without split authority, unbounded queues or cross-tenant delivery.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Build repeatable multi-client and multi-room qualification scenarios with representative avatar poses, dynamic objects, interactions and collaborative edits. Exercise proposed 20, 50 and 100 participant profiles while measuring owner CPU, tick headroom, serialization, bandwidth, memory and recovery. Publish passing configurations and limits rather than a universal participant claim.",
+        "tests": "Combine network impairment, worker/coordinator failures, rolling upgrades, competing grabs and document traffic; retain traces and reproducible fixture commands as release evidence.",
+        "security": "Include hostile message rates, forged grants and relevance-boundary access attempts. Use synthetic principals and exclude private content from diagnostic traces."
+      }
+    },
+    {
+      "id": "N13",
+      "title": "Coordinate revocation and generic moderation across services",
+      "prs": [],
+      "dependsOn": [
+        "N11",
+        "N10",
+        "N14",
+        "M12"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Removal stops protected activity and future media delivery across active connections and reconnects. Host applications define role policy while the engine enforces scoped actions; partial service failure has a documented fail-closed path.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Implement engine operations for removing principals, restricting publication/editing, expiring bans and invalidating control leases across world, media and collaboration services. Publish idempotent revocation events with measurable enforcement latency. Persist membership/revocation events and consumer acknowledgments. Apply them to collaboration writes/subscriptions, durable editing, presenter leases and device eligibility for future key envelopes; M16 consumes the same event lifecycle.",
+        "tests": "Exercise revocation races, unavailable consumers, stale grants, repeat commands, ban expiry and attempts to retain an active presenter or grab lease. Verify one removal across world commands, documents, editing, presenter/grab leases, media admission and key-envelope eligibility.",
+        "security": "Authorize the moderator and target scope, retain safe audit records and prevent cross-tenant removal or silent access restoration after recovery."
+      }
+    },
+    {
+      "id": "N14",
+      "title": "Implement durable world revisions and authoring transactions",
+      "prs": [],
+      "dependsOn": [
+        "W01",
+        "N01"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Two authorized clients can commit disjoint changes and receive explicit conflicts on incompatible edits. Undo creates a valid compensating revision. A published world references a consistent immutable dependency set.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Networking",
+        "release": "core",
+        "deliverable": "Implement the server APIs for world templates, revisioned entity changes, idempotent command groups, history queries, optimistic conflicts and explicit snapshot publication. Keep these generic APIs independent of the browser editor and live physics ticks.",
+        "tests": "Run database integration tests for concurrent commits, retries, interrupted transactions, migration, history visibility and snapshot restoration.",
+        "security": "Validate principal, tenant, entity and dependency read permissions; audit changes without recording transient participant tracking or embedding credentials in world data."
+      }
+    },
+    {
+      "id": "M01",
+      "title": "Establish the shared spatial-audio graph and listener contract",
+      "prs": [],
+      "dependsOn": [
+        "W02"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A world source routes through exactly one spatial path. Entering or leaving XR switches the listener without duplicate audio or one listener per eye. World video defaults to spatial playback; global amplification requires an explicit configuration.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Define serializable AudioEmitter and AudioZone components plus source adapters for buffers, media elements and live tracks. Build the Babylon AudioEngine v2/Web Audio integration with one local listener, category buses and explicit nonspatial modes. Bind listener position/orientation to desktop camera or XR head pose using canonical meters and coordinates.",
+        "tests": "Verify coordinate fixtures, head rotation, camera changes, graph ownership, source disposal and serialization round trips using deterministic audio probes.",
+        "security": "Source references resolve through authorized engine assets or tracks. Do not allow imported scene data to execute arbitrary audio-processing scripts."
+      }
+    },
+    {
+      "id": "M02",
+      "title": "Implement attached sounds, distance curves and continuous music mixing",
+      "prs": [],
+      "dependsOn": [
+        "M01",
+        "A05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Four distinct calibrated corner tracks remain continuously mixed with equal attenuation at equal distance; approaching a corner changes the balance smoothly. A bird's source follows its transform. Inverse falloff still reaches zero at the engine's configured cutoff.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Add reusable short-sound buffers, streaming loops and entity/local-offset attachments. Implement configured attenuation, reference distance, rolloff, directional cones and a separate fade-start/audible-radius envelope. Preserve explicit mono/stereo handling and support calibration metadata. Attach sources to interpolated transforms so animated birds and moving objects carry their sounds smoothly.",
+        "tests": "Measure gain and channel behavior with fixtures; exercise loops, changing distance, replacement, moving attachments and HRTF/equal-power profiles.",
+        "security": "Bound decoding and cached buffers by published asset limits. Reject nonfinite gains or malformed distance settings before constructing audio nodes."
+      }
+    },
+    {
+      "id": "M03",
+      "title": "Add area emitters, acoustic zones and bounded occlusion",
+      "prs": [],
+      "dependsOn": [
+        "M02",
+        "W07"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A waterfall grows louder near its authored extent rather than only near its center. Crossing zone boundaries remains smooth. Multiple emitters do not accidentally multiply the source level, and geometric walls influence the configured approximation without claiming full acoustic simulation.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Implement authored point, line and area-source approximations for waterfalls and broad sound features. Add optional acoustic zones, bounded collision-query occlusion, smooth low-pass/gain changes and modest reverb sends. Publish editable parameters and serialization hooks while keeping all sources within one coherent gain and phase model.",
+        "tests": "Check area edges, moving listener paths, zone overlaps, normalized multi-emitter output and query budgets; compare occluded and unobstructed fixtures.",
+        "security": "Acoustic attenuation never grants privacy. Bound emitter counts, impulse-response resources and per-frame geometry queries for creator-authored zones."
+      }
+    },
+    {
+      "id": "M04",
+      "title": "Manage audio activation, mixing controls and resource budgets",
+      "prs": [],
+      "dependsOn": [
+        "M03"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Join activation works within browser permissions. Headset sleep and tab suspension recover without duplicate nodes. Resource pressure preserves prioritized voice and presentations, while any quality downgrade retains distance behavior and avoids nearest-source switching among audible corner tracks.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Implement gesture-based audio unlock, suspension/resume handling and per-user voice, video, music, ambience and effects controls with master headroom. Budget active decoders and panners independently of graphics. Virtualize inaudible loops with hysteresis and preserved timeline, and expose a listener policy for applications using an accessible 2D view.",
+        "tests": "Stress declared source budgets; cycle suspension, resume, scene reload and user mute; measure node/decoder cleanup and preserved loop positions.",
+        "security": "Enforce source limits even for trusted-looking manifests. Device and autoplay restrictions produce actionable state, never hidden attempts to bypass user permissions."
+      }
+    },
+    {
+      "id": "M05",
+      "title": "Introduce the LiveKit media adapter behind engine contracts",
+      "prs": [],
+      "dependsOn": [
+        "N02"
+      ],
+      "externalPrerequisites": [
+        "A reachable LiveKit-compatible media service for integration testing; M07 supplies the self-hosted qualification environment."
+      ],
+      "acceptanceCriteria": "A generic engine sample publishes and receives media through the adapter without importing a meeting application. Switching endpoint configuration preserves object bindings. Reconnect and track replacement have explicit events that downstream spatial systems can consume.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Define media-session, publication, subscription and track-lifecycle interfaces independent of conference UI and world object semantics. Implement the selected LiveKit client/server adapter with stable source identities, connection state, mute/replacement events and service-side token issuance. Support both configured self-hosted and managed endpoints through the same public contract.",
+        "tests": "Run adapter contract cases for join, publish, mute, replace, disconnect, reconnect and disposal; verify server/client version compatibility.",
+        "security": "Keep API secrets server-side. Bind issued media identities to verified engine principals and fail closed on unsupported or unauthorized publication requests."
+      }
+    },
+    {
+      "id": "M06",
+      "title": "Enforce private media membership and subscription permissions",
+      "prs": [],
+      "dependsOn": [
+        "M05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A modified client cannot subscribe to an unauthorized nearby microphone, private group or tenant. Membership removal stops future delivery through the tested service path. Applications choose group policy while the engine enforces identities, scopes and operations. Original and server-refreshed cached tokens cannot restore removed permissions. Measure the maximum enforcement interval, including control-plane partitions, and keep the claim blocked until the configured enforcement mechanism passes.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Map engine capabilities to narrow media-room, publication and subscription grants. Implement server-enforced private conversation membership, source permissions, renewal and revocation. Use separate authorized media rooms or verified server-side subscription enforcement where required; do not rely on client muting or a cooperative publisher to protect private streams. Implement a qualified self-hosted admission/revocation path at every signaling entry and reconnect, with membership epochs, no direct bypass and enforceable media-node checks for active-session access. Use a maintained server integration where needed; short token TTL alone is insufficient. Expiring authorization leases must bound active-session access when the control plane is unavailable.",
+        "tests": "Attempt direct SDK subscriptions, forged track IDs, reused grants, stale membership and cross-room access; test revocation during playback and reconnect. Reuse original/refreshed tokens after removal, attempt direct signaling access and interrupt management/control services during active media; verify bounded termination without granting stale access.",
+        "security": "Acoustic range and AOI are independent of permission. Document grant lifetime and revocation latency; never expose service administrator credentials to browsers."
+      }
+    },
+    {
+      "id": "M07",
+      "title": "Ship a self-hosted SFU and TURN deployment harness",
+      "prs": [],
+      "dependsOn": [
+        "M06",
+        "N08"
+      ],
+      "externalPrerequisites": [
+        "UDP-capable test hosts with routable public addresses, DNS/TLS certificates and controlled external clients; generic HTTP-only hosting is insufficient."
+      ],
+      "acceptanceCriteria": "Two external clients communicate through direct connectivity and forced TURN fallback. Multiple rooms distribute across the media fleet, while one room's capacity remains measured. Planned node drain and failure produce documented reconnect behavior and actionable diagnostics.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Provide pinned LiveKit and TURN configurations, local integration orchestration and a reference production deployment with explicit UDP/TCP ports, TLS, public addressing and health checks. Qualify coordination compatibility and node draining. Document the single-node room boundary, region placement and which hosting services can expose the required media networking.",
+        "tests": "Exercise restricted networks, UDP blocking, TCP/TLS fallback, certificate renewal, coordinator interruption and media-node restart using external probes.",
+        "security": "Use authenticated expiring TURN credentials, restricted administration and secrets injection. Prevent the relay from becoming an unauthenticated public service. Expose signaling only through the qualified admission path and deploy the M06 media-node revocation/lease enforcement configuration."
+      }
+    },
+    {
+      "id": "M08",
+      "title": "Attach remote microphones to avatars without duplicate playback",
+      "prs": [],
+      "dependsOn": [
+        "M04",
+        "M06",
+        "W14"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Walking avatars carry their voices; listener motion and head rotation change the mix appropriately. Muting, reconnecting or replacing a microphone never creates two playback paths. Missing avatars use an explicit temporary binding policy rather than silently becoming global audio.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Wrap each selected incoming microphone track in a single-track media-stream audio source and bind it to the avatar's interpolated head/mouth offset. Reconcile track identity, mute, replacement and teardown with the media adapter. Publish local microphone capture outbound without default local monitoring or a simultaneous global conference audio renderer.",
+        "tests": "Use two moving clients to check spatial gain, track replacement, mute, late avatar arrival, device permission denial and clean disposal.",
+        "security": "Create nodes only for authorized subscribed tracks. Revocation tears down playback promptly; local capture starts only after the browser's permission flow."
+      }
+    },
+    {
+      "id": "M09",
+      "title": "Create generic media surfaces and an extensible viewer registry",
+      "prs": [],
+      "dependsOn": [
+        "M01",
+        "A25"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Images, registered content and unknown attachments can be placed, replaced, moved and deleted without orphaned resources. Unsupported files receive a clear attachment/preview result. A surface exports and reimports with stable source and audio references.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Implement media-surface entities with source revision, aspect ratio, audio binding, preview state and disposal lifecycle. Add a registry for authorized viewers/converters and an attachment fallback that preserves originals. Expose the same content through world surfaces and accessible 2D views without assuming arbitrary websites, native applications or file formats render inside VR. Resolve imported external file sources through the A25 broker and preserve their publication identity.",
+        "tests": "Exercise registry selection, unsupported types, missing revisions, loading failures, replacement, lifecycle cleanup and serialization.",
+        "security": "Treat viewer plugins as trusted engine extensions. Resolve files through authorized storage and validate external fetches; never execute embedded active content automatically."
+      }
+    },
+    {
+      "id": "M10",
+      "title": "Publish camera and screen capture onto world surfaces",
+      "prs": [],
+      "dependsOn": [
+        "M08",
+        "M09"
+      ],
+      "externalPrerequisites": [
+        "Actual supported desktop browsers and headset receivers; available capture-audio sources vary by browser and operating system."
+      ],
+      "acceptanceCriteria": "A desktop user chooses the capture source through the browser prompt. Headsets display supported incoming streams regardless of their ability to originate capture. Stop-sharing, source termination and replacement update both picture and spatial sound.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Add explicit camera and desktop screen-capture workflows, publication controls and live textures. Associate captured audio with the intended screen/camera emitter without duplicating microphone playback. Provide a short-lived paired-device presentation capability so a desktop can originate a stream while a headset receives it; keep application presenter policy outside the engine.",
+        "tests": "Qualify capture denial, window/tab/system-audio variations, ended tracks, paired-device expiry and mixed microphone/screen audio on supported browsers.",
+        "security": "Require user activation and scoped publication grants. Pairing must bind verified principals and require explicit device confirmation; never silently capture another device."
+      }
+    },
+    {
+      "id": "M11",
+      "title": "Play uploaded video through one synchronized visual/audio element",
+      "prs": [],
+      "dependsOn": [
+        "M04",
+        "M09",
+        "M24"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A looping wall video sounds as if it comes from its screen, including after movement or replacement. Pausing and seeking affect picture and sound together. Muting its emitter removes that video's audio completely, with no independent global route.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Load qualified uploaded-video variants into one media element used by both the video texture and MediaElementAudioSourceNode. Connect its audio once to the screen emitter, expose play/pause/seek/loop controls and preserve source clock ownership. Handle authorized CDN access, CORS, codec selection and clear failure states.",
+        "tests": "Exercise loops, seeks, resize, disposal, unsupported codecs, expired URLs and CORS failures while measuring audio/video alignment.",
+        "security": "Use published validated variants and authorized delivery. Reject arbitrary decoder inputs beyond resource limits and avoid exposing signed media URLs in logs."
+      }
+    },
+    {
+      "id": "M12",
+      "title": "Synchronize presentation control and media playback across clients",
+      "prs": [],
+      "dependsOn": [
+        "M10",
+        "M11",
+        "N09"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Only the current authorized controller changes a surface. Late joiners reach the current page or video position, and lease expiry or handoff cannot replay stale controls. Each client shares playback state while retaining its own spatial audio mix.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Apply server-owned presentation leases to source selection, page changes and video controls. Synchronize asset revision, source identity, sequence number, play state, position, rate and server-time anchor. Implement late-join reconstruction and measured drift correction; keep transient pointers separate from durable content and application-specific presenter selection. Register checkpoint/restore hooks for source revision, page, playback time anchor and controller epoch with N09; invalidate stale presenter leases after authority-owner changes.",
+        "tests": "Inject clock offset, delayed controls, duplicate seeks, simultaneous handoff, late join and buffering; measure drift and sequence convergence. Crash the world owner during active video and presenter handoff, restore the checkpoint and verify late-join reconstruction with a new authority epoch.",
+        "security": "Validate every control operation against entity scope and lease epoch. Source changes must reference authorized published content, not unchecked external URLs."
+      }
+    },
+    {
+      "id": "M13",
+      "title": "Allocate media subscriptions from world visibility and audio relevance",
+      "prs": [],
+      "dependsOn": [
+        "N07",
+        "M10",
+        "M11"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A visible video texture does not stop because its backing element is hidden. Crossing a voice range avoids rapid subscription churn and clipped initial speech under the qualified margin. Revoked streams are removed regardless of retention margins or priority.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Drive stream subscription and quality from projected surface size, visibility, priority and decoder budgets rather than hidden HTML-element dimensions alone. Add authorized voice pre-subscription margins, smooth fades and hysteresis around audible boundaries. Prioritize active presentations and speech while exposing policy hooks for applications and device profiles.",
+        "tests": "Exercise occluded screens, moving listeners, rapid viewport changes, constrained decoder counts, competing streams and permission changes while measuring quality transitions.",
+        "security": "Intersect every optimization decision with server authorization. Client proximity requests cannot widen private media membership or bypass source permissions."
+      }
+    },
+    {
+      "id": "M14",
+      "title": "Render PDF slides, images and readable text surfaces",
+      "prs": [],
+      "dependsOn": [
+        "M12",
+        "M25"
+      ],
+      "externalPrerequisites": [
+        "The qualified office-conversion and font environment supplied by the document-conversion lane."
+      ],
+      "acceptanceCriteria": "A presenter changes a slide once and authorized clients display the same page revision in desktop and immersive views. Nearby text remains readable within the qualified device budget. Users can access original files and choose screen sharing when static conversion loses essential behavior.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Integrate PDF.js page rendering, image panels and text surfaces with bounded resolution, lazy page loading and accessible 2D text/navigation. Consume immutable office-to-PDF outputs and publish page metadata to presentation synchronization. Preserve original documents and show conversion limitations, including unsupported animations, fonts or embedded applications.",
+        "tests": "Use large-page, font, rotation, image and malformed-document fixtures; verify page identity, accessibility, resource limits and late joins.",
+        "security": "Disable automatic execution or navigation from document actions. Resolve external references through approved policies and isolate conversion outside the browser runtime."
+      }
+    },
+    {
+      "id": "M15",
+      "title": "Connect shared notes, whiteboards and page annotations to surfaces",
+      "prs": [],
+      "dependsOn": [
+        "N10",
+        "N11",
+        "M14"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Concurrent notes and strokes converge after reconnect. Page changes keep annotations on their correct page and source revision. Read-only viewers can follow presentations without acquiring edit authority, and world export retains permitted document references and content snapshots.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Bind Yjs documents to reusable notes, whiteboard and annotation surfaces. Implement desktop and qualified XR input, vector strokes, selection and accessible editing views. Anchor annotations to asset revision and page coordinates; send pointers through ephemeral channels while preserving persistent content separately from server-owned presentation control.",
+        "tests": "Exercise simultaneous edits, page switching, source replacement, disconnected drawing, permission changes, export/reimport and keyboard operation.",
+        "security": "Enforce document and surface permissions independently. Bound stroke density and text size, sanitize displayed content and prevent annotations from becoming executable scene behavior."
+      }
+    },
+    {
+      "id": "M16",
+      "title": "Implement authenticated media E2EE keys and membership epochs",
+      "prs": [],
+      "dependsOn": [
+        "N13"
+      ],
+      "externalPrerequisites": [
+        "A reviewed browser-compatible key-envelope/group-key implementation and security review of endpoint authentication and key lifecycle."
+      ],
+      "acceptanceCriteria": "Only admitted endpoints obtain current media keys. Removed devices cannot decrypt future epochs; key loss fails visibly rather than silently disabling encryption. Document that signaling metadata remains server-visible and that revocation cannot erase previously received content.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Define the E2EE threat model and implement a reviewed endpoint-authentication and key-envelope protocol around LiveKit's encryption support. Generate session epoch keys at authorized endpoints, distribute encrypted envelopes to verified devices, and rotate on membership changes. Handle late joins, reconnects, key loss, revocation and explicit recovery policy without plaintext keys in service logs. Consume N13 membership/revocation events for device eligibility and key-epoch changes. Scope keys to each actual authorized private media audience rather than sharing one world-wide key.",
+        "tests": "Exercise device substitution, forged envelopes, late join, removal, reconnect, rotation races and unsupported-browser failure using reviewed protocol fixtures.",
+        "security": "Use established cryptographic primitives and authenticated endpoint identities. Block production E2EE claims until protocol and integration review passes."
+      }
+    },
+    {
+      "id": "M17",
+      "title": "Protect shared content with explicit encrypted-processing boundaries",
+      "prs": [],
+      "dependsOn": [
+        "M16",
+        "M14"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Authorized clients restore encrypted shared documents and render prepared content after reconnect while storage contains ciphertext. Revoked members cannot obtain new epochs. Choosing server conversion or processing identifies the endpoint's access rather than describing it as outside the trust boundary.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Add client-encrypted document updates, snapshots and prepared media/assets using the established key lifecycle and opaque storage/relay contracts. Keep server-required simulation state outside this promise. Provide explicit modes for local preparation or an admitted converter that can read source content; encrypted storage must not silently bypass validation or claim invisible server conversion.",
+        "tests": "Verify encrypted persistence/reload, tampering, wrong keys, large updates, key rotation and conversion-mode transitions with synthetic content.",
+        "security": "Authenticate ciphertext metadata and scope keys to content audiences. Keep client resource limits, provenance and access controls after decryption."
+      }
+    },
+    {
+      "id": "M18",
+      "title": "Record sessions through an explicitly authorized processing endpoint",
+      "prs": [],
+      "dependsOn": [
+        "M07",
+        "M17"
+      ],
+      "externalPrerequisites": [
+        "A deployed recording/egress worker with measured CPU capacity and durable artifact storage."
+      ],
+      "acceptanceCriteria": "Recording captures the declared program and produces playable, synchronized output with recoverable failure status. Private sessions cannot gain an undisclosed recorder. The API distinguishes ordinary egress from an E2EE-capable processing path instead of assuming stock egress decrypts arbitrary sessions. A live microphone, a PDF slide change and an uploaded wall video with soundtrack appear once each when selected, at the correct program times; excluded/private sources remain absent.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "expanded",
+        "deliverable": "Provide recording start/stop/status APIs and a separate recording worker using qualified LiveKit egress or an admitted receiver endpoint. Define captured tracks, surface composition and synchronization metadata. Publish immutable recording artifacts with access and retention hooks. For encrypted sessions, admit a recorder with keys only through explicit application-approved processing policy. Implement a reusable program-composition input contract for live tracks, file-backed audio/video with M12 playback anchors and PDF/slide state. Select a produced mix or a defined listener/viewpoint mix; file-backed sources require content authorization and keys independently of media-track encryption.",
+        "tests": "Exercise start/stop races, worker crash, missing tracks, key rotation, revoked recorder, retry idempotency and artifact deletion. Exercise the mixed live-track, slide and file-video fixture through capture and playback, checking source selection, timing, audio duplication and separate content/media key access.",
+        "security": "Authorize recording separately from listening. Scope processor keys and storage access, and avoid logging decrypted media or reusable credentials."
+      }
+    },
+    {
+      "id": "M19",
+      "title": "Integrate authorized captions and transcription providers",
+      "prs": [],
+      "dependsOn": [
+        "M18"
+      ],
+      "externalPrerequisites": [
+        "A selected and licensed self-hosted speech-recognition runtime/model or configured transcription provider, plus representative language fixtures."
+      ],
+      "acceptanceCriteria": "Captions track the selected audio program and remain aligned through source changes. Encrypted sessions identify the processor as a key-holding endpoint or disable processing clearly. Users can distinguish partial corrections and unavailable transcription from finalized text.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "expanded",
+        "deliverable": "Define a transcription provider contract and an explicitly admitted caption-processing endpoint. Route authorized audio, emit speaker/source identifiers and timestamped partial/final captions, and render readable captions in desktop, 2D and qualified XR surfaces. Expose transcript export, access and retention hooks while keeping application language and recording policy separate. Consume the M18 program-input contract, including selected file-backed audio; possession of media-track keys does not grant document or file access.",
+        "tests": "Use known speech fixtures, interruption, mixed sources, caption revisions, provider failure and key revocation; measure latency and documented recognition limits.",
+        "security": "Grant only necessary tracks and keys. Protect transcript artifacts as content, with tenant-scoped access and configurable deletion."
+      }
+    },
+    {
+      "id": "M20",
+      "title": "Relay a shared stage program across independent audience rooms",
+      "prs": [],
+      "dependsOn": [
+        "M13",
+        "M18"
+      ],
+      "externalPrerequisites": [
+        "Relay/republishing capacity and multi-room SFU infrastructure with routable media connectivity for load qualification."
+      ],
+      "acceptanceCriteria": "Clients in different audience rooms receive the same live program through real media delivery, not merely matching identifiers. One audience-room failure does not stop the stage. Capacity evidence separates stage publishers, relay fanout, per-room limits and aggregate attendance.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "expanded",
+        "deliverable": "Implement a generic stage-program source with a common clock, track/source identifiers and an actual authorized relay or republishing worker into independent audience media rooms. Propagate presentation state with measured relay delay, reconnect and source replacement behavior. Keep audience world instances separate and expose topology controls for applications. Reuse the M18 program-input contract to coordinate live tracks, authorized file-backed video/audio timelines and slide state across audience rooms.",
+        "tests": "Exercise multiple rooms, relay interruption, publisher replacement, clock alignment, room churn and encrypted-mode key rotation under measured traffic.",
+        "security": "Authorize each relay destination and its source access. Any relay that decrypts content is an admitted processing endpoint, with explicit keys and trust."
+      }
+    },
+    {
+      "id": "M21",
+      "title": "Deliver a produced broadcast with viewer-latency awareness",
+      "prs": [],
+      "dependsOn": [
+        "M20"
+      ],
+      "externalPrerequisites": [
+        "A selected broadcast packaging path and CDN/object store supporting required access controls, media formats and CORS."
+      ],
+      "acceptanceCriteria": "Many receiver instances share a program without joining one unbounded interactive room. Late joins and buffering preserve the declared synchronization model. The API exposes latency and live-edge status rather than presenting delayed viewers as identical to stage participants.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "expanded",
+        "deliverable": "Add a produced-program broadcast adapter with qualified segmented video delivery, authenticated manifests and CDN/object-storage configuration. Map viewer playback time to the stage program clock so slides, annotations and application interactions can account for broadcast delay. Support lightweight and world-surface receivers, with spatial screen audio unless explicit amplification is selected.",
+        "tests": "Exercise buffering, seeking within the allowed window, token expiry, source discontinuity, CDN failure and viewer-time alignment. Verify the microphone, changing PDF and uploaded wall-video soundtrack fixture end to end, with each chosen input captured once and private inputs excluded.",
+        "security": "Protect manifests and segments with scoped access. Document revocation/cache/buffer limits; broadcast distribution does not automatically preserve media E2EE."
+      }
+    },
+    {
+      "id": "M22",
+      "title": "Promote audience participants into live publishing safely",
+      "prs": [],
+      "dependsOn": [
+        "M21"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "An authorized audience member can join the live stage without hearing a delayed copy of themselves or retaining duplicate program audio. Failed promotion returns to a usable audience state. Demotion revokes publication and restores the appropriate audience clock and subscriptions.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "expanded",
+        "deliverable": "Implement application-neutral promotion and demotion transactions between audience reception and authorized live publishing. Obtain fresh grants, establish the interactive connection, transfer relevant control leases and switch playback paths with feedback prevention. Provide status and rollback hooks; applications decide who is invited, accepted or returned to the audience.",
+        "tests": "Exercise accepted/declined invitations, slow permissions, reconnect mid-transition, duplicate requests, source-device failure and simultaneous handoffs.",
+        "security": "Reauthorize at each boundary, expire transfer grants and revoke old capabilities. Audience membership alone cannot acquire microphone or presenter authority."
+      }
+    },
+    {
+      "id": "M23",
+      "title": "Qualify the complete spatial-media graph on real devices",
+      "prs": [],
+      "dependsOn": [
+        "N12",
+        "M15",
+        "M19",
+        "M22"
+      ],
+      "externalPrerequisites": [
+        "Reference laptops with speakers/headphones, actual supported headsets, external network probes and consented human listeners for perceptual and echo tests."
+      ],
+      "acceptanceCriteria": "Spatial behavior, permission enforcement and single-route playback survive reconnect and source replacement. Acoustic quality remains usable under the declared concurrent load. Stage, broadcast, recording and caption results identify their different latency, trust and capacity profiles.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "expanded",
+        "deliverable": "Run reproducible end-to-end scenarios combining four-corner music, moving birds, avatar microphones, area waterfalls, looping screens and live presentations. Qualify laptop speakers, headphones and actual headsets through the final graph, including echo cancellation, output-device changes and resume. Publish supported browser/device configurations, source budgets, drift, frame/audio cost and network conditions.",
+        "tests": "Include blind listening checks, instrumented gain fixtures, restricted-network runs, device swaps, processor failure and hostile subscription attempts; retain evidence for release.",
+        "security": "Use consented test participants and synthetic content. Verify no private tracks, plaintext keys or transcript content enter diagnostics."
+      }
+    },
+    {
+      "id": "M24",
+      "title": "Implement video and audio preparation workers",
+      "prs": [],
+      "dependsOn": [
+        "A05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Representative uploaded media plays through the supported browser profiles with the correct duration, channel layout and seek behavior. Invalid input and unavailable codecs produce clear diagnostics rather than silent audio loss.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Integrate pinned FFmpeg workers for metadata probing, browser-playable video/audio variants, thumbnails and loudness metadata. Define supported codec/container profiles, preserve originals and publish immutable derived media through the asset pipeline.",
+        "tests": "Test variable frame rate, silent and multi-channel inputs, corrupt containers, large files, cancellation, retry and resulting browser playback.",
+        "security": "Run untrusted containers under resource/egress limits, audit the actual FFmpeg build and prevent path, playlist or remote-reference escape."
+      }
+    },
+    {
+      "id": "M25",
+      "title": "Implement office document conversion and safe previews",
+      "prs": [],
+      "dependsOn": [
+        "A05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Representative slide decks and documents yield readable page sequences with correct order and useful font/layout diagnostics. Encrypted, corrupt or unsupported inputs have explicit outcomes; embedded macros do not execute.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Integrate a pinned headless office converter for supported presentation/document inputs, PDF/page outputs and thumbnails. Package fonts and record conversion differences; expose original retrieval and desktop sharing for features that static pages cannot preserve.",
+        "tests": "Compare reference pages, fonts, images, slide order, failures and cancellation; verify output through the browser PDF renderer when M14 is integrated.",
+        "security": "Isolate office parsing, disable active content and network references, enforce file/page/resource limits and retain private-document access controls."
+      }
+    },
+    {
+      "id": "M26",
+      "title": "Qualify core spatial audio and laptop echo behavior",
+      "prs": [],
+      "dependsOn": [
+        "M13",
+        "M16",
+        "N12"
+      ],
+      "externalPrerequisites": [
+        "Reference laptop speakers/headphones and actual supported headsets"
+      ],
+      "acceptanceCriteria": "Equally calibrated sources have matching distance gains at equal distances; movement changes the mix continuously. Video audio remains screen-attached with one route. Simultaneous conversation and video remain usable without feedback under the declared profile.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Audio and media",
+        "release": "core",
+        "deliverable": "Run the core four-corner, moving-source, waterfall and wall-video audio scenarios on headphones, laptop speakers and actual supported headsets. Exercise microphone echo cancellation through the final playback graph and record core source/decoder budgets.",
+        "tests": "Measure gain/cutoff behavior and A/V drift; perform listening, device-change, reconnect, permission-denial and headset-resume checks with real output/capture devices.",
+        "security": "Confirm private streams stay inaccessible and diagnostic output contains no audio content or keys; failures remain release blockers for affected profiles."
+      }
+    },
+    {
+      "id": "B01",
+      "title": "Adapt the browser editor shell and scene selection",
+      "prs": [],
+      "dependsOn": [
+        "W04"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "An imported world exposes stable selectable entities and hierarchy without duplicating renderer-owned objects. Selection stays synchronized between outline and viewport. Keyboard navigation, focus transitions and read-only mode work, and replacing the world clears obsolete selections safely.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Authoring",
+        "release": "core",
+        "deliverable": "Wrap the qualified browser authoring foundation or build missing shell components: hierarchy outline, viewport selection, inspector hosting, tool modes and host-injected authorization. Keep editor packages application-neutral and reusable independently of conference administration.",
+        "tests": "Exercise nested/instanced scenes, multi-selection, deleted entities, keyboard operation and scene replacement in browser tests; inspect accessible names and focus order.",
+        "security": "Read-only presentation is not enforcement; editor commands require a valid capability and sanitize asset-provided labels before display."
+      }
+    },
+    {
+      "id": "B02",
+      "title": "Add transactional transforms, cloning and prefab editing",
+      "prs": [],
+      "dependsOn": [
+        "B01",
+        "W09"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Dragging a group creates one logical undo step rather than a history entry per frame. Cloning allocates new identifiers, prefab overrides remain distinct from source definitions and reparenting preserves intended world transforms. Cancelled gestures restore the original scene.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Authoring",
+        "release": "core",
+        "deliverable": "Implement transform gizmos, numeric entry, snapping, reparenting, cloning and prefab instance overrides through a shared authoring-command model. Provide local preview and reversible grouped edits while preserving source pivots and stable object identity.",
+        "tests": "Cover rotated parents, negative scales, group transforms, prefab overrides, cancel/undo/redo and invalid parent cycles against independent fixtures.",
+        "security": "Validate numeric bounds and entity scopes before committing commands; previews cannot bypass protected-object capabilities."
+      }
+    },
+    {
+      "id": "B03",
+      "title": "Expose material, lighting and environment authoring",
+      "prs": [],
+      "dependsOn": [
+        "B02",
+        "W16"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Users edit a material instance without unexpectedly changing unrelated shared materials. Light and environment changes preview correctly, undo cleanly and survive serialization. Unsupported shader features remain visible as preserved metadata with explicit limitations rather than silently resetting.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Authoring",
+        "release": "core",
+        "deliverable": "Add inspectors for supported physically based material properties, texture assignment, lights, shadows, sky, water and weather settings. Reuse selected renderer editors where compatible and store changes as portable component data or declared renderer extensions.",
+        "tests": "Exercise shared-versus-instance edits, texture replacement, renderer-extension preservation, undo and low-quality preview behavior with reference materials.",
+        "security": "Permit only validated asset references and bounded rendering parameters; arbitrary shader or node input follows the trusted-extension policy."
+      }
+    },
+    {
+      "id": "B04",
+      "title": "Deliver drag-and-drop import, catalog and placement flows",
+      "prs": [],
+      "dependsOn": [
+        "B02",
+        "A14",
+        "W23"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Dropping a supported asset leads to an editable placed object or an actionable conversion result. Retries do not duplicate published assets or placements. Cancelled jobs and missing textures remain understandable, and users can reuse an existing asset without reuploading it.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Authoring",
+        "release": "core",
+        "deliverable": "Connect files, folders and archives to resumable imports, job progress, diagnostics and the reusable asset catalog/inventory. Support quick runtime-asset placement, delayed conversion placeholders and source retrieval without vendor-specific controls or conference-only workflows.",
+        "tests": "Exercise ready GLB, archive dependencies, interrupted upload, retry, cancellation, failed conversion and placement after asynchronous completion.",
+        "security": "Enforce upload/catalog/placement capabilities and tenant boundaries; display converter diagnostics safely and retain server resource limits."
+      }
+    },
+    {
+      "id": "B05",
+      "title": "Provide collision, navigation and spawn authoring tools",
+      "prs": [],
+      "dependsOn": [
+        "B02",
+        "W11"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A host can inspect blocked doorways, repair a collider or spawn point, rebuild affected navigation and validate traversal. Pending rebuilds cannot publish a falsely ready walkable area. Edits have clear undo behavior and preserve unchanged regions.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Authoring",
+        "release": "core",
+        "deliverable": "Add overlays and editing controls for collider assignments, simplified shapes, collision groups, navigation tiles, teleport regions, portals and spawn locations. Expose rebuild status and diagnostics while preserving the separation between visual geometry and physical representation.",
+        "tests": "Use venue fixtures with arches, stairs and deliberately broken colliders; verify rebuild cancellation, stale result rejection and safe-spawn validation.",
+        "security": "Authorize physics edits separately from ordinary placement; reject malicious shape parameters and dangerous spawn destinations."
+      }
+    },
+    {
+      "id": "B06",
+      "title": "Implement browser terrain sculpting and tile updates",
+      "prs": [],
+      "dependsOn": [
+        "B05",
+        "W16"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A stroke crossing tile borders preserves seams and undoes as one operation. Rebuild progress and temporarily unavailable regions are visible. Removing a supporting surface triggers the established participant recovery policy before publication, and unchanged tiles retain their identities.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Authoring",
+        "release": "core",
+        "deliverable": "Add bounded terrain sculpt/flatten/smooth and surface-paint tools with brush preview, grouped stroke transactions and tiled dirty-region updates. Coordinate visual, collider and navigation revisions so live editing cannot produce silent disagreement between rendered and physical terrain.",
+        "tests": "Exercise border strokes, large undo operations, interrupted rebuilds, negative elevations, concurrent invalidation and world reload after terrain edits.",
+        "security": "Limit brush extent, changed-tile counts and rebuild frequency; enforce terrain-edit capabilities independently of object manipulation."
+      }
+    },
+    {
+      "id": "B07",
+      "title": "Author media surfaces, sound emitters and acoustic zones",
+      "prs": [],
+      "dependsOn": [
+        "B04",
+        "M12"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Users place a wall video with one spatial soundtrack, attach sound to an animal and configure overlapping corner tracks. Moving or duplicating objects preserves intended bindings without accidental duplicate playback. Acoustic changes undo and reload; private-media authorization remains distinct from audible radius.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Authoring",
+        "release": "core",
+        "deliverable": "Provide reusable inspectors for screen geometry, source bindings, playback policy, emitter attachments, distance curves, directional cones, mixer buses and acoustic zones. Add visual falloff/zone overlays and a listener preview using existing media/audio systems.",
+        "tests": "Verify save/reload of media/audio settings, duplicate-binding prevention, emitter offsets, overlapping ranges and acoustic-zone editing.",
+        "security": "Validate source access and playback-control grants; authoring an audible zone cannot grant access to a private conversation."
+      }
+    },
+    {
+      "id": "B08",
+      "title": "Author behavior graphs, actor settings and attachments",
+      "prs": [],
+      "dependsOn": [
+        "B02",
+        "W14",
+        "W15",
+        "W17"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "An author configures a door trigger, animated route and wearable attachment without editing source files. References survive cloning and prefab overrides. Invalid action graphs, missing clips and broken sockets prevent misleading publication and remain repairable after reload.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Authoring",
+        "release": "core",
+        "deliverable": "Expose declarative trigger/action editing, clip selection, NPC route configuration, attachment sockets and component diagnostics through reusable editor panels. Reuse qualified graph tools; the core editor supports declared behaviors while general creator-code editing follows the isolated-runtime expansion.",
+        "tests": "Exercise behavior graph validation, component-reference remapping, route previews, clip changes, attachment replacement and undo across actor edits.",
+        "security": "Editor previews execute only approved actions in a constrained context; privileged runtime effects require normal authority checks."
+      }
+    },
+    {
+      "id": "B09",
+      "title": "Persist collaborative edits, revision history and undo",
+      "prs": [],
+      "dependsOn": [
+        "B02",
+        "N14",
+        "N05"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Two editors changing the same entity receive a consistent commit or explicit conflict. Disjoint permitted changes persist, retries create no duplicate revisions and revocation stops further commits. Undo respects intervening edits instead of restoring a stale whole-world snapshot.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Authoring",
+        "release": "core",
+        "deliverable": "Connect authoring commands to durable revisions, idempotent commits, edit leases or optimistic version checks and collaborative change notifications. Add revision history, conflict resolution and reversible command groups without using a document CRDT as physics authority.",
+        "tests": "Run concurrent browser editors against persistence with dropped acknowledgments, stale revisions, expired leases, retries, reconnect and conflicting undo.",
+        "security": "Validate actor, tenant, expected revision and entity scopes server-side; history must not expose inaccessible assets or other tenants' edits."
+      }
+    },
+    {
+      "id": "B10",
+      "title": "Complete world export, reimport and live-to-template saves",
+      "prs": [],
+      "dependsOn": [
+        "B03",
+        "B06",
+        "B07",
+        "B08",
+        "B09",
+        "A16"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A world round-trip preserves IDs, prefab overrides, terrain, collisions, behaviors, media and source references. Saving thrown-object placements creates an intentional new revision without recording physics ticks. GLB limitations are explicit, and export never silently removes supported editing capabilities.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Authoring",
+        "release": "core",
+        "deliverable": "Connect browser workflows to complete world-bundle export/reimport, supported GLB export, original retrieval and explicit capture of selected live changes into a new template revision. Reuse asset-lane exporters and surface fidelity/loss reports instead of duplicating conversion code.",
+        "tests": "Round-trip a composite authored world, compare semantic manifests, restore captured runtime placements and test missing dependencies, migration and interrupted exports.",
+        "security": "Check export/read capabilities per dependency and exclude live credentials, participant records, private keys and ephemeral tracking from bundles."
+      }
+    },
+    {
+      "id": "R01",
+      "title": "Package the reproducible local and hosted service stack",
+      "prs": [],
+      "dependsOn": [
+        "N09",
+        "M07",
+        "N10"
+      ],
+      "externalPrerequisites": [
+        "Selected hosting resources exposing required HTTP/WebSocket and media transports"
+      ],
+      "acceptanceCriteria": "A fresh environment can launch the selected stack and run a two-client room with asset processing and live media. No service silently depends on a developer workstation or hosted editor account.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "core",
+        "deliverable": "Provide local composition and deployable infrastructure for control API, world fleet, media/TURN, collaboration, queue, database and storage. Separate HTTP/WebSocket routing from UDP-capable media infrastructure and document capacity assumptions.",
+        "tests": "Run clean provisioning, service discovery, health/readiness, dependency outage and teardown/recreate tests.",
+        "security": "Use scoped identities, private service paths, secret references and minimal exposed ports. Keep local convenience settings out of production defaults."
+      }
+    },
+    {
+      "id": "R02",
+      "title": "Harden transport secrets keys and service boundaries",
+      "prs": [],
+      "dependsOn": [
+        "R01",
+        "M17"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Expired credentials fail closed, rotation works without cross-tenant access, and supported encrypted modes match their stated participants and processors. Browser bundles contain no service secrets. Session revocation follows the measured M06 enforcement path; a JWT expiry timestamp is not treated as active-session termination.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "core",
+        "deliverable": "Complete environment-specific TLS, secure WebSockets, TURN credentials, service authentication, key rotation, secret distribution and browser policy configuration. Document data classes, retention and server-visible processing boundaries.",
+        "tests": "Test token/key expiry, rotation, downgraded transport, origin/cross-site abuse and key-loss recovery according to the documented policy.",
+        "security": "Apply the standing end-to-end security standard to each actual data flow; do not claim certification or hide necessary trusted endpoints."
+      }
+    },
+    {
+      "id": "R03",
+      "title": "Add metrics tracing capacity budgets and cost controls",
+      "prs": [],
+      "dependsOn": [
+        "R01",
+        "M13"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Operators can distinguish client rendering, simulation, media and network bottlenecks, and can account for per-event participant minutes, bandwidth and worker consumption.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "core",
+        "deliverable": "Instrument frame time, asset latency, conversion time, world tick, queue depth, room placement, subscriptions, decoder/audio load and recovery. Add budget alerts and safe diagnostic export using opaque session IDs.",
+        "tests": "Inject representative failures/load and verify correlation, alert delivery, metric bounds and log redaction.",
+        "security": "Exclude private document/media content and raw tracking streams; restrict diagnostics and prevent user-controlled labels from exhausting monitoring resources."
+      }
+    },
+    {
+      "id": "R04",
+      "title": "Qualify persistence migration backups and restoration",
+      "prs": [],
+      "dependsOn": [
+        "R01",
+        "B10"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A clean environment can restore an internally consistent world and its assets at a documented recovery point. Retried restores do not duplicate jobs or revive revoked grants unintentionally.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "core",
+        "deliverable": "Implement backup/restore procedures for metadata, world revisions, collaboration documents and asset manifests, with explicit retention and recovery targets. Use compatible migrations and rehearsed restore or forward-repair plans.",
+        "tests": "Run real database/object-storage restore, missing-asset detection, schema upgrade/downgrade compatibility and interrupted migration drills.",
+        "security": "Encrypt protected backups, restrict restore access, verify deletion/retention behavior and document key recovery separately from data recovery."
+      }
+    },
+    {
+      "id": "R05",
+      "title": "Qualify restricted networks and service failure recovery",
+      "prs": [],
+      "dependsOn": [
+        "R01",
+        "M12"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Authorized clients recover predictably without duplicate room authorities, presenters or audio paths. Unsupported seamless migration is not advertised as achieved.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "core",
+        "deliverable": "Exercise TURN fallback, bandwidth/latency/loss changes, WebSocket reconnect, worker drain/crash, media-node loss, converter restart and staged release rollback. Publish expected user-visible recovery and limitations.",
+        "tests": "Run controlled fault scenarios through actual ingress and media paths; verify queue replay, lease epochs and checkpoint restoration. Repeat recovery with removed members holding original and refreshed media tokens, including unavailable control-plane services.",
+        "security": "Ensure recovery never drops authorization checks, restores stale media access or exposes abandoned temporary processing files."
+      }
+    },
+    {
+      "id": "R06",
+      "title": "Qualify rendering audio and conference capacity profiles",
+      "prs": [],
+      "dependsOn": [
+        "R03",
+        "W22",
+        "M26"
+      ],
+      "externalPrerequisites": [
+        "Representative ordinary laptop, premium desktop and actual target headsets"
+      ],
+      "acceptanceCriteria": "Publish passing hardware/browser/workload profiles with p95/p99 frame timing, selected headset refresh, join latency, media quality, memory and service headroom. Failing configurations remain unsupported rather than receiving an invented capacity claim.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "core",
+        "deliverable": "Run reproducible desktop and real-headset workloads with architectural assets, animated wildlife, physics, four music sources, avatar voice and video screens. Test 20/50/100 interactive participants and concurrent interactive-room growth separately; R13 qualifies the expanded stage/broadcast topology.",
+        "tests": "Use real media publishers/decoders plus load clients, repeat steady-state and burst joins, and retain raw measurements and configuration hashes.",
+        "security": "Verify load controls resist resource exhaustion and test with privacy modes enabled rather than disabling safeguards for better numbers."
+      }
+    },
+    {
+      "id": "R07",
+      "title": "Complete integrated security and abuse verification",
+      "prs": [],
+      "dependsOn": [
+        "R02",
+        "W18"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Blocking findings are fixed and verified on the candidate commit. A self-review is identified honestly; actual repository-required independent reviews remain enforced if configured.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "expanded",
+        "deliverable": "Execute the engine threat-model scenarios across tenant isolation, grants, uploads, converters, behaviors, media subscriptions, exports and administration. Add regression coverage for findings and record a separate self security review.",
+        "tests": "Run cross-tenant and stale-token attacks, parser/sandbox escape fixtures, quotas, SSRF/path traversal, permission races and secret scans in deployed configurations.",
+        "security": "Do not weaken required checks or encryption to close the milestone. Record residual limitations with bounded impact and a concrete disposition."
+      }
+    },
+    {
+      "id": "R08",
+      "title": "Qualify browser headset and accessible engine behavior",
+      "prs": [],
+      "dependsOn": [
+        "M26",
+        "W22"
+      ],
+      "externalPrerequisites": [
+        "Actual devices for every advertised immersive support profile"
+      ],
+      "acceptanceCriteria": "Each advertised combination has actual evidence and useful fallback behavior. The local accessibility example works without requiring immersive 3D navigation.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "core",
+        "deliverable": "Define the supported browser/headset matrix and run input, locomotion, media, listener pose, readable surfaces, focus, permission-denial, sleep/resume and context-loss scenarios. Qualify optional hands/layers/trackers separately.",
+        "tests": "Run browser automation plus hands-on headset, keyboard/screen-reader and output-device scripts; preserve device/browser versions with results.",
+        "security": "Verify capture consent, safe focus transitions and privacy-consistent alternate views; do not use an emulator as sole hardware evidence."
+      }
+    },
+    {
+      "id": "R09",
+      "title": "Publish the engine beta with verified core contracts",
+      "prs": [],
+      "dependsOn": [
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R08",
+        "M15"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A clean independent consumer can install the beta and run local and multiplayer examples. Released artifacts correspond to the tested commit and exclude unverified adapter claims.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "core",
+        "deliverable": "Produce versioned SDK packages and service images with migration notes, immutable provenance and a compatibility matrix. Publish only the core functionality already exercised through the release checks, keeping expanded capabilities visibly pending.",
+        "tests": "Run package-consumer, API/schema compatibility, artifact integrity and upgrade/rollback smoke checks against released builds.",
+        "security": "Complete the core subset of R07 threat-model checks and a separate beta security review; no unresolved blocking finding may enter the beta."
+      }
+    },
+    {
+      "id": "R10",
+      "title": "Complete SDK documentation integration examples and handoff",
+      "prs": [],
+      "dependsOn": [
+        "R09"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A fresh developer can build a non-conference application, import/export a world and deploy a test room using repository instructions alone. Handoff includes unresolved external dependencies and the next runnable cards.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "core",
+        "deliverable": "Publish getting-started guides, SDK/API references, plugin/converter authoring, world schemas, media/audio examples, deployment/runbooks and upgrade guidance. Maintain exact progress, dependency and evidence records for future agents and project dashboards.",
+        "tests": "Execute documented commands and example projects in clean environments; validate links, schema examples and status/evidence references.",
+        "security": "Keep credentials out of documentation and examples, state privacy boundaries accurately and verify deployment examples use secure defaults."
+      }
+    },
+    {
+      "id": "R11",
+      "title": "Qualify expanded formats and the requested reference assets",
+      "prs": [],
+      "dependsOn": [
+        "A24",
+        "W22",
+        "B10"
+      ],
+      "externalPrerequisites": [
+        "Actual reference models and provisioned native SDK/application/plugin environments"
+      ],
+      "acceptanceCriteria": "Every advertised native or specialist adapter has a real passing fixture; the Acropolis/eagle/futuristic-building scenarios have visual and functional evidence using actual supplied files. Exchange substitutes do not mark native loaders complete.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "expanded",
+        "deliverable": "Run real native-tool connectors and the agreed architecture/animal corpus through conversion, editing, rendering tiers, collision/navigation and export. Record exact file/tool versions, approximation reports and supported feature subsets.",
+        "tests": "Compare reference renders/animations, traverse openings, place and throw props, inspect acoustic attachments and round-trip the complete edited world.",
+        "security": "Exercise malformed files and embedded code through isolated workers; preserve source access controls and immutable conversion provenance."
+      }
+    },
+    {
+      "id": "R12",
+      "title": "Accept and release the complete general engine",
+      "prs": [],
+      "dependsOn": [
+        "R07",
+        "R10",
+        "R11",
+        "R13",
+        "G16"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Every core and expanded engine card is implemented and verified against its required evidence. Any incomplete mandatory capability, unresolved blocking finding or missing required hardware, provider, asset or native-tool evidence blocks the complete release. A fresh host runs the general examples and deployment successfully.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "expanded",
+        "deliverable": "Reconcile all core and expanded engine cards, publish supported capability/format/device profiles and produce the final versioned SDK and service release. Keep every reusable mechanism free of conference-specific runtime dependencies.",
+        "tests": "Run the final package, migration, world-round-trip, security, real-device and operational smoke suite on released artifacts; link immutable evidence and rollback instructions.",
+        "security": "Close all blocking security findings, retain required notices, verify artifact provenance and perform the final separately recorded security review."
+      }
+    },
+    {
+      "id": "R13",
+      "title": "Qualify expanded stage broadcast and processing at event scale",
+      "prs": [],
+      "dependsOn": [
+        "R05",
+        "R06",
+        "M23"
+      ],
+      "externalPrerequisites": [
+        "Provisioned load, relay, recording/transcription and CDN test infrastructure"
+      ],
+      "acceptanceCriteria": "Independent audience instances receive the correct program and current presentation state. Promotion, processor failure and reconnect preserve permissions and avoid duplicate sound. Published event capacity follows actual results for the stated topology.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Operations and release",
+        "release": "expanded",
+        "deliverable": "Exercise the complete multi-instance stage, produced broadcast, audience promotion, encrypted content, recording and captions under sustained and burst workloads. Measure separate interactive, relay, processing and CDN latency/capacity profiles.",
+        "tests": "Run load and outage rehearsals with real media sources/decoders, authorized processors and broadcast distribution; correlate viewer delay, question/poll timing and recovery evidence.",
+        "security": "Keep private backstage/conversation content out of the public program and verify key/endpoint admission boundaries under scaling and failover."
+      }
+    },
+    {
+      "id": "G01",
+      "title": "Define generated-object, NPC, provider-job and usage contracts",
+      "prs": [],
+      "dependsOn": [
+        "F08",
+        "W01",
+        "A01"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A standalone engine host can describe creation, approve a bounded cost reservation and load an NPC definition without importing XLR8, a payment processor, credit prices or conference roles. Object creation does not require a humanoid rig or conversational brain.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Define versioned creation intents for objects and NPCs; generated image sets; provider tasks; rig/animation results; persona, memory scope and lifecycle descriptors; cost estimates, usage events, budget reservations and injected entitlement ports. Preserve source artifacts and stable identities across providers and world instances.",
+        "tests": "Validate schema versions, capability negotiation, malformed provider output, identity continuity, bounded numeric units and an independent host consumer.",
+        "security": "Treat prompts and provider responses as untrusted data. Host authorization is authoritative; model text cannot authorize expenditure, tools or world mutations."
+      }
+    },
+    {
+      "id": "G02",
+      "title": "Generate consistent multiview reference images",
+      "prs": [],
+      "dependsOn": [
+        "G01",
+        "A03",
+        "A05"
+      ],
+      "externalPrerequisites": [
+        "An image-generation provider account, credentials and an approved test-spend budget"
+      ],
+      "acceptanceCriteria": "The same depicted object is recognizable across views; a humanoid reference set has separated limbs and a rig-compatible rest pose. Failed consistency checks are repairable within an explicitly approved retry budget. Original references remain available.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Integrate a replaceable image-generation provider. Produce a coherent front, rear, side and three-quarter reference set from a shared character/object specification, with pose, framing, identity, prompt/model versions, seeds where supported and output provenance. Show previews before downstream generation when requested.",
+        "tests": "Run actual provider image generation, consistency/pose review, cancellation, partial failure, timeout and bounded-regeneration cases; fixture-only tests remain separately labeled.",
+        "security": "Keep provider keys server-side and scope access to reference images. Upload only the selected inputs; redact signed URLs and prompts containing private data from operational logs."
+      }
+    },
+    {
+      "id": "G03",
+      "title": "Integrate Hyper3D Rodin model generation",
+      "prs": [],
+      "dependsOn": [
+        "G01",
+        "G02",
+        "A03",
+        "A25"
+      ],
+      "externalPrerequisites": [
+        "Rodin API credentials, funded provider balance and an approved test-spend budget"
+      ],
+      "acceptanceCriteria": "An actual coherent image set produces a downloadable textured 3D model and enters the ordinary asset pipeline. Ambiguous submission timeouts reconcile provider task state instead of blindly creating a second paid job. Model family is always explicit.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Implement the Rodin HTTP adapter for ordered multiview images, explicit model/tier parameters, asynchronous task/status handling, output download and provider usage capture. Import original mesh/material outputs into controlled immutable storage; keep provider credentials and expiring task handles out of saved worlds.",
+        "tests": "Exercise live creation/status/download, ordered image inputs, rate limits, provider rejection, expired download refresh, restart recovery, duplicate callbacks and source/result integrity.",
+        "security": "Validate provider endpoints and output hosts, bound downloaded data, isolate mesh parsing and reconcile task ownership before accepting callbacks or charging usage."
+      }
+    },
+    {
+      "id": "G04",
+      "title": "Normalize characters and integrate Meshy rigging",
+      "prs": [],
+      "dependsOn": [
+        "G03",
+        "A11",
+        "A13",
+        "W12"
+      ],
+      "externalPrerequisites": [
+        "Meshy API credentials, funded provider balance and an approved test-spend budget"
+      ],
+      "acceptanceCriteria": "A generated humanoid has a working skeleton, skin weights and stable scale in the browser. The pipeline diagnoses unsuitable topology and does not claim every creature can use the same provider. Generic object creation and nonhumanoid import remain supported.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Prepare textured humanoid GLB input from Rodin output; validate scale, declared forward axis, limb separation, topology and rest pose. Integrate Meshy external-model rigging and preserve the returned rig and skin. Expose repair or alternate/manual rig adapters for unsupported bodies.",
+        "tests": "Run actual external GLB rigging, +Z input-facing checks, skeleton/weight validation, deformation preview, upload expiry, provider failures and alternate-rig import.",
+        "security": "Deliver only the intended asset through an expiring provider-readable URL or supported upload. Preserve original bytes and isolate returned-file parsing."
+      }
+    },
+    {
+      "id": "G05",
+      "title": "Acquire animations and prepare runtime character clips",
+      "prs": [],
+      "dependsOn": [
+        "G04",
+        "W13"
+      ],
+      "externalPrerequisites": [
+        "Meshy animation API access and an approved test-spend budget"
+      ],
+      "acceptanceCriteria": "A generated NPC switches between locomotion and gestures without losing its material, skeleton or identity. Missing facial shapes are reported as a distinct capability gap; body auto-rigging is not treated as automatic lip-sync support.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Integrate Meshy animation tasks for idle, walking, speaking gestures and selected actions; retain provider action identifiers and clip names. Import/retarget clips, root motion and attachment mappings through the existing animation system. Capture rig/clip artifacts before provider expiry.",
+        "tests": "Run live rig-to-animation tasks, multi-clip import, blending, root motion, interruption, expired task handling and persistent replay after provider task deletion.",
+        "security": "Treat animation metadata as untrusted; bound clip count/duration and retain only controlled asset references in worlds."
+      }
+    },
+    {
+      "id": "G06",
+      "title": "Compile generated objects and NPC assets for world placement",
+      "prs": [],
+      "dependsOn": [
+        "G03",
+        "A12",
+        "A13",
+        "A16",
+        "W23"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A creator can generate a static prop or venue element, place it, collide with it, clone it and export/reimport it. An NPC asset preserves rig/animation bindings. Generation never bypasses weak-device budgets or collision readiness.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Send generated objects and characters through the same material, LOD, collider, navigation, scale, source-retention and export pipeline as imported assets. Produce placement previews, stable asset revisions, inventory entries and repair diagnostics.",
+        "tests": "Test original-to-runtime provenance, safe placement, physical bounds, quality variants, large output rejection/repair, rig preservation and editable world round trips.",
+        "security": "Isolate compiler tasks and authorize publication/ownership changes. Keep generated content out of privileged execution paths."
+      }
+    },
+    {
+      "id": "G07",
+      "title": "Orchestrate resumable generation and stage-level cost settlement",
+      "prs": [],
+      "dependsOn": [
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G12"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A worker restart resumes paid completed stages without regenerating them. Failures retain usable outputs and release unspent reservations. No downstream paid stage begins without an adequate valid reservation; uncertain provider outcomes enter reconciliation.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Implement durable creation jobs spanning references, Rodin, optional Meshy rig/animation, compilation and publication. Persist stage results, user preview decisions, cancellation, compensation, retries and provider request identities; emit estimated, reserved, incurred and released usage separately.",
+        "tests": "Inject crashes before/after provider submission and settlement, duplicate delivery, delayed callbacks, cancellation races, retry ceilings and partial-success recovery against real providers plus deterministic fault fixtures.",
+        "security": "Bind jobs, reservations and outputs to a tenant/principal. Never trust client-supplied price or completion status; compensate with append-only events."
+      }
+    },
+    {
+      "id": "G08",
+      "title": "Implement reusable NPC entity and behavior lifecycle",
+      "prs": [],
+      "dependsOn": [
+        "G01",
+        "W15",
+        "N05",
+        "W23"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "NPCs can be placed, approached, addressed, moved and instantiated across permitted worlds without requiring a conference. One authoritative actor governs shared actions; concurrent conversations have declared isolation and capacity.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Add a general NPC controller for identity, asset/rig attachment, navigation, perception, interaction focus, action queues, idle/active state and shared-world authority. Separate durable NPC identity from transient rendered instances and conversational sessions.",
+        "tests": "Test spawn/despawn, ownership, two-client observation, navigation/collision, action cancellation, instance identity, reconnect and resource disposal.",
+        "security": "Authorize NPC actions through ordinary world capabilities; an NPC has no ambient administrator or arbitrary-script privilege."
+      }
+    },
+    {
+      "id": "G09",
+      "title": "Integrate conversational personas and bounded LLM tools",
+      "prs": [],
+      "dependsOn": [
+        "G08",
+        "G11",
+        "G12"
+      ],
+      "externalPrerequisites": [
+        "An LLM endpoint, credentials where required and an approved test-spend budget"
+      ],
+      "acceptanceCriteria": "The NPC sustains its configured English persona while answering using its approved knowledge and relevant private conversation context. It is identified as an AI portrayal. Conversation content cannot override owner settings, access other users memories, spend money or perform unauthorized world actions.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Implement pluggable LLM conversations with persona style, vocabulary, language, curated knowledge, source attribution and bounded world tools. Include an English Einstein portrayal fixture explaining spacetime, with observable model/prompt versions and a configurable modern-knowledge policy.",
+        "tests": "Run actual LLM multi-turn conversations, persona/language evaluation, retrieval evidence, interruption, prompt-injection and tool-authorization cases, token limits and provider outage recovery.",
+        "security": "Enforce capabilities outside the model, separate instruction and retrieved-data channels, minimize provider disclosure and validate every requested tool action."
+      }
+    },
+    {
+      "id": "G10",
+      "title": "Give NPCs spatial speech and synchronized expressive motion",
+      "prs": [],
+      "dependsOn": [
+        "G09",
+        "G05",
+        "M08",
+        "M19",
+        "W13"
+      ],
+      "externalPrerequisites": [
+        "Speech provider access, approved test-spend budget and actual target audio/headset devices"
+      ],
+      "acceptanceCriteria": "An NPC can converse through text or voice on desktop and VR. Moving closer changes its speech level/direction; interrupted speech stops promptly. Facial animation uses verified available rig capabilities, with an explicit simpler fallback.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Integrate streaming speech input/output, interruption, captions, turn-taking and optional viseme/facial adapters. Route generated speech through the NPCs existing positional emitter and coordinate gesture/lip-sync timing with the same speech session.",
+        "tests": "Run real STT/TTS sessions, spatial graph and single-route checks, interruption, overlapping speakers, caption alignment, head rotation, provider latency and real headset/audio verification.",
+        "security": "Gate microphone capture and transcript retention with explicit user controls; isolate conversation audio scopes and avoid storing raw audio by default."
+      }
+    },
+    {
+      "id": "G11",
+      "title": "Persist NPC memory with private conversation boundaries",
+      "prs": [],
+      "dependsOn": [
+        "G01",
+        "F08",
+        "N13"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A resumed NPC recalls permitted earlier conversations with the same user. A second user, creator or subscriber cannot read another users private conversation solely through ownership or payment. Frozen NPCs retain their authorized memory without ongoing inference.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Store durable NPC configuration, structured memories, episodic summaries and retrievable conversation context with provenance, versioning and retention controls. Separate creator-authored knowledge, world-shared memories and per-user private conversations. Support inspection, correction, forgetting, export and deletion.",
+        "tests": "Test real database/vector retrieval, restart/restore, cross-user isolation, correction, deletion propagation, stale summaries, memory poisoning and bounded compaction/retrieval cost.",
+        "security": "Enforce tenant, NPC, user and conversation ACLs during both indexing and retrieval; encrypt stored data as appropriate and keep derived summaries subject to the same deletion policy."
+      }
+    },
+    {
+      "id": "G12",
+      "title": "Meter provider usage and enforce generic operating budgets",
+      "prs": [],
+      "dependsOn": [
+        "G01",
+        "F08",
+        "R03"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Concurrent NPC turns cannot exceed a hosts approved reservation ceiling. Missing or expired funding denies new paid work. Actual platform costs remain visible when the host elects to charge its user zero. Uncancelable in-flight work is bounded by an already reserved maximum.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Implement durable usage events, provider rate-card snapshots, maximum-cost estimates, atomic reserve/settle/release and expiring operating leases. Measure image/model/rig jobs, LLM tokens, speech, embeddings, storage and active simulation resources. Expose host-injected funding/entitlement decisions without credit or subscription business rules.",
+        "tests": "Test concurrent reservations, duplicate settlement, stale rates, provider under/over-reporting, timeout reconciliation, expired leases, crash recovery and an independent host cost adapter.",
+        "security": "Use integer accounting units and durable idempotency keys; authenticate meters and budget decisions. Model output and browser balances are never authoritative."
+      }
+    },
+    {
+      "id": "G13",
+      "title": "Freeze and resume NPCs without losing identity or memory",
+      "prs": [],
+      "dependsOn": [
+        "G07",
+        "G08",
+        "G10",
+        "G11",
+        "G12"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Removing funding can leave a clearly dormant world object or make it inaccessible according to host policy. No new paid inference, speech or background agent loop runs while frozen. Restoring a valid lease resumes the same NPC; it does not regenerate the character.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Implement funded, active, quiescing, frozen and resuming states. Stop accepting paid work, cancel supported requests, settle bounded in-flight usage, checkpoint behavior/memory and release runtime/media resources. Restore assets, identity and authorized context on renewed funding.",
+        "tests": "Test funding loss during speech/generation, last-turn settlement, server crashes during checkpoint, long dormancy, repeated resume, access revocation and exact resource cleanup.",
+        "security": "Use server-authoritative lifecycle transitions. Preserve data access controls across freeze/resume; checkpointing is not deletion or a billing bypass."
+      }
+    },
+    {
+      "id": "G14",
+      "title": "Share and clone NPCs with explicit identity and access policies",
+      "prs": [],
+      "dependsOn": [
+        "G08",
+        "G11",
+        "G13",
+        "W23",
+        "N13"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "Several authorized users can access the same published NPC subject to host concurrency limits. A clone receives a new identity and explicitly selected knowledge; private visitor memories do not silently copy or become public.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Expose capability-based NPC access, private/shared sessions, world placement, immutable persona versions and explicit clone-versus-instance operations. Accept host entitlement decisions for paid access without implementing a marketplace in the engine.",
+        "tests": "Test entitlement revocation, cross-world instances, simultaneous sessions, clone semantics, owner transfer, private memory isolation and subscriber-like host adapters.",
+        "security": "Recheck authorization for sessions and protected assets; opaque NPC IDs and public world visibility do not grant memory access."
+      }
+    },
+    {
+      "id": "G15",
+      "title": "Add general creation and NPC authoring controls",
+      "prs": [],
+      "dependsOn": [
+        "G07",
+        "G10",
+        "G13",
+        "G14",
+        "B08",
+        "W06"
+      ],
+      "externalPrerequisites": [],
+      "acceptanceCriteria": "A standalone engine example can interpret conjure an Einstein NPC to explain spacetime to me, obtain host approval, create/place the NPC and converse with it. Object-only prompts use the same creation flow. Users can inspect failures and choose repair or resume without repeating paid completed stages.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Add reusable typed/voice creation commands, multiview previews, generation progress, placement, persona/knowledge editing, animation settings, memory controls and freeze/resume UI. Present cost/approval data through an injected host UI contract; provide desktop, touch and in-headset controls.",
+        "tests": "Exercise the actual UI with providers, accessibility input, VR panels, cancellation, repair, context continuity and frozen-state explanations.",
+        "security": "Display prompts/results as data and reauthorize creation/memory/world mutations on the server. Client preview approval is bound to the exact job and quote."
+      }
+    },
+    {
+      "id": "G16",
+      "title": "Qualify generated objects and persistent NPCs end to end",
+      "prs": [],
+      "dependsOn": [
+        "G15",
+        "R08",
+        "A16"
+      ],
+      "externalPrerequisites": [
+        "Live image/Rodin/Meshy/LLM/speech access, approved test-spend budget and actual supported headset/audio devices"
+      ],
+      "acceptanceCriteria": "Actual generated props and an Einstein-style NPC work on the supported desktop and headset profiles. Restart, funding exhaustion and later restoration preserve identity/memory; account isolation and cost ceilings pass. Simulated providers cannot close this release gate.",
+      "sourceMetadata": {
+        "sourcePlan": "docs/plan/pr-plan.json",
+        "lane": "Generation and NPCs",
+        "release": "expanded",
+        "deliverable": "Run and retain the complete real-provider creation, rigging, animation, conversation, memory, spatial voice and operating-budget scenarios. Publish source/provider versions, cost measurements, performance profiles, lifecycle limits, export semantics and an application-independent sample.",
+        "tests": "Run the full live pipeline, multi-user memory/privacy, failure-injection, overspend/concurrency, resource cleanup, weak-device profiles, real audio and export/reimport acceptance.",
+        "security": "Complete an integrated separate review of upload parsing, provider credentials, prompt/tool boundaries, memory ACLs and spend authorization; resolve blocking findings."
+      }
+    }
+  ],
+  "pullRequests": [
+    {
+      "id": 1,
+      "number": 1,
+      "title": "F01: Establish engine SDK workspace and implementation baseline",
+      "state": "closed",
+      "url": "https://github.com/neophilism/Browser-VR-Engine/pull/1",
+      "createdAt": "2026-10-17T21:26:45Z",
+      "updatedAt": "2026-10-17T21:27:05Z",
+      "mergedAt": "2026-10-17T21:27:05Z",
+      "closedAt": "2026-10-17T21:27:05Z",
+      "draft": false
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "title": "ci: establish evidence and required-check merge procedure (F02)",
+      "state": "closed",
+      "url": "https://github.com/neophilism/Browser-VR-Engine/pull/2",
+      "createdAt": "2026-10-17T21:52:03Z",
+      "updatedAt": "2026-10-17T21:55:55Z",
+      "mergedAt": "2026-10-17T21:55:55Z",
+      "closedAt": "2026-10-17T21:55:55Z",
+      "draft": false
+    },
+    {
+      "id": 3,
+      "number": 3,
+      "title": "docs: add complete NPC generation, credits and subscription plan",
+      "state": "closed",
+      "url": "https://github.com/neophilism/Browser-VR-Engine/pull/3",
+      "createdAt": "2026-10-17T21:58:34Z",
+      "updatedAt": "2026-10-17T22:01:51Z",
+      "mergedAt": "2026-10-17T22:01:51Z",
+      "closedAt": "2026-10-17T22:01:51Z",
+      "draft": false
+    },
+    {
+      "id": 4,
+      "number": 4,
+      "title": "feat: shared engine contracts and reproducible qualification world (F03)",
+      "state": "closed",
+      "url": "https://github.com/neophilism/Browser-VR-Engine/pull/4",
+      "createdAt": "2026-10-17T22:08:27Z",
+      "updatedAt": "2026-10-17T22:10:25Z",
+      "mergedAt": "2026-10-17T22:10:25Z",
+      "closedAt": "2026-10-17T22:10:25Z",
+      "draft": false
+    },
+    {
+      "id": 5,
+      "number": 5,
+      "title": "F04/F05: add reproducible foundation evaluations and required browser CI",
+      "state": "closed",
+      "url": "https://github.com/neophilism/Browser-VR-Engine/pull/5",
+      "createdAt": "2026-10-18T16:56:59Z",
+      "updatedAt": "2026-10-18T17:06:11Z",
+      "mergedAt": "2026-10-18T17:06:10Z",
+      "closedAt": "2026-10-18T17:06:11Z",
+      "draft": false
+    },
+    {
+      "id": 6,
+      "number": 6,
+      "title": "Require released VRSpace service evaluation in engine CI",
+      "state": "closed",
+      "url": "https://github.com/neophilism/Browser-VR-Engine/pull/6",
+      "createdAt": "2026-10-18T17:17:49Z",
+      "updatedAt": "2026-10-18T18:38:57Z",
+      "mergedAt": "2026-10-18T17:21:47Z",
+      "closedAt": "2026-10-18T17:21:47Z",
+      "draft": false
+    },
+    {
+      "id": 7,
+      "number": 7,
+      "title": "Add immersive VR evaluation and repair animation observation",
+      "state": "closed",
+      "url": "https://github.com/neophilism/Browser-VR-Engine/pull/7",
+      "createdAt": "2026-10-18T18:09:02Z",
+      "updatedAt": "2026-10-18T18:38:54Z",
+      "mergedAt": "2026-10-18T18:34:27Z",
+      "closedAt": "2026-10-18T18:34:27Z",
+      "draft": false
+    },
+    {
+      "id": 8,
+      "number": 8,
+      "title": "Add bounded manual Hubs runtime evaluation",
+      "state": "closed",
+      "url": "https://github.com/neophilism/Browser-VR-Engine/pull/8",
+      "createdAt": "2026-10-18T18:52:25Z",
+      "updatedAt": "2026-10-18T20:48:10Z",
+      "mergedAt": "2026-10-18T18:55:42Z",
+      "closedAt": "2026-10-18T18:55:42Z",
+      "draft": false
+    },
+    {
+      "id": 9,
+      "number": 9,
+      "title": "Add portable authored-world reload and verification",
+      "state": "closed",
+      "url": "https://github.com/neophilism/Browser-VR-Engine/pull/9",
+      "createdAt": "2026-10-18T21:04:33Z",
+      "updatedAt": "2026-10-18T21:20:39Z",
+      "mergedAt": "2026-10-18T21:09:10Z",
+      "closedAt": "2026-10-18T21:09:11Z",
+      "draft": false
+    },
+    {
+      "id": 10,
+      "number": 10,
+      "title": "Fix portable media readiness and retain failed main evidence",
+      "state": "closed",
+      "url": "https://github.com/neophilism/Browser-VR-Engine/pull/10",
+      "createdAt": "2026-10-18T21:30:40Z",
+      "updatedAt": "2026-10-18T21:45:56Z",
+      "mergedAt": "2026-10-18T21:39:06Z",
+      "closedAt": "2026-10-18T21:39:06Z",
+      "draft": false
+    }
+  ]
+}
