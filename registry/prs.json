@@ -56,7 +56,7 @@
       "id": "BVR-F03",
       "title": "Define shared contracts and qualification fixtures",
       "prs": [
-        3
+        4
       ],
       "dependsOn": [
         "BVR-F02"
@@ -76,9 +76,7 @@
     {
       "id": "BVR-F04",
       "title": "Qualify Hubs and Spoke as a complete foundation",
-      "prs": [
-        4
-      ],
+      "prs": [],
       "dependsOn": [
         "BVR-F03"
       ],
@@ -94,14 +92,19 @@
         "tests": "Run the common desktop/two-client scenario and actual-headset checklist; capture frame timing and reconnect behavior without claiming production capacity.",
         "security": "Inventory covered licenses, exposed services, default access policies and stale dependencies; document necessary patches rather than imposing marketplace feature restrictions.",
         "originalWorkUnitId": "F04"
-      }
+      },
+      "contributingPrs": [
+        5,
+        7,
+        8,
+        9,
+        10
+      ]
     },
     {
       "id": "BVR-F05",
       "title": "Qualify Babylon and reusable VRSpace subsystems",
-      "prs": [
-        5
-      ],
+      "prs": [],
       "dependsOn": [
         "BVR-F03"
       ],
@@ -117,7 +120,14 @@
         "tests": "Run the same desktop, multi-client and headset scenarios; inspect bundle size, frame cost and service boundaries.",
         "security": "Check client/server separation, dependency notices, untrusted media routes and credential handling. Do not import an entire service stack merely to obtain a small client module.",
         "originalWorkUnitId": "F05"
-      }
+      },
+      "contributingPrs": [
+        5,
+        6,
+        7,
+        9,
+        10
+      ]
     },
     {
       "id": "BVR-F06",
