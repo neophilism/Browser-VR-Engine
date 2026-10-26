@@ -1,4 +1,4 @@
-import { build } from 'esbuild';
+import { build, stop } from 'esbuild';
 import { resolve } from 'node:path';
 import { writeFile, copyFile } from 'node:fs/promises';
 import { packageRoot, fixtureRoot } from './config.mjs';
@@ -17,6 +17,7 @@ const browser=await build({
   plugins,metafile:true,
 });
 const carrier=await build({absWorkingDir:packageRoot,entryPoints:['src/portable-world.js'],bundle:true,format:'esm',target:'es2022',platform:'browser',outfile:resolve(packageRoot,'dist/portable-world.mjs'),plugins,metafile:true,logLevel:'info'});
+stop();
 verifyWorkspaceBuildInputs([browser.metafile,carrier.metafile]);
 await copyFile(resolve(packageRoot,'src/audio-meter.js'),resolve(packageRoot,'dist/audio-meter.js'));
 const after={inputs:await fingerprintFiles(buildInputPaths),workspaceInputs:await fingerprintWorkspaceFiles()};
