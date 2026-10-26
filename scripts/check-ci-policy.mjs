@@ -69,6 +69,24 @@ export function validateWorkflow(text, pins) {
   return errors;
 }
 
+export function validateDeploymentMonitorWorkflow(text) {
+  const errors = [];
+  const document = parseDocument(text, { uniqueKeys: true });
+  if (document.errors.length || document.warnings.length) return ['Deployment monitor workflow YAML is invalid'];
+  let workflow;
+  try { workflow = document.toJS({ maxAliasCount: 0 }); } catch { return ['Deployment monitor workflow aliases are not permitted']; }
+  const expectedPaths = ['.github/deployment-monitor.json', '.github/workflows/deployment-monitor-contract.yml'];
+  const expectedUse = 'neophilism/Development-Deployment-Monitor/.github/workflows/validate-client.yml@429a9203cec131189692bfa7e41124ef5a7a906c';
+  if (workflow?.name !== 'Deployment monitor contract') errors.push('Deployment monitor workflow name differs');
+  if (JSON.stringify(Object.keys(workflow?.on ?? {})) !== '["pull_request"]' || JSON.stringify(workflow?.on?.pull_request?.paths) !== JSON.stringify(expectedPaths)) errors.push('Deployment monitor trigger differs');
+  if (JSON.stringify(workflow?.permissions) !== '{"contents":"read"}') errors.push('Deployment monitor permissions must be contents read only');
+  if (JSON.stringify(Object.keys(workflow?.jobs ?? {})) !== '["contract"]') errors.push('Deployment monitor must expose only the contract job');
+  const contract = workflow?.jobs?.contract;
+  if (!contract || JSON.stringify(Object.keys(contract)) !== '["uses"]' || contract.uses !== expectedUse) errors.push('Deployment monitor must use the reviewed immutable reusable workflow');
+  if (/\bsecrets\s*(?:\.|\[)|pull_request_target|workflow_run|workflow_dispatch/i.test(JSON.stringify(workflow))) errors.push('Deployment monitor cannot access secrets or privileged/manual events');
+  return errors;
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const root = resolve(import.meta.dirname, '..');
   const pins = JSON.parse(await readFile(resolve(root, 'docs/ci/action-pins.json'), 'utf8')).actions;
@@ -77,7 +95,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   if (!files.includes('engine-ci.yml')) errors.push('Missing engine CI workflow');
   if (!files.includes('f04-hubs-runtime.yml')) errors.push('Missing reviewed manual F04 workflow');
   for (const file of files) {
-    const validate = file === 'engine-ci.yml' ? validateWorkflow : file === 'f04-hubs-runtime.yml' ? validateF04RuntimeWorkflow : null;
+    const validate = file === 'engine-ci.yml' ? validateWorkflow : file === 'f04-hubs-runtime.yml' ? validateF04RuntimeWorkflow : file === 'deployment-monitor-contract.yml' ? validateDeploymentMonitorWorkflow : null;
     if (!validate) errors.push(`${file}: workflow has no reviewed policy`);
     else errors.push(...validate(await readFile(resolve(root, '.github/workflows', file), 'utf8'), pins).map(error => `${file}: ${error}`));
   }
