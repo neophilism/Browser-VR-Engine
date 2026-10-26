@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { parse, stringify } from 'yaml';
-import { validateWorkflow, validatePackageCommands } from '../check-ci-policy.mjs';
+import { validateWorkflow, validatePackageCommands, validateDeploymentMonitorWorkflow } from '../check-ci-policy.mjs';
 import { inspectBoundary } from '../check-boundaries.mjs';
 import { inspectExposure, redact, redactStructured } from '../check-secret-exposure.mjs';
 import { classifyAudit } from '../check-dependencies.mjs';
@@ -11,7 +11,25 @@ import { validatePackInventory } from '../test-consumer.mjs';
 
 const workflowText = await readFile(new URL('../../.github/workflows/engine-ci.yml', import.meta.url), 'utf8');
 const pins = JSON.parse(await readFile(new URL('../../docs/ci/action-pins.json', import.meta.url), 'utf8')).actions;
+
 test('the actual workflow conforms to the checked-in policy', () => assert.deepEqual(validateWorkflow(workflowText, pins), []));
+
+const deploymentMonitorText = await readFile(new URL('../../.github/workflows/deployment-monitor-contract.yml', import.meta.url), 'utf8');
+test('the deployment monitor caller uses the reviewed immutable contract', () => assert.deepEqual(validateDeploymentMonitorWorkflow(deploymentMonitorText), []));
+for (const [name, mutate] of [
+  ['floating DDM ref', workflow => { workflow.jobs.contract.uses = 'neophilism/Development-Deployment-Monitor/.github/workflows/validate-client.yml@main'; }],
+  ['manual trigger', workflow => { workflow.on.workflow_dispatch = {}; }],
+  ['write permission', workflow => { workflow.permissions.contents = 'write'; }],
+  ['caller parameters', workflow => { workflow.jobs.contract.with = { mode: 'unreviewed' }; }],
+  ['unrelated path', workflow => { workflow.on.pull_request.paths.push('src/**'); }]
+]) {
+  test(`deployment monitor policy rejects ${name}`, () => {
+    const workflow = parse(deploymentMonitorText);
+    mutate(workflow);
+    assert.ok(validateDeploymentMonitorWorkflow(stringify(workflow)).length);
+  });
+}
+
 
 const manifest = JSON.parse(await readFile(new URL('../../package.json', import.meta.url), 'utf8'));
 test('required package and example commands include every foundation host and suite', () => {
